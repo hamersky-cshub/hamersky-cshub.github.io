@@ -9,7 +9,6 @@ import { fileURLToPath } from 'url'
 export default defineConfig({
   compressHTML: true,
   site: 'https://hamersky-cshub.github.io/',
-  base: 'https://github.com/hamersky-cshub/',
   integrations: [mdx(), icon(), compress()],
   vite: {
     css: {
