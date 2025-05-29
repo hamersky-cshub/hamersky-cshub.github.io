@@ -1,38 +1,63 @@
+# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
+  # Spustí se při pushi do větve 'main'
   push:
-    branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches:
+      - main # Nebo 'master', podle tvé hlavní větve
+  # Umožňuje ruční spuštění workflow z Actions záložky na GitHubu
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
+# Nastavení GITHUB_TOKEN oprávnění pro nasazení na GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Povolit pouze jedno souběžné nasazení, zruší starší běhy, pokud jsou ve frontě/běží
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Zvol si svou verzi Node.js
+          cache: 'npm' # Nebo 'npm' / 'yarn'
+      - name: Install dependencies
+        run: npm install # Nebo 'pnpm install' / 'yarn install'
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Astro
+        run: npm run build # Nebo 'pnpm run build' / 'yarn run build'
+        env: # Předej proměnné do buildu, pokud je potřeba
+          # Například pokud `site` a `base` nejsou v astro.config.js napevno
+          # VITE_SITE_URL: ${{ steps.pages.outputs.base_url }} # Příklad
+          # VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }} # Příklad
+          # Pro Astro je lepší mít site a base přímo v astro.config.mjs
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Nahraje obsah adresáře 'dist' (nebo jaký máš nastavený outDir)
+          path: ./dist
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
