@@ -38,11 +38,6 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Astro
         run: npm run build # Nebo 'pnpm run build' / 'yarn run build'
-        env: # Předej proměnné do buildu, pokud je potřeba
-          # Například pokud `site` a `base` nejsou v astro.config.js napevno
-          # VITE_SITE_URL: ${{ steps.pages.outputs.base_url }} # Příklad
-          # VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }} # Příklad
-          # Pro Astro je lepší mít site a base přímo v astro.config.mjs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
