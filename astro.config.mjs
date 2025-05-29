@@ -8,7 +8,8 @@ import { fileURLToPath } from 'url'
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: 'https://accessible-astro-starter.incluud.dev',
+  site: 'https://hamersky-cshub.github.io/',
+  base: 'https://github.com/hamersky-cshub/hamersky-cshub.github.io/',
   integrations: [mdx(), icon(), compress()],
   vite: {
     css: {
