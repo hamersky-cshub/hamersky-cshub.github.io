@@ -14,7 +14,7 @@ interface Props {
   src?: string
 }
 
-const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
+const { src = '/assets/images/index/20945658.jpg' }: Props = Astro.props
 ---
 
 <section class="hero my-24">
@@ -25,13 +25,9 @@ const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
           <slot><span class="text-gradient">WWW</span><br/>Wise Web Wanderers</slot>
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="https://github.com/incluud/accessible-astro-starter">
-            <Icon name="lucide:star" />
-            Star on GitHub
-          </a>
-          <a class="button has-icon color-secondary" href="https://accessible-astro.incluud.dev/">
-            <Icon name="lucide:bookmark" />
-            Read the docs
+          <a class="button has-icon" href="/modules/">
+            <Icon name="lucide:book-marked" />
+            Start Learning
           </a>
         </div>
       </div>
