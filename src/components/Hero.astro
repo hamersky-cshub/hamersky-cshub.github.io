@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
-
+import heroImg from '../assets/images/index/20945658.jpg'
 
 /**
  * Hero Component
@@ -15,7 +15,7 @@ interface Props {
   src?: string
 }
 
-// const { src = 'src/assets/images/index/20945658.jpg' }: Props = Astro.props
+// const { src = '../assets/images/index/20945658.jpg' }: Props = Astro.props
 ---
 
 <section class="hero my-24">
@@ -32,7 +32,7 @@ interface Props {
           </a>
         </div>
       </div>
-      <Image class="hidden lg:block" src="/src/assets/images/index/20945658.jpg" alt="" decoding="async" width={800} height={600} loading="eager" />
+      <Image class="hidden lg:block" src={heroImg} alt="" decoding="async" width={800} height={600} loading="eager" />
     </div>
   </div>
 </section>
