@@ -58,7 +58,7 @@ const totalPages = Math.ceil(page.total / page.size)
             <li>
               <Card
                 imageComponent={project.featuredImage}
-                url={'/portfolio/' + project.id}
+                url={'/module/' + project.id}
                 title={project.data.title}
                 footer={'Author: ' + project.data.author}
               >
@@ -70,10 +70,10 @@ const totalPages = Math.ceil(page.total / page.size)
       </ul>
       <div class="mt-12 grid place-content-center">
         <Pagination
-          firstPage={page.url.prev ? '/portfolio' : null}
+          firstPage={page.url.prev ? '/module' : null}
           previousPage={page.url.prev ? page.url.prev : null}
           nextPage={page.url.next ? page.url.next : null}
-          lastPage={page.url.next ? `/portfolio/${Math.ceil(page.total / page.size)}` : null}
+          lastPage={page.url.next ? `/module/${Math.ceil(page.total / page.size)}` : null}
           currentPage={`${page.currentPage}`}
           totalPages={`${Math.ceil(page.total / page.size)}`}
           ariaLabel="Portfolio pagination"
