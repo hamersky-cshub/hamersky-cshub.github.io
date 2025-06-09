@@ -1,0 +1,105 @@
+---
+import Layout from './Layout.astro';
+import ModuleNavigation from '../components/ModuleNavigation.astro';
+---
+
+interface Props {
+  title: string;
+  description?: string;
+  moduleTitle: string;
+  moduleIcon: string;
+  currentModule: string;
+}
+
+const { 
+  title, 
+  description, 
+  moduleTitle,
+  moduleIcon,
+  currentModule
+} = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <div class="module-container">
+    <div class="module-header">
+      <div class="module-icon">
+        <img src={`/images/icons/${moduleIcon}`} alt={`${moduleTitle} icon`} width="48" height="48" />
+      </div>
+      <h1>{moduleTitle}</h1>
+    </div>
+    
+    <div class="module-content">
+      <aside class="module-sidebar">
+        <ModuleNavigation currentModule={currentModule} />
+      </aside>
+      <div class="module-main">
+        <slot />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .module-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .module-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--neutral-100);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .module-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius-md);
+  }
+
+  .module-header h1 {
+    margin-bottom: 0;
+  }
+
+  .module-content {
+    display: flex;
+    gap: var(--spacing-lg);
+  }
+
+  .module-sidebar {
+    flex: 0 0 250px;
+    background-color: var(--neutral-100);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .module-main {
+    flex: 1;
+    background-color: var(--neutral-100);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 768px) {
+    .module-content {
+      flex-direction: column;
+    }
+    
+    .module-sidebar {
+      flex: auto;
+      width: 100%;
+    }
+  }
+</style>
