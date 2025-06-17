@@ -1,0 +1,146 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
+import ContentMedia from '@components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import { Pagination } from 'accessible-astro-components'
+---
+
+<DefaultLayout>
+  <PageHeader
+      title="Social Engineering"
+      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      bgType="bordered"
+  />
+
+<section class="my-12">
+    <div class="container mb-12">
+      <h2 class="font-bold mb-6">Lorem Ipsum</h2>
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="container mb-12">
+      <h2 class="font-bold mb-6">Lorem Ipsum</h2>
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="container mb-12">
+      <h2 class="font-bold mb-6">Lorem Ipsum</h2>
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+
+<div class="container my-12 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600">End of the Module</div>
+
+
+  <ContentMedia imgSrc="/src/assets/images/index/20945658.jpg" reverseImg={true}>
+  <h2 class="font-bold mt-12">Other Modules</h2>
+
+  <Accordion>
+    <AccordionItem class="mb-4" title="Digital Citizenship">
+      <h4 class="mb-3">Digital Citizenship</h4>
+      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="grid grid-cols-2 gap-6 mt-6">
+      <a class="button has-icon" href="/learning-hub/digital-citizenship/">
+    <Icon name="lucide:book-marked" />
+    Start Learning
+    </a>
+    <a class="button has-icon color-secondary" href="/learning-hub/digital-citizenship/">
+    <Icon name="lucide:gamepad-2" />
+    Play a Game
+    </a>
+    </div>
+    </AccordionItem>
+
+    <AccordionItem class="mb-4" title="Attacker Perspective">
+      <h4 class="mb-3"">Attacker Perspective</h4>
+      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+       <div class="grid grid-cols-2 gap-6 mt-6">
+      <a class="button has-icon" href="/learning-hub/attacker-perspective/">
+    <Icon name="lucide:book-marked" />
+    Start Learning
+    </a>
+    <a class="button has-icon color-secondary" href="/learning-hub/attacker-perspective/">
+    <Icon name="lucide:gamepad-2" />
+    Play a Game
+    </a>
+    </div>
+    </AccordionItem>
+
+    <AccordionItem class="mb-4" title="Authentication">
+      <h4 class="mb-3">Authentication</h4>
+      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="grid grid-cols-2 gap-6 mt-6">
+      <a class="button has-icon" href="/learning-hub/authentication/">
+    <Icon name="lucide:book-marked" />
+    Start Learning
+    </a>
+    <a class="button has-icon color-secondary" href="/learning-hub/authentication/">
+    <Icon name="lucide:gamepad-2" />
+    Play a Game
+    </a>
+    </div>
+    </AccordionItem>
+
+    <AccordionItem class="mb-4" title="Data Privacy">
+      <h4 class="mb-3">Data Privacy</h4>
+      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="grid grid-cols-2 gap-6 mt-6">
+      <a class="button has-icon" href="/learning-hub/data-privacy/">
+    <Icon name="lucide:book-marked" />
+    Start Learning
+    </a>
+    <a class="button has-icon color-secondary" href="/learning-hub/data-privacy/">
+    <Icon name="lucide:gamepad-2" />
+    Play a Game
+    </a>
+    </div>
+    </AccordionItem>
+
+    <AccordionItem class="mb-4" title="Malware">
+      <h4 class="mb-3">Malware</h4>
+      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="grid grid-cols-2 gap-6 mt-6">
+      <a class="button has-icon" href="/learning-hub/malware/">
+    <Icon name="lucide:book-marked" />
+    Start Learning
+    </a>
+    <a class="button has-icon color-secondary" href="/learning-hub/malware/">
+    <Icon name="lucide:gamepad-2" />
+    Play a Game
+    </a>
+    </div>
+    </AccordionItem>
+
+    <AccordionItem class="mb-4" title="Digital Abuse">
+      <h4 class="mb-3">Digital Abuse</h4>
+      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="grid grid-cols-2 gap-6 mt-6">
+      <a class="button has-icon" href="/learning-hub/digital-abuse/">
+    <Icon name="lucide:book-marked" />
+    Start Learning
+    </a>
+    <a class="button has-icon color-secondary" href="/learning-hub/digital-abuse/">
+    <Icon name="lucide:gamepad-2" />
+    Play a Game
+    </a>
+    </div>
+    </AccordionItem>
+    </ContentMedia>
+  </Accordion>
+
+</section>
+</DefaultLayout>

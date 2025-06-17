@@ -1,6 +1,8 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
+import { Accordion, AccordionItem, Media } from 'accessible-astro-components'
+import Feature from '@components/Feature.astro'
 ---
 
 <DefaultLayout title="About">
@@ -21,15 +23,54 @@ import PageHeader from '@components/PageHeader.astro'
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
 
-      <h2>Lorem Ipsum</h2>
-      <p>
+      <h2>Our Values</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content">
+        <Feature icon="lucide:blocks" title="Lorem Ipsum">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Feature>
+        <Feature icon="lucide:puzzle" title="Lorem Ipsum">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Feature>
+        <Feature icon="lucide:library-big" title="Lorem Ipsum">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Feature>
+        <Feature icon="lucide:library-big" title="Lorem Ipsum">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Feature>
+</div>
+
+
+<h2>FAQ</h2>
+<Accordion>
+
+  {/* Chevron variant with arrow on the right */}
+  <AccordionItem
+    title="Lorem Ipsum"
+    variant="chevron"
+    open={true} 
+  >
+    <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-      <ul class="list-inside list-disc">
-        <li>Lorem Ipsum</li>
-        <li>Lorem Ipsum</li>
-        <li>Lorem Ipsum</li>
-      </ul>
-    </div>
-  </section>
+  </AccordionItem>
+
+  <AccordionItem
+    title="Lorem Ipsum"
+    variant="chevron"
+  >
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+  </AccordionItem>
+
+  <AccordionItem
+    title="Lorem Ipsum"
+    variant="chevron"
+  >
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+  </AccordionItem>
+</Accordion>
+</section>
 </DefaultLayout>
