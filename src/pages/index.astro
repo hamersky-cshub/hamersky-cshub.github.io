@@ -5,7 +5,11 @@ import Feature from '@components/Feature.astro'
 import Counter from '@components/Counter.astro'
 import ContentMedia from '@components/ContentMedia.astro'
 import ExternalLink from '@components/ExternalLink.astro'
-import { Accordion, AccordionItem, Avatar, AvatarGroup, Card, Badge} from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { Accordion, AccordionItem, Avatar, AvatarGroup, Card, Badge, Notification } from 'accessible-astro-components'
+import CallToAction from '@components/CallToAction.astro'
+import BreakoutImage from '@components/BreakoutImage.astro'
+import BlockQuote from '@components/BlockQuote.astro'
 ---
 
 <DefaultLayout title="Home">
@@ -13,7 +17,11 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup, Card, Badge} from 'acces
   <section class="my-12">
     <div class="container">
 
-<h2 class="mb-12">Explore the Features</h2>
+  <p class="mb-24 text-4xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://localhost:4321/about/">About</a> consequat.</p>
+
+<h2 class="mb-12">
+  <Icon name="lucide:sparkles" />
+  Explore the Features</h2>
 
 <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <Feature icon="lucide:blocks" title="Interactive Learning Modules">
@@ -27,8 +35,11 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup, Card, Badge} from 'acces
         </Feature>
 </div>
 
-<h2 class="mt-24 mb-12">Learning Modules</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content mt-28">
+<h2 class="mt-24 mb-12">
+  <Icon name="lucide:graduation-cap" />
+  Learning<br/> Modules</h2>
+
 
   <Card
   img="/images/138715027_10428703.jpg"
@@ -79,6 +90,113 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup, Card, Badge} from 'acces
   <p>Digital abuse is when someone is mean, scary, or makes you feel bad using, like sending unkind messages or sharing pictures without asking. If this happens, you should always tell a trusted grown-up right away so they can help.</p>
   </Card>
 </div>
+
+
+<h2 class="mt-24 mb-12">
+  <Icon name="lucide:land-plot" />
+  Interactive Challenges</h2>
+
+<div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 feature-card feature-content">
+        <Feature icon="lucide:blocks" title="Challenge #1">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:biceps-flexed" />
+            Take the Challenge
+          </div>
+        </Feature>
+        <Feature icon="lucide:blocks" title="Challenge #2">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:biceps-flexed" />
+            Take the Challenge
+          </div>
+        </Feature>
+        <Feature icon="lucide:blocks" title="Challenge #3">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:biceps-flexed" />
+            Take the Challenge
+          </div>
+        </Feature>
+        <Feature icon="lucide:blocks" title="Challenge #4">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:biceps-flexed" />
+            Take the Challenge
+          </div>
+        </Feature>
+        <Feature icon="lucide:blocks" title="Challenge #5">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:biceps-flexed" />
+            Take the Challenge
+          </div>
+        </Feature>
+</div>
+
+
+<h2 class="mt-24 mb-12">
+  <Icon name="lucide:gamepad-2" />
+  Cybersecurity Games</h2>
+
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+        <Feature icon="lucide:blocks" title="Game #1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+        <Feature icon="lucide:puzzle" title="Game #2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+        <Feature icon="lucide:library-big" title="Game #3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+        <Feature icon="lucide:library-big" title="Game #4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+        <Feature icon="lucide:library-big" title="Game #5">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+        <Feature icon="lucide:library-big" title="Game #6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+        <Feature icon="lucide:library-big" title="Game #7">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+            <Icon name="lucide:joystick" />
+            Play the Game
+            </button>
+        </Feature>
+</div>
+
+
     </div>
   </section>
 </DefaultLayout>

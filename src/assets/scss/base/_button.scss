@@ -33,6 +33,16 @@
     }
   }
 
+  &.color-neutral {
+    border-color: light-dark(var(--color-neutral-300), var(--color-neutral-300));
+    background-color: light-dark(var(--color-neutral-300), var(--color-neutral-300));
+
+    &:where(:hover, :focus-visible) {
+      border-color: light-dark(var(--color-neutral-500), var(--color-neutral-500));
+      background-color: light-dark(var(--color-neutral-500), var(--color-neutral-500));
+    }
+  }
+
   &.has-icon {
     display: flex;
     align-items: center;
