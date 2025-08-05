@@ -31,6 +31,10 @@ jobs:
         with:
           node-version: '20' # Zvol si svou verzi Node.js
           cache: 'npm' # Nebo 'npm' / 'yarn'
+      - name: Clean install
+        run: |
+          rm -rf node_modules
+          npm ci
       - name: Install dependencies
         run: npm install # Nebo 'pnpm install' / 'yarn install'
       - name: Setup Pages
