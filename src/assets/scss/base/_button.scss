@@ -7,12 +7,12 @@
   align-items: center;
   transition: all var(--animation-speed-fast) var(--cubic-bezier);
   cursor: pointer;
-  border: 3px solid light-dark(var(--color-primary-200), var(--color-primary-100));
+  border: 3px solid var(--brand-primary);
   border-radius: var(--radius-s);
-  background-color: light-dark(var(--color-primary-200), var(--color-primary-100));
+  background-color: var(--brand-primary);
   padding: var(--space-xs) var(--space-s);
   inline-size: fit-content;
-  color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
   font-weight: 700;
 
   @include text-decoration(transparent, currentColor);
