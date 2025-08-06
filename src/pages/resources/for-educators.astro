@@ -3,6 +3,13 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import PageHeader from '@components/PageHeader.astro'
 import Feature from '@components/Feature.astro'
+import FeatureDC from '@components/FeatureDC.astro'
+import FeatureAP from '@components/FeatureAP.astro'
+import FeatureAT from '@components/FeatureAT.astro'
+import FeatureDA from '@components/FeatureDA.astro'
+import FeatureDP from '@components/FeatureDP.astro'
+import FeatureMW from '@components/FeatureMW.astro'
+import FeatureSE from '@components/FeatureSE.astro'
 import {
   Accordion,
   AccordionItem,
@@ -34,33 +41,36 @@ import {
 
   <section class="my-12">
     <div class="container">
-      <h2 class="font-bold mb-6">Digital Citizenship</h2>
+      
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #22C55E; font-size: 2.5em; font-weight: bold; border-color: #16A34A" class="mb-5 mr-5">#01</Badge>
+        <h2 class="font-bold mb-6">Digital Citizenship</h2></span>
   <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
+        <FeatureDC icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
+        <FeatureDC icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
+        <FeatureDC icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
@@ -70,33 +80,35 @@ import {
         
         <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
         
-      <h2 class="font-bold mb-6">Attacker Perspective</h2>
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #6D28D9; font-size: 2.5em; font-weight: bold; border-color: #5B21B6" class="mb-5 mr-5">#02</Badge>
+        <h2 class="font-bold mb-6">Attacker Perspective</h2></span>
   <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
+        <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
+        <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
+        <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
@@ -106,33 +118,35 @@ import {
 
         <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
         
-      <h2 class="font-bold mb-6">Authentication</h2>
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #F59E0B; font-size: 2.5em; font-weight: bold; border-color: #D97706" class="mb-5 mr-5">#03</Badge>
+        <h2 class="font-bold mb-6">Authentication</h2></span>
   <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
+        <FeatureAT icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
+        <FeatureAT icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download" style="color: #FFF" />
             Download
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
+        <FeatureAT icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
             <Icon name="lucide:download"style="color: #FFF" />
             Download
           </a>
@@ -142,10 +156,88 @@ import {
 
         <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
         
-      <h2 class="font-bold mb-6">Data Privacy</h2>
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #14B8A6; font-size: 2.5em; font-weight: bold; border-color: #0D9488" class="mb-5 mr-5">#04</Badge>
+        <h2 class="font-bold mb-6">Data Privacy</h2></span>
   <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
+        <FeatureDP icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+        </div>
+        </Feature>
+        <FeatureDP icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+        </div>
+        </Feature>
+        <FeatureDP icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+        </div>
+        </Feature>
+        </div>
+
+        <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
+        
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #D946EF; font-size: 2.5em; font-weight: bold; border-color: #C026D3" class="mb-5 mr-5">#05</Badge>
+        <h2 class="font-bold mb-6">Social Engineering</h2></span>
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+        <FeatureSE icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+        </div>
+        </Feature>
+        <FeatureSE icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+        </div>
+        </Feature>
+        <FeatureSE icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
+          <a class="button has-icon" style="width: 100%" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+        </div>
+        </Feature>
+        </div>
+
+        <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
+        
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #84CC16; font-size: 2.5em; font-weight: bold; border-color: #65A30D" class="mb-5 mr-5">#06</Badge>
+        <h2 class="font-bold mb-6">Malware</h2></span>
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+        <FeatureMW icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
           <a class="button has-icon" href="/learning-hub/introduction">
@@ -154,8 +246,8 @@ import {
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
+        <FeatureMW icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
           <a class="button has-icon" href="/learning-hub/introduction">
@@ -164,8 +256,8 @@ import {
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
+        <FeatureMW icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
           <a class="button has-icon" href="/learning-hub/introduction">
@@ -178,10 +270,12 @@ import {
 
         <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
         
-      <h2 class="font-bold mb-6">Social Engineering</h2>
+      <span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #EF4444; font-size: 2.5em; font-weight: bold; border-color: #DC2626" class="mb-5 mr-5">#07</Badge>
+        <h2 class="font-bold mb-6">Digital Abuse</h2></span>
   <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
+        <FeatureDA icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
           <a class="button has-icon" href="/learning-hub/introduction">
@@ -190,8 +284,8 @@ import {
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
+        <FeatureDA icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
           <a class="button has-icon" href="/learning-hub/introduction">
@@ -200,80 +294,8 @@ import {
           </a>
         </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </div>
-        </Feature>
-        </div>
-
-        <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
-        
-      <h2 class="font-bold mb-6">Malware</h2>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </div>
-        </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </div>
-        </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </div>
-        </Feature>
-        </div>
-
-        <hr class="mt-24 mb-12 container" style="color:rgb(209, 209, 209)" />
-        
-      <h2 class="font-bold mb-6">Digital Abuse</h2>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200" class="mb-3">Infographic</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </div>
-        </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e" class="mb-3">Presentation</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
-          <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </div>
-        </Feature>
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue" class="mb-3">Methodology</Badge>
+        <FeatureDA icon="lucide:blocks" title="Lorem Ipsum">
+          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row mt-6">
           <a class="button has-icon" href="/learning-hub/introduction">

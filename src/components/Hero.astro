@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
-import heroImg from '../assets/images/index/20945658.jpg'
+import heroImg from '../assets/images/index/ff9232fe-0fb1-4103-927e-21075c6d877c.jpg'
+import { Badge } from 'accessible-astro-components'
 
 /**
  * Hero Component
@@ -18,11 +19,11 @@ interface Props {
 // const { src = '../assets/images/index/20945658.jpg' }: Props = Astro.props
 ---
 
-<section class="hero my-24">
+<section class="hero mt-12 mb-24">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+        <h1 class="text-center text-6xl md:text-left lg:text-9xl" style="font-weight: 900; z-index: 3;">
           <slot><span style="color: #2563EB">WWW</span><br/>Wise Web Wanderers</slot>
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
@@ -32,7 +33,9 @@ interface Props {
           </a>
         </div>
       </div>
-      <Image class="hidden lg:block" src={heroImg} alt="" decoding="async" width={800} height={600} loading="eager" />
+      <div class="hero-image-wrapper" style="z-index: 2;">
+      <Image class="hidden lg:block" src={heroImg} alt="" decoding="async" width={500} height={500} loading="eager" />
+      </div>
     </div>
   </div>
 </section>
@@ -40,6 +43,14 @@ interface Props {
 <style lang="scss">
   h1 {
     text-wrap: unset;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
   }
 
   .text-gradient {

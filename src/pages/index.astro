@@ -2,6 +2,13 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
+import FeatureDC from '@components/FeatureDC.astro'
+import FeatureAP from '@components/FeatureAP.astro'
+import FeatureAT from '@components/FeatureAT.astro'
+import FeatureDA from '@components/FeatureDA.astro'
+import FeatureDP from '@components/FeatureDP.astro'
+import FeatureMW from '@components/FeatureMW.astro'
+import FeatureSE from '@components/FeatureSE.astro'
 import Counter from '@components/Counter.astro'
 import ContentMedia from '@components/ContentMedia.astro'
 import ExternalLink from '@components/ExternalLink.astro'
@@ -19,9 +26,11 @@ import BlockQuote from '@components/BlockQuote.astro'
 
   <p class="mb-24 text-4xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://localhost:4321/about/">About</a> consequat.</p>
 
-<h2 class="mb-12">
-  <Icon name="lucide:sparkles" />
-  Explore the Features</h2>
+
+  <span class="mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:sparkles" /></Badge>
+        <h2 class="font-bold mb-6">Explore the Features</h2>
+  </span>
 
 <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <Feature icon="lucide:blocks" title="Interactive Learning Modules">
@@ -31,26 +40,27 @@ import BlockQuote from '@components/BlockQuote.astro'
           Play interactive games that help you learn how to protect your devices and accounts, understand the importance of strong passwords, and recognize safe online behaviors.
         </Feature>
         <Feature icon="lucide:library-big" title="Comprehensive Resources">
-          Acces additional resources created for educators and parents, including lesson plans, activities, and tips to support children's online safety education.
+          Access additional resources created for educators and parents, including lesson plans, activities, and tips to support children's online safety education.
         </Feature>
 </div>
 
-<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content mt-28">
-<h2 class="mt-24 mb-12">
-  <Icon name="lucide:graduation-cap" />
-  Learning Modules</h2>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content mt-28" style="align-items: center">
+<span style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:graduation-cap" /></Badge>
+        <h2 class="font-bold mb-6">Learning Modules</h2>
+  </span>
 
 
   <Card
-  img="/images/138715027_10428703.jpg"
-  url="/learning-hub/digital-citizenship/"
+  img="/images/dreamina-2025-08-05-1696-Digital world and people living in that ....jpeg"
+  url="/learning-hub/digital-citizenship/introduction"
   title="Digital Citizenship"
   style="border-color: #22C55E; border-width: 10px; border-style: solid;">
   <p>Being a good digital citizen means being kind and respectful to others online, just like you are on the playground, and always telling a grown-up if something makes you feel uncomfortable. It's about sharing good things and being safe.</p>
   </Card>
 
   <Card
-  img="/images/8142746_3839931.jpg"
+  img="/images/dreamina-2025-08-05-4250-Attacker_hacker behind the computer. Vio....jpeg"
   url="/learning-hub/attacker-perspective/"
   title="Attacker Perspective"
   style="border-color: #6D28D9; border-width: 10px; border-style: solid;">
@@ -58,7 +68,7 @@ import BlockQuote from '@components/BlockQuote.astro'
   </Card>
 
   <Card
-  img="/images/21689577_6498809.jpg"
+  img="/images/dreamina-2025-08-05-8678-Authentication method with a person, e.g....jpeg"
   url="/learning-hub/authentication/"
   title="Authentication"
   style="border-color: #F59E0B; border-width: 10px; border-style: solid;">
@@ -66,7 +76,7 @@ import BlockQuote from '@components/BlockQuote.astro'
   </Card>
 
   <Card
-  img="/images/119588617_10207836.jpg"
+  img="/images/dreamina-2025-08-06-3167-Data privacy protection. Cyan color....jpeg"
   url="/learning-hub/data-privacy/"
   title="Data Privacy"
   style="border-color: #14B8A6; border-width: 10px; border-style: solid;">
@@ -74,7 +84,7 @@ import BlockQuote from '@components/BlockQuote.astro'
   </Card>
 
   <Card
-  img="/images/8135200_3831994.jpg"
+  img="/images/dreamina-2025-08-06-6780-Social engineering, phishing. Neon pink ....jpeg"
   url="/learning-hub/social-engineering/"
   title="Social Engineering"
   style="border-color: #D946EF; border-width: 10px; border-style: solid;">
@@ -82,7 +92,7 @@ import BlockQuote from '@components/BlockQuote.astro'
   </Card>
 
   <Card
-  img="/images/3226131_43076.jpg"
+  img="/images/dreamina-2025-08-06-5653-Malware, computer bugs. Toxic green colo....jpeg"
   url="/learning-hub/malware/"
   title="Malware"
   style="border-color: #84CC16; border-width: 10px; border-style: solid;">
@@ -90,7 +100,7 @@ import BlockQuote from '@components/BlockQuote.astro'
   </Card>
 
   <Card
-  img="/images/8967116_4056374.jpg"
+  img="/images/dreamina-2025-08-06-6192-Digital abuse, on-line bullying. Vivid r....jpeg"
   url="/learning-hub/digital-abuse/"
   title="Digital Abuse"
   style="border-color: #EF4444; border-width: 10px; border-style: solid;">
@@ -99,52 +109,53 @@ import BlockQuote from '@components/BlockQuote.astro'
 </div>
 
 
-<h2 class="mt-24 mb-12">
-  <Icon name="lucide:land-plot" />
-  Interactive Challenges</h2>
+<span class="mt-28 mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:land-plot" /></Badge>
+        <h2 class="font-bold mb-6">Interactive Challenges</h2>
+  </span>
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Challenge #1"> 
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A" class="mb-3">Digital Citizenship</Badge>
+        <FeatureAT icon="lucide:blocks" title="Challenge #1"> 
+          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Challenge #2">
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A" class="mb-3">Digital Citizenship</Badge>
+        <FeatureDP icon="lucide:blocks" title="Challenge #2">
+          <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Challenge #3">
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A" class="mb-3">Digital Citizenship</Badge>
+        <FeatureSE icon="lucide:blocks" title="Challenge #3">
+          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Challenge #4">
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A" class="mb-3">Digital Citizenship</Badge>
+        <FeatureMW icon="lucide:blocks" title="Challenge #4">
+          <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Challenge #5">
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A" class="mb-3">Digital Citizenship</Badge>
+        <FeatureDA icon="lucide:blocks" title="Challenge #5">
+          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
@@ -152,63 +163,64 @@ import BlockQuote from '@components/BlockQuote.astro'
 </div>
 
 
-<h2 class="mt-24 mb-12">
-  <Icon name="lucide:gamepad-2" />
-  Cybersecurity Games</h2>
+<span class="mt-32 mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:gamepad-2" /></Badge>
+        <h2 class="font-bold mb-6">Cybersecurity Games</h2>
+  </span>
 
 <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Game #1">
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A" class="mb-3">Digital Citizenship</Badge>
+        <FeatureDC icon="lucide:blocks" title="Game #1">
+          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
-        <Feature icon="lucide:puzzle" title="Game #2">
-          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6" class="mb-3">Attacker Perspective</Badge>
+        <FeatureAP icon="lucide:puzzle" title="Game #2">
+          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
-        <Feature icon="lucide:library-big" title="Game #3">
-          <Badge style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706" class="mb-3">Authentication</Badge>
+        <FeatureAT icon="lucide:library-big" title="Game #3">
+          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
-        <Feature icon="lucide:library-big" title="Game #4">
-          <Badge style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0D9488" class="mb-3">Data Privacy</Badge>
+        <FeatureDP icon="lucide:library-big" title="Game #4">
+          <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
-        <Feature icon="lucide:library-big" title="Game #5">
-          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3" class="mb-3">Social Engineering</Badge>
+        <FeatureSE icon="lucide:library-big" title="Game #5">
+          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
-        <Feature icon="lucide:library-big" title="Game #6">
-          <Badge style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D" class="mb-3">Malware</Badge>
+        <FeatureMW icon="lucide:library-big" title="Game #6">
+          <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
-        <Feature icon="lucide:library-big" title="Game #7">
-          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626" class="mb-3">Digital Abuse</Badge>
+        <FeatureDA icon="lucide:library-big" title="Game #7">
+          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
