@@ -102,24 +102,24 @@
 }
 
 @font-face {
-  font-style: black;
+  font-style: normal;
   font-weight: 800;
   src:
-    local('Lodrina Solid Regular'),
-    local('londrina-solid-v18-latin-regular'),
-    url('/fonts/londrina-solid-v18-latin-regular.woff2') format('woff2');
-  font-family: 'Londrina Solid';
+    local('Londrina Solid Regular'),
+    local('LondrinaSolid-Regular'),
+    url('/fonts/LondrinaSolid-Regular.woff2') format('woff2');
+  font-family: 'Atkinson Hyperlegible';
   font-display: swap;
 }
 
 @font-face {
-  font-style: normal;
+  font-style: black;
   font-weight: 900;
   src:
-    local('Lodrina Solid Black'),
-    local('londrina-solid-v18-latin-900'),
-    url('/fonts/londrina-solid-v18-latin-900.woff2') format('woff2');
-  font-family: 'Londrina Solid';
+    local('Londrina Solid Black'),
+    local('LondrinaSolid-Black'),
+    url('/fonts/LondrinaSolid-Black.woff2') format('woff2');
+  font-family: 'Atkinson Hyperlegible';
   font-display: swap;
 }
 
