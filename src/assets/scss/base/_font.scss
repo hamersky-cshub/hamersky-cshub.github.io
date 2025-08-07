@@ -101,6 +101,28 @@
   font-display: swap;
 }
 
+@font-face {
+  font-style: black;
+  font-weight: 800;
+  src:
+    local('Atkinson Hyperlegible SemiBold'),
+    local('AtkinsonHyperlegible-SemiBold'),
+    url('/fonts/LondrinaSolid-Regular.woff2') format('woff2');
+  font-family: 'Atkinson Hyperlegible';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: black;
+  font-weight: 900;
+  src:
+    local('Atkinson Hyperlegible SemiBold'),
+    local('AtkinsonHyperlegible-SemiBold'),
+    url('/fonts/LondrinaSolid-Black.woff2') format('woff2');
+  font-family: 'Atkinson Hyperlegible';
+  font-display: swap;
+}
+
 @layer base {
   p {
     text-wrap: pretty;
@@ -118,7 +140,7 @@
 
   h1,
   h2 {
-    font-weight: 600;
+    font-weight: 900;
   }
 
   h3,
