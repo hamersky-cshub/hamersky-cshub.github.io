@@ -113,12 +113,12 @@
 }
 
 @font-face {
-  font-style: black;
+  font-style: normal;
   font-weight: 900;
   src:
     local('Lodrina Solid Black'),
-    local('LondrinaSolid-Black'),
-    url('fonts/LondrinaSolid-Black.woff2') format('woff2');
+    local('londrina-solid-v18-latin-900'),
+    url('/fonts/londrina-solid-v18-latin-900.woff2') format('woff2');
   font-family: 'Londrina Solid';
   font-display: swap;
 }
