@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
+import { Tabs, TabsList, TabsTab, TabsPanel, Badge } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import ContentMedia from '@components/ContentMedia.astro'
@@ -17,9 +17,10 @@ import ContentMedia from '@components/ContentMedia.astro'
 <section class="my-12">
     <div class="container">
 
-<h2 class="mb-12">
-  <Icon name="lucide:graduation-cap" />
-  Learning Modules</h2>
+<span class="mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:graduation-cap" /></Badge>
+        <h1 class="font-bold mb-8" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">
+  Learning Modules</h1></span>
       
 <Tabs>
   <TabsList>
@@ -33,7 +34,7 @@ import ContentMedia from '@components/ContentMedia.astro'
   </TabsList>
 
   <TabsPanel id="panel1" labelledby="tab1" selected>
-    <ContentMedia imgSrc="/images/20945658.jpg" reverseImg={true}>
+    <ContentMedia imgSrc="/images/1754638591.png" reverseImg={true}>
     <h1>Digital Citizenship</h1>
     <div class="grid grid-cols-1 md:grid-cols-1 gap-6" >
     <p>
@@ -47,7 +48,7 @@ import ContentMedia from '@components/ContentMedia.astro'
   </TabsPanel>
   
   <TabsPanel id="panel2" labelledby="tab2">
-    <ContentMedia imgSrc="/images/20945658.jpg" reverseImg={true}>
+    <ContentMedia imgSrc="/images/1754638755.png" reverseImg={true}>
     <h1>Attacker Perspective</h1>
     <div class="grid grid-cols-1 md:grid-cols-1 gap-6" >
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec bibendum diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris condimentum sodales nisi vel interdum. Suspendisse quis euismod mi. Donec mattis et felis vitae cursus. Donec metus neque, ultrices sit amet justo vitae, convallis convallis nisi. Proin sit amet mauris ante. Praesent bibendum in leo id sagittis. Nunc at urna et enim malesuada consectetur at id risus. In porta aliquet sagittis. Sed vel nibh auctor quam porta molestie. Morbi eu magna non felis pharetra pharetra. Mauris interdum mattis nulla.</p>
@@ -60,7 +61,7 @@ import ContentMedia from '@components/ContentMedia.astro'
   </TabsPanel>
 
   <TabsPanel id="panel3" labelledby="tab3">
-    <ContentMedia imgSrc="/images/20945658.jpg" reverseImg={true}>
+    <ContentMedia imgSrc="/images/1754638882.png" reverseImg={true}>
     <h1>Authentication</h1>
     <div class="grid grid-cols-1 md:grid-cols-1 gap-6" >
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec bibendum diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris condimentum sodales nisi vel interdum. Suspendisse quis euismod mi. Donec mattis et felis vitae cursus. Donec metus neque, ultrices sit amet justo vitae, convallis convallis nisi. Proin sit amet mauris ante. Praesent bibendum in leo id sagittis. Nunc at urna et enim malesuada consectetur at id risus. In porta aliquet sagittis. Sed vel nibh auctor quam porta molestie. Morbi eu magna non felis pharetra pharetra. Mauris interdum mattis nulla.</p>
@@ -73,7 +74,7 @@ import ContentMedia from '@components/ContentMedia.astro'
   </TabsPanel>
 
   <TabsPanel id="panel4" labelledby="tab4">
-    <ContentMedia imgSrc="/images/20945658.jpg" reverseImg={true}>
+    <ContentMedia imgSrc="/images/1754638808.png" reverseImg={true}>
     <h1>Data Privacy</h1>
     <div class="grid grid-cols-1 md:grid-cols-1 gap-6" >
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec bibendum diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris condimentum sodales nisi vel interdum. Suspendisse quis euismod mi. Donec mattis et felis vitae cursus. Donec metus neque, ultrices sit amet justo vitae, convallis convallis nisi. Proin sit amet mauris ante. Praesent bibendum in leo id sagittis. Nunc at urna et enim malesuada consectetur at id risus. In porta aliquet sagittis. Sed vel nibh auctor quam porta molestie. Morbi eu magna non felis pharetra pharetra. Mauris interdum mattis nulla.</p>
@@ -125,9 +126,11 @@ import ContentMedia from '@components/ContentMedia.astro'
   </TabsPanel>
 </Tabs>
 
-<h2 class="mt-24 mb-12">
-  <Icon name="lucide:land-plot" />
-  Interactive Challenges</h2>
+
+<span class="mt-24 mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:land-plot" /></Badge>
+        <h1 class="font-bold mb-8" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">
+  Interactive Challenges</h1></span>
 
 <Tabs>
   <TabsList>
@@ -206,9 +209,10 @@ import ContentMedia from '@components/ContentMedia.astro'
 </Tabs>
 
 
-<h2 class="mt-24 mb-12">
-  <Icon name="lucide:gamepad-2" />
-  Cybersecurity Games</h2>
+<span class="mt-24 mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:gamepad-2" /></Badge>
+        <h1 class="font-bold mb-8" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">
+  Cybersecurity Games</h1></span>
 
 <Tabs>
   <TabsList>
