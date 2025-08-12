@@ -1,17 +1,18 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
+import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel, Badge } from 'accessible-astro-components'
 import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
 import { Pagination } from 'accessible-astro-components'
+import FeatureSE from '@components/FeatureSE.astro'
 ---
 
 <DefaultLayout>
 
 <section class="my-12">
     <div class="container mb-12">
-      <h2 class="font-bold mb-6">Lorem Ipsum</h2>
+      <h2 class="mb-6">Lorem Ipsum</h2>
       <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <img src="/images/20945658.jpg" alt="Social Engineering" />
       <div class="flex flex-col items-center gap-8 md:items-start">
@@ -25,7 +26,7 @@ import { Pagination } from 'accessible-astro-components'
     </div>
 
     <div class="container mb-12">
-      <h2 class="font-bold mb-6">Lorem Ipsum</h2>
+      <h2 class="mb-6">Lorem Ipsum</h2>
       <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
       <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -34,7 +35,7 @@ import { Pagination } from 'accessible-astro-components'
     </div>
 
     <div class="container mb-12">
-      <h2 class="font-bold mb-6">Lorem Ipsum</h2>
+      <h2 class="mb-6">Lorem Ipsum</h2>
       <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
       <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -52,103 +53,110 @@ import { Pagination } from 'accessible-astro-components'
   style="display: flex; justify-content: center;"
 />
 
-<div class="container my-12 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600">End of the Module</div>
+<div class="container my-12 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600">End of Reading</div>
+
+  <div class="container my-12">
+    <h2 class="mb-6">Let's Practice</h2>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content">
+    <FeatureSE icon="lucide:blocks" title="Challenge #5"> 
+          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/challenge/'">
+            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
+            Take the Challenge
+          </button>
+      </Feature>
+  
+    <FeatureSE icon="lucide:blocks" title="Game #5">
+          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+          </button>
+    </Feature>
+         </div>
+  </div>
 
 
-  <ContentMedia imgSrc="/images/20945658.jpg" reverseImg={true}>
-  <h2 class="font-bold mt-12">Other Modules</h2>
 
-  <Accordion>
-    <AccordionItem class="mb-4" title="Digital Citizenship">
-      <h4 class="mb-3">Digital Citizenship</h4>
+  <div class="container my-12 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600">Study More 👇</div>
+
+
+  <h2 class="container mt-12">Other Modules</h2>
+
+  <Accordion class="container mt-6">
+    <AccordionItem class="container mb-4" title="Digital Citizenship">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
+      <h4 class="mb-3" style="font-weight: 900;">Digital Citizenship</h4>
       <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="grid grid-cols-2 gap-6 mt-6">
-      <a class="button has-icon" href="/learning-hub/digital-citizenship/">
+      <a class="button has-icon" href="/learning-hub/digital-citizenship/introduction">
     <Icon name="lucide:book-marked" />
     Start Learning
     </a>
-    <a class="button has-icon color-secondary" href="/learning-hub/digital-citizenship/">
-    <Icon name="lucide:gamepad-2" />
-    Play a Game
-    </a>
+    </div>
     </div>
     </AccordionItem>
 
-    <AccordionItem class="mb-4" title="Attacker Perspective">
-      <h4 class="mb-3">Attacker Perspective</h4>
+    <AccordionItem class="container mb-4" title="Attacker Perspective">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
+      <h4 class="mb-3" style="font-weight: 900;">Attacker Perspective</h4>
       <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-       <div class="grid grid-cols-2 gap-6 mt-6">
-      <a class="button has-icon" href="/learning-hub/attacker-perspective/">
+      <a class="button has-icon" href="/learning-hub/attacker-perspective/introduction">
     <Icon name="lucide:book-marked" />
     Start Learning
     </a>
-    <a class="button has-icon color-secondary" href="/learning-hub/attacker-perspective/">
-    <Icon name="lucide:gamepad-2" />
-    Play a Game
-    </a>
+    </div>
     </div>
     </AccordionItem>
 
-    <AccordionItem class="mb-4" title="Authentication">
-      <h4 class="mb-3">Authentication</h4>
+    <AccordionItem class="container mb-4" title="Authentication">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
+      <h4 class="mb-3" style="font-weight: 900;">Authentication</h4>
       <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="grid grid-cols-2 gap-6 mt-6">
-      <a class="button has-icon" href="/learning-hub/authentication/">
+      <a class="button has-icon" href="/learning-hub/authentication/introduction">
     <Icon name="lucide:book-marked" />
     Start Learning
     </a>
-    <a class="button has-icon color-secondary" href="/learning-hub/authentication/">
-    <Icon name="lucide:gamepad-2" />
-    Play a Game
-    </a>
+    </div>
     </div>
     </AccordionItem>
 
-    <AccordionItem class="mb-4" title="Data Privacy">
-      <h4 class="mb-3">Data Privacy</h4>
+    <AccordionItem class="container mb-4" title="Data Privacy">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
+      <h4 class="mb-3" style="font-weight: 900;">Data Privacy</h4>
       <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="grid grid-cols-2 gap-6 mt-6">
-      <a class="button has-icon" href="/learning-hub/data-privacy/">
+      <a class="button has-icon" href="/learning-hub/data-privacy/introduction">
     <Icon name="lucide:book-marked" />
     Start Learning
     </a>
-    <a class="button has-icon color-secondary" href="/learning-hub/data-privacy/">
-    <Icon name="lucide:gamepad-2" />
-    Play a Game
-    </a>
+    </div>
     </div>
     </AccordionItem>
 
-    <AccordionItem class="mb-4" title="Malware">
-      <h4 class="mb-3">Malware</h4>
+    <AccordionItem class="container mb-4" title="Malware">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
+      <h4 class="mb-3" style="font-weight: 900;">Malware</h4>
       <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="grid grid-cols-2 gap-6 mt-6">
-      <a class="button has-icon" href="/learning-hub/malware/">
+      <a class="button has-icon" href="/learning-hub/malware/introduction">
     <Icon name="lucide:book-marked" />
     Start Learning
     </a>
-    <a class="button has-icon color-secondary" href="/learning-hub/malware/">
-    <Icon name="lucide:gamepad-2" />
-    Play a Game
-    </a>
+    </div>
     </div>
     </AccordionItem>
 
-    <AccordionItem class="mb-4" title="Digital Abuse">
-      <h4 class="mb-3">Digital Abuse</h4>
+    <AccordionItem class="container mb-4" title="Digital Abuse">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
+      <h4 class="mb-3" style="font-weight: 900;">Digital Abuse</h4>
       <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="grid grid-cols-2 gap-6 mt-6">
-      <a class="button has-icon" href="/learning-hub/digital-abuse/">
+      <a class="button has-icon" href="/learning-hub/digital-abuse/introduction">
     <Icon name="lucide:book-marked" />
     Start Learning
     </a>
-    <a class="button has-icon color-secondary" href="/learning-hub/digital-abuse/">
-    <Icon name="lucide:gamepad-2" />
-    Play a Game
-    </a>
+    </div>
     </div>
     </AccordionItem>
-    </ContentMedia>
   </Accordion>
 
 </section>

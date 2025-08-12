@@ -115,47 +115,65 @@ import BlockQuote from '@components/BlockQuote.astro'
   </span>
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 feature-card feature-content">
-        <FeatureAT icon="lucide:blocks" title="Challenge #1"> 
+        <FeatureDC icon="lucide:blocks" title="Challenge #1"> 
+          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/challenge/'">
+            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
+            Take the Challenge
+          </div>
+        </Feature>
+        <FeatureAP icon="lucide:blocks" title="Challenge #2"> 
+          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/challenge/'">
+            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
+            Take the Challenge
+          </div>
+        </Feature>
+        <FeatureAT icon="lucide:blocks" title="Challenge #3"> 
           <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/authentication/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <FeatureDP icon="lucide:blocks" title="Challenge #2">
+        <FeatureDP icon="lucide:blocks" title="Challenge #4">
           <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <FeatureSE icon="lucide:blocks" title="Challenge #3">
+        <FeatureSE icon="lucide:blocks" title="Challenge #5">
           <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <FeatureMW icon="lucide:blocks" title="Challenge #4">
+        <FeatureMW icon="lucide:blocks" title="Challenge #6">
           <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/malware/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <FeatureDA icon="lucide:blocks" title="Challenge #5">
+        <FeatureDA icon="lucide:blocks" title="Challenge #7">
           <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
@@ -172,7 +190,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureDC icon="lucide:blocks" title="Game #1">
           <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -180,7 +198,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureAP icon="lucide:puzzle" title="Game #2">
           <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -188,7 +206,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureAT icon="lucide:library-big" title="Game #3">
           <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/authentication/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -196,7 +214,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureDP icon="lucide:library-big" title="Game #4">
           <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -204,7 +222,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureSE icon="lucide:library-big" title="Game #5">
           <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -212,7 +230,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureMW icon="lucide:library-big" title="Game #6">
           <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/malware/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -220,7 +238,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <FeatureDA icon="lucide:library-big" title="Game #7">
           <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/'">
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
