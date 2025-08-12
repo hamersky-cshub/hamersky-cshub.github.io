@@ -10,6 +10,7 @@ import react from '@astrojs/react';
 export default defineConfig({
   compressHTML: true,
   site: 'https://hamersky-cshub.github.io/',
+  base: '/hamersky-cshub.github.io/',
   integrations: [mdx(), icon(), compress(), react()],
   vite: {
     css: {
