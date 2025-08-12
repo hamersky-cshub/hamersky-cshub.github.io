@@ -2,6 +2,7 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import PageHeader from '@components/PageHeader.astro'
+import Feature from '@components/Feature.astro'
 import FeatureDC from '@components/FeatureDC.astro'
 import FeatureAP from '@components/FeatureAP.astro'
 import FeatureAT from '@components/FeatureAT.astro'
@@ -40,65 +41,6 @@ import {
 
   <section class="my-12">
     <div class="container">
-
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
-    <FeatureDC icon="lucide:blocks" title="Game #1">
-          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        <FeatureAP icon="lucide:puzzle" title="Game #2">
-          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        <FeatureAT icon="lucide:library-big" title="Game #3">
-          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/authentication/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        <FeatureDP icon="lucide:library-big" title="Game #4">
-          <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        <FeatureSE icon="lucide:library-big" title="Game #5">
-          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        <FeatureMW icon="lucide:library-big" title="Game #6">
-          <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/malware/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        <FeatureDA icon="lucide:library-big" title="Game #7">
-          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
-            Play the Game
-            </button>
-        </Feature>
-        </div>
       
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #22C55E; font-size: 2.5em; font-weight: 900; border-color: #16A34A" class="mb-5 mr-5">#01</Badge>
@@ -132,36 +74,7 @@ import {
         
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
     
-      <span style="display: flex; align-items: center;">
-        <Badge style="color: #FFF; background-color: #6D28D9; font-size: 2.5em; font-weight: 900; border-color: #5B21B6" class="mb-5 mr-5">#02</Badge>
-        <h2 class="mb-6">Attacker Perspective</h2></span>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <a class="button has-icon mt-6" style="width: 100%" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </FeatureAP>
-        <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #04f6be; font-weight: bold; border-color: #04cd9e; opacity: 0.5" class="mb-3">Presentation</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <a class="button has-icon mt-6" style="width: 100%" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </FeatureAP>
-        <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
-          <Badge style="background-color: #fd0065; font-weight: bold; border-color: #cd0454; color:aliceblue; opacity: 0.5" class="mb-3">Methodology</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <a class="button has-icon mt-6" style="width: 100%" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
-            Download
-          </a>
-        </FeatureAP>
-      </div>
-
+      
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
         
       <span style="display: flex; align-items: center;">
