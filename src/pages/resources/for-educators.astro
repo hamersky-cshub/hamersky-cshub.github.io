@@ -31,7 +31,7 @@ import {
 } from 'accessible-astro-components'
 ---
 
-<DefaultLayout class="container" title="For Educators">
+<DefaultLayout title="For Educators">
   <PageHeader
       title="For Educators"
       subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -39,11 +39,70 @@ import {
   />
 
   <section class="my-12">
-    <div class="container feature-card feature-content">
+    <div class="container">
+
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+    <FeatureDC icon="lucide:blocks" title="Game #1">
+          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        <FeatureAP icon="lucide:puzzle" title="Game #2">
+          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        <FeatureAT icon="lucide:library-big" title="Game #3">
+          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/authentication/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        <FeatureDP icon="lucide:library-big" title="Game #4">
+          <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        <FeatureSE icon="lucide:library-big" title="Game #5">
+          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        <FeatureMW icon="lucide:library-big" title="Game #6">
+          <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/malware/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        <FeatureDA icon="lucide:library-big" title="Game #7">
+          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/game/'">
+            <Icon name="lucide:joystick" style="color: #FFF" />
+            Play the Game
+            </button>
+        </Feature>
+        </div>
       
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #22C55E; font-size: 2.5em; font-weight: 900; border-color: #16A34A" class="mb-5 mr-5">#01</Badge>
-        <h2 class="mb-6">Digital Citizenship</h2></div>
+        <h2 class="mb-6">Digital Citizenship</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureDC icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
@@ -73,9 +132,9 @@ import {
         
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
     
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #6D28D9; font-size: 2.5em; font-weight: 900; border-color: #5B21B6" class="mb-5 mr-5">#02</Badge>
-        <h2 class="mb-6">Attacker Perspective</h2></div>
+        <h2 class="mb-6">Attacker Perspective</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
@@ -105,9 +164,9 @@ import {
 
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
         
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #F59E0B; font-size: 2.5em; font-weight: 900; border-color: #D97706" class="mb-5 mr-5">#03</Badge>
-        <h2 class="mb-6">Authentication</h2></div>
+        <h2 class="mb-6">Authentication</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureAT icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
@@ -137,9 +196,9 @@ import {
 
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
         
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #14B8A6; font-size: 2.5em; font-weight: 900; border-color: #0D9488" class="mb-5 mr-5">#04</Badge>
-        <h2 class="mb-6">Data Privacy</h2></div>
+        <h2 class="mb-6">Data Privacy</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureDP icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
@@ -169,9 +228,9 @@ import {
 
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
         
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #D946EF; font-size: 2.5em; font-weight: 900; border-color: #C026D3" class="mb-5 mr-5">#05</Badge>
-        <h2 class="mb-6">Social Engineering</h2></div>
+        <h2 class="mb-6">Social Engineering</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureSE icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
@@ -201,9 +260,9 @@ import {
 
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
         
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #84CC16; font-size: 2.5em; font-weight: 900; border-color: #65A30D" class="mb-5 mr-5">#06</Badge>
-        <h2 class="mb-6">Malware</h2></div>
+        <h2 class="mb-6">Malware</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureMW icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
@@ -233,9 +292,9 @@ import {
 
         <hr class="mt-24 mb-12" style="color:rgb(209, 209, 209)" />
         
-      <div style="display: flex; align-items: center;">
+      <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #EF4444; font-size: 2.5em; font-weight: 900; border-color: #DC2626" class="mb-5 mr-5">#07</Badge>
-        <h2 class="mb-6">Digital Abuse</h2></div>
+        <h2 class="mb-6">Digital Abuse</h2></span>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <FeatureDA icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
