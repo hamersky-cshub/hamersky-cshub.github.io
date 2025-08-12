@@ -2,7 +2,6 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import PageHeader from '@components/PageHeader.astro'
-import Feature from '@components/Feature.astro'
 import FeatureDC from '@components/FeatureDC.astro'
 import FeatureAP from '@components/FeatureAP.astro'
 import FeatureAT from '@components/FeatureAT.astro'
@@ -45,7 +44,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #22C55E; font-size: 2.5em; font-weight: 900; border-color: #16A34A" class="mb-5 mr-5">#01</Badge>
         <h2 class="mb-6">Digital Citizenship</h2></span>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureDC icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -77,7 +76,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #6D28D9; font-size: 2.5em; font-weight: 900; border-color: #5B21B6" class="mb-5 mr-5">#02</Badge>
         <h2 class="mb-6">Attacker Perspective</h2></span>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureAP icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -109,7 +108,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #F59E0B; font-size: 2.5em; font-weight: 900; border-color: #D97706" class="mb-5 mr-5">#03</Badge>
         <h2 class="mb-6">Authentication</h2></span>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureAT icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -141,7 +140,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #14B8A6; font-size: 2.5em; font-weight: 900; border-color: #0D9488" class="mb-5 mr-5">#04</Badge>
         <h2 class="mb-6">Data Privacy</h2></span>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureDP icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -173,7 +172,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #D946EF; font-size: 2.5em; font-weight: 900; border-color: #C026D3" class="mb-5 mr-5">#05</Badge>
         <h2 class="mb-6">Social Engineering</h2></span>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureSE icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -205,7 +204,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #84CC16; font-size: 2.5em; font-weight: 900; border-color: #65A30D" class="mb-5 mr-5">#06</Badge>
         <h2 class="mb-6">Malware</h2></span>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureMW icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -237,7 +236,7 @@ import {
       <span style="display: flex; align-items: center;">
         <Badge style="color: #FFF; background-color: #EF4444; font-size: 2.5em; font-weight: 900; border-color: #DC2626" class="mb-5 mr-5">#07</Badge>
         <h2 class="mb-6">Digital Abuse</h2></span>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <FeatureDA icon="lucide:blocks" title="Lorem Ipsum">
           <Badge style="background-color: #f4f004; font-weight: bold; border-color: #d6d200; opacity: 0.5" class="mb-3">Infographic</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
