@@ -5,7 +5,7 @@ import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel, Bad
 import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
 import { Pagination } from 'accessible-astro-components'
-import FeatureDP from '@components/FeatureDP.astro'
+import Feature from '@components/Feature.astro'
 ---
 
 <DefaultLayout>
@@ -58,7 +58,7 @@ import FeatureDP from '@components/FeatureDP.astro'
   <div class="container my-12">
     <h2 class="mb-6">Let's Practice</h2>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content">
-    <FeatureDP icon="lucide:blocks" title="Challenge #4"> 
+    <Feature icon="lucide:blocks" title="Challenge #4"> 
           <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/challenge/'">
@@ -67,7 +67,7 @@ import FeatureDP from '@components/FeatureDP.astro'
           </button>
       </Feature>
   
-    <FeatureDP icon="lucide:blocks" title="Game #4">
+    <Feature icon="lucide:blocks" title="Game #4">
           <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">

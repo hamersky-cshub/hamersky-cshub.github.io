@@ -5,7 +5,7 @@ import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel, Bad
 import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
 import { Pagination } from 'accessible-astro-components'
-import FeatureSE from '@components/FeatureSE.astro'
+import Feature from '@components/Feature.astro'
 ---
 
 <DefaultLayout>
@@ -58,7 +58,7 @@ import FeatureSE from '@components/FeatureSE.astro'
   <div class="container my-12">
     <h2 class="mb-6">Let's Practice</h2>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content">
-    <FeatureSE icon="lucide:blocks" title="Challenge #5"> 
+    <Feature icon="lucide:blocks" title="Challenge #5"> 
           <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/challenge/'">
@@ -67,7 +67,7 @@ import FeatureSE from '@components/FeatureSE.astro'
           </button>
       </Feature>
   
-    <FeatureSE icon="lucide:blocks" title="Game #5">
+    <Feature icon="lucide:blocks" title="Game #5">
           <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
