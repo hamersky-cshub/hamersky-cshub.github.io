@@ -76,7 +76,7 @@ const sanitizedSubtitle: string = subtitle
           </div>
         )
       }
-      <h1>{title}</h1>
+      <h1 style="text-decoration: underline; text-decoration-color: #2563EB;">{title}</h1>
       {sanitizedSubtitle && <p class="text-2xl" set:html={sanitizedSubtitle} />}
       {
         author && (
