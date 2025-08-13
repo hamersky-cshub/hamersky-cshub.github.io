@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Media } from 'accessible-astro-components'
+import { Accordion, AccordionItem, Media, Badge } from 'accessible-astro-components'
 import Feature from '@components/Feature.astro'
 ---
 
@@ -25,20 +25,25 @@ import Feature from '@components/Feature.astro'
       </p>
 
       <h2 class="mt-12 mb-6">Our Values</h2>
+
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content">
-        <Feature icon="lucide:blocks" title="Lorem Ipsum">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <Feature class="feature-dc" icon="lucide:blocks" title="Value #1">
+          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Feature>
-        <Feature icon="lucide:puzzle" title="Lorem Ipsum">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <Feature class="feature-ap" icon="lucide:puzzle" title="Value #2">
+          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Feature>
-        <Feature icon="lucide:library-big" title="Lorem Ipsum">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <Feature class="feature-at" icon="lucide:library-big" title="Value #3">
+          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Feature>
-        <Feature icon="lucide:library-big" title="Lorem Ipsum">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <Feature class="feature-dp" icon="lucide:library-big" title="Value #4">
+          <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Feature>
-      </div>
+</div>
     
 <hr style="color:rgb(209, 209, 209); margin-top: 10%;" />
 
