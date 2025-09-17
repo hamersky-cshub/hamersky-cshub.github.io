@@ -19,13 +19,14 @@ interface Props {
 // const { src = '../assets/images/index/20945658.jpg' }: Props = Astro.props
 ---
 
-<section class="hero mt-12 mb-24">
+<section class="hero mt-6 mb-24">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="text-center text-6xl md:text-left lg:text-9xl" style="font-weight: 900; z-index: 3; letter-spacing: 5px;"> 
           <slot><span style="color: #2563EB; ">W</span>ise <span style="color: #2563EB">W</span>eb <span style="color: #2563EB">W</span>anderers</slot>
         </h1>
+        <p class="text-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="https://hamersky-cshub.github.io/about/">About</a> consequat.</p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="/learning-hub/introduction">
             <Icon name="lucide:book-marked" />

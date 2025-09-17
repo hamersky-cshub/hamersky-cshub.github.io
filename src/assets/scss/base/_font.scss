@@ -94,9 +94,20 @@
   font-style: normal;
   font-weight: 600;
   src:
-    local('Atkinson Hyperlegible SemiBold'),
-    local('AtkinsonHyperlegible-SemiBold'),
-    url('/fonts/AtkinsonHyperlegibleNext-SemiBold.woff2') format('woff2');
+    local('Londrina Solid Regular'),
+    local('LondrinaSolid-Regular'),
+    url('/fonts/LondrinaSolid-Regular.woff2') format('woff2');
+  font-family: 'Atkinson Hyperlegible';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Londrina Solid Regular'),
+    local('LondrinaSolid-Regular'),
+    url('/fonts/LondrinaSolid-Regular.woff2') format('woff2');
   font-family: 'Atkinson Hyperlegible';
   font-display: swap;
 }
@@ -143,8 +154,12 @@
     font-weight: 900;
   }
 
-  h3,
-  h4,
+  h3 {
+    font-weight: 800;
+  }
+  h4 {
+    font-weight: 700;
+  }
   h5,
   h6 {
     font-weight: 500;

@@ -2,6 +2,7 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import PageHeader from '../components/PageHeader.astro'
+import Feature from '@components/Feature.astro'
 import {
   Accordion,
   AccordionItem,
@@ -384,5 +385,35 @@ import {
     Play a Game
     </a>
     </div>
+
+
+
+
+<span class="mt-28 mb-6" style="display: flex; align-items: center;">
+        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:sparkles" /></Badge>
+        <h1 class="font-bold mb-6" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">Explore the Features</h1>
+  </span>
+
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+        <Feature icon="lucide:blocks" title="Interactive Learning Modules">
+          Dive into our learning modules designed to teach you about digital citizenship, authentication, data privacy, social engineering, malware, and digital abuse.
+        </Feature>
+        <Feature icon="lucide:puzzle" title="Fun Safety Games">
+          Play interactive games that help you learn how to protect your devices and accounts, understand the importance of strong passwords, and recognize safe online behaviors.
+        </Feature>
+        <Feature icon="lucide:library-big" title="Comprehensive Resources">
+          Access additional resources created for educators and parents, including lesson plans, activities, and tips to support children's online safety education.
+        </Feature>
+</div>
+
+<Notification >
+  <div style="display: inline-grid; width: 100%; justify-items: center;">
+  <p>Download all the materials for this part of the module.</p>
+  <a class="button has-icon mt-4" style="width: 100%;" href="/learning-hub/introduction">
+            <Icon name="lucide:download" style="color: #FFF" />
+            Download
+          </a>
+  </div>
+</Notification>
     
 </DefaultLayout>
