@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
-import heroImg from '../assets/images/index/ff9232fe-0fb1-4103-927e-21075c6d877c.jpg'
+import heroImg from '../assets/images/index/robot-intro.png'
 import { Badge } from 'accessible-astro-components'
 
 /**
@@ -19,7 +19,7 @@ interface Props {
 // const { src = '../assets/images/index/20945658.jpg' }: Props = Astro.props
 ---
 
-<section class="hero mt-6 mb-24">
+<section class="hero mt-24 mb-24">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
@@ -34,8 +34,8 @@ interface Props {
           </a>
         </div>
       </div>
-      <div class="hero-image-wrapper" style="z-index: 2;">
-      <Image class="hidden lg:block" src={heroImg} alt="" decoding="async" width={500} height={500} loading="eager" />
+      <div style="z-index: 2;">
+      <Image class="hidden lg:block floating-image" src={heroImg} alt="" decoding="async" loading="eager" />
       </div>
     </div>
   </div>
@@ -44,6 +44,19 @@ interface Props {
 <style lang="scss">
   h1 {
     text-wrap: unset;
+  }
+
+  .floating-image {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
   }
 
   .hero-image-wrapper {
