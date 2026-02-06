@@ -7,28 +7,253 @@ import { Icon } from 'astro-icon/components'
 import { Pagination } from 'accessible-astro-components'
 ---
 
-<DefaultLayout title="Challenge #2">
+<DefaultLayout title="Build-A-Scam Workshop">
   <PageHeader
-      title="Challenge #2"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      title="Build-A-Scam Workshop"
+      subtitle="Build a fake phishing email by mixing a subject line, an emotional hook, a fake sender, and a call-to-action. This shows how easy it is for attackers to create convincing scams."
       bgType="bordered"
   />
 
 <section class="my-12">
     <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Citizenship" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">How It Works</h2>
+        <p>
+          Drag options into the Email Preview to assemble a phishing message. Notice how small
+          choices can make a message feel urgent, official, or emotional.
+        </p>
+        <p class="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+          Safety note: This is for learning only. Never send messages like these.
+        </p>
       </div>
+
+      <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h3 class="mb-3 text-base font-semibold">Builder Pieces</h3>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div class="builder-group" data-group="sender">
+              <h4 class="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-600">Fake Sender</h4>
+              <div class="builder-options">
+                <button class="builder-chip" draggable="true" data-group="sender">IT Support &lt;help@school-login.com&gt;</button>
+                <button class="builder-chip" draggable="true" data-group="sender">Principal Office &lt;principal@school-portal.net&gt;</button>
+                <button class="builder-chip" draggable="true" data-group="sender">Gaming Store &lt;rewards@gam3-sh0p.co&gt;</button>
+                <button class="builder-chip" draggable="true" data-group="sender">Streaming Service &lt;billing@streamnow.info&gt;</button>
+              </div>
+            </div>
+            
+            <div class="builder-group" data-group="subject">
+              <h4 class="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-600">Subject Line</h4>
+              <div class="builder-options">
+                <button class="builder-chip" draggable="true" data-group="subject">Your account will be locked in 2 hours</button>
+                <button class="builder-chip" draggable="true" data-group="subject">Unusual sign-in detected</button>
+                <button class="builder-chip" draggable="true" data-group="subject">Claim your prize before midnight</button>
+                <button class="builder-chip" draggable="true" data-group="subject">School portal security update</button>
+              </div>
+            </div>
+
+            <div class="builder-group" data-group="hook">
+              <h4 class="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-600">Emotional Hook</h4>
+              <div class="builder-options">
+                <button class="builder-chip" draggable="true" data-group="hook">Act now or lose access</button>
+                <button class="builder-chip" draggable="true" data-group="hook">Your friend needs help right away</button>
+                <button class="builder-chip" draggable="true" data-group="hook">Everyone is talking about you</button>
+                <button class="builder-chip" draggable="true" data-group="hook">Limited time only</button>
+              </div>
+            </div>
+
+            <div class="builder-group" data-group="cta">
+              <h4 class="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-600">Call-to-Action</h4>
+              <div class="builder-options">
+                <button class="builder-chip" draggable="true" data-group="cta">Click to verify your password</button>
+                <button class="builder-chip" draggable="true" data-group="cta">Download the urgent update</button>
+                <button class="builder-chip" draggable="true" data-group="cta">Log in to confirm details</button>
+                <button class="builder-chip" draggable="true" data-group="cta">Open the attachment to view</button>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <button id="clear-preview" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+              Clear Preview
+            </button>
+            <span class="text-xs text-slate-500">Tip: You can also click a piece to place it.</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="text-base font-semibold">Email Preview</h3>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">
+              Drag Here
+            </span>
+          </div>
+          <div class="space-y-4">
+            <div class="preview-row">
+              <span class="preview-label">From</span>
+              <div class="preview-drop" data-drop="sender">Drop a fake sender here</div>
+            </div>
+            <div class="preview-row">
+              <span class="preview-label">Subject</span>
+              <div class="preview-drop" data-drop="subject">Drop a subject line here</div>
+            </div>
+            <div class="preview-row">
+              <span class="preview-label">Message</span>
+              <div class="preview-message">
+                <div class="preview-drop mb-3" data-drop="hook">Drop an emotional hook here</div>
+                <div class="preview-drop" data-drop="cta">Drop a call-to-action here</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 rounded-lg border border-slate-100 bg-slate-50 p-4 text-xs text-slate-600">
+            Learning check: Which parts of this message make you feel rushed or worried?
+          </div>
+        </div>
       </div>
     </div>
-
-
 </section>
+
+<style>
+  .builder-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .builder-chip {
+    border-radius: 9999px;
+    border: 1px solid #cbd5f5;
+    background: #eef2ff;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #3730a3;
+  }
+  .builder-chip:focus-visible {
+    outline: 2px solid #312e81;
+    outline-offset: 2px;
+  }
+  .builder-chip.dragging {
+    opacity: 0.5;
+  }
+  .preview-row {
+    display: grid;
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .preview-row {
+      grid-template-columns: 90px 1fr;
+      align-items: center;
+    }
+  }
+  .preview-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+  .preview-drop {
+    min-height: 2.5rem;
+    border-radius: 0.75rem;
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  .preview-drop.filled {
+    border-style: solid;
+    border-color: #1d4ed8;
+    background: #eff6ff;
+    color: #1e3a8a;
+    font-weight: 600;
+  }
+  .preview-drop.active {
+    border-color: #0f172a;
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+  .preview-message {
+    display: grid;
+    gap: 0.75rem;
+  }
+</style>
+
+<script>
+  const chips = Array.from(document.querySelectorAll('.builder-chip'))
+  const drops = Array.from(document.querySelectorAll('.preview-drop'))
+  const clearButton = document.getElementById('clear-preview')
+
+  const setDropContent = (dropZone, text) => {
+    dropZone.textContent = text
+    dropZone.classList.add('filled')
+  }
+
+  const resetDropContent = (dropZone) => {
+    const fallback = dropZone.getAttribute('data-fallback') || dropZone.dataset.fallback
+    if (fallback) {
+      dropZone.textContent = fallback
+    }
+    dropZone.classList.remove('filled')
+  }
+
+  drops.forEach((drop) => {
+    if (!drop.dataset.fallback) {
+      drop.dataset.fallback = drop.textContent?.trim() || ''
+    }
+  })
+
+  chips.forEach((chip) => {
+    chip.addEventListener('dragstart', /** @param {DragEvent} event */ (event) => {
+      chip.classList.add('dragging')
+      const dt = event.dataTransfer
+      if (dt) {
+        dt.setData('text/plain', chip.textContent.trim())
+        dt.setData('application/x-group', chip.dataset.group || '')
+        dt.effectAllowed = 'move'
+      }
+    })
+    chip.addEventListener('dragend', () => {
+      chip.classList.remove('dragging')
+    })
+    chip.addEventListener('click', () => {
+      const group = chip.dataset.group
+      const target = drops.find((drop) => drop.dataset.drop === group)
+      if (target) {
+        setDropContent(target, chip.textContent.trim())
+      }
+    })
+  })
+
+  drops.forEach((drop) => {
+    drop.addEventListener('dragover', /** @param {DragEvent} event */ (event) => {
+      event.preventDefault()
+      drop.classList.add('active')
+      const dt = event.dataTransfer
+      if (dt) dt.dropEffect = 'move'
+    })
+    drop.addEventListener('dragleave', () => {
+      drop.classList.remove('active')
+    })
+    drop.addEventListener('drop', /** @param {DragEvent} event */ (event) => {
+      event.preventDefault()
+      drop.classList.remove('active')
+      const dt = event.dataTransfer
+      const group = dt?.getData('application/x-group') || ''
+      if (group && group !== drop.dataset.drop) {
+        drop.classList.add('active')
+        setTimeout(() => drop.classList.remove('active'), 300)
+        return
+      }
+      const text = dt?.getData('text/plain') || ''
+      if (text) {
+        setDropContent(drop, text)
+      }
+    })
+  })
+
+  if (clearButton) {
+    clearButton.addEventListener('click', () => {
+      drops.forEach((drop) => resetDropContent(drop))
+    })
+  }
+</script>
 </DefaultLayout>

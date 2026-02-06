@@ -1,13 +1,8 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
-import { Accordion, AccordionItem, Badge, Notification } from 'accessible-astro-components'
-import Feature from '@components/Feature.astro'
-import { Video } from 'accessible-astro-components'
+import { Badge } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Attacker Perspective">
@@ -18,337 +13,374 @@ import { Video } from 'accessible-astro-components'
   />
 
 <section class="my-12">
-    <div class="container mb-24 grid grid-cols-2 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <h2>Aims of the Module</h2>
-
-<div class="grid grid-cols-1 lg:grid-cols-3">
-<Notification class="m-1">
-  <p>Understand the perspective of an attacker</p>
-</Notification>
-<Notification class="m-1">
-  <p>Understand the perspective of an attacker</p>
-</Notification>
-<Notification class="m-1">
-  <p>Understand the perspective of an attacker</p>
-</Notification>
-</div>
-</div>
-
-
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <h2>Learning Outcomes</h2>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-3">
-<Notification class="m-1">
-  <p>Understand the perspective of an attacker</p>
-</Notification>
-<Notification class="m-1">
-  <p>Understand the perspective of an attacker</p>
-</Notification>
-<Notification class="m-1">
-  <p>Understand the perspective of an attacker</p>
-</Notification>
-</div>
+  <div class="container">
+    <div class="ap-grid ap-grid--two">
+      <div class="ap-panel">
+        <h2>Aims of the Module</h2>
+        <ul class="ap-list">
+          <li>Understand the perspective of an attacker.</li>
+          <li>Identify how trust can be misused in everyday situations.</li>
+          <li>Build awareness of safe help-seeking behavior.</li>
+        </ul>
       </div>
+      <div class="ap-panel">
+        <h2>Learning Outcomes</h2>
+        <ul class="ap-list">
+          <li>Recognize common tactics used to gain a child’s trust.</li>
+          <li>Explain why personal boundaries and privacy matter.</li>
+          <li>Practice safer decision-making with trusted adults.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ap-section">
+      <div class="ap-section__header">
+        <h2>Module Content</h2>
+        <p class="ap-section__subtitle">Download materials for each submodule and preview what is included.</p>
       </div>
 
-      <div class="container mb-12 grid grid-cols-1 items-center lg:grid-cols-1">
-        <div>
-  <h2 class="mb-12">Module Content</h2>
-  </div>
+      <article class="ap-module">
+        <div class="ap-module__header">
+          <Badge class="ap-badge">#01</Badge>
+          <div>
+            <h3>The Circle of Trustees</h3>
+            <p class="ap-goal"><b>Goal:</b> Help children gain knowledge of the concept of a trusted person and develop skills in identifying the circle of trusted persons.</p>
+          </div>
+        </div>
 
-  <div style="display: flex; align-items: start;">
-        <Badge style="color: #FFF; background-color: #6D28D9; font-size: 2em; font-weight: 800; border-color: #5B21B6" class="mb-5 mr-5">#01</Badge>
-        <div>
-        <h3 class="mb-6">The Circle of Trustees</h3>
-
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2" style="align-items: center;">
-        <p style="font-size: 1.3em;">
-          <b>GOAL:</b> Help children gain knowledge of the concept of a trusted person and develop skills in identifying the circle of trusted persons.</p>
-
-<Notification >
-  <div style="display: inline-grid; width: 100%; justify-items: center;">
-  <p class="text-xl">Download all the materials for this part of the module.</p>
-  <a class="button has-icon mt-4" style="width: 100%; font-size: 1.3em; font-weight: 700" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
+        <div class="ap-module__download">
+          <p>Download all the materials for this part of the module.</p>
+          <a class="button has-icon" href="/learning-hub/introduction">
+            <Icon name="lucide:download" />
             Download
           </a>
-  </div>
-</Notification>
-    
- </div>
-
- <div class="container mt-12 mb-6 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"><b>What's Included? 👇</b></div>
-
-        <h4 class="mb-6">Resources</h4>
-
-
-<Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Image</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>A schema to locate persona around the child</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-<Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Image</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>A schema to locate persona based on the trust level</b>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-
-  <h4 class="mt-12 mb-6">Activity Plan</h4>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Activity #1</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Identification of the circle of trust</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Activity #2</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Distinguishing different trust levels</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-
-<h4 class="mt-12 mb-6">Reading Material</h4>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Reading for Educators</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Identification of the circle of trust</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Reading for Children</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Distinguishing different trust levels</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-
-<h4 class="mt-12 mb-6">Preparation Material</h4>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Material #1</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Identification of the circle of trust</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Material #2</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Distinguishing different trust levels</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-        </div>
         </div>
 
-<hr class="my-18" style="color:rgb(209, 209, 209)" />
+        <div class="ap-divider"><b>What’s Included</b></div>
 
-<div style="display: flex; align-items: start;">
-        <Badge style="color: #FFF; background-color: #6D28D9; font-size: 2em; font-weight: 800; border-color: #5B21B6" class="mb-5 mr-5">#02</Badge>
-        <div>
-        <h3 class="mb-6">What is and Adversary?</h3>
+        <div class="ap-grid ap-grid--four">
+          <div class="ap-card">
+            <h4>Resources</h4>
+            <ul class="ap-list">
+              <li><b>Image:</b> A schema to locate persona around the child.</li>
+              <li><b>Image:</b> A schema to locate persona based on the trust level.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4>Activity Plan</h4>
+            <ul class="ap-list">
+              <li><b>Activity #1:</b> Identification of the circle of trust.</li>
+              <li><b>Activity #2:</b> Distinguishing different trust levels.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4>Reading Material</h4>
+            <ul class="ap-list">
+              <li><b>Reading for Educators:</b> Identification of the circle of trust.</li>
+              <li><b>Reading for Children:</b> Distinguishing different trust levels.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4>Preparation Material</h4>
+            <ul class="ap-list">
+              <li><b>Material #1:</b> Identification of the circle of trust.</li>
+              <li><b>Material #2:</b> Distinguishing different trust levels.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
 
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2" style="align-items: center;">
-        <p style="font-size: 1.3em;">
-          <b>GOAL:</b> Help children gain knowledge of the concept of a trusted person and develop skills in identifying the circle of trusted persons.</p>
+      <article class="ap-module">
+        <div class="ap-module__header">
+          <Badge class="ap-badge">#02</Badge>
+          <div>
+            <h3>What Is an Adversary?</h3>
+            <p class="ap-goal"><b>Goal:</b> Help children understand who adversaries are and how they might pretend to be trustworthy.</p>
+          </div>
+        </div>
 
-<Notification >
-  <div style="display: inline-grid; width: 100%; justify-items: center;">
-  <p class="text-xl">Download all the materials for this part of the module.</p>
-  <a class="button has-icon mt-4" style="width: 100%; font-size: 1.3em; font-weight: 700" href="/learning-hub/introduction">
-            <Icon name="lucide:download" style="color: #FFF" />
+        <div class="ap-module__download">
+          <p>Download all the materials for this part of the module.</p>
+          <a class="button has-icon" href="/learning-hub/introduction">
+            <Icon name="lucide:download" />
             Download
           </a>
-  </div>
-</Notification>
+        </div>
+
+        <div class="ap-divider"><b>What’s Included</b></div>
+
+        <div class="ap-grid ap-grid--four">
+          <div class="ap-card">
+            <h4>Resources</h4>
+            <ul class="ap-list">
+              <li><b>Image:</b> A schema to locate persona around the child.</li>
+              <li><b>Image:</b> A schema to locate persona based on the trust level.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4>Activity Plan</h4>
+            <ul class="ap-list">
+              <li><b>Activity #1:</b> Identification of the circle of trust.</li>
+              <li><b>Activity #2:</b> Distinguishing different trust levels.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4>Reading Material</h4>
+            <ul class="ap-list">
+              <li><b>Reading for Educators:</b> Identification of the circle of trust.</li>
+              <li><b>Reading for Children:</b> Distinguishing different trust levels.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4>Preparation Material</h4>
+            <ul class="ap-list">
+              <li><b>Material #1:</b> Identification of the circle of trust.</li>
+              <li><b>Material #2:</b> Distinguishing different trust levels.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="ap-divider ap-divider--center"><b>Explore Other Topics</b></div>
     
- </div>
+    <div class="ap-section">
+      <div class="ap-section__header">
+        <h2>Other Modules</h2>
+        <p class="ap-section__subtitle">Browse related modules and continue learning.</p>
+      </div>
 
- <div class="container mt-12 mb-6 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"><b>What's Included? 👇</b></div>
+    <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content" style="align-items: center">
+      <article class="ap-module-card">
+        <h4>Digital Citizenship</h4>
+        <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="button has-icon ap-card-button" href="/learning-hub/digital-citizenship/introduction">
+          <Icon name="lucide:book-marked" />
+          Start Learning
+        </a>
+      </article>
 
-        <h4 class="mb-6">Resources</h4>
+      <article class="ap-module-card">
+        <h4>Authentication</h4>
+        <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="button has-icon ap-card-button" href="/learning-hub/authentication/introduction">
+          <Icon name="lucide:book-marked" />
+          Start Learning
+        </a>
+      </article>
 
+      <article class="ap-module-card">
+        <h4>Data Privacy</h4>
+        <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="button has-icon ap-card-button" href="/learning-hub/data-privacy/introduction">
+          <Icon name="lucide:book-marked" />
+          Start Learning
+        </a>
+      </article>
 
-<Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Image</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>A schema to locate persona around the child</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
+      <article class="ap-module-card">
+        <h4>Social Engineering</h4>
+        <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="button has-icon ap-card-button" href="/learning-hub/social-engineering/introduction">
+          <Icon name="lucide:book-marked" />
+          Start Learning
+        </a>
+      </article>
 
-<Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Image</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>A schema to locate persona based on the trust level</b>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
+      <article class="ap-module-card">
+        <h4>Malware</h4>
+        <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="button has-icon ap-card-button" href="/learning-hub/malware/introduction">
+          <Icon name="lucide:book-marked" />
+          Start Learning
+        </a>
+      </article>
 
-
-  <h4 class="mt-12 mb-6">Activity Plan</h4>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Activity #1</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Identification of the circle of trust</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Activity #2</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Distinguishing different trust levels</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-
-<h4 class="mt-12 mb-6">Reading Material</h4>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Reading for Educators</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Identification of the circle of trust</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Reading for Children</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Distinguishing different trust levels</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-
-<h4 class="mt-12 mb-6">Preparation Material</h4>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Material #1</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Identification of the circle of trust</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-  <Notification role="status" class="my-2">
-  <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5;">Material #2</Badge>
-  <div class="grid grid-cols-1" style="display: flex; flex-direction: column;">
-  <b>Distinguishing different trust levels</b> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-</Notification>
-
-        </div>
-        </div>
-
-        </div>
-
- <div class="container mb-6 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"><b>Explore Other Topics 👇</b></div>
-
-        <h2 class="container mt-12">Other Modules</h2>
-
-  <Accordion class="container mt-6">
-    <AccordionItem class="container mb-4" title="Digital Citizenship">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Digital Citizenship</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/digital-citizenship/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
+      <article class="ap-module-card">
+        <h4>Digital Abuse</h4>
+        <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="button has-icon ap-card-button" href="/learning-hub/digital-abuse/introduction">
+          <Icon name="lucide:book-marked" />
+          Start Learning
+        </a>
+      </article>
     </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Authentication">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Authentication</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/authentication/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Data Privacy">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Data Privacy</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/data-privacy/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Social Engineering">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Social Engineering</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/social-engineering/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Malware">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Malware</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/malware/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Digital Abuse">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Digital Abuse</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/digital-abuse/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-  </Accordion>
-        </div>
-        
-
-</div>
-
-
-
 </section>
 </DefaultLayout>
+
+<style>
+  .ap-grid {
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .ap-grid--two {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .ap-grid--four {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .ap-panel {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+  }
+
+  .ap-list {
+    margin-top: var(--space-s);
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .ap-section {
+    margin-top: var(--space-2xl);
+  }
+
+  .ap-section__header {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-l);
+  }
+
+  .ap-section__subtitle {
+    color: var(--color-neutral-700);
+  }
+
+  .ap-module {
+    border: 3px solid var(--border-color-purple);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(109, 40, 217, 0.2));
+    box-shadow: var(--elevation-2);
+    margin-bottom: var(--space-xl);
+  }
+
+  .ap-module__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .ap-badge {
+    color: #fff;
+    background-color: var(--brand-AP);
+    border-color: color-mix(in oklab, var(--brand-AP), black 10%);
+    font-size: var(--font-size-2);
+    font-weight: 800;
+    padding: var(--space-3xs) var(--space-xs);
+  }
+
+  .ap-goal {
+    font-size: var(--font-size-0);
+    margin-top: var(--space-2xs);
+  }
+
+  .ap-module__download {
+    margin-top: var(--space-m);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-s);
+    border-radius: var(--radius-m);
+    border: 2px dashed var(--border-color-purple);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .ap-module__download .button {
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  .ap-module__download p {
+    margin: 0;
+    font-weight: 400;
+    width: 60%;
+  }
+
+  .ap-divider {
+    margin: var(--space-l) 0 var(--space-m);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--font-size--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-700);
+  }
+
+  .ap-divider::before,
+  .ap-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid var(--border-color-purple);
+  }
+
+  .ap-divider--center {
+    justify-content: center;
+  }
+
+  .ap-divider--center::before,
+  .ap-divider--center::after {
+    flex: 0.6;
+  }
+
+  .ap-card {
+    border: 2px solid var(--border-color-purple);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    background: var(--background-color);
+  }
+
+  .ap-module-grid {
+    margin-top: var(--space-l);
+    display: grid;
+    gap: var(--space-l);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .ap-module-card {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-m);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+    display: grid;
+    gap: var(--space-s);
+    align-content: start;
+  }
+
+  .ap-card-text {
+    color: var(--color-neutral-700);
+  }
+
+  .ap-card-button {
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1200px) {
+    .ap-module-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ap-module-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ap-module-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

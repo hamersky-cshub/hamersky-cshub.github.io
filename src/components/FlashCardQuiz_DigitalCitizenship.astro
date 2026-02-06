@@ -1,0 +1,342 @@
+---
+const cards = [
+  {
+    prompt: "A classmate posts a photo of their science project with no faces shown.",
+    example: "\"Built a volcano!\"",
+    answer: "good",
+    reason: "Sharing your work without showing people or private details is usually OK.",
+  },
+  {
+    prompt: "Someone wants to post a screenshot that shows a friend's full name and home address.",
+    example: "\"Look where Jamie lives! 123 Oak St.\"",
+    answer: "bad",
+    reason: "Never post private information like addresses, phone numbers, or passwords.",
+  },
+  {
+    prompt: "A student shares a kind comment congratulating a teammate after a game.",
+    example: "\"Great teamwork today!\"",
+    answer: "good",
+    reason: "Positive and respectful messages are safe and supportive.",
+  },
+  {
+    prompt: "A post makes fun of someone's appearance in a group chat.",
+    example: "\"Your haircut looks terrible lol.\"",
+    answer: "bad",
+    reason: "Hurtful or bullying content is not OK to post.",
+  },
+  {
+    prompt: "A student asks everyone to follow a link that promises free game coins.",
+    example: "\"Click here for FREE coins!\"",
+    answer: "bad",
+    reason: "Suspicious links can be scams or unsafe. Don't share them.",
+  },
+  {
+    prompt: "A kid posts a fun drawing they made and asks for feedback.",
+    example: "\"Here is my dragon drawing! Any tips?\"",
+    answer: "good",
+    reason: "Sharing your own creative work is a safe way to connect.",
+  },
+  {
+    prompt: "A post shows a friend in the background who didn't say it's OK to share.",
+    example: "\"Look at us in the cafeteria!\"",
+    answer: "bad",
+    reason: "Always ask permission before posting photos of other people.",
+  },
+  {
+    prompt: "A student shares a helpful reminder about homework with no personal details.",
+    example: "\"Reminder: math worksheet is due Friday.\"",
+    answer: "good",
+    reason: "Helpful school info that doesn't include private details is OK.",
+  },
+]
+---
+
+<section class="flash-quiz" data-flash-quiz>
+  <div class="container">
+    <div class="flash-quiz__header">
+      <div>
+        <h2 class="flash-quiz__title">GOOD or BAD to Post?</h2>
+        <p class="flash-quiz__subtitle">
+          Pick the best choice for each card. Think about privacy, kindness, and safety.
+        </p>
+      </div>
+      <div class="flash-quiz__progress" aria-live="polite" data-progress>Card 1 of {cards.length}</div>
+    </div>
+
+    <div class="flash-quiz__card" data-card-list>
+      {cards.map((card, index) => (
+        <article
+          class="flash-quiz__item"
+          data-card
+          data-answer={card.answer}
+          data-reason={card.reason}
+          data-index={index}
+        >
+          <div class="flash-quiz__prompt">
+            <span class="flash-quiz__label">Scenario</span>
+            <h3>{card.prompt}</h3>
+          </div>
+          <div class="flash-quiz__example">
+            <span class="flash-quiz__label">Post Text Example</span>
+            <p>{card.example}</p>
+          </div>
+
+          <div class="flash-quiz__choices" role="group" aria-label="Choose if this post is okay">
+            <button class="flash-quiz__choice button flash-quiz__choice--good" data-choice="good" type="button">
+              GOOD to Post
+            </button>
+            <button class="flash-quiz__choice button flash-quiz__choice--bad" data-choice="bad" type="button">
+              BAD to Post
+            </button>
+          </div>
+
+          <p class="flash-quiz__feedback" data-feedback aria-live="polite"></p>
+        </article>
+      ))}
+    </div>
+
+    <div class="flash-quiz__nav">
+      <button class="button flash-quiz__restart" type="button" data-restart>
+        Restart
+      </button>
+      <button class="button" type="button" data-prev>
+        Previous
+      </button>
+      <div class="flash-quiz__score" data-score>Score: 0 / {cards.length}</div>
+      <button class="button" type="button" data-next>
+        Next
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const quizRoots = document.querySelectorAll('[data-flash-quiz]')
+
+  quizRoots.forEach((quizRoot) => {
+    const cards = Array.from(quizRoot.querySelectorAll('[data-card]'))
+    const progress = quizRoot.querySelector('[data-progress]')
+    const scoreEl = quizRoot.querySelector('[data-score]')
+    const prevBtn = quizRoot.querySelector('[data-prev]')
+    const nextBtn = quizRoot.querySelector('[data-next]')
+    const restartBtn = quizRoot.querySelector('[data-restart]')
+
+    let index = 0
+    let score = 0
+
+    const updateScore = () => {
+      score = cards.filter((card) => card.dataset.scored === 'true').length
+      scoreEl.textContent = `Score: ${score} / ${cards.length}`
+    }
+
+    const showCard = (nextIndex) => {
+      index = Math.min(Math.max(nextIndex, 0), cards.length - 1)
+      cards.forEach((card, cardIndex) => {
+        card.classList.toggle('is-active', cardIndex === index)
+      })
+      progress.textContent = `Card ${index + 1} of ${cards.length}`
+      prevBtn.disabled = index === 0
+      nextBtn.disabled = index === cards.length - 1
+    }
+
+    const resetCard = (card) => {
+      card.dataset.answered = 'false'
+      card.dataset.scored = 'false'
+      card.classList.remove('is-correct', 'is-wrong')
+      const feedback = card.querySelector('[data-feedback]')
+      feedback.textContent = ''
+    }
+
+    cards.forEach((card) => {
+      resetCard(card)
+
+      card.querySelectorAll('[data-choice]').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (card.dataset.answered === 'true') return
+          const choice = button.dataset.choice
+          const correct = card.dataset.answer
+          const feedback = card.querySelector('[data-feedback]')
+          const reason = card.dataset.reason
+
+          const isCorrect = choice === correct
+          card.dataset.answered = 'true'
+          card.classList.toggle('is-correct', isCorrect)
+          card.classList.toggle('is-wrong', !isCorrect)
+
+          if (isCorrect) {
+            card.dataset.scored = 'true'
+            feedback.textContent = `Correct. ${reason}`
+          } else {
+            feedback.textContent = `Not quite. ${reason}`
+          }
+
+          updateScore()
+        })
+      })
+    })
+
+    prevBtn.addEventListener('click', () => showCard(index - 1))
+    nextBtn.addEventListener('click', () => showCard(index + 1))
+
+    restartBtn.addEventListener('click', () => {
+      cards.forEach((card) => resetCard(card))
+      updateScore()
+      showCard(0)
+    })
+
+    updateScore()
+    showCard(0)
+  })
+</script>
+
+<style>
+  .flash-quiz {
+    margin: var(--space-3xl) 0;
+  }
+
+  .flash-quiz__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-m);
+    margin-bottom: var(--space-l);
+  }
+
+  .flash-quiz__title {
+    font-size: var(--font-size-3);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .flash-quiz__subtitle {
+    max-width: 60ch;
+    color: var(--color-neutral-700);
+  }
+
+  .flash-quiz__progress {
+    align-self: flex-start;
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--radius-s);
+    border: 2px solid var(--border-color-subtle);
+    font-weight: 600;
+  }
+
+  .flash-quiz__card {
+    position: relative;
+    min-height: 280px;
+  }
+
+  .flash-quiz__item {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-s);
+    border-radius: var(--radius-l);
+    border: 3px solid var(--border-color-subtle);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(231, 247, 255, 0.9));
+    padding: var(--space-l);
+    box-shadow: var(--elevation-2);
+  }
+
+  .flash-quiz__item.is-active {
+    display: flex;
+  }
+
+  .flash-quiz__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+    font-size: var(--font-size--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-700);
+    font-weight: 700;
+  }
+
+  .flash-quiz__example {
+    padding: var(--space-s);
+    border-radius: var(--radius-m);
+    background: var(--color-neutral-200);
+  }
+
+  .flash-quiz__choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-s);
+    margin-top: var(--space-2xs);
+  }
+
+  .flash-quiz__choice {
+    width: 100%;
+  }
+
+  .flash-quiz__choice--bad {
+    border-color: var(--brand-DA);
+    background-color: var(--brand-DA);
+  }
+
+  .flash-quiz__choice--bad:where(:hover, :focus-visible) {
+    border-color: color-mix(in oklab, var(--brand-DA), white 15%);
+    background-color: color-mix(in oklab, var(--brand-DA), white 15%);
+  }
+
+  .flash-quiz__choice--good {
+    border-color: var(--brand-DC);
+    background-color: var(--brand-DC);
+  }
+
+  .flash-quiz__choice--good:where(:hover, :focus-visible) {
+    border-color: color-mix(in oklab, var(--brand-DC), white 15%);
+    background-color: color-mix(in oklab, var(--brand-DC), white 15%);
+  }
+
+  .flash-quiz__item.is-correct {
+    border-color: var(--brand-DC);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-DC), transparent 80%);
+  }
+
+  .flash-quiz__item.is-wrong {
+    border-color: var(--brand-DA);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-DA), transparent 80%);
+  }
+
+  .flash-quiz__feedback {
+    min-height: 2.5rem;
+    font-weight: 600;
+  }
+
+  .flash-quiz__nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-s);
+    align-items: center;
+    margin-top: var(--space-l);
+  }
+
+  .flash-quiz__score {
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .flash-quiz__restart {
+    border-color: var(--link-color);
+    background-color: var(--background-color);
+    color: var(--link-color);
+    opacity: 0.5;
+  }
+
+  .flash-quiz__restart:where(:hover, :focus-visible) {
+    background-color: var(--link-color);
+    color: var(--background-color);
+  }
+
+  @media (min-width: 768px) {
+    .flash-quiz__nav {
+      grid-template-columns: repeat(4, auto);
+      justify-content: space-between;
+    }
+  }
+
+  .flash-quiz__nav .button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+</style>

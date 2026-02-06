@@ -14,7 +14,7 @@ import BlockQuote from '@components/BlockQuote.astro'
 
 <DefaultLayout title="Home">
   <Hero />
-  <section class="mb-12">
+  <section class="mb-12 home-learning">
     <div class="container">
 
 <div class="container my-6 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"><b>Let's Learning! 👇</b></div>
@@ -92,10 +92,10 @@ import BlockQuote from '@components/BlockQuote.astro'
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 feature-card feature-content">
         <Feature class="feature-dc" icon="lucide:blocks" title="Challenge #1"> 
-          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
+          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/challenge/'">
+          <button class="button has-icon module-button module-dc" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
@@ -104,25 +104,25 @@ import BlockQuote from '@components/BlockQuote.astro'
           <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/challenge/'">
+          <button class="button has-icon module-button module-ap" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
         <Feature class="feature-at" icon="lucide:blocks" title="Challenge #3"> 
-          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
+          <Badge style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/authentication/challenge/'">
+          <button class="button has-icon module-button module-auth" style="width: 100%" onclick="location.href='/learning-hub/authentication/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
-        <Feature icon="lucide:blocks" title="Challenge #4">
-          <Badge class="feature-dp" style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
+        <Feature class="feature-dp" icon="lucide:blocks" title="Challenge #4">
+          <Badge style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0c958a; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/challenge/'">
+          <button class="button has-icon module-button module-privacy" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
@@ -131,16 +131,16 @@ import BlockQuote from '@components/BlockQuote.astro'
           <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/challenge/'">
+          <button class="button has-icon module-button module-se" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
         </Feature>
         <Feature class="feature-mw" icon="lucide:blocks" title="Challenge #6">
-          <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
+          <Badge style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/malware/challenge/'">
+          <button class="button has-icon module-button module-malware" style="width: 100%" onclick="location.href='/learning-hub/malware/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
@@ -149,7 +149,7 @@ import BlockQuote from '@components/BlockQuote.astro'
           <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/challenge/'">
+          <button class="button has-icon module-button module-abuse" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/challenge/'">
             <Icon name="lucide:biceps-flexed" style="color: #FFF" />
             Take the Challenge
           </div>
@@ -164,9 +164,9 @@ import BlockQuote from '@components/BlockQuote.astro'
 
 <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
         <Feature class="feature-dc" icon="lucide:blocks" title="Game #1">
-          <Badge style="color: #000; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
+          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/game/'">
+          <button class="button has-icon mt-6 module-button module-dc" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -174,23 +174,23 @@ import BlockQuote from '@components/BlockQuote.astro'
         <Feature class="feature-ap" icon="lucide:puzzle" title="Game #2">
           <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/game/'">
+          <button class="button has-icon mt-6 module-button module-ap" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
         <Feature class="feature-at" icon="lucide:library-big" title="Game #3">
-          <Badge style="color: #000; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
+          <Badge style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/authentication/game/'">
+          <button class="button has-icon mt-6 module-button module-auth" style="width: 100%" onclick="location.href='/learning-hub/authentication/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
         <Feature class="feature-dp" icon="lucide:library-big" title="Game #4">
-          <Badge style="color: #000; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
+          <Badge style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">
+          <button class="button has-icon mt-6 module-button module-privacy" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -198,15 +198,15 @@ import BlockQuote from '@components/BlockQuote.astro'
         <Feature class="feature-se" icon="lucide:library-big" title="Game #5">
           <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
+          <button class="button has-icon mt-6 module-button module-se" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
         </Feature>
         <Feature class="feature-mw" icon="lucide:library-big" title="Game #6">
-          <Badge style="color: #000; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
+          <Badge style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/malware/game/'">
+          <button class="button has-icon mt-6 module-button module-malware" style="width: 100%" onclick="location.href='/learning-hub/malware/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -214,7 +214,7 @@ import BlockQuote from '@components/BlockQuote.astro'
         <Feature class="feature-da" icon="lucide:library-big" title="Game #7">
           <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/game/'">
+          <button class="button has-icon mt-6 module-button module-abuse" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/game/'">
             <Icon name="lucide:joystick" style="color: #FFF" />
             Play the Game
             </button>
@@ -225,3 +225,51 @@ import BlockQuote from '@components/BlockQuote.astro'
     </div>
   </section>
 </DefaultLayout>
+
+<style>
+  .home-learning :global(.module-button) {
+    color: #ffffff;
+    border-color: transparent;
+    transition: opacity 0.2s ease;
+    border-radius: 10px;
+  }
+
+  .home-learning :global(.module-button:hover) {
+    opacity: 0.7;
+  }
+
+  .home-learning :global(.module-dc) {
+    background-color: #22c55e;
+    border-color: #22c55e;
+  }
+
+  .home-learning :global(.module-ap) {
+    background-color: #6d28d9;
+    border-color: #6d28d9;
+  }
+
+  .home-learning :global(.module-auth) {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+  }
+
+  .home-learning :global(.module-privacy) {
+    background-color: #14b8a6;
+    border-color: #14b8a6;
+  }
+
+  .home-learning :global(.module-se) {
+    background-color: #d946ef;
+    border-color: #d946ef;
+  }
+
+  .home-learning :global(.module-malware) {
+    background-color: #84cc16;
+    border-color: #84cc16;
+  }
+
+  .home-learning :global(.module-abuse) {
+    background-color: #ef4444;
+    border-color: #ef4444;
+  }
+</style>
