@@ -1,125 +1,464 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
+import { Badge } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Digital Citizenship">
   <PageHeader
       title="Digital Citizenship"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      subtitle="Digital citizenship helps students navigate online spaces with confidence, empathy, and responsibility. This module supports educators in teaching safe habits, respectful communication, and thoughtful decision-making in digital environments."
       bgType="bordered"
   />
 
-<section class="my-12">
-    <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Citizenship" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <video id="What is Digital Environment?" controls preload="metadata" poster="/videos/DigitalCitizenship_Presentation_DigitalEnvironment_Thumbnail.png">
-        <source src="/videos/DigitalCitizenship_Presentation_DigitalEnvironmentV1.mp4" />
-        <track
-          label="English"
-          kind="subtitles"
-          srclang="en"
-          src="/videos/1.1.1.Subtitles.Digital_environments_EN.vtt"
-          default />
-        <track
-          label="Czech"
-          kind="subtitles"
-          srclang="cs"
-          src="/videos/1.1.1.Subtitles.Digital_environments_CZ.vtt" />
-      </video>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <section class="my-12">
+    <div class="container">
+      <div class="dc-grid dc-grid--two">
+        <div class="dc-panel">
+          <h2>Aims of the Module</h2>
+          <ul class="dc-list">
+            <li>Build foundational understanding of digital environments.</li>
+            <li>Encourage respectful, safe, and responsible online behavior.</li>
+            <li>Help students make thoughtful choices about sharing and privacy.</li>
+          </ul>
+        </div>
+        <div class="dc-panel">
+          <h2>Learning Outcomes</h2>
+          <ul class="dc-list">
+            <li>Explain what a digital environment is and where it shows up in daily life.</li>
+            <li>Identify actions that create a positive digital footprint.</li>
+            <li>Recognize when to pause, ask for help, or report concerns.</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="dc-section">
+        <div class="dc-section__header">
+          <h2>Module Content</h2>
+          <p class="dc-section__subtitle">Download materials for each submodule and preview what is included.</p>
+        </div>
+
+        <article class="dc-module">
+          <div class="dc-module__header">
+            <Badge class="dc-badge">#01</Badge>
+            <div>
+              <h3>Digital Environments</h3>
+              <p class="dc-goal"><b>Goal:</b> Explore how online spaces work and what makes them feel safe and welcoming.</p>
+            </div>
+          </div>
+
+          <div class="dc-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="dc-divider"><b>What’s Included</b></div>
+
+          <div class="dc-grid dc-grid--four">
+            <div class="dc-card">
+              <h4>Resources</h4>
+              <ul class="dc-list">
+                <li><b>Image:</b> A map of common digital spaces for students.</li>
+                <li><b>Handout:</b> Classroom expectations for online spaces.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Activity Plan</h4>
+              <ul class="dc-list">
+                <li><b>Activity #1:</b> Spot the digital environment.</li>
+                <li><b>Activity #2:</b> Build a shared class agreement.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Reading Material</h4>
+              <ul class="dc-list">
+                <li><b>Reading for Educators:</b> Setting norms for online spaces.</li>
+                <li><b>Reading for Students:</b> How to be a good digital citizen.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Preparation Material</h4>
+              <ul class="dc-list">
+                <li><b>Material #1:</b> Vocabulary cards for key terms.</li>
+                <li><b>Material #2:</b> Scenario prompts for discussion.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="dc-divider"><b>Featured Video</b></div>
+
+          <div class="dc-video-card">
+            <div>
+              <h4>What Is a Digital Environment?</h4>
+              <p class="dc-goal"><b>Goal:</b> Help students recognize the online spaces where learning, play, and communication happen.</p>
+            </div>
+            <div class="dc-video">
+              <video id="What is Digital Environment?" controls preload="metadata" poster="/videos/DigitalCitizenship_Presentation_DigitalEnvironment_Thumbnail.png">
+                <source src="/videos/DigitalCitizenship_Presentation_DigitalEnvironmentV1.mp4" />
+                <track
+                  label="English"
+                  kind="subtitles"
+                  srclang="en"
+                  src="/videos/1.1.1.Subtitles.Digital_environments_EN.vtt"
+                  default />
+                <track
+                  label="Czech"
+                  kind="subtitles"
+                  srclang="cs"
+                  src="/videos/1.1.1.Subtitles.Digital_environments_CZ.vtt" />
+              </video>
+            </div>
+            <div class="dc-video__details">
+              <p>Use this video to spark discussion about online spaces students already use, from learning platforms to games and messaging apps. Pause for quick reflections on where students spend time online.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="dc-module">
+          <div class="dc-module__header">
+            <Badge class="dc-badge">#02</Badge>
+            <div>
+              <h3>Digital Footprint</h3>
+              <p class="dc-goal"><b>Goal:</b> Show how posts, messages, and choices leave a trail that affects reputation and safety.</p>
+            </div>
+          </div>
+
+          <div class="dc-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="dc-divider"><b>What’s Included</b></div>
+
+          <div class="dc-grid dc-grid--four">
+            <div class="dc-card">
+              <h4>Resources</h4>
+              <ul class="dc-list">
+                <li><b>Image:</b> Footprint trail to visualize online actions.</li>
+                <li><b>Checklist:</b> “Pause before you post” questions.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Activity Plan</h4>
+              <ul class="dc-list">
+                <li><b>Activity #1:</b> Footprint choices sorting.</li>
+                <li><b>Activity #2:</b> Create a positive profile.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Reading Material</h4>
+              <ul class="dc-list">
+                <li><b>Reading for Educators:</b> Talking about reputation and safety.</li>
+                <li><b>Reading for Students:</b> What stays online?</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Preparation Material</h4>
+              <ul class="dc-list">
+                <li><b>Material #1:</b> Discussion prompts on sharing.</li>
+                <li><b>Material #2:</b> Exit ticket reflection.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="dc-module">
+          <div class="dc-module__header">
+            <Badge class="dc-badge">#03</Badge>
+            <div>
+              <h3>Respect & Empathy Online</h3>
+              <p class="dc-goal"><b>Goal:</b> Practice communication that supports wellbeing, kindness, and community online.</p>
+            </div>
+          </div>
+
+          <div class="dc-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="dc-divider"><b>What’s Included</b></div>
+
+          <div class="dc-grid dc-grid--four">
+            <div class="dc-card">
+              <h4>Resources</h4>
+              <ul class="dc-list">
+                <li><b>Poster:</b> The “THINK” checklist for kind communication.</li>
+                <li><b>Cards:</b> Empathy scenarios for small groups.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Activity Plan</h4>
+              <ul class="dc-list">
+                <li><b>Activity #1:</b> Rewrite it with kindness.</li>
+                <li><b>Activity #2:</b> Build a respectful reply.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Reading Material</h4>
+              <ul class="dc-list">
+                <li><b>Reading for Educators:</b> Supporting positive peer culture.</li>
+                <li><b>Reading for Students:</b> How to disagree respectfully.</li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Preparation Material</h4>
+              <ul class="dc-list">
+                <li><b>Material #1:</b> Role-play guidelines.</li>
+                <li><b>Material #2:</b> Reflection worksheet.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="dc-divider dc-divider--center"><b>Explore Other Topics</b></div>
+
+      <div class="dc-section">
+        <div class="dc-section__header">
+          <h2>Other Modules</h2>
+          <p class="dc-section__subtitle">Browse related modules and continue learning.</p>
+        </div>
+
+        <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content" style="align-items: center">
+          <article class="dc-module-card">
+            <h4>Attacker Perspective</h4>
+            <p class="dc-card-text">Understand how trust can be manipulated and learn to spot risky behavior.</p>
+            <a class="button has-icon dc-card-button" href="/learning-hub/attacker-perspective/introduction">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="dc-module-card">
+            <h4>Authentication</h4>
+            <p class="dc-card-text">Teach students how to secure their accounts with strong, memorable routines.</p>
+            <a class="button has-icon dc-card-button" href="/learning-hub/authentication/introduction">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="dc-module-card">
+            <h4>Data Privacy</h4>
+            <p class="dc-card-text">Explore how personal information is shared and ways to keep it safe.</p>
+            <a class="button has-icon dc-card-button" href="/learning-hub/data-privacy/introduction">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="dc-module-card">
+            <h4>Social Engineering</h4>
+            <p class="dc-card-text">Learn how scammers and manipulators use persuasion and false urgency.</p>
+            <a class="button has-icon dc-card-button" href="/learning-hub/social-engineering/introduction">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="dc-module-card">
+            <h4>Malware</h4>
+            <p class="dc-card-text">Help students recognize suspicious downloads and protect devices.</p>
+            <a class="button has-icon dc-card-button" href="/learning-hub/malware/introduction">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="dc-module-card">
+            <h4>Digital Abuse</h4>
+            <p class="dc-card-text">Identify harmful online behavior and learn how to get help safely.</p>
+            <a class="button has-icon dc-card-button" href="/learning-hub/digital-abuse/introduction">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+        </section>
       </div>
     </div>
-
-
-<h2 class="container mt-12">Other Modules</h2>
-
-  <Accordion class="container mt-6">
-    <AccordionItem class="container mb-4" title="Attacker Perspective">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Attacker Perspective</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/attacker-perspective/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Authentication">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Authentication</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/authentication/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Data Privacy">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Data Privacy</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/data-privacy/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Social Engineering">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Social Engineering</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/social-engineering/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Malware">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Malware</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/malware/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Digital Abuse">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Digital Abuse</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/digital-abuse/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-</section>
+  </section>
 </DefaultLayout>
+
+<style>
+  .dc-grid {
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .dc-grid--two {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .dc-grid--four {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .dc-panel {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+  }
+
+  .dc-list {
+    margin-top: var(--space-s);
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .dc-section {
+    margin-top: var(--space-2xl);
+  }
+
+  .dc-section__header {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-l);
+  }
+
+  .dc-section__subtitle {
+    color: var(--color-neutral-700);
+  }
+
+  .dc-module {
+    border: 3px solid var(--brand-DC);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(34, 197, 94, 0.2));
+    box-shadow: var(--elevation-2);
+    margin-bottom: var(--space-xl);
+  }
+
+  .dc-module__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .dc-badge {
+    color: #fff;
+    background-color: var(--brand-DC);
+    border-color: color-mix(in oklab, var(--brand-DC), black 10%);
+    font-size: var(--font-size-2);
+    font-weight: 800;
+    padding: var(--space-3xs) var(--space-xs);
+  }
+
+  .dc-goal {
+    font-size: var(--font-size-0);
+    margin-top: var(--space-2xs);
+  }
+
+  .dc-module__download {
+    margin-top: var(--space-m);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-s);
+    border-radius: var(--radius-m);
+    border: 2px dashed var(--brand-DC);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .dc-module__download .button {
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  .dc-module__download p {
+    margin: 0;
+    font-weight: 400;
+    width: 60%;
+  }
+
+  .dc-divider {
+    margin: var(--space-l) 0 var(--space-m);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--font-size--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-700);
+  }
+
+  .dc-divider::before,
+  .dc-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid var(--brand-DC);
+  }
+
+  .dc-divider--center {
+    justify-content: center;
+  }
+
+  .dc-divider--center::before,
+  .dc-divider--center::after {
+    flex: 0.6;
+  }
+
+  .dc-card {
+    border: 2px solid color-mix(in oklab, var(--brand-DC), white 30%);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    background: var(--background-color);
+  }
+
+  .dc-module-card {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-m);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+    display: grid;
+    gap: var(--space-s);
+    align-content: start;
+  }
+
+  .dc-card-text {
+    color: var(--color-neutral-700);
+  }
+
+  .dc-card-button {
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  .dc-video-card {
+    border: 2px solid var(--brand-DC);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: var(--background-color);
+    box-shadow: var(--elevation-2);
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .dc-video video {
+    width: 100%;
+    border-radius: var(--radius-m);
+    box-shadow: var(--elevation-1);
+    background: #000;
+  }
+
+  .dc-video__details {
+    display: grid;
+    gap: var(--space-xs);
+  }
+</style>
