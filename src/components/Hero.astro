@@ -19,23 +19,29 @@ interface Props {
 // const { src = '../assets/images/index/20945658.jpg' }: Props = Astro.props
 ---
 
-<section class="hero mt-24 mb-24">
+<section class="hero mt-24 mb-12">
   <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-9xl" style="font-weight: 900; z-index: 3; letter-spacing: 5px;"> 
-          <slot><span style="color: #2563EB; ">W</span>ise <span style="color: #2563EB">W</span>eb <span style="color: #2563EB">W</span>anderers</slot>
+        <h1 class="text-center text-6xl md:text-left lg:text-9xl" style="font-weight: 900; z-index: 3; letter-spacing: 5px;">
+          <slot><span style="color: #2563EB;">W</span>ise <span style="color: #2563EB">W</span>eb <span style="color: #2563EB">W</span>anderers</slot>
         </h1>
-        <p class="text-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="https://hamersky-cshub.github.io/about/">About</a> consequat.</p>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <p class="text-3xl text-center md:text-left">
+          Build smart, safe online habits with lessons, challenges, and games designed for upper elementary classrooms.
+        </p>
+        <div class="flex flex-col gap-3 min-[600px]:flex-row items-center">
           <a class="button has-icon" href="/learning-hub/introduction">
-            <Icon name="lucide:book-marked" />
-            Start Learning
+            <Icon name="lucide:graduation-cap" />
+            Explore the Learning Hub
+          </a>
+          <a class="button has-icon is-outline" href="#learning-modules">
+            <Icon name="lucide:blocks" />
+            Browse Modules
           </a>
         </div>
       </div>
       <div style="z-index: 2;">
-      <Image class="hidden lg:block floating-image" src={heroImg} alt="" decoding="async" loading="eager" />
+        <Image class="hidden lg:block floating-image" src={heroImg} alt="" decoding="async" loading="eager" />
       </div>
     </div>
   </div>
@@ -54,8 +60,29 @@ interface Props {
     border-radius: 10px;
   }
 
+  .hero-badge {
+    color: #fff;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .button.is-outline {
+    background: transparent;
+    color: var(--link-color);
+    border-color: var(--link-color);
+  }
+
+  .button.is-outline:hover,
+  .button.is-outline:focus-visible {
+    background: rgba(37, 99, 235, 0.1);
+  }
+
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px);
     }
     50% {

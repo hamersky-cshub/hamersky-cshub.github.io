@@ -229,11 +229,11 @@ import { Badge } from 'accessible-astro-components'
           <p class="dc-section__subtitle">Browse related modules and continue learning.</p>
         </div>
 
-        <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content" style="align-items: center">
+        <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content">
           <article class="dc-module-card">
             <h4>Attacker Perspective</h4>
             <p class="dc-card-text">Understand how trust can be manipulated and learn to spot risky behavior.</p>
-            <a class="button has-icon dc-card-button" href="/learning-hub/attacker-perspective/introduction">
+            <a class="button has-icon dc-card-button" href="/learning-hub/attacker-perspective/content">
               <Icon name="lucide:book-marked" />
               Start Learning
             </a>
@@ -242,7 +242,7 @@ import { Badge } from 'accessible-astro-components'
           <article class="dc-module-card">
             <h4>Authentication</h4>
             <p class="dc-card-text">Teach students how to secure their accounts with strong, memorable routines.</p>
-            <a class="button has-icon dc-card-button" href="/learning-hub/authentication/introduction">
+            <a class="button has-icon dc-card-button" href="/learning-hub/authentication/content">
               <Icon name="lucide:book-marked" />
               Start Learning
             </a>
@@ -251,7 +251,7 @@ import { Badge } from 'accessible-astro-components'
           <article class="dc-module-card">
             <h4>Data Privacy</h4>
             <p class="dc-card-text">Explore how personal information is shared and ways to keep it safe.</p>
-            <a class="button has-icon dc-card-button" href="/learning-hub/data-privacy/introduction">
+            <a class="button has-icon dc-card-button" href="/learning-hub/data-privacy/content">
               <Icon name="lucide:book-marked" />
               Start Learning
             </a>
@@ -260,7 +260,7 @@ import { Badge } from 'accessible-astro-components'
           <article class="dc-module-card">
             <h4>Social Engineering</h4>
             <p class="dc-card-text">Learn how scammers and manipulators use persuasion and false urgency.</p>
-            <a class="button has-icon dc-card-button" href="/learning-hub/social-engineering/introduction">
+            <a class="button has-icon dc-card-button" href="/learning-hub/social-engineering/content">
               <Icon name="lucide:book-marked" />
               Start Learning
             </a>
@@ -269,7 +269,7 @@ import { Badge } from 'accessible-astro-components'
           <article class="dc-module-card">
             <h4>Malware</h4>
             <p class="dc-card-text">Help students recognize suspicious downloads and protect devices.</p>
-            <a class="button has-icon dc-card-button" href="/learning-hub/malware/introduction">
+            <a class="button has-icon dc-card-button" href="/learning-hub/malware/content">
               <Icon name="lucide:book-marked" />
               Start Learning
             </a>
@@ -278,7 +278,7 @@ import { Badge } from 'accessible-astro-components'
           <article class="dc-module-card">
             <h4>Digital Abuse</h4>
             <p class="dc-card-text">Identify harmful online behavior and learn how to get help safely.</p>
-            <a class="button has-icon dc-card-button" href="/learning-hub/digital-abuse/introduction">
+            <a class="button has-icon dc-card-button" href="/learning-hub/digital-abuse/content">
               <Icon name="lucide:book-marked" />
               Start Learning
             </a>
@@ -425,7 +425,8 @@ import { Badge } from 'accessible-astro-components'
     padding: var(--space-m);
     background: var(--background-color);
     box-shadow: var(--elevation-1);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-s);
     align-content: start;
   }
@@ -438,6 +439,7 @@ import { Badge } from 'accessible-astro-components'
     width: 100%;
     justify-content: center;
     border-radius: 10px;
+      margin-top: auto;
   }
 
   .dc-video-card {

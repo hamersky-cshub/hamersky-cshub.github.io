@@ -2,274 +2,617 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
-import Counter from '@components/Counter.astro'
-import ContentMedia from '@components/ContentMedia.astro'
-import ExternalLink from '@components/ExternalLink.astro'
 import { Icon } from 'astro-icon/components'
-import { Accordion, AccordionItem, Avatar, AvatarGroup, Card, Badge, Notification } from 'accessible-astro-components'
-import CallToAction from '@components/CallToAction.astro'
-import BreakoutImage from '@components/BreakoutImage.astro'
-import BlockQuote from '@components/BlockQuote.astro'
+import { Accordion, AccordionItem, Card, Badge } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Home">
   <Hero />
-  <section class="mb-12 home-learning">
+  <section class="mb-12">
+    
     <div class="container">
+      <div class="home-intro">
+        <div class="intro-banner my-18">
 
-<div class="container my-6 py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"><b>Let's Learning! 👇</b></div>
+      
 
+        <div class="intro-stats grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="stat-card">
+            <span class="stat-number">7</span>
+            <span class="stat-title">Learning Modules</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">7</span>
+            <span class="stat-title">Interactive Challenges</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">7</span>
+            <span class="stat-title">Cyber Games</span>
+          </div>
+        </div>
+      </div>
 
-<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content mt-18" style="align-items: center">
-<span style="display: flex; align-items: center;">
-        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:graduation-cap" /></Badge>
-        <h1 class="font-bold mb-6" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">Learning Modules</h1>
-  </span>
+      <div class="section-title" id="learning-modules">
+        <div class="section-badge">
+          <Badge class="section-icon"><Icon class="m-3" name="lucide:graduation-cap" /></Badge>
+        </div>
+        <div>
+          <h2 class="section-heading">Learning Modules</h2>
+          <p class="section-subtitle">Classroom-ready lessons that introduce core cyber safety skills.</p>
+        </div>
+      </div>
 
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 feature-card feature-content module-grid" style="align-items: center">
+        <Card
+          class="module-card module-card-dc"
+          img="/images/01_digital-citizenship_poster.png"
+          url="/learning-hub/digital-citizenship/content"
+          title="Digital Citizenship"
+          style="border-color: #22C55E; border-width: 10px; border-style: solid;">
+          <p>Practice being kind, respectful, and safe online, just like in your classroom or on the playground.</p>
+        </Card>
 
-  <Card
-  img="/images/01_digital-citizenship_poster.png"
-  url="/learning-hub/digital-citizenship/content"
-  title="Digital Citizenship"
-  style="border-color: #22C55E; border-width: 10px; border-style: solid;">
-  <p>Being a good digital citizen means being kind and respectful to others online, just like you are on the playground, and always telling a grown-up if something makes you feel uncomfortable. It's about sharing good things and being safe.</p>
-  </Card>
+        <Card
+          class="module-card module-card-ap"
+          img="/images/02_attacker-perspective_poster.png"
+          url="/learning-hub/attacker-perspective/content"
+          title="Attacker Perspective"
+          style="border-color: #6D28D9; border-width: 10px; border-style: solid;">
+          <p>Spot sneaky tricks by learning how someone might try to break the rules, then stay one step ahead.</p>
+        </Card>
 
-  <Card
-  img="/images/02_attacker-perspective_poster.png"
-  url="/learning-hub/attacker-perspective/content"
-  title="Attacker Perspective"
-  style="border-color: #6D28D9; border-width: 10px; border-style: solid;">
-  <p>Learn how to think like someone who might try to be tricky or break the rules online. By learning their sneaky tricks, we can be one step ahead and become experts at keeping our games and secrets safe.</p>
-  </Card>
+        <Card
+          class="module-card module-card-at"
+          img="/images/03_authentication_poster.png"
+          url="/learning-hub/authentication/content"
+          title="Authentication"
+          style="border-color: #F59E0B; border-width: 10px; border-style: solid;">
+          <p>Understand passwords, secret codes, and why strong logins help protect your digital stuff.</p>
+        </Card>
 
-  <Card
-  img="/images/03_authentication_poster.png"
-  url="/learning-hub/authentication/conntent"
-  title="Authentication"
-  style="border-color: #F59E0B; border-width: 10px; border-style: solid;">
-  <p>Authentication is like having a secret password or a special key. It helps make sure only you or people you trust can get in and keeps your things safe.</p>
-  </Card>
+        <Card
+          class="module-card module-card-dp"
+          img="/images/04_data-privacy_poster.png"
+          url="/learning-hub/data-privacy/content"
+          title="Data Privacy"
+          style="border-color: #14B8A6; border-width: 10px; border-style: solid;">
+          <p>Learn what personal information is and how to keep it safe from people you do not know.</p>
+        </Card>
 
-  <Card
-  img="/images/04_data-privacy_poster.png"
-  url="/learning-hub/data-privacy/content"
-  title="Data Privacy"
-  style="border-color: #14B8A6; border-width: 10px; border-style: solid;">
-  <p>Data privacy means keeping your personal information, like your full name, where you live, or your birthday, a secret from people you don't know online. It's important to only share these things with your family or trusted grown-ups.</p>
-  </Card>
+        <Card
+          class="module-card module-card-se"
+          img="/images/05_social-engineering_poster.png"
+          url="/learning-hub/social-engineering/content"
+          title="Social Engineering"
+          style="border-color: #D946EF; border-width: 10px; border-style: solid;">
+          <p>Recognize tricks where someone pretends to be a friend so they can get your secrets.</p>
+        </Card>
 
-  <Card
-  img="/images/05_social-engineering_poster.png"
-  url="/learning-hub/social-engineering/content"
-  title="Social Engineering"
-  style="border-color: #D946EF; border-width: 10px; border-style: solid;">
-  <p>Social engineering is when someone online tries to trick you into telling them your secrets or clicking on something unsafe by pretending to be someone they're not, like a friend or a game character.</p>
-  </Card>
+        <Card
+          class="module-card module-card-mw"
+          img="/images/06_malware_poster.png"
+          url="/learning-hub/malware/content"
+          title="Malware"
+          style="border-color: #84CC16; border-width: 10px; border-style: solid;">
+          <p>Discover how to avoid digital germs that can make devices act sick or slow.</p>
+        </Card>
 
-  <Card
-  img="/images/06_malware_poster.png"
-  url="/learning-hub/malware/content"
-  title="Malware"
-  style="border-color: #84CC16; border-width: 10px; border-style: solid;">
-  <p>Malware is like a computer cold or germ that can make your computer or mobile sick. We can help keep devices healthy by not clicking on strange things.</p>
-  </Card>
+        <Card
+          class="module-card module-card-da"
+          img="/images/07_digital-abuse_poster.png"
+          url="/learning-hub/digital-abuse/content"
+          title="Digital Abuse"
+          style="border-color: #EF4444; border-width: 10px; border-style: solid;">
+          <p>Know what to do if someone is mean online and how to ask trusted grown-ups for help.</p>
+        </Card>
+      </div>
 
-  <Card
-  img="/images/07_digital-abuse_poster.png"
-  url="/learning-hub/digital-abuse/content"
-  title="Digital Abuse"
-  style="border-color: #EF4444; border-width: 10px; border-style: solid;">
-  <p>Digital abuse is when someone is mean, scary, or makes you feel bad using, like sending unkind messages or sharing pictures without asking. If this happens, you should always tell a trusted grown-up right away so they can help.</p>
-  </Card>
-</div>
+      <div class="section-title" id="interactive-challenges">
+        <div class="section-badge">
+          <Badge class="section-icon"><Icon class="m-3" name="lucide:land-plot" /></Badge>
+        </div>
+        <div>
+          <h2 class="section-heading">Interactive Challenges</h2>
+          <p class="section-subtitle">Hands-on missions that help students practice real-world cyber choices.</p>
+        </div>
+      </div>
 
-
-<span class="mt-28 mb-6" style="display: flex; align-items: center;">
-        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:land-plot" /></Badge>
-        <h1 class="font-bold mb-6" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">Interactive Challenges</h1>
-  </span>
-
-<div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 feature-card feature-content">
-        <Feature class="feature-dc" icon="lucide:blocks" title="Challenge #1"> 
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-dc" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 feature-card feature-content challenge-grid">
+        <Feature class="feature-dc" icon="lucide:blocks" title="GOOD or BAD Content to Post?">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.6">Digital Citizenship</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Practice helpful online behavior with a scenario-based mission and reflection prompts.</p>
+            <a class="button has-icon module-button module-dc" href="/learning-hub/digital-citizenship/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-        <Feature class="feature-ap" icon="lucide:blocks" title="Challenge #2"> 
-          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-ap" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+        <Feature class="feature-ap" icon="lucide:blocks" title="Build-A-Scam Workshop">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.6">Attacker Perspective</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Identify sneaky behavior and choose the safest response in a short story.</p>
+            <a class="button has-icon module-button module-ap" href="/learning-hub/attacker-perspective/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-        <Feature class="feature-at" icon="lucide:blocks" title="Challenge #3"> 
-          <Badge style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-auth" style="width: 100%" onclick="location.href='/learning-hub/authentication/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+        <Feature class="feature-at" icon="lucide:blocks" title="Password Lab">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.6">Authentication</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Build a strong password toolkit and spot weak logins quickly.</p>
+            <a class="button has-icon module-button module-auth" href="/learning-hub/authentication/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-        <Feature class="feature-dp" icon="lucide:blocks" title="Challenge #4">
-          <Badge style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0c958a; opacity: 0.5" class="mb-3">Data Privacy</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-privacy" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+        <Feature class="feature-dp" icon="lucide:blocks" title="Digital Footprint Sorter">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0c958a; opacity: 0.6">Data Privacy</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Decide what information is safe to share and what to keep private.</p>
+            <a class="button has-icon module-button module-privacy" href="/learning-hub/data-privacy/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-        <Feature class="feature-se" icon="lucide:blocks" title="Challenge #5">
-          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-se" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+        <Feature class="feature-se" icon="lucide:blocks" title="Phishing Case Files">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.6">Social Engineering</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Spot a fake friend and choose the safest next step.</p>
+            <a class="button has-icon module-button module-se" href="/learning-hub/social-engineering/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-        <Feature class="feature-mw" icon="lucide:blocks" title="Challenge #6">
-          <Badge style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-malware" style="width: 100%" onclick="location.href='/learning-hub/malware/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+        <Feature class="feature-mw" icon="lucide:blocks" title="uman Antivirus Defender">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.6">Malware</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Make smart choices to keep devices healthy and fast.</p>
+            <a class="button has-icon module-button module-malware" href="/learning-hub/malware/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-        <Feature class="feature-da" icon="lucide:blocks" title="Challenge #7">
-          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <p class="col-span-2 col-start-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon module-button module-abuse" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/challenge/'">
-            <Icon name="lucide:biceps-flexed" style="color: #FFF" />
-            Take the Challenge
+        <Feature class="feature-da" icon="lucide:blocks" title="Safety Dictionary">
+          <Badge class="challenge-badge" style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.6">Digital Abuse</Badge>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center">
+            <p class="col-span-2 col-start-1">Learn how to respond safely and when to ask trusted adults for help.</p>
+            <a class="button has-icon module-button module-abuse" href="/learning-hub/digital-abuse/challenge/" style="width: 100%">
+              <Icon name="lucide:biceps-flexed" />
+              Take the Challenge
+            </a>
           </div>
         </Feature>
-</div>
+      </div>
 
+      <div class="section-title" id="cybersecurity-games">
+        <div class="section-badge">
+          <Badge class="section-icon"><Icon class="m-3" name="lucide:gamepad-2" /></Badge>
+        </div>
+        <div>
+          <h2 class="section-heading">Cybersecurity Games</h2>
+          <p class="section-subtitle">Playful activities that reinforce each module with teamwork and curiosity.</p>
+        </div>
+      </div>
 
-<span class="mt-32 mb-6" style="display: flex; align-items: center;">
-        <Badge style="color: #FFF; background-color: #2563EB; border-color: #2563EB; font-size: 2.5em; font-weight: bold;" class="mb-5 mr-5"><Icon class="m-3" name="lucide:gamepad-2" /></Badge>
-        <h1 class="font-bold mb-6" style="font-weight: 900; text-decoration: underline; text-decoration-color: #2563EB;">Cybersecurity Games</h1>
-  </span>
-
-<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 feature-card feature-content game-grid">
         <Feature class="feature-dc" icon="lucide:blocks" title="Game #1">
-          <Badge style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.5" class="mb-3">Digital Citizenship</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-dc" style="width: 100%" onclick="location.href='/learning-hub/digital-citizenship/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #22C55E; font-weight: bold; border-color: #16A34A; opacity: 0.6">Digital Citizenship</Badge>
+          <p class="mt-6">Practice kindness and good online manners with a fast team activity.</p>
+          <a class="button has-icon mt-6 module-button module-dc" href="/learning-hub/digital-citizenship/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
         <Feature class="feature-ap" icon="lucide:puzzle" title="Game #2">
-          <Badge style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.5" class="mb-3">Attacker Perspective</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-ap" style="width: 100%" onclick="location.href='/learning-hub/attacker-perspective/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #6D28D9; font-weight: bold; border-color: #5B21B6; opacity: 0.6">Attacker Perspective</Badge>
+          <p class="mt-6">Find the fake link and defend your digital team together.</p>
+          <a class="button has-icon mt-6 module-button module-ap" href="/learning-hub/attacker-perspective/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
         <Feature class="feature-at" icon="lucide:library-big" title="Game #3">
-          <Badge style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.5" class="mb-3">Authentication</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-auth" style="width: 100%" onclick="location.href='/learning-hub/authentication/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #F59E0B; font-weight: bold; border-color: #D97706; opacity: 0.6">Authentication</Badge>
+          <p class="mt-6">Create the strongest password patterns in a classroom challenge.</p>
+          <a class="button has-icon mt-6 module-button module-auth" href="/learning-hub/authentication/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
         <Feature class="feature-dp" icon="lucide:library-big" title="Game #4">
-          <Badge style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.5" class="mb-3">Data Privacy</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-privacy" style="width: 100%" onclick="location.href='/learning-hub/data-privacy/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #14B8A6; font-weight: bold; border-color: #0D9488; opacity: 0.6">Data Privacy</Badge>
+          <p class="mt-6">Sort safe and unsafe info in a quick-fire team competition.</p>
+          <a class="button has-icon mt-6 module-button module-privacy" href="/learning-hub/data-privacy/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
         <Feature class="feature-se" icon="lucide:library-big" title="Game #5">
-          <Badge style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.5" class="mb-3">Social Engineering</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-se" style="width: 100%" onclick="location.href='/learning-hub/social-engineering/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #D946EF; font-weight: bold; border-color: #C026D3; opacity: 0.6">Social Engineering</Badge>
+          <p class="mt-6">Investigate messages to see which are safe and which are suspicious.</p>
+          <a class="button has-icon mt-6 module-button module-se" href="/learning-hub/social-engineering/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
         <Feature class="feature-mw" icon="lucide:library-big" title="Game #6">
-          <Badge style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.5" class="mb-3">Malware</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-malware" style="width: 100%" onclick="location.href='/learning-hub/malware/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #84CC16; font-weight: bold; border-color: #65A30D; opacity: 0.6">Malware</Badge>
+          <p class="mt-6">Keep your device healthy by spotting risky downloads fast.</p>
+          <a class="button has-icon mt-6 module-button module-malware" href="/learning-hub/malware/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
         <Feature class="feature-da" icon="lucide:library-big" title="Game #7">
-          <Badge style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.5" class="mb-3">Digital Abuse</Badge>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button has-icon mt-6 module-button module-abuse" style="width: 100%" onclick="location.href='/learning-hub/digital-abuse/game/'">
-            <Icon name="lucide:joystick" style="color: #FFF" />
+          <Badge class="game-badge" style="color: #FFF; background-color: #EF4444; font-weight: bold; border-color: #DC2626; opacity: 0.6">Digital Abuse</Badge>
+          <p class="mt-6">Build empathy and safety by practicing the right response steps.</p>
+          <a class="button has-icon mt-6 module-button module-abuse" href="/learning-hub/digital-abuse/game/" style="width: 100%">
+            <Icon name="lucide:joystick" />
             Play the Game
-            </button>
+          </a>
         </Feature>
-</div>
-
-
+      </div>
     </div>
   </section>
 </DefaultLayout>
 
 <style>
-  .home-learning :global(.module-button) {
+  
+
+  .home-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .intro-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--link-color);
+  }
+
+  .intro-title {
+    font-size: clamp(2.25rem, 1.8rem + 1.5vw, 3.25rem);
+    font-weight: 900;
+  }
+
+  .intro-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-neutral-700);
+  }
+
+  .intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .jump-pill {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 2px dashed var(--link-color);
+    font-weight: 700;
+    color: var(--link-color);
+    background: rgba(37, 99, 235, 0.08);
+    text-decoration: none;
+  }
+
+  .jump-pill:hover,
+  .jump-pill:focus-visible {
+    background: rgba(37, 99, 235, 0.16);
+  }
+
+  .intro-paths {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .path-card {
+    background: var(--color-neutral-100);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--elevation-2);
+    border: 3px solid var(--color-neutral-300);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .path-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-4);
+  }
+
+  .path-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--link-color);
+  }
+
+  .path-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .path-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .text-link {
+    color: var(--link-color);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .text-link:hover,
+  .text-link:focus-visible {
+    text-decoration: underline;
+  }
+
+  .intro-stats {
+    margin-top: 0.5rem;
+  }
+
+  .stat-card {
+    background: var(--color-neutral-100);
+    border-radius: 1rem;
+    border: 2px solid var(--color-neutral-300);
+    padding: 1rem;
+    display: grid;
+    gap: 0.35rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--link-color);
+  }
+
+  .stat-title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .stat-subtitle {
+    color: var(--color-neutral-700);
+  }
+
+  .home-how {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 3.5rem;
+    
+  }
+
+  .section-title.compact {
+    margin-top: 0;
+  }
+
+  .section-badge {
+    display: flex;
+    align-items: center;
+  }
+
+  .section-icon {
+    color: #fff;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+
+  .section-pill {
+    color: #fff;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-weight: 800;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .section-heading {
+    font-size: clamp(4rem, 1.5rem + 1vw, 2.75rem);
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+    margin-bottom: 0.7rem;
+  }
+
+  .section-subtitle {
+    color: var(--color-neutral-700);
+    font-size: 1.15rem;
+  }
+
+  .module-grid :global(.card) {
+    box-shadow: var(--elevation-2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .module-grid :global(.card:hover),
+  .module-grid :global(.card:focus-within) {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-4);
+  }
+
+  .module-grid :global(.card .image) {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .module-grid :global(.card .image::after) {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.00s ease;
+  }
+
+  .module-grid :global(.card:hover .image::after),
+  .module-grid :global(.card:focus-within .image::after) {
+    opacity: 1;
+  }
+
+  .module-grid :global(.card:hover .image img),
+  .module-grid :global(.card:focus-within .image img) {
+    opacity: 0;
+  }
+
+  .module-grid :global(.card .image img) {
+    transition: opacity 2.00s ease;
+  }
+
+  .module-grid :global(.module-card-dc .image::after) {
+    background-image: url('/images/01_digital-citizenship_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-ap .image::after) {
+    background-image: url('/images/02_attacker-perspective_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-at .image::after) {
+    background-image: url('/images/03_authentication_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-dp .image::after) {
+    background-image: url('/images/04_data-privacy_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-se .image::after) {
+    background-image: url('/images/05_social-engineering_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-mw .image::after) {
+    background-image: url('/images/06_malware_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-da .image::after) {
+    background-image: url('/images/07_digital-abuse_poster_hover.png');
+  }
+
+  .challenge-grid,
+  .game-grid {
+    margin-top: 1.5rem;
+  }
+
+  .challenge-badge,
+  .game-badge {
+    border-radius: 10px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  :global(.module-button) {
     color: #ffffff;
     border-color: transparent;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     border-radius: 10px;
   }
 
-  .home-learning :global(.module-button:hover) {
-    opacity: 0.7;
+  :global(.module-button [data-icon]) {
+    color: #ffffff;
   }
 
-  .home-learning :global(.module-dc) {
+  :global(.module-button:hover) {
+    opacity: 0.55;
+    transform: translateY(-2px);
+  }
+
+  :global(.button.is-outline) {
+    background: transparent;
+    color: var(--link-color);
+    border-color: var(--link-color);
+  }
+
+  :global(.button.is-outline:hover),
+  :global(.button.is-outline:focus-visible) {
+    background: rgba(37, 99, 235, 0.1);
+  }
+
+  :global(.module-dc) {
     background-color: #22c55e;
     border-color: #22c55e;
   }
 
-  .home-learning :global(.module-ap) {
+  :global(.module-ap) {
     background-color: #6d28d9;
     border-color: #6d28d9;
   }
 
-  .home-learning :global(.module-auth) {
+  :global(.module-auth) {
     background-color: #f59e0b;
     border-color: #f59e0b;
   }
 
-  .home-learning :global(.module-privacy) {
+  :global(.module-privacy) {
     background-color: #14b8a6;
     border-color: #14b8a6;
   }
 
-  .home-learning :global(.module-se) {
+  :global(.module-se) {
     background-color: #d946ef;
     border-color: #d946ef;
   }
 
-  .home-learning :global(.module-malware) {
+  :global(.module-malware) {
     background-color: #84cc16;
     border-color: #84cc16;
   }
 
-  .home-learning :global(.module-abuse) {
+  :global(.module-abuse) {
     background-color: #ef4444;
     border-color: #ef4444;
+  }
+
+  @media (max-width: 640px) {
+    .section-title {
+      grid-template-columns: 1fr;
+    }
+
+    .section-badge {
+      justify-content: flex-start;
+    }
   }
 </style>

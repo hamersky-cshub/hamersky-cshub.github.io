@@ -1,110 +1,365 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
+import { Badge } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Authentication">
   <PageHeader
       title="Authentication"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      subtitle="Authentication helps students understand how we prove who we are online. This module supports educators in teaching strong sign-in habits, why extra verification matters, and how to keep accounts protected."
       bgType="bordered"
   />
 
-<section class="my-12">
-    <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Authentication" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <section class="my-12">
+    <div class="container">
+      <div class="auth-grid auth-grid--two">
+        <div class="auth-panel">
+          <h2>Aims of the Module</h2>
+          <ul class="auth-list">
+            <li>Introduce the idea of identity and access in digital spaces.</li>
+            <li>Build habits for creating and protecting strong passwords.</li>
+            <li>Explain how extra verification improves account safety.</li>
+          </ul>
+        </div>
+        <div class="auth-panel">
+          <h2>Learning Outcomes</h2>
+          <ul class="auth-list">
+            <li>Define authentication and why it is used online.</li>
+            <li>Create a memorable, strong passphrase and store it safely.</li>
+            <li>Identify when to use multi-factor authentication and ask for help.</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="auth-section">
+        <div class="auth-section__header">
+          <h2>Module Content</h2>
+          <p class="auth-section__subtitle">Download materials for each submodule and preview what is included.</p>
+        </div>
+
+        <article class="auth-module">
+          <div class="auth-module__header">
+            <Badge class="auth-badge">#01</Badge>
+            <div>
+              <h3>Passwords & Passphrases</h3>
+              <p class="auth-goal"><b>Goal:</b> Help students create strong, memorable secrets and understand why reuse is risky.</p>
+            </div>
+          </div>
+
+          <div class="auth-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="auth-divider"><b>What's Included</b></div>
+
+          <div class="auth-grid auth-grid--four">
+            <div class="auth-card">
+              <h4>Resources</h4>
+              <ul class="auth-list">
+                <li><b>Poster:</b> "Passphrase recipe" steps.</li>
+                <li><b>Worksheet:</b> Password strength checklist.</li>
+              </ul>
+            </div>
+            <div class="auth-card">
+              <h4>Activity Plan</h4>
+              <ul class="auth-list">
+                <li><b>Activity #1:</b> Build a strong passphrase.</li>
+                <li><b>Activity #2:</b> Spot weak password habits.</li>
+              </ul>
+            </div>
+            <div class="auth-card">
+              <h4>Reading Material</h4>
+              <ul class="auth-list">
+                <li><b>Reading for Educators:</b> Teaching password hygiene.</li>
+                <li><b>Reading for Students:</b> Why secrets keep us safe.</li>
+              </ul>
+            </div>
+            <div class="auth-card">
+              <h4>Preparation Material</h4>
+              <ul class="auth-list">
+                <li><b>Material #1:</b> Vocabulary cards for key terms.</li>
+                <li><b>Material #2:</b> Scenario prompts for class discussion.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="auth-module">
+          <div class="auth-module__header">
+            <Badge class="auth-badge">#02</Badge>
+            <div>
+              <h3>Multi-Factor Authentication</h3>
+              <p class="auth-goal"><b>Goal:</b> Show how a second step protects accounts, even if a password is guessed.</p>
+            </div>
+          </div>
+
+          <div class="auth-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="auth-divider"><b>What's Included</b></div>
+
+          <div class="auth-grid auth-grid--four">
+            <div class="auth-card">
+              <h4>Resources</h4>
+              <ul class="auth-list">
+                <li><b>Diagram:</b> "Two-step login" flow.</li>
+                <li><b>Handout:</b> Examples of verification methods.</li>
+              </ul>
+            </div>
+            <div class="auth-card">
+              <h4>Activity Plan</h4>
+              <ul class="auth-list">
+                <li><b>Activity #1:</b> Match accounts to the right factor.</li>
+                <li><b>Activity #2:</b> Role-play a safe login.</li>
+              </ul>
+            </div>
+            <div class="auth-card">
+              <h4>Reading Material</h4>
+              <ul class="auth-list">
+                <li><b>Reading for Educators:</b> Why MFA reduces risk.</li>
+                <li><b>Reading for Students:</b> The "second lock" idea.</li>
+              </ul>
+            </div>
+            <div class="auth-card">
+              <h4>Preparation Material</h4>
+              <ul class="auth-list">
+                <li><b>Material #1:</b> Parent/guardian note on MFA.</li>
+                <li><b>Material #2:</b> Quick-start checklist for setups.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="auth-divider auth-divider--center"><b>Explore Other Topics</b></div>
+
+      <div class="auth-section">
+        <div class="auth-section__header">
+          <h2>Other Modules</h2>
+          <p class="auth-section__subtitle">Browse related modules and continue learning.</p>
+        </div>
+
+        <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content">
+          <article class="auth-module-card">
+            <h4>Digital Citizenship</h4>
+            <p class="auth-card-text">Build responsible habits for communication, sharing, and respectful online behavior.</p>
+            <a class="button has-icon auth-card-button" href="/learning-hub/digital-citizenship/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="auth-module-card">
+            <h4>Attacker Perspective</h4>
+            <p class="auth-card-text">Understand how trust can be misused and how to ask for help safely.</p>
+            <a class="button has-icon auth-card-button" href="/learning-hub/attacker-perspective/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="auth-module-card">
+            <h4>Data Privacy</h4>
+            <p class="auth-card-text">Learn what counts as personal data and how to keep it protected.</p>
+            <a class="button has-icon auth-card-button" href="/learning-hub/data-privacy/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="auth-module-card">
+            <h4>Social Engineering</h4>
+            <p class="auth-card-text">Practice spotting manipulation tactics and choosing safer responses.</p>
+            <a class="button has-icon auth-card-button" href="/learning-hub/social-engineering/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="auth-module-card">
+            <h4>Malware</h4>
+            <p class="auth-card-text">Discover how harmful software spreads and how to avoid it.</p>
+            <a class="button has-icon auth-card-button" href="/learning-hub/malware/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="auth-module-card">
+            <h4>Digital Abuse</h4>
+            <p class="auth-card-text">Recognize harmful online behavior and find support pathways.</p>
+            <a class="button has-icon auth-card-button" href="/learning-hub/digital-abuse/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+        </section>
       </div>
     </div>
-
-
-<h2 class="container mt-12">Other Modules</h2>
-
-  <Accordion class="container mt-6">
-    <AccordionItem class="container mb-4" title="Digital Citizenship">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Digital Citizenship</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/digital-citizenship/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Attacker Perspective">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Attacker Perspective</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/attacker-perspective/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Data Privacy">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Data Privacy</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/data-privacy/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Social Engineering">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Social Engineering</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/social-engineering/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Malware">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Malware</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/malware/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Digital Abuse">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Digital Abuse</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/digital-abuse/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-  </Accordion>
-
-</section>
+  </section>
 </DefaultLayout>
+
+<style>
+  .auth-grid {
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .auth-grid--two {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .auth-grid--four {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .auth-panel {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+  }
+
+  .auth-list {
+    margin-top: var(--space-s);
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .auth-section {
+    margin-top: var(--space-2xl);
+  }
+
+  .auth-section__header {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-l);
+  }
+
+  .auth-section__subtitle {
+    color: var(--color-neutral-700);
+  }
+
+  .auth-module {
+    border: 3px solid color-mix(in oklab, var(--brand-AT), black 10%);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), color-mix(in oklab, var(--brand-AT), white 78%));
+    box-shadow: var(--elevation-2);
+    margin-bottom: var(--space-xl);
+  }
+
+  .auth-module__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .auth-badge {
+    color: #fff;
+    background-color: var(--brand-AT);
+    border-color: color-mix(in oklab, var(--brand-AT), black 10%);
+    font-size: var(--font-size-2);
+    font-weight: 800;
+    padding: var(--space-3xs) var(--space-xs);
+  }
+
+  .auth-goal {
+    font-size: var(--font-size-0);
+    margin-top: var(--space-2xs);
+  }
+
+  .auth-module__download {
+    margin-top: var(--space-m);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-s);
+    border-radius: var(--radius-m);
+    border: 2px dashed color-mix(in oklab, var(--brand-AT), white 15%);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .auth-module__download .button {
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  .auth-module__download p {
+    margin: 0;
+    font-weight: 400;
+    width: 60%;
+  }
+
+  .auth-divider {
+    margin: var(--space-l) 0 var(--space-m);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--font-size--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-700);
+  }
+
+  .auth-divider::before,
+  .auth-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid color-mix(in oklab, var(--brand-AT), white 25%);
+  }
+
+  .auth-divider--center {
+    justify-content: center;
+  }
+
+  .auth-divider--center::before,
+  .auth-divider--center::after {
+    flex: 0.6;
+  }
+
+  .auth-card {
+    border: 2px solid color-mix(in oklab, var(--brand-AT), white 25%);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    background: var(--background-color);
+  }
+
+  .auth-module-card {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-m);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-content: start;
+  }
+
+  .auth-card-text {
+    color: var(--color-neutral-700);
+  }
+
+  .auth-card-button {
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+      margin-top: auto;
+  }
+</style>

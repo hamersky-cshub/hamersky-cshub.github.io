@@ -1,44 +1,365 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
+import { Badge } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Social Engineering">
   <PageHeader
       title="Social Engineering"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      subtitle="Social engineering is when someone uses pressure, tricks, or false trust to get information or access. This module helps educators teach students how to spot manipulation and respond safely."
       bgType="bordered"
   />
 
-<section class="my-12">
-    <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Social Egineering" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <section class="my-12">
+    <div class="container">
+      <div class="se-grid se-grid--two">
+        <div class="se-panel">
+          <h2>Aims of the Module</h2>
+          <ul class="se-list">
+            <li>Explain how manipulation can happen online and in person.</li>
+            <li>Identify common tactics like urgency, flattery, or authority.</li>
+            <li>Practice safe responses and help-seeking behavior.</li>
+          </ul>
+        </div>
+        <div class="se-panel">
+          <h2>Learning Outcomes</h2>
+          <ul class="se-list">
+            <li>Recognize pressure tactics used in messages or chats.</li>
+            <li>Use a pause-and-check routine before acting.</li>
+            <li>Know when and how to report suspicious behavior.</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="se-section">
+        <div class="se-section__header">
+          <h2>Module Content</h2>
+          <p class="se-section__subtitle">Download materials for each submodule and preview what is included.</p>
+        </div>
+
+        <article class="se-module">
+          <div class="se-module__header">
+            <Badge class="se-badge">#01</Badge>
+            <div>
+              <h3>Tricks, Pressure & Persuasion</h3>
+              <p class="se-goal"><b>Goal:</b> Help students spot common manipulation tactics used to gain trust or access.</p>
+            </div>
+          </div>
+
+          <div class="se-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="se-divider"><b>What's Included</b></div>
+
+          <div class="se-grid se-grid--four">
+            <div class="se-card">
+              <h4>Resources</h4>
+              <ul class="se-list">
+                <li><b>Poster:</b> "Red flags" checklist.</li>
+                <li><b>Cards:</b> Tactics and examples deck.</li>
+              </ul>
+            </div>
+            <div class="se-card">
+              <h4>Activity Plan</h4>
+              <ul class="se-list">
+                <li><b>Activity #1:</b> Spot the tactic game.</li>
+                <li><b>Activity #2:</b> Role-play safe responses.</li>
+              </ul>
+            </div>
+            <div class="se-card">
+              <h4>Reading Material</h4>
+              <ul class="se-list">
+                <li><b>Reading for Educators:</b> Recognizing influence tactics.</li>
+                <li><b>Reading for Students:</b> When a message feels off.</li>
+              </ul>
+            </div>
+            <div class="se-card">
+              <h4>Preparation Material</h4>
+              <ul class="se-list">
+                <li><b>Material #1:</b> Scenario scripts for discussion.</li>
+                <li><b>Material #2:</b> "Pause and check" reminder cards.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="se-module">
+          <div class="se-module__header">
+            <Badge class="se-badge">#02</Badge>
+            <div>
+              <h3>Verify, Report & Get Help</h3>
+              <p class="se-goal"><b>Goal:</b> Practice verifying information and choosing safe help pathways.</p>
+            </div>
+          </div>
+
+          <div class="se-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="se-divider"><b>What's Included</b></div>
+
+          <div class="se-grid se-grid--four">
+            <div class="se-card">
+              <h4>Resources</h4>
+              <ul class="se-list">
+                <li><b>Guide:</b> Verification steps for messages.</li>
+                <li><b>Handout:</b> Trusted adults and school contacts list.</li>
+              </ul>
+            </div>
+            <div class="se-card">
+              <h4>Activity Plan</h4>
+              <ul class="se-list">
+                <li><b>Activity #1:</b> Choose the safest next step.</li>
+                <li><b>Activity #2:</b> Create a class help map.</li>
+              </ul>
+            </div>
+            <div class="se-card">
+              <h4>Reading Material</h4>
+              <ul class="se-list">
+                <li><b>Reading for Educators:</b> Building reporting confidence.</li>
+                <li><b>Reading for Students:</b> It is okay to ask for help.</li>
+              </ul>
+            </div>
+            <div class="se-card">
+              <h4>Preparation Material</h4>
+              <ul class="se-list">
+                <li><b>Material #1:</b> Parent/guardian letter template.</li>
+                <li><b>Material #2:</b> Exit ticket reflection sheet.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="se-divider se-divider--center"><b>Explore Other Topics</b></div>
+
+      <div class="se-section">
+        <div class="se-section__header">
+          <h2>Other Modules</h2>
+          <p class="se-section__subtitle">Browse related modules and continue learning.</p>
+        </div>
+
+        <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content">
+          <article class="se-module-card">
+            <h4>Digital Citizenship</h4>
+            <p class="se-card-text">Build responsible habits for communication, sharing, and respectful online behavior.</p>
+            <a class="button has-icon se-card-button" href="/learning-hub/digital-citizenship/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="se-module-card">
+            <h4>Attacker Perspective</h4>
+            <p class="se-card-text">Understand how trust can be misused and how to ask for help safely.</p>
+            <a class="button has-icon se-card-button" href="/learning-hub/attacker-perspective/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="se-module-card">
+            <h4>Authentication</h4>
+            <p class="se-card-text">Learn how strong passwords and extra verification protect accounts.</p>
+            <a class="button has-icon se-card-button" href="/learning-hub/authentication/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="se-module-card">
+            <h4>Data Privacy</h4>
+            <p class="se-card-text">Learn what counts as personal data and how to keep it protected.</p>
+            <a class="button has-icon se-card-button" href="/learning-hub/data-privacy/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="se-module-card">
+            <h4>Malware</h4>
+            <p class="se-card-text">Discover how harmful software spreads and how to avoid it.</p>
+            <a class="button has-icon se-card-button" href="/learning-hub/malware/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="se-module-card">
+            <h4>Digital Abuse</h4>
+            <p class="se-card-text">Recognize harmful online behavior and find support pathways.</p>
+            <a class="button has-icon se-card-button" href="/learning-hub/digital-abuse/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+        </section>
       </div>
     </div>
-
-
-<Pagination
-  firstPage=""
-  previousPage=""
-  nextPage="/learning-hub/social-engineering/1"
-  lastPage="/learning-hub/social-engineering/3"
-  currentPage="0"
-  totalPages="3"
-  style="display: flex; justify-content: center;"
-/>
-
-</section>
+  </section>
 </DefaultLayout>
+
+<style>
+  .se-grid {
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .se-grid--two {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .se-grid--four {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .se-panel {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+  }
+
+  .se-list {
+    margin-top: var(--space-s);
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .se-section {
+    margin-top: var(--space-2xl);
+  }
+
+  .se-section__header {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-l);
+  }
+
+  .se-section__subtitle {
+    color: var(--color-neutral-700);
+  }
+
+  .se-module {
+    border: 3px solid color-mix(in oklab, var(--brand-SE), black 10%);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), color-mix(in oklab, var(--brand-SE), white 78%));
+    box-shadow: var(--elevation-2);
+    margin-bottom: var(--space-xl);
+  }
+
+  .se-module__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .se-badge {
+    color: #fff;
+    background-color: var(--brand-SE);
+    border-color: color-mix(in oklab, var(--brand-SE), black 10%);
+    font-size: var(--font-size-2);
+    font-weight: 800;
+    padding: var(--space-3xs) var(--space-xs);
+  }
+
+  .se-goal {
+    font-size: var(--font-size-0);
+    margin-top: var(--space-2xs);
+  }
+
+  .se-module__download {
+    margin-top: var(--space-m);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-s);
+    border-radius: var(--radius-m);
+    border: 2px dashed color-mix(in oklab, var(--brand-SE), white 15%);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .se-module__download .button {
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  .se-module__download p {
+    margin: 0;
+    font-weight: 400;
+    width: 60%;
+  }
+
+  .se-divider {
+    margin: var(--space-l) 0 var(--space-m);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--font-size--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-700);
+  }
+
+  .se-divider::before,
+  .se-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid color-mix(in oklab, var(--brand-SE), white 25%);
+  }
+
+  .se-divider--center {
+    justify-content: center;
+  }
+
+  .se-divider--center::before,
+  .se-divider--center::after {
+    flex: 0.6;
+  }
+
+  .se-card {
+    border: 2px solid color-mix(in oklab, var(--brand-SE), white 25%);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    background: var(--background-color);
+  }
+
+  .se-module-card {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-m);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-content: start;
+  }
+
+  .se-card-text {
+    color: var(--color-neutral-700);
+  }
+
+  .se-card-button {
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+      margin-top: auto;
+  }
+</style>

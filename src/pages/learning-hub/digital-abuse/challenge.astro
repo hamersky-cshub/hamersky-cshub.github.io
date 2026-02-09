@@ -1,34 +1,625 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
-import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
 ---
 
-<DefaultLayout title="Challenge #7">
+<DefaultLayout title="Safety Dictionary">
   <PageHeader
-      title="Challenge #7"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      title="Safety Dictionary"
+      subtitle="Pair each keyword with its definition. Learn the language of safety and what to do when something feels wrong online."
       bgType="bordered"
   />
 
 <section class="my-12">
     <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Citizenship" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">How It Works</h2>
+        <p>
+          Click a keyword, then click the definition that matches it. Get all 10 pairs to win.
+        </p>
+        <div class="tip-card">
+          Tip: If a message makes you feel scared, rushed, or confused, pause and talk to a trusted adult.
+        </div>
       </div>
+
+      <div class="game-shell">
+        <div class="game-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-label">Match Board</p>
+              <h3 class="panel-title">Digital Abuse Terms</h3>
+            </div>
+            <div class="progress-pill">
+              <span id="pair-count">0/10</span>
+            </div>
+          </div>
+
+          <div class="board">
+            <div>
+              <h4 class="board-title">Keywords</h4>
+              <div id="terms" class="board-grid" aria-live="polite">
+                Click Start to load the cards.
+              </div>
+            </div>
+            <div>
+              <h4 class="board-title">Definitions</h4>
+              <div id="definitions" class="board-grid">
+                Definitions will appear here.
+              </div>
+            </div>
+          </div>
+
+          <div id="match-feedback" class="match-feedback"> </div>
+
+          <div class="controls">
+            <div class="button-row">
+              <button id="btn-start" class="btn-primary">Start</button>
+              <button id="btn-reset" class="btn-secondary">Reset</button>
+            </div>
+            <button id="btn-shuffle" class="btn-ghost">Shuffle Cards</button>
+          </div>
+        </div>
+
+        <div class="score-panel">
+          <div class="score-header">
+            <h3 class="text-base font-semibold">Scoreboard</h3>
+            <span class="score-pill">Match Game</span>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-card">
+              <p class="score-label">Matches</p>
+              <p id="score" class="score-value">0</p>
+            </div>
+            <div class="score-card">
+              <p class="score-label">Tries</p>
+              <p id="tries" class="score-value">0</p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <p class="score-label">Safety Moves</p>
+            <div class="hint-list">
+              <div class="hint-item">Do not share passwords or your home address.</div>
+              <div class="hint-item">Block and report anyone who is mean or scary.</div>
+              <div class="hint-item">Save screenshots and show a trusted adult.</div>
+              <div class="hint-item">It is okay to stop chatting if you feel weird.</div>
+            </div>
+          </div>
+
+          <div class="challenge-card">
+            Challenge: After you finish, name one adult you can talk to if something feels unsafe online.
+          </div>
+        </div>
       </div>
     </div>
-
-
 </section>
+
+<style>
+  .tip-card {
+    border-radius: 0.9rem;
+    border: 1px solid #bae6fd;
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: #075985;
+  }
+  .game-shell {
+    display: grid;
+    gap: 2rem;
+  }
+  @media (min-width: 1024px) {
+    .game-shell {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+      align-items: start;
+    }
+  }
+  .game-panel,
+  .score-panel {
+    border-radius: 1.25rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  }
+  .panel-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .panel-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #64748b;
+    font-weight: 700;
+  }
+  .panel-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .progress-pill {
+    border-radius: 999px;
+    background: #ecfeff;
+    color: #155e75;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .board {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .board {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .board-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+  .board-grid {
+    display: grid;
+    gap: 0.75rem;
+    border-radius: 1rem;
+    border: 2px dashed #cbd5e1;
+    padding: 1rem;
+    min-height: 18rem;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.95rem;
+    align-items: start;
+    justify-items: start;
+  }
+  .match-card {
+    border-radius: 999px;
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    padding: 0.55rem 1.1rem 0.55rem 1.7rem;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    width: 100%;
+    position: relative;
+  }
+  .match-card::before {
+    content: '';
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: #94a3b8;
+  }
+  .match-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    border-color: #93c5fd;
+  }
+  .match-card.selected {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25);
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    color: #0b3b5c;
+  }
+  .match-card.matched {
+    border-color: #86efac;
+    background: #f0fdf4;
+    color: #166534;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+  }
+  .match-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .match-card:focus-visible {
+    outline: 3px solid rgba(14, 165, 233, 0.35);
+    outline-offset: 2px;
+  }
+  .match-feedback {
+    margin-top: 1rem;
+    font-weight: 700;
+    min-height: 1.5rem;
+    color: #0f172a;
+  }
+  .controls {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.6rem 1.1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary {
+    background: #0ea5e9;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 18px rgba(14, 165, 233, 0.25);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #0f172a;
+  }
+  .btn-secondary:hover {
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    border: 1px dashed #cbd5e1;
+    background: #f8fafc;
+    color: #475569;
+  }
+  .btn-ghost:hover {
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    transform: translateY(-1px);
+  }
+  .score-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .score-pill {
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.35rem 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .score-card {
+    border-radius: 0.9rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    padding: 1rem;
+    text-align: center;
+  }
+  .score-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #64748b;
+  }
+  .score-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .hint-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .hint-item {
+    border-radius: 0.85rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    color: #1f2937;
+  }
+  .challenge-card {
+    margin-top: 1.5rem;
+    border-radius: 0.9rem;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #475569;
+  }
+</style>
+
+<script is:inline>
+  const initDigitalAbuseMatch = () => {
+    const pairs = [
+    {
+      id: 'grooming',
+      term: 'Cyber Grooming',
+      definition: 'When someone builds trust online to get a kid to share private info or meet in person.'
+    },
+    {
+      id: 'privacy',
+      term: 'Digital Privacy',
+      definition: 'Keeping personal info like your name, address, and passwords safe online.'
+    },
+    {
+      id: 'catfishing',
+      term: 'Catfishing',
+      definition: 'Pretending to be someone else online to trick people.'
+    },
+    {
+      id: 'predator',
+      term: 'Online Predator',
+      definition: 'An adult who tries to harm or trick kids online.'
+    },
+    {
+      id: 'cyberbullying',
+      term: 'Cyberbullying',
+      definition: 'Using messages or posts to be mean, embarrass, or hurt someone.'
+    },
+    {
+      id: 'scam',
+      term: 'Scam',
+      definition: 'A trick to steal money, accounts, or personal information.'
+    },
+    {
+      id: 'exploitation',
+      term: 'Exploitation',
+      definition: 'Using someone online for your own benefit in an unfair or unsafe way.'
+    },
+    {
+      id: 'doxxing',
+      term: 'Doxxing',
+      definition: 'Sharing private info publicly without permission.'
+    },
+    {
+      id: 'impersonation',
+      term: 'Impersonation',
+      definition: 'Using another name or account to pretend to be them.'
+    },
+    {
+      id: 'threats',
+      term: 'Threats',
+      definition: 'Messages that scare or pressure someone to do something.'
+    }
+  ]
+
+    const termsEl = document.getElementById('terms')
+  const defsEl = document.getElementById('definitions')
+  const feedbackEl = document.getElementById('match-feedback')
+  const scoreEl = document.getElementById('score')
+  const triesEl = document.getElementById('tries')
+  const pairCountEl = document.getElementById('pair-count')
+
+  const startButton = document.getElementById('btn-start')
+  const resetButton = document.getElementById('btn-reset')
+  const shuffleButton = document.getElementById('btn-shuffle')
+
+  let selectedTerm = null
+  let selectedDef = null
+  let matched = new Set()
+  let tries = 0
+  let gameActive = false
+
+  const shuffle = (array) => {
+    const copy = [...array]
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = copy[i]
+      copy[i] = copy[j]
+      copy[j] = temp
+    }
+    return copy
+  }
+
+  const renderBoard = () => {
+    const termCards = shuffle(pairs)
+    const defCards = shuffle(pairs)
+
+    termsEl.innerHTML = ''
+    defsEl.innerHTML = ''
+
+    termCards.forEach((item) => {
+      const button = document.createElement('button')
+      button.type = 'button'
+      button.className = 'match-card'
+      button.dataset.type = 'term'
+      button.dataset.id = item.id
+      button.setAttribute('aria-pressed', 'false')
+      button.textContent = item.term
+      termsEl.appendChild(button)
+    })
+
+    defCards.forEach((item) => {
+      const button = document.createElement('button')
+      button.type = 'button'
+      button.className = 'match-card'
+      button.dataset.type = 'definition'
+      button.dataset.id = item.id
+      button.setAttribute('aria-pressed', 'false')
+      button.textContent = item.definition
+      defsEl.appendChild(button)
+    })
+  }
+
+  const clearSelections = () => {
+    selectedTerm = null
+    selectedDef = null
+    document.querySelectorAll('.match-card.selected').forEach((card) => {
+      card.classList.remove('selected')
+      card.setAttribute('aria-pressed', 'false')
+    })
+  }
+
+  const updateScore = () => {
+    scoreEl.textContent = String(matched.size)
+    triesEl.textContent = String(tries)
+    pairCountEl.textContent = `${matched.size}/10`
+  }
+
+  const showFeedback = (message, tone = 'neutral') => {
+    feedbackEl.textContent = message
+    if (tone === 'good') feedbackEl.style.color = '#15803d'
+    if (tone === 'bad') feedbackEl.style.color = '#b91c1c'
+    if (tone === 'neutral') feedbackEl.style.color = '#0f172a'
+  }
+
+  const markMatched = (id) => {
+    const cards = document.querySelectorAll(`.match-card[data-id="${id}"]`)
+    cards.forEach((card) => {
+      card.classList.remove('selected')
+      card.classList.add('matched')
+      card.disabled = true
+      card.classList.add('disabled')
+      card.setAttribute('aria-pressed', 'true')
+    })
+  }
+
+  const applyMatched = () => {
+    matched.forEach((id) => markMatched(id))
+  }
+
+  const handleMatchCheck = () => {
+    if (!selectedTerm || !selectedDef) return
+    tries += 1
+
+    if (selectedTerm === selectedDef) {
+      matched.add(selectedTerm)
+      markMatched(selectedTerm)
+      showFeedback('Correct! Nice match.', 'good')
+      updateScore()
+
+      if (matched.size === pairs.length) {
+        showFeedback('You matched them all! Great work.', 'good')
+      }
+      clearSelections()
+      return
+    }
+
+    showFeedback('Not quite. Try a different definition.', 'bad')
+    updateScore()
+    const selectedCards = document.querySelectorAll('.match-card.selected')
+    selectedCards.forEach((card) => {
+      card.classList.add('disabled')
+    })
+    setTimeout(() => {
+      selectedCards.forEach((card) => {
+        card.classList.remove('disabled')
+      })
+      clearSelections()
+    }, 600)
+  }
+
+  const handleCardClick = (event) => {
+    if (!gameActive) return
+    const target = event.target
+    if (!target.classList.contains('match-card')) return
+    if (target.disabled) return
+
+    const type = target.dataset.type
+    const id = target.dataset.id
+
+    if (type === 'term') {
+      document.querySelectorAll('.match-card[data-type="term"].selected').forEach((card) => {
+        card.classList.remove('selected')
+        card.setAttribute('aria-pressed', 'false')
+      })
+      target.classList.add('selected')
+      target.setAttribute('aria-pressed', 'true')
+      selectedTerm = id
+    }
+
+    if (type === 'definition') {
+      document.querySelectorAll('.match-card[data-type="definition"].selected').forEach((card) => {
+        card.classList.remove('selected')
+        card.setAttribute('aria-pressed', 'false')
+      })
+      target.classList.add('selected')
+      target.setAttribute('aria-pressed', 'true')
+      selectedDef = id
+    }
+
+    handleMatchCheck()
+  }
+
+  const startGame = () => {
+    matched = new Set()
+    tries = 0
+    gameActive = true
+    renderBoard()
+    applyMatched()
+    clearSelections()
+    updateScore()
+    showFeedback('Pick a keyword and a definition to begin!', 'neutral')
+  }
+
+  const resetGame = () => {
+    matched = new Set()
+    tries = 0
+    gameActive = false
+    termsEl.textContent = 'Click Start to load the cards.'
+    defsEl.textContent = 'Definitions will appear here.'
+    clearSelections()
+    updateScore()
+    showFeedback('Game reset. Click Start when you are ready.', 'neutral')
+  }
+
+  if (termsEl) {
+    termsEl.addEventListener('click', handleCardClick)
+  }
+  if (defsEl) {
+    defsEl.addEventListener('click', handleCardClick)
+  }
+
+  if (startButton) {
+    startButton.addEventListener('click', startGame)
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener('click', resetGame)
+  }
+
+  if (shuffleButton) {
+    shuffleButton.addEventListener('click', () => {
+      if (!gameActive) return
+      renderBoard()
+      applyMatched()
+      clearSelections()
+      showFeedback('Cards shuffled! Keep matching.', 'neutral')
+    })
+  }
+
+    updateScore()
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDigitalAbuseMatch)
+  } else {
+    initDigitalAbuseMatch()
+  }
+</script>
 </DefaultLayout>

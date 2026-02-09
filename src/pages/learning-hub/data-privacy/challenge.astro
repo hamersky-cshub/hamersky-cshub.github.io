@@ -1,34 +1,238 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
-import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
 ---
 
-<DefaultLayout title="Challenge #4">
+<DefaultLayout title="Digital Footprint Sorter">
   <PageHeader
-      title="Challenge #4"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      title="Digital Footprint Sorter"
+      subtitle="Decide what counts as a digital footprint and what does not. Keep score and learn how your online trail grows."
       bgType="bordered"
   />
 
 <section class="my-12">
     <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Citizenship" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">How It Works</h2>
+        <p>
+          Read each card and choose: "Digital Footprint" or "Not a Digital Footprint." Try to get 8 out of 10.
+        </p>
+        <p class="rounded-lg border border-sky-200 bg-sky-50 p-4 text-sm text-sky-900">
+          Reminder: A digital footprint is the trail you leave online, like posts, searches, and likes.
+        </p>
       </div>
+
+      <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="mb-3 text-base font-semibold">Footprint Examples</h3>
+          <div id="footprint-card" class="footprint-card" aria-live="polite">
+            Click Start to begin.
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-3">
+            <button id="btn-footprint" class="rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700">
+              Digital Footprint
+            </button>
+            <button id="btn-not" class="rounded-md bg-slate-600 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700">
+              Not a Digital Footprint
+            </button>
+          </div>
+
+          <div id="feedback" class="mt-4 text-sm font-semibold text-slate-700"> </div>
+
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-3">
+              <button id="btn-start" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                Start
+              </button>
+              <button id="btn-reset" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                Reset
+              </button>
+            </div>
+            <button id="btn-next" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" disabled>
+              Next Example
+            </button>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="text-base font-semibold">Scoreboard</h3>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">
+              Practice Only
+            </span>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-box">
+              <p class="score-label">Score</p>
+              <p id="score" class="score-value">0</p>
+            </div>
+            <div class="score-box">
+              <p class="score-label">Card</p>
+              <p id="card-count" class="score-value">0/10</p>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-lg border border-slate-100 bg-slate-50 p-4 text-xs text-slate-600">
+            Challenge: After you finish, name one way to shrink your footprint.
+          </div>
+        </div>
       </div>
     </div>
-
-
 </section>
+
+<style>
+  .footprint-card {
+    border-radius: 0.75rem;
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #1e293b;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+  }
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .score-box {
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    text-align: center;
+    background: #ffffff;
+  }
+  .score-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+  .score-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+</style>
+
+<script>
+  const cards = [
+    { text: 'Posting a photo on a game forum', answer: 'footprint' },
+    { text: 'Searching for a science project online', answer: 'footprint' },
+    { text: 'Talking to a friend at lunch with no phones', answer: 'not' },
+    { text: 'Liking a video on a streaming app', answer: 'footprint' },
+    { text: 'Writing your name on a paper worksheet', answer: 'not' },
+    { text: 'Sending a message in a class chat', answer: 'footprint' },
+    { text: 'Borrowing a library book in person', answer: 'not' },
+    { text: 'Joining a new app with your email', answer: 'footprint' },
+    { text: 'Walking your dog in the park', answer: 'not' },
+    { text: 'Commenting on a friend\'s post', answer: 'footprint' }
+  ]
+
+  const cardEl = document.getElementById('footprint-card')
+  const feedbackEl = document.getElementById('feedback')
+  const scoreEl = document.getElementById('score')
+  const countEl = document.getElementById('card-count')
+
+  const startButton = document.getElementById('btn-start')
+  const nextButton = document.getElementById('btn-next')
+  const resetButton = document.getElementById('btn-reset')
+  const footprintButton = document.getElementById('btn-footprint')
+  const notButton = document.getElementById('btn-not')
+
+  let current = 0
+  let score = 0
+  let answered = false
+
+  const shuffle = (array) => {
+    const copy = [...array]
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = copy[i]
+      copy[i] = copy[j]
+      copy[j] = temp
+    }
+    return copy
+  }
+
+  let deck = shuffle(cards)
+
+  const updateCard = () => {
+    const card = deck[current]
+    if (!card) {
+      cardEl.textContent = 'Great job! You finished all cards.'
+      nextButton.disabled = true
+      return
+    }
+    cardEl.textContent = card.text
+    feedbackEl.textContent = ''
+    answered = false
+    nextButton.disabled = true
+    countEl.textContent = `${current + 1}/10`
+  }
+
+  const handleAnswer = (choice) => {
+    if (answered) return
+    const card = deck[current]
+    if (!card) return
+    answered = true
+
+    if (card.answer === choice) {
+      score += 1
+      feedbackEl.textContent = 'Correct!'
+      feedbackEl.style.color = '#15803d'
+    } else {
+      feedbackEl.textContent = 'Not quite.'
+      feedbackEl.style.color = '#b91c1c'
+    }
+
+    scoreEl.textContent = String(score)
+    nextButton.disabled = false
+  }
+
+  if (startButton) {
+    startButton.addEventListener('click', () => {
+      current = 0
+      score = 0
+      deck = shuffle(cards)
+      scoreEl.textContent = '0'
+      countEl.textContent = '1/10'
+      updateCard()
+    })
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener('click', () => {
+      current += 1
+      updateCard()
+    })
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener('click', () => {
+      current = 0
+      score = 0
+      deck = shuffle(cards)
+      cardEl.textContent = 'Click Start to begin.'
+      feedbackEl.textContent = ''
+      scoreEl.textContent = '0'
+      countEl.textContent = '0/10'
+      nextButton.disabled = true
+      answered = false
+    })
+  }
+
+  if (footprintButton) {
+    footprintButton.addEventListener('click', () => handleAnswer('footprint'))
+  }
+
+  if (notButton) {
+    notButton.addEventListener('click', () => handleAnswer('not'))
+  }
+</script>
 </DefaultLayout>

@@ -1,110 +1,365 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
 import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
+import { Badge } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Digital Abuse">
   <PageHeader
       title="Digital Abuse"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      subtitle="Digital abuse includes harmful behavior online such as threats, harassment, or unwanted contact. This module helps educators teach students to recognize unsafe behavior, set boundaries, and find support."
       bgType="bordered"
   />
 
-<section class="my-12">
-    <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Abuse">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <section class="my-12">
+    <div class="container">
+      <div class="da-grid da-grid--two">
+        <div class="da-panel">
+          <h2>Aims of the Module</h2>
+          <ul class="da-list">
+            <li>Define digital abuse in age-appropriate, supportive terms.</li>
+            <li>Recognize warning signs and unhealthy online behaviors.</li>
+            <li>Practice safe help-seeking and reporting steps.</li>
+          </ul>
+        </div>
+        <div class="da-panel">
+          <h2>Learning Outcomes</h2>
+          <ul class="da-list">
+            <li>Identify behaviors that cross boundaries or cause harm.</li>
+            <li>Use simple safety steps like blocking or reporting.</li>
+            <li>Know trusted adults and support channels to reach out to.</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="da-section">
+        <div class="da-section__header">
+          <h2>Module Content</h2>
+          <p class="da-section__subtitle">Download materials for each submodule and preview what is included.</p>
+        </div>
+
+        <article class="da-module">
+          <div class="da-module__header">
+            <Badge class="da-badge">#01</Badge>
+            <div>
+              <h3>Recognizing Harmful Online Behavior</h3>
+              <p class="da-goal"><b>Goal:</b> Help students identify behaviors that are unsafe, intimidating, or harmful.</p>
+            </div>
+          </div>
+
+          <div class="da-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="da-divider"><b>What's Included</b></div>
+
+          <div class="da-grid da-grid--four">
+            <div class="da-card">
+              <h4>Resources</h4>
+              <ul class="da-list">
+                <li><b>Poster:</b> Examples of harmful behavior.</li>
+                <li><b>Cards:</b> Boundary and safety scenarios.</li>
+              </ul>
+            </div>
+            <div class="da-card">
+              <h4>Activity Plan</h4>
+              <ul class="da-list">
+                <li><b>Activity #1:</b> Safe vs. unsafe sorting.</li>
+                <li><b>Activity #2:</b> "How would you respond?" discussion.</li>
+              </ul>
+            </div>
+            <div class="da-card">
+              <h4>Reading Material</h4>
+              <ul class="da-list">
+                <li><b>Reading for Educators:</b> Trauma-informed conversations.</li>
+                <li><b>Reading for Students:</b> Your boundaries matter.</li>
+              </ul>
+            </div>
+            <div class="da-card">
+              <h4>Preparation Material</h4>
+              <ul class="da-list">
+                <li><b>Material #1:</b> Classroom support map.</li>
+                <li><b>Material #2:</b> Vocabulary and definitions.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="da-module">
+          <div class="da-module__header">
+            <Badge class="da-badge">#02</Badge>
+            <div>
+              <h3>Support, Reporting & Recovery</h3>
+              <p class="da-goal"><b>Goal:</b> Reinforce steps for getting help, documenting issues, and restoring safety.</p>
+            </div>
+          </div>
+
+          <div class="da-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a class="button has-icon" href="/learning-hub/introduction">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="da-divider"><b>What's Included</b></div>
+
+          <div class="da-grid da-grid--four">
+            <div class="da-card">
+              <h4>Resources</h4>
+              <ul class="da-list">
+                <li><b>Guide:</b> Reporting and blocking steps.</li>
+                <li><b>Handout:</b> Trusted adults and support hotlines.</li>
+              </ul>
+            </div>
+            <div class="da-card">
+              <h4>Activity Plan</h4>
+              <ul class="da-list">
+                <li><b>Activity #1:</b> Build a safety plan.</li>
+                <li><b>Activity #2:</b> Practice asking for help.</li>
+              </ul>
+            </div>
+            <div class="da-card">
+              <h4>Reading Material</h4>
+              <ul class="da-list">
+                <li><b>Reading for Educators:</b> Responding to disclosures.</li>
+                <li><b>Reading for Students:</b> You are not alone.</li>
+              </ul>
+            </div>
+            <div class="da-card">
+              <h4>Preparation Material</h4>
+              <ul class="da-list">
+                <li><b>Material #1:</b> Family support letter template.</li>
+                <li><b>Material #2:</b> Reflection worksheet.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="da-divider da-divider--center"><b>Explore Other Topics</b></div>
+
+      <div class="da-section">
+        <div class="da-section__header">
+          <h2>Other Modules</h2>
+          <p class="da-section__subtitle">Browse related modules and continue learning.</p>
+        </div>
+
+        <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content">
+          <article class="da-module-card">
+            <h4>Digital Citizenship</h4>
+            <p class="da-card-text">Build responsible habits for communication, sharing, and respectful online behavior.</p>
+            <a class="button has-icon da-card-button" href="/learning-hub/digital-citizenship/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="da-module-card">
+            <h4>Attacker Perspective</h4>
+            <p class="da-card-text">Understand how trust can be misused and how to ask for help safely.</p>
+            <a class="button has-icon da-card-button" href="/learning-hub/attacker-perspective/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="da-module-card">
+            <h4>Authentication</h4>
+            <p class="da-card-text">Learn how strong passwords and extra verification protect accounts.</p>
+            <a class="button has-icon da-card-button" href="/learning-hub/authentication/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="da-module-card">
+            <h4>Data Privacy</h4>
+            <p class="da-card-text">Learn what counts as personal data and how to keep it protected.</p>
+            <a class="button has-icon da-card-button" href="/learning-hub/data-privacy/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="da-module-card">
+            <h4>Social Engineering</h4>
+            <p class="da-card-text">Practice spotting manipulation tactics and choosing safer responses.</p>
+            <a class="button has-icon da-card-button" href="/learning-hub/social-engineering/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+
+          <article class="da-module-card">
+            <h4>Malware</h4>
+            <p class="da-card-text">Discover how harmful software spreads and how to avoid it.</p>
+            <a class="button has-icon da-card-button" href="/learning-hub/malware/content">
+              <Icon name="lucide:book-marked" />
+              Start Learning
+            </a>
+          </article>
+        </section>
       </div>
     </div>
-
-
-<h2 class="container mt-12">Other Modules</h2>
-
-  <Accordion class="container mt-6">
-    <AccordionItem class="container mb-4" title="Digital Citizenship">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Digital Citizenship</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/digital-citizenship/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Attacker Perspective">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Attacker Perspective</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/attacker-perspective/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Authentication">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Authentication</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/authentication/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Data Privacy">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Data Privacy</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/data Privacy/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Social Engineering">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Social Engineering</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/social-engineering/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-
-    <AccordionItem class="container mb-4" title="Malware">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="column-gap: 7rem; align-items: center;">
-      <h4 class="mb-3" style="font-weight: 900;">Malware</h4>
-      <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="button has-icon" href="/learning-hub/malware/introduction">
-    <Icon name="lucide:book-marked" />
-    Start Learning
-    </a>
-    </div>
-    </div>
-    </AccordionItem>
-  </Accordion>
-
-</section>
+  </section>
 </DefaultLayout>
+
+<style>
+  .da-grid {
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .da-grid--two {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .da-grid--four {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .da-panel {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+  }
+
+  .da-list {
+    margin-top: var(--space-s);
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .da-section {
+    margin-top: var(--space-2xl);
+  }
+
+  .da-section__header {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-l);
+  }
+
+  .da-section__subtitle {
+    color: var(--color-neutral-700);
+  }
+
+  .da-module {
+    border: 3px solid color-mix(in oklab, var(--brand-DA), black 10%);
+    border-radius: var(--radius-l);
+    padding: var(--space-l);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), color-mix(in oklab, var(--brand-DA), white 78%));
+    box-shadow: var(--elevation-2);
+    margin-bottom: var(--space-xl);
+  }
+
+  .da-module__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .da-badge {
+    color: #fff;
+    background-color: var(--brand-DA);
+    border-color: color-mix(in oklab, var(--brand-DA), black 10%);
+    font-size: var(--font-size-2);
+    font-weight: 800;
+    padding: var(--space-3xs) var(--space-xs);
+  }
+
+  .da-goal {
+    font-size: var(--font-size-0);
+    margin-top: var(--space-2xs);
+  }
+
+  .da-module__download {
+    margin-top: var(--space-m);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-s);
+    border-radius: var(--radius-m);
+    border: 2px dashed color-mix(in oklab, var(--brand-DA), white 15%);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .da-module__download .button {
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  .da-module__download p {
+    margin: 0;
+    font-weight: 400;
+    width: 60%;
+  }
+
+  .da-divider {
+    margin: var(--space-l) 0 var(--space-m);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--font-size--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-700);
+  }
+
+  .da-divider::before,
+  .da-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid color-mix(in oklab, var(--brand-DA), white 25%);
+  }
+
+  .da-divider--center {
+    justify-content: center;
+  }
+
+  .da-divider--center::before,
+  .da-divider--center::after {
+    flex: 0.6;
+  }
+
+  .da-card {
+    border: 2px solid color-mix(in oklab, var(--brand-DA), white 25%);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    background: var(--background-color);
+  }
+
+  .da-module-card {
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+    padding: var(--space-m);
+    background: var(--background-color);
+    box-shadow: var(--elevation-1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-content: start;
+  }
+
+  .da-card-text {
+    color: var(--color-neutral-700);
+  }
+
+  .da-card-button {
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+      margin-top: auto;
+  }
+</style>

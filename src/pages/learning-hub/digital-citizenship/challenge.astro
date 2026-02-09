@@ -4,26 +4,22 @@ import PageHeader from '@components/PageHeader.astro'
 import FlashCardQuiz from '@components/FlashCardQuiz_DigitalCitizenship.astro'
 ---
 
-<DefaultLayout title="Digital Citizenship Flash Cards">
+<DefaultLayout title="GOOD or BAD Content to Post?">
   <PageHeader
-      title="GOOD and BAD Content to Post"
+      title="GOOD or BAD Content to Post?"
       subtitle="Use these flash cards to practice safe digital citizenship. Read each scenario and decide if the post is okay to share online."
       bgType="bordered"
   />
 
 <section class="my-12">
     <div class="container mb-12">
-      <h2 class="mb-6">Practice Before You Post</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Citizenship" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Good digital citizens share content that is kind, respectful, and safe. Before posting, think about privacy, feelings, and whether the information should stay private.</p>
-
-      <p>These flash cards help kids practice deciding what is appropriate to share online. Choose the best option and read the feedback to learn why.</p>
-      </div>
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">How It Works</h2>
+        <p>
+          Pick the best choice for each card. Think about privacy, kindness, and safety.
+        </p>
       </div>
     </div>
-
     <FlashCardQuiz />
 </section>
 </DefaultLayout>

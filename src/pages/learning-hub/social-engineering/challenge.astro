@@ -1,34 +1,412 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Accordion, AccordionItem, Card, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
-import ContentMedia from '@components/ContentMedia.astro'
-import { Icon } from 'astro-icon/components'
-import { Pagination } from 'accessible-astro-components'
 ---
 
-<DefaultLayout title="Challenge #5">
+<DefaultLayout title="Phishing Case Files">
   <PageHeader
-      title="Challenge #5"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      title="Phishing Case Files"
+      subtitle="Become a message detective. Read each case file and decide if it is safe or a phishing trick."
       bgType="bordered"
   />
 
 <section class="my-12">
     <div class="container mb-12">
-      <h2 class="mb-6">Lorem Ipsum</h2>
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <img src="/images/20945658.jpg" alt="Digital Citizenship" />
-      <div class="flex flex-col items-center gap-8 md:items-start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in fvoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">How It Works</h2>
+        <p>
+          Each case file has a message plus clues. Choose "Safe" or "Phishing" and collect evidence.
+        </p>
+        <p class="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+          Safety note: Real services never ask for passwords in messages.
+        </p>
       </div>
+
+      <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Case File</p>
+              <h3 class="text-lg font-semibold text-slate-900">Inbox Investigation</h3>
+            </div>
+            <div class="case-badge">
+              <span id="case-count">0/8</span>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-header">
+              <div>
+                <p class="case-label">From</p>
+                <p id="case-from" class="case-value">Click Start to begin</p>
+              </div>
+              <div>
+                <p class="case-label">Subject</p>
+                <p id="case-subject" class="case-value"> </p>
+              </div>
+            </div>
+            <div>
+              <p class="case-label">Message</p>
+              <div id="case-message" class="case-message">
+                Your message will appear here.
+              </div>
+            </div>
+            <div class="case-footer">
+              <div>
+                <p class="case-label">Link shown</p>
+                <p id="case-link" class="case-value"> </p>
+              </div>
+              <div>
+                <p class="case-label">Feeling</p>
+                <p id="case-feeling" class="case-value"> </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <button id="btn-safe" class="rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700">
+              Safe Message
+            </button>
+            <button id="btn-phish" class="rounded-md bg-rose-600 px-4 py-2 text-sm font-semibold text-white hover:bg-rose-700">
+              Phishing Trick
+            </button>
+          </div>
+
+          <div id="case-feedback" class="mt-4 text-sm font-semibold text-slate-700"> </div>
+
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-3">
+              <button id="btn-start" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                Start
+              </button>
+              <button id="btn-reset" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                Reset
+              </button>
+            </div>
+            <button id="btn-next" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" disabled>
+              Next Case
+            </button>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="text-base font-semibold">Evidence Board</h3>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">
+              Detective Tools
+            </span>
+          </div>
+
+          <div class="evidence-grid">
+            <div class="evidence-card">
+              <p class="evidence-label">Score</p>
+              <p id="score" class="evidence-value">0</p>
+            </div>
+            <div class="evidence-card">
+              <p class="evidence-label">Cases</p>
+              <p id="case-progress" class="evidence-value">0/8</p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Common Red Flags</p>
+            <div class="mt-3 grid grid-cols-1 gap-3">
+              <div class="flag-item">Urgent deadline or threats</div>
+              <div class="flag-item">Strange link or misspelled web address</div>
+              <div class="flag-item">Asks for passwords or private info</div>
+              <div class="flag-item">Too-good-to-be-true rewards</div>
+              <div class="flag-item">Download this file to fix it</div>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-lg border border-slate-100 bg-slate-50 p-4 text-xs text-slate-600">
+            Challenge: Circle the biggest red flag in each case.
+          </div>
+        </div>
       </div>
     </div>
-
-
 </section>
+
+<style>
+  .case-badge {
+    border-radius: 9999px;
+    background: #e0e7ff;
+    color: #312e81;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .case-card {
+    border-radius: 1rem;
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    padding: 1.25rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .case-header,
+  .case-footer {
+    display: grid;
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .case-header,
+    .case-footer {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .case-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+  .case-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .case-message {
+    border-radius: 0.75rem;
+    background: #ffffff;
+    padding: 0.9rem;
+    border: 1px solid #e2e8f0;
+    line-height: 1.45;
+    color: #0f172a;
+  }
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .evidence-card {
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    text-align: center;
+    background: #ffffff;
+  }
+  .evidence-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+  .evidence-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .flag-item {
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    color: #1f2937;
+    background: #ffffff;
+  }
+</style>
+
+<script>
+  const cases = [
+    {
+      from: 'School Tech Desk <support@school-logn.com>',
+      subject: 'Account locked in 30 minutes',
+      message: 'We saw a strange login. Fix it now or your account will lock. Click below to verify.',
+      link: 'http://school-logn.com/reset',
+      feeling: 'Urgent',
+      answer: 'phish',
+      reason: 'Misspelled school domain and pressure to act fast.'
+    },
+    {
+      from: 'Mrs. Patel <mpatel@districtschools.org>',
+      subject: 'Class slideshow available',
+      message: 'Slides from today are posted on the class site. No reply needed.',
+      link: 'class site (no link in message)',
+      feeling: 'Normal',
+      answer: 'safe',
+      reason: 'From a real school domain and no request for personal info.'
+    },
+    {
+      from: 'Game Center <rewards@game-center.com>',
+      subject: 'You won 1,000 gems!',
+      message: 'Claim now! Log in with your username and password to get your prize before midnight.',
+      link: 'http://game-center-rewards.net/claim',
+      feeling: 'Excited',
+      answer: 'phish',
+      reason: 'Too-good-to-be-true prize and asks for password.'
+    },
+    {
+      from: 'Bank Alert <security@banking-safe.net>',
+      subject: 'Unusual charge: confirm now',
+      message: 'We need your full name, birthday, and card number to stop fraud. Reply now.',
+      link: 'Reply to this message',
+      feeling: 'Worried',
+      answer: 'phish',
+      reason: 'Requests private info through a message.'
+    },
+    {
+      from: 'Library <noreply@citylibrary.org>',
+      subject: 'Book due Friday',
+      message: 'Friendly reminder: your book is due Friday. Bring it back or renew in person.',
+      link: 'None',
+      feeling: 'Calm',
+      answer: 'safe',
+      reason: 'Normal reminder with no links or data requests.'
+    },
+    {
+      from: 'Video Stream <billing@streamnow.info>',
+      subject: 'Payment failed: update card',
+      message: 'Update your payment right away to avoid losing access. Click the link.',
+      link: 'http://streamnow-billing.info/update',
+      feeling: 'Urgent',
+      answer: 'phish',
+      reason: 'Odd domain and urgent payment request.'
+    },
+    {
+      from: 'Coach Lee <coach.lee@districtschools.org>',
+      subject: 'Practice moved to 4 PM',
+      message: 'Practice time changed today. Bring your water bottle.',
+      link: 'None',
+      feeling: 'Normal',
+      answer: 'safe',
+      reason: 'Trusted sender and no links or private info.'
+    },
+    {
+      from: 'Tech Fix <helpdesk@fast-fix.com>',
+      subject: 'Virus found on your device',
+      message: 'Download this file and run it to remove the virus immediately.',
+      link: 'http://fast-fix.com/download',
+      feeling: 'Scared',
+      answer: 'phish',
+      reason: 'Unexpected download request is risky.'
+    }
+  ]
+
+  const fromEl = document.getElementById('case-from')
+  const subjectEl = document.getElementById('case-subject')
+  const messageEl = document.getElementById('case-message')
+  const linkEl = document.getElementById('case-link')
+  const feelingEl = document.getElementById('case-feeling')
+  const feedbackEl = document.getElementById('case-feedback')
+  const scoreEl = document.getElementById('score')
+  const progressEl = document.getElementById('case-progress')
+  const countEl = document.getElementById('case-count')
+
+  const startButton = document.getElementById('btn-start')
+  const nextButton = document.getElementById('btn-next')
+  const resetButton = document.getElementById('btn-reset')
+  const safeButton = document.getElementById('btn-safe')
+  const phishButton = document.getElementById('btn-phish')
+
+  let current = 0
+  let score = 0
+  let answered = false
+
+  const shuffle = (array) => {
+    const copy = [...array]
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = copy[i]
+      copy[i] = copy[j]
+      copy[j] = temp
+    }
+    return copy
+  }
+
+  let deck = shuffle(cases)
+
+  const updateCase = () => {
+    const item = deck[current]
+    if (!item) {
+      fromEl.textContent = 'Case closed!'
+      subjectEl.textContent = 'All messages reviewed.'
+      messageEl.textContent = 'Great work, detective. You finished every case file.'
+      linkEl.textContent = 'None'
+      feelingEl.textContent = 'Proud'
+      nextButton.disabled = true
+      return
+    }
+
+    fromEl.textContent = item.from
+    subjectEl.textContent = item.subject
+    messageEl.textContent = item.message
+    linkEl.textContent = item.link
+    feelingEl.textContent = item.feeling
+    feedbackEl.textContent = ''
+    feedbackEl.style.color = '#0f172a'
+    answered = false
+    nextButton.disabled = true
+    countEl.textContent = `${current + 1}/8`
+    progressEl.textContent = `${current + 1}/8`
+  }
+
+  const handleAnswer = (choice) => {
+    if (answered) return
+    const item = deck[current]
+    if (!item) return
+    answered = true
+
+    if (item.answer === choice) {
+      score += 1
+      feedbackEl.textContent = `Correct! ${item.reason}`
+      feedbackEl.style.color = '#15803d'
+    } else {
+      const hint = item.answer === 'phish' ? 'This one is phishing.' : 'This one is safe.'
+      feedbackEl.textContent = `${hint} ${item.reason}`
+      feedbackEl.style.color = '#b91c1c'
+    }
+
+    scoreEl.textContent = String(score)
+    nextButton.disabled = false
+  }
+
+  if (startButton) {
+    startButton.addEventListener('click', () => {
+      current = 0
+      score = 0
+      deck = shuffle(cases)
+      scoreEl.textContent = '0'
+      updateCase()
+    })
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener('click', () => {
+      current += 1
+      updateCase()
+    })
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener('click', () => {
+      current = 0
+      score = 0
+      deck = shuffle(cases)
+      fromEl.textContent = 'Click Start to begin'
+      subjectEl.textContent = ' '
+      messageEl.textContent = 'Your message will appear here.'
+      linkEl.textContent = ' '
+      feelingEl.textContent = ' '
+      feedbackEl.textContent = ''
+      scoreEl.textContent = '0'
+      progressEl.textContent = '0/8'
+      countEl.textContent = '0/8'
+      nextButton.disabled = true
+      answered = false
+    })
+  }
+
+  if (safeButton) {
+    safeButton.addEventListener('click', () => handleAnswer('safe'))
+  }
+
+  if (phishButton) {
+    phishButton.addEventListener('click', () => handleAnswer('phish'))
+  }
+</script>
 </DefaultLayout>

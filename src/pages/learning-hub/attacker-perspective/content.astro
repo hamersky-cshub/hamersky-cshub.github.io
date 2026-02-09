@@ -150,11 +150,11 @@ import { Badge } from 'accessible-astro-components'
         <p class="ap-section__subtitle">Browse related modules and continue learning.</p>
       </div>
 
-    <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content" style="align-items: center">
+    <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content">
       <article class="ap-module-card">
         <h4>Digital Citizenship</h4>
         <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="button has-icon ap-card-button" href="/learning-hub/digital-citizenship/introduction">
+        <a class="button has-icon ap-card-button" href="/learning-hub/digital-citizenship/content">
           <Icon name="lucide:book-marked" />
           Start Learning
         </a>
@@ -163,7 +163,7 @@ import { Badge } from 'accessible-astro-components'
       <article class="ap-module-card">
         <h4>Authentication</h4>
         <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="button has-icon ap-card-button" href="/learning-hub/authentication/introduction">
+        <a class="button has-icon ap-card-button" href="/learning-hub/authentication/content">
           <Icon name="lucide:book-marked" />
           Start Learning
         </a>
@@ -172,7 +172,7 @@ import { Badge } from 'accessible-astro-components'
       <article class="ap-module-card">
         <h4>Data Privacy</h4>
         <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="button has-icon ap-card-button" href="/learning-hub/data-privacy/introduction">
+        <a class="button has-icon ap-card-button" href="/learning-hub/data-privacy/content">
           <Icon name="lucide:book-marked" />
           Start Learning
         </a>
@@ -181,7 +181,7 @@ import { Badge } from 'accessible-astro-components'
       <article class="ap-module-card">
         <h4>Social Engineering</h4>
         <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="button has-icon ap-card-button" href="/learning-hub/social-engineering/introduction">
+        <a class="button has-icon ap-card-button" href="/learning-hub/social-engineering/content">
           <Icon name="lucide:book-marked" />
           Start Learning
         </a>
@@ -190,7 +190,7 @@ import { Badge } from 'accessible-astro-components'
       <article class="ap-module-card">
         <h4>Malware</h4>
         <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="button has-icon ap-card-button" href="/learning-hub/malware/introduction">
+        <a class="button has-icon ap-card-button" href="/learning-hub/malware/content">
           <Icon name="lucide:book-marked" />
           Start Learning
         </a>
@@ -199,7 +199,7 @@ import { Badge } from 'accessible-astro-components'
       <article class="ap-module-card">
         <h4>Digital Abuse</h4>
         <p class="ap-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="button has-icon ap-card-button" href="/learning-hub/digital-abuse/introduction">
+        <a class="button has-icon ap-card-button" href="/learning-hub/digital-abuse/content">
           <Icon name="lucide:book-marked" />
           Start Learning
         </a>
@@ -351,7 +351,8 @@ import { Badge } from 'accessible-astro-components'
     padding: var(--space-m);
     background: var(--background-color);
     box-shadow: var(--elevation-1);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-s);
     align-content: start;
   }
@@ -364,6 +365,7 @@ import { Badge } from 'accessible-astro-components'
     width: 100%;
     justify-content: center;
     border-radius: 10px;
+      margin-top: auto;
   }
 
   @media (max-width: 1200px) {
