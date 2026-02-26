@@ -1,17 +1,28 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
-<DefaultLayout title="404">
-  <section class="my-12">
-    <div class="container">
-      <h1>Ooops...</h1>
-    </div>
-  </section>
-  <section class="my-12">
-    <div class="space-content container">
-      <p class="text-2xl">This page does not exist. Don't worry though, we got you.</p>
-      <a class="button" href="/">Let's get you home, wanderer.</a>
+<DefaultLayout title="404 - Page Not Found">
+  <section class="my-12 flex flex-col items-center justify-center text-center pb-12">
+    <div class="container space-content">
+      <div class="mb-6 mt-16 flex justify-center">
+        <Icon name="lucide:map-pin-off" class="w-32 h-32 mx-auto" style="color: #2563eb;" />
+      </div>
+      
+      <h1 class="font-black mb-2" style="font-size: clamp(3.5rem, 2rem + 3vw, 5rem); text-decoration: underline; text-decoration-color: #2563eb;">404</h1>
+      <h2 class="text-3xl font-bold mb-6 mt-2">You've Wandered Off the Digital Path!</h2>
+      
+      <p class="text-xl mb-12" style="color: var(--color-neutral-700); max-width: 600px; margin-left: auto; margin-right: auto;">
+        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back to safe shores.
+      </p>
+      
+      <div class="mt-10 flex flex-col items-center justify-center text-center">
+        <a class="button has-icon text-lg" href="/" style="background-color: #2563eb; color: #fff; border-color: #2563eb; border-radius: 10px; padding: 0.75rem 1.5rem;">
+          <Icon name="lucide:home" />
+          Navigate Back Home
+        </a>
+      </div>
     </div>
   </section>
 </DefaultLayout>

@@ -440,8 +440,8 @@ import PageHeader from '@components/PageHeader.astro'
     const termCards = shuffle(pairs)
     const defCards = shuffle(pairs)
 
-    termsEl.innerHTML = ''
-    defsEl.innerHTML = ''
+    termsEl.replaceChildren()
+    defsEl.replaceChildren()
 
     termCards.forEach((item) => {
       const button = document.createElement('button')

@@ -56,6 +56,30 @@ const sanitizedSubtitle: string = subtitle
         a: ['href', 'title', 'target', 'rel'],
         span: ['class'],
       },
+      allowedSchemes: ['http', 'https', 'mailto'],
+      allowProtocolRelative: false,
+      transformTags: {
+        a: (_, attribs) => {
+          const { target: _ignoredTarget, rel: _ignoredRel, ...safeAttribs } = attribs
+          const nextTarget = attribs.target === '_blank' ? '_blank' : undefined
+          const relValues = new Set((attribs.rel || '').split(/\s+/).filter(Boolean))
+
+          if (nextTarget === '_blank') {
+            relValues.add('noopener')
+            relValues.add('noreferrer')
+          }
+
+          const nextRel = [...relValues].join(' ')
+          return {
+            tagName: 'a',
+            attribs: {
+              ...safeAttribs,
+              ...(nextTarget ? { target: nextTarget } : {}),
+              ...(nextRel ? { rel: nextRel } : {}),
+            },
+          }
+        },
+      },
     })
   : ''
 ---

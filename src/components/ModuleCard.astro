@@ -1,0 +1,80 @@
+---
+interface Props {
+  class?: string
+  title: string
+  img: string
+  url: string
+  description: string
+  style?: string
+  imageAlt?: string
+}
+
+const { class: className, title, img, url, description, style: inlineStyle, imageAlt = '' } = Astro.props
+---
+
+<article class:list={['card', className]} style={inlineStyle}>
+  <div class="image">
+    <img src={img} alt={imageAlt} width="640" height="360" loading="lazy" decoding="async" />
+  </div>
+  <div class="content">
+    <div class="title">
+      <h3>
+        <a href={url}>{title}</a>
+      </h3>
+    </div>
+    <p class="description">{description}</p>
+  </div>
+</article>
+
+<style>
+  :where(.card) {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border: 2px solid light-dark(hsl(0 0% 10%), hsl(0 0% 90%));
+    border-radius: 0.5rem;
+    block-size: 100%;
+    overflow: hidden;
+  }
+
+  :where(.image) {
+    block-size: 250px;
+    overflow: clip;
+  }
+
+  :where(.image img) {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  :where(.content) {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
+
+  a {
+    color: currentColor;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+  a:where(:hover, :focus-visible) {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  a::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+</style>

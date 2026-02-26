@@ -8,51 +8,75 @@ import Footer from '../components/Footer.astro'
 const {
   title = 'KidCy',
   description = 'Dive into our learning modules designed to teach you about digital citizenship, authentication, data privacy, social engineering, malware, and digital abuse.',
-  url = Astro.site,
-  image = '/public/WWW-preview.png',
+  url = Astro.url.toString(),
+  image = '/WWW-preview.png',
   author = 'KidCy Team',
 } = Astro.props
+
+const cleanDescription = description.trim()
+const metaDescription =
+  cleanDescription.length > 155 ? `${cleanDescription.slice(0, 152).trimEnd()}...` : cleanDescription
 ---
 
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self' blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; upgrade-insecure-requests"
+    />
 
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/public/images/WWW-icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/WWW-icon.svg" />
+    <link rel="preload" href="/fonts/AtkinsonHyperlegibleNext-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
-    <SiteMeta title={title} description={description.substring(0, 100)} url={url} image={image} author={author} />
+    <SiteMeta title={title} description={metaDescription} url={url} image={image} author={author} />
   </head>
-  <body>
+  <body class="site-shell">
     <Header />
-    <main id="main-content" transition:animate="fade">
+    <main id="main-content" class="site-main" transition:animate="fade">
       <slot />
     </main>
     <Footer />
     <style lang="scss" is:global>
       // sticky footer on low content pages
-      html,
-      body {
-        height: 100%;
+      html {
+        block-size: 100%;
       }
 
       body {
-        display: flex;
-        flex-direction: column;
+        min-block-size: 100%;
+        min-block-size: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
         overflow-x: clip;
+        background-color: var(--background-color);
+      }
 
-        main {
-          flex: 1 0 auto;
+      .site-main {
+        inline-size: 100%;
+        padding-block-end: max(var(--space-s), env(safe-area-inset-bottom));
+      }
+
+      @supports not (overflow: clip) {
+        body {
+          overflow-x: hidden;
         }
+      }
 
-        footer {
-          flex-shrink: 0;
+      @media (max-width: 48rem) {
+        .site-main {
+          padding-block-end: max(var(--space-xs), env(safe-area-inset-bottom));
         }
       }
 
       pre {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-inline-size: 100%;
         border: 2px solid var(--link-color);
         border-radius: 0.35rem;
         padding: 1rem;

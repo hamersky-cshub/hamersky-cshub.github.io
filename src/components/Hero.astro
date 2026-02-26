@@ -53,7 +53,10 @@ interface Props {
   }
 
   .floating-image {
-    animation: float 4s ease-in-out infinite;
+    transform-origin: 55% 60%;
+    will-change: transform;
+    animation: wander-float 13s ease-in-out infinite;
+    animation-delay: -2.4s;
   }
 
   .button {
@@ -80,13 +83,30 @@ interface Props {
     background: rgba(37, 99, 235, 0.1);
   }
 
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px);
+  @keyframes wander-float {
+    0% {
+      transform: translate3d(0px, 0px, 0) rotate(0deg);
     }
-    50% {
-      transform: translateY(-25px);
+    14% {
+      transform: translate3d(4px, -5px, 0) rotate(0.25deg);
+    }
+    29% {
+      transform: translate3d(-6px, -11px, 0) rotate(-0.35deg);
+    }
+    43% {
+      transform: translate3d(5px, -8px, 0) rotate(0.3deg);
+    }
+    58% {
+      transform: translate3d(-3px, -14px, 0) rotate(-0.2deg);
+    }
+    74% {
+      transform: translate3d(6px, -9px, 0) rotate(0.35deg);
+    }
+    88% {
+      transform: translate3d(-4px, -4px, 0) rotate(-0.25deg);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0) rotate(0deg);
     }
   }
 

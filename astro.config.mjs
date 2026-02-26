@@ -4,14 +4,13 @@ import compress from 'astro-compress'
 import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url'
-import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
   site: 'https://hamersky-cshub.github.io/',
   output: 'static',
-  integrations: [mdx(), icon(), compress(), react()],
+  integrations: [mdx(), icon(), compress()],
   vite: {
     css: {
       preprocessorOptions: {
