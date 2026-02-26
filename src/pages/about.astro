@@ -17,11 +17,11 @@ import { Icon } from 'astro-icon/components'
     <div class="container">
 
       <!-- Intro Section -->
-      <div class="section-title" id="our-mission">
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
         <div class="section-badge">
           <Badge class="section-icon"><Icon class="m-3" name="lucide:book-open" /></Badge>
         </div>
-        <div>
+        <div class="flex-1 min-w-0">
           <h2 class="section-heading">Our Mission</h2>
           <p class="section-subtitle">Empowering individuals through digital education.</p>
         </div>
@@ -37,11 +37,11 @@ import { Icon } from 'astro-icon/components'
       </div>
 
       <!-- Values Section -->
-      <div class="section-title" id="our-values">
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6" id="our-values">
         <div class="section-badge">
           <Badge class="section-icon"><Icon class="m-3" name="lucide:star" /></Badge>
         </div>
-        <div>
+        <div class="flex-1 min-w-0">
           <h2 class="section-heading">Our Core Values</h2>
           <p class="section-subtitle">The principles that guide our platform and community.</p>
         </div>
@@ -63,11 +63,11 @@ import { Icon } from 'astro-icon/components'
       </div>
       
       <!-- FAQ Section -->
-      <div class="section-title" id="faq">
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6" id="faq">
         <div class="section-badge">
           <Badge class="section-icon"><Icon class="m-3" name="lucide:help-circle" /></Badge>
         </div>
-        <div>
+        <div class="flex-1 min-w-0">
           <h2 class="section-heading">FAQ</h2>
           <p class="section-subtitle">Everything you need to know about the platform.</p>
         </div>
@@ -94,14 +94,6 @@ import { Icon } from 'astro-icon/components'
 </DefaultLayout>
 
 <style>
-  .section-title {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    align-items: center;
-    margin-top: 3.5rem;
-  }
-
   .section-badge {
     display: flex;
     align-items: center;
@@ -147,11 +139,6 @@ import { Icon } from 'astro-icon/components'
   }
 
   @media (max-width: 640px) {
-    .section-title {
-      grid-template-columns: auto 1fr;
-      gap: 1rem;
-    }
-
     .section-badge {
       justify-content: flex-start;
     }
