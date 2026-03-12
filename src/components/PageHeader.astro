@@ -44,9 +44,23 @@ interface Props {
    * Whether to show the breadcrumbs
    */
   showBreadcrumbs?: boolean
+  /**
+   * Title underline color
+   * @default '#2563EB'
+   */
+  underlineColor?: string
 }
 
-const { class: className, title, subtitle, bgType, showBreadcrumbs = true, featuredImage, author } = Astro.props
+const {
+  class: className,
+  title,
+  subtitle,
+  bgType,
+  showBreadcrumbs = true,
+  featuredImage,
+  author,
+  underlineColor = '#2563EB',
+} = Astro.props
 
 // Sanitize subtitle HTML if present
 const sanitizedSubtitle: string = subtitle
@@ -84,7 +98,7 @@ const sanitizedSubtitle: string = subtitle
   : ''
 ---
 
-<section class:list={[className, 'page-header']}>
+<section class:list={[className, 'page-header']} style={`--page-header-underline: ${underlineColor};`}>
   <div class:list={['py-16', bgType && `bg-${bgType}`]}>
     <div class="space-content container">
       {
@@ -100,7 +114,7 @@ const sanitizedSubtitle: string = subtitle
           </div>
         )
       }
-      <h1 style="text-decoration: underline; text-decoration-color: #2563EB;">{title}</h1>
+      <h1 class="page-header__title">{title}</h1>
       {sanitizedSubtitle && <p class="text-2xl" set:html={sanitizedSubtitle} />}
       {
         author && (
@@ -139,6 +153,11 @@ const sanitizedSubtitle: string = subtitle
     .bg-bordered {
       border: 1px solid var(--border-color-subtle);
       border-inline: 0;
+    }
+
+    .page-header__title {
+      text-decoration: underline;
+      text-decoration-color: var(--page-header-underline, #2563EB);
     }
 
     .featured-image-container {

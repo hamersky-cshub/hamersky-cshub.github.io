@@ -1,0 +1,17 @@
+---
+import { getLocalizedPageLoader } from 'src/utils/localizedPages'
+
+interface Props {
+  route: string
+}
+
+const { route } = Astro.props
+const loadPage = getLocalizedPageLoader(route)
+
+if (!loadPage) {
+  throw new Error(`Missing localized source page for route "${route || '/'}".`)
+}
+
+const pageModule = await loadPage()
+const Page = pageModule.default
+---

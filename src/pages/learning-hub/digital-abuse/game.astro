@@ -1,5 +1,109 @@
 ---
-import LearningHubGamePlaceholder from '@components/LearningHubGamePlaceholder.astro'
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Icon } from 'astro-icon/components'
+import { Badge } from 'accessible-astro-components'
 ---
 
-<LearningHubGamePlaceholder title="Game #7" />
+<DefaultLayout title="Game #7">
+  <PageHeader
+      title="Game #7"
+      subtitle="Lorem ipsum dolor sit amet."
+      underlineColor="var(--brand-DA)"
+      bgType="bordered"
+  />
+  <section class="my-12">
+  <div class="container mb-12">
+        <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">How It Works</h2>
+        <p>
+          To play the game, you need to have the Roblox app installed on your device. After clicking the Play button, the game will open in the Roblox application. If you don’t have Roblox installed yet, you will be prompted to download and install it first.
+        </p>
+        <div class="tip-card">
+          Tip: For the best experience, make sure you have the Roblox app installed on your device before clicking the Play button.
+        </div>
+      </div>
+    <div class="roblox-embed">
+
+    <div class="game-frame" id="gameFrame">
+    
+    <img 
+      src="https://cms-media.roblox.com/resize=width:1280,fit:max/GnaqqRBTcCuoRELL938w" 
+      class="game-thumbnail"
+      alt="Game thumbnail"
+    />
+
+    <div class="play-overlay">
+      <a href="roblox://placeId=85447363856674" class="button" rel="noopener noreferrer">
+        ▶ Play
+      </a>
+    </div>
+
+  </div>
+
+  
+    </div>
+    </div>
+
+
+</DefaultLayout>
+
+<style>
+.roblox-embed {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.tip-card {
+    border-radius: 0.9rem;
+    border: 1px solid #bae6fd;
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: #075985;
+  }
+
+.game-frame {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.game-thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+}
+
+.button {
+  font-size: 24px;
+  padding: 15px 30px;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #FFF;
+  color: #2563EB;
+  transition: all 0.5s ease;
+}
+
+.game-info {
+  padding: 10px 5px;
+}
+</style>

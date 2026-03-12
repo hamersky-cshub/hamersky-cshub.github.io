@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import logo from '/public/images/WWW-icon.svg'
+import { localizePath } from 'src/utils/i18n'
 
 /**
  * Logo Component
@@ -16,9 +17,10 @@ interface Props {
 }
 
 const { loading = 'eager' }: Props = Astro.props
+const homeHref = localizePath(Astro.currentLocale, '/')
 ---
 
-<a href="/" class="flex items-center gap-2 !no-underline">
+<a href={homeHref} class="flex items-center gap-2 !no-underline">
   <Image src={ logo } alt="WWW: Wise Web Wanderers" width="47" height="37" loading={loading} />
   <span class="font-bold">WWW: Wise Web Wanderers</span>
 </a>

@@ -9,48 +9,61 @@ import { Badge } from 'accessible-astro-components'
   <PageHeader
       title="Digital Citizenship"
       subtitle="Digital citizenship helps students navigate online spaces with confidence, empathy, and responsibility. This module supports educators in teaching safe habits, respectful communication, and thoughtful decision-making in digital environments."
+      underlineColor="var(--brand-DC)"
       bgType="bordered"
   />
 
   <section class="my-12">
     <div class="container">
-      <div class="dc-grid dc-grid--two">
-        <div class="dc-panel">
-          <h2>Aims of the Module</h2>
-          <ul class="dc-list">
-            <li>Build foundational understanding of digital environments.</li>
-            <li>Encourage respectful, safe, and responsible online behavior.</li>
-            <li>Help students make thoughtful choices about sharing and privacy.</li>
-          </ul>
-        </div>
-        <div class="dc-panel">
-          <h2>Learning Outcomes</h2>
-          <ul class="dc-list">
-            <li>Explain what a digital environment is and where it shows up in daily life.</li>
-            <li>Identify actions that create a positive digital footprint.</li>
-            <li>Recognize when to pause, ask for help, or report concerns.</li>
-          </ul>
-        </div>
+      <div class="dc-grid dc-grid--three dc-grid--learning-overview" style="margin-bottom: var(--space-l);">
+        <article class="dc-panel">
+          <h3 style="font-size: var(--font-size-3);">Aim of the Module</h3>
+          <div class="dc-panel__content">
+            <p style="font-size: var(--text-2xl);">To provide an understanding of what digital citizenship is and how to follow its core principles.</p>
+          </div>
+        </article>
+
+        <article class="dc-panel">
+          <h3 style="font-size: var(--font-size-3);">Learning Objectives</h3>
+          <div class="dc-panel__content">
+            <ul class="dc-list dc-list--plain">
+              <li>To stress the importance of digital citizenship.</li>
+              <li>To introduce the concept of digital citizenship and its principles of rights, responsibility and respect in digital environments.</li>
+              <li>To develop students understanding of how to apply these principles of rights, responsibility and respect in digital environments - to be safe, savvy, and social.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="dc-panel">
+          <h3 style="font-size: var(--font-size-3);">Learning Outcomes</h3>
+          <div class="dc-panel__content">
+            <ul class="dc-list dc-list--plain">
+              <li>I can explain what digital citizenship is and why it is important.</li>
+              <li>I can discuss the principles of rights, responsibility and respect in digital environments, including how to stay safe, act savvy and engage socially.</li>
+            </ul>
+          </div>
+        </article>
       </div>
 
-      <div class="dc-section">
-        <div class="dc-section__header">
-          <h2>Module Content</h2>
-          <p class="dc-section__subtitle">Download materials for each submodule and preview what is included.</p>
-        </div>
+      <div class="dc-divider dc-divider--center" style="margin-top: var(--space-xl);"><b>Module Content</b></div>
 
-        <article class="dc-module">
-          <div class="dc-module__header">
-            <Badge class="dc-badge">#01</Badge>
+      <div class="dc-section">
+        <details class="dc-module">
+          <summary class="dc-module__header">
+            <Badge class="dc-badge">Part 1</Badge>
             <div>
               <h3>Digital Environments</h3>
-              <p class="dc-goal"><b>Goal:</b> Explore how online spaces work and what makes them feel safe and welcoming.</p>
+              <p class="dc-goal"><b>Goal:</b> Help students understand what a digital environment is and positive aspects of this.</p>
             </div>
-          </div>
+          </summary>
+          <div class="dc-module__content">
 
           <div class="dc-module__download">
             <p>Download all the materials for this part of the module.</p>
-            <a class="button has-icon" href="/learning-hub/introduction">
+            <a
+              class="button has-icon dc-module__download-button"
+              href="/materials/digital-citizenship/bundles/dc-01-digital-environments-materials.zip"
+              download="dc-01-digital-environments-materials.zip">
               <Icon name="lucide:download" />
               Download
             </a>
@@ -61,30 +74,56 @@ import { Badge } from 'accessible-astro-components'
           <div class="dc-grid dc-grid--four">
             <div class="dc-card">
               <h4>Resources</h4>
-              <ul class="dc-list">
-                <li><b>Image:</b> A map of common digital spaces for students.</li>
-                <li><b>Handout:</b> Classroom expectations for online spaces.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Scenario Cards:</b> Physical and digital worlds.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_poster.png"
+                    download="dc-01-map-of-common-digital-spaces.png"
+                    aria-label="Download map of common digital spaces">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Activity Plan</h4>
-              <ul class="dc-list">
-                <li><b>Activity #1:</b> Spot the digital environment.</li>
-                <li><b>Activity #2:</b> Build a shared class agreement.</li>
-              </ul>
-            </div>
-            <div class="dc-card">
-              <h4>Reading Material</h4>
-              <ul class="dc-list">
-                <li><b>Reading for Educators:</b> Setting norms for online spaces.</li>
-                <li><b>Reading for Students:</b> How to be a good digital citizen.</li>
-              </ul>
-            </div>
-            <div class="dc-card">
-              <h4>Preparation Material</h4>
-              <ul class="dc-list">
-                <li><b>Material #1:</b> Vocabulary cards for key terms.</li>
-                <li><b>Material #2:</b> Scenario prompts for discussion.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Step 1:</b> Introduction</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-01-activity-spot-digital-environment.txt"
+                    download="dc-01-activity-spot-digital-environment.txt"
+                    aria-label="Download activity one">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Step 2:</b> What is a digital environment?</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-01-activity-class-agreement.txt"
+                    download="dc-01-activity-class-agreement.txt"
+                    aria-label="Download activity two">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Step 3:</b> Plenary - Summary/informal assessment</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-01-activity-class-agreement.txt"
+                    download="dc-01-activity-class-agreement.txt"
+                    aria-label="Download activity three">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -92,9 +131,31 @@ import { Badge } from 'accessible-astro-components'
           <div class="dc-divider"><b>Featured Video</b></div>
 
           <div class="dc-video-card">
-            <div>
-              <h4>What Is a Digital Environment?</h4>
-              <p class="dc-goal"><b>Goal:</b> Help students recognize the online spaces where learning, play, and communication happen.</p>
+            <div class="dc-video-card__header">
+              <section>
+                <h4>What Is a Digital Environment?</h4>
+              </section>
+              <section>
+              <a
+                class="dc-item-download dc-video-download"
+                href="/videos/DigitalCitizenship_Presentation_DigitalEnvironmentV1.mp4"
+                download="DigitalCitizenship_Presentation_DigitalEnvironmentV1.mp4"
+                aria-label="Download featured video">
+                <Icon name="lucide:download" />
+                <span>Download Video</span>
+              </a>
+              <a
+                class="dc-item-download dc-video-download"
+                href="/videos/DigitalCitizenship_Presentation_DigitalEnvironmentV1.mp4"
+                download="DigitalCitizenship_Presentation_DigitalEnvironmentV1.mp4"
+                aria-label="Download featured video">
+                <Icon name="lucide:download" />
+                <span>Download Subtitles</span>
+              </a>
+              </section>
+            </div>
+            <div class="dc-goal">
+              <p>Use this video to spark discussion about online spaces students already use, from learning platforms to games and messaging apps. Pause for quick reflections on where students spend time online.</p>
             </div>
             <div class="dc-video">
               <video id="What is Digital Environment?" controls preload="metadata" poster="/videos/DigitalCitizenship_Presentation_DigitalEnvironment_Thumbnail.png">
@@ -112,24 +173,26 @@ import { Badge } from 'accessible-astro-components'
                   src="/videos/1.1.1.Subtitles.Digital_environments_CZ.vtt" />
               </video>
             </div>
-            <div class="dc-video__details">
-              <p>Use this video to spark discussion about online spaces students already use, from learning platforms to games and messaging apps. Pause for quick reflections on where students spend time online.</p>
-            </div>
           </div>
-        </article>
+          </div>
+        </details>
 
-        <article class="dc-module">
-          <div class="dc-module__header">
-            <Badge class="dc-badge">#02</Badge>
+        <details class="dc-module">
+          <summary class="dc-module__header">
+            <Badge class="dc-badge">Part 2</Badge>
             <div>
-              <h3>Digital Footprint</h3>
-              <p class="dc-goal"><b>Goal:</b> Show how posts, messages, and choices leave a trail that affects reputation and safety.</p>
+              <h3>What Does it Mean to be a Digital Citizen?</h3>
+              <p class="dc-goal"><b>Goal:</b> Help students understand what digital citizenship is and why it is important.</p>
             </div>
-          </div>
+          </summary>
+          <div class="dc-module__content">
 
           <div class="dc-module__download">
             <p>Download all the materials for this part of the module.</p>
-            <a class="button has-icon" href="/learning-hub/introduction">
+            <a
+              class="button has-icon dc-module__download-button"
+              href="/materials/digital-citizenship/bundles/dc-02-digital-footprint-materials.zip"
+              download="dc-02-digital-footprint-materials.zip">
               <Icon name="lucide:download" />
               Download
             </a>
@@ -140,47 +203,132 @@ import { Badge } from 'accessible-astro-components'
           <div class="dc-grid dc-grid--four">
             <div class="dc-card">
               <h4>Resources</h4>
-              <ul class="dc-list">
-                <li><b>Image:</b> Footprint trail to visualize online actions.</li>
-                <li><b>Checklist:</b> “Pause before you post” questions.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Image:</b> Footprint trail to visualize online actions.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_challenge.png"
+                    download="dc-02-footprint-trail.png"
+                    aria-label="Download footprint trail image">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Checklist:</b> “Pause before you post” questions.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-resource-pause-before-post-checklist.txt"
+                    download="dc-02-resource-pause-before-post-checklist.txt"
+                    aria-label="Download pause before post checklist">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Activity Plan</h4>
-              <ul class="dc-list">
-                <li><b>Activity #1:</b> Footprint choices sorting.</li>
-                <li><b>Activity #2:</b> Create a positive profile.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #1:</b> Footprint choices sorting.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-activity-footprint-sorting.txt"
+                    download="dc-02-activity-footprint-sorting.txt"
+                    aria-label="Download footprint choices activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #2:</b> Create a positive profile.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-activity-positive-profile.txt"
+                    download="dc-02-activity-positive-profile.txt"
+                    aria-label="Download positive profile activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Reading Material</h4>
-              <ul class="dc-list">
-                <li><b>Reading for Educators:</b> Talking about reputation and safety.</li>
-                <li><b>Reading for Students:</b> What stays online?</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Educators:</b> Talking about reputation and safety.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-reading-educators-reputation-safety.txt"
+                    download="dc-02-reading-educators-reputation-safety.txt"
+                    aria-label="Download educator reading about reputation and safety">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Students:</b> What stays online?</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-reading-students-what-stays-online.txt"
+                    download="dc-02-reading-students-what-stays-online.txt"
+                    aria-label="Download student reading about what stays online">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Preparation Material</h4>
-              <ul class="dc-list">
-                <li><b>Material #1:</b> Discussion prompts on sharing.</li>
-                <li><b>Material #2:</b> Exit ticket reflection.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #1:</b> Discussion prompts on sharing.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-prep-sharing-prompts.txt"
+                    download="dc-02-prep-sharing-prompts.txt"
+                    aria-label="Download discussion prompts on sharing">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #2:</b> Exit ticket reflection.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-02-prep-exit-ticket.txt"
+                    download="dc-02-prep-exit-ticket.txt"
+                    aria-label="Download exit ticket reflection">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-        </article>
-
-        <article class="dc-module">
-          <div class="dc-module__header">
-            <Badge class="dc-badge">#03</Badge>
-            <div>
-              <h3>Respect & Empathy Online</h3>
-              <p class="dc-goal"><b>Goal:</b> Practice communication that supports wellbeing, kindness, and community online.</p>
-            </div>
           </div>
+        </details>
+
+        <details class="dc-module">
+          <summary class="dc-module__header">
+            <Badge class="dc-badge">Part 3</Badge>
+            <div>
+              <h3>How to Stay Safe in Digital Environments – Privacy Settings</h3>
+              <p class="dc-goal"><b>Goal:</b> Help students to know how to be safe in digital environments by thinking critically and acting responsibly with privacy settings.</p>
+            </div>
+          </summary>
+          <div class="dc-module__content">
 
           <div class="dc-module__download">
             <p>Download all the materials for this part of the module.</p>
-            <a class="button has-icon" href="/learning-hub/introduction">
+            <a
+              class="button has-icon dc-module__download-button"
+              href="/materials/digital-citizenship/bundles/dc-03-respect-empathy-materials.zip"
+              download="dc-03-respect-empathy-materials.zip">
               <Icon name="lucide:download" />
               Download
             </a>
@@ -191,34 +339,387 @@ import { Badge } from 'accessible-astro-components'
           <div class="dc-grid dc-grid--four">
             <div class="dc-card">
               <h4>Resources</h4>
-              <ul class="dc-list">
-                <li><b>Poster:</b> The “THINK” checklist for kind communication.</li>
-                <li><b>Cards:</b> Empathy scenarios for small groups.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Poster:</b> The “THINK” checklist for kind communication.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_poster_hover.png"
+                    download="dc-03-think-checklist-poster.png"
+                    aria-label="Download think checklist poster">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Cards:</b> Empathy scenarios for small groups.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_game.png"
+                    download="dc-03-empathy-scenario-cards.png"
+                    aria-label="Download empathy scenario cards">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Activity Plan</h4>
-              <ul class="dc-list">
-                <li><b>Activity #1:</b> Rewrite it with kindness.</li>
-                <li><b>Activity #2:</b> Build a respectful reply.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #1:</b> Rewrite it with kindness.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-activity-rewrite-with-kindness.txt"
+                    download="dc-03-activity-rewrite-with-kindness.txt"
+                    aria-label="Download rewrite with kindness activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #2:</b> Build a respectful reply.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-activity-respectful-reply.txt"
+                    download="dc-03-activity-respectful-reply.txt"
+                    aria-label="Download respectful reply activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Reading Material</h4>
-              <ul class="dc-list">
-                <li><b>Reading for Educators:</b> Supporting positive peer culture.</li>
-                <li><b>Reading for Students:</b> How to disagree respectfully.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Educators:</b> Supporting positive peer culture.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-reading-educators-peer-culture.txt"
+                    download="dc-03-reading-educators-peer-culture.txt"
+                    aria-label="Download educator reading on peer culture">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Students:</b> How to disagree respectfully.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-reading-students-disagree-respectfully.txt"
+                    download="dc-03-reading-students-disagree-respectfully.txt"
+                    aria-label="Download student reading on respectful disagreement">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="dc-card">
               <h4>Preparation Material</h4>
-              <ul class="dc-list">
-                <li><b>Material #1:</b> Role-play guidelines.</li>
-                <li><b>Material #2:</b> Reflection worksheet.</li>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #1:</b> Role-play guidelines.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-prep-role-play-guidelines.txt"
+                    download="dc-03-prep-role-play-guidelines.txt"
+                    aria-label="Download role-play guidelines">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #2:</b> Reflection worksheet.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-prep-reflection-worksheet.txt"
+                    download="dc-03-prep-reflection-worksheet.txt"
+                    aria-label="Download reflection worksheet">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-        </article>
+          </div>
+        </details>
+
+        <details class="dc-module">
+          <summary class="dc-module__header">
+            <Badge class="dc-badge">Part 4</Badge>
+            <div>
+              <h3>How to Act Savvy in Digital Environments – Being Wise and Resilient</h3>
+              <p class="dc-goal"><b>Goal:</b> Help students understand how being wise and resilient can help them to be savvy in digital environments.</p>
+            </div>
+          </summary>
+          <div class="dc-module__content">
+
+          <div class="dc-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a
+              class="button has-icon dc-module__download-button"
+              href="/materials/digital-citizenship/bundles/dc-03-respect-empathy-materials.zip"
+              download="dc-03-respect-empathy-materials.zip">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="dc-divider"><b>What’s Included</b></div>
+
+          <div class="dc-grid dc-grid--four">
+            <div class="dc-card">
+              <h4>Resources</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Poster:</b> The “THINK” checklist for kind communication.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_poster_hover.png"
+                    download="dc-03-think-checklist-poster.png"
+                    aria-label="Download think checklist poster">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Cards:</b> Empathy scenarios for small groups.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_game.png"
+                    download="dc-03-empathy-scenario-cards.png"
+                    aria-label="Download empathy scenario cards">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Activity Plan</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #1:</b> Rewrite it with kindness.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-activity-rewrite-with-kindness.txt"
+                    download="dc-03-activity-rewrite-with-kindness.txt"
+                    aria-label="Download rewrite with kindness activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #2:</b> Build a respectful reply.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-activity-respectful-reply.txt"
+                    download="dc-03-activity-respectful-reply.txt"
+                    aria-label="Download respectful reply activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Reading Material</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Educators:</b> Supporting positive peer culture.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-reading-educators-peer-culture.txt"
+                    download="dc-03-reading-educators-peer-culture.txt"
+                    aria-label="Download educator reading on peer culture">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Students:</b> How to disagree respectfully.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-reading-students-disagree-respectfully.txt"
+                    download="dc-03-reading-students-disagree-respectfully.txt"
+                    aria-label="Download student reading on respectful disagreement">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Preparation Material</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #1:</b> Role-play guidelines.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-prep-role-play-guidelines.txt"
+                    download="dc-03-prep-role-play-guidelines.txt"
+                    aria-label="Download role-play guidelines">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #2:</b> Reflection worksheet.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-prep-reflection-worksheet.txt"
+                    download="dc-03-prep-reflection-worksheet.txt"
+                    aria-label="Download reflection worksheet">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </details>
+
+        <details class="dc-module">
+          <summary class="dc-module__header">
+            <Badge class="dc-badge">Part 5</Badge>
+            <div>
+              <h3>How to Act Responsibly in Digital Environments - Respecting Ourselves and Others in Digital Environments</h3>
+              <p class="dc-goal"><b>Goal:</b> Help students understand how to act responsibly, showing respect for themselves and others when engaging socially in digital environments.</p>
+            </div>
+          </summary>
+          <div class="dc-module__content">
+
+          <div class="dc-module__download">
+            <p>Download all the materials for this part of the module.</p>
+            <a
+              class="button has-icon dc-module__download-button"
+              href="/materials/digital-citizenship/bundles/dc-03-respect-empathy-materials.zip"
+              download="dc-03-respect-empathy-materials.zip">
+              <Icon name="lucide:download" />
+              Download
+            </a>
+          </div>
+
+          <div class="dc-divider"><b>What’s Included</b></div>
+
+          <div class="dc-grid dc-grid--four">
+            <div class="dc-card">
+              <h4>Resources</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Poster:</b> The “THINK” checklist for kind communication.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_poster_hover.png"
+                    download="dc-03-think-checklist-poster.png"
+                    aria-label="Download think checklist poster">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Cards:</b> Empathy scenarios for small groups.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/images/01_digital-citizenship_game.png"
+                    download="dc-03-empathy-scenario-cards.png"
+                    aria-label="Download empathy scenario cards">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Activity Plan</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #1:</b> Rewrite it with kindness.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-activity-rewrite-with-kindness.txt"
+                    download="dc-03-activity-rewrite-with-kindness.txt"
+                    aria-label="Download rewrite with kindness activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Activity #2:</b> Build a respectful reply.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-activity-respectful-reply.txt"
+                    download="dc-03-activity-respectful-reply.txt"
+                    aria-label="Download respectful reply activity">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Reading Material</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Educators:</b> Supporting positive peer culture.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-reading-educators-peer-culture.txt"
+                    download="dc-03-reading-educators-peer-culture.txt"
+                    aria-label="Download educator reading on peer culture">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Reading for Students:</b> How to disagree respectfully.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-reading-students-disagree-respectfully.txt"
+                    download="dc-03-reading-students-disagree-respectfully.txt"
+                    aria-label="Download student reading on respectful disagreement">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dc-card">
+              <h4>Preparation Material</h4>
+              <ul class="dc-material-list">
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #1:</b> Role-play guidelines.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-prep-role-play-guidelines.txt"
+                    download="dc-03-prep-role-play-guidelines.txt"
+                    aria-label="Download role-play guidelines">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+                <li class="dc-material-item">
+                  <p class="dc-material-text"><b>Material #2:</b> Reflection worksheet.</p>
+                  <a
+                    class="dc-item-download"
+                    href="/materials/digital-citizenship/dc-03-prep-reflection-worksheet.txt"
+                    download="dc-03-prep-reflection-worksheet.txt"
+                    aria-label="Download reflection worksheet">
+                    <Icon name="lucide:download" />
+                    <span>Download</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </details>
       </div>
 
       <div class="dc-divider dc-divider--center"><b>Explore Other Topics</b></div>
@@ -226,61 +727,61 @@ import { Badge } from 'accessible-astro-components'
       <div class="dc-section">
         <div class="dc-section__header">
           <h2>Other Modules</h2>
-          <p class="dc-section__subtitle">Browse related modules and continue learning.</p>
+          <p class="dc-section__subtitle">Browse related modules and continue exploring.</p>
         </div>
 
         <section class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 feature-card feature-content">
-          <article class="dc-module-card">
+          <article class="dc-module-card" style="--module-card-color: var(--brand-AP);">
             <h4>Attacker Perspective</h4>
             <p class="dc-card-text">Understand how trust can be manipulated and learn to spot risky behavior.</p>
             <a class="button has-icon dc-card-button" href="/learning-hub/attacker-perspective/content">
               <Icon name="lucide:book-marked" />
-              Start Learning
+              Start Exploring
             </a>
           </article>
 
-          <article class="dc-module-card">
+          <article class="dc-module-card" style="--module-card-color: var(--brand-AT);">
             <h4>Authentication</h4>
             <p class="dc-card-text">Teach students how to secure their accounts with strong, memorable routines.</p>
             <a class="button has-icon dc-card-button" href="/learning-hub/authentication/content">
               <Icon name="lucide:book-marked" />
-              Start Learning
+              Start Exploring
             </a>
           </article>
 
-          <article class="dc-module-card">
+          <article class="dc-module-card" style="--module-card-color: var(--brand-DP);">
             <h4>Data Privacy</h4>
             <p class="dc-card-text">Explore how personal information is shared and ways to keep it safe.</p>
             <a class="button has-icon dc-card-button" href="/learning-hub/data-privacy/content">
               <Icon name="lucide:book-marked" />
-              Start Learning
+              Start Exploring
             </a>
           </article>
 
-          <article class="dc-module-card">
+          <article class="dc-module-card" style="--module-card-color: var(--brand-SE);">
             <h4>Social Engineering</h4>
             <p class="dc-card-text">Learn how scammers and manipulators use persuasion and false urgency.</p>
             <a class="button has-icon dc-card-button" href="/learning-hub/social-engineering/content">
               <Icon name="lucide:book-marked" />
-              Start Learning
+              Start Exploring
             </a>
           </article>
 
-          <article class="dc-module-card">
+          <article class="dc-module-card" style="--module-card-color: var(--brand-MW);">
             <h4>Malware</h4>
             <p class="dc-card-text">Help students recognize suspicious downloads and protect devices.</p>
             <a class="button has-icon dc-card-button" href="/learning-hub/malware/content">
               <Icon name="lucide:book-marked" />
-              Start Learning
+              Start Exploring
             </a>
           </article>
 
-          <article class="dc-module-card">
+          <article class="dc-module-card" style="--module-card-color: var(--brand-DA);">
             <h4>Digital Abuse</h4>
             <p class="dc-card-text">Identify harmful online behavior and learn how to get help safely.</p>
             <a class="button has-icon dc-card-button" href="/learning-hub/digital-abuse/content">
               <Icon name="lucide:book-marked" />
-              Start Learning
+              Start Exploring
             </a>
           </article>
         </section>
@@ -299,8 +800,13 @@ import { Badge } from 'accessible-astro-components'
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
+  .dc-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .dc-grid--four {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: 1fr;
+    gap: var(--space-m);
   }
 
   .dc-panel {
@@ -311,14 +817,77 @@ import { Badge } from 'accessible-astro-components'
     box-shadow: var(--elevation-1);
   }
 
+  .dc-grid--learning-overview {
+    align-items: stretch;
+  }
+
+  .dc-panel--compact {
+    padding: var(--space-m);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dc-panel--learning {
+    height: 100%;
+  }
+
+  .dc-panel--objectives {
+    background: linear-gradient(165deg, color-mix(in oklab, var(--color-neutral-100), white 42%), color-mix(in oklab, var(--color-neutral-300), white 28%));
+  }
+
+  .dc-panel--outcomes {
+    background: linear-gradient(165deg, color-mix(in oklab, var(--color-neutral-100), white 40%), color-mix(in oklab, var(--color-neutral-300), white 26%));
+  }
+
+  .dc-panel--learning h3 {
+    margin: 0;
+    min-height: 2.6rem;
+    display: flex;
+    align-items: flex-start;
+    font-size: clamp(1.35rem, 1vw + 1rem, 1.9rem);
+    line-height: 1.1;
+  }
+
+  .dc-panel__content {
+    margin-top: var(--space-xs);
+    color: var(--color-neutral-700);
+    border-top: 2px solid color-mix(in oklab, var(--color-neutral-500), white 35%);
+    padding-top: var(--space-s);
+  }
+
   .dc-list {
-    margin-top: var(--space-s);
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: grid;
-    gap: var(--space-2xs);
+    gap: 0;
+  }
+
+  .dc-list li {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    font-size: var(--font-size--1);
+    line-height: 1.5;
+    color: var(--color-neutral-700);
+  }
+
+  .dc-list li + li {
+    margin-top: var(--space-s);
+    padding-top: var(--space-s);
+    border-top: 1px solid color-mix(in oklab, var(--color-neutral-500), white 55%);
+  }
+
+  .dc-aim-text {
+    margin: 0;
+    font-size: clamp(1.45rem, 1.1vw + 1rem, 2.05rem);
+    line-height: 1.32;
+    color: var(--color-neutral-700);
   }
 
   .dc-section {
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-xl);
   }
 
   .dc-section__header {
@@ -334,17 +903,46 @@ import { Badge } from 'accessible-astro-components'
   .dc-module {
     border: 3px solid var(--brand-DC);
     border-radius: var(--radius-l);
-    padding: var(--space-l);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(34, 197, 94, 0.2));
+    padding: 0;
+    background:rgba(34,197,94,0.2);
     box-shadow: var(--elevation-2);
     margin-bottom: var(--space-xl);
+    overflow: hidden;
   }
 
   .dc-module__header {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     gap: var(--space-m);
-    align-items: start;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    padding: var(--space-l);
+  }
+
+  .dc-module__header::-webkit-details-marker {
+    display: none;
+  }
+
+  .dc-module__header::marker {
+    content: '';
+  }
+
+  .dc-module__header::after {
+    content: '▾';
+    color: color-mix(in oklab, var(--brand-DC), black 20%);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .dc-module:not([open]) .dc-module__header::after {
+    transform: rotate(-90deg);
+  }
+
+  .dc-module__content {
+    padding: 0 var(--space-l) var(--space-l);
   }
 
   .dc-badge {
@@ -368,21 +966,32 @@ import { Badge } from 'accessible-astro-components'
     gap: var(--space-s);
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-s);
+    padding: var(--space-m);
     border-radius: var(--radius-m);
     border: 2px dashed var(--brand-DC);
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.72);
   }
 
-  .dc-module__download .button {
-    width: 30%;
+  .dc-module__download-button {
+    width: clamp(190px, 28%, 320px);
     border-radius: 10px;
+    justify-content: center;
+    background: var(--brand-DC);
+    color: #fff;
+    border: 2px solid color-mix(in oklab, var(--brand-DC), black 10%);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dc-module__download-button:hover {
+    background: #fff;
+    color: var(--brand-DC);
+    transform: translateY(-1px);
   }
 
   .dc-module__download p {
     margin: 0;
     font-weight: 400;
-    width: 60%;
+    width: min(100%, 560px);
   }
 
   .dc-divider {
@@ -393,7 +1002,7 @@ import { Badge } from 'accessible-astro-components'
     font-size: var(--font-size--1);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--color-neutral-700);
+    color: color-mix(in oklab, var(--brand-DC), black 20%);
   }
 
   .dc-divider::before,
@@ -405,6 +1014,7 @@ import { Badge } from 'accessible-astro-components'
 
   .dc-divider--center {
     justify-content: center;
+    color: var(--color-neutral-700);
   }
 
   .dc-divider--center::before,
@@ -416,19 +1026,78 @@ import { Badge } from 'accessible-astro-components'
     border: 2px solid color-mix(in oklab, var(--brand-DC), white 30%);
     border-radius: var(--radius-m);
     padding: var(--space-m);
-    background: var(--background-color);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .dc-card h4 {
+    margin-bottom: var(--space-s);
+  }
+
+  .dc-material-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .dc-material-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-s);
+    align-items: center;
+    padding: var(--space-xs) var(--space-s);
+    border: 1px solid color-mix(in oklab, var(--brand-DC), white 45%);
+    border-radius: var(--radius-s);
+    background: linear-gradient(90deg, color-mix(in oklab, var(--brand-DC), white 96%), #fff 38%);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .dc-material-item:hover {
+    border-color: color-mix(in oklab, var(--brand-DC), black 6%);
+    transform: translateY(-1px);
+  }
+
+  .dc-material-text {
+    margin: 0;
+  }
+
+  .dc-item-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid color-mix(in oklab,var(--brand-DC),white 45%);
+    color: color-mix(in oklab, var(--brand-DC), black 10%);
+    background: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.35rem 0.8rem;
+    font-weight: 700;
+    font-size: var(--font-size--1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dc-item-download:hover {
+    background-color: var(--brand-DC);
+    color: #fff;
+    border-color: color-mix(in oklab, var(--brand-DC), black 6%);
+    transform: translateY(-1px);
   }
 
   .dc-module-card {
-    border: 2px solid var(--border-color-subtle);
+    border: 2px solid color-mix(in oklab, var(--module-card-color, var(--brand-DC)), white 30%);
     border-radius: var(--radius-l);
     padding: var(--space-m);
-    background: var(--background-color);
+    background: color-mix(in oklab, var(--module-card-color, var(--brand-DC)), white 90%);
     box-shadow: var(--elevation-1);
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
     align-content: start;
+  }
+
+  .dc-module-card h4 {
+    color: color-mix(in oklab, var(--module-card-color, var(--brand-DC)), black 22%);
   }
 
   .dc-card-text {
@@ -439,17 +1108,40 @@ import { Badge } from 'accessible-astro-components'
     width: 100%;
     justify-content: center;
     border-radius: 10px;
-      margin-top: auto;
+    margin-top: auto;
+    background: var(--module-card-color, var(--brand-DC));
+    color: #fff;
+    border: 2px solid color-mix(in oklab, var(--module-card-color, var(--brand-DC)), black 10%);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dc-card-button:hover {
+    background: #fff;
+    color: var(--module-card-color, var(--brand-DC));
+    transform: translateY(-1px);
   }
 
   .dc-video-card {
-    border: 2px solid var(--brand-DC);
-    border-radius: var(--radius-l);
-    padding: var(--space-l);
-    background: var(--background-color);
+    border: 2px solid color-mix(in oklab, var(--brand-DC), white 30%);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    background: rgba(255,255,255,0.7);
     box-shadow: var(--elevation-2);
     display: grid;
-    gap: var(--space-m);
+    gap: var(--space-s);
+  }
+
+  .dc-video-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-s);
+  }
+
+  .dc-video-download {
+    flex-shrink: 0;
+    justify-content: center;
+    min-width: 128px;
   }
 
   .dc-video video {
@@ -462,5 +1154,42 @@ import { Badge } from 'accessible-astro-components'
   .dc-video__details {
     display: grid;
     gap: var(--space-xs);
+  }
+
+  @media (max-width: 900px) {
+    .dc-grid--three {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dc-panel--aim {
+      grid-column: 1 / -1;
+    }
+
+    .dc-module__download-button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .dc-grid--three {
+      grid-template-columns: 1fr;
+    }
+
+    .dc-panel--aim {
+      grid-column: auto;
+    }
+
+    .dc-material-item {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .dc-video-card__header {
+      flex-direction: column;
+    }
+
+    .dc-video-download {
+      width: 100%;
+    }
   }
 </style>

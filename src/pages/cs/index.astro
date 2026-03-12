@@ -1,11 +1,11 @@
 ---
-import DefaultLayout from '@layouts/DefaultLayout.astro'
-import Hero from '@components/Hero.astro'
+import DefaultLayout from '@layouts/DefaultLayout_CS.astro'
+import Hero from '@components/Hero_CS.astro'
 import Feature from '@components/Feature.astro'
 import ModuleCard from '@components/ModuleCard.astro'
 import { Icon } from 'astro-icon/components'
 import { Badge } from 'accessible-astro-components'
-import { localizePath } from '../utils/i18n'
+import { localizePath } from 'src/utils/i18n'
 
 const moduleCards = [
   {
@@ -245,15 +245,15 @@ const localizedGames = games.map((game) => ({
           <div class="intro-stats grid grid-cols-1 gap-6 md:grid-cols-3">
           <div class="stat-card">
             <span class="stat-number">7</span>
-            <span class="stat-title">Learning Modules</span>
+            <span class="stat-title">Vzdělávacích modulů</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">7</span>
-            <span class="stat-title">Interactive Challenges</span>
+            <span class="stat-title">Interaktivních výzev</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">7</span>
-            <span class="stat-title">Cyber Games</span>
+            <span class="stat-title">Kyberbezpečnostních her</span>
           </div>
         </div>
       </div>
@@ -263,8 +263,8 @@ const localizedGames = games.map((game) => ({
           <Badge class="section-icon"><Icon class="m-3" name="lucide:graduation-cap" /></Badge>
         </div>
         <div>
-          <h2 class="section-heading">Learning Modules</h2>
-          <p class="section-subtitle">Classroom-ready lessons that introduce core cyber safety skills.</p>
+          <h2 class="section-heading">Vzdělávací moduly</h2>
+          <p class="section-subtitle">Výukové lekce připravené pro třídu, které představují základní dovednosti kybernetické bezpečnosti.</p>
         </div>
       </div>
 
@@ -288,8 +288,8 @@ const localizedGames = games.map((game) => ({
           <Badge class="section-icon"><Icon class="m-3" name="lucide:land-plot" /></Badge>
         </div>
         <div>
-          <h2 class="section-heading">Interactive Challenges</h2>
-          <p class="section-subtitle">Hands-on missions that help students practice real-world cyber choices.</p>
+          <h2 class="section-heading">Interaktivní výzvy</h2>
+          <p class="section-subtitle">Praktické mise, které pomáhají studentům procvičovat rozhodování v reálném světě.</p>
         </div>
       </div>
 
@@ -320,8 +320,8 @@ const localizedGames = games.map((game) => ({
           <Badge class="section-icon"><Icon class="m-3" name="lucide:gamepad-2" /></Badge>
         </div>
         <div>
-          <h2 class="section-heading">Cybersecurity Games</h2>
-          <p class="section-subtitle">Playful activities that reinforce each module with teamwork and curiosity.</p>
+          <h2 class="section-heading">Kyberbezpečnostní hry</h2>
+          <p class="section-subtitle">Hratelné aktivity, které podporují každý vzdělávací modul.</p>
         </div>
       </div>
 

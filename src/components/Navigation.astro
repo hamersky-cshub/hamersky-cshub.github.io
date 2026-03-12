@@ -36,22 +36,67 @@ import Logo from './Logo.astro'
 
     const mainMenu = mainNav.querySelector('ul') as HTMLUListElement | null
     const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')] as HTMLButtonElement[]
+    const localePrefixes = ['en', 'cs', 'de', 'lt', 'no']
 
     // functions
+    const normalizePath = (pathname: string): string => {
+      const normalized = pathname.replace(/\/+$/, '')
+      return normalized === '' ? '/' : normalized
+    }
+
+    const stripLocalePrefix = (pathname: string): string => {
+      const normalizedPath = normalizePath(pathname)
+
+      if (normalizedPath === '/') {
+        return normalizedPath
+      }
+
+      const segments = normalizedPath.split('/').filter(Boolean)
+      if (segments.length === 0 || !localePrefixes.includes(segments[0])) {
+        return normalizedPath
+      }
+
+      const strippedPath = `/${segments.slice(1).join('/')}`
+      return strippedPath === '/' || strippedPath === '' ? '/' : strippedPath
+    }
+
+    const matchesMenuItem = (menuItem: HTMLAnchorElement, currentPathname: string): boolean => {
+      const currentPath = stripLocalePrefix(currentPathname)
+      const menuPath = stripLocalePrefix(menuItem.pathname)
+      const matchType = menuItem.dataset.navMatch ?? 'exact'
+
+      if (matchType === 'root') {
+        return currentPath === '/'
+      }
+
+      if (matchType === 'section') {
+        const section = menuItem.dataset.navSection
+        if (section) {
+          return currentPath === `/${section}` || currentPath.startsWith(`/${section}/`)
+        }
+      }
+
+      if (matchType === 'prefix') {
+        return currentPath === menuPath || currentPath.startsWith(`${menuPath}/`)
+      }
+
+      return currentPath === menuPath
+    }
+
     const setActiveMenuItem = (): void => {
       const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
       const currentPathname = window.location.pathname
 
       mobileDesktopMenus.forEach((menu) => {
-        const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
+        const menuItems = [...menu.querySelectorAll('a:not([rel*="external"]):not([data-nav-ignore])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
-          if (currentPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
+          if (matchesMenuItem(menuItem, currentPathname)) {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
-          } else if (menuItem.textContent === 'Home' && currentPathname === '/') {
-            menuItem.classList.add('is-active')
-            menuItem.setAttribute('aria-current', 'page')
+          } else {
+            menuItem.classList.remove('is-active')
+            menuItem.removeAttribute('aria-current')
           }
         })
       })
@@ -313,6 +358,73 @@ import Logo from './Logo.astro'
           &:where(:hover, :focus-visible) {
             background-color: var(--background-color);
             color: var(--link-color) !important;
+          }
+        }
+
+        .menu-item--language {
+          @include breakpoint('nav') {
+            margin-inline-start: auto;
+          }
+
+          > button {
+            border: 2px solid var(--border-color-subtle);
+            border-radius: 999px;
+            background: var(--background-color);
+            padding: 0.45rem 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+          }
+
+          > ul {
+            min-inline-size: 210px;
+            inset-inline-start: auto;
+            inset-inline-end: 0;
+          }
+
+          .language-switcher__toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+          }
+
+          .language-switcher__toggle:hover,
+          .language-switcher__toggle:focus-visible,
+          .language-switcher__item:hover,
+          .language-switcher__item:focus-visible {
+            text-decoration: none;
+          }
+
+          .language-switcher__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-s);
+            border-radius: var(--radius-m);
+            padding: 0.35rem 0.5rem;
+          }
+
+          .language-switcher__item:hover,
+          .language-switcher__item:focus-visible,
+          .language-switcher__item.is-active {
+            background: color-mix(in srgb, var(--link-color) 12%, transparent);
+            color: var(--link-color);
+            text-decoration: underline;
+          text-decoration-style: wavy;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 7px;
+          }
+
+          .language-switcher__code {
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+          }
+
+          .language-switcher__label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: none;
           }
         }
       }

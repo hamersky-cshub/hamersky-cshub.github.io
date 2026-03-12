@@ -9,6 +9,13 @@ import { fileURLToPath } from 'url'
 export default defineConfig({
   compressHTML: true,
   site: 'https://hamersky-cshub.github.io/',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'cs', 'de', 'lt', 'no'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   output: 'static',
   integrations: [mdx(), icon(), compress()],
   vite: {

@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import heroImg from '../assets/images/index/robot-intro.png'
 import { Badge } from 'accessible-astro-components'
-import { localizePath } from '../utils/i18n'
+import { localizePath } from 'src/utils/i18n'
 
 /**
  * Hero Component
@@ -29,16 +29,16 @@ const learningHubHref = localizePath(Astro.currentLocale, '/learning-hub/introdu
           <slot><span style="color: #2563EB;">W</span>ise <span style="color: #2563EB">W</span>eb <span style="color: #2563EB">W</span>anderers</slot>
         </h1>
         <p class="text-3xl text-center md:text-left">
-          Build smart, safe online habits with lessons, challenges, and games designed for upper elementary classrooms.
+          Sukurkite protingus ir saugius interneto naudojimo įpročius naudodami pamokas, užduotis ir žaidimus, skirtus vyresniųjų klasių mokiniams.
         </p>
         <div class="flex flex-col gap-3 min-[600px]:flex-row items-center">
           <a class="button has-icon" href={learningHubHref}>
             <Icon name="lucide:graduation-cap" />
-            Explore the Learning Hub
+            Išbandyti mokymosi centrumą
           </a>
           <a class="button has-icon is-outline" href="#learning-modules">
             <Icon name="lucide:blocks" />
-            Browse Modules
+            Naršyti modulius
           </a>
         </div>
       </div>

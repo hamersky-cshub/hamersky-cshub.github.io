@@ -1,16 +1,29 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
+
+const pairs = [
+  { id: 1, keyword: "Digital Abuse",    definition: "Using technology to hurt, threaten, or control someone online." },
+  { id: 2, keyword: "Cyberbullying",    definition: "Repeated harmful online behaviour that targets a specific person." },
+  { id: 3, keyword: "Harassment",       definition: "Unwanted messages or actions meant to upset or frighten someone." },
+  { id: 4, keyword: "Blocking",         definition: "A platform feature that stops someone from contacting you." },
+  { id: 5, keyword: "Reporting",        definition: "Telling a platform or trusted adult about harmful online behaviour." },
+  { id: 6, keyword: "Screenshot",       definition: "A saved image of your screen, useful for keeping evidence of abuse." },
+  { id: 7, keyword: "Trusted Adult",    definition: "A parent, teacher, or guardian who can help you stay safe." },
+  { id: 8, keyword: "Online Boundary",  definition: "A personal rule about what you are comfortable sharing or doing online." },
+  { id: 9, keyword: "Threat",           definition: "A message designed to make someone feel scared or in danger." },
+  { id: 10, keyword: "Grooming",        definition: "Gradually building trust with someone in order to manipulate them." },
+]
 ---
 
 <DefaultLayout title="Safety Dictionary">
   <PageHeader
-      title="Safety Dictionary"
-      subtitle="Pair each keyword with its definition. Learn the language of safety and what to do when something feels wrong online."
-      bgType="bordered"
+    title="Safety Dictionary"
+    subtitle="Pair each keyword with its definition. Learn the language of safety and what to do when something feels wrong online."
+    bgType="bordered"
   />
 
-<section class="my-12">
+  <section class="my-12">
     <div class="container mb-12">
       <div class="mb-10 flex flex-col gap-6">
         <h2 class="mb-2">How It Works</h2>
@@ -21,81 +34,221 @@ import PageHeader from '@components/PageHeader.astro'
           Tip: If a message makes you feel scared, rushed, or confused, pause and talk to a trusted adult.
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="game-shell">
-        <div class="game-panel">
-          <div class="panel-header">
-            <div>
-              <p class="panel-label">Match Board</p>
-              <h3 class="panel-title">Digital Abuse Terms</h3>
-            </div>
-            <div class="progress-pill">
-              <span id="pair-count">0/10</span>
-            </div>
-          </div>
+  <section class="match-game" data-match-game>
+    <div class="container">
 
-          <div class="board">
-            <div>
-              <h4 class="board-title">Keywords</h4>
-              <div id="terms" class="board-grid" aria-live="polite">
-                Click Start to load the cards.
-              </div>
-            </div>
-            <div>
-              <h4 class="board-title">Definitions</h4>
-              <div id="definitions" class="board-grid">
-                Definitions will appear here.
-              </div>
-            </div>
-          </div>
+      <div class="match-game__toolbar">
+        <div class="match-game__score" data-score aria-live="polite">Score: 0 / {pairs.length}</div>
+        <button class="button match-game__restart" type="button" data-restart>Restart</button>
+      </div>
 
-          <div id="match-feedback" class="match-feedback"> </div>
+      <div class="match-game__attempt-msg" data-attempt-msg aria-live="polite"></div>
 
-          <div class="controls">
-            <div class="button-row">
-              <button id="btn-start" class="btn-primary">Start</button>
-              <button id="btn-reset" class="btn-secondary">Reset</button>
-            </div>
-            <button id="btn-shuffle" class="btn-ghost">Shuffle Cards</button>
-          </div>
+      <div class="match-game__board">
+        <div class="match-game__col" data-keywords>
+          {pairs.map((p) => (
+            <button
+              class="match-tile match-tile--keyword"
+              type="button"
+              data-id={p.id}
+              data-type="keyword"
+            >
+              {p.keyword}
+            </button>
+          ))}
         </div>
 
-        <div class="score-panel">
-          <div class="score-header">
-            <h3 class="text-base font-semibold">Scoreboard</h3>
-            <span class="score-pill">Match Game</span>
-          </div>
-
-          <div class="score-grid">
-            <div class="score-card">
-              <p class="score-label">Matches</p>
-              <p id="score" class="score-value">0</p>
-            </div>
-            <div class="score-card">
-              <p class="score-label">Tries</p>
-              <p id="tries" class="score-value">0</p>
-            </div>
-          </div>
-
-          <div class="mt-6">
-            <p class="score-label">Safety Moves</p>
-            <div class="hint-list">
-              <div class="hint-item">Do not share passwords or your home address.</div>
-              <div class="hint-item">Block and report anyone who is mean or scary.</div>
-              <div class="hint-item">Save screenshots and show a trusted adult.</div>
-              <div class="hint-item">It is okay to stop chatting if you feel weird.</div>
-            </div>
-          </div>
-
-          <div class="challenge-card">
-            Challenge: After you finish, name one adult you can talk to if something feels unsafe online.
-          </div>
+        <div class="match-game__col" data-definitions>
+          {pairs.map((p) => (
+            <button
+              class="match-tile match-tile--definition"
+              type="button"
+              data-id={p.id}
+              data-type="definition"
+            >
+              {p.definition}
+            </button>
+          ))}
         </div>
       </div>
+
+      <div class="match-game__win" data-win hidden>
+        <div class="match-game__win-inner">
+          <span class="match-game__win-icon">🎉</span>
+          <h2>You matched them all!</h2>
+          <p>Great work — you know the language of online safety.</p>
+          <button class="button" type="button" data-restart>Play Again</button>
+        </div>
+      </div>
+
     </div>
-</section>
+  </section>
+</DefaultLayout>
+
+<script>
+  document.querySelectorAll('[data-match-game]').forEach((root) => {
+    const keywordCol   = root.querySelector('[data-keywords]')
+    const defCol       = root.querySelector('[data-definitions]')
+    const scoreEl      = root.querySelector('[data-score]')
+    const attemptMsg   = root.querySelector('[data-attempt-msg]')
+    const winPanel     = root.querySelector('[data-win]')
+    const restartBtns  = root.querySelectorAll('[data-restart]')
+
+    const totalPairs   = root.querySelectorAll('[data-type="keyword"]').length
+    let score          = 0
+    let selectedTile: HTMLButtonElement | null = null
+    let busy           = false
+
+    // ── Shuffle helper ────────────────────────────────────────────────────────
+    const shuffle = (col: Element) => {
+      const tiles = Array.from(col.querySelectorAll('.match-tile'))
+      for (let i = tiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        col.appendChild(tiles[j])
+        tiles.splice(j, 1)
+      }
+    }
+
+    // ── Update score display ──────────────────────────────────────────────────
+    const updateScore = () => {
+      scoreEl!.textContent = `Score: ${score} / ${totalPairs}`
+    }
+
+    // ── Clear attempt message ─────────────────────────────────────────────────
+    let clearMsgTimer: ReturnType<typeof setTimeout>
+    const showMsg = (text: string, type: 'correct' | 'wrong') => {
+      clearTimeout(clearMsgTimer)
+      attemptMsg!.textContent = text
+      attemptMsg!.className = `match-game__attempt-msg match-game__attempt-msg--${type}`
+      clearMsgTimer = setTimeout(() => {
+        attemptMsg!.textContent = ''
+        attemptMsg!.className = 'match-game__attempt-msg'
+      }, 1800)
+    }
+
+    // ── Deselect all tiles ────────────────────────────────────────────────────
+    const deselectAll = () => {
+      root.querySelectorAll('.match-tile--selected').forEach((t) =>
+        t.classList.remove('match-tile--selected')
+      )
+      selectedTile = null
+    }
+
+    // ── Handle a tile click ───────────────────────────────────────────────────
+    const handleClick = (tile: HTMLButtonElement) => {
+      if (busy) return
+      if (tile.disabled) return
+
+      const type = tile.dataset.type!
+      const id   = tile.dataset.id!
+
+      // Clicking the already-selected tile → deselect
+      if (tile.classList.contains('match-tile--selected')) {
+        tile.classList.remove('match-tile--selected')
+        selectedTile = null
+        return
+      }
+
+      // No tile selected yet → select this one
+      if (!selectedTile) {
+        tile.classList.add('match-tile--selected')
+        selectedTile = tile
+        return
+      }
+
+      // A tile of the same type → swap selection
+      if (selectedTile.dataset.type === type) {
+        deselectAll()
+        tile.classList.add('match-tile--selected')
+        selectedTile = tile
+        return
+      }
+
+      // Two tiles of different types selected → evaluate
+      const firstTile  = selectedTile
+      const secondTile = tile
+
+      busy = true
+      secondTile.classList.add('match-tile--selected')
+
+      if (firstTile.dataset.id === secondTile.dataset.id) {
+        // ✅ Correct match
+        firstTile.classList.remove('match-tile--selected')
+        secondTile.classList.remove('match-tile--selected')
+        firstTile.classList.add('match-tile--matched')
+        secondTile.classList.add('match-tile--matched')
+
+        setTimeout(() => {
+          firstTile.classList.add('match-tile--gone')
+          secondTile.classList.add('match-tile--gone')
+          firstTile.disabled  = true
+          secondTile.disabled = true
+          score++
+          updateScore()
+          showMsg('✓ Correct match!', 'correct')
+
+          if (score === totalPairs) {
+            setTimeout(() => { winPanel!.hidden = false }, 400)
+          }
+          selectedTile = null
+          busy = false
+        }, 500)
+      } else {
+        // ❌ Wrong match
+        firstTile.classList.add('match-tile--wrong')
+        secondTile.classList.add('match-tile--wrong')
+
+        showMsg('✗ Not a match — try again.', 'wrong')
+
+        setTimeout(() => {
+          firstTile.classList.remove('match-tile--selected', 'match-tile--wrong')
+          secondTile.classList.remove('match-tile--selected', 'match-tile--wrong')
+          selectedTile = null
+          busy = false
+        }, 700)
+      }
+    }
+
+    // ── Attach listeners ──────────────────────────────────────────────────────
+    root.querySelectorAll<HTMLButtonElement>('.match-tile').forEach((tile) => {
+      tile.addEventListener('click', () => handleClick(tile))
+    })
+
+    // ── Restart ───────────────────────────────────────────────────────────────
+    const restart = () => {
+      score        = 0
+      selectedTile = null
+      busy         = false
+      winPanel!.hidden = true
+      attemptMsg!.textContent = ''
+      attemptMsg!.className   = 'match-game__attempt-msg'
+
+      root.querySelectorAll<HTMLButtonElement>('.match-tile').forEach((tile) => {
+        tile.className = tile.dataset.type === 'keyword'
+          ? 'match-tile match-tile--keyword'
+          : 'match-tile match-tile--definition'
+        tile.disabled = false
+      })
+
+      shuffle(keywordCol!)
+      shuffle(defCol!)
+      updateScore()
+    }
+
+    restartBtns.forEach((btn) => btn.addEventListener('click', restart))
+
+    // ── Initial shuffle ───────────────────────────────────────────────────────
+    shuffle(keywordCol!)
+    shuffle(defCol!)
+    updateScore()
+  })
+</script>
 
 <style>
+  /* ── Tip card ────────────────────────────────────────────────────────────── */
   .tip-card {
     border-radius: 0.9rem;
     border: 1px solid #bae6fd;
@@ -104,522 +257,207 @@ import PageHeader from '@components/PageHeader.astro'
     font-size: 0.95rem;
     color: #075985;
   }
-  .game-shell {
-    display: grid;
-    gap: 2rem;
+
+  /* ── Game wrapper ────────────────────────────────────────────────────────── */
+  .match-game {
+    margin-bottom: var(--space-3xl);
   }
-  @media (min-width: 1024px) {
-    .game-shell {
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
-      align-items: start;
-    }
-  }
-  .game-panel,
-  .score-panel {
-    border-radius: 1.25rem;
-    border: 1px solid #e2e8f0;
-    background: #ffffff;
-    padding: 1.5rem;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  }
-  .panel-header {
+
+  /* ── Toolbar ─────────────────────────────────────────────────────────────── */
+  .match-game__toolbar {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: var(--space-m);
+    margin-bottom: var(--space-m);
+    flex-wrap: wrap;
   }
-  .panel-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #64748b;
+
+  .match-game__score {
+    font-size: var(--font-size-2);
     font-weight: 700;
+    padding: var(--space-2xs) var(--space-s);
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-s);
   }
-  .panel-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0f172a;
+
+  .match-game__restart {
+    border-color: var(--link-color);
+    background-color: var(--background-color);
+    color: var(--link-color);
   }
-  .progress-pill {
-    border-radius: 999px;
-    background: #ecfeff;
-    color: #155e75;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.35rem 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+
+  .match-game__restart:where(:hover, :focus-visible) {
+    background-color: var(--link-color);
+    color: var(--background-color);
   }
-  .board {
+
+  /* ── Attempt message ─────────────────────────────────────────────────────── */
+  .match-game__attempt-msg {
+    min-height: 1.8rem;
+    font-weight: 600;
+    font-size: var(--font-size-0);
+    margin-bottom: var(--space-s);
+    transition: color 0.2s;
+  }
+
+  .match-game__attempt-msg--correct { color: #15803d; }
+  .match-game__attempt-msg--wrong   { color: #b91c1c; }
+
+  /* ── Board ───────────────────────────────────────────────────────────────── */
+  .match-game__board {
     display: grid;
-    gap: 1.5rem;
-  }
-  @media (min-width: 768px) {
-    .board {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .board-title {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #64748b;
-    margin-bottom: 0.75rem;
-  }
-  .board-grid {
-    display: grid;
-    gap: 0.75rem;
-    border-radius: 1rem;
-    border: 2px dashed #cbd5e1;
-    padding: 1rem;
-    min-height: 18rem;
-    background: #f8fafc;
-    color: #475569;
-    font-size: 0.95rem;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-m);
     align-items: start;
-    justify-items: start;
   }
-  .match-card {
-    border-radius: 999px;
-    border: 2px solid #e2e8f0;
-    background: #ffffff;
-    padding: 0.55rem 1.1rem 0.55rem 1.7rem;
-    text-align: left;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0f172a;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+
+  @media (max-width: 640px) {
+    .match-game__board {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .match-game__col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  /* ── Tiles ───────────────────────────────────────────────────────────────── */
+  .match-tile {
     width: 100%;
-    position: relative;
+    text-align: left;
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-m);
+    border: 2px solid var(--border-color-subtle);
+    background: var(--background-color);
+    font-size: var(--font-size-0);
+    line-height: 1.45;
+    cursor: pointer;
+    transition:
+      border-color 0.18s,
+      background-color 0.18s,
+      color 0.18s,
+      opacity 0.3s,
+      transform 0.18s,
+      box-shadow 0.18s;
+    box-shadow: var(--elevation-1);
   }
-  .match-card::before {
-    content: '';
-    position: absolute;
-    left: 0.7rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 999px;
-    background: #94a3b8;
+
+  .match-tile--keyword {
+    font-weight: 700;
+    font-size: var(--font-size-1);
+    border-left: 4px solid var(--brand-DA);
   }
-  .match-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
-    border-color: #93c5fd;
+
+  .match-tile--definition {
+    color: var(--color-neutral-700);
+    border-left: 4px solid var(--border-color-subtle);
   }
-  .match-card.selected {
-    border-color: #0284c7;
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25);
-    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
-    color: #0b3b5c;
+
+  /* Hover */
+  .match-tile:where(:hover, :focus-visible):not(:disabled):not(.match-tile--matched):not(.match-tile--gone) {
+    border-color: var(--brand-DA);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-DA), transparent 80%);
+    transform: translateY(-1px);
   }
-  .match-card.matched {
-    border-color: #86efac;
-    background: #f0fdf4;
-    color: #166534;
+
+  /* Selected */
+  .match-tile--selected {
+    background-color: color-mix(in oklab, var(--brand-DA), white 75%);
+    border-color: var(--brand-DA);
+    color: color-mix(in oklab, var(--brand-DA), black 30%);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-DA), transparent 60%);
+  }
+
+  .match-tile--keyword.match-tile--selected {
+    border-left-color: var(--brand-DA);
+  }
+
+  .match-tile--definition.match-tile--selected {
+    border-left-color: var(--brand-DA);
+    color: color-mix(in oklab, var(--brand-DA), black 30%);
+  }
+
+  /* Wrong flash */
+  .match-tile--wrong {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+    animation: shake 0.35s ease;
+  }
+
+  @keyframes shake {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-5px); }
+    40%  { transform: translateX(5px); }
+    60%  { transform: translateX(-4px); }
+    80%  { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Matched — brief green glow before disappearing */
+  .match-tile--matched {
+    background-color: #dcfce7;
+    border-color: #16a34a;
+    color: #14532d;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.3);
+  }
+
+  /* Gone */
+  .match-tile--gone {
+    opacity: 0;
+    pointer-events: none;
+    height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden;
+    transition:
+      opacity 0.4s,
+      height 0.4s 0.1s,
+      padding 0.4s 0.1s,
+      margin 0.4s 0.1s;
+  }
+
+  /* Disabled (matched) */
+  .match-tile:disabled {
     cursor: default;
-    box-shadow: none;
-    transform: none;
   }
-  .match-card.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+
+  /* ── Win panel ───────────────────────────────────────────────────────────── */
+  .match-game__win {
+    margin-top: var(--space-xl);
   }
-  .match-card:focus-visible {
-    outline: 3px solid rgba(14, 165, 233, 0.35);
-    outline-offset: 2px;
-  }
-  .match-feedback {
-    margin-top: 1rem;
-    font-weight: 700;
-    min-height: 1.5rem;
-    color: #0f172a;
-  }
-  .controls {
-    margin-top: 1.5rem;
+
+  .match-game__win-inner {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-  }
-  .button-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  .btn-primary,
-  .btn-secondary,
-  .btn-ghost {
-    border-radius: 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    padding: 0.6rem 1.1rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .btn-primary {
-    background: #0ea5e9;
-    color: #ffffff;
-  }
-  .btn-primary:hover {
-    box-shadow: 0 8px 18px rgba(14, 165, 233, 0.25);
-    transform: translateY(-1px);
-  }
-  .btn-secondary {
-    border: 1px solid #cbd5e1;
-    background: #ffffff;
-    color: #0f172a;
-  }
-  .btn-secondary:hover {
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
-    transform: translateY(-1px);
-  }
-  .btn-ghost {
-    border: 1px dashed #cbd5e1;
-    background: #f8fafc;
-    color: #475569;
-  }
-  .btn-ghost:hover {
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-    transform: translateY(-1px);
-  }
-  .score-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .score-pill {
-    border-radius: 999px;
-    background: #f1f5f9;
-    color: #475569;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.35rem 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .score-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .score-card {
-    border-radius: 0.9rem;
-    border: 1px solid #e2e8f0;
-    background: #ffffff;
-    padding: 1rem;
+    gap: var(--space-s);
+    padding: var(--space-xl);
+    border-radius: var(--radius-l);
+    border: 3px solid #16a34a;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    box-shadow: var(--elevation-2);
     text-align: center;
   }
-  .score-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #64748b;
+
+  .match-game__win-icon {
+    font-size: 3rem;
+    line-height: 1;
   }
-  .score-value {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #0f172a;
+
+  .match-game__win-inner h2 {
+    color: #14532d;
   }
-  .hint-list {
-    display: grid;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
-  }
-  .hint-item {
-    border-radius: 0.85rem;
-    border: 1px solid #e2e8f0;
-    background: #ffffff;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    color: #1f2937;
-  }
-  .challenge-card {
-    margin-top: 1.5rem;
-    border-radius: 0.9rem;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    padding: 1rem;
-    font-size: 0.85rem;
-    color: #475569;
+
+  .match-game__win-inner p {
+    color: #166534;
+    max-width: 40ch;
   }
 </style>
-
-<script is:inline>
-  const initDigitalAbuseMatch = () => {
-    const pairs = [
-    {
-      id: 'grooming',
-      term: 'Cyber Grooming',
-      definition: 'When someone builds trust online to get a kid to share private info or meet in person.'
-    },
-    {
-      id: 'privacy',
-      term: 'Digital Privacy',
-      definition: 'Keeping personal info like your name, address, and passwords safe online.'
-    },
-    {
-      id: 'catfishing',
-      term: 'Catfishing',
-      definition: 'Pretending to be someone else online to trick people.'
-    },
-    {
-      id: 'predator',
-      term: 'Online Predator',
-      definition: 'An adult who tries to harm or trick kids online.'
-    },
-    {
-      id: 'cyberbullying',
-      term: 'Cyberbullying',
-      definition: 'Using messages or posts to be mean, embarrass, or hurt someone.'
-    },
-    {
-      id: 'scam',
-      term: 'Scam',
-      definition: 'A trick to steal money, accounts, or personal information.'
-    },
-    {
-      id: 'exploitation',
-      term: 'Exploitation',
-      definition: 'Using someone online for your own benefit in an unfair or unsafe way.'
-    },
-    {
-      id: 'doxxing',
-      term: 'Doxxing',
-      definition: 'Sharing private info publicly without permission.'
-    },
-    {
-      id: 'impersonation',
-      term: 'Impersonation',
-      definition: 'Using another name or account to pretend to be them.'
-    },
-    {
-      id: 'threats',
-      term: 'Threats',
-      definition: 'Messages that scare or pressure someone to do something.'
-    }
-  ]
-
-    const termsEl = document.getElementById('terms')
-  const defsEl = document.getElementById('definitions')
-  const feedbackEl = document.getElementById('match-feedback')
-  const scoreEl = document.getElementById('score')
-  const triesEl = document.getElementById('tries')
-  const pairCountEl = document.getElementById('pair-count')
-
-  const startButton = document.getElementById('btn-start')
-  const resetButton = document.getElementById('btn-reset')
-  const shuffleButton = document.getElementById('btn-shuffle')
-
-  let selectedTerm = null
-  let selectedDef = null
-  let matched = new Set()
-  let tries = 0
-  let gameActive = false
-
-  const shuffle = (array) => {
-    const copy = [...array]
-    for (let i = copy.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1))
-      const temp = copy[i]
-      copy[i] = copy[j]
-      copy[j] = temp
-    }
-    return copy
-  }
-
-  const renderBoard = () => {
-    const termCards = shuffle(pairs)
-    const defCards = shuffle(pairs)
-
-    termsEl.replaceChildren()
-    defsEl.replaceChildren()
-
-    termCards.forEach((item) => {
-      const button = document.createElement('button')
-      button.type = 'button'
-      button.className = 'match-card'
-      button.dataset.type = 'term'
-      button.dataset.id = item.id
-      button.setAttribute('aria-pressed', 'false')
-      button.textContent = item.term
-      termsEl.appendChild(button)
-    })
-
-    defCards.forEach((item) => {
-      const button = document.createElement('button')
-      button.type = 'button'
-      button.className = 'match-card'
-      button.dataset.type = 'definition'
-      button.dataset.id = item.id
-      button.setAttribute('aria-pressed', 'false')
-      button.textContent = item.definition
-      defsEl.appendChild(button)
-    })
-  }
-
-  const clearSelections = () => {
-    selectedTerm = null
-    selectedDef = null
-    document.querySelectorAll('.match-card.selected').forEach((card) => {
-      card.classList.remove('selected')
-      card.setAttribute('aria-pressed', 'false')
-    })
-  }
-
-  const updateScore = () => {
-    scoreEl.textContent = String(matched.size)
-    triesEl.textContent = String(tries)
-    pairCountEl.textContent = `${matched.size}/10`
-  }
-
-  const showFeedback = (message, tone = 'neutral') => {
-    feedbackEl.textContent = message
-    if (tone === 'good') feedbackEl.style.color = '#15803d'
-    if (tone === 'bad') feedbackEl.style.color = '#b91c1c'
-    if (tone === 'neutral') feedbackEl.style.color = '#0f172a'
-  }
-
-  const markMatched = (id) => {
-    const cards = document.querySelectorAll(`.match-card[data-id="${id}"]`)
-    cards.forEach((card) => {
-      card.classList.remove('selected')
-      card.classList.add('matched')
-      card.disabled = true
-      card.classList.add('disabled')
-      card.setAttribute('aria-pressed', 'true')
-    })
-  }
-
-  const applyMatched = () => {
-    matched.forEach((id) => markMatched(id))
-  }
-
-  const handleMatchCheck = () => {
-    if (!selectedTerm || !selectedDef) return
-    tries += 1
-
-    if (selectedTerm === selectedDef) {
-      matched.add(selectedTerm)
-      markMatched(selectedTerm)
-      showFeedback('Correct! Nice match.', 'good')
-      updateScore()
-
-      if (matched.size === pairs.length) {
-        showFeedback('You matched them all! Great work.', 'good')
-      }
-      clearSelections()
-      return
-    }
-
-    showFeedback('Not quite. Try a different definition.', 'bad')
-    updateScore()
-    const selectedCards = document.querySelectorAll('.match-card.selected')
-    selectedCards.forEach((card) => {
-      card.classList.add('disabled')
-    })
-    setTimeout(() => {
-      selectedCards.forEach((card) => {
-        card.classList.remove('disabled')
-      })
-      clearSelections()
-    }, 600)
-  }
-
-  const handleCardClick = (event) => {
-    if (!gameActive) return
-    const target = event.target
-    if (!target.classList.contains('match-card')) return
-    if (target.disabled) return
-
-    const type = target.dataset.type
-    const id = target.dataset.id
-
-    if (type === 'term') {
-      document.querySelectorAll('.match-card[data-type="term"].selected').forEach((card) => {
-        card.classList.remove('selected')
-        card.setAttribute('aria-pressed', 'false')
-      })
-      target.classList.add('selected')
-      target.setAttribute('aria-pressed', 'true')
-      selectedTerm = id
-    }
-
-    if (type === 'definition') {
-      document.querySelectorAll('.match-card[data-type="definition"].selected').forEach((card) => {
-        card.classList.remove('selected')
-        card.setAttribute('aria-pressed', 'false')
-      })
-      target.classList.add('selected')
-      target.setAttribute('aria-pressed', 'true')
-      selectedDef = id
-    }
-
-    handleMatchCheck()
-  }
-
-  const startGame = () => {
-    matched = new Set()
-    tries = 0
-    gameActive = true
-    renderBoard()
-    applyMatched()
-    clearSelections()
-    updateScore()
-    showFeedback('Pick a keyword and a definition to begin!', 'neutral')
-  }
-
-  const resetGame = () => {
-    matched = new Set()
-    tries = 0
-    gameActive = false
-    termsEl.textContent = 'Click Start to load the cards.'
-    defsEl.textContent = 'Definitions will appear here.'
-    clearSelections()
-    updateScore()
-    showFeedback('Game reset. Click Start when you are ready.', 'neutral')
-  }
-
-  if (termsEl) {
-    termsEl.addEventListener('click', handleCardClick)
-  }
-  if (defsEl) {
-    defsEl.addEventListener('click', handleCardClick)
-  }
-
-  if (startButton) {
-    startButton.addEventListener('click', startGame)
-  }
-
-  if (resetButton) {
-    resetButton.addEventListener('click', resetGame)
-  }
-
-  if (shuffleButton) {
-    shuffleButton.addEventListener('click', () => {
-      if (!gameActive) return
-      renderBoard()
-      applyMatched()
-      clearSelections()
-      showFeedback('Cards shuffled! Keep matching.', 'neutral')
-    })
-  }
-
-    updateScore()
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDigitalAbuseMatch)
-  } else {
-    initDigitalAbuseMatch()
-  }
-</script>
-</DefaultLayout>

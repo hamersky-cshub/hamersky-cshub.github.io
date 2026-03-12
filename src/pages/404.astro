@@ -1,6 +1,9 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
+import { localizePath } from '../utils/i18n'
+
+const homeHref = localizePath(Astro.currentLocale, '/')
 ---
 
 <DefaultLayout title="404 - Page Not Found">
@@ -18,7 +21,7 @@ import { Icon } from 'astro-icon/components'
       </p>
       
       <div class="mt-10 flex flex-col items-center justify-center text-center">
-        <a class="button has-icon text-lg" href="/" style="background-color: #2563eb; color: #fff; border-color: #2563eb; border-radius: 10px; padding: 0.75rem 1.5rem;">
+        <a class="button has-icon text-lg" href={homeHref} style="background-color: #2563eb; color: #fff; border-color: #2563eb; border-radius: 10px; padding: 0.75rem 1.5rem;">
           <Icon name="lucide:home" />
           Navigate Back Home
         </a>
