@@ -40,6 +40,8 @@ export default defineConfig({
         '@post-images': fileURLToPath(new URL('./public/posts', import.meta.url)),
         '@project-images': fileURLToPath(new URL('./public/projects', import.meta.url)),
         '@i18n': fileURLToPath(new URL('./src/i18n', import.meta.url)),
+        'src/i18n': fileURLToPath(new URL('./src/i18n', import.meta.url)),
+        'src/data': fileURLToPath(new URL('./src/data', import.meta.url)),
       },
     },
   },
