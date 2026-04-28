@@ -1,0 +1,79 @@
+---
+import Logo from './Logo.astro'
+import { localizePath } from 'src/i18n/i18n'
+import { useTranslations } from 'src/i18n/index'
+
+/**
+ * Footer Component
+ *
+ * Site-wide footer with navigation links, learning module links,
+ * branding, and copyright info.
+ *
+ * Accessibility:
+ * - <footer> landmark replaces the need for role="contentinfo"
+ * - Screen-reader-only h2 provides heading hierarchy inside the landmark
+ * - Footer nav uses <nav aria-label> to distinguish from header nav
+ * - External Erasmus+ link uses rel="noopener noreferrer"
+ *
+ * @see WCAG 1.3.1 — Info and Relationships
+ * @see WCAG 2.4.1 — Bypass Blocks (footer nav as distinct landmark)
+ */
+const currentYear = new Date().getFullYear()
+const locale = Astro.currentLocale
+const { t } = useTranslations(locale)
+---
+
+<footer>
+  <section class="footer-links py-10" aria-label="Site links">
+    <h2 class="sr-only">Footer</h2>
+    <div class="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Primary navigation -->
+      <nav aria-label="Footer navigation">
+        <h3 class="text-2xl font-bold">{t('footer.navigation')}</h3>
+        <ul class="mt-4 flex flex-col gap-2">
+          <li><a href={localizePath(locale, '/')}>{t('nav.home')}</a></li>
+          <li><a href={localizePath(locale, '/about')}>{t('nav.about')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/introduction')}>{t('nav.learningHub')}</a></li>
+        </ul>
+      </nav>
+
+      <!-- Module quick links -->
+      <nav aria-label="Learning modules">
+        <h3 class="text-2xl font-bold">{t('footer.learningModules')}</h3>
+        <ul class="mt-4 flex flex-col gap-2">
+          <li><a href={localizePath(locale, '/learning-hub/digital-citizenship/content')}>{t('modules.dc.title')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/attacker-perspective/content')}>{t('modules.ap.title')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/authentication/content')}>{t('modules.at.title')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/data-privacy/content')}>{t('modules.dp.title')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/social-engineering/content')}>{t('modules.se.title')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/malware/content')}>{t('modules.mw.title')}</a></li>
+          <li><a href={localizePath(locale, '/learning-hub/digital-abuse/content')}>{t('modules.da.title')}</a></li>
+        </ul>
+      </nav>
+
+      <!-- Branding & tagline -->
+      <div class="flex flex-col gap-4">
+        <Logo loading="lazy" />
+        <p class="leading-[1.75]">
+          {t('footer.tagline')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-legal py-8" aria-label="Legal information">
+    <div class="container flex flex-col gap-4 md:flex-row md:justify-between">
+      <p>&copy; {currentYear} - KidCy</p>
+      <p>
+        {t('footer.madeWith')}
+        <a href="https://erasmus-plus.ec.europa.eu/" rel="noopener noreferrer">Erasmus+</a>.
+      </p>
+    </div>
+  </section>
+</footer>
+
+<style>
+  section {
+    border-top: 1px solid var(--border-color-subtle);
+  }
+</style>

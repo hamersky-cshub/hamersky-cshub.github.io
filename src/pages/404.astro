@@ -1,0 +1,33 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+import { localizePath } from '../i18n/i18n'
+import { useTranslations } from '../i18n/index'
+
+const homeHref = localizePath(Astro.currentLocale, '/')
+const { t } = useTranslations(Astro.currentLocale)
+---
+
+<DefaultLayout title={t('notFound.title')}>
+  <section class="my-12 flex flex-col items-center justify-center text-center pb-12">
+    <div class="container space-content">
+      <div class="mb-6 mt-16 flex justify-center">
+        <Icon name="lucide:map-pin-off" class="w-32 h-32 mx-auto" style="color: #2563eb;" />
+      </div>
+
+      <h1 class="font-black mb-2" style="font-size: clamp(3.5rem, 2rem + 3vw, 5rem); text-decoration: underline; text-decoration-color: #2563eb;">{t('notFound.code')}</h1>
+      <h2 class="text-3xl font-bold mb-6 mt-2">{t('notFound.heading')}</h2>
+
+      <p class="text-xl mb-12" style="color: var(--color-neutral-700); max-width: 600px; margin-left: auto; margin-right: auto;">
+        {t('notFound.message')}
+      </p>
+
+      <div class="mt-10 flex flex-col items-center justify-center text-center">
+        <a class="button has-icon text-lg" href={homeHref} style="background-color: #2563eb; color: #fff; border-color: #2563eb; border-radius: 10px; padding: 0.75rem 1.5rem;">
+          <Icon name="lucide:home" />
+          {t('notFound.backHome')}
+        </a>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

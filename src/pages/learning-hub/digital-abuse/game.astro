@@ -1,0 +1,114 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { useTranslations } from 'src/i18n/index'
+
+const { t } = useTranslations(Astro.currentLocale)
+---
+
+<DefaultLayout title={t('games.da.title')}>
+  <PageHeader
+      title={t('games.da.title')}
+      subtitle={t('games.da.subtitle')}
+      underlineColor="var(--brand-DA)"
+      bgType="module"
+  />
+  <section class="my-12">
+  <div class="container mb-12">
+        <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">{t('gamePage.howItWorks')}</h2>
+        <p>
+          {t('gamePage.gameInstructions')}
+        </p>
+        <div class="tip-card">
+          <div class="tip-card__lead">
+            <span class="tip-card__icon" aria-hidden="true">💬</span>
+            <strong class="tip-card__label">{t('gamePage.tipLabel')}</strong>
+          </div>
+          <div class="tip-card__body">{t('gamePage.tip')}</div>
+        </div>
+      </div>
+    <div class="roblox-embed">
+
+    <div class="game-frame" id="gameFrame">
+
+    <img
+      src="https://cms-media.roblox.com/resize=width:1280,fit:max/GnaqqRBTcCuoRELL938w"
+      class="game-thumbnail"
+      alt={t('games.da.altText')}
+    />
+
+    <div class="play-overlay">
+      <a href="roblox://placeId=85447363856674" class="button" rel="noopener noreferrer" aria-label={t('gamePage.playAriaLabel')}>
+        &#9654; {t('gamePage.playGame')}
+      </a>
+    </div>
+
+  </div>
+
+
+    </div>
+    </div>
+  </section>
+
+</DefaultLayout>
+
+<style>
+.roblox-embed {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 2rem;
+  font-family: var(--font-body);
+}
+
+.tip-card {
+    border-radius: 0.9rem;
+    border: 1px solid color-mix(in oklab, var(--brand-DA), white 40%);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--brand-DA), white 82%), color-mix(in oklab, var(--brand-DA), white 92%));
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: color-mix(in oklab, var(--brand-DA), black 30%);
+  }
+
+.game-frame {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.game-thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+}
+
+.button {
+  font-size: 24px;
+  padding: 15px 30px;
+  background: var(--brand-DA);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #FFF;
+  color: var(--brand-DA);
+  transition: all 0.5s ease;
+}
+
+.game-info {
+  padding: 10px 5px;
+}
+</style>

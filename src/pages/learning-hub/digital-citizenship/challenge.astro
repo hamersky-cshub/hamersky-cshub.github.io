@@ -1,0 +1,899 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { useTranslations } from 'src/i18n/index'
+
+const { t, v } = useTranslations(Astro.currentLocale)
+const { v: vEn } = useTranslations('en')
+
+type ChallengePost = {
+  id: number
+  text: string
+  category: 'safe' | 'unsafe'
+  emoji: string
+  explanation: string
+}
+
+const rawPosts = v<ReadonlyArray<Record<string, unknown>>>('challengeDC.posts') ?? []
+const enPosts = vEn<ReadonlyArray<Record<string, unknown>>>('challengeDC.posts') ?? []
+
+const postCount = Math.max(rawPosts.length, enPosts.length)
+const posts: ReadonlyArray<ChallengePost> = Array.from({ length: postCount }, (_, idx) => {
+  const raw = rawPosts[idx] ?? {}
+  const fallback = enPosts[idx] ?? {}
+  const categoryCandidate = (raw.category ?? fallback.category) as string
+  const category = categoryCandidate === 'safe' || categoryCandidate === 'unsafe' ? categoryCandidate : 'unsafe'
+
+  return {
+    id: idx + 1,
+    text: String(raw.text ?? fallback.text ?? ''),
+    category,
+    emoji: String(raw.emoji ?? fallback.emoji ?? ''),
+    explanation: String(raw.explanation ?? fallback.explanation ?? ''),
+  }
+})
+
+const totalPosts = posts.length
+---
+
+<DefaultLayout title={t('challengeDC.title')}>
+  <PageHeader
+    title={t('challengeDC.title')}
+    subtitle={t('challengeDC.subtitle')}
+    bgType="module"
+    underlineColor="var(--brand-DC)"
+  />
+
+  <section class="my-12">
+    <div class="container mb-12">
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">{t('challengeDC.howItWorks')}</h2>
+        <p>
+          {t('challengeDC.instruction')}
+        </p>
+        <div class="tip-card">
+          <div class="tip-card__lead">
+            <span class="tip-card__icon" aria-hidden="true">💬</span>
+            <strong class="tip-card__label">{t('challengeDC.tipLabel')}</strong>
+          </div>
+          <div class="tip-card__body">{t('challengeDC.tip')}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="sort-game"
+    data-sort-game
+    data-total-posts={totalPosts}
+    data-score-label={t('challengeDC.correctCountLabel')}
+    data-feedback-correct={t('challengeDC.correct')}
+    data-feedback-wrong={t('challengeDC.tryOtherZone')}
+    data-drag-safe-here={t('challengeDC.dragSafeHere')}
+    data-drag-unsafe-here={t('challengeDC.dragUnsafeHere')}
+  >
+    <div class="container">
+
+      <!-- Toolbar with score and restart -->
+      <div class="sort-game__toolbar">
+        <div class="sort-game__score" data-score aria-live="polite">0 / {totalPosts} {t('challengeDC.correctCountLabel')}</div>
+        <button class="button sort-game__restart" type="button" data-restart>{t('challengeDC.tryAgain')}</button>
+      </div>
+
+      <!-- Feedback message -->
+      <div class="sort-game__feedback" data-feedback aria-live="polite"></div>
+
+      <!-- Game board -->
+      <div class="sort-game__board">
+
+        <!-- Card tray (source) -->
+        <div class="sort-game__tray" data-tray>
+          <h3 class="sort-game__tray-label">{t('challengeDC.postsToSort')}</h3>
+          <div class="sort-game__cards-container" data-cards-tray>
+            {posts.map((post) => (
+              <div class="post-card-wrapper">
+                <div
+                  class="post-card"
+                  data-post-id={post.id}
+                  data-category={post.category}
+                  data-explanation={post.explanation}
+                  draggable="true"
+                  tabindex="0"
+                >
+                  <div class="post-card__emoji">{post.emoji}</div>
+                  <div class="post-card__text">{post.text}</div>
+                  <div class="post-card__check" aria-hidden="true">✓</div>
+                </div>
+                <div class="post-card__explanation" data-card-explanation={post.id} aria-live="polite"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Drop zones -->
+        <div class="sort-game__zones">
+
+          <!-- Safe to Share (Green) -->
+          <div
+            class="drop-zone drop-zone--safe"
+            data-zone="safe"
+            role="region"
+            aria-label={t('challengeDC.safeZoneAriaLabel')}
+          >
+            <div class="drop-zone__header">
+              <h3 class="drop-zone__title">{t('challengeDC.safeToShare')}</h3>
+              <span class="drop-zone__icon">✅</span>
+            </div>
+            <div class="drop-zone__content" data-zone-content>
+              <p class="drop-zone__empty">{t('challengeDC.dragSafeHere')}</p>
+            </div>
+          </div>
+
+          <!-- Do NOT Share (Red) -->
+          <div
+            class="drop-zone drop-zone--unsafe"
+            data-zone="unsafe"
+            role="region"
+            aria-label={t('challengeDC.unsafeZoneAriaLabel')}
+          >
+            <div class="drop-zone__header">
+              <h3 class="drop-zone__title">{t('challengeDC.doNotShare')}</h3>
+              <span class="drop-zone__icon">🚫</span>
+            </div>
+            <div class="drop-zone__content" data-zone-content>
+              <p class="drop-zone__empty">{t('challengeDC.dragUnsafeHere')}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Win celebration -->
+      <div class="sort-game__win" data-win hidden>
+        <div class="sort-game__win-inner">
+          <span class="sort-game__win-icon">🎉</span>
+          <h2>{t('challengeDC.winTitle')}</h2>
+          <p>{t('challengeDC.winMessage')}</p>
+          <button class="button" type="button" data-restart>{t('challengeDC.playAgain')}</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script>
+  const initializeSortGame = () => {
+    document.querySelectorAll('[data-sort-game]').forEach((root) => {
+      if (!(root instanceof HTMLElement)) return
+      if (root.dataset.bound === 'true') return
+      root.dataset.bound = 'true'
+
+      const totalPosts = Number.parseInt(root.dataset.totalPosts ?? '', 10) || 0
+      const scoreLabel = root.dataset.scoreLabel ?? ''
+      const feedbackCorrect = root.dataset.feedbackCorrect ?? ''
+      const feedbackWrong = root.dataset.feedbackWrong ?? ''
+      const dragSafeHere = root.dataset.dragSafeHere ?? ''
+      const dragUnsafeHere = root.dataset.dragUnsafeHere ?? ''
+
+      const scoreEl = root.querySelector('[data-score]')
+      const feedbackEl = root.querySelector<HTMLElement>('[data-feedback]')
+      const winPanel = root.querySelector<HTMLElement>('[data-win]')
+      const cardsTray = root.querySelector('[data-cards-tray]')
+      const zones = root.querySelectorAll<HTMLElement>('[data-zone]')
+      const restartBtns = root.querySelectorAll('[data-restart]')
+
+      if (!scoreEl || !feedbackEl || !winPanel || !cardsTray || zones.length === 0) return
+
+      let score = 0
+      let selectedCard: HTMLElement | null = null
+      let draggedCard: HTMLElement | null = null
+      let busy = false
+
+      // ── Initialize zone maps ──────────────────────────────────────────────
+      const zoneMap = new Map<string, HTMLElement>()
+      zones.forEach((zone) => {
+        zoneMap.set(zone.dataset.zone || '', zone)
+      })
+
+      // ── Get all cards ─────────────────────────────────────────────────────
+      const getCards = () => Array.from(root.querySelectorAll<HTMLElement>('[data-post-id]'))
+
+      // ── Get wrapper for a card ────────────────────────────────────────────
+      const getWrapper = (card: HTMLElement) => card.closest('.post-card-wrapper') as HTMLElement | null
+
+      // ── Update score display ──────────────────────────────────────────────
+      const updateScore = () => {
+        const correctCount = getCards().filter((c) => c.dataset.placed === 'true').length
+        const total = totalPosts || getCards().length
+        scoreEl.textContent = `${correctCount} / ${total} ${scoreLabel}`.trim()
+      }
+
+      // ── Show feedback ─────────────────────────────────────────────────────
+      let feedbackTimer: ReturnType<typeof setTimeout>
+      const showFeedback = (message: string, type: 'correct' | 'wrong') => {
+        clearTimeout(feedbackTimer)
+        feedbackEl.textContent = message
+        feedbackEl.className = `sort-game__feedback sort-game__feedback--${type}`
+        feedbackEl.style.display = 'block'
+        feedbackTimer = setTimeout(() => {
+          feedbackEl.textContent = ''
+          feedbackEl.style.display = 'none'
+        }, 3000)
+      }
+
+      // ── Show explanation below a specific card ────────────────────────────
+      const showCardExplanation = (card: HTMLElement, text: string) => {
+        // Hide all other explanations first
+        hideAllExplanations()
+
+        const postId = card.dataset.postId
+        const explanationEl = root.querySelector(`[data-card-explanation="${postId}"]`) as HTMLElement | null
+        if (!explanationEl) return
+
+        explanationEl.textContent = text
+        explanationEl.className = 'post-card__explanation'
+        explanationEl.style.display = 'block'
+
+        // Scroll the explanation into view
+        explanationEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }
+
+      const hideAllExplanations = () => {
+        root.querySelectorAll('[data-card-explanation]').forEach((el) => {
+          if (el instanceof HTMLElement) {
+            el.style.display = 'none'
+            el.textContent = ''
+          }
+        })
+      }
+
+      // ── Deselect card (mobile) ────────────────────────────────────────────
+      const deselectCard = () => {
+        if (selectedCard) {
+          selectedCard.classList.remove('post-card--selected')
+        }
+        selectedCard = null
+      }
+
+      // ── Handle card click (mobile select only) ────────────────────────────
+      const handleCardClick = (card: HTMLElement) => {
+        if (card.dataset.placed === 'true' || busy) return
+
+        if (selectedCard === card) {
+          deselectCard()
+          hideAllExplanations()
+          return
+        }
+
+        deselectCard()
+        selectedCard = card
+        card.classList.add('post-card--selected')
+        // Explanations appear only after correct placement into a drop zone.
+        hideAllExplanations()
+      }
+
+      // ── Handle zone click (mobile drop) ───────────────────────────────────
+      const handleZoneClick = (zone: HTMLElement) => {
+        if (!selectedCard || busy || selectedCard.dataset.placed === 'true') return
+        performDrop(selectedCard, zone)
+      }
+
+      // ── Move card + wrapper into a drop zone ─────────────────────────────
+      const moveCardToZone = (card: HTMLElement, zone: HTMLElement) => {
+        const wrapper = getWrapper(card)
+        const content = zone.querySelector('[data-zone-content]')
+        if (!content || !wrapper) return
+
+        const empty = content.querySelector('.drop-zone__empty')
+        if (empty) empty.remove()
+
+        content.appendChild(wrapper)
+      }
+
+      // ── Perform drop logic ────────────────────────────────────────────────
+      const performDrop = (card: HTMLElement, zone: HTMLElement) => {
+        if (card.dataset.placed === 'true') return
+
+        busy = true
+        const cardCategory = card.dataset.category || ''
+        const zoneType = zone.dataset.zone || ''
+        const explanation = card.dataset.explanation || ''
+
+        if (cardCategory === zoneType) {
+          // Correct placement
+          card.dataset.placed = 'true'
+          card.classList.add('post-card--placed')
+          card.classList.remove('post-card--selected')
+
+          moveCardToZone(card, zone)
+
+          score++
+          updateScore()
+          showFeedback(feedbackCorrect, 'correct')
+          showCardExplanation(card, explanation)
+          deselectCard()
+
+          setTimeout(() => {
+            busy = false
+            checkWin()
+          }, 600)
+        } else {
+          // Wrong placement
+          card.classList.add('post-card--wrong')
+          showFeedback(feedbackWrong, 'wrong')
+          hideAllExplanations()
+
+          setTimeout(() => {
+            card.classList.remove('post-card--wrong')
+            busy = false
+          }, 700)
+        }
+      }
+
+      // ── Check win condition ───────────────────────────────────────────────
+      const checkWin = () => {
+        const allCorrect = getCards().every((c) => c.dataset.placed === 'true')
+        if (allCorrect) {
+          setTimeout(() => {
+            winPanel.hidden = false
+            winPanel.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          }, 400)
+        }
+      }
+
+      // ── Drag event handlers ───────────────────────────────────────────────
+      const handleDragStart = (e: DragEvent) => {
+        if (!(e.target instanceof HTMLElement)) return
+        const card = e.target.closest('[data-post-id]') as HTMLElement
+        if (!card || card.dataset.placed === 'true') {
+          e.preventDefault()
+          return
+        }
+        draggedCard = card
+        card.classList.add('post-card--dragging')
+        if (e.dataTransfer) {
+          e.dataTransfer.effectAllowed = 'move'
+          e.dataTransfer.setData('text/plain', card.dataset.postId || '')
+        }
+      }
+
+      const handleDragEnd = (e: DragEvent) => {
+        if (!(e.target instanceof HTMLElement)) return
+        const card = e.target.closest('[data-post-id]') as HTMLElement
+        if (card) {
+          card.classList.remove('post-card--dragging')
+        }
+      }
+
+      const handleDragOver = (e: DragEvent) => {
+        e.preventDefault()
+        if (e.dataTransfer) {
+          e.dataTransfer.dropEffect = 'move'
+        }
+        const zone = (e.target as HTMLElement).closest('[data-zone]') as HTMLElement
+        if (zone) {
+          zone.classList.add('drop-zone--active')
+        }
+      }
+
+      const handleDragLeave = (e: DragEvent) => {
+        const zone = (e.target as HTMLElement).closest('[data-zone]') as HTMLElement
+        if (zone && e.target === zone) {
+          zone.classList.remove('drop-zone--active')
+        }
+      }
+
+      const handleDrop = (e: DragEvent) => {
+        e.preventDefault()
+        if (!draggedCard) return
+
+        const zone = (e.target as HTMLElement).closest('[data-zone]') as HTMLElement
+        if (!zone) return
+
+        zone.classList.remove('drop-zone--active')
+        performDrop(draggedCard, zone)
+        draggedCard = null
+      }
+
+      // ── Restart ───────────────────────────────────────────────────────────
+      const restart = () => {
+        score = 0
+        selectedCard = null
+        draggedCard = null
+        busy = false
+        winPanel.hidden = true
+        feedbackEl.textContent = ''
+        feedbackEl.style.display = 'none'
+        hideAllExplanations()
+
+        // Reset all cards back into the tray
+        const wrappers = Array.from(root.querySelectorAll('.post-card-wrapper'))
+        wrappers.forEach((wrapper) => {
+          const card = wrapper.querySelector('[data-post-id]')
+          if (card instanceof HTMLElement) {
+            card.dataset.placed = 'false'
+            card.className = 'post-card'
+          }
+          cardsTray.appendChild(wrapper)
+        })
+
+        // Restore empty messages in drop zones
+        zones.forEach((zone) => {
+          const content = zone.querySelector('[data-zone-content]')
+          if (content instanceof HTMLElement) {
+            const zoneType = zone.dataset.zone
+            const label = zoneType === 'safe' ? dragSafeHere : dragUnsafeHere
+            if (!content.querySelector('.drop-zone__empty')) {
+              const p = document.createElement('p')
+              p.className = 'drop-zone__empty'
+              p.textContent = label
+              content.prepend(p)
+            }
+          }
+        })
+
+        // Shuffle tray
+        shuffleTray()
+        updateScore()
+      }
+
+      // ── Shuffle tray ──────────────────────────────────────────────────────
+      const shuffleTray = () => {
+        const wrappers = Array.from(cardsTray.querySelectorAll('.post-card-wrapper'))
+        for (let i = wrappers.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1))
+          const temp = wrappers[i]
+          wrappers[i] = wrappers[j]
+          wrappers[j] = temp
+        }
+        wrappers.forEach((wrapper) => cardsTray.appendChild(wrapper))
+      }
+
+      // ── Attach listeners ──────────────────────────────────────────────────
+      // Drag events on the whole tray (delegation)
+      root.addEventListener('dragstart', handleDragStart, true)
+      root.addEventListener('dragend', handleDragEnd, true)
+
+      zones.forEach((zone) => {
+        zone.addEventListener('dragover', handleDragOver)
+        zone.addEventListener('dragleave', handleDragLeave)
+        zone.addEventListener('drop', handleDrop)
+        zone.addEventListener('click', () => handleZoneClick(zone))
+      })
+
+      // Card click handlers (mobile fallback)
+      getCards().forEach((card) => {
+        if (card instanceof HTMLElement) {
+          card.addEventListener('click', (e) => {
+            e.stopPropagation()
+            handleCardClick(card)
+          })
+        }
+      })
+
+      // Restart buttons
+      restartBtns.forEach((btn) => btn.addEventListener('click', restart))
+
+      // Initial setup
+      shuffleTray()
+      updateScore()
+    })
+  }
+
+  document.addEventListener('astro:page-load', initializeSortGame)
+  initializeSortGame()
+</script>
+
+<style>
+  /* ── Tip card ────────────────────────────────────────────────────────────── */
+  .tip-card {
+    border-radius: 0.9rem;
+    border: 1px solid color-mix(in oklab, var(--brand-DC), white 40%);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--brand-DC), white 82%), color-mix(in oklab, var(--brand-DC), white 92%));
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: color-mix(in oklab, var(--brand-DC), black 30%);
+  }
+
+  /* ── Game wrapper ────────────────────────────────────────────────────────── */
+  .sort-game {
+    margin-bottom: var(--space-3xl);
+  }
+
+  /* ── Toolbar ─────────────────────────────────────────────────────────────── */
+  .sort-game__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-m);
+    margin-bottom: var(--space-m);
+    flex-wrap: wrap;
+  }
+
+  .sort-game__score {
+    font-size: var(--font-size-2);
+    font-weight: 700;
+    padding: var(--space-2xs) var(--space-s);
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+  }
+
+  .sort-game__restart {
+    border-color: var(--link-color);
+    background-color: var(--background-color);
+    color: var(--link-color);
+    border-radius: var(--radius-l);
+  }
+
+  .sort-game__restart:where(:hover, :focus-visible) {
+    background-color: var(--link-color);
+    color: var(--background-color);
+  }
+
+  /* ── Feedback message ────────────────────────────────────────────────────── */
+  .sort-game__feedback {
+    display: none;
+    min-height: 1.8rem;
+    font-weight: 600;
+    font-size: var(--font-size-0);
+    margin-bottom: var(--space-s);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-m);
+    transition: color 0.2s;
+  }
+
+  .sort-game__feedback--correct {
+    color: #15803d;
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+  }
+
+  .sort-game__feedback--wrong {
+    color: #b91c1c;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+  }
+
+  /* ── Game board layout ───────────────────────────────────────────────────── */
+  .sort-game__board {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-l);
+    margin: var(--space-xl) 0;
+  }
+
+  @media (max-width: 1024px) {
+    .sort-game__board {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Tray (source area) ──────────────────────────────────────────────────── */
+  .sort-game__tray {
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    background-color: #f3f4f6;
+    border: 2px dashed #d1d5db;
+  }
+
+  .sort-game__tray-label {
+    font-size: var(--font-size-1);
+    font-weight: 700;
+    margin-bottom: var(--space-m);
+    color: var(--color-neutral-800);
+  }
+
+  .sort-game__cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  /* ── Post card wrapper ─────────────────────────────────────────────────── */
+  .post-card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Post card ───────────────────────────────────────────────────────────── */
+  .post-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    background-color: white;
+    border: 2px solid #e5e7eb;
+    cursor: grab;
+    user-select: none;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s,
+      border-color 0.2s,
+      background-color 0.2s;
+    box-shadow: var(--elevation-1);
+  }
+
+  .post-card:where(:hover, :focus-visible) {
+    border-color: var(--brand-DC);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-DC), transparent 80%);
+    transform: translateY(-2px);
+  }
+
+  .post-card:focus-visible {
+    outline: none;
+  }
+
+  .post-card--selected {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+
+  .post-card--dragging {
+    opacity: 0.6;
+    cursor: grabbing;
+  }
+
+  .post-card--placed {
+    cursor: default;
+    opacity: 0.85;
+    border-color: #d1d5db;
+  }
+
+  .post-card--placed .post-card__text {
+    color: #9ca3af;
+  }
+
+  .post-card--wrong {
+    animation: shake 0.4s ease;
+    background-color: #fef2f2;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+
+  .post-card__emoji {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .post-card__text {
+    flex: 1;
+    font-size: var(--font-size-0);
+    font-weight: 500;
+    color: var(--color-neutral-800);
+    line-height: 1.4;
+  }
+
+  .post-card__check {
+    display: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  .post-card--placed .post-card__check {
+    display: block;
+  }
+
+  /* ── Inline explanation (below each card) ──────────────────────────────── */
+  .post-card__explanation {
+    display: none;
+    margin: var(--space-2xs) 0 var(--space-xs);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-s);
+    border: 1px solid #cbd5e1;
+    border-left: 3px solid #94a3b8;
+    background-color: #e5e7eb;
+    color: #1f2937;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    animation: fadeIn 0.25s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Zones container ─────────────────────────────────────────────────────── */
+  .sort-game__zones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-m);
+  }
+
+  /* ── Drop zones ──────────────────────────────────────────────────────────── */
+  .drop-zone {
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+    min-height: 250px;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drop-zone--active {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    background-color: #f0f9ff;
+  }
+
+  .drop-zone--safe {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+  }
+
+  .drop-zone--safe.drop-zone--active {
+    background-color: #dcfce7;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  }
+
+  .drop-zone--unsafe {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+  }
+
+  .drop-zone--unsafe.drop-zone--active {
+    background-color: #fee2e2;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+  }
+
+  .drop-zone__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-m);
+  }
+
+  .drop-zone__title {
+    font-size: var(--font-size-1);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .drop-zone--safe .drop-zone__title {
+    color: #15803d;
+  }
+
+  .drop-zone--unsafe .drop-zone__title {
+    color: #b91c1c;
+  }
+
+  .drop-zone__icon {
+    font-size: 1.25rem;
+  }
+
+  .drop-zone__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    min-height: 60px;
+  }
+
+  .drop-zone__empty {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: var(--space-m) 0;
+  }
+
+  /* Cards inside zones should be smaller */
+  .drop-zone .post-card {
+    padding: var(--space-s);
+    gap: var(--space-s);
+  }
+
+  .drop-zone .post-card__emoji {
+    font-size: 1.15rem;
+  }
+
+  .drop-zone .post-card__text {
+    font-size: 0.85rem;
+  }
+
+  .drop-zone .post-card__explanation {
+    font-size: 0.82rem;
+    padding: var(--space-2xs) var(--space-s);
+  }
+
+  /* ── Win panel ───────────────────────────────────────────────────────────── */
+  .sort-game__win {
+    margin-top: var(--space-xl);
+  }
+
+  .sort-game__win-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+    padding: var(--space-xl);
+    border-radius: var(--radius-l);
+    border: 3px solid #10b981;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    box-shadow: var(--elevation-2);
+    text-align: center;
+    animation: slideUp 0.5s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .sort-game__win-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+    animation: bounce 0.6s ease;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .sort-game__win-inner h2 {
+    color: #14532d;
+    margin: 0;
+    font-size: var(--font-size-3);
+  }
+
+  .sort-game__win-inner p {
+    color: #166534;
+    max-width: 50ch;
+    margin: 0;
+    font-size: var(--font-size-0);
+  }
+
+  .sort-game__win-inner .button {
+    margin-top: var(--space-s);
+  }
+
+  /* ── Responsive adjustments ──────────────────────────────────────────────– */
+  @media (max-width: 640px) {
+    .post-card {
+      padding: var(--space-s);
+      gap: var(--space-s);
+    }
+
+    .post-card__emoji {
+      font-size: 1.25rem;
+    }
+
+    .post-card__text {
+      font-size: 0.9rem;
+    }
+
+    .drop-zone {
+      min-height: 180px;
+    }
+
+    .sort-game__zones {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+</DefaultLayout>

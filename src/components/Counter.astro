@@ -1,0 +1,51 @@
+---
+/**
+ * Counter Component
+ *
+ * @description A component that displays a number with a title and subtitle
+ */
+interface Props {
+  /**
+   * The number to display. Accepts a number or a numeric string (e.g. "42").
+   * Non-numeric strings will throw a build-time error to surface the problem early.
+   */
+  count: string | number
+  /**
+   * The title text to display below the count
+   */
+  title: string
+  /**
+   * The subtitle text to display below the title
+   */
+  sub: string
+}
+
+const { count, title, sub } = Astro.props
+
+// Normalize count to a number so the template always renders a valid value.
+// Coerce string → number; reject anything that isn't numeric so the problem
+// surfaces at build time rather than silently rendering "NaN" to users.
+const normalizedCount: number = typeof count === 'number'
+  ? count
+  : (() => {
+      const parsed = Number(count)
+      if (!Number.isFinite(parsed)) {
+        throw new Error(
+          `[Counter] Invalid "count" prop: expected a number or numeric string, got "${count}".`
+        )
+      }
+      return parsed
+    })()
+---
+
+<div class="animate text-center">
+  <p class="text-6xl font-bold">{normalizedCount}</p>
+  <p class="text-4xl font-semibold">{title}</p>
+  <p class="text-2xl">{sub}</p>
+</div>
+
+<style lang="scss">
+  div > p:first-child {
+    color: var(--link-color);
+  }
+</style>

@@ -1,0 +1,113 @@
+/**
+ * Learning Module Colors
+ *
+ * Per-module accent colors applied to buttons, cards, and badges.
+ * These classes are applied globally (e.g. via Hero components) so they
+ * live here in the shared SCSS rather than in a scoped component style block.
+ *
+ * Usage:
+ *   <a class="button module-dc">Digital Citizenship</a>
+ */
+
+.module-button {
+  color: #ffffff;
+  border-color: transparent;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border-radius: 10px;
+
+  [data-icon] {
+    color: #ffffff;
+  }
+
+  &:hover {
+    opacity: 0.55;
+    transform: translateY(-2px);
+  }
+}
+
+.button.is-outline {
+  background: transparent;
+  color: var(--link-color);
+  border-color: var(--link-color);
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(37, 99, 235, 0.1);
+  }
+}
+
+/* Module accent colors — one per learning module.
+ * Source of truth: --brand-* vars in _root.scss.
+ * Do NOT add hardcoded hex here; update _root.scss instead.
+ */
+.module-dc {
+  background-color: var(--brand-DC);
+  border-color: var(--brand-DC);
+}
+
+.module-ap {
+  background-color: var(--brand-AP);
+  border-color: var(--brand-AP);
+}
+
+.module-auth {
+  background-color: var(--brand-AT);
+  border-color: var(--brand-AT);
+}
+
+.module-privacy {
+  background-color: var(--brand-DP);
+  border-color: var(--brand-DP);
+}
+
+.module-se {
+  background-color: var(--brand-SE);
+  border-color: var(--brand-SE);
+}
+
+.module-malware {
+  background-color: var(--brand-MW);
+  border-color: var(--brand-MW);
+}
+
+.module-abuse {
+  background-color: var(--brand-DA);
+  border-color: var(--brand-DA);
+}
+
+/* ── Tip card layout (shared across all challenge & game pages) ──────────────
+ * Colors remain in each page's scoped <style> block (brand-specific).
+ * This file handles only the structural / layout layer.
+ *
+ * Grid: [💬 Tip] | [description]
+ *        auto        1fr
+ */
+.tip-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0;
+  align-items: center;
+}
+
+/* Icon + bold label together in column 1 */
+.tip-card__lead {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.tip-card__icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.tip-card__label {
+  font-weight: 800;
+}
+
+/* Description text in column 2 */
+.tip-card__body {
+  min-width: 0;
+}

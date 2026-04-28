@@ -1,0 +1,338 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Image } from 'astro:assets'
+import Mission from '/src/assets/images/about/mission.png'
+import Collaboration from '/src/assets/images/about/collaboration.png'
+import Impact from '/src/assets/images/about/scalable.png'
+import International from '/src/assets/images/about/international.png'
+import Adaptable from '/src/assets/images/about/adaptable.png'
+import Cohesion from '/src/assets/images/about/european.png'
+import LogoUniLi from '/src/assets/images/about/Universität_Liechtenstein_logo.svg'
+import LogoCSH from '/src/assets/images/about/cyberSecurityHubCZ-logo-black_cut.png'
+import LogoInland from '/src/assets/images/about/University_of_Inland_Norway_logo.svg.png'
+import LogoInnsbruck from '/src/assets/images/about/Universitaet-innsbruck-logo-rgb-farbe.svg.png'
+import LogoVilnius from '/src/assets/images/about/Logo_vilnius_university.png'
+import { useTranslations } from '../i18n/index'
+
+const { t } = useTranslations(Astro.currentLocale)
+---
+
+<DefaultLayout title={t('about.title')}>
+  <PageHeader
+    title={t('about.title')}
+    subtitle={t('about.subtitle')}
+    bgType="module"
+  />
+
+  <section class="mb-12" aria-label="About the project">
+    <div class="container">
+
+      <!-- Intro Section -->
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
+          <h2 class="section-heading">{t('about.missionTitle')}</h2>
+      </div>
+
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-center mission">
+        <div>
+        <p class="text-xl mt-4">{t('about.missionP1')}</p>
+        <p class="text-xl mt-8">{t('about.missionP2')}</p>
+        <p class="text-xl mt-8">{t('about.missionP3')}</p>
+        </div>
+        <Image class="float" src={Mission} alt="" decoding="async" loading="eager" />
+        </div>
+
+  <div class="divider" style="margin-top: var(--space-2xl); margin-bottom: var(--space-2xl);"></div>
+
+      <!-- Project Partners Section -->
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
+          <h2 class="section-heading">{t('about.partnersTitle')}</h2>
+      </div>
+
+      <div class="initiative-partners-grid mt-8 mb-16">
+        <article class="core-value-card initiative-partner-card">
+          <div class="initiative-partner-content">
+            <div>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniLiechtenstein')}</h3>
+              <p class="mt-4">{t('about.uniLiechtensteinDesc')}</p>
+            </div>
+            <Image class="justify-self-center logo-image" src={LogoUniLi} alt="University of Liechtenstein logo" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="core-value-card initiative-partner-card">
+          <div class="initiative-partner-content">
+            <div>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.cyberSecurityHub')}</h3>
+              <p class="mt-4">{t('about.cyberSecurityHubDesc')}</p>
+            </div>
+            <Image class="justify-self-center logo-image" src={LogoCSH} alt="CyberSecurity Hub logo" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="core-value-card initiative-partner-card">
+          <div class="initiative-partner-content">
+            <div>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniInlandNorway')}</h3>
+              <p class="mt-4">{t('about.uniInlandNorwayDesc')}</p>
+            </div>
+            <Image class="justify-self-center logo-image" src={LogoInland} alt="University of Inland Norway logo" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="core-value-card initiative-partner-card">
+          <div class="initiative-partner-content">
+            <div>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniInnsbruck')}</h3>
+              <p class="mt-4">{t('about.uniInnsbruckDesc')}</p>
+            </div>
+            <Image class="justify-self-center logo-image" src={LogoInnsbruck} alt="University of Innsbruck logo" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="core-value-card initiative-partner-card">
+          <div class="initiative-partner-content">
+            <div>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.vilniusUni')}</h3>
+              <p class="mt-4">{t('about.vilniusUniDesc')}</p>
+            </div>
+            <Image class="justify-self-center logo-image" src={LogoVilnius} alt="Vilnius University logo" loading="lazy" />
+          </div>
+        </article>
+      </div>
+
+  <div class="divider" style="margin-top: var(--space-2xl); margin-bottom: var(--space-2xl);"></div>
+
+      <!-- Values Section -->
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6" id="our-values">
+          <h2 class="section-heading">{t('about.coreValuesTitle')}</h2>
+      </div>
+
+      <div class="core-values-grid mt-8 mb-16">
+        <article class="core-value-card">
+          <div class="core-value-media">
+            <Image src={Impact} alt="Scalable impact illustration" width={1000} height={1000} loading="lazy" />
+          </div>
+          <h3 class="core-value-title">{t('about.scalableImpact')}</h3>
+          <p class="core-value-description">{t('about.scalableImpactDesc')}</p>
+        </article>
+        <article class="core-value-card">
+          <div class="core-value-media">
+            <Image src={International} alt="International collaboration illustration" width={1000} height={1000} loading="lazy" />
+          </div>
+          <h3 class="core-value-title">{t('about.internationalCollab')}</h3>
+          <p class="core-value-description">{t('about.internationalCollabDesc')}</p>
+        </article>
+        <article class="core-value-card">
+          <div class="core-value-media">
+            <Image src={Adaptable} alt="Practical and adaptable education illustration" width={1000} height={1000} loading="lazy" />
+          </div>
+          <h3 class="core-value-title" set:html={t('about.practicalAdaptable')}></h3>
+          <p class="core-value-description">{t('about.practicalAdaptableDesc')}</p>
+        </article>
+        <article class="core-value-card">
+          <div class="core-value-media">
+            <Image src={Cohesion} alt="European digital cohesion illustration" width={1000} height={1000} loading="lazy" />
+          </div>
+          <h3 class="core-value-title">{t('about.europeanCohesion')}</h3>
+          <p class="core-value-description">{t('about.europeanCohesionDesc')}</p>
+        </article>
+      </div>
+
+  <div class="divider" style="margin-top: var(--space-2xl); margin-bottom: var(--space-2xl);"></div>
+
+      <!-- Joining Section -->
+
+      <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
+          <h2 class="section-heading">{t('about.getInvolvedTitle')}</h2>
+      </div>
+
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-center join grid-right">
+          <Image class="float" src={Collaboration} alt="" decoding="async" loading="eager" style="transform:scale(0.7)"/>
+          <div>
+          <p class="text-xl mt-4">{t('about.getInvolvedP1')}</p>
+          <p class="text-xl mt-8">{t('about.getInvolvedP2')}</p>
+          <p class="text-xl mt-8">{t('about.getInvolvedP3')}</p>
+          </div>
+        </div>  
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .section-badge {
+    display: flex;
+    align-items: center;
+  }
+
+  .section-icon {
+    color: #fff;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+
+  .section-heading {
+    font-size: clamp(2.75rem, 2.5rem + 1vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.15;
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+    margin-bottom: 0.7rem;
+  }
+
+  .section-subtitle {
+    color: var(--color-neutral-700);
+    font-size: 1.15rem;
+  }
+
+  .divider {
+    border-top: 2px solid var(--color-neutral-300);
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(0.8);
+    }
+    50% {
+      transform: translateY(-15px) scale(0.8);
+    }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .initiative-partners-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .initiative-partner-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 640px) {
+    .initiative-partner-content {
+      grid-template-columns: minmax(0, 1fr) minmax(150px, 280px);
+      gap: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .initiative-partner-content {
+      grid-template-columns: minmax(0, 1fr) minmax(180px, 350px);
+    }
+  }
+
+  :global(.core-values-grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    :global(.core-values-grid) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :global(.core-values-grid) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  :global(.core-value-card) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    padding: 1.25rem;
+    border: 1px solid #dbe2ea;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    box-shadow: var(--elevation-1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  :global(.core-value-card:hover),
+  :global(.core-value-card:focus-within) {
+    transform: translateY(-4px);
+    box-shadow: var(--elevation-3);
+    border-color: #2563eb;
+  }
+
+  :global(.core-value-media) {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    min-height: 155px;
+    padding: 0.75rem;
+    border-radius: 0.9rem;
+    border: 1px solid #bfdbfe;
+    background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 100%);
+  }
+
+  :global(.core-value-media img) {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  :global(.core-value-title) {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    color: #0f172a;
+  }
+
+  :global(.core-value-description) {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #334155;
+  }
+
+  .logo-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 1.75rem;
+    border-radius: 0.9rem;
+    border: 1px solid #bfdbfe;
+    background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 100%);
+  }
+
+  @media (min-width: 640px) {
+    .logo-image {
+      max-width: 350px;
+    }
+  }
+
+
+  @media (max-width: 640px) {
+    .section-badge {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (min-width: 1040px) {
+    .mission {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .join {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

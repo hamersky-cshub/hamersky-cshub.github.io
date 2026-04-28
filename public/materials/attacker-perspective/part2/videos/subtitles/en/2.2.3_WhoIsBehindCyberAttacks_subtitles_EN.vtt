@@ -1,0 +1,523 @@
+WEBVTT
+
+00:08.600 --> 00:11.620
+Hi there, welcome to
+this video where we
+
+00:11.620 --> 00:13.240
+are going to learn
+about the attacker's
+
+00:13.240 --> 00:15.680
+perspective in
+cybersecurity. Let's
+
+00:15.680 --> 00:20.080
+dive in. The goal of
+the presentation is
+
+00:20.080 --> 00:22.660
+to emphasise the
+existing risks posed
+
+00:22.660 --> 00:25.500
+by some unfriendly
+actors, called
+
+00:25.500 --> 00:28.700
+attackers, in
+cyberspace. In the
+
+00:28.700 --> 00:31.240
+video, firstly, we
+will discuss what the
+
+00:31.240 --> 00:34.780
+attacker is. Then, we
+will distinguish the
+
+00:34.780 --> 00:37.000
+common types of
+attackers and examine
+
+00:37.000 --> 00:39.240
+their motivations for
+engaging in malicious
+
+00:39.240 --> 00:40.400
+activity.
+
+00:47.140 --> 00:48.820
+According to the
+dictionary, the
+
+00:48.820 --> 00:51.160
+adversary is someone
+who opposes or
+
+00:51.160 --> 00:54.220
+resists. It is an
+enemy or an opponent.
+
+00:54.320 --> 00:57.680
+A more specific term,
+attacker, identifies
+
+00:57.680 --> 01:00.380
+someone who carries
+out harmful actions.
+
+01:00.520 --> 01:03.600
+In the cybersecurity
+field, an attacker is
+
+01:03.600 --> 01:05.840
+an individual or
+entity that causes
+
+01:05.840 --> 01:08.340
+problems for regular
+users and companies
+
+01:08.340 --> 01:11.040
+to perform tasks and
+duties in the digital
+
+01:11.040 --> 01:14.180
+space. The attacker
+can be a person,
+
+01:14.180 --> 01:16.820
+group or organisation
+that conducts
+
+01:16.820 --> 01:18.620
+malicious activities
+against digital
+
+01:18.620 --> 01:21.980
+resources. Typically,
+we refer to such a
+
+01:21.980 --> 01:23.760
+person as an attacker
+due to their
+
+01:23.760 --> 01:27.660
+aggressive or active
+pose. Cybersecurity
+
+01:27.660 --> 01:29.220
+professionals
+distinguish various
+
+01:29.220 --> 01:31.320
+types of attackers
+and link them to
+
+01:31.320 --> 01:34.920
+specific motivations.
+Today, we will learn
+
+01:34.920 --> 01:36.820
+about some of the
+most common types you
+
+01:36.820 --> 01:38.940
+could meet or hear
+about when doing your
+
+01:38.940 --> 01:42.360
+daily activities.
+Insiders, hacktivists
+
+01:42.360 --> 01:44.640
+, script kiddies,
+nation-state actors
+
+01:44.640 --> 01:48.080
+and cybercriminals.
+Let us start with
+
+01:48.080 --> 01:51.480
+insiders. An insider
+is someone who knows
+
+01:51.480 --> 01:53.700
+information available
+within a group, due
+
+01:53.700 --> 01:56.560
+to being part of that
+group. We are all
+
+01:56.560 --> 01:59.360
+insiders of various
+groups. Typically, it
+
+01:59.360 --> 02:01.780
+is a regular thing.
+However, in
+
+02:01.780 --> 02:04.200
+cybersecurity, the
+concept of an insider
+
+02:04.200 --> 02:06.700
+threat refers to an
+insider who not only
+
+02:06.700 --> 02:09.340
+possesses knowledge,
+but also utilises it
+
+02:09.340 --> 02:10.900
+in a manner that
+leads to negative
+
+02:10.900 --> 02:13.240
+consequences for the
+group or specific
+
+02:13.240 --> 02:16.460
+individuals. For
+example, let us
+
+02:16.460 --> 02:18.540
+assume that you share
+your password for the
+
+02:18.540 --> 02:21.500
+gaming platform with
+your best friend. The
+
+02:21.500 --> 02:23.120
+friend wants to
+impress some older
+
+02:23.120 --> 02:24.880
+school children and
+gives them your
+
+02:24.880 --> 02:27.940
+password. These older
+children access your
+
+02:27.940 --> 02:30.580
+account and take
+control of it. Your
+
+02:30.580 --> 02:32.840
+friend is an insider,
+but the actions led
+
+02:32.840 --> 02:34.500
+to some negative
+consequences from
+
+02:34.500 --> 02:37.380
+your perspective.
+That is why we should
+
+02:37.380 --> 02:40.080
+all be careful when
+sharing personal data
+
+02:40.080 --> 02:42.640
+. Another type of
+attacker is
+
+02:42.640 --> 02:44.460
+hacktivists. The
+concept of a
+
+02:44.460 --> 02:46.380
+hacktivist is
+constructed from two
+
+02:46.380 --> 02:50.360
+words, hacker and
+activist. A hacker is
+
+02:50.360 --> 02:52.480
+a person who knows a
+lot about computers
+
+02:52.480 --> 02:56.300
+and computer systems.
+This person utilises
+
+02:56.300 --> 02:58.540
+their knowledge and
+skills to gain access
+
+02:58.540 --> 03:01.040
+to systems to steal
+the data or disturb
+
+03:01.040 --> 03:04.700
+those systems. It is
+a cyber hooligan. An
+
+03:04.700 --> 03:07.180
+activist is a person
+who stands up for a
+
+03:07.180 --> 03:10.520
+cause they believe in
+. A hacktivist uses
+
+03:10.520 --> 03:12.940
+their hacking skills
+to send a message,
+
+03:12.940 --> 03:14.320
+usually about
+something they
+
+03:14.320 --> 03:17.600
+perceive as unfair in
+the world. For
+
+03:17.600 --> 03:20.160
+example, a hacktivist
+who loves nature
+
+03:20.160 --> 03:22.340
+could disrupt the
+website of a company
+
+03:22.340 --> 03:24.340
+that cuts down trees
+in the forest and
+
+03:24.340 --> 03:28.180
+sells timber. Script
+kiddies make another
+
+03:28.180 --> 03:31.320
+type of adversary
+actor. Script kiddies
+
+03:31.320 --> 03:33.360
+possess some skills
+and knowledge that
+
+03:33.360 --> 03:35.480
+enable them to break
+into or disturb
+
+03:35.480 --> 03:38.640
+computer systems.
+However, they lack
+
+03:38.640 --> 03:40.340
+the necessary
+knowledge and skills
+
+03:40.340 --> 03:42.600
+to comprehend the
+implications of their
+
+03:42.600 --> 03:45.720
+actions. Typically,
+script kiddies are
+
+03:45.720 --> 03:47.800
+eager to discover
+software and run or
+
+03:47.800 --> 03:51.280
+test it, sometimes to
+show off. For example
+
+03:51.280 --> 03:53.060
+, your friend could
+use specialized
+
+03:53.060 --> 03:55.000
+software to run at
+school and
+
+03:55.000 --> 03:57.020
+potentially disrupt
+the entire school
+
+03:57.020 --> 03:59.740
+network by specifying
+program parameters
+
+03:59.740 --> 04:03.280
+during execution. If
+your friend has no
+
+04:03.280 --> 04:05.780
+idea how everything
+is developed and why
+
+04:05.780 --> 04:08.460
+the software behaves
+in a certain way, it
+
+04:08.460 --> 04:10.460
+means we have some
+script kiddies around
+
+04:10.460 --> 04:15.300
+. Cybercriminals are
+adversary actors or
+
+04:15.300 --> 04:17.560
+attackers with larger
+goals than just
+
+04:17.560 --> 04:19.120
+disrupting the
+school's computer
+
+04:19.120 --> 04:21.560
+network or public
+services.
+
+04:22.040 --> 04:24.340
+Cybercriminals are
+highly ambitious and
+
+04:24.340 --> 04:28.160
+seek financial or
+reputational gain. Do
+
+04:28.160 --> 04:29.560
+you have a
+supermarket around
+
+04:29.560 --> 04:32.200
+where you go from
+time to time? The
+
+04:32.200 --> 04:33.920
+targets of
+cybercriminals could
+
+04:33.920 --> 04:35.840
+target payment
+systems, cash
+
+04:35.840 --> 04:38.260
+registers, and some
+specialized logistics
+
+04:38.260 --> 04:40.900
+systems.
+Cybercriminals could
+
+04:40.900 --> 04:42.740
+attempt to steal data
+about the credit
+
+04:42.740 --> 04:47.180
+cards used in these
+systems. In the news,
+
+04:47.180 --> 04:49.020
+you might have heard
+about state-sponsored
+
+04:49.020 --> 04:52.020
+actors. It is not a
+secret that among
+
+04:52.020 --> 04:54.240
+more than 200
+countries globally,
+
+04:54.240 --> 04:56.960
+there are alliances
+and opposing parties.
+
+04:57.720 --> 04:59.700
+Among the alliances,
+there are
+
+04:59.700 --> 05:01.540
+competitions in
+innovations and
+
+05:01.540 --> 05:04.780
+disagreements over
+values. Thus, states
+
+05:04.780 --> 05:07.000
+sponsor some hacker
+groups to sabotage
+
+05:07.000 --> 05:09.840
+events or to engage
+in espionage, aiming
+
+05:09.840 --> 05:11.900
+to get data or
+specific knowledge
+
+05:11.900 --> 05:16.780
+related to secret
+information. Now you
+
+05:16.780 --> 05:19.120
+know several types of
+adversaries and their
+
+05:19.120 --> 05:22.100
+motivation to perform
+adversarial actions.
+
+05:22.100 --> 05:24.240
+Could you think of
+one sentence to
+
+05:24.240 --> 05:26.320
+describe each of the
+adversary actors
+
+05:26.320 --> 05:29.600
+listed in the slide?
+Let us take half a
+
+05:29.600 --> 05:30.780
+minute to think.
+
+05:59.100 --> 06:01.560
+Was it enough time to
+find the proper words
+
+06:01.560 --> 06:03.420
+in trying to
+distinguish all types
+
+06:03.420 --> 06:07.080
+? One more thing to
+mention. When your
+
+06:07.080 --> 06:09.120
+computer freezes or
+your phone stops
+
+06:09.120 --> 06:11.240
+working, it does not
+mean that you have
+
+06:11.240 --> 06:13.860
+been attacked. To
+attribute the
+
+06:13.860 --> 06:15.840
+incident to a
+particular adversary,
+
+06:15.840 --> 06:17.500
+an investigation is
+needed.
+
+06:19.460 --> 06:21.380
+Thank you for
+watching!

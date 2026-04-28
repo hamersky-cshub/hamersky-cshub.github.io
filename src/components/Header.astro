@@ -1,0 +1,50 @@
+---
+import Navigation from '../components/Navigation.astro'
+import LanguageSwitcher from '../components/LanguageSwitcher.astro'
+import { SkipLink } from 'accessible-astro-components'
+import { localizePath } from 'src/i18n/i18n'
+import { useTranslations } from 'src/i18n/index'
+
+/**
+ * Header Component
+ *
+ * @description A component that displays the header of the website
+ */
+const locale = Astro.currentLocale
+const { t } = useTranslations(locale)
+const homeHref = localizePath(locale, '/')
+const aboutHref = localizePath(locale, '/about')
+const learningHubHref = localizePath(locale, '/learning-hub/introduction')
+---
+
+<header>
+  <SkipLink />
+  <Navigation>
+    <li class="menu-item">
+      <a href={homeHref} data-nav-match="root">{t('nav.home')}</a>
+    </li>
+    <li class="menu-item">
+      <a href={aboutHref} data-nav-match="exact">{t('nav.about')}</a>
+    </li>
+    <li class="menu-item highlight" style="font-weight: 900;">
+      <a href={learningHubHref} data-nav-match="section" data-nav-section="learning-hub">
+        {t('nav.learningHub')}
+      </a>
+    </li>
+    <LanguageSwitcher />
+  </Navigation>
+</header>
+
+<style lang="scss" is:global>
+  header {
+    .type-icon {
+      display: block;
+      margin-inline: -7px;
+
+      svg {
+        inline-size: 30px;
+        block-size: 30px;
+      }
+    }
+  }
+</style>

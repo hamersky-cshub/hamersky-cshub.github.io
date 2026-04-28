@@ -1,0 +1,150 @@
+---
+/**
+ * ResponsiveToggle Component
+ *
+ * Hamburger/close button that controls the mobile navigation drawer.
+ * Visible only below the nav breakpoint (900px).
+ *
+ * Accessibility:
+ * - aria-expanded reflects menu state; aria-label updates accordingly
+ * - SVG icon is decorative (aria-hidden) — button label provides meaning
+ * - Escape key closes the menu and returns focus to this button
+ * - Focus-visible outline meets WCAG 2.4.7 contrast requirements
+ *
+ * @see WCAG 2.1.1 — Keyboard
+ * @see WCAG 4.1.2 — Name, Role, Value
+ */
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<button
+  class:list={[className, 'responsive-toggle']}
+  aria-expanded="false"
+  aria-label="Open menu navigation"
+>
+  <span>Menu</span>
+  <svg width="26" height="21" viewBox="0 0 28 22" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M2 1.667h24m-24 8h24m-24 8h24"
+      stroke="var(--foreground-color)"
+      stroke-width="2.667"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</button>
+
+<script>
+  /** SVG path data for the hamburger (☰) and close (✕) icons */
+  const ICON_HAMBURGER = 'M2 1.667h24m-24 8h24m-24 8h24'
+  const ICON_CLOSE = 'M10 10 2 2m8 8 8 8m-8-8 8-8m-8 8-8 8'
+
+  /** SVG stroke attributes shared between both icon states */
+  const SVG_ATTRS: Record<string, string> = {
+    stroke: 'var(--foreground-color)',
+    'stroke-width': '2.667',
+    'stroke-linecap': 'round',
+    'stroke-linejoin': 'round',
+  }
+
+  const initializeResponsiveToggle = () => {
+    const toggle = document.querySelector('.responsive-toggle') as HTMLButtonElement | null
+    if (!toggle || toggle.dataset.bound === 'true') return
+    toggle.dataset.bound = 'true'
+
+    const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null
+
+    /**
+     * Replace the SVG <path> content without creating new SVG elements.
+     * Uses replaceChildren for a single DOM mutation.
+     */
+    const setIcon = (icon: SVGSVGElement, pathData: string) => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+      path.setAttribute('d', pathData)
+      for (const [attr, value] of Object.entries(SVG_ATTRS)) {
+        path.setAttribute(attr, value)
+      }
+      icon.replaceChildren(path)
+    }
+
+    /** Synchronize button text, icon, and ARIA state */
+    const setMenuState = (isOpen: boolean) => {
+      const text = toggle.querySelector('span')
+      const icon = toggle.querySelector('svg') as SVGSVGElement | null
+      if (!text || !icon) return
+
+      text.textContent = isOpen ? 'Close' : 'Menu'
+      toggle.setAttribute('aria-expanded', String(isOpen))
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu navigation' : 'Open menu navigation')
+      setIcon(icon, isOpen ? ICON_CLOSE : ICON_HAMBURGER)
+    }
+
+    /** Close menu and return focus to the toggle (keyboard UX) */
+    const closeMenu = () => {
+      if (!mobileMenu?.classList.contains('show')) return
+      mobileMenu.classList.remove('show')
+      setMenuState(false)
+      toggle.focus()
+    }
+
+    // Toggle on click
+    toggle.addEventListener('click', () => {
+      if (!mobileMenu) return
+      const willOpen = !mobileMenu.classList.contains('show')
+      mobileMenu.classList.toggle('show', willOpen)
+      setMenuState(willOpen)
+    })
+
+    // Escape key closes the mobile menu — WCAG 2.1.1 Keyboard
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu()
+    })
+  }
+
+  document.addEventListener('astro:page-load', initializeResponsiveToggle)
+  initializeResponsiveToggle()
+</script>
+
+<style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+
+  .responsive-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    span {
+      margin-inline-end: var(--space-3xs);
+    }
+
+    svg {
+      width: 30px;
+
+      path {
+        transition: fill var(--animation-speed-fast) var(--cubic-bezier);
+      }
+    }
+
+    &:where(:hover, :focus-visible) {
+      span {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 7px;
+      }
+    }
+
+    /* Keyboard focus ring — WCAG 2.4.7 */
+    &:focus-visible {
+      outline: 3px solid var(--link-color);
+      outline-offset: 4px;
+      border-radius: var(--radius-s, 0.25rem);
+    }
+  }
+</style>

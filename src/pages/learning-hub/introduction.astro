@@ -1,0 +1,758 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { localizePath } from 'src/i18n/i18n'
+import { useTranslations } from 'src/i18n/index'
+import Image from 'astro/components/Image.astro'
+import { modules as moduleData } from 'src/data/modules'
+import { modulePartsData } from 'src/data/moduleParts'
+import DigitalCitizenship from '/src/assets/images/learning-hub/01_digital-citizenship.png'
+import AttackerPerspective from '/src/assets/images/learning-hub/02_attacker-perspective.png'
+import AuthenticationImage from '/src/assets/images/learning-hub/03_authentication.png'
+import DataPrivacyImage from '/src/assets/images/learning-hub/04_data-privacy.png'
+import SocialEngineeringImage from '/src/assets/images/learning-hub/05_social-engineering.png'
+import MalwareImage from '/src/assets/images/learning-hub/06_malware.png'
+import DigitalAbuseImage from '/src/assets/images/learning-hub/07_digital-abuse.png'
+
+const locale = Astro.currentLocale
+const { t } = useTranslations(locale)
+
+const imageMap = {
+  dc: DigitalCitizenship,
+  ap: AttackerPerspective,
+  at: AuthenticationImage,
+  dp: DataPrivacyImage,
+  se: SocialEngineeringImage,
+  mw: MalwareImage,
+  da: DigitalAbuseImage,
+}
+
+const modules = moduleData.map(m => ({
+  ...m,
+  img: imageMap[m.id],
+  url: `/learning-hub/${m.slug}/content`,
+}))
+
+const challenges = moduleData
+  .filter(m => m.challenges > 0)
+  .map(m => ({ id: m.id, href: `/learning-hub/${m.slug}/challenge/` }))
+
+const games = moduleData
+  .filter(m => m.games > 0)
+  .map(m => ({ id: m.id, href: `/learning-hub/${m.slug}/game/` }))
+
+const modulePartsOverrides = Object.fromEntries(
+  moduleData.map(m => [
+    m.id,
+    [
+      {
+        label: t('contentPage.guideLabel'),
+        title: t('contentPage.teachersGuideTitle'),
+        href: `/learning-hub/${m.slug}/content/#teachers-guide`,
+      },
+      ...(modulePartsData[m.id] ?? []).map((p, i) => ({
+        label: `${t('hub.partLabel')} ${i + 1}`,
+        title: t(`hub.moduleParts.${m.id}.p${i + 1}Title`),
+        href: `/learning-hub/${m.slug}/content/#${p.anchorId}`,
+      })),
+    ],
+  ])
+)
+
+const normalizeHex = (hex: string): string => {
+  const raw = hex.replace('#', '')
+  if (raw.length === 3) {
+    return raw
+      .split('')
+      .map((char) => `${char}${char}`)
+      .join('')
+  }
+  return raw
+}
+
+const hexToRgb = (hex: string) => {
+  const normalized = normalizeHex(hex)
+  const value = Number.parseInt(normalized, 16)
+  return {
+    r: (value >> 16) & 255,
+    g: (value >> 8) & 255,
+    b: value & 255,
+  }
+}
+
+const rgba = (hex: string, alpha: number): string => {
+  const { r, g, b } = hexToRgb(hex)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+const localizedChallenges = Object.fromEntries(
+  challenges.map((challenge) => [
+    challenge.id,
+    {
+      ...challenge,
+      href: localizePath(locale, challenge.href),
+      title: t(`challenge${challenge.id.toUpperCase()}.title`),
+      description: t(`hub.challengeCards.${challenge.id}.description`),
+    },
+  ]),
+)
+
+const localizedGames = Object.fromEntries(
+  games.map((game) => [
+    game.id,
+    {
+      ...game,
+      href: localizePath(locale, game.href),
+      title: t(`games.${game.id}.title`),
+      description: t(`hub.gameCards.${game.id}.description`),
+    },
+  ]),
+)
+
+const localizedModules = modules.map((module) => {
+  const introParts = modulePartsOverrides[module.id as keyof typeof modulePartsOverrides]
+
+  return {
+    ...module,
+    title: t(`modules.${module.id}.title`),
+    description: t(`modules.${module.id}.description`),
+    url: localizePath(locale, module.url),
+    challenge: localizedChallenges[module.id],
+    game: localizedGames[module.id],
+    panelBorder: rgba(module.color, 0.4),
+    panelSurface: rgba(module.color, 0.08),
+    panelSurfaceStrong: rgba(module.color, 0.14),
+    dividerColor: rgba(module.color, 0.28),
+    parts: introParts.length,
+    introParts,
+  }
+})
+---
+
+<DefaultLayout title={t('hub.title')}>
+  <PageHeader
+    title={t('hub.title')}
+    subtitle={t('hub.subtitle')}
+    bgType="module"
+  />
+
+  <section class="learning-hub-modules my-12" aria-label={t('hub.learningModulesAriaLabel')}>
+    <div class="container">
+      <div class="module-stack">
+        {
+          localizedModules.map((module) => (
+            <article
+              class={`module-panel module-panel-${module.id}`}
+              style={`--module-color: ${module.color}; --panel-border: ${module.panelBorder}; --panel-surface: ${module.panelSurface}; --panel-surface-strong: ${module.panelSurfaceStrong}; --divider-color: ${module.dividerColor};`}
+            >
+              <div class="module-intro-grid">
+                <div class="module-poster">
+                  <Image class="module-poster-image" src={module.img} alt={module.title} loading="lazy" />
+                </div>
+
+                <div class="module-copy">
+                  <h2 class="module-title">
+                    <a href={module.url}>{module.title}</a>
+                  </h2>
+
+                  <div class="module-meta" aria-label={`${module.title} ${t('hub.moduleSummaryAriaSuffix')}`}>
+                    <span class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+                      </svg>
+                      {t('hub.parts')}: {module.parts}
+                    </span>
+                    <span class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/>
+                      </svg>
+                      {t('hub.materials')}: {module.materials}
+                    </span>
+                    <span class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+                      </svg>
+                      {t('hub.videos')}: {module.videos}
+                    </span>
+                    <span class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                      </svg>
+                       {t('hub.challenges')}: {module.challenges}
+                    </span>
+                    {
+                      module.games ? (
+                        <span class="meta-item">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="0.8" fill="currentColor" stroke="none"/><circle cx="17" cy="13" r="0.8" fill="currentColor" stroke="none"/><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1c0 1-0.5 2-1 2.5L19 17a3 3 0 0 1-2.5 1.5h-9A3 3 0 0 1 5 17l-2-4.5C2.5 12 2 11 2 10V9z"/>
+                          </svg>
+                          {t('hub.games')}: {module.games}
+                        </span>
+                      ) : null
+                    }
+                  </div>
+
+                  <p class="module-description">{module.description}</p>
+                </div>
+
+                <button
+                  class="module-toggle"
+                  aria-expanded="false"
+                  aria-label={`${t('hub.expandDetailsAriaPrefix')} ${module.title} ${t('hub.expandDetailsAriaSuffix')}`}
+                  data-module-toggle
+                  data-module-title={module.title}
+                  data-expand-prefix={t('hub.expandDetailsAriaPrefix')}
+                  data-collapse-prefix={t('hub.collapseDetailsAriaPrefix')}
+                  data-details-suffix={t('hub.expandDetailsAriaSuffix')}
+                >
+                  <svg class="toggle-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8 5l8 7-8 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="module-collapsible" data-module-collapsible hidden>
+                <div class="module-divider" role="presentation"></div>
+
+                <div class="module-parts" aria-label={`${module.title} ${t('hub.partListAriaSuffix')}`}>
+                  <p class="label">{t('hub.partsHeading')}</p>
+                  <ol class="parts-timeline">
+                    {
+                      module.introParts.map((part) => (
+                        <li class="parts-timeline-item">
+                          {part.href ? (
+                            <a class="parts-badge" href={localizePath(locale, part.href)}>{part.label}</a>
+                          ) : (
+                            <span class="parts-badge">{part.label}</span>
+                          )}
+                          {part.href ? (
+                            <a class="parts-name parts-name--link" href={localizePath(locale, part.href)}>{part.title}</a>
+                          ) : (
+                            <span class="parts-name">{part.title}</span>
+                          )}
+                        </li>
+                      ))
+                    }
+                  </ol>
+                </div>
+
+                <div class="module-divider" role="presentation"></div>
+
+                <div class="module-actions-grid">
+                  <div class="activity-card-wrapper">
+                    <div class="activity-card">
+                      <p class="label">{t('hub.interactiveChallengeLabel')}</p>
+                      <h3>{module.challenge?.title ?? t('hub.challengeFallbackTitle')}</h3>
+                      <p>
+                        {module.challenge?.description ??
+                          t('hub.challengeFallbackDescription')}
+                      </p>
+                      <a class="activity-cta" href={module.challenge?.href ?? module.url}>{t('hub.openChallengeCta')}</a>
+                    </div>
+                  </div>
+
+                  <div class="activity-card-wrapper">
+                    <div class={module.game ? 'activity-card' : 'activity-card activity-card--disabled'}>
+                      <p class="label">{t('hub.cybersecurityGameLabel')}</p>
+                      <h3>{module.game?.title ?? t('hub.noGameTitle')}</h3>
+                      <p>
+                        {module.game?.description ??
+                          t('hub.noGameDescription')}
+                      </p>
+                      <a
+                        class={module.game ? 'activity-cta' : 'activity-cta activity-cta--disabled'}
+                        href={module.game?.href ?? module.url}
+                        aria-disabled={module.game ? 'false' : 'true'}
+                        tabindex={module.game ? 0 : -1}
+                      >
+                        {module.game ? t('hub.playGameCta') : t('hub.noGameCta')}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style is:global>
+  .learning-hub-modules .module-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .learning-hub-modules .module-panel {
+    border: 2px solid var(--panel-border);
+    border-radius: 1.25rem;
+    background: linear-gradient(155deg, var(--panel-surface), #ffffff 55%);
+    box-shadow: var(--elevation-2);
+    padding: clamp(1rem, 2vw, 1.75rem);
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
+  }
+
+  .learning-hub-modules .module-panel:hover,
+  .learning-hub-modules .module-panel:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 34px -20px var(--panel-border), var(--elevation-4);
+  }
+
+  .learning-hub-modules .module-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  .learning-hub-modules .module-poster {
+    display: block;
+    overflow: hidden;
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .learning-hub-modules .module-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: 50% 55%;
+    will-change: transform;
+  }
+
+  .learning-hub-modules .module-panel:hover .module-poster-image,
+  .learning-hub-modules .module-panel:focus-within .module-poster-image {
+    animation: module-poster-float 4.6s ease-in-out infinite;
+  }
+
+  @keyframes module-poster-float {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+    22% {
+      transform: translate3d(6px, -7px, 0) rotate(0.5deg) scale(1.02);
+    }
+    48% {
+      transform: translate3d(-7px, -12px, 0) rotate(-0.6deg) scale(1.025);
+    }
+    74% {
+      transform: translate3d(5px, -6px, 0) rotate(0.45deg) scale(1.02);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .learning-hub-modules .module-panel {
+      transition: none;
+    }
+
+    .learning-hub-modules .module-panel:hover,
+    .learning-hub-modules .module-panel:focus-within {
+      transform: none;
+    }
+
+    .learning-hub-modules .module-panel:hover .module-poster-image,
+    .learning-hub-modules .module-panel:focus-within .module-poster-image {
+      animation: none;
+    }
+  }
+
+  .learning-hub-modules .module-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .learning-hub-modules .module-title {
+    margin: 0;
+    font-size: clamp(2rem, 1.7rem + 1.2vw, 2.9rem);
+    line-height: 1.05;
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-color: var(--module-color);
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 0.2rem;
+  }
+
+  .learning-hub-modules .module-title a {
+    color: var(--color-neutral-900);
+    text-decoration: none;
+  }
+
+  .learning-hub-modules .module-title a:hover,
+  .learning-hub-modules .module-title a:focus-visible {
+    color: var(--module-color);
+  }
+
+  .learning-hub-modules .module-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .learning-hub-modules .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-neutral-800);
+  }
+
+  .learning-hub-modules .meta-item svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+    color: var(--module-color);
+  }
+
+  .learning-hub-modules .module-description {
+    margin: 0;
+    max-width: 70ch;
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--color-neutral-800);
+  }
+
+  .learning-hub-modules .module-divider {
+    border-top: 2px solid var(--divider-color);
+    margin: 1.4rem 0;
+  }
+
+  .learning-hub-modules .module-parts {
+    border: 2px solid var(--panel-border);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--panel-surface);
+  }
+
+  .learning-hub-modules .parts-heading {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--module-color);
+    letter-spacing: 0.01em;
+  }
+
+  .learning-hub-modules .parts-timeline {
+    list-style: none;
+    margin: 0;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .learning-hub-modules .parts-timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+
+  /* dashed connector between items */
+  .learning-hub-modules .parts-timeline-item + .parts-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--badge-width, 80px) / 2 - 1px);
+    bottom: 100%;
+    width: 2px;
+    height: 1rem;
+    border-left: 2px dashed var(--panel-border);
+  }
+
+  .learning-hub-modules .parts-timeline-item + .parts-timeline-item {
+    margin-top: 1rem;
+  }
+
+  .learning-hub-modules .parts-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 80px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--module-color);
+    background: var(--module-color);
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  a.parts-badge:hover,
+  a.parts-badge:focus-visible {
+    background: transparent;
+    color: var(--module-color);
+  }
+
+  .learning-hub-modules .parts-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-neutral-900);
+    line-height: 1.35;
+  }
+
+  .learning-hub-modules .parts-name--link {
+    text-decoration: underline;
+    text-decoration-color: var(--module-color);
+    text-underline-offset: 3px;
+    color: var(--color-neutral-900);
+  }
+
+  .learning-hub-modules .parts-name--link:hover,
+  .learning-hub-modules .parts-name--link:focus-visible {
+    color: var(--module-color);
+  }
+
+  .learning-hub-modules .module-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .learning-hub-modules .activity-card-wrapper {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .learning-hub-modules .activity-card-wrapper > .activity-card {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .learning-hub-modules .activity-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-radius: 1rem;
+    border: 2px solid var(--panel-border);
+    background: var(--panel-surface);
+    padding: 1rem;
+    color: var(--color-neutral-900);
+  }
+
+  .learning-hub-modules .activity-card--disabled {
+    filter: grayscale(1) blur(0.7px);
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .learning-hub-modules .activity-card--disabled .activity-cta {
+    background: var(--color-neutral-300);
+    border-color: var(--color-neutral-300);
+    color: var(--color-neutral-600);
+  }
+
+  .learning-hub-modules .activity-cta--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .learning-hub-modules .label {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-900);
+  }
+
+  .learning-hub-modules .activity-card h3 {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--color-neutral-900);
+  }
+
+  .learning-hub-modules .activity-card p {
+    margin: 0;
+    color: var(--color-neutral-800);
+  }
+
+  .learning-hub-modules .activity-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 0.4rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--module-color);
+    background: var(--module-color);
+    font-weight: 800;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .learning-hub-modules .activity-cta:hover,
+  .learning-hub-modules .activity-cta:focus-visible {
+    background: transparent;
+    color: var(--module-color);
+  }
+
+  /* ── Toggle button ── */
+  .learning-hub-modules .module-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 2px solid var(--panel-border);
+    background: var(--panel-surface-strong);
+    color: var(--module-color);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .learning-hub-modules .module-toggle:hover,
+  .learning-hub-modules .module-toggle:focus-visible {
+    background: var(--module-color);
+    border-color: var(--module-color);
+    color: #ffffff;
+    outline: none;
+  }
+
+  .learning-hub-modules .toggle-arrow {
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .learning-hub-modules .module-toggle[aria-expanded="true"] .toggle-arrow {
+    transform: rotate(90deg);
+  }
+
+  /* ── Collapsible section ── */
+  .learning-hub-modules .module-collapsible {
+    overflow: hidden;
+  }
+
+  .learning-hub-modules .module-collapsible[hidden] {
+    display: none;
+  }
+
+  @media (max-width: 960px) {
+    .learning-hub-modules .module-intro-grid {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+    }
+
+    .learning-hub-modules .module-poster {
+      max-width: 460px;
+      grid-column: 1 / -1;
+    }
+
+    .learning-hub-modules .module-copy {
+      grid-column: 1;
+    }
+
+    .learning-hub-modules .module-toggle {
+      grid-column: 2;
+      align-self: start;
+      margin-top: 0.25rem;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .learning-hub-modules .module-actions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .learning-hub-modules .module-intro-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .learning-hub-modules .module-poster {
+      max-width: 100%;
+    }
+
+    .learning-hub-modules .module-toggle {
+      grid-column: 1;
+      justify-self: end;
+    }
+
+    .learning-hub-modules .module-title {
+      font-size: 1.5rem;
+    }
+
+    .learning-hub-modules .module-description {
+      font-size: 1rem;
+    }
+
+    .learning-hub-modules .parts-timeline-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .learning-hub-modules .parts-timeline-item + .parts-timeline-item::before {
+      display: none;
+    }
+
+    .learning-hub-modules .module-parts {
+      padding: 1rem;
+    }
+
+    .learning-hub-modules .activity-card {
+      padding: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  const buildToggleAriaLabel = (btn: HTMLButtonElement, prefix: string) => {
+    const title = btn.dataset.moduleTitle ?? ''
+    const suffix = btn.dataset.detailsSuffix ?? ''
+    return `${prefix} ${title} ${suffix}`.trim().replace(/\s+/g, ' ')
+  }
+
+  const initializeModuleToggles = () => {
+    document.querySelectorAll<HTMLButtonElement>('[data-module-toggle]').forEach((btn) => {
+      if (btn.dataset.toggleBound === 'true') return
+      btn.dataset.toggleBound = 'true'
+
+      btn.addEventListener('click', () => {
+        const panel = btn.closest('.module-panel')
+        const collapsible = panel?.querySelector<HTMLElement>('[data-module-collapsible]')
+        if (!collapsible) return
+
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true'
+
+        if (isExpanded) {
+          collapsible.hidden = true
+          btn.setAttribute('aria-expanded', 'false')
+          btn.setAttribute('aria-label', buildToggleAriaLabel(btn, btn.dataset.expandPrefix ?? ''))
+        } else {
+          collapsible.hidden = false
+          btn.setAttribute('aria-expanded', 'true')
+          btn.setAttribute('aria-label', buildToggleAriaLabel(btn, btn.dataset.collapsePrefix ?? ''))
+        }
+      })
+    })
+  }
+
+  document.addEventListener('astro:page-load', initializeModuleToggles)
+  initializeModuleToggles()
+</script>

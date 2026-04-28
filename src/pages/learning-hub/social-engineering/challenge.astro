@@ -1,0 +1,493 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { useTranslations } from 'src/i18n/index'
+
+const { t, v } = useTranslations(Astro.currentLocale)
+const { v: vEn } = useTranslations('en')
+
+type Scenario = {
+  id: number
+  type: 'email' | 'chat'
+  from: string
+  subject?: string
+  message: string
+  correct: 'trust' | 'ignore-report'
+  explanation: string
+  tactic: string
+}
+
+const rawScenarios = v<ReadonlyArray<Record<string, unknown>>>('challengeSE.scenarios') ?? []
+const enScenarios = vEn<ReadonlyArray<Record<string, unknown>>>('challengeSE.scenarios') ?? []
+const scenarioCount = Math.max(rawScenarios.length, enScenarios.length)
+
+const scenarios: Scenario[] = Array.from({ length: scenarioCount }, (_, idx) => {
+  const raw = rawScenarios[idx] ?? {}
+  const fb = enScenarios[idx] ?? {}
+  const correct = (raw.correct ?? fb.correct) as string
+  const type = (raw.type ?? fb.type) as string
+  return {
+    id: (raw.id ?? fb.id ?? idx + 1) as number,
+    type: type === 'chat' ? 'chat' : 'email',
+    from: String(raw.from ?? fb.from ?? ''),
+    subject: raw.subject !== undefined ? String(raw.subject) : fb.subject !== undefined ? String(fb.subject) : undefined,
+    message: String(raw.message ?? fb.message ?? ''),
+    correct: correct === 'trust' ? 'trust' : 'ignore-report',
+    explanation: String(raw.explanation ?? fb.explanation ?? ''),
+    tactic: String(raw.tactic ?? fb.tactic ?? ''),
+  }
+})
+
+const labels = {
+  caseLabel: t('challengeSE.caseLabel'),
+  ofLabel: t('challengeSE.ofLabel'),
+  fromLabel: t('challengeSE.fromLabel'),
+  subjectLabel: t('challengeSE.subjectLabel'),
+  messageLabel: t('challengeSE.messageLabel'),
+  trustButton: t('challengeSE.trustButton'),
+  ignoreButton: t('challengeSE.ignoreButton'),
+  nextCase: t('challengeSE.nextCase'),
+  correctLabel: t('challengeSE.correctLabel'),
+  incorrectLabel: t('challengeSE.incorrectLabel'),
+  rankRookie: t('challengeSE.rankRookie'),
+  rankRookieMsg: t('challengeSE.rankRookieMsg'),
+  rankJunior: t('challengeSE.rankJunior'),
+  rankJuniorMsg: t('challengeSE.rankJuniorMsg'),
+  rankSenior: t('challengeSE.rankSenior'),
+  rankSeniorMsg: t('challengeSE.rankSeniorMsg'),
+  rankMaster: t('challengeSE.rankMaster'),
+  rankMasterMsg: t('challengeSE.rankMasterMsg'),
+  casesIdentified: t('challengeSE.casesIdentified'),
+  redFlagDetected: 'Red Flag Detected',
+}
+
+const redFlags = v<string[]>('challengeSE.redFlags') ?? vEn<string[]>('challengeSE.redFlags') ?? []
+---
+
+<DefaultLayout title={t('challengeSE.title')}>
+  <PageHeader
+    title={t('challengeSE.title')}
+    subtitle={t('challengeSE.subtitle')}
+    bgType="module"
+    underlineColor="var(--brand-SE)"
+  />
+
+  <script
+    type="application/json"
+    id="se-challenge-data"
+    set:html={JSON.stringify({ scenarios, labels })}
+  />
+
+  <section class="my-12">
+    <div class="container">
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">{t('challengeSE.howItWorks')}</h2>
+        <p>
+          {t('challengeSE.instruction')}
+        </p>
+        <div class="tip-card">
+          <div class="tip-card__lead">
+            <span class="tip-card__icon" aria-hidden="true">💬</span>
+            <strong class="tip-card__label">{t('challengeSE.tipLabel')}</strong>
+          </div>
+          <div class="tip-card__body">{t('challengeSE.tip')}</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_350px]">
+        <!-- Main Challenge Area -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <!-- Game State: Loading -->
+          <div id="game-loading" class="flex min-h-[28rem] items-center justify-center">
+            <div class="mx-auto flex max-w-2xl flex-col gap-4 text-center">
+              <h2 class="text-2xl font-bold text-slate-900">{t('challengeSE.startTitle')}</h2>
+              <p class="text-slate-600">
+                {t('challengeSE.startDescription')}
+              </p>
+              <button
+                id="btn-start-game"
+                class="mx-auto mt-4 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                {t('challengeSE.startButton')}
+              </button>
+            </div>
+          </div>
+
+          <!-- Game State: Playing -->
+          <div id="game-playing" class="hidden space-y-6">
+            <!-- Progress Bar -->
+            <div>
+              <div class="mb-2 flex items-center justify-between">
+                <span class="text-sm font-semibold text-slate-700">{t('challengeSE.caseProgress')}</span>
+                <span id="progress-text" class="text-sm font-semibold text-slate-600"></span>
+              </div>
+              <div class="h-2 w-full rounded-full bg-slate-200">
+                <div
+                  id="progress-bar"
+                  class="h-2 rounded-full bg-blue-600 transition-all duration-300"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Message Card -->
+            <div class="rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+              <!-- Message Type Badge -->
+              <div class="mb-4 flex items-center gap-2">
+                <div
+                  id="msg-icon"
+                  class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-lg"
+                >
+                  ✉️
+                </div>
+                <span id="msg-type-badge" class="text-xs font-bold uppercase text-slate-600"></span>
+              </div>
+
+              <!-- From/Sender -->
+              <div class="mb-4 border-b border-slate-200 pb-4">
+                <p class="text-xs font-bold uppercase text-slate-500">{t('challengeSE.fromLabel')}</p>
+                <p id="msg-from" class="mt-1 font-semibold text-slate-900"></p>
+              </div>
+
+              <!-- Subject (Email only) -->
+              <div id="msg-subject-container" class="mb-4 border-b border-slate-200 pb-4">
+                <p class="text-xs font-bold uppercase text-slate-500">{t('challengeSE.subjectLabel')}</p>
+                <p id="msg-subject" class="mt-1 font-semibold text-slate-900"></p>
+              </div>
+
+              <!-- Message Body -->
+              <div class="mb-4 border-b border-slate-200 pb-4">
+                <p class="text-xs font-bold uppercase text-slate-500">{t('challengeSE.messageLabel')}</p>
+                <div id="msg-body" class="mt-3 rounded-lg bg-white p-4 leading-relaxed text-slate-900"></div>
+              </div>
+
+              <!-- Manipulation Tactic (shown after answer) -->
+              <div id="tactic-container" class="hidden mb-4 rounded-lg bg-yellow-50 p-4 border border-yellow-200">
+                <p class="text-xs font-bold uppercase text-yellow-800 mb-1" id="red-flag-label"></p>
+                <p id="msg-tactic" class="text-sm font-semibold text-yellow-900"></p>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-3">
+              <button
+                id="btn-trust"
+                class="rounded-lg bg-green-600 px-4 py-3 text-center font-semibold text-white transition hover:bg-green-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:cursor-not-allowed disabled:opacity-50"
+                id="btn-trust"
+              >
+                <span id="btn-trust-label"></span>
+              </button>
+              <button
+                id="btn-ignore-report"
+                class="rounded-lg bg-red-600 px-4 py-3 text-center font-semibold text-white transition hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <span id="btn-ignore-label"></span>
+              </button>
+            </div>
+
+            <!-- Feedback Area -->
+            <div id="feedback-container" class="hidden rounded-lg border-l-4 p-4" role="status" aria-live="assertive">
+              <p id="feedback-text" class="font-semibold"></p>
+              <p id="feedback-explanation" class="mt-2 text-sm"></p>
+            </div>
+
+            <!-- Next Button -->
+            <button
+              id="btn-next-case"
+              class="hidden w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+            </button>
+          </div>
+
+          <!-- Game State: Results -->
+          <div id="game-results" class="hidden space-y-6 text-center">
+            <div>
+              <h2 class="text-3xl font-bold text-slate-900">{t('challengeSE.completedTitle')}</h2>
+              <p class="mt-2 text-lg text-slate-600">{t('challengeSE.completedDescription')}</p>
+            </div>
+
+            <!-- Score Display -->
+            <div class="rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-8">
+              <div class="text-5xl font-bold text-blue-600" id="final-score">0</div>
+              <p class="mt-2 text-slate-600" id="cases-identified-label"></p>
+            </div>
+
+            <!-- Rank Badge -->
+            <div class="rounded-xl border-2 border-slate-200 bg-white p-6">
+              <p class="text-sm font-bold uppercase text-slate-600 mb-2">{t('challengeSE.detectiveRankLabel')}</p>
+              <div id="rank-display" class="text-4xl font-bold text-slate-900 mb-2">{t('challengeSE.defaultRank')}</div>
+              <p id="rank-message" class="text-slate-600">{t('challengeSE.defaultRankMessage')}</p>
+            </div>
+
+            <!-- Summary -->
+            <div class="rounded-lg bg-slate-50 p-6 text-left">
+              <h3 class="mb-3 font-bold text-slate-900">{t('challengeSE.performanceSummary')}</h3>
+              <div id="summary-list" class="space-y-2 text-sm text-slate-700"></div>
+            </div>
+
+            <!-- Play Again Button -->
+            <button
+              id="btn-play-again"
+              class="w-full rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              {t('challengeSE.playAgain')}
+            </button>
+          </div>
+        </div>
+
+        <!-- Side Panel: Detective Notes -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-fit sticky top-6">
+          <div class="mb-4">
+            <h3 class="text-base font-bold text-slate-900">{t('challengeSE.detectiveNotes')}</h3>
+            <p class="mt-1 text-xs text-slate-600">{t('challengeSE.detectiveTipsTitle')}</p>
+          </div>
+
+          <div class="space-y-3 border-t border-slate-200 pt-4">
+            {redFlags.map((flag) => (
+              <div class="rounded-lg bg-red-50 p-3">
+                <p class="text-xs font-bold text-red-900">{flag}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3 text-xs text-blue-900">
+            <strong>💡</strong> {t('challengeSE.proTip')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const initializeChallenge = () => {
+      const dataEl = document.getElementById('se-challenge-data')
+      if (!dataEl) return
+      const { scenarios, labels } = JSON.parse(dataEl.textContent ?? '{}')
+      if (!scenarios || !labels) return
+
+      const gameLoading = document.getElementById('game-loading')
+      const gamePlaying = document.getElementById('game-playing')
+      const gameResults = document.getElementById('game-results')
+
+      const btnStartGame = document.getElementById('btn-start-game')
+      const btnTrust = document.getElementById('btn-trust') as HTMLButtonElement | null
+      const btnIgnoreReport = document.getElementById('btn-ignore-report') as HTMLButtonElement | null
+      const btnNextCase = document.getElementById('btn-next-case') as HTMLButtonElement | null
+      const btnPlayAgain = document.getElementById('btn-play-again') as HTMLButtonElement | null
+
+      const progressText = document.getElementById('progress-text')
+      const progressBar = document.getElementById('progress-bar')
+      const msgIcon = document.getElementById('msg-icon')
+      const msgTypeBadge = document.getElementById('msg-type-badge')
+      const msgFrom = document.getElementById('msg-from')
+      const msgSubject = document.getElementById('msg-subject')
+      const msgSubjectContainer = document.getElementById('msg-subject-container')
+      const msgBody = document.getElementById('msg-body')
+      const msgTactic = document.getElementById('msg-tactic')
+      const tacticContainer = document.getElementById('tactic-container')
+      const redFlagLabel = document.getElementById('red-flag-label')
+
+      const feedbackContainer = document.getElementById('feedback-container')
+      const feedbackText = document.getElementById('feedback-text')
+      const feedbackExplanation = document.getElementById('feedback-explanation')
+
+      const finalScore = document.getElementById('final-score')
+      const rankDisplay = document.getElementById('rank-display')
+      const rankMessage = document.getElementById('rank-message')
+      const summaryList = document.getElementById('summary-list')
+      const casesIdentifiedLabel = document.getElementById('cases-identified-label')
+
+      const btnTrustLabel = document.getElementById('btn-trust-label')
+      const btnIgnoreLabel = document.getElementById('btn-ignore-label')
+
+      if (
+        !gameLoading || !gamePlaying || !gameResults ||
+        !btnStartGame || !btnTrust || !btnIgnoreReport || !btnNextCase || !btnPlayAgain ||
+        !progressText || !progressBar || !msgIcon || !msgTypeBadge || !msgFrom ||
+        !msgSubject || !msgSubjectContainer || !msgBody || !msgTactic || !tacticContainer ||
+        !feedbackContainer || !feedbackText || !feedbackExplanation ||
+        !finalScore || !rankDisplay || !rankMessage || !summaryList
+      ) {
+        return
+      }
+
+      if (btnStartGame.dataset.bound === 'true') return
+      btnStartGame.dataset.bound = 'true'
+
+      // Set button labels from translated data
+      if (btnTrustLabel) btnTrustLabel.innerHTML = labels.trustButton.replace(' ', '<br />')
+      if (btnIgnoreLabel) btnIgnoreLabel.innerHTML = labels.ignoreButton.replace(' ', '<br />')
+      if (btnNextCase) btnNextCase.textContent = labels.nextCase
+      if (casesIdentifiedLabel) casesIdentifiedLabel.textContent = labels.casesIdentified
+      if (redFlagLabel) redFlagLabel.textContent = labels.redFlagDetected
+
+      let deck: typeof scenarios[number][] = []
+      let currentIndex = 0
+      let score = 0
+      let answered = false
+      const answers: { scenario: number; correct: boolean }[] = []
+
+      const shuffle = <T,>(array: T[]): T[] => {
+        const copy = [...array]
+        for (let i = copy.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1))
+          const temp = copy[i]
+          copy[i] = copy[j]
+          copy[j] = temp
+        }
+        return copy
+      }
+
+      const startGame = () => {
+        deck = shuffle(scenarios)
+        currentIndex = 0
+        score = 0
+        answered = false
+        answers.length = 0
+
+        gameLoading.classList.add('hidden')
+        gamePlaying.classList.remove('hidden')
+        gameResults.classList.add('hidden')
+
+        showCase()
+      }
+
+      const showCase = () => {
+        if (currentIndex >= deck.length) {
+          showResults()
+          return
+        }
+
+        const scenario = deck[currentIndex]
+
+        msgFrom.textContent = scenario.from
+        msgBody.textContent = scenario.message
+
+        if (scenario.type === 'email') {
+          msgIcon.textContent = '✉️'
+          msgTypeBadge.textContent = 'Email'
+          msgSubject.textContent = scenario.subject ?? ''
+          msgSubjectContainer.classList.remove('hidden')
+        } else {
+          msgIcon.textContent = '💬'
+          msgTypeBadge.textContent = 'Chat'
+          msgSubjectContainer.classList.add('hidden')
+        }
+
+        const progress = (currentIndex / deck.length) * 100
+        progressBar.style.width = `${progress}%`
+        progressText.textContent = `${labels.caseLabel} ${currentIndex + 1} ${labels.ofLabel} ${deck.length}`
+
+        feedbackContainer.classList.add('hidden')
+        tacticContainer.classList.add('hidden')
+        btnNextCase.classList.add('hidden')
+
+        btnTrust.disabled = false
+        btnIgnoreReport.disabled = false
+
+        answered = false
+      }
+
+      const handleAnswer = (choice: 'trust' | 'ignore-report') => {
+        if (answered) return
+        answered = true
+
+        const scenario = deck[currentIndex]
+        const isCorrect = scenario.correct === choice
+
+        btnTrust.disabled = true
+        btnIgnoreReport.disabled = true
+
+        feedbackContainer.classList.remove('hidden')
+        if (isCorrect) {
+          feedbackContainer.classList.remove('border-red-400', 'bg-red-50')
+          feedbackContainer.classList.add('border-green-400', 'bg-green-50')
+          feedbackText.textContent = '✅ ' + labels.correctLabel + '!'
+          feedbackText.classList.remove('text-red-900')
+          feedbackText.classList.add('text-green-900')
+          score += 1
+        } else {
+          feedbackContainer.classList.remove('border-green-400', 'bg-green-50')
+          feedbackContainer.classList.add('border-red-400', 'bg-red-50')
+          feedbackText.textContent = '❌ ' + labels.incorrectLabel
+          feedbackText.classList.remove('text-green-900')
+          feedbackText.classList.add('text-red-900')
+        }
+
+        feedbackExplanation.textContent = scenario.explanation
+        msgTactic.textContent = scenario.tactic
+        tacticContainer.classList.remove('hidden')
+        btnNextCase.classList.remove('hidden')
+
+        answers.push({ scenario: scenario.id, correct: isCorrect })
+      }
+
+      const showResults = () => {
+        gamePlaying.classList.add('hidden')
+        gameResults.classList.remove('hidden')
+
+        let rank = ''
+        let message = ''
+
+        if (score <= 4) {
+          rank = labels.rankRookie
+          message = labels.rankRookieMsg
+        } else if (score <= 8) {
+          rank = labels.rankJunior
+          message = labels.rankJuniorMsg
+        } else if (score <= 12) {
+          rank = labels.rankSenior
+          message = labels.rankSeniorMsg
+        } else {
+          rank = labels.rankMaster
+          message = labels.rankMasterMsg
+        }
+
+        finalScore.textContent = String(score)
+        rankDisplay.textContent = rank
+        rankMessage.textContent = message
+
+        summaryList.innerHTML = ''
+        answers.forEach((answer, idx) => {
+          const scenario = deck[idx]
+          const icon = answer.correct ? '✅' : '❌'
+          const line = document.createElement('div')
+          line.className = 'flex items-center gap-2'
+          line.innerHTML = `<span>${icon}</span><span>${labels.caseLabel} ${scenario.id}: ${answer.correct ? labels.correctLabel : labels.incorrectLabel}</span>`
+          summaryList.appendChild(line)
+        })
+      }
+
+      btnStartGame.addEventListener('click', startGame)
+      btnTrust.addEventListener('click', () => handleAnswer('trust'))
+      btnIgnoreReport.addEventListener('click', () => handleAnswer('ignore-report'))
+      btnNextCase.addEventListener('click', () => {
+        currentIndex += 1
+        showCase()
+      })
+      btnPlayAgain.addEventListener('click', startGame)
+    }
+
+    document.addEventListener('astro:page-load', initializeChallenge)
+    initializeChallenge()
+  </script>
+
+  <style>
+    .tip-card {
+      border-radius: 0.9rem;
+      border: 1px solid color-mix(in oklab, var(--brand-SE), white 50%);
+      background: linear-gradient(135deg, color-mix(in oklab, var(--brand-SE), white 88%), color-mix(in oklab, var(--brand-SE), white 96%));
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: color-mix(in oklab, var(--brand-SE), black 40%);
+    }
+
+    :global(body) {
+      --tw-bg-opacity: 1;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+    }
+  </style>
+</DefaultLayout>

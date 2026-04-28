@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import logo from '/public/images/WWW-icon.svg'
+import { localizePath } from 'src/i18n/i18n'
+
+/**
+ * Logo Component
+ *
+ * Renders the site logo as a link to the homepage.
+ * The image is decorative (alt="") because the adjacent <span> provides
+ * the accessible name — prevents screen readers from announcing it twice.
+ *
+ * @see WCAG 1.1.1 — Non-text Content
+ */
+interface Props {
+  /** Image loading strategy. Use 'lazy' in footer, 'eager' in header. */
+  loading?: 'eager' | 'lazy'
+}
+
+const { loading = 'eager' }: Props = Astro.props
+const homeHref = localizePath(Astro.currentLocale, '/')
+---
+
+<a href={homeHref} class="logo-link flex items-center gap-2 !no-underline">
+  <!-- Decorative: text label in <span> provides the accessible name -->
+  <Image src={logo} alt="" width="47" height="37" loading={loading} />
+  <span class="font-bold">WWW: Wise Web Wanderers</span>
+</a>
+
+<style lang="scss">
+  .logo-link {
+    color: var(--foreground-color);
+
+    &:focus-visible {
+      outline: 3px solid var(--link-color);
+      outline-offset: 4px;
+      border-radius: var(--radius-s, 0.25rem);
+    }
+  }
+</style>

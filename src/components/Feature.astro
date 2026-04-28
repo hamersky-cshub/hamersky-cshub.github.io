@@ -1,0 +1,124 @@
+---
+/**
+ * Feature Component
+ *
+ * @description A component that displays a feature with a title and description
+ */
+interface Props {
+  /**
+   * The title to display
+   */
+  title: string
+
+  class?: string
+}
+
+const { title = 'Title', class: customClass = '' }: Props = Astro.props
+---
+
+<div class={`feature flex flex-col gap-4 ${customClass}`}>
+
+    <h3 class="text-2xl font-bold" style="font-weight: 800;">{title}</h3>
+  <div class="feature-card">
+  <div class="feature-content">
+    <slot />
+  </div>
+    <div class="feature-footer mt-auto"></div>
+    <slot name="footer" />
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+
+  .feature {
+    position: relative;
+    padding: var(--space-l);
+    inline-size: calc(100% - var(--space-l));
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+  .feature-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+  .feature-content {
+  flex:  1 auto;
+}
+
+  .feature-footer {
+  margin-top: auto;
+}
+
+    @include breakpoint(xl) {
+      inline-size: 100%;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+    }
+
+    &::before {
+      z-index: 1;
+      inset: 0;
+      box-shadow: 0 0 0 6px var(--color-neutral-100);
+      border: 3px solid var(--color-neutral-700);
+      border-radius: var(--radius-l);
+      background-color: var(--color-neutral-100);
+    }
+
+    &::after {
+      z-index: 0;
+      inset: var(--space-m) -0.85rem -0.85rem 1rem;
+      border-radius: var(--radius-l);
+      background-color: var(--link-color);
+    }
+
+    &.feature-dc::after {
+      background-color: var(--brand-DC);
+    }
+
+    &.feature-ap::after {
+      background-color: var(--brand-AP);
+    }
+
+    &.feature-at::after {
+      background-color: var(--brand-AT);
+    }
+
+    &.feature-dp::after {
+      background-color: var(--brand-DP);
+    }
+
+    &.feature-se::after {
+      background-color: var(--brand-SE);
+    }
+
+    &.feature-mw::after {
+      background-color: var(--brand-MW);
+    }
+
+    &.feature-da::after {
+      background-color: var(--brand-DA);
+    }
+
+   }
+
+  :global(.feature [data-icon]) {
+    inline-size: 4rem;
+    block-size: auto;
+    color: var(--link-color);
+  }
+
+  :global(.darkmode .feature::before) {
+    box-shadow: 0 0 0 6px var(--color-neutral-900);
+    background-color: var(--color-neutral-900);
+  }
+</style>

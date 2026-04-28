@@ -1,0 +1,420 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import Hero from '@components/Hero.astro'
+import { Icon } from 'astro-icon/components'
+import { localizePath } from '../i18n/i18n'
+import { useTranslations } from '../i18n/index'
+import { Image } from 'astro:assets'
+import LearningModules from '/src/assets/images/index/learning-modules.png'
+import Challenges from '/src/assets/images/index/challenges.png'
+import CybersecurityGames from '/src/assets/images/index/cybersecurity-games.png'
+import { moduleCount, challengeCount, gameCount } from '../data/modules'
+
+const about = localizePath(Astro.currentLocale, '/about')
+const { t } = useTranslations(Astro.currentLocale)
+---
+
+<DefaultLayout title={t('home.title')}>
+  <Hero />
+  <section class="mb-12">
+    <div class="container">
+      <div class="home-intro">
+        <div class="intro-banner my-12">
+          <div class="intro-stats grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="stat-card">
+            <span class="stat-number">{moduleCount}</span>
+            <p class="stat-title">{t('home.statModulesLabel')} <br/>{t('home.statModulesLabel2')}</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">{challengeCount}</span>
+            <p class="stat-title">{t('home.statChallengesLabel')} <br/>{t('home.statChallengesLabel2')}</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">{gameCount}</span>
+            <p class="stat-title">{t('home.statGamesLabel')} <br/>{t('home.statGamesLabel2')}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="learning-modules-grid-left">
+        <div class="modules-image">
+          <Image class="hidden xl:block floating-image1" src={LearningModules} alt="Open learning module book illustration" decoding="async" loading="eager" />
+        </div>
+        <div class="modules-content">
+          <div>
+            <h2 class="section-heading" id="learning-modules">{t('home.learningModulesTitle')}</h2>
+          </div>
+          <p class="md:text-2xl">{t('home.learningModulesText')}</p>
+        </div>
+      </div>
+
+      <div class="learning-modules-grid-right">
+        <div class="modules-content">
+          <div>
+            <h2 class="section-heading" id="learning-modules-right">{t('home.challengesTitle')}</h2>
+          </div>
+          <p class="md:text-2xl">{t('home.challengesText')}</p>
+        </div>
+        <div class="modules-image">
+          <Image class="hidden xl:block floating-image2" src={Challenges} alt="Puzzle pieces illustration representing interactive challenges" decoding="async" loading="eager" />
+        </div>
+      </div>
+
+      <div class="learning-modules-grid-left">
+        <div class="modules-image">
+          <Image class="hidden xl:block floating-image3" src={CybersecurityGames} alt="Game controller illustration representing cybersecurity games" decoding="async" loading="eager" />
+        </div>
+        <div class="modules-content">
+          <div>
+            <h2 class="section-heading">{t('home.gamesTitle')}</h2>
+          </div>
+          <p class="md:text-2xl">{t('home.gamesText')}</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card__content">
+          <p class="stat-title">{t('home.wantToKnowMore')}</p>
+          <p class="stat-subtitle">{t('home.wantToKnowMoreSub')}</p>
+        </div>
+            <a class="button has-icon" href={about}>
+            <Icon name="lucide:lightbulb" />
+            {t('home.aboutInitiative')}
+          </a>
+      </div>
+
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .floating-image1 {
+    scale: 0.9;
+    transform-origin: 55% 60%;
+    will-change: transform;
+    animation: wander-float 16s ease-in-out infinite;
+    animation-delay: -1s;
+  }
+
+  .floating-image2 {
+    scale: 1;
+    transform-origin: 52% 58%;
+    will-change: transform;
+    animation: wander-float2 18s ease-in-out infinite;
+    animation-delay: -0.5s;
+  }
+
+  .floating-image3 {
+    scale: 1;
+    transform-origin: 58% 62%;
+    will-change: transform;
+    animation: wander-float3 14s ease-in-out infinite;
+    animation-delay: -1.5s;
+  }
+
+  @keyframes wander-float {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(0.9);
+    }
+    25% {
+      transform: translate(8px, -10px) rotate(1deg) scale(0.92);
+    }
+    50% {
+      transform: translate(5px, 8px) rotate(-0.7deg) scale(0.88);
+    }
+    75% {
+      transform: translate(-10px, 6px) rotate(0.6deg) scale(0.9);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(0.9);
+    }
+  }
+
+  @keyframes wander-float2 {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(0.78);
+    }
+    25% {
+      transform: translate(8px, -10px) rotate(1deg) scale(0.785);
+    }
+    50% {
+      transform: translate(4px, 8px) rotate(-0.7deg) scale(0.775);
+    }
+    75% {
+      transform: translate(-10px, 5px) rotate(0.6deg) scale(0.78);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(0.78);
+    }
+  }
+
+  @keyframes wander-float3 {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(0.82);
+    }
+    25% {
+      transform: translate(-12px, 5px) rotate(-1.2deg) scale(0.825);
+    }
+    50% {
+      transform: translate(6px, -9px) rotate(1.1deg) scale(0.815);
+    }
+    75% {
+      transform: translate(10px, 10px) rotate(-0.8deg) scale(0.82);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(0.82);
+    }
+  }
+
+  /* Disable floating animations for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .floating-image1,
+    .floating-image2,
+    .floating-image3 {
+      animation: none;
+    }
+  }
+
+  .home-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .intro-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .intro-stats {
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  :global(.stat-card) {
+    border: 1px solid #dbe2ea;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    height: 100%;
+    text-align: center;
+    box-shadow: var(--elevation-1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .stat-card:hover,
+  .stat-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--elevation-3);
+    border-color: #2563eb;
+  }
+
+  .info-card {
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 1rem;
+    border: 2px solid var(--brand-primary);
+    padding: 1.25rem;
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 1fr;
+  }
+
+  .info-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .info-card {
+      padding: 2rem;
+      grid-template-columns: 2fr auto;
+      gap: 0.35rem;
+    }
+  }
+
+  .button {
+    border-radius: 10px;
+    color: var(--button-text-color);
+  }
+
+  .stat-number {
+    font-size: clamp(3.5rem, 3rem + 3vw, 5.5rem);
+    line-height: 1;
+    font-weight: 900;
+    color: var(--link-color);
+  }
+
+  .stat-title {
+    font-size: clamp(1.25rem, 1rem + 1vw, 2rem);
+    line-height: 1.2;
+    font-weight: 800;
+      color: var(--text-decoration-color);
+  }
+
+  .stat-subtitle {
+    color: var(--color-neutral-600);
+  }
+
+  /* Shared base for alternating image+content grids */
+  .learning-modules-grid-left,
+  .learning-modules-grid-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 1040px) {
+    .learning-modules-grid-left,
+    .learning-modules-grid-right {
+      margin-bottom: 5rem;
+    }
+
+    .learning-modules-grid-left {
+      grid-template-columns: 1fr 1.3fr;
+    }
+
+    .learning-modules-grid-right {
+      grid-template-columns: 1.3fr 1fr;
+    }
+  }
+
+  .modules-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modules-image img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+  }
+
+  .modules-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .modules-content > p {
+    grid-column: 1 / -1;
+  }
+
+  .section-heading {
+    font-size: clamp(2.75rem, 2.5rem + 1vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.15;
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+    margin-bottom: 0.7rem;
+  }
+
+  .module-grid :global(.card) {
+    box-shadow: var(--elevation-2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .module-grid :global(.card:hover),
+  .module-grid :global(.card:focus-within) {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-4);
+  }
+
+  .module-grid :global(.card .image) {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .module-grid :global(.card .image::after) {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.00s ease;
+  }
+
+  .module-grid :global(.card:hover .image::after),
+  .module-grid :global(.card:focus-within .image::after) {
+    opacity: 1;
+  }
+
+  .module-grid :global(.card:hover .image img),
+  .module-grid :global(.card:focus-within .image img) {
+    opacity: 0;
+  }
+
+  .module-grid :global(.card .image img) {
+    transition: opacity 2.00s ease;
+  }
+
+  .module-grid :global(.module-card-dc .image::after) {
+    background-image: url('/images/01_digital-citizenship_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-ap .image::after) {
+    background-image: url('/images/02_attacker-perspective_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-at .image::after) {
+    background-image: url('/images/03_authentication_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-dp .image::after) {
+    background-image: url('/images/04_data-privacy_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-se .image::after) {
+    background-image: url('/images/05_social-engineering_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-mw .image::after) {
+    background-image: url('/images/06_malware_poster_hover.png');
+  }
+
+  .module-grid :global(.module-card-da .image::after) {
+    background-image: url('/images/07_digital-abuse_poster_hover.png');
+  }
+
+  /* Module button colors live in src/assets/scss/base/_modules.scss */
+
+  @media (max-width: 768px) {
+    .modules-content {
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    /* On mobile the grid is single-column, so DOM order determines visual order.
+       The right-layout section has text first in DOM (correct for desktop),
+       but we want image on top on mobile — use order to flip without changing HTML. */
+    .learning-modules-grid-right .modules-image {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .modules-content {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .home-intro {
+      gap: 0;
+    }
+  }
+</style>

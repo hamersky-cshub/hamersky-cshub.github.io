@@ -1,0 +1,68 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { getCurrentLocale, stripLocaleFromPathname, SUPPORTED_LOCALES } from 'src/i18n/i18n'
+
+const locale = getCurrentLocale(Astro.currentLocale)
+const currentPathname = stripLocaleFromPathname(Astro.url.pathname)
+const route = currentPathname === '/' ? '' : currentPathname.slice(1)
+const search = Astro.url.search
+
+const localeLabels: Record<(typeof SUPPORTED_LOCALES)[number], string> = {
+  en: 'English',
+  cs: 'Čeština',
+  de: 'Deutsch',
+  lt: 'Lietuvių',
+  no: 'Norsk',
+}
+
+const localeLinks = SUPPORTED_LOCALES.map((code) => ({
+  code,
+  href: `${getRelativeLocaleUrl(code, route)}${search}`,
+  label: localeLabels[code],
+  shortLabel: code.toUpperCase(),
+  isActive: code === locale,
+}))
+
+const currentLocaleLabel = localeLinks.find((entry) => entry.isActive)?.shortLabel ?? locale.toUpperCase()
+---
+
+<li class="menu-item has-dropdown menu-item--language">
+  <button
+    type="button"
+    class="language-switcher__toggle"
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-label="Choose language"
+  >
+    <span class="language-switcher__current">{currentLocaleLabel}</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M6 9L12 15L18 9"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
+  <ul class="language-switcher__menu" aria-label="Language switcher">
+    {
+      localeLinks.map((entry) => (
+        <li>
+          <a
+            href={entry.href}
+            lang={entry.code}
+            hreflang={entry.code}
+            class:list={['submenu-item', 'language-switcher__item', entry.isActive && 'is-active']}
+            data-nav-ignore
+            aria-current={entry.isActive ? 'page' : undefined}
+          >
+            <span class="language-switcher__code">{entry.shortLabel}</span>
+            <span class="language-switcher__label">{entry.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</li>

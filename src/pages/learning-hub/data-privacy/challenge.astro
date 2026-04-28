@@ -1,0 +1,911 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { useTranslations } from 'src/i18n/index'
+
+/**
+ * Digital Footprint or Not? Challenge
+ *
+ * A drag-and-drop sorting mini-game for ages 10-12 where students learn
+ * which everyday activities leave a digital footprint and which do not.
+ *
+ * Features:
+ * - 15 activity cards with emoji icons
+ * - Two drop zones: "Leaves a Footprint" (teal) and "No Footprint" (gray)
+ * - Drag-and-drop on desktop, tap-to-select on mobile
+ * - Immediate visual feedback with explanations
+ * - Score tracking and win celebration
+ * - Accessible: aria-live regions, focus-visible outlines, semantic HTML
+ */
+
+const { t, v } = useTranslations(Astro.currentLocale)
+const { v: vEn } = useTranslations('en')
+
+type ChallengeActivity = {
+  id: number
+  text: string
+  category: 'footprint' | 'no-footprint'
+  emoji: string
+  explanation: string
+}
+
+const rawActivities = v<ReadonlyArray<Record<string, unknown>>>('challengeDP.activities') ?? []
+const enActivities = vEn<ReadonlyArray<Record<string, unknown>>>('challengeDP.activities') ?? []
+
+const activityCount = Math.max(rawActivities.length, enActivities.length)
+const activities: ReadonlyArray<ChallengeActivity> = Array.from({ length: activityCount }, (_, idx) => {
+  const raw = rawActivities[idx] ?? {}
+  const fallback = enActivities[idx] ?? {}
+  const categoryCandidate = (raw.category ?? fallback.category) as string
+  const category = categoryCandidate === 'footprint' || categoryCandidate === 'no-footprint'
+    ? categoryCandidate
+    : 'footprint'
+
+  return {
+    id: idx + 1,
+    text: String(raw.text ?? fallback.text ?? ''),
+    category,
+    emoji: String(raw.emoji ?? fallback.emoji ?? ''),
+    explanation: String(raw.explanation ?? fallback.explanation ?? ''),
+  }
+})
+
+const totalActivities = activities.length
+---
+
+<DefaultLayout title={t('challengeDP.title')}>
+  <PageHeader
+    title={t('challengeDP.title')}
+    subtitle={t('challengeDP.subtitle')}
+    bgType="module"
+    underlineColor="var(--brand-DP)"
+  />
+
+  <section class="my-12">
+    <div class="container mb-12">
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">{t('challengeDP.howItWorks')}</h2>
+        <p>
+          {t('challengeDP.instruction')}
+        </p>
+        <div class="tip-card">
+          <div class="tip-card__lead">
+            <span class="tip-card__icon" aria-hidden="true">💬</span>
+            <strong class="tip-card__label">{t('challengeDP.tipLabel')}</strong>
+          </div>
+          <div class="tip-card__body">{t('challengeDP.tip')}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="fp-game"
+    data-fp-game
+    data-total-activities={totalActivities}
+    data-score-label={t('challengeDP.activitiesToSort')}
+    data-feedback-correct={t('challengeDP.correct')}
+    data-feedback-wrong={t('challengeDP.tryOtherZone')}
+    data-drag-footprint-here={t('challengeDP.dragOnlineHere')}
+    data-drag-no-footprint-here={t('challengeDP.dragOfflineHere')}
+  >
+    <div class="container">
+
+      <!-- Toolbar with score and restart -->
+      <div class="fp-game__toolbar">
+        <div class="fp-game__score" data-score aria-live="polite">0 / {totalActivities}</div>
+        <button class="button fp-game__restart" type="button" data-restart>{t('challengeDP.tryAgain')}</button>
+      </div>
+
+      <!-- Feedback message -->
+      <div class="fp-game__feedback" data-feedback aria-live="polite"></div>
+
+      <!-- Game board -->
+      <div class="fp-game__board">
+
+        <!-- Card tray (source) -->
+        <div class="fp-game__tray" data-tray>
+          <h3 class="fp-game__tray-label">{t('challengeDP.activitiesToSort')}</h3>
+          <div class="fp-game__cards-container" data-cards-tray>
+            {activities.map((activity) => (
+              <div class="activity-card-wrapper">
+                <div
+                  class="activity-card"
+                  data-activity-id={activity.id}
+                  data-category={activity.category}
+                  data-explanation={activity.explanation}
+                  draggable="true"
+                  tabindex="0"
+                >
+                  <div class="activity-card__emoji">{activity.emoji}</div>
+                  <div class="activity-card__text">{activity.text}</div>
+                  <div class="activity-card__check" aria-hidden="true">✓</div>
+                </div>
+                <div class="activity-card__explanation" data-card-explanation={activity.id} aria-live="polite"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Drop zones -->
+        <div class="fp-game__zones">
+
+          <!-- Leaves a Digital Footprint (Teal) -->
+          <div
+            class="drop-zone drop-zone--footprint"
+            data-zone="footprint"
+            role="region"
+            aria-label={t('challengeDP.leavesFootprint')}
+          >
+            <div class="drop-zone__header">
+              <h3 class="drop-zone__title">{t('challengeDP.leavesFootprint')}</h3>
+              <span class="drop-zone__icon">👣</span>
+            </div>
+            <div class="drop-zone__content" data-zone-content>
+              <p class="drop-zone__empty">{t('challengeDP.dragOnlineHere')}</p>
+            </div>
+          </div>
+
+          <!-- No Digital Footprint (Gray) -->
+          <div
+            class="drop-zone drop-zone--no-footprint"
+            data-zone="no-footprint"
+            role="region"
+            aria-label={t('challengeDP.noFootprint')}
+          >
+            <div class="drop-zone__header">
+              <h3 class="drop-zone__title">{t('challengeDP.noFootprint')}</h3>
+              <span class="drop-zone__icon">🚫</span>
+            </div>
+            <div class="drop-zone__content" data-zone-content>
+              <p class="drop-zone__empty">{t('challengeDP.dragOfflineHere')}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Win celebration -->
+      <div class="fp-game__win" data-win hidden>
+        <div class="fp-game__win-inner">
+          <span class="fp-game__win-icon">🎉</span>
+          <h2>{t('challengeDP.winTitle')}</h2>
+          <p>{t('challengeDP.winMessage')}</p>
+          <button class="button" type="button" data-restart>{t('challengeDP.playAgain')}</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script>
+  const initializeFootprintGame = () => {
+    document.querySelectorAll('[data-fp-game]').forEach((root) => {
+      if (!(root instanceof HTMLElement)) return
+      if (root.dataset.bound === 'true') return
+      root.dataset.bound = 'true'
+
+      const totalActivities = Number.parseInt(root.dataset.totalActivities ?? '', 10) || 0
+      const feedbackCorrect = root.dataset.feedbackCorrect ?? ''
+      const feedbackWrong = root.dataset.feedbackWrong ?? ''
+      const dragFootprintHere = root.dataset.dragFootprintHere ?? ''
+      const dragNoFootprintHere = root.dataset.dragNoFootprintHere ?? ''
+
+      const scoreEl = root.querySelector('[data-score]')
+      const feedbackEl = root.querySelector<HTMLElement>('[data-feedback]')
+      const winPanel = root.querySelector<HTMLElement>('[data-win]')
+      const cardsTray = root.querySelector('[data-cards-tray]')
+      const zones = root.querySelectorAll<HTMLElement>('[data-zone]')
+      const restartBtns = root.querySelectorAll('[data-restart]')
+
+      if (!scoreEl || !feedbackEl || !winPanel || !cardsTray || zones.length === 0) return
+
+      let score = 0
+      let selectedCard: HTMLElement | null = null
+      let draggedCard: HTMLElement | null = null
+      let busy = false
+
+      // ── Initialize zone maps ───────────────────────────────────────
+      const zoneMap = new Map<string, HTMLElement>()
+      zones.forEach((zone) => {
+        zoneMap.set(zone.dataset.zone || '', zone)
+      })
+
+      // ── Get all cards ──────────────────────────────────────────────
+      const getCards = () => Array.from(root.querySelectorAll<HTMLElement>('[data-activity-id]'))
+
+      // ── Get wrapper for a card ─────────────────────────────────────
+      const getWrapper = (card: HTMLElement) => card.closest('.activity-card-wrapper') as HTMLElement | null
+
+      // ── Update score display ───────────────────────────────────────
+      const updateScore = () => {
+        const correctCount = getCards().filter((c) => c.dataset.placed === 'true').length
+        const total = totalActivities || getCards().length
+        scoreEl.textContent = `${correctCount} / ${total}`
+      }
+
+      // ── Show feedback ──────────────────────────────────────────────
+      let feedbackTimer: ReturnType<typeof setTimeout>
+      const showFeedback = (message: string, type: 'correct' | 'wrong') => {
+        clearTimeout(feedbackTimer)
+        feedbackEl.textContent = message
+        feedbackEl.className = `fp-game__feedback fp-game__feedback--${type}`
+        feedbackEl.style.display = 'block'
+        feedbackTimer = setTimeout(() => {
+          feedbackEl.textContent = ''
+          feedbackEl.style.display = 'none'
+        }, 3000)
+      }
+
+      // ── Show explanation below a specific card ─────────────────────
+      const showCardExplanation = (card: HTMLElement, text: string) => {
+        hideAllExplanations()
+
+        const activityId = card.dataset.activityId
+        const explanationEl = root.querySelector(`[data-card-explanation="${activityId}"]`) as HTMLElement | null
+        if (!explanationEl) return
+
+        explanationEl.textContent = text
+        explanationEl.className = 'activity-card__explanation'
+        explanationEl.style.display = 'block'
+
+        explanationEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }
+
+      const hideAllExplanations = () => {
+        root.querySelectorAll('[data-card-explanation]').forEach((el) => {
+          if (el instanceof HTMLElement) {
+            el.style.display = 'none'
+            el.textContent = ''
+          }
+        })
+      }
+
+      // ── Deselect card (mobile) ─────────────────────────────────────
+      const deselectCard = () => {
+        if (selectedCard) {
+          selectedCard.classList.remove('activity-card--selected')
+        }
+        selectedCard = null
+      }
+
+      // ── Handle card click (mobile select only) ─────────────────────
+      const handleCardClick = (card: HTMLElement) => {
+        if (card.dataset.placed === 'true' || busy) return
+
+        if (selectedCard === card) {
+          deselectCard()
+          hideAllExplanations()
+          return
+        }
+
+        deselectCard()
+        selectedCard = card
+        card.classList.add('activity-card--selected')
+        hideAllExplanations()
+      }
+
+      // ── Handle zone click (mobile drop) ────────────────────────────
+      const handleZoneClick = (zone: HTMLElement) => {
+        if (!selectedCard || busy || selectedCard.dataset.placed === 'true') return
+        performDrop(selectedCard, zone)
+      }
+
+      // ── Move card + wrapper into a drop zone ──────────────────────
+      const moveCardToZone = (card: HTMLElement, zone: HTMLElement) => {
+        const wrapper = getWrapper(card)
+        const content = zone.querySelector('[data-zone-content]')
+        if (!content || !wrapper) return
+
+        const empty = content.querySelector('.drop-zone__empty')
+        if (empty) empty.remove()
+
+        content.appendChild(wrapper)
+      }
+
+      // ── Perform drop logic ─────────────────────────────────────────
+      const performDrop = (card: HTMLElement, zone: HTMLElement) => {
+        if (card.dataset.placed === 'true') return
+
+        busy = true
+        const cardCategory = card.dataset.category || ''
+        const zoneType = zone.dataset.zone || ''
+        const explanation = card.dataset.explanation || ''
+
+        if (cardCategory === zoneType) {
+          // Correct placement
+          card.dataset.placed = 'true'
+          card.classList.add('activity-card--placed')
+          card.classList.remove('activity-card--selected')
+
+          moveCardToZone(card, zone)
+
+          score++
+          updateScore()
+          showFeedback(feedbackCorrect, 'correct')
+          showCardExplanation(card, explanation)
+          deselectCard()
+
+          setTimeout(() => {
+            busy = false
+            checkWin()
+          }, 600)
+        } else {
+          // Wrong placement
+          card.classList.add('activity-card--wrong')
+          showFeedback(feedbackWrong, 'wrong')
+          hideAllExplanations()
+
+          setTimeout(() => {
+            card.classList.remove('activity-card--wrong')
+            busy = false
+          }, 700)
+        }
+      }
+
+      // ── Check win condition ────────────────────────────────────────
+      const checkWin = () => {
+        const allCorrect = getCards().every((c) => c.dataset.placed === 'true')
+        if (allCorrect) {
+          setTimeout(() => {
+            winPanel.hidden = false
+            winPanel.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          }, 400)
+        }
+      }
+
+      // ── Drag event handlers ────────────────────────────────────────
+      const handleDragStart = (e: DragEvent) => {
+        if (!(e.target instanceof HTMLElement)) return
+        const card = e.target.closest('[data-activity-id]') as HTMLElement
+        if (!card || card.dataset.placed === 'true') {
+          e.preventDefault()
+          return
+        }
+        draggedCard = card
+        card.classList.add('activity-card--dragging')
+        if (e.dataTransfer) {
+          e.dataTransfer.effectAllowed = 'move'
+          e.dataTransfer.setData('text/plain', card.dataset.activityId || '')
+        }
+      }
+
+      const handleDragEnd = (e: DragEvent) => {
+        if (!(e.target instanceof HTMLElement)) return
+        const card = e.target.closest('[data-activity-id]') as HTMLElement
+        if (card) {
+          card.classList.remove('activity-card--dragging')
+        }
+      }
+
+      const handleDragOver = (e: DragEvent) => {
+        e.preventDefault()
+        if (e.dataTransfer) {
+          e.dataTransfer.dropEffect = 'move'
+        }
+        const zone = (e.target as HTMLElement).closest('[data-zone]') as HTMLElement
+        if (zone) {
+          zone.classList.add('drop-zone--active')
+        }
+      }
+
+      const handleDragLeave = (e: DragEvent) => {
+        const zone = (e.target as HTMLElement).closest('[data-zone]') as HTMLElement
+        if (zone && e.target === zone) {
+          zone.classList.remove('drop-zone--active')
+        }
+      }
+
+      const handleDrop = (e: DragEvent) => {
+        e.preventDefault()
+        if (!draggedCard) return
+
+        const zone = (e.target as HTMLElement).closest('[data-zone]') as HTMLElement
+        if (!zone) return
+
+        zone.classList.remove('drop-zone--active')
+        performDrop(draggedCard, zone)
+        draggedCard = null
+      }
+
+      // ── Restart ────────────────────────────────────────────────────
+      const restart = () => {
+        score = 0
+        selectedCard = null
+        draggedCard = null
+        busy = false
+        winPanel.hidden = true
+        feedbackEl.textContent = ''
+        feedbackEl.style.display = 'none'
+        hideAllExplanations()
+
+        // Reset all cards back into the tray
+        const wrappers = Array.from(root.querySelectorAll('.activity-card-wrapper'))
+        wrappers.forEach((wrapper) => {
+          const card = wrapper.querySelector('[data-activity-id]')
+          if (card instanceof HTMLElement) {
+            card.dataset.placed = 'false'
+            card.className = 'activity-card'
+          }
+          cardsTray.appendChild(wrapper)
+        })
+
+        // Restore empty messages in drop zones
+        zones.forEach((zone) => {
+          const content = zone.querySelector('[data-zone-content]')
+          if (content instanceof HTMLElement) {
+            const zoneType = zone.dataset.zone
+            const label = zoneType === 'footprint' ? dragFootprintHere : dragNoFootprintHere
+            if (!content.querySelector('.drop-zone__empty')) {
+              const p = document.createElement('p')
+              p.className = 'drop-zone__empty'
+              p.textContent = label
+              content.prepend(p)
+            }
+          }
+        })
+
+        // Shuffle tray
+        shuffleTray()
+        updateScore()
+      }
+
+      // ── Shuffle tray ───────────────────────────────────────────────
+      const shuffleTray = () => {
+        const wrappers = Array.from(cardsTray.querySelectorAll('.activity-card-wrapper'))
+        for (let i = wrappers.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1))
+          const temp = wrappers[i]
+          wrappers[i] = wrappers[j]
+          wrappers[j] = temp
+        }
+        wrappers.forEach((wrapper) => cardsTray.appendChild(wrapper))
+      }
+
+      // ── Attach listeners ───────────────────────────────────────────
+      root.addEventListener('dragstart', handleDragStart, true)
+      root.addEventListener('dragend', handleDragEnd, true)
+
+      zones.forEach((zone) => {
+        zone.addEventListener('dragover', handleDragOver)
+        zone.addEventListener('dragleave', handleDragLeave)
+        zone.addEventListener('drop', handleDrop)
+        zone.addEventListener('click', () => handleZoneClick(zone))
+      })
+
+      // Card click handlers (mobile fallback)
+      getCards().forEach((card) => {
+        if (card instanceof HTMLElement) {
+          card.addEventListener('click', (e) => {
+            e.stopPropagation()
+            handleCardClick(card)
+          })
+        }
+      })
+
+      // Restart buttons
+      restartBtns.forEach((btn) => btn.addEventListener('click', restart))
+
+      // Initial setup
+      shuffleTray()
+      updateScore()
+    })
+  }
+
+  document.addEventListener('astro:page-load', initializeFootprintGame)
+  initializeFootprintGame()
+</script>
+
+<style>
+  /* ── Tip card ──────────────────────────────────────────────────────────── */
+  .tip-card {
+    border-radius: 0.9rem;
+    border: 1px solid color-mix(in oklab, var(--brand-DP), white 50%);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--brand-DP), white 88%), color-mix(in oklab, var(--brand-DP), white 96%));
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: color-mix(in oklab, var(--brand-DP), black 40%);
+  }
+
+  /* ── Game wrapper ──────────────────────────────────────────────────────── */
+  .fp-game {
+    margin-bottom: var(--space-3xl);
+  }
+
+  /* ── Toolbar ───────────────────────────────────────────────────────────── */
+  .fp-game__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-m);
+    margin-bottom: var(--space-m);
+    flex-wrap: wrap;
+  }
+
+  .fp-game__score {
+    font-size: var(--font-size-2);
+    font-weight: 700;
+    padding: var(--space-2xs) var(--space-s);
+    border: 2px solid var(--border-color-subtle);
+    border-radius: var(--radius-l);
+  }
+
+  .fp-game__restart {
+    border-color: var(--link-color);
+    background-color: var(--background-color);
+    color: var(--link-color);
+    border-radius: var(--radius-l);
+  }
+
+  .fp-game__restart:where(:hover, :focus-visible) {
+    background-color: var(--link-color);
+    color: white;
+  }
+
+  /* ── Feedback message ──────────────────────────────────────────────────── */
+  .fp-game__feedback {
+    display: none;
+    min-height: 1.8rem;
+    font-weight: 600;
+    font-size: var(--font-size-0);
+    margin-bottom: var(--space-s);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-m);
+    transition: color 0.2s;
+  }
+
+  .fp-game__feedback--correct {
+    color: #15803d;
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+  }
+
+  .fp-game__feedback--wrong {
+    color: #b91c1c;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+  }
+
+  /* ── Game board layout ─────────────────────────────────────────────────── */
+  .fp-game__board {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-l);
+    margin: var(--space-xl) 0;
+  }
+
+  @media (max-width: 1024px) {
+    .fp-game__board {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Tray (source area) ────────────────────────────────────────────────── */
+  .fp-game__tray {
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    background-color: #f3f4f6;
+    border: 2px dashed #d1d5db;
+  }
+
+  .fp-game__tray-label {
+    font-size: var(--font-size-1);
+    font-weight: 700;
+    margin-bottom: var(--space-m);
+    color: var(--color-neutral-800);
+  }
+
+  .fp-game__cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  /* ── Activity card wrapper ─────────────────────────────────────────────── */
+  .activity-card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Activity card ─────────────────────────────────────────────────────── */
+  .activity-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    background-color: white;
+    border: 2px solid #e5e7eb;
+    cursor: grab;
+    user-select: none;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s,
+      border-color 0.2s,
+      background-color 0.2s;
+    box-shadow: var(--elevation-1);
+  }
+
+  .activity-card:where(:hover, :focus-visible) {
+    border-color: var(--brand-DP);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-DP), transparent 80%);
+    transform: translateY(-2px);
+  }
+
+  .activity-card:focus-visible {
+    outline: none;
+  }
+
+  .activity-card--selected {
+    border-color: var(--brand-DP);
+    background-color: color-mix(in oklab, var(--brand-DP), white 92%);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-DP), transparent 70%);
+  }
+
+  .activity-card--dragging {
+    opacity: 0.6;
+    cursor: grabbing;
+  }
+
+  .activity-card--placed {
+    cursor: default;
+    opacity: 0.85;
+    border-color: #d1d5db;
+  }
+
+  .activity-card--placed .activity-card__text {
+    color: #9ca3af;
+  }
+
+  .activity-card--wrong {
+    animation: shake 0.4s ease;
+    background-color: #fef2f2;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+
+  .activity-card__emoji {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .activity-card__text {
+    flex: 1;
+    font-size: var(--font-size-0);
+    font-weight: 500;
+    color: var(--color-neutral-800);
+    line-height: 1.4;
+  }
+
+  .activity-card__check {
+    display: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-DP);
+  }
+
+  .activity-card--placed .activity-card__check {
+    display: block;
+  }
+
+  /* ── Inline explanation (below each card) ──────────────────────────────── */
+  .activity-card__explanation {
+    display: none;
+    margin: var(--space-2xs) 0 var(--space-xs);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-s);
+    border: 1px solid #cbd5e1;
+    border-left: 3px solid #94a3b8;
+    background-color: #e5e7eb;
+    color: #1f2937;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    animation: fadeIn 0.25s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Zones container ───────────────────────────────────────────────────── */
+  .fp-game__zones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-m);
+  }
+
+  /* ── Drop zones ────────────────────────────────────────────────────────── */
+  .drop-zone {
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+    min-height: 250px;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drop-zone--active {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-DP), transparent 70%);
+    background-color: color-mix(in oklab, var(--brand-DP), white 94%);
+  }
+
+  .drop-zone--footprint {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+  }
+
+  .drop-zone--footprint.drop-zone--active {
+    background-color: #dcfce7;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  }
+
+  .drop-zone--no-footprint {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+  }
+
+  .drop-zone--no-footprint.drop-zone--active {
+    background-color: #fee2e2;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+  }
+
+  .drop-zone__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-m);
+  }
+
+  .drop-zone__title {
+    font-size: var(--font-size-1);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .drop-zone--footprint .drop-zone__title {
+    color: #15803d;
+  }
+
+  .drop-zone--no-footprint .drop-zone__title {
+    color: #b91c1c;
+  }
+
+  .drop-zone__icon {
+    font-size: 1.25rem;
+  }
+
+  .drop-zone__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    min-height: 60px;
+  }
+
+  .drop-zone__empty {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: var(--space-m) 0;
+  }
+
+  /* Cards inside zones should be smaller */
+  .drop-zone .activity-card {
+    padding: var(--space-s);
+    gap: var(--space-s);
+  }
+
+  .drop-zone .activity-card__emoji {
+    font-size: 1.15rem;
+  }
+
+  .drop-zone .activity-card__text {
+    font-size: 0.85rem;
+  }
+
+  .drop-zone .activity-card__explanation {
+    font-size: 0.82rem;
+    padding: var(--space-2xs) var(--space-s);
+  }
+
+  /* ── Win panel ─────────────────────────────────────────────────────────── */
+  .fp-game__win {
+    margin-top: var(--space-xl);
+  }
+
+  .fp-game__win-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+    padding: var(--space-xl);
+    border-radius: var(--radius-l);
+    border: 3px solid var(--brand-DP);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--brand-DP), white 92%), color-mix(in oklab, var(--brand-DP), white 84%));
+    box-shadow: var(--elevation-2);
+    text-align: center;
+    animation: slideUp 0.5s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fp-game__win-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+    animation: bounce 0.6s ease;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .fp-game__win-inner h2 {
+    color: color-mix(in oklab, var(--brand-DP), black 40%);
+    margin: 0;
+    font-size: var(--font-size-3);
+  }
+
+  .fp-game__win-inner p {
+    color: color-mix(in oklab, var(--brand-DP), black 30%);
+    max-width: 50ch;
+    margin: 0;
+    font-size: var(--font-size-0);
+  }
+
+  .fp-game__win-inner .button {
+    margin-top: var(--space-s);
+  }
+
+  /* ── Responsive adjustments ────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .activity-card {
+      padding: var(--space-s);
+      gap: var(--space-s);
+    }
+
+    .activity-card__emoji {
+      font-size: 1.25rem;
+    }
+
+    .activity-card__text {
+      font-size: 0.9rem;
+    }
+
+    .drop-zone {
+      min-height: 180px;
+    }
+
+    .fp-game__zones {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+</DefaultLayout>

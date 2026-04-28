@@ -1,0 +1,265 @@
+---
+import { Image } from 'astro:assets'
+import sanitizeHtml from 'sanitize-html'
+import { Icon } from 'astro-icon/components'
+
+/* Avatar, Breadcrumbs, BreadcrumbsItem available from 'accessible-astro-components'
+   when breadcrumb or author features are enabled in the template */
+
+/**
+ * PageHeader Component
+ *
+ * Renders a full-width page header with title, optional subtitle, optional
+ * featured image, and optional action buttons. Background variants
+ * (primary, secondary, neutral, gradient, bordered) allow visual variety
+ * across pages.
+ *
+ * Security:
+ * - Subtitle HTML is sanitized via sanitize-html (allowlist of safe tags)
+ * - External links in sanitized content get rel="noopener noreferrer"
+ *
+ * Accessibility:
+ * - Focus-visible outlines on all .btn elements (WCAG 2.4.7)
+ * - Decorative featured image uses alt="" (informational alt handled by title)
+ * - Title underline color exposed via --page-header-underline CSS custom prop
+ *
+ * @see WCAG 2.4.7 — Focus Visible
+ * @see WCAG 1.1.1 — Non-text Content
+ */
+interface Props {
+  /**
+   * Additional classes to apply to the PageHeader
+   */
+  class?: string
+  /**
+   * The featured image of the page
+   */
+  featuredImage?: string
+  /**
+   * The title of the page
+   */
+  title: string
+  /**
+   * The subtitle of the page
+   * @description Can contain HTML content (will be sanitized)
+   */
+  subtitle?: string
+  /**
+   * The background variant for the page header
+   * @default undefined — Uses the default background color
+   */
+  bgType?: 'primary' | 'secondary' | 'neutral' | 'gradient' | 'bordered' | 'module'
+  /**
+   * Title underline color
+   * @default '#2563EB'
+   */
+  underlineColor?: string
+  /**
+   * Buttons to display in the page header
+   */
+  buttons?: {
+    text: string
+    href: string
+    variant?: 'primary' | 'secondary'
+    icon?: string
+    download?: string
+  }[];
+}
+
+const {
+  class: className,
+  title,
+  subtitle,
+  bgType,
+  featuredImage,
+  underlineColor = '#2563EB',
+  buttons,
+} = Astro.props
+
+// Sanitize subtitle HTML if present
+const sanitizedSubtitle: string = subtitle
+  ? sanitizeHtml(subtitle, {
+      allowedTags: ['b', 'i', 'em', 'strong', 'a', 'span', 'br'],
+      allowedAttributes: {
+        a: ['href', 'title', 'target', 'rel'],
+        span: ['class'],
+      },
+      allowedSchemes: ['http', 'https', 'mailto'],
+      allowProtocolRelative: false,
+      transformTags: {
+        a: (_: string, attribs: Record<string, string>) => {
+          const { target: _ignoredTarget, rel: _ignoredRel, ...safeAttribs } = attribs
+          const nextTarget = attribs.target === '_blank' ? '_blank' : undefined
+          const relValues = new Set((attribs.rel || '').split(/\s+/).filter(Boolean))
+
+          if (nextTarget === '_blank') {
+            relValues.add('noopener')
+            relValues.add('noreferrer')
+          }
+
+          const nextRel = [...relValues].join(' ')
+          return {
+            tagName: 'a',
+            attribs: {
+              ...safeAttribs,
+              ...(nextTarget ? { target: nextTarget } : {}),
+              ...(nextRel ? { rel: nextRel } : {}),
+            },
+          }
+        },
+      },
+    })
+  : ''
+---
+
+<section class:list={[className, 'page-header']} style={`--page-header-underline: ${underlineColor};`}>
+  <div class:list={['py-16', bgType && `bg-${bgType}`]}>
+    <div class="space-content container">
+      {
+        featuredImage && (
+          <div class="featured-image-container mb-8">
+            <Image
+              src={featuredImage}
+              alt=""
+              width={1200}
+              height={250}
+              class="h-[250px] w-full rounded-lg object-cover"
+            />
+          </div>
+        )
+      }
+      <h1 class="page-header__title">{title}</h1>
+      {sanitizedSubtitle && <p class="text-2xl" set:html={sanitizedSubtitle} />}
+      {
+        buttons && buttons.length > 0 && (
+          <div class="mt-6 flex gap-4">
+            {buttons.map((button) => (
+              <a
+                class:list={[
+                  'btn',
+                  `btn-${button.variant || 'primary'}`,
+                  button.icon && 'has-icon',
+                ]}
+                href={button.href}
+                download={button.download}
+              >
+                {button.icon && <Icon name={button.icon} />} {button.text}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-header {
+    .bg-primary {
+      background-color: light-dark(var(--color-primary-100), var(--color-primary-500));
+    }
+
+    .bg-secondary {
+      background-color: light-dark(var(--color-secondary-100), var(--color-secondary-500));
+    }
+
+    .bg-neutral {
+      background-color: light-dark(var(--color-neutral-300), var(--color-neutral-800));
+    }
+
+    .bg-gradient {
+      background-image: linear-gradient(
+        315deg,
+        light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
+        light-dark(var(--color-secondary-100), var(--color-primary-200))
+      );
+      color: var(--color-neutral-900);
+    }
+
+    .bg-bordered {
+      border: 1px solid var(--border-color-subtle);
+      border-inline: 0;
+    }
+
+    .bg-module {
+      background: linear-gradient(155deg, color-mix(in oklab, var(--page-header-underline), white 90%) 0%, var(--background-color) 60%);
+      border: 1px solid color-mix(in oklab, var(--page-header-underline), white 60%);
+      border-inline: 0;
+    }
+
+    :global(html.darkmode) .bg-module {
+      background: linear-gradient(155deg, color-mix(in oklab, var(--page-header-underline) 22%, var(--dm-surface-2)) 0%, var(--dm-surface-1) 65%);
+      border-color: color-mix(in oklab, var(--page-header-underline) 40%, var(--dm-border-sub));
+      color: var(--dm-fg);
+    }
+
+    :global(html.darkmode) .bg-module .page-header__title {
+      text-decoration-color: color-mix(in oklab, var(--page-header-underline), white 25%);
+    }
+
+    :global(html.darkmode) .bg-module p {
+      color: var(--dm-fg-muted);
+    }
+
+    .page-header__title {
+      text-decoration: underline;
+      text-decoration-color: var(--page-header-underline, #2563EB);
+    }
+
+    .featured-image-container {
+      max-height: 500px;
+      overflow: hidden;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--page-header-underline);
+      color: white;
+      outline: 2px solid var(--page-header-underline);
+    }
+
+    .btn-primary:hover {
+      background-color: color-mix(in oklab, var(--page-header-underline), black 10%);
+      outline: 2px solid color-mix(in oklab, var(--page-header-underline), black 10%);
+    }
+
+    .btn-secondary {
+      background-color: var(--background-color);
+      color: var(--page-header-underline);
+      outline: 2px solid var(--page-header-underline);
+    }
+
+    .btn-secondary:hover {
+      background: color-mix(in oklab, var(--background-color), var(--page-header-underline) 15%);
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--page-header-underline);
+      outline-offset: 3px;
+    }
+
+    .btn.has-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn.has-icon [data-icon] {
+      inline-size: 22px;
+      transition: transform 0.3s ease;
+    }
+
+    .btn.has-icon:hover [data-icon],
+    .btn.has-icon:focus-visible [data-icon] {
+      animation: boop 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+  }
+</style>

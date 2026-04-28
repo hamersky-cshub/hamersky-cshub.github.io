@@ -1,0 +1,140 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import heroImg from '../assets/images/index/robot-intro.png'
+import { localizePath } from '../i18n/i18n'
+import { useTranslations } from '../i18n/index'
+
+/**
+ * Hero Component
+ *
+ * @description A component that displays a hero section with a title, description, and image
+ */
+interface Props {
+  /**
+   * The source URL for the image
+   */
+  src?: string
+}
+
+const learningHubHref = localizePath(Astro.currentLocale, '/learning-hub/introduction')
+const { t } = useTranslations(Astro.currentLocale)
+---
+
+<section class="hero mt-12 mb-12 md:mt-24">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="hero-title text-center md:text-left" style="z-index: 3; letter-spacing: -0.05em;">
+          <slot><span style="color: var(--link-color);">W</span>ise <span style="color: var(--link-color);">W</span>eb <br/><span style="color: var(--link-color);">W</span>anderers</slot>
+        </h1>
+        <p class="text-xl md:text-3xl text-center md:text-left">
+          {t('hero.subtitle')}
+        </p>
+        <div class="flex flex-col gap-3 min-[600px]:flex-row items-center">
+          <a class="button has-icon" href={learningHubHref}>
+            <Icon name="lucide:graduation-cap" />
+            {t('hero.explore')}
+          </a>
+          <a class="button has-icon is-outline" href="#learning-modules">
+            <Icon name="lucide:info" />
+            {t('hero.moreInfo')}
+          </a>
+        </div>
+      </div>
+      <div style="z-index: 5;">
+        <Image class="hidden xl:block floating-image" src={heroImg} alt="" decoding="async" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  h1 {
+    text-wrap: unset;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 7vw + 1rem, 8rem);
+    line-height: 1.05;
+  }
+
+  .floating-image {
+    scale: 0.87;
+    transform-origin: 55% 60%;
+    will-change: transform;
+    animation: wander-float 13s ease-in-out infinite;
+    animation-delay: -2.4s;
+  }
+
+  .button {
+    border-radius: 10px;
+    color: var(--button-text-color);
+  }
+
+  .hero-badge {
+    color: #fff;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .button.is-outline {
+    background: transparent;
+    color: var(--link-color);
+    border-color: var(--link-color);
+  }
+
+  .button.is-outline:hover,
+  .button.is-outline:focus-visible {
+    background: rgba(37, 99, 235, 0.1);
+  }
+
+  @keyframes wander-float {
+    0% {
+      transform: translate3d(0px, 0px, 0) rotate(0deg);
+    }
+    14% {
+      transform: translate3d(4px, -5px, 0) rotate(0.25deg);
+    }
+    29% {
+      transform: translate3d(-6px, -11px, 0) rotate(-0.35deg);
+    }
+    43% {
+      transform: translate3d(5px, -8px, 0) rotate(0.3deg);
+    }
+    58% {
+      transform: translate3d(-3px, -14px, 0) rotate(-0.2deg);
+    }
+    74% {
+      transform: translate3d(6px, -9px, 0) rotate(0.35deg);
+    }
+    88% {
+      transform: translate3d(-4px, -4px, 0) rotate(-0.25deg);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0) rotate(0deg);
+    }
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

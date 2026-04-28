@@ -1,0 +1,97 @@
+---
+import { Icon } from 'astro-icon/components'
+
+/**
+ * CallToAction Component
+ *
+ * A prominent banner with a heading and action link, typically used
+ * at the bottom of a page to drive conversions or next steps.
+ *
+ * Accessibility:
+ * - Arrow icon is decorative (aria-hidden) — link text alone conveys meaning
+ * - :focus-visible outline provides keyboard discoverability
+ * - High-contrast color pairing: dark text on light gradient background
+ *
+ * @see WCAG 2.4.7 — Focus Visible
+ */
+interface Props {
+  /** The heading text displayed above the link */
+  title?: string
+  /** The URL the action link navigates to */
+  link?: string
+  /** The visible label for the action link */
+  linkText?: string
+}
+
+const {
+  title = 'Get this theme on GitHub',
+  link = 'https://github.com/incluud/accessible-astro-starter',
+  linkText = 'Use this theme',
+} = Astro.props
+
+/** External links need rel="noopener noreferrer" for security */
+const isExternal = link.startsWith('http')
+---
+
+<div class="container">
+  <div class="call-to-action mt-24 mb-32 flex flex-col items-center gap-12 rounded-xl px-12 py-20 md:px-24">
+    <h2 class="text-center text-3xl md:text-6xl">{title}</h2>
+    <a
+      href={link}
+      class="cta-link text-center text-2xl"
+      {...(isExternal ? { rel: 'noopener noreferrer' } : {})}
+    >
+      {linkText}
+      <Icon name="lucide:arrow-right" aria-hidden="true" />
+    </a>
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../assets/scss/base/mixins' as *;
+
+  .call-to-action {
+    position: relative;
+    background-image: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-100), var(--color-primary-200))
+    );
+    color: var(--color-neutral-900);
+  }
+
+  .cta-link,
+  .cta-link:visited {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    border: 3px solid var(--color-neutral-900);
+    border-radius: var(--radius-s);
+    padding: var(--space-s);
+    color: var(--color-neutral-900);
+    font-weight: bold;
+    text-decoration: none;
+
+    @include text-decoration(transparent, currentColor);
+
+    [data-icon] {
+      transition: translate var(--animation-speed-fast) var(--cubic-bezier);
+    }
+
+    &:where(:hover, :focus) {
+      background-color: var(--color-neutral-900);
+      color: var(--color-neutral-100);
+      text-decoration: underline;
+
+      [data-icon] {
+        translate: 5px 0;
+      }
+    }
+
+    /* Distinct focus ring for keyboard users — WCAG 2.4.7 */
+    &:focus-visible {
+      outline: 3px solid var(--color-neutral-900);
+      outline-offset: 4px;
+    }
+  }
+</style>

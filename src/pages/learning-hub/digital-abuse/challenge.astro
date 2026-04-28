@@ -1,0 +1,1205 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { useTranslations } from 'src/i18n/index'
+
+const { t, v } = useTranslations(Astro.currentLocale)
+const { v: vEn } = useTranslations('en')
+
+// ── Types ──────────────────────────────────────────────────────────────────
+type StructChoice = { next: string; points: number }
+type StructNode = {
+  mood: string
+  ending?: true
+  type?: 'good' | 'okay' | 'bad'
+  stars?: number
+  choices?: StructChoice[]
+}
+
+type Choice = { text: string; next: string; points: number }
+type StoryNode = {
+  text: string
+  mood: string
+  choices?: Choice[]
+  ending?: true
+  type?: 'good' | 'okay' | 'bad'
+  stars?: number
+  title?: string
+  lesson?: string
+}
+type Story = {
+  id: number
+  title: string
+  emoji: string
+  topic: string
+  nodes: Record<string, StoryNode>
+}
+
+// ── Story structure (game mechanics — not translated) ──────────────────────
+const storyStructure: Array<{ id: number; nodes: Record<string, StructNode> }> = [
+  { id: 1, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 0 }, { next: 'end_b2', points: 2 }] },
+    end_b1: { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    end_b2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 0 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+  }},
+  { id: 2, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 0 }, { next: 'end_b2', points: 2 }] },
+    end_b1: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+    end_b2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 1 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+  }},
+  { id: 3, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 0 }, { next: 'end_b2', points: 2 }] },
+    end_b1: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+    end_b2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 0 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+  }},
+  { id: 4, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 2 }, { next: 'end_b2', points: 0 }] },
+    end_b1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_b2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 1 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+  }},
+  { id: 5, nodes: {
+    start:  { mood: 'sad',       choices: [{ next: 'end_a',  points: 0 }, { next: 'end_b',  points: 0 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    end_b:  { mood: 'okay',      ending: true, type: 'okay', stars: 1 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 2 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+  }},
+  { id: 6, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 0 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 0 }, { next: 'end_b2', points: 2 }] },
+    end_b1: { mood: 'bad',       ending: true, type: 'bad',  stars: 0 },
+    end_b2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 1 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+  }},
+  { id: 7, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 0 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 0 }, { next: 'end_b2', points: 2 }] },
+    end_b1: { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    end_b2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 0 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+  }},
+  { id: 8, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 1 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 2 }, { next: 'end_b2', points: 0 }] },
+    end_b1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_b2: { mood: 'okay',      ending: true, type: 'okay', stars: 1 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 1 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+  }},
+  { id: 9, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'mid_a',  points: 0 }, { next: 'end_b',  points: 0 }, { next: 'mid_c',  points: 2 }] },
+    mid_a:  { mood: 'worried',   choices: [{ next: 'end_a1', points: 0 }, { next: 'end_a2', points: 1 }] },
+    end_a1: { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    end_a2: { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+    end_b:  { mood: 'okay',      ending: true, type: 'okay', stars: 2 },
+    mid_c:  { mood: 'supportive',choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 1 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+  }},
+  { id: 10, nodes: {
+    start:  { mood: 'worried',   choices: [{ next: 'end_a',  points: 0 }, { next: 'mid_b',  points: 0 }, { next: 'mid_c',  points: 2 }] },
+    end_a:  { mood: 'bad',       ending: true, type: 'bad',  stars: 0 },
+    mid_b:  { mood: 'worried',   choices: [{ next: 'end_b1', points: 0 }, { next: 'end_b2', points: 2 }] },
+    end_b1: { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+    end_b2: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    mid_c:  { mood: 'worried',   choices: [{ next: 'end_c1', points: 2 }, { next: 'end_c2', points: 0 }] },
+    end_c1: { mood: 'good',      ending: true, type: 'good', stars: 3 },
+    end_c2: { mood: 'bad',       ending: true, type: 'bad',  stars: 1 },
+  }},
+]
+
+// ── Merge translated text with structural data ─────────────────────────────
+const rawStories = v<ReadonlyArray<Record<string, unknown>>>('challengeDA.stories') ?? []
+const enStories  = vEn<ReadonlyArray<Record<string, unknown>>>('challengeDA.stories') ?? []
+
+const stories: Story[] = storyStructure.map((struct, idx) => {
+  const raw = (rawStories[idx] ?? {}) as Record<string, unknown>
+  const fb  = (enStories[idx]  ?? {}) as Record<string, unknown>
+
+  const rawNodes = (raw.nodes ?? fb.nodes ?? []) as Array<Record<string, unknown>>
+  const nodeMap: Record<string, Record<string, unknown>> = {}
+  rawNodes.forEach(n => { nodeMap[String(n.id ?? '')] = n })
+
+  const nodes: Record<string, StoryNode> = {}
+  Object.entries(struct.nodes).forEach(([nodeId, structNode]) => {
+    const tn = nodeMap[nodeId] ?? {}
+    const structChoices = structNode.choices ?? []
+    const textChoices   = (tn.choices ?? []) as string[]
+
+    const builtNode: StoryNode = {
+      text: String(tn.text ?? ''),
+      mood: structNode.mood,
+    }
+    if (structNode.ending)              builtNode.ending = true
+    if (structNode.type)                builtNode.type   = structNode.type
+    if (structNode.stars !== undefined) builtNode.stars  = structNode.stars
+    if (tn.title)                       builtNode.title  = String(tn.title)
+    if (tn.lesson)                      builtNode.lesson = String(tn.lesson)
+    if (structChoices.length) {
+      builtNode.choices = structChoices.map((c, i) => ({
+        text:   String(textChoices[i] ?? ''),
+        next:   c.next,
+        points: c.points,
+      }))
+    }
+    nodes[nodeId] = builtNode
+  })
+
+  return {
+    id:    struct.id,
+    title: String(raw.title ?? fb.title ?? ''),
+    emoji: String(raw.emoji ?? fb.emoji ?? ''),
+    topic: String(raw.topic ?? fb.topic ?? ''),
+    nodes,
+  }
+})
+
+// ── Labels from translations ───────────────────────────────────────────────
+const labels = {
+  storyLabel:       t('challengeDA.storiesTitle'),
+  watchOutTitle:    t('challengeDA.watchOutTitle'),
+  welcomeDesc:      t('challengeDA.welcomeDesc'),
+  startStory:       t('challengeDA.startStory'),
+  whatWeLearned:    t('challengeDA.whatWeLearned'),
+  tryDifferentPath: t('challengeDA.tryDifferentPath'),
+  nextStory:        t('challengeDA.nextStory'),
+  seeFinalScore:    t('challengeDA.seeFinalScore'),
+  allStoriesComplete: t('challengeDA.allStoriesComplete'),
+  finalScoreDesc:   t('challengeDA.finalScoreDesc'),
+  playAgain:        t('challengeDA.playAgain'),
+  rankChampion:     t('challengeDA.rankChampion'),
+  rankChampionMsg:  t('challengeDA.rankChampionMsg'),
+  rankDefender:     t('challengeDA.rankDefender'),
+  rankDefenderMsg:  t('challengeDA.rankDefenderMsg'),
+  rankNavigator:    t('challengeDA.rankNavigator'),
+  rankNavigatorMsg: t('challengeDA.rankNavigatorMsg'),
+  rankBeginning:    t('challengeDA.rankBeginning'),
+  rankBeginningMsg: t('challengeDA.rankBeginningMsg'),
+  yourBestScore:    t('challengeDA.yourBestScore'),
+  bestResultDesc:   t('challengeDA.bestResultDesc'),
+  badgeGood:        '\u2728 Great Outcome!',
+  badgeOkay:        '\u{1F324}\uFE0F Could Be Better',
+  badgeBad:         '\u274C Tough Lesson',
+  topicLabel:       'Topic',
+  storyOf:          'of',
+  pointsLabel:      'Points this run',
+}
+
+const watchOutItems = v<string[]>('challengeDA.watchOutItems') ?? vEn<string[]>('challengeDA.watchOutItems') ?? []
+---
+
+<DefaultLayout title={t('challengeDA.title')}>
+  <PageHeader
+    title={t('challengeDA.title')}
+    subtitle={t('challengeDA.subtitle')}
+    bgType="module"
+    underlineColor="var(--brand-DA)"
+  />
+
+  <script
+    type="application/json"
+    id="da-challenge-data"
+    set:html={JSON.stringify({ stories, labels })}
+  />
+
+  <section class="my-12">
+    <div class="container">
+
+      <!-- How It Works -->
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">{t('challengeDA.howItWorks')}</h2>
+        <p>{t('challengeDA.instruction')}</p>
+        <div class="tip-card">
+          <div class="tip-card__lead">
+            <span class="tip-card__icon" aria-hidden="true">💬</span>
+            <strong class="tip-card__label">{t('challengeDA.tipLabel')}</strong>
+          </div>
+          <div class="tip-card__body">{t('challengeDA.tip')}</div>
+        </div>
+      </div>
+
+      <!-- Two-column layout -->
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
+
+        <!-- ── Main: Story Area ─────────────────────────────────────────── -->
+        <div>
+
+          <!-- Story header bar -->
+          <div class="story-header">
+            <div class="story-header-left">
+              <span class="story-emoji" id="story-emoji">📖</span>
+              <div class="story-header-text">
+                <span class="story-number" id="story-number">Story 1 of 10</span>
+                <span class="story-title-text" id="story-title-text">…</span>
+              </div>
+            </div>
+            <div class="session-pts-box">
+              <span class="pts-label" id="pts-label-el">{labels.pointsLabel}</span>
+              <span class="pts-value" id="session-pts">0</span>
+            </div>
+          </div>
+
+          <!-- Story panel -->
+          <div class="story-panel">
+
+            <!-- Welcome / between-story state -->
+            <div id="welcome-state" class="welcome-state">
+              <div class="welcome-icon" id="welcome-emoji">📱</div>
+              <h3 class="welcome-title" id="welcome-title">Story 1</h3>
+              <p class="welcome-topic" id="welcome-topic">Topic</p>
+              <p class="welcome-desc" id="welcome-desc">{labels.welcomeDesc}</p>
+              <button class="btn btn-primary" id="start-btn">{labels.startStory}</button>
+            </div>
+
+            <!-- Messages area -->
+            <div id="messages-area" class="messages-area hidden" aria-live="polite" aria-label="Story messages"></div>
+
+            <!-- Choices -->
+            <div id="choices-container" class="choices-container hidden"></div>
+
+            <!-- Ending card -->
+            <div id="ending-card" class="ending-card hidden">
+              <div class="ending-badge" id="ending-badge">{labels.badgeGood}</div>
+              <div class="ending-title" id="ending-title">…</div>
+              <div class="ending-stars" id="ending-stars">★★★</div>
+              <div class="ending-lesson">
+                <strong>{labels.whatWeLearned}</strong>
+                <p id="ending-lesson-text">…</p>
+              </div>
+            </div>
+
+          </div><!-- .story-panel -->
+
+          <!-- Action buttons (shown after ending) -->
+          <div id="action-buttons" class="action-buttons hidden">
+            <button class="btn btn-secondary" id="retry-btn">{labels.tryDifferentPath}</button>
+            <button class="btn btn-primary" id="next-story-btn">{labels.nextStory}</button>
+            <button class="btn btn-primary" id="all-done-btn" style="display:none">{labels.seeFinalScore}</button>
+          </div>
+
+        </div><!-- main column -->
+
+        <!-- ── Sidebar ──────────────────────────────────────────────────── -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-fit sticky top-6">
+
+          <!-- Total score -->
+          <div class="mb-4">
+            <h3 class="text-base font-bold text-slate-900">{labels.yourBestScore}</h3>
+            <p class="mt-1 text-xs text-slate-600">{labels.bestResultDesc}</p>
+          </div>
+          <div class="score-display border-t border-slate-200 pt-4 mb-6">
+            <span class="score-big" id="total-stars-display">0</span>
+            <span class="score-denom">/ 30 ★</span>
+          </div>
+
+          <!-- Story progress -->
+          <div class="mb-6 border-t border-slate-200 pt-4">
+            <h3 class="text-sm font-bold text-slate-900 mb-3">{labels.storyLabel}</h3>
+            <div id="story-rows" class="story-rows-list"></div>
+          </div>
+
+          <!-- Tips -->
+          <div class="border-t border-slate-200 pt-4">
+            <h3 class="text-sm font-bold text-slate-900 mb-3">{labels.watchOutTitle}</h3>
+            <div class="space-y-2">
+              {watchOutItems.map((item) => (
+                <div class="rounded-lg bg-red-50 p-3">
+                  <p class="text-xs font-semibold text-red-900">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div><!-- sidebar -->
+
+      </div><!-- grid -->
+
+      <!-- Final score overlay -->
+      <div class="final-overlay hidden" id="final-overlay">
+        <div class="final-card">
+          <div class="final-icon">🎉</div>
+          <h2 class="final-title">{labels.allStoriesComplete}</h2>
+          <p class="final-subtitle">{labels.finalScoreDesc}</p>
+          <div class="final-score-box">
+            <span id="final-stars-count">0</span>
+            <span class="final-denom">/ 30 ★</span>
+          </div>
+          <div class="final-rank" id="final-rank"></div>
+          <p class="final-rank-msg" id="final-rank-msg"></p>
+          <button class="btn btn-primary" id="play-again-btn">{labels.playAgain}</button>
+        </div>
+      </div>
+
+    </div><!-- container -->
+  </section>
+
+  <style>
+    /* ── Tip card ──────────────────────────────────────────────────────────── */
+    .tip-card {
+      border-radius: 0.9rem;
+      border: 1px solid color-mix(in oklab, var(--brand-DA), white 40%);
+      background: linear-gradient(135deg, color-mix(in oklab, var(--brand-DA), white 82%), color-mix(in oklab, var(--brand-DA), white 92%));
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: color-mix(in oklab, var(--brand-DA), black 30%);
+    }
+
+    /* ── Story header ──────────────────────────────────────────────────────── */
+    .story-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px 14px 0 0;
+      padding: 12px 18px;
+      border-bottom: none;
+    }
+
+    .story-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .story-emoji { font-size: 1.6rem; flex-shrink: 0; }
+
+    .story-header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .story-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #ef4444;
+    }
+
+    .story-title-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .session-pts-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+
+    .pts-label { font-size: 0.68rem; color: #94a3b8; font-weight: 600; }
+    .pts-value { font-size: 1.3rem; font-weight: 800; color: #ef4444; line-height: 1; }
+
+    /* ── Story panel ───────────────────────────────────────────────────────── */
+    .story-panel {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-top: 2px solid #ef4444;
+      border-radius: 0 0 14px 14px;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Welcome state ─────────────────────────────────────────────────────── */
+    .welcome-state {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      gap: 10px;
+    }
+
+    .welcome-icon { font-size: 3rem; margin-bottom: 4px; }
+
+    .welcome-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1f2937;
+      margin: 0;
+    }
+
+    .welcome-topic {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #ef4444;
+      margin: 0;
+    }
+
+    .welcome-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin: 0;
+      max-width: 360px;
+    }
+
+    /* ── Messages area ─────────────────────────────────────────────────────── */
+    .messages-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem 1.25rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 1000px;
+      scroll-behavior: smooth;
+    }
+
+    .messages-area::-webkit-scrollbar { width: 5px; }
+    .messages-area::-webkit-scrollbar-track { background: #f8fafc; border-radius: 10px; }
+    .messages-area::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 10px; }
+
+    /* ── Message bubbles ───────────────────────────────────────────────────── */
+    :global(.msg-bubble) {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      animation: msgSlide 0.35s ease-out;
+    }
+
+    @keyframes msgSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    :global(.msg-narrator) { justify-content: flex-start; }
+    :global(.msg-player)   { justify-content: flex-end; flex-direction: row-reverse; }
+
+    :global(.msg-avatar-narrator) {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    :global(.msg-avatar-player) {
+      flex-shrink: 0;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .msg-content {
+      max-width: 76%;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    :global(.msg-narrator .msg-content) {
+      background: #fff1f2;
+      border-radius: 4px 14px 14px 14px;
+      color: #1f2937;
+      padding: 20px;
+      margin-right: 5rem;
+    }
+
+    :global(.msg-player .msg-content) {
+      background: #ef4444;
+      border-radius: 14px 4px 14px 14px;
+      color: white;
+      font-weight: 500;
+      padding: 20px;
+      margin-left: 5rem;
+    }
+
+    /* ── Choices ───────────────────────────────────────────────────────────── */
+    .choices-container {
+      padding: 10px 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    /* choice-btn is created dynamically via JS, so styles must be :global */
+    :global(.choice-btn) {
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 12px 14px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #b91c1c;
+      background: #fee2e2;
+      border: 2px solid #f87171;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.15s;
+      animation: msgSlide 0.3s ease-out;
+    }
+
+    :global(.choice-btn:hover) {
+      background: #ef4444;
+      border-color: #ef4444;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    :global(.choice-btn:active) { transform: translateY(0); }
+
+    /* ── Ending card ───────────────────────────────────────────────────────── */
+    .ending-card {
+      margin: 1.25rem;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      animation: msgSlide 0.4s ease-out;
+    }
+
+    .ending-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .ending-good  { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #065f46; }
+    .ending-okay  { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #78350f; }
+    .ending-bad   { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #7f1d1d; }
+
+    .ending-card.ending-card-good  { background: #f0fdf4; border: 2px solid #86efac; }
+    .ending-card.ending-card-okay  { background: #fffbeb; border: 2px solid #fcd34d; }
+    .ending-card.ending-card-bad   { background: #fff1f2; border: 2px solid #fca5a5; }
+
+    .ending-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 6px;
+    }
+
+    .ending-stars {
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+      color: #f59e0b;
+    }
+
+    .ending-lesson {
+      background: rgba(0,0,0,0.04);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    .ending-lesson strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+      color: #374151;
+    }
+
+    .ending-lesson p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* ── Action buttons ────────────────────────────────────────────────────── */
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #ef4444;
+      border: 2px solid #fca5a5;
+    }
+
+    .btn-secondary:hover {
+      background: #fff1f2;
+      border-color: #ef4444;
+    }
+
+    /* ── Sidebar: score display ────────────────────────────────────────────── */
+    .score-display {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .score-big  { font-size: 2.4rem; font-weight: 900; color: #ef4444; line-height: 1; }
+    .score-denom { font-size: 1rem; color: #94a3b8; font-weight: 600; }
+
+    /* ── Sidebar: story rows ───────────────────────────────────────────────── */
+    .story-rows-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .s-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 5px 4px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+
+    .s-row-active { background: #fff1f2; }
+    .s-row:hover  { background: #f8fafc; }
+
+    .s-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .s-dot-locked { background: #e2e8f0; }
+
+    .s-dot-active {
+      background: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+    }
+
+    .s-dot-done {
+      background: #22c55e;
+    }
+
+    .s-dot-done::after {
+      content: '\2713';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 900;
+      color: white;
+    }
+
+    .s-row-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
+    }
+
+    .s-row-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+    }
+
+    .s-row-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #374151;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .s-row-stars {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ── Final overlay ─────────────────────────────────────────────────────── */
+    .final-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .final-overlay.hidden { display: none; }
+
+    .final-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 460px;
+      margin: 1rem;
+      animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .final-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
+
+    .final-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 0.3rem;
+    }
+
+    .final-subtitle { font-size: 0.95rem; color: #6b7280; margin-bottom: 1.25rem; }
+
+    .final-score-box {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #ef4444;
+      background: #fff1f2;
+      border: 2px solid #fecaca;
+      border-radius: 12px;
+      padding: 12px 28px;
+      margin-bottom: 1rem;
+    }
+
+    .final-denom { font-size: 1.1rem; font-weight: 700; color: #9ca3af; }
+
+    .final-rank {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 6px;
+    }
+
+    .final-rank-msg {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* ── Utilities ─────────────────────────────────────────────────────────── */
+    .hidden { display: none !important; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+
+  <script>
+    // ── Types ─────────────────────────────────────────────────────────────────
+    interface Choice {
+      text: string
+      next: string
+      points: number
+    }
+
+    interface StoryNode {
+      text: string
+      mood: string
+      choices?: Choice[]
+      ending?: true
+      type?: 'good' | 'okay' | 'bad'
+      stars?: number
+      title?: string
+      lesson?: string
+    }
+
+    interface Story {
+      id: number
+      title: string
+      emoji: string
+      topic: string
+      nodes: Record<string, StoryNode>
+    }
+
+    interface Labels {
+      storyLabel: string
+      watchOutTitle: string
+      welcomeDesc: string
+      startStory: string
+      whatWeLearned: string
+      tryDifferentPath: string
+      nextStory: string
+      seeFinalScore: string
+      allStoriesComplete: string
+      finalScoreDesc: string
+      playAgain: string
+      rankChampion: string
+      rankChampionMsg: string
+      rankDefender: string
+      rankDefenderMsg: string
+      rankNavigator: string
+      rankNavigatorMsg: string
+      rankBeginning: string
+      rankBeginningMsg: string
+      yourBestScore: string
+      bestResultDesc: string
+      badgeGood: string
+      badgeOkay: string
+      badgeBad: string
+      topicLabel: string
+      storyOf: string
+      pointsLabel: string
+    }
+
+    // ── Load data ─────────────────────────────────────────────────────────────
+    function initGame() {
+      const dataEl = document.getElementById('da-challenge-data')
+      if (!dataEl) return
+      const { stories, labels } = JSON.parse(dataEl.textContent ?? '{}') as { stories: Story[]; labels: Labels }
+
+      // ── State ───────────────────────────────────────────────────────────────
+      let currentStoryIdx  = 0
+      let currentNodeId    = 'start'
+      let sessionPoints    = 0
+      let completedSet     = new Set<number>()
+      let bestStars        : Record<number, number> = {}
+
+      // ── DOM refs ────────────────────────────────────────────────────────────
+      const getEl = (id: string) => document.getElementById(id) as HTMLElement
+
+      // ── Helpers ─────────────────────────────────────────────────────────────
+      const totalBestStars = () => Object.values(bestStars).reduce((s, v) => s + v, 0)
+
+      const moodEmoji: Record<string, string> = {
+        neutral: '\u{1F4D6}', worried: '\u{1F61F}', sad: '\u{1F622}', supportive: '\u{1F4AA}',
+        good: '\u{1F60A}', bad: '\u{1F61E}', okay: '\u{1F610}', danger: '\u26A0\uFE0F',
+      }
+
+      // ── Sidebar ─────────────────────────────────────────────────────────────
+      function updateSidebar() {
+        getEl('total-stars-display').textContent = String(totalBestStars())
+
+        const container = getEl('story-rows')
+        container.innerHTML = ''
+
+        stories.forEach((story, idx) => {
+          const isDone   = completedSet.has(idx)
+          const isActive = idx === currentStoryIdx
+          const isLocked = idx > 0 && !completedSet.has(idx - 1) && !isActive
+
+          const row = document.createElement('div')
+          row.className = `s-row${isActive ? ' s-row-active' : ''}`
+          if (!isLocked) {
+            row.style.cursor = 'pointer'
+            row.addEventListener('click', () => { if (idx !== currentStoryIdx) loadStory(idx) })
+          }
+
+          const dot = document.createElement('div')
+          dot.className = `s-dot ${isDone ? 's-dot-done' : isActive ? 's-dot-active' : 's-dot-locked'}`
+
+          const info = document.createElement('div')
+          info.className = 's-row-info'
+
+          const lbl = document.createElement('span')
+          lbl.className = 's-row-label'
+          lbl.textContent = `Story ${idx + 1}: `
+
+          const ttl = document.createElement('span')
+          ttl.className = 's-row-title'
+          ttl.textContent = story.title
+
+          info.appendChild(lbl)
+          info.appendChild(ttl)
+
+          const starsEl = document.createElement('div')
+          starsEl.className = 's-row-stars'
+          if (isDone) {
+            const s = bestStars[idx] ?? 0
+            starsEl.textContent = '\u2605'.repeat(s) + '\u2606'.repeat(3 - s)
+            starsEl.style.color = s === 3 ? '#f59e0b' : s >= 2 ? '#94a3b8' : '#d1d5db'
+          } else {
+            starsEl.textContent = isLocked ? '\u{1F512}' : (isActive ? '\u{1F4AC}' : '\u{1F513}')
+          }
+
+          row.appendChild(dot)
+          row.appendChild(info)
+          row.appendChild(starsEl)
+          container.appendChild(row)
+        })
+      }
+
+      // ── Load / reset a story ─────────────────────────────────────────────────
+      function loadStory(idx: number) {
+        currentStoryIdx = idx
+        currentNodeId   = 'start'
+        sessionPoints   = 0
+
+        const story = stories[idx]
+
+        getEl('story-emoji').textContent      = story.emoji
+        getEl('story-number').textContent     = `Story ${idx + 1} ${labels.storyOf} ${stories.length}`
+        getEl('story-title-text').textContent = story.title
+        getEl('session-pts').textContent      = '0'
+
+        getEl('welcome-emoji').textContent  = story.emoji
+        getEl('welcome-title').textContent  = `Story ${idx + 1}: ${story.title}`
+        getEl('welcome-topic').textContent  = `${labels.topicLabel}: ${story.topic}`
+        getEl('welcome-desc').textContent   = labels.welcomeDesc
+        getEl('start-btn').textContent      = labels.startStory
+
+        // Reset panel
+        getEl('messages-area').innerHTML = ''
+        getEl('messages-area').classList.add('hidden')
+        getEl('choices-container').innerHTML = ''
+        getEl('choices-container').classList.add('hidden')
+        getEl('ending-card').classList.add('hidden')
+        getEl('action-buttons').classList.add('hidden')
+        getEl('welcome-state').classList.remove('hidden')
+
+        updateSidebar()
+      }
+
+      // ── Start button \u2192 play first node ──────────────────────────────────────
+      function startStory() {
+        getEl('welcome-state').classList.add('hidden')
+        getEl('messages-area').classList.remove('hidden')
+        displayNode('start')
+      }
+
+      // ── Display a story node ─────────────────────────────────────────────────
+      function displayNode(nodeId: string) {
+        currentNodeId = nodeId
+        const node = stories[currentStoryIdx].nodes[nodeId]
+        if (!node) return
+
+        addNarratorMsg(node.text, node.mood)
+
+        setTimeout(() => {
+          if (node.ending) {
+            showEnding(node)
+          } else if (node.choices) {
+            showChoices(node.choices)
+          }
+        }, 500)
+      }
+
+      // ── Narrator message bubble ──────────────────────────────────────────────
+      function addNarratorMsg(text: string, mood: string) {
+        const area = getEl('messages-area')
+
+        const bubble  = document.createElement('div')
+        bubble.className = 'msg-bubble msg-narrator'
+
+        const avatar  = document.createElement('div')
+        avatar.className = 'msg-avatar-narrator'
+        avatar.textContent = moodEmoji[mood] ?? '\u{1F4D6}'
+
+        const content = document.createElement('div')
+        content.className = 'msg-content'
+        content.textContent = text
+
+        bubble.appendChild(avatar)
+        bubble.appendChild(content)
+        area.appendChild(bubble)
+        area.scrollTop = area.scrollHeight
+      }
+
+      // ── Player choice message bubble ─────────────────────────────────────────
+      function addPlayerMsg(text: string) {
+        const area = getEl('messages-area')
+
+        const bubble  = document.createElement('div')
+        bubble.className = 'msg-bubble msg-player'
+
+        const avatar  = document.createElement('div')
+        avatar.className = 'msg-avatar-player'
+        avatar.textContent = '\u{1F464}'
+
+        const content = document.createElement('div')
+        content.className = 'msg-content'
+        content.textContent = text
+
+        bubble.appendChild(avatar)
+        bubble.appendChild(content)
+        area.appendChild(bubble)
+        area.scrollTop = area.scrollHeight
+      }
+
+      // ── Show choices ─────────────────────────────────────────────────────────
+      function showChoices(choices: Choice[]) {
+        const container = getEl('choices-container')
+        container.innerHTML = ''
+        container.classList.remove('hidden')
+
+        choices.forEach(choice => {
+          const btn = document.createElement('button')
+          btn.className = 'choice-btn'
+          btn.textContent = choice.text
+          btn.addEventListener('click', () => selectChoice(choice))
+          container.appendChild(btn)
+        })
+      }
+
+      // ── Handle choice selection ──────────────────────────────────────────────
+      function selectChoice(choice: Choice) {
+        getEl('choices-container').innerHTML = ''
+        getEl('choices-container').classList.add('hidden')
+
+        sessionPoints += choice.points
+        getEl('session-pts').textContent = String(sessionPoints)
+
+        addPlayerMsg(choice.text)
+
+        setTimeout(() => displayNode(choice.next), 600)
+      }
+
+      // ── Show ending card ─────────────────────────────────────────────────────
+      function showEnding(node: StoryNode) {
+        const stars   = node.stars  ?? 0
+        const type    = node.type   ?? 'bad'
+        const title   = node.title  ?? ''
+        const lesson  = node.lesson ?? ''
+
+        // Record best
+        const prev = bestStars[currentStoryIdx] ?? -1
+        if (stars > prev) bestStars[currentStoryIdx] = stars
+        completedSet.add(currentStoryIdx)
+
+        const badgeText  = { good: labels.badgeGood, okay: labels.badgeOkay, bad: labels.badgeBad }
+        const cardClass  = { good: 'ending-card-good', okay: 'ending-card-okay', bad: 'ending-card-bad' }
+        const badgeClass = { good: 'ending-badge ending-good', okay: 'ending-badge ending-okay', bad: 'ending-badge ending-bad' }
+
+        const card = getEl('ending-card')
+        card.className = `ending-card ${cardClass[type]}`
+
+        const badge = getEl('ending-badge')
+        badge.className = badgeClass[type]
+        badge.textContent = badgeText[type]
+
+        getEl('ending-title').textContent       = title
+        getEl('ending-stars').textContent       = '\u2605'.repeat(stars) + '\u2606'.repeat(3 - stars)
+        getEl('ending-lesson-text').textContent = lesson
+
+        card.classList.remove('hidden')
+
+        // Action buttons
+        const actions  = getEl('action-buttons')
+        const nextBtn  = getEl('next-story-btn')
+        const doneBtn  = getEl('all-done-btn')
+        const isLast   = currentStoryIdx === stories.length - 1
+
+        getEl('retry-btn').textContent  = labels.tryDifferentPath
+        nextBtn.textContent             = labels.nextStory
+        doneBtn.textContent             = labels.seeFinalScore
+
+        actions.classList.remove('hidden')
+        nextBtn.style.display = isLast ? 'none' : 'inline-block'
+        doneBtn.style.display = isLast ? 'inline-block' : 'none'
+
+        updateSidebar()
+      }
+
+      // ── Final score overlay ──────────────────────────────────────────────────
+      function showFinalScore() {
+        const total = totalBestStars()
+        getEl('final-stars-count').textContent = String(total)
+
+        let rank = '', msg = ''
+        if      (total >= 27) { rank = labels.rankChampion;  msg = labels.rankChampionMsg  }
+        else if (total >= 21) { rank = labels.rankDefender;  msg = labels.rankDefenderMsg  }
+        else if (total >= 15) { rank = labels.rankNavigator; msg = labels.rankNavigatorMsg }
+        else                  { rank = labels.rankBeginning; msg = labels.rankBeginningMsg }
+
+        getEl('final-rank').textContent     = rank
+        getEl('final-rank-msg').textContent = msg
+        getEl('final-overlay').classList.remove('hidden')
+      }
+
+      // ── Init ─────────────────────────────────────────────────────────────────
+      const guard = document.getElementById('story-rows')
+      if (!guard || guard.dataset.initialized === 'true') return
+      guard.dataset.initialized = 'true'
+
+      loadStory(0)
+
+      getEl('start-btn').addEventListener('click', startStory)
+      getEl('retry-btn').addEventListener('click', () => loadStory(currentStoryIdx))
+      getEl('next-story-btn').addEventListener('click', () => {
+        if (currentStoryIdx < stories.length - 1) loadStory(currentStoryIdx + 1)
+      })
+      getEl('all-done-btn').addEventListener('click', showFinalScore)
+      getEl('play-again-btn').addEventListener('click', () => {
+        getEl('final-overlay').classList.add('hidden')
+        completedSet.clear()
+        bestStars = {}
+        loadStory(0)
+      })
+    }
+
+    document.addEventListener('astro:page-load', initGame)
+    initGame()
+  </script>
+</DefaultLayout>

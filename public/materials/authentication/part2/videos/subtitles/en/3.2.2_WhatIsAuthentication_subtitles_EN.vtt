@@ -1,0 +1,330 @@
+WEBVTT
+
+00:08.440 --> 00:11.520
+Hi there, welcome to
+this video about
+
+00:11.520 --> 00:14.860
+authentication. In
+this video, we will
+
+00:14.860 --> 00:16.740
+explore what
+authentication means
+
+00:16.740 --> 00:20.300
+in the digital world.
+Authentication is an
+
+00:20.300 --> 00:22.160
+important process
+that helps keep
+
+00:22.160 --> 00:24.980
+accounts and
+information safe. By
+
+00:24.980 --> 00:27.080
+the end of this video
+, you will understand
+
+00:27.080 --> 00:30.360
+why authentication is
+needed every day.
+
+00:35.240 --> 00:37.120
+Computers and apps
+cannot recognize
+
+00:37.120 --> 00:39.940
+people like humans
+can. They cannot see
+
+00:39.940 --> 00:43.020
+faces, hear voices,
+or recognize emotions
+
+00:43.020 --> 00:46.200
+. Because of this,
+systems need a clear
+
+00:46.200 --> 00:49.180
+way to know who is
+using them. Without
+
+00:49.180 --> 00:51.880
+this, anyone could
+pretend to be anyone
+
+00:51.880 --> 00:55.880
+else. Proof is needed
+, so systems can
+
+00:55.880 --> 00:58.380
+check that the right
+person is logging in.
+
+00:58.680 --> 01:00.680
+This proof helps
+protect accounts from
+
+01:00.680 --> 01:03.120
+strangers and
+attackers. Without
+
+01:03.120 --> 01:05.300
+proof, personal
+information would not
+
+01:05.300 --> 01:07.060
+be safe.
+Authentication
+
+01:07.060 --> 01:08.780
+provides that proof.
+
+01:15.000 --> 01:17.060
+Authentication is the
+process of proving
+
+01:17.060 --> 01:19.920
+who you are to a
+digital system. It
+
+01:19.920 --> 01:21.920
+shows that your
+digital identity is
+
+01:21.920 --> 01:25.420
+real and belongs to
+you. Authentication
+
+01:25.420 --> 01:28.060
+happens every time
+you log in. It is a
+
+01:28.060 --> 01:31.480
+key part of online
+safety. Think about
+
+01:31.480 --> 01:34.060
+entering a school or
+library. You may need
+
+01:34.060 --> 01:36.500
+to show an ID or tell
+your name to prove
+
+01:36.500 --> 01:39.300
+you belong there.
+Authentication works
+
+01:39.300 --> 01:41.740
+the same way online.
+It checks that you
+
+01:41.740 --> 01:45.440
+are allowed to enter.
+Authentication exists
+
+01:45.440 --> 01:47.420
+to stop strangers
+from accessing
+
+01:47.420 --> 01:50.660
+accounts. It protects
+messages, photos,
+
+01:50.660 --> 01:53.640
+schoolwork, and game
+progress. Without
+
+01:53.640 --> 01:55.960
+authentication,
+digital spaces would
+
+01:55.960 --> 01:58.220
+not be private.
+Everyone's data would
+
+01:58.220 --> 02:00.860
+be at risk.
+Authentication
+
+02:00.860 --> 02:02.480
+protects many types
+of digital
+
+02:02.480 --> 02:03.900
+information.
+Authentication
+
+02:03.900 --> 02:06.320
+includes emails,
+messages, files, and
+
+02:06.320 --> 02:09.280
+personal data. It
+also protects your
+
+02:09.280 --> 02:12.720
+digital reputation
+and identity. Strong
+
+02:12.720 --> 02:15.620
+authentication keeps
+these things secure.
+
+02:20.260 --> 02:22.020
+Passwords are the
+most common
+
+02:22.020 --> 02:24.560
+authentication method
+. A password is a
+
+02:24.560 --> 02:26.840
+secret that only the
+real user should know
+
+02:26.840 --> 02:29.840
+. Systems check the
+password to confirm
+
+02:29.840 --> 02:32.460
+identity. Keeping
+passwords secret is
+
+02:32.460 --> 02:35.880
+very important. Some
+systems use more than
+
+02:35.880 --> 02:38.500
+just passwords. They
+may use codes sent to
+
+02:38.500 --> 02:40.700
+devices, security
+cards, or
+
+02:40.700 --> 02:43.500
+fingerprints. These
+methods add extra
+
+02:43.500 --> 02:45.500
+protection. They make
+it harder for
+
+02:45.500 --> 02:46.920
+attackers to get in.
+
+02:51.020 --> 02:52.920
+Attackers often try
+to break
+
+02:52.920 --> 02:55.460
+authentication. They
+may guess passwords
+
+02:55.460 --> 02:58.340
+or trick people into
+sharing them. Their
+
+02:58.340 --> 03:02.560
+goal is to pretend to
+be someone else. Good
+
+03:02.560 --> 03:05.520
+authentication makes
+this difficult.
+
+03:05.620 --> 03:08.020
+Sharing passwords
+breaks authentication
+
+03:08.020 --> 03:10.720
+completely. It gives
+someone else access
+
+03:10.720 --> 03:13.820
+to your identity.
+Even trusted friends
+
+03:13.820 --> 03:16.540
+should not know your
+password. Passwords
+
+03:16.540 --> 03:20.000
+must stay private.
+Strong authentication
+
+03:20.000 --> 03:22.740
+makes accounts safer.
+It slows attackers
+
+03:22.740 --> 03:25.660
+down and can stop
+them. Using good
+
+03:25.660 --> 03:28.300
+methods protects
+digital identity.
+
+03:28.300 --> 03:32.540
+Strong authentication
+is a smart habit. You
+
+03:32.540 --> 03:33.740
+play an important
+role in
+
+03:33.740 --> 03:36.000
+authentication. Your
+choices help keep
+
+03:36.000 --> 03:39.380
+systems secure.
+Choosing good secrets
+
+03:39.380 --> 03:41.500
+and protecting them
+matters. Safe
+
+03:41.500 --> 03:43.760
+behavior supports
+authentication.
+
+03:48.820 --> 03:51.620
+Authentication is how
+systems check who you
+
+03:51.620 --> 03:53.940
+are. It protects
+accounts and personal
+
+03:53.940 --> 03:57.340
+data. Without it,
+digital spaces would
+
+03:57.340 --> 04:00.480
+not be safe.
+Authentication helps
+
+04:00.480 --> 04:05.240
+keep your digital
+life secure. Next, we
+
+04:05.240 --> 04:07.540
+will learn what makes
+passwords strong or
+
+04:07.540 --> 04:10.620
+weak. Understanding
+passwords helps
+
+04:10.620 --> 04:13.180
+authentication work
+better. Thank you for
+
+04:13.180 --> 04:13.880
+watching this video.

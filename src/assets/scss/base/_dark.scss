@@ -1,0 +1,1447 @@
+/**
+ * Dark Mode Component
+ */
+
+// ── Module button outline variant ────────────────────────────────────────────
+.darkmode .button.is-outline {
+  background: transparent;
+  color: var(--dm-primary);
+  border-color: var(--dm-primary);
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(96, 165, 250, 0.15);
+  }
+}
+
+// ── Home page – stat cards ────────────────────────────────────────────────────
+.darkmode .stat-card {
+  background: linear-gradient(180deg, var(--dm-surface-2) 0%, var(--dm-surface-1) 100%);
+  border-color: var(--dm-border-sub);
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--dm-primary);
+  }
+}
+
+// ── Stat number color ─────────────────────────────────────────────────────────
+.darkmode .stat-number {
+  color: var(--dm-primary);
+}
+
+// ── Stat title: full foreground weight, not muted ─────────────────────────────
+.darkmode .stat-title {
+  color: var(--dm-fg);
+}
+
+// ── Home page – info card ────────────────────────────────────────────────────
+.darkmode .info-card {
+  background: rgba(96, 165, 250, 0.08);
+  border-color: var(--dm-primary);
+}
+
+// ── Home page – stat subtitle muted text ─────────────────────────────────────
+.darkmode .stat-subtitle {
+  color: var(--dm-fg-muted);
+}
+
+// ── CallToAction component ────────────────────────────────────────────────────
+.darkmode .call-to-action {
+  background-image: linear-gradient(315deg, #1f2d4a 25%, #1a2e3f);
+  color: var(--dm-fg);
+
+  h2 {
+    color: var(--dm-fg);
+  }
+
+  .cta-link,
+  .cta-link:visited {
+    border-color: var(--dm-fg);
+    color: var(--dm-fg);
+
+    &:where(:hover, :focus) {
+      background-color: var(--dm-fg);
+      color: var(--dm-bg);
+    }
+
+    &:focus-visible {
+      outline-color: var(--dm-fg);
+    }
+  }
+}
+
+// ── Content page panels (dc-panel, and equivalent on other module pages) ─────
+.darkmode .dc-panel {
+  background: linear-gradient(180deg, var(--dm-surface-2) 0%, var(--dm-surface-1) 100%);
+  border-color: var(--dm-border-sub);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.40);
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.darkmode .dc-panel__content {
+  color: var(--dm-fg);
+  border-top-color: var(--dm-border);
+}
+
+.darkmode .bg-bordered {
+      border: 1px solid var(--border-color-subtle);
+      border-inline: 0;
+    }
+
+// ── dc-list items (objectives / outcomes) ────────────────────────────────────
+.darkmode .dc-list li {
+  color: var(--dm-fg-muted);
+}
+
+.darkmode .dc-list li + li {
+  border-top-color: var(--dm-border-sub);
+}
+
+// ── Section goal text and meta items ─────────────────────────────────────────
+.darkmode .dc-goal {
+  color: var(--dm-fg-muted);
+}
+
+.darkmode .dc-meta-item {
+  color: var(--dm-fg-muted);
+}
+
+.darkmode .dc-section__subtitle {
+  color: var(--dm-fg-muted);
+}
+
+// ── Module accordion (.dc-module) ────────────────────────────────────────────
+.darkmode .dc-module {
+  background: linear-gradient(155deg, var(--dm-surface-2) 0%, var(--dm-surface-1) 55%);
+  border-color: var(--dm-border-sub);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+  }
+}
+
+// ── Download section within module ───────────────────────────────────────────
+.darkmode .dc-module__download {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: currentColor; // inherits the per-module brand color
+}
+
+.darkmode .dc-module__download-button:hover {
+  background: var(--dm-surface-3);
+  color: var(--dm-fg);
+}
+
+// ── dc-card (materials grid) ─────────────────────────────────────────────────
+.darkmode .dc-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--dm-border-sub);
+}
+
+// ── Material items inside dc-card ────────────────────────────────────────────
+.darkmode .dc-material-item {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 38%);
+  border-color: var(--dm-border-sub);
+
+  &:hover {
+    border-color: var(--dm-primary);
+  }
+}
+
+// ── Item download links ───────────────────────────────────────────────────────
+.darkmode .dc-item-download {
+  background: var(--dm-surface-1);
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+// ── Video card ────────────────────────────────────────────────────────────────
+.darkmode .dc-video-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--dm-border-sub);
+}
+
+// ── Related module cards at bottom of content pages ──────────────────────────
+.darkmode .dc-module-card {
+  background: color-mix(in oklab, var(--module-card-color, var(--brand-DC)) 12%, var(--dm-surface-1));
+  border-color: color-mix(in oklab, var(--module-card-color, var(--brand-DC)) 40%, var(--dm-border-sub));
+}
+
+.darkmode .dc-module-card h4 {
+  color: color-mix(in oklab, var(--module-card-color, var(--brand-DC)), white 35%);
+}
+
+.darkmode .dc-card-text {
+  color: var(--dm-fg-muted);
+}
+
+.darkmode .dc-card-button:hover {
+  background: var(--dm-surface-3);
+  color: var(--dm-fg);
+}
+
+// ── ModuleCard component (introduction page) ──────────────────────────────────
+.darkmode :where(.card) {
+  border-color: var(--dm-border-sub);
+  background-color: var(--dm-surface-1);
+}
+
+// ── Page Header background variants ──────────────────────────────────────────
+.darkmode .page-header {
+  .bg-primary {
+    background-color: color-mix(in oklab, var(--brand-primary) 18%, var(--dm-surface-1));
+  }
+
+  .bg-secondary {
+    background-color: color-mix(in oklab, var(--brand-secondary) 12%, var(--dm-surface-1));
+  }
+
+  .bg-neutral {
+    background-color: var(--dm-surface-1);
+  }
+
+  .bg-gradient {
+    background-image: linear-gradient(315deg, #1f2d4a 25%, #1a3040);
+    color: var(--dm-fg);
+  }
+
+  .bg-bordered {
+    border-color: var(--dm-border-sub);
+  }
+
+  // Secondary button on dark background
+  .btn-secondary {
+    background-color: var(--dm-surface-1);
+    color: var(--dm-fg);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--dm-surface-2);
+  }
+}
+
+// ── Navigation – language switcher dropdown background ────────────────────────
+.darkmode #main-navigation .has-dropdown ul {
+  background-color: var(--dm-surface-1);
+  border-color: var(--dm-border-sub);
+}
+
+// ── Navigation – mobile menu panel ───────────────────────────────────────────
+.darkmode #main-navigation .mobile-menu {
+  background-color: var(--dm-surface-1);
+  border-color: var(--dm-border-sub);
+}
+
+// ── Navigation – language button border ──────────────────────────────────────
+.darkmode #main-navigation .menu-item--language > button {
+  background: var(--dm-surface-1);
+  border-color: var(--dm-border-sub);
+}
+
+// ── Introduction page module list (introduction.astro) ────────────────────────
+.darkmode .feature-content .dc-module-card {
+  background: color-mix(in oklab, var(--module-card-color, var(--brand-DC)) 10%, var(--dm-surface-2));
+}
+
+// ── Challenge & game pages ────────────────────────────────────────────────────
+.darkmode [class*="challenge-"] .stat-card,
+.darkmode [class*="game-"] .stat-card {
+  background: linear-gradient(180deg, var(--dm-surface-2) 0%, var(--dm-surface-1) 100%);
+  border-color: var(--dm-border);
+}
+
+// ── Pre / code blocks ────────────────────────────────────────────────────────
+.darkmode pre {
+  background-color: var(--dm-surface-2);
+  color: var(--dm-fg);
+  border-color: var(--dm-primary);
+}
+
+.darkmode code:not(pre > code) {
+  background-color: var(--dm-surface-2);
+  color: var(--dm-fg);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+// ── kbd ───────────────────────────────────────────────────────────────────────
+.darkmode kbd {
+  box-shadow: 0 2px 0 1px var(--dm-border);
+  border-color: var(--dm-border-sub);
+  background-color: var(--dm-surface-2);
+  color: var(--dm-fg);
+}
+
+// ── Scrollbar (Chromium) ──────────────────────────────────────────────────────
+.darkmode {
+  scrollbar-color: var(--dm-border) var(--dm-bg);
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--dm-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dm-border);
+    border-radius: 4px;
+    border: 2px solid var(--dm-bg);
+  }
+}
+
+// ── card-meta-item (other-modules strip) ─────────────────────────────────────
+.darkmode .card-meta-item {
+  color: var(--foreground-color);
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CHALLENGE & GAME PAGES
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Tip cards (appear on all challenge and game pages) ────────────────────────
+// Authentication challenge tip (amber)
+.darkmode .tip-card {
+  border-color: #92400e;
+  background: linear-gradient(135deg, #1c1708, #1a1c0e);
+  color: #fcd34d;
+}
+
+// ── Challenge card (main card on challenge pages) ─────────────────────────────
+.darkmode .challenge-card {
+  background: var(--dm-surface-1) !important;
+  border-color: var(--dm-border-sub) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+}
+
+.darkmode .challenge-header {
+  border-bottom-color: var(--dm-border-sub) !important;
+}
+
+.darkmode .round-badge {
+  color: #fcd34d !important;
+  background: #2a1f05 !important;
+  border-color: #92400e !important;
+}
+
+.darkmode .challenge-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .challenge-description {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Password input ────────────────────────────────────────────────────────────
+.darkmode .password-input {
+  background: var(--dm-surface-2) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-fg) !important;
+
+  &:focus {
+    border-color: #F59E0B !important;
+    background-color: #1e1a08 !important;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2) !important;
+  }
+}
+
+.darkmode .input-label {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .toggle-visibility:hover,
+.darkmode .toggle-visibility:focus {
+  background: var(--dm-surface-3) !important;
+}
+
+// ── Strength meter track ──────────────────────────────────────────────────────
+.darkmode .strength-meter {
+  background: var(--dm-border) !important;
+}
+
+.darkmode .strength-text {
+  color: #fca5a5 !important;
+  background: #2a0f0f !important;
+
+  &.okay {
+    color: #fcd34d !important;
+    background: #2a1f05 !important;
+  }
+
+  &.strong {
+    color: #6ee7b7 !important;
+    background: #052820 !important;
+  }
+}
+
+// ── Criteria section ──────────────────────────────────────────────────────────
+.darkmode .criteria-section {
+  background: #1e1a08 !important;
+  border-left-color: #F59E0B !important;
+}
+
+.darkmode .criteria-title {
+  color: #fcd34d !important;
+}
+
+.darkmode .criteria-item {
+  color: var(--dm-fg-muted) !important;
+
+  &.met {
+    color: #6ee7b7 !important;
+  }
+}
+
+.darkmode .criteria-icon {
+  border-color: var(--dm-border) !important;
+  background: var(--dm-surface-2) !important;
+
+  &.met {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+  }
+}
+
+.darkmode .criteria-item.criteria-locked .criteria-icon {
+  border-color: var(--dm-border-sub) !important;
+  background: var(--dm-surface-1) !important;
+}
+
+.darkmode .criteria-unlock-badge {
+  color: #fcd34d !important;
+  background: #2a1f05 !important;
+  border-color: #92400e !important;
+}
+
+// ── Feedback messages ─────────────────────────────────────────────────────────
+.darkmode .feedback-message {
+  background: #1e1a08 !important;
+  border-left-color: #F59E0B !important;
+  color: #fcd34d !important;
+
+  &.encouraging {
+    background: #1e1a08 !important;
+    border-left-color: #d97706 !important;
+    color: #fcd34d !important;
+  }
+
+  &.excellent {
+    background: #052820 !important;
+    border-left-color: #10b981 !important;
+    color: #6ee7b7 !important;
+  }
+}
+
+// ── Challenge buttons ─────────────────────────────────────────────────────────
+.darkmode .btn-primary:disabled {
+  background: var(--dm-border) !important;
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .btn-secondary {
+  background: var(--dm-surface-2) !important;
+  color: var(--dm-fg-muted) !important;
+  border-color: var(--dm-border) !important;
+
+  &:hover {
+    background: var(--dm-surface-3) !important;
+    border-color: var(--dm-fg-muted) !important;
+    color: var(--dm-fg) !important;
+  }
+}
+
+// ── Sidebar panel (challenge sidebar) ────────────────────────────────────────
+.darkmode .rounded-2xl.border.bg-white {
+  background-color: var(--dm-surface-1) !important;
+  border-color: var(--dm-border-sub) !important;
+}
+
+// ── Round progress in sidebar ─────────────────────────────────────────────────
+.darkmode .round-row.active-row {
+  background: #1e1a08 !important;
+
+  .round-row-label { color: #fcd34d !important; }
+  .round-row-desc  { color: #b45309 !important; }
+}
+
+.darkmode .round-row.completed-row {
+  background: #052820 !important;
+
+  .round-row-label { color: #6ee7b7 !important; }
+  .round-row-desc  { color: #059669 !important; }
+}
+
+.darkmode .round-row-label {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .round-row-desc {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .round-dot {
+  background: var(--dm-border) !important;
+  border-color: var(--dm-border-sub) !important;
+}
+
+// ── Do's list items (green bg) ────────────────────────────────────────────────
+.darkmode .rounded-lg.bg-green-50 {
+  background: #052820 !important;
+  border: 1px solid #064e35 !important;
+
+  .text-green-900 {
+    color: #6ee7b7 !important;
+  }
+}
+
+// ── Don'ts list items (red bg) ────────────────────────────────────────────────
+.darkmode .rounded-lg.bg-red-50 {
+  background: #2a0f0f !important;
+  border: 1px solid #640c0c !important;
+
+  .text-red-900 {
+    color: #fca5a5 !important;
+  }
+}
+
+// ── Completion overlay card ────────────────────────────────────────────────────
+.darkmode .completion-card {
+  background: var(--dm-surface-2) !important;
+  border: 1px solid var(--dm-border) !important;
+}
+
+.darkmode .completion-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .completion-text,
+.darkmode .completion-tips {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .rounds-completed {
+  background: #2a1f05 !important;
+  border-color: #d97706 !important;
+  color: #fcd34d !important;
+}
+
+// ── Game pages ────────────────────────────────────────────────────────────────
+.darkmode .tip-card:has(:not(.tip-amber)) {
+  border-color: #075985;
+  background: linear-gradient(135deg, #061620, #091a25);
+  color: #7dd3fc;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// DIGITAL CITIZENSHIP CHALLENGE  (digital-citizenship/challenge.astro)
+// Sort-game drag-and-drop with scoped CSS — all hardcoded light colors need
+// explicit overrides here because scoped selectors prevent global Tailwind
+// utility rules from catching them.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Card tray (source area) ───────────────────────────────────────────────────
+.darkmode .sort-game__tray {
+  background-color: var(--dm-surface-2) !important;
+  border-color: var(--dm-border) !important;
+}
+
+// Tray label uses var(--color-neutral-800) which is ~30% lightness — invisible
+// on dark backgrounds.
+.darkmode .sort-game__tray-label {
+  color: var(--dm-fg) !important;
+}
+
+// ── Feedback messages ─────────────────────────────────────────────────────────
+.darkmode .sort-game__feedback--correct {
+  color: #6ee7b7 !important;
+  background-color: #052820 !important;
+  border-color: #064e35 !important;
+}
+
+.darkmode .sort-game__feedback--wrong {
+  color: #fca5a5 !important;
+  background-color: #2a0f0f !important;
+  border-color: #640c0c !important;
+}
+
+// ── Post cards ────────────────────────────────────────────────────────────────
+.darkmode .post-card {
+  background-color: var(--dm-surface-1) !important;
+  border-color: var(--dm-border) !important;
+}
+
+.darkmode .post-card:where(:hover, :focus-visible) {
+  border-color: var(--dm-primary) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.darkmode .post-card--selected {
+  background-color: #1e2d45 !important;
+  border-color: var(--dm-primary) !important;
+}
+
+.darkmode .post-card--wrong {
+  background-color: #2a0f0f !important;
+  border-color: #ef4444 !important;
+}
+
+.darkmode .post-card--placed {
+  border-color: var(--dm-border-sub) !important;
+}
+
+.darkmode .post-card__text {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .post-card--placed .post-card__text {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Inline explanation ────────────────────────────────────────────────────────
+.darkmode .post-card__explanation {
+  background-color: var(--dm-surface-2) !important;
+  color: var(--dm-fg-muted) !important;
+  border-color: var(--dm-border) !important;
+  border-left-color: var(--dm-border-sub) !important;
+}
+
+// ── Drop zones ────────────────────────────────────────────────────────────────
+.darkmode .drop-zone {
+  background-color: var(--dm-surface-2) !important;
+  border-color: var(--dm-border) !important;
+}
+
+.darkmode .drop-zone--active {
+  background-color: var(--dm-surface-3) !important;
+}
+
+.darkmode .drop-zone--safe {
+  border-color: #059669 !important;
+  background-color: #052820 !important;
+}
+
+.darkmode .drop-zone--safe.drop-zone--active {
+  background-color: #064e35 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+}
+
+.darkmode .drop-zone--unsafe {
+  border-color: #991b1b !important;
+  background-color: #2a0f0f !important;
+}
+
+.darkmode .drop-zone--unsafe.drop-zone--active {
+  background-color: #450a0a !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.darkmode .drop-zone--safe .drop-zone__title {
+  color: #6ee7b7 !important;
+}
+
+.darkmode .drop-zone--unsafe .drop-zone__title {
+  color: #fca5a5 !important;
+}
+
+.darkmode .drop-zone__empty {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Win panel ─────────────────────────────────────────────────────────────────
+.darkmode .sort-game__win-inner {
+  background: linear-gradient(135deg, #052820, #064e35) !important;
+  border-color: #059669 !important;
+}
+
+.darkmode .sort-game__win-inner h2 {
+  color: #6ee7b7 !important;
+}
+
+.darkmode .sort-game__win-inner p {
+  color: #a7f3d0 !important;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// DATA PRIVACY CHALLENGE  (data-privacy/challenge.astro)
+// Same sort-game pattern as DC but fp-game__* / activity-card class prefix.
+// Brand color is --brand-DP (teal). color-mix() values produce bright light
+// tints in light mode — override all to dark surfaces here.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Card tray ─────────────────────────────────────────────────────────────────
+.darkmode .fp-game__tray {
+  background-color: var(--dm-surface-2) !important;
+  border-color: var(--dm-border) !important;
+}
+
+.darkmode .fp-game__tray-label {
+  color: var(--dm-fg) !important; // var(--color-neutral-800) is ~30% lightness — invisible on dark bg
+}
+
+// ── Feedback messages ─────────────────────────────────────────────────────────
+.darkmode .fp-game__feedback--correct {
+  color: #6ee7b7 !important;
+  background-color: #052820 !important;
+  border-color: #064e35 !important;
+}
+
+.darkmode .fp-game__feedback--wrong {
+  color: #fca5a5 !important;
+  background-color: #2a0f0f !important;
+  border-color: #640c0c !important;
+}
+
+// ── Activity cards ────────────────────────────────────────────────────────────
+.darkmode .activity-card {
+  background-color: var(--dm-surface-1) !important;
+  border-color: var(--dm-border) !important;
+}
+
+.darkmode .activity-card__text {
+  color: var(--dm-fg) !important; // var(--color-neutral-800) invisible on dark bg
+}
+
+.darkmode .activity-card--selected {
+  background-color: color-mix(in oklab, var(--brand-DP) 18%, var(--dm-surface-2)) !important;
+  border-color: var(--brand-DP) !important;
+}
+
+.darkmode .activity-card--wrong {
+  background-color: #2a0f0f !important;
+  border-color: #ef4444 !important;
+}
+
+.darkmode .activity-card--placed {
+  border-color: var(--dm-border-sub) !important;
+}
+
+.darkmode .activity-card--placed .activity-card__text {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .activity-card__explanation {
+  background-color: var(--dm-surface-2) !important;
+  color: var(--dm-fg-muted) !important;
+  border-color: var(--dm-border) !important;
+  border-left-color: var(--dm-border-sub) !important;
+}
+
+// ── Drop zones ────────────────────────────────────────────────────────────────
+.darkmode .fp-game__zones .drop-zone {
+  // No !important — specificity 0,3,0 still beats scoped CSS (0,2,0), but
+  // allows .drop-zone--footprint / .drop-zone--no-footprint rules with
+  // !important to correctly override with their specific green/red colors.
+  background-color: var(--dm-surface-2);
+  border-color: var(--dm-border);
+}
+
+.darkmode .drop-zone--footprint {
+  border-color: #059669 !important;
+  background-color: #052820 !important;
+}
+
+.darkmode .drop-zone--footprint.drop-zone--active {
+  background-color: #064e35 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+}
+
+.darkmode .drop-zone--no-footprint {
+  border-color: #991b1b !important;
+  background-color: #2a0f0f !important;
+}
+
+.darkmode .drop-zone--no-footprint.drop-zone--active {
+  background-color: #450a0a !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.darkmode .drop-zone--footprint .drop-zone__title {
+  color: #6ee7b7 !important;
+}
+
+.darkmode .drop-zone--no-footprint .drop-zone__title {
+  color: #fca5a5 !important;
+}
+
+// ── Win panel ─────────────────────────────────────────────────────────────────
+.darkmode .fp-game__win-inner {
+  background: linear-gradient(135deg,
+    color-mix(in oklab, var(--brand-DP) 12%, var(--dm-surface-2)),
+    color-mix(in oklab, var(--brand-DP) 18%, var(--dm-surface-1))
+  ) !important;
+  border-color: var(--brand-DP) !important;
+}
+
+.darkmode .fp-game__win-inner h2 {
+  color: color-mix(in oklab, var(--brand-DP), white 30%) !important;
+}
+
+.darkmode .fp-game__win-inner p {
+  color: color-mix(in oklab, var(--brand-DP), white 50%) !important;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// DIGITAL ABUSE CHALLENGE  (digital-abuse/challenge.astro)
+// Story-based adventure: story header/panel, message bubbles, ending cards,
+// action buttons, sidebar story rows, final overlay. Brand color --brand-DA
+// (red #ef4444). Many elements use hardcoded white/light backgrounds.
+// Note: :global() styles compile without scoping hash; !important still needed
+// because Tailwind utilities can conflict.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Story header bar ──────────────────────────────────────────────────────────
+.darkmode .story-header {
+  background: var(--dm-surface-1) !important;
+  border-color: var(--dm-border-sub) !important;
+}
+
+.darkmode .story-title-text {
+  color: var(--dm-fg) !important;
+}
+
+// ── Story panel ───────────────────────────────────────────────────────────────
+.darkmode .story-panel {
+  background: var(--dm-surface-1) !important;
+  border-color: var(--dm-border-sub) !important;
+  border-top-color: var(--brand-DA) !important;
+}
+
+// ── Scrollbar track inside messages-area ──────────────────────────────────────
+.darkmode .messages-area::-webkit-scrollbar-track {
+  background: var(--dm-surface-2);
+}
+
+// ── Welcome state ─────────────────────────────────────────────────────────────
+.darkmode .welcome-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .welcome-desc {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Message bubbles (global styles — still need !important vs Tailwind) ────────
+.darkmode .msg-narrator .msg-content {
+  background: color-mix(in oklab, var(--brand-DA) 8%, var(--dm-surface-2)) !important;
+  color: var(--dm-fg) !important;
+}
+
+// ── Ending card states ────────────────────────────────────────────────────────
+.darkmode .ending-card.ending-card-good {
+  background: #052820 !important;
+  border-color: #059669 !important;
+}
+
+.darkmode .ending-card.ending-card-okay {
+  background: #1e1a08 !important;
+  border-color: #d97706 !important;
+}
+
+.darkmode .ending-card.ending-card-bad {
+  background: #2a0f0f !important;
+  border-color: #991b1b !important;
+}
+
+// Ending badge pills
+.darkmode .ending-good {
+  background: linear-gradient(135deg, #052820, #064e35) !important;
+  color: #6ee7b7 !important;
+}
+
+.darkmode .ending-okay {
+  background: linear-gradient(135deg, #1e1a08, #2a1f05) !important;
+  color: #fcd34d !important;
+}
+
+.darkmode .ending-bad {
+  background: linear-gradient(135deg, #2a0f0f, #450a0a) !important;
+  color: #fca5a5 !important;
+}
+
+.darkmode .ending-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .ending-lesson {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.darkmode .ending-lesson strong,
+.darkmode .ending-lesson p {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Choice buttons (global — dynamically created via JS) ──────────────────────
+.darkmode .choice-btn {
+  color: color-mix(in oklab, var(--brand-DA), white 30%) !important;
+  background: color-mix(in oklab, var(--brand-DA) 10%, var(--dm-surface-2)) !important;
+  border-color: color-mix(in oklab, var(--brand-DA) 40%, var(--dm-border)) !important;
+}
+
+.darkmode .choice-btn:hover {
+  background: var(--brand-DA) !important;
+  border-color: var(--brand-DA) !important;
+  color: white !important;
+}
+
+// ── Action / nav buttons ──────────────────────────────────────────────────────
+.darkmode .action-buttons .btn-secondary {
+  background: var(--dm-surface-2) !important;
+  color: color-mix(in oklab, var(--brand-DA), white 20%) !important;
+  border-color: color-mix(in oklab, var(--brand-DA) 40%, var(--dm-border)) !important;
+}
+
+.darkmode .action-buttons .btn-secondary:hover {
+  background: color-mix(in oklab, var(--brand-DA) 10%, var(--dm-surface-2)) !important;
+  border-color: var(--brand-DA) !important;
+}
+
+// ── Sidebar: story rows ───────────────────────────────────────────────────────
+.darkmode .s-row-active {
+  background: color-mix(in oklab, var(--brand-DA) 10%, var(--dm-surface-2)) !important;
+}
+
+.darkmode .s-row:hover {
+  background: var(--dm-surface-2) !important;
+}
+
+.darkmode .s-row-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .s-dot-locked {
+  background: var(--dm-border) !important;
+}
+
+// ── Points label / score denominators (medium-gray, explicit for dark) ───────
+.darkmode .pts-label {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .s-row-label {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .score-denom,
+.darkmode .final-denom {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Final overlay card ────────────────────────────────────────────────────────
+.darkmode .final-card {
+  background: var(--dm-surface-2) !important;
+}
+
+.darkmode .final-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .final-subtitle,
+.darkmode .final-rank-msg {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .final-score-box {
+  background: color-mix(in oklab, var(--brand-DA) 10%, var(--dm-surface-2)) !important;
+  border-color: color-mix(in oklab, var(--brand-DA) 40%, var(--dm-border)) !important;
+}
+
+.darkmode .final-rank {
+  color: var(--dm-fg) !important;
+}
+
+// ── About page & other content pages ─────────────────────────────────────────
+.darkmode .feature {
+  background: var(--dm-surface-1);
+  border-color: var(--dm-border-sub);
+}
+
+// ── Section heading underline color (#2563eb) ─────────────────────────────────
+.darkmode .section-heading {
+  text-decoration-color: var(--dm-primary);
+}
+
+// ── General: forms, inputs ────────────────────────────────────────────────────
+.darkmode input:not([type="submit"]):not([type="button"]):not([type="reset"]),
+.darkmode select,
+.darkmode textarea {
+  background-color: var(--dm-surface-2);
+  border-color: var(--dm-border);
+  color: var(--dm-fg);
+
+  &::placeholder {
+    color: var(--dm-fg-muted);
+  }
+
+  &:focus {
+    border-color: var(--dm-primary);
+    outline-color: var(--dm-primary);
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// TAILWIND UTILITY OVERRIDES
+//
+// The rules below intentionally use !important. Challenge and game pages use
+// Tailwind utility classes (bg-slate-50, text-slate-900, etc.) directly in
+// their HTML. Because Tailwind utilities can have equal or higher specificity
+// than a plain class selector, !important is the only reliable way to override
+// them in dark mode without restructuring the challenge/game page HTML.
+//
+// Do NOT remove !important from these rules unless the challenge/game pages
+// are refactored to use semantic class names instead of raw Tailwind utilities.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Tailwind bg-white utility override ────────────────────────────────────────
+.darkmode [class~="bg-white"]:not(button):not(a):not(.btn) {
+  background-color: var(--dm-surface-1) !important;
+}
+
+// ── Tailwind slate / gray color overrides (challenge & game pages) ─────────────
+.darkmode [class~="bg-slate-50"],
+.darkmode [class~="bg-gray-50"] {
+  background-color: var(--dm-surface-2) !important;
+}
+
+.darkmode [class~="bg-slate-100"],
+.darkmode [class~="bg-gray-100"] {
+  background-color: var(--dm-surface-2) !important;
+}
+
+.darkmode [class~="bg-slate-200"],
+.darkmode [class~="bg-gray-200"] {
+  background-color: var(--dm-border-sub) !important;
+}
+
+.darkmode [class~="border-slate-200"],
+.darkmode [class~="border-gray-200"],
+.darkmode [class~="border-slate-300"],
+.darkmode [class~="border-gray-300"] {
+  border-color: var(--dm-border-sub) !important;
+}
+
+.darkmode [class~="text-slate-900"],
+.darkmode [class~="text-gray-900"] {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode [class~="text-slate-700"],
+.darkmode [class~="text-gray-700"] {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode [class~="text-slate-600"],
+.darkmode [class~="text-gray-600"] {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode [class~="text-slate-500"],
+.darkmode [class~="text-gray-500"] {
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Social-engineering challenge: message card bg-slate-50 ───────────────────
+.darkmode [class~="bg-slate-50"][class~="rounded-xl"],
+.darkmode [class~="bg-slate-50"][class~="rounded-lg"] {
+  background-color: var(--dm-surface-2) !important;
+  border-color: var(--dm-border) !important;
+}
+
+// ── Yellow/amber tactic reveal box ───────────────────────────────────────────
+.darkmode [class~="bg-yellow-50"] {
+  background-color: #1e1a08 !important;
+  border-color: #92400e !important;
+}
+
+.darkmode [class~="text-yellow-800"],
+.darkmode [class~="text-yellow-900"] {
+  color: #fcd34d !important;
+}
+
+// ── Green success / Red error boxes (SE challenge feedback) ──────────────────
+.darkmode [class~="bg-green-50"] {
+  background-color: #052820 !important;
+}
+
+.darkmode [class~="bg-green-100"] {
+  background-color: #052820 !important;
+}
+
+.darkmode [class~="text-green-900"],
+.darkmode [class~="text-green-800"] {
+  color: #6ee7b7 !important;
+}
+
+.darkmode [class~="bg-red-50"],
+.darkmode [class~="bg-red-100"] {
+  background-color: #2a0f0f !important;
+}
+
+.darkmode [class~="text-red-900"],
+.darkmode [class~="text-red-800"] {
+  color: #fca5a5 !important;
+}
+
+// ── Progress bar track (h-2 bg-slate-200) ────────────────────────────────────
+.darkmode [class~="h-2"][class~="bg-slate-200"] {
+  background-color: var(--dm-border) !important;
+}
+
+// ── Blue icon circle (bg-blue-100) ────────────────────────────────────────────
+.darkmode [class~="bg-blue-100"] {
+  background-color: #1e2d45 !important;
+}
+
+// ── Attacker-perspective challenge: purple tip card (hardcoded hex) ───────────
+.darkmode .tip-card {
+  border-color: color-mix(in oklab, currentColor 30%, var(--dm-border-sub));
+  background: var(--dm-surface-2) !important;
+  color: var(--dm-fg-muted) !important;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ATTACKER PERSPECTIVE CHALLENGE  (attacker-perspective/challenge.astro)
+// Social-media mock with hotspot game. Scoped CSS uses many hardcoded light
+// backgrounds (#f0f2f5, white) and dark text (#111827, #374151). All need
+// explicit !important overrides — scoped selectors beat global without it.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Browser window border (too light on dark page) ────────────────────────────
+.darkmode .browser-window {
+  border-color: var(--dm-border) !important;
+}
+
+// ── Profile page background (#f0f2f5 in scoped CSS) ──────────────────────────
+.darkmode .profile-page {
+  background: var(--dm-surface-2) !important;
+}
+
+// ── Profile head (white bar under cover photo) ────────────────────────────────
+.darkmode .profile-head {
+  background: var(--dm-surface-1) !important;
+  border-bottom-color: var(--dm-border-sub) !important;
+}
+
+// Avatar ring (border: 4px solid white) ───────────────────────────────────────
+.darkmode .p-avatar {
+  border-color: var(--dm-surface-1) !important;
+}
+
+// ── Profile head: text colors ─────────────────────────────────────────────────
+.darkmode .display-name {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .handle,
+.darkmode .status-label,
+.darkmode .stat-item {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .bio-text {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .stat-sep {
+  color: var(--dm-border) !important;
+}
+
+// ── Info card (About section, white bg) ───────────────────────────────────────
+.darkmode .info-card {
+  background: var(--dm-surface-1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35) !important;
+}
+
+.darkmode .info-card-title {
+  color: var(--dm-fg) !important;
+  border-bottom-color: var(--dm-border-sub) !important;
+}
+
+.darkmode .info-row,
+.darkmode .non-click {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .info-row:hover:not([data-found]) {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--dm-border-sub) !important;
+}
+
+// Password show button (light purple in light mode) ───────────────────────────
+.darkmode .show-pw-btn {
+  color: #c4b5fd !important;
+  background: #1e1b4b !important;
+  border-color: #4338ca !important;
+}
+
+.darkmode .show-pw-btn:hover:not([data-found]) {
+  background: #2e2a5e !important;
+  border-color: #6366f1 !important;
+}
+
+// Security question ───────────────────────────────────────────────────────────
+.darkmode .pw-text {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .secq-value {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .secq-answer {
+  color: #c4b5fd !important; // brighter purple readable on dark
+}
+
+// ── Post cards (social feed) ──────────────────────────────────────────────────
+// Note: .post-card bg-white also covered by earlier DC rule — kept here for
+// explicitness and correct text overrides specific to the AP social-media mock.
+.darkmode .post-uname {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .post-body {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .post-card:hover:not([data-found]) {
+  background: var(--dm-surface-2) !important;
+}
+
+.darkmode .post-place-badge {
+  background: var(--dm-surface-3) !important;
+  color: var(--dm-fg-muted) !important;
+}
+
+// ── Post action bars (Like / Comment / Share — white bg) ─────────────────────
+.darkmode .post-actions-bar {
+  background: var(--dm-surface-1) !important;
+  border-top-color: var(--dm-border-sub) !important;
+}
+
+.darkmode .action-btn:hover:not([data-found]) {
+  background: var(--dm-surface-3) !important;
+  color: var(--dm-fg) !important;
+}
+
+// ── Sidebar: vuln count + list ────────────────────────────────────────────────
+.darkmode .vuln-count {
+  color: #c4b5fd !important; // dark purple #6d28d9 invisible on dark bg
+}
+
+.darkmode .vuln-item {
+  color: #6ee7b7 !important; // dark green #065f46 invisible on dark bg
+}
+
+// ── Game-end overlay card ─────────────────────────────────────────────────────
+.darkmode .overlay-card {
+  background: var(--dm-surface-2) !important;
+}
+
+.darkmode .overlay-title {
+  color: var(--dm-fg) !important;
+}
+
+.darkmode .overlay-msg {
+  color: var(--dm-fg-muted) !important;
+}
+
+.darkmode .overlay-score {
+  color: #c4b5fd !important; // dark purple #4c1d95 invisible on dark bg
+}
+
+// ── Name/status/bio/stats hover bg ───────────────────────────────────────────
+.darkmode .name-btn:hover:not([data-found]),
+.darkmode .status-btn:hover:not([data-found]),
+.darkmode .bio-btn:hover:not([data-found]),
+.darkmode .stats-btn:hover:not([data-found]) {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--dm-border-sub) !important;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ABOUT PAGE  (src/pages/about.astro)
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Section subtitle muted text ───────────────────────────────────────────────
+.darkmode .section-subtitle {
+  color: var(--dm-fg-muted);
+}
+
+// ── Horizontal rule dividers ──────────────────────────────────────────────────
+.darkmode .divider {
+  border-top-color: var(--dm-border-sub);
+}
+
+// ── Partner cards & core-value cards ─────────────────────────────────────────
+.darkmode .core-value-card {
+  background: linear-gradient(180deg, var(--dm-surface-2) 0%, var(--dm-surface-1) 100%);
+  border-color: var(--dm-border-sub);
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--dm-primary);
+  }
+}
+
+// ── Core-value title & description text ───────────────────────────────────────
+.darkmode .core-value-title {
+  color: var(--dm-fg);
+}
+
+.darkmode .core-value-description {
+  color: var(--dm-fg-muted);
+}
+
+// ── Core-value media (illustration container) ─────────────────────────────────
+.darkmode .core-value-media {
+  border-color: color-mix(in oklab, var(--dm-primary) 25%, var(--dm-border-sub));
+}
+
+// ── Logo image containers (partner logos) ─────────────────────────────────────
+.darkmode .logo-image {
+  border-color: var(--dm-border-sub);
+  background: var(--dm-surface-1);
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--dm-primary) 8%, var(--dm-surface-2)) 0%,
+    color-mix(in oklab, var(--dm-primary) 4%, var(--dm-surface-1)) 100%
+  );
+}
+
+// ── Partner card heading color ────────────────────────────────────────────────
+.darkmode .initiative-partner-card h3 {
+  color: var(--dm-fg);
+}
+
+// ── Partner card body text ────────────────────────────────────────────────────
+.darkmode .initiative-partner-card p {
+  color: var(--dm-fg-muted);
+}
+
+
+// ══════════════════════════════════════════════════════════════════════════════
+// INTRODUCTION PAGE  (src/pages/learning-hub/introduction.astro)
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Module panel: swap the white gradient for a dark surface ──────────────────
+.darkmode .learning-hub-modules .module-panel {
+  background: linear-gradient(
+    155deg,
+    color-mix(in oklab, var(--module-color) 12%, var(--dm-surface-2)) 0%,
+    var(--dm-surface-1) 55%
+  );
+  border-color: color-mix(in oklab, var(--module-color) 35%, var(--dm-border-sub));
+}
+
+// ── Module title link ─────────────────────────────────────────────────────────
+.darkmode .learning-hub-modules .module-title a {
+  color: var(--dm-fg);
+}
+
+// ── Module meta items (parts / materials count) ────────────────────────────────
+.darkmode .learning-hub-modules .meta-item {
+  color: var(--dm-fg);
+}
+
+// ── Module description text ───────────────────────────────────────────────────
+.darkmode .learning-hub-modules .module-description {
+  color: var(--dm-fg-muted);
+}
+
+// ── Parts section (collapsible) ───────────────────────────────────────────────
+.darkmode .learning-hub-modules .module-parts {
+  background: color-mix(in oklab, var(--module-color) 10%, var(--dm-surface-2));
+  border-color: color-mix(in oklab, var(--module-color) 30%, var(--dm-border-sub));
+}
+
+// ── Parts badge: keep module color bg but switch to dark text for light modules ──
+.darkmode .learning-hub-modules .module-panel-dc .parts-badge,
+.darkmode .learning-hub-modules .module-panel-ap .parts-badge,
+.darkmode .learning-hub-modules .module-panel-at .parts-badge,
+.darkmode .learning-hub-modules .module-panel-dp .parts-badge,
+.darkmode .learning-hub-modules .module-panel-se .parts-badge,
+.darkmode .learning-hub-modules .module-panel-mw .parts-badge,
+.darkmode .learning-hub-modules .module-panel-da .parts-badge {
+  color: #ffffff;
+}
+
+// ── Parts name links ───────────────────────────────────────────────────────────
+.darkmode .learning-hub-modules .parts-name {
+  color: var(--dm-fg);
+}
+
+.darkmode .learning-hub-modules .parts-name--link {
+  color: var(--dm-fg);
+}
+
+// ── Activity cards (challenge / game) ─────────────────────────────────────────
+.darkmode .learning-hub-modules .activity-card {
+  background: color-mix(in oklab, var(--module-color) 8%, var(--dm-surface-2));
+  border-color: color-mix(in oklab, var(--module-color) 28%, var(--dm-border-sub));
+  color: var(--dm-fg);
+}
+
+// ── Activity card label, heading, body text ────────────────────────────────────
+.darkmode .learning-hub-modules .label {
+  color: var(--dm-fg-muted);
+}
+
+.darkmode .learning-hub-modules .activity-card h3 {
+  color: var(--dm-fg);
+}
+
+.darkmode .learning-hub-modules .activity-card p {
+  color: var(--dm-fg-muted);
+}
+
+// ── Activity CTA buttons (same module-color logic as parts badges) ─────────────
+.darkmode .learning-hub-modules .module-panel-dc .activity-cta,
+.darkmode .learning-hub-modules .module-panel-ap .activity-cta,
+.darkmode .learning-hub-modules .module-panel-at .activity-cta,
+.darkmode .learning-hub-modules .module-panel-dp .activity-cta,
+.darkmode .learning-hub-modules .module-panel-se .activity-cta,
+.darkmode .learning-hub-modules .module-panel-mw .activity-cta,
+.darkmode .learning-hub-modules .module-panel-da .activity-cta {
+  color: #ffffff;
+}
+
+// ── Toggle button (expand/collapse) ───────────────────────────────────────────
+.darkmode .learning-hub-modules .module-toggle {
+  background: color-mix(in oklab, var(--module-color) 18%, var(--dm-surface-3));
+  border-color: color-mix(in oklab, var(--module-color) 35%, var(--dm-border));
+
+  &:hover,
+  &:focus-visible {
+    background: var(--module-color);
+    border-color: var(--module-color);
+  }
+}
+
+// ── Module divider lines ───────────────────────────────────────────────────────
+.darkmode .learning-hub-modules .module-divider {
+  border-top-color: color-mix(in oklab, var(--module-color) 40%, var(--dm-border-sub));
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// GAME PAGES  (all modules — authentication, data-privacy, social-engineering,
+// malware, digital-abuse)
+// Each game page has an identical .roblox-embed > .button structure.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Play button hover: swap white bg for dark surface ─────────────────────────
+// Light mode: .button:hover → white bg + module-colored text (correct)
+// Dark mode:  white bg is blinding — replace with elevated surface.
+.darkmode .roblox-embed .button:hover {
+  background: var(--dm-surface-3) !important;
+  color: var(--dm-fg) !important;
+}
+

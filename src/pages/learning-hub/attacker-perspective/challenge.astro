@@ -1,0 +1,1113 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { useTranslations } from 'src/i18n/index'
+
+const { t, v } = useTranslations(Astro.currentLocale)
+const { v: vEn } = useTranslations('en')
+
+type Hotspot = {
+  id: string
+  label: string
+  explain: string
+}
+
+const rawHotspots = v<ReadonlyArray<Record<string, unknown>>>('challengeAP.hotspots') ?? []
+const enHotspots = vEn<ReadonlyArray<Record<string, unknown>>>('challengeAP.hotspots') ?? []
+
+const hotspotById = new Map<string, Hotspot>()
+enHotspots.forEach((item) => {
+  const id = String(item.id ?? '')
+  hotspotById.set(id, { id, label: String(item.label ?? id), explain: String(item.explain ?? '') })
+})
+rawHotspots.forEach((item) => {
+  const id = String(item.id ?? '')
+  const prev = hotspotById.get(id)
+  hotspotById.set(id, {
+    id,
+    label: String(item.label ?? prev?.label ?? id),
+    explain: String(item.explain ?? prev?.explain ?? ''),
+  })
+})
+
+const hs = (id: string) => hotspotById.get(id) ?? { id, label: id, explain: '' }
+const attackerTargets = v<ReadonlyArray<string>>('challengeAP.attackerTargets') ?? []
+---
+
+<DefaultLayout title={t('challengeAP.title')}>
+  <PageHeader
+    title={t('challengeAP.title')}
+    subtitle={t('challengeAP.subtitle')}
+    bgType="module"
+    underlineColor="var(--brand-AP)"
+  />
+
+  <section
+    class="my-12"
+    data-vulnerability-game
+    data-vuln-empty={t('challengeAP.vulnerabilitiesEmpty')}
+    data-win-title={t('challengeAP.winTitle')}
+    data-win-msg={t('challengeAP.winMsg')}
+    data-lose-title={t('challengeAP.loseTitle')}
+    data-lose-msg-template={t('challengeAP.loseMsgTemplate')}
+    data-voice-initial={t('challengeAP.attackerVoiceInitial')}
+    data-voice-win-template={t('challengeAP.attackerVoiceWin')}
+    data-voice-lose={t('challengeAP.attackerVoiceLose')}
+    data-voice-already-tagged-template={t('challengeAP.attackerVoiceAlreadyTagged')}
+    data-voice-correct-template={t('challengeAP.attackerVoiceCorrect')}
+    data-voice-wrong-template={t('challengeAP.attackerVoiceWrong')}
+  >
+    <div class="container">
+
+      <div class="mb-10 flex flex-col gap-6">
+        <h2 class="mb-2">{t('challengeAP.howItWorks')}</h2>
+        <p>
+          {t('challengeAP.instruction')}
+        </p>
+        <div class="tip-card">
+          <div class="tip-card__lead">
+            <span class="tip-card__icon" aria-hidden="true">💬</span>
+            <strong class="tip-card__label">{t('challengeAP.tipLabel')}</strong>
+          </div>
+          <div class="tip-card__body">{t('challengeAP.tip')}</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
+
+        <!-- Main: Browser Window -->
+        <div>
+
+          <!-- Mock browser window -->
+          <div class="browser-window">
+
+            <!-- Browser chrome (dark) -->
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="bdot bdot-red"></span>
+                <span class="bdot bdot-yellow"></span>
+                <span class="bdot bdot-green"></span>
+              </div>
+              <!-- Address bar — HOTSPOT: HTTP (correct) -->
+	              <button
+	                class="address-bar hotspot-btn"
+	                data-id="http"
+	                data-correct="true"
+	                data-label={hs('http').label}
+	                data-explain={hs('http').explain}
+	              >
+	                <span class="addr-lock">🔓</span>
+	                <span class="addr-url">http://socialmedia-insecure.com/profile/alex123</span>
+	              </button>
+            </div>
+
+            <!-- Profile page (white background) -->
+            <div class="profile-page">
+
+              <!-- Profile header -->
+              <div class="profile-head">
+
+                <!-- Avatar — HOTSPOT: avatar (wrong) -->
+	                <button
+	                  class="avatar-wrap hotspot-btn"
+	                  data-id="avatar"
+	                  data-correct="false"
+	                  data-label={hs('avatar').label}
+	                  data-explain={hs('avatar').explain}
+	                >
+	                  <div class="p-avatar">👤</div>
+	                </button>
+
+                <div class="head-info">
+
+                  <!-- Name & handle — HOTSPOT: username (wrong) -->
+	                  <button
+	                    class="name-btn hotspot-btn"
+	                    data-id="username"
+	                    data-correct="false"
+	                    data-label={hs('username').label}
+	                    data-explain={hs('username').explain}
+	                  >
+	                    <span class="display-name">{t('challengeAP.profile.displayName')}</span>
+	                    <span class="handle">{t('challengeAP.profile.handle')}</span>
+	                  </button>
+
+                  <!-- Online status — HOTSPOT: online (wrong) -->
+	                  <button
+	                    class="status-btn hotspot-btn"
+	                    data-id="online"
+	                    data-correct="false"
+	                    data-label={hs('online').label}
+	                    data-explain={hs('online').explain}
+	                  >
+	                    <span class="online-dot"></span>
+	                    <span class="status-label">{t('challengeAP.profile.statusActiveNow')}</span>
+	                  </button>
+
+                  <!-- Bio — HOTSPOT: bio (wrong) -->
+	                  <button
+	                    class="bio-btn hotspot-btn"
+	                    data-id="bio"
+	                    data-correct="false"
+	                    data-label={hs('bio').label}
+	                    data-explain={hs('bio').explain}
+	                  >
+	                    <span class="bio-text">{t('challengeAP.profile.bioText')}</span>
+	                  </button>
+
+                  <!-- Follower stats — HOTSPOT: followers (wrong) -->
+	                  <button
+	                    class="stats-btn hotspot-btn"
+	                    data-id="followers"
+	                    data-correct="false"
+	                    data-label={hs('followers').label}
+	                    data-explain={hs('followers').explain}
+	                  >
+	                    <span class="stat-item"><strong>847</strong> {t('challengeAP.profile.statsFriendsLabel')}</span>
+	                    <span class="stat-sep">·</span>
+	                    <span class="stat-item"><strong>312</strong> {t('challengeAP.profile.statsFollowingLabel')}</span>
+	                  </button>
+
+                </div>
+              </div>
+
+              <!-- Profile body: two-column layout -->
+              <div class="profile-body">
+
+                <!-- Left: About + Account -->
+                <div class="profile-left">
+
+                  <!-- About card -->
+	                  <div class="info-card">
+	                    <h3 class="info-card-title">{t('challengeAP.profile.aboutTitle')}</h3>
+
+                    <!-- Birthday — HOTSPOT: birthday (correct) -->
+	                    <button
+	                      class="info-row hotspot-btn"
+	                      data-id="birthday"
+	                      data-correct="true"
+	                      data-label={hs('birthday').label}
+	                      data-explain={hs('birthday').explain}
+	                    >
+	                      <span class="row-icon">🎂</span>
+	                      <span class="row-text">{t('challengeAP.profile.bornText')}</span>
+	                    </button>
+
+                    <!-- Email — HOTSPOT: email (wrong) -->
+	                    <button
+	                      class="info-row hotspot-btn"
+	                      data-id="email"
+	                      data-correct="false"
+	                      data-label={hs('email').label}
+	                      data-explain={hs('email').explain}
+	                    >
+	                      <span class="row-icon">✉️</span>
+	                      <span class="row-text">{t('challengeAP.profile.emailText')}</span>
+	                    </button>
+
+                    <!-- Pet Name — HOTSPOT: petname (correct) -->
+	                    <button
+	                      class="info-row hotspot-btn"
+	                      data-id="petname"
+	                      data-correct="true"
+	                      data-label={hs('petname').label}
+	                      data-explain={hs('petname').explain}
+	                    >
+	                      <span class="row-icon">🐱</span>
+	                      <span class="row-text">{t('challengeAP.profile.petNameText')}</span>
+	                    </button>
+                  </div>
+
+                </div>
+
+                <!-- Right: Posts feed -->
+                <div class="profile-right">
+
+                  <!-- Post 1: real-time location — HOTSPOT: location (correct) -->
+	                  <button
+	                    class="post-card hotspot-btn"
+	                    data-id="location"
+	                    data-correct="true"
+	                    data-label={hs('location').label}
+	                    data-explain={hs('location').explain}
+	                  >
+	                    <div class="post-header-row">
+	                      <span class="post-av">👤</span>
+	                      <div class="post-meta">
+	                        <p class="post-uname">{t('challengeAP.profile.displayName')}</p>
+	                        <p class="post-time">{t('challengeAP.profile.post1Time')}</p>
+	                      </div>
+	                    </div>
+	                    <p class="post-body">{t('challengeAP.profile.post1Body')}</p>
+	                    <div class="post-place-badge">{t('challengeAP.profile.post1Badge')}</div>
+	                  </button>
+                  <div class="post-actions-bar">
+                    <!-- Like button post 1 — HOTSPOT: like1 (wrong) -->
+	                    <button
+	                      class="action-btn hotspot-btn"
+	                      data-id="like1"
+	                      data-correct="false"
+	                      data-label={hs('like1').label}
+	                      data-explain={hs('like1').explain}
+	                    >
+	                      👍 {t('challengeAP.profile.actionLike')} <span class="act-count">24</span>
+	                    </button>
+                    <!-- Comment button post 1 — HOTSPOT: comment1 (wrong) -->
+	                    <button
+	                      class="action-btn hotspot-btn"
+	                      data-id="comment1"
+	                      data-correct="false"
+	                      data-label={hs('comment1').label}
+	                      data-explain={hs('comment1').explain}
+	                    >
+	                      💬 {t('challengeAP.profile.actionComment')} <span class="act-count">8</span>
+	                    </button>
+                    <!-- Share button post 1 — HOTSPOT: share1 (wrong) -->
+	                    <button
+	                      class="action-btn hotspot-btn"
+	                      data-id="share1"
+	                      data-correct="false"
+	                      data-label={hs('share1').label}
+	                      data-explain={hs('share1').explain}
+	                    >
+	                      ↗️ {t('challengeAP.profile.actionShare')}
+	                    </button>
+                  </div>
+
+                  <!-- Post 2: generic — HOTSPOT: post2 (wrong) -->
+	                  <button
+	                    class="post-card hotspot-btn"
+	                    data-id="post2"
+	                    data-correct="false"
+	                    data-label={hs('post2').label}
+	                    data-explain={hs('post2').explain}
+	                  >
+	                    <div class="post-header-row">
+	                      <span class="post-av">👤</span>
+	                      <div class="post-meta">
+	                        <p class="post-uname">{t('challengeAP.profile.displayName')}</p>
+	                        <p class="post-time">{t('challengeAP.profile.post2Time')}</p>
+	                      </div>
+	                    </div>
+	                    <p class="post-body">{t('challengeAP.profile.post2Body')}</p>
+	                  </button>
+                  <div class="post-actions-bar">
+                    <!-- Like button post 2 — HOTSPOT: like2 (wrong) -->
+	                    <button
+	                      class="action-btn hotspot-btn"
+	                      data-id="like2"
+	                      data-correct="false"
+	                      data-label={hs('like2').label}
+	                      data-explain={hs('like2').explain}
+	                    >
+	                      👍 {t('challengeAP.profile.actionLike')} <span class="act-count">41</span>
+	                    </button>
+                    <!-- Comment button post 2 — HOTSPOT: comment2 (wrong) -->
+	                    <button
+	                      class="action-btn hotspot-btn"
+	                      data-id="comment2"
+	                      data-correct="false"
+	                      data-label={hs('comment2').label}
+	                      data-explain={hs('comment2').explain}
+	                    >
+	                      💬 {t('challengeAP.profile.actionComment')} <span class="act-count">15</span>
+	                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-fit sticky top-6">
+
+	          <!-- Lives -->
+	          <div class="mb-4">
+	            <h3 class="text-base font-bold text-slate-900">{t('challengeAP.livesTitle')}</h3>
+	            <p class="mt-1 text-xs text-slate-600">{t('challengeAP.livesDesc')}</p>
+	          </div>
+          <div class="lives-row border-t border-slate-200 pt-4 mb-6">
+            <span class="life-icon" id="life-1">❤️</span>
+            <span class="life-icon" id="life-2">❤️</span>
+            <span class="life-icon" id="life-3">❤️</span>
+          </div>
+
+	          <!-- Found counter -->
+	          <div class="mb-6 border-t border-slate-200 pt-4">
+	            <h3 class="text-sm font-bold text-slate-900 mb-3">{t('challengeAP.vulnerabilitiesFoundTitle')}</h3>
+	            <div class="vuln-counter">
+	              <span class="vuln-count" id="found-count">0</span>
+	              <span class="vuln-denom">{t('challengeAP.vulnerabilitiesCount')}</span>
+	            </div>
+	            <ul class="vuln-list mt-3" id="found-list">
+	              <li class="vuln-empty">{t('challengeAP.vulnerabilitiesEmpty')}</li>
+	            </ul>
+	          </div>
+
+	          <!-- Tips -->
+	          <div class="border-t border-slate-200 pt-4">
+	            <h3 class="text-sm font-bold text-slate-900 mb-3">{t('challengeAP.attackerTargetsTitle')}</h3>
+	            <div class="space-y-2">
+	              {attackerTargets.map((item) => (
+	                <div class="rounded-lg bg-red-50 p-3">
+	                  <p class="text-xs font-semibold text-red-900">{item}</p>
+	                </div>
+	              ))}
+	            </div>
+	          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game-end overlay -->
+  <div class="game-overlay hidden" id="game-overlay">
+    <div class="overlay-card">
+      <div class="overlay-icon" id="overlay-icon">🎉</div>
+      <h2 class="overlay-title" id="overlay-title">…</h2>
+      <p class="overlay-msg" id="overlay-msg">…</p>
+	      <div class="overlay-score">
+	        <span id="overlay-found">0</span> {t('challengeAP.vulnFoundSuffix')}
+	      </div>
+	      <button class="btn btn-primary" id="reset-btn">{t('challengeAP.tryAgain')}</button>
+	    </div>
+	  </div>
+
+  <style>
+    /* ── Tip card ──────────────────────────────────────────────────────────── */
+    .tip-card {
+      border-radius: 0.9rem;
+      border: 1px solid #ddd6fe;
+      background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: #4c1d95;
+    }
+
+    /* ── Attacker voice bar ────────────────────────────────────────────────── */
+    .attacker-bar {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #1e1b4b;
+      border: 1px solid #4338ca;
+      border-radius: 10px;
+      padding: 12px 16px;
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    .attacker-bar.bar-correct {
+      background: #14532d;
+      border-color: #22c55e;
+    }
+
+    .attacker-bar.bar-wrong {
+      background: #7f1d1d;
+      border-color: #ef4444;
+    }
+
+    .attacker-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+
+    .attacker-text {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #c7d2fe;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      line-height: 1.5;
+      transition: color 0.4s ease;
+    }
+
+    .attacker-bar.bar-correct .attacker-text { color: #86efac; }
+    .attacker-bar.bar-wrong  .attacker-text { color: #fca5a5; }
+
+    /* ── Browser window ────────────────────────────────────────────────────── */
+    .browser-window {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+      border: 1px solid #d1d5db;
+    }
+
+    .browser-chrome {
+      background: #2d2d2d;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .browser-dots { display: flex; gap: 6px; }
+    .bdot { width: 12px; height: 12px; border-radius: 50%; }
+    .bdot-red    { background: #ff5f57; }
+    .bdot-yellow { background: #febc2e; }
+    .bdot-green  { background: #28c840; }
+
+    /* Address bar (dark context — special hotspot styling) */
+    .address-bar {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: 1.5px solid #555;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      color: #e5e5e5;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      min-width: 0;
+    }
+
+    .address-bar:hover:not([data-found]) {
+      background: #222;
+      border-color: #888;
+    }
+
+    .address-bar[data-found="true"] {
+      background: rgba(34, 197, 94, 0.18) !important;
+      border-color: #22c55e !important;
+    }
+
+    .addr-lock { font-size: 0.85rem; flex-shrink: 0; }
+    .addr-url  { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* ── Profile page (WHITE background) ──────────────────────────────────── */
+    .profile-page {
+      background: #f0f2f5;
+    }
+
+    /* Cover photo */
+    .cover-btn {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 2px solid transparent;
+      border-radius: 0;
+      cursor: pointer;
+      transition: border-color 0.2s, filter 0.2s;
+    }
+
+    .cover-btn:hover:not([data-found]) .cover-inner { filter: brightness(1.08); }
+    .cover-btn[data-found="true"] { border-color: #22c55e; }
+
+    .cover-inner {
+      height: 140px;
+      background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 50%, #1e1b4b 100%);
+      transition: filter 0.2s;
+    }
+
+    /* Profile head */
+    .profile-head {
+      background: white;
+      padding: 12px 16px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+    }
+
+    .avatar-wrap {
+      margin-top: -36px;
+      flex-shrink: 0;
+      background: none;
+      padding: 2px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .avatar-wrap:hover:not([data-found]) { border-color: rgba(0,0,0,0.12); }
+    .avatar-wrap[data-found="true"]      { border-color: #22c55e; }
+
+    .p-avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      border: 4px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .head-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    /* Generic head button */
+    .name-btn, .status-btn, .bio-btn, .stats-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 2px 6px;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      transition: background 0.15s, border-color 0.15s;
+      width: fit-content;
+    }
+
+    .name-btn:hover:not([data-found]),
+    .status-btn:hover:not([data-found]),
+    .bio-btn:hover:not([data-found]),
+    .stats-btn:hover:not([data-found]) {
+      background: rgba(0,0,0,0.04);
+      border-color: rgba(0,0,0,0.08);
+    }
+
+    .display-name { font-weight: 700; font-size: 1.15rem; color: #111827; }
+    .handle       { color: #9ca3af; font-size: 0.85rem; }
+
+    .online-dot   { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
+    .status-label { font-size: 0.8rem; color: #6b7280; }
+
+    .bio-text  { font-size: 0.875rem; color: #374151; }
+    .stat-item { font-size: 0.825rem; color: #6b7280; }
+    .stat-sep  { color: #d1d5db; font-size: 0.825rem; }
+
+    /* ── Profile body grid ─────────────────────────────────────────────────── */
+    .profile-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    @media (max-width: 680px) {
+      .profile-body { grid-template-columns: 1fr; }
+    }
+
+    /* ── Info cards ────────────────────────────────────────────────────────── */
+    .info-card {
+      background: white;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .info-card-title {
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: #374151;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 5px 4px;
+      font-size: 0.85rem;
+      color: #374151;
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      transition: background 0.15s, border-color 0.15s;
+      margin-bottom: 2px;
+    }
+
+    .info-row:hover:not([data-found]) {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.06);
+    }
+
+    .non-click {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 4px;
+      font-size: 0.85rem;
+      color: #374151;
+      margin-bottom: 2px;
+      cursor: default;
+    }
+
+    .row-icon { font-size: 1rem; flex-shrink: 0; }
+    .row-text { font-size: 0.85rem; }
+
+    /* Password row */
+    .pw-row-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 4px;
+      margin-bottom: 4px;
+    }
+
+    .pw-display-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .pw-text {
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: #374151;
+      letter-spacing: 0.08em;
+      transition: color 0.3s;
+    }
+
+    .show-pw-btn {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #6d28d9;
+      background: #f5f3ff;
+      border: 1.5px solid #ddd6fe;
+      border-radius: 4px;
+      padding: 3px 9px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+      font-family: inherit;
+    }
+
+    .show-pw-btn:hover:not([data-found]) {
+      background: #ede9fe;
+      border-color: #c4b5fd;
+    }
+
+    .show-pw-btn[data-found="true"] {
+      background: rgba(34, 197, 94, 0.12) !important;
+      border-color: #22c55e !important;
+      color: #065f46 !important;
+    }
+
+    /* Security question row */
+    .secq-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
+    .secq-label  { font-size: 0.7rem; color: #9ca3af; line-height: 1.2; }
+    .secq-value  { font-size: 0.85rem; color: #374151; }
+    .secq-answer { color: #7c3aed; }
+
+    /* ── Posts ─────────────────────────────────────────────────────────────── */
+    .profile-right { display: flex; flex-direction: column; }
+
+    .post-card {
+      background: white;
+      border-radius: 8px 8px 0 0;
+      padding: 14px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-bottom: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: background 0.15s, border-color 0.15s;
+      display: block;
+      font: inherit;
+      color: inherit;
+    }
+
+    .post-card:hover:not([data-found]) { background: #fafafa; }
+
+    .post-header-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .post-av   { font-size: 1.5rem; }
+    .post-uname { font-weight: 600; font-size: 0.875rem; color: #111827; line-height: 1.2; }
+    .post-time  { font-size: 0.72rem; color: #9ca3af; }
+    .post-body  { font-size: 0.875rem; color: #374151; line-height: 1.5; margin-bottom: 10px; }
+
+    .post-place-badge {
+      background: #f3f4f6;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    .post-actions-bar {
+      background: white;
+      border-radius: 0 0 8px 8px;
+      padding: 4px 10px;
+      display: flex;
+      gap: 2px;
+      border-top: 1px solid #f3f4f6;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 10px;
+    }
+
+    .action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 6px 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6b7280;
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      font: inherit;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .action-btn:hover:not([data-found]) {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .act-count { color: #9ca3af; font-weight: 400; }
+
+    /* ── Universal found / wrong states ───────────────────────────────────── */
+    .hotspot-btn[data-found="true"] {
+      background: rgba(34, 197, 94, 0.1) !important;
+      border-color: #22c55e !important;
+    }
+
+    /* Missed (revealed after game-over) */
+    .hotspot-btn[data-found="missed"] {
+      background: rgba(239, 68, 68, 0.1) !important;
+      border-color: #ef4444 !important;
+    }
+
+    @keyframes wrongFlash {
+      0%   { outline: none; }
+      25%  { outline: 3px solid #ef4444; outline-offset: 2px; }
+      75%  { outline: 3px solid #ef4444; outline-offset: 2px; }
+      100% { outline: none; }
+    }
+
+    .hotspot-btn.wrong-flash { animation: wrongFlash 0.55s ease; }
+
+    /* ── Sidebar ───────────────────────────────────────────────────────────── */
+    .lives-row { display: flex; gap: 8px; }
+
+    .life-icon {
+      font-size: 1.6rem;
+      transition: filter 0.3s, opacity 0.3s;
+    }
+
+    .life-icon.lost {
+      filter: grayscale(100%);
+      opacity: 0.3;
+    }
+
+    .vuln-counter { display: flex; align-items: baseline; gap: 8px; }
+    .vuln-count   { font-size: 2.4rem; font-weight: 900; color: #6d28d9; list-style: none; }
+    .vuln-denom   { font-size: 1rem; color: #9ca3af; font-weight: 600; }
+
+    .vuln-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .vuln-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    .vuln-empty { font-size: 0.8rem; color: #9ca3af; }
+
+    /* ── Game-end overlay ──────────────────────────────────────────────────── */
+    .game-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .game-overlay.hidden { display: none; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .overlay-card {
+      background: white;
+      border-radius: 20px;
+      padding: var(--space-2xl);
+      text-align: center;
+      max-width: 480px;
+      margin: var(--space-m);
+      animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .overlay-icon  { font-size: 4rem; margin-bottom: var(--space-m); }
+    .overlay-title { font-size: 1.75rem; font-weight: 800; color: #1f2937; margin-bottom: var(--space-s); }
+    .overlay-msg   { font-size: 1rem; color: #6b7280; margin-bottom: var(--space-l); line-height: 1.6; }
+
+    .overlay-score {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #4c1d95;
+      padding: var(--space-m) var(--space-l);
+      background: #f5f3ff;
+      border-radius: 10px;
+      border: 2px solid #ddd6fe;
+      margin-bottom: var(--space-l);
+    }
+
+    .overlay-score span { font-size: 1.8rem; font-weight: 900; color: #6d28d9; }
+
+    /* ── Buttons ───────────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      padding: var(--space-m) var(--space-2xl);
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.03em;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(109, 40, 217, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(109, 40, 217, 0.4);
+    }
+
+    /* ── Reduced motion ────────────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
+  <script>
+    const initializeVulnerabilityChallenge = () => {
+      document.querySelectorAll('[data-vulnerability-game]').forEach((root) => {
+        if (!(root instanceof HTMLElement)) return
+        if (root.dataset.bound === 'true') return
+        root.dataset.bound = 'true'
+
+        const vulnEmpty = root.dataset.vulnEmpty ?? ''
+        const winTitle = root.dataset.winTitle ?? ''
+        const winMsg = root.dataset.winMsg ?? ''
+        const loseTitle = root.dataset.loseTitle ?? ''
+        const loseMsgTemplate = root.dataset.loseMsgTemplate ?? ''
+        const voiceInitial = root.dataset.voiceInitial ?? ''
+        const voiceWinTemplate = root.dataset.voiceWinTemplate ?? ''
+        const voiceLose = root.dataset.voiceLose ?? ''
+        const voiceAlreadyTaggedTemplate = root.dataset.voiceAlreadyTaggedTemplate ?? ''
+        const voiceCorrectTemplate = root.dataset.voiceCorrectTemplate ?? ''
+        const voiceWrongTemplate = root.dataset.voiceWrongTemplate ?? ''
+
+        const MAX_WRONG = 3
+
+        // ── Elements ─────────────────────────────────────────────────────────
+        const attackerBar = root.querySelector('#attacker-bar')
+        const attackerVoice = root.querySelector('#attacker-voice')
+        const foundCountEl = root.querySelector('#found-count')
+        const foundListEl = root.querySelector('#found-list')
+        const gameOverlay = document.querySelector('#game-overlay')
+        const overlayIcon = document.querySelector('#overlay-icon')
+        const overlayTitle = document.querySelector('#overlay-title')
+        const overlayMsg = document.querySelector('#overlay-msg')
+        const overlayFound = document.querySelector('#overlay-found')
+        const resetBtn = document.querySelector('#reset-btn')
+
+        const hotspotBtns = Array.from(root.querySelectorAll('.hotspot-btn')).filter((el) => el instanceof HTMLElement)
+
+        if (!(foundListEl instanceof HTMLElement)) return
+        if (!(gameOverlay instanceof HTMLElement)) return
+        if (!(resetBtn instanceof HTMLElement)) return
+        if (hotspotBtns.length === 0) return
+
+        // ── State ───────────────────────────────────────────────────────────
+        const found = new Set()
+        let wrongAttempts = 0
+        let gameOver = false
+
+        const getTotalCorrect = () => hotspotBtns.filter((btn) => btn.dataset.correct === 'true').length
+        const TOTAL_CORRECT = getTotalCorrect()
+
+        // ── Helpers ─────────────────────────────────────────────────────────
+        const formatTemplate = (template: string | null | undefined, vars?: Record<string, string | number>) =>
+          String(template ?? '').replace(/\{(\w+)\}/g, (_m, key) => String(vars?.[key] ?? ''))
+
+        const setVoice = (msg: string, type: string = 'neutral') => {
+          if (attackerVoice instanceof HTMLElement) attackerVoice.textContent = msg
+          if (attackerBar instanceof HTMLElement) {
+            attackerBar.classList.remove('bar-correct', 'bar-wrong')
+            if (type !== 'neutral') attackerBar.classList.add(`bar-${type}`)
+          }
+        }
+
+        const setFoundEmpty = () => {
+          foundListEl.innerHTML = ''
+          const li = document.createElement('li')
+          li.className = 'vuln-empty'
+          li.textContent = vulnEmpty
+          foundListEl.appendChild(li)
+        }
+
+        const updateFoundUI = () => {
+          if (foundCountEl instanceof HTMLElement) foundCountEl.textContent = String(found.size)
+          if (found.size === 0) {
+            setFoundEmpty()
+            return
+          }
+
+          foundListEl.innerHTML = ''
+          Array.from(found).forEach((id) => {
+            const btn = hotspotBtns.find((b) => b.dataset.id === id)
+            const label = btn?.dataset.label ?? id
+            const li = document.createElement('li')
+            li.className = 'vuln-item'
+            li.textContent = `✓ ${label}`
+            foundListEl.appendChild(li)
+          })
+        }
+
+        const updateLives = () => {
+          for (let i = 1; i <= MAX_WRONG; i++) {
+            const el = root.querySelector(`#life-${i}`)
+            if (el instanceof HTMLElement) el.classList.toggle('lost', i <= wrongAttempts)
+          }
+        }
+
+        // ── Game end ─────────────────────────────────────────────────────────
+        const checkEnd = () => {
+          const won = found.size === TOTAL_CORRECT
+          const lost = wrongAttempts >= MAX_WRONG
+
+          if (!won && !lost) return
+
+          gameOver = true
+
+          if (lost && !won) {
+            // Reveal unfound vulnerabilities
+            hotspotBtns
+              .filter((btn) => btn.dataset.correct === 'true' && !found.has(btn.dataset.id ?? ''))
+              .forEach((btn) => btn.setAttribute('data-found', 'missed'))
+          }
+
+          if (overlayIcon instanceof HTMLElement) overlayIcon.textContent = won ? '🎉' : '💀'
+          if (overlayTitle instanceof HTMLElement) overlayTitle.textContent = won ? winTitle : loseTitle
+          if (overlayMsg instanceof HTMLElement) {
+            overlayMsg.textContent = won ? winMsg : formatTemplate(loseMsgTemplate, { found: found.size, total: TOTAL_CORRECT })
+          }
+          if (overlayFound instanceof HTMLElement) overlayFound.textContent = String(found.size)
+
+          gameOverlay.classList.remove('hidden')
+          setVoice(
+            won ? formatTemplate(voiceWinTemplate, { total: TOTAL_CORRECT }) : voiceLose,
+            won ? 'correct' : 'wrong'
+          )
+        }
+
+        // ── Click handler ────────────────────────────────────────────────────
+        const handleClick = (e: Event) => {
+          const btn = e.currentTarget
+          if (!(btn instanceof HTMLElement)) return
+
+          const id = btn.dataset.id ?? ''
+          const correct = btn.dataset.correct === 'true'
+          const label = btn.dataset.label ?? id
+          const explain = btn.dataset.explain ?? ''
+
+          if (gameOver) return
+
+          if (btn.dataset.found === 'true') {
+            setVoice(formatTemplate(voiceAlreadyTaggedTemplate, { label }), 'neutral')
+            return
+          }
+
+          if (correct) {
+            found.add(id)
+            btn.setAttribute('data-found', 'true')
+            setVoice(formatTemplate(voiceCorrectTemplate, { label, explain }), 'correct')
+            updateFoundUI()
+            checkEnd()
+          } else {
+            wrongAttempts++
+            btn.classList.add('wrong-flash')
+            setTimeout(() => btn.classList.remove('wrong-flash'), 600)
+            updateLives()
+            setVoice(formatTemplate(voiceWrongTemplate, { explain }), 'wrong')
+            checkEnd()
+          }
+        }
+
+        hotspotBtns.forEach((btn) => btn.addEventListener('click', handleClick))
+
+        // ── Reset ────────────────────────────────────────────────────────────
+        resetBtn.addEventListener('click', () => {
+          found.clear()
+          wrongAttempts = 0
+          gameOver = false
+
+          hotspotBtns.forEach((btn) => {
+            btn.removeAttribute('data-found')
+            btn.classList.remove('wrong-flash')
+          })
+
+          if (attackerBar instanceof HTMLElement) attackerBar.classList.remove('bar-correct', 'bar-wrong')
+
+          gameOverlay.classList.add('hidden')
+          updateLives()
+          updateFoundUI()
+          setVoice(voiceInitial, 'neutral')
+        })
+
+        // ── Init ─────────────────────────────────────────────────────────────
+        updateLives()
+        updateFoundUI()
+        setVoice(voiceInitial, 'neutral')
+      })
+    }
+
+    document.addEventListener('astro:page-load', initializeVulnerabilityChallenge)
+    initializeVulnerabilityChallenge()
+  </script>
+</DefaultLayout>

@@ -1,0 +1,44 @@
+---
+import { Media } from 'accessible-astro-components'
+
+/**
+ * ContentMedia Component
+ *
+ * Displays slotted content alongside an image in a two-column layout.
+ * The image position can be reversed (right instead of left) via the
+ * `reverseImg` prop. Renders as a <section> for landmark clarity.
+ *
+ * @example
+ * <ContentMedia imgSrc="/hero.jpg" imgAlt="A student using a laptop">
+ *   <h2>Welcome</h2>
+ *   <p>Intro text here.</p>
+ * </ContentMedia>
+ *
+ * @see WCAG 1.1.1 — Always provide meaningful alt text via imgAlt
+ */
+interface Props {
+  /** URL of the image to display */
+  imgSrc: string
+  /** Accessible alt text describing the image content */
+  imgAlt?: string
+  /** When true, the image appears to the right of the content */
+  reverseImg?: boolean
+}
+
+const { imgSrc, imgAlt = '', reverseImg = false }: Props = Astro.props
+---
+
+<section>
+  <div class="container">
+    <div class:list={[
+      'grid grid-cols-1 gap-24 md:grid-cols-2',
+      reverseImg && 'content-media--reversed'
+    ]}>
+      {!reverseImg && <Media class="rounded-lg" src={imgSrc} alt={imgAlt} />}
+      <div class="flex flex-col justify-center">
+        <slot />
+      </div>
+      {reverseImg && <Media class="rounded-lg" src={imgSrc} alt={imgAlt} />}
+    </div>
+  </div>
+</section>
