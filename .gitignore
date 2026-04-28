@@ -33,4 +33,5 @@ pnpm-debug.log*
 # Local Vercel folder
 .vercel
 
-# IDE and editor specific files
+# Other
+.gitattributes
