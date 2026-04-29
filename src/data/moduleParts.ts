@@ -1,11 +1,38 @@
-import { modulePartsMeta } from './modules'
-import type { ModuleId, PartMeta } from './modules'
+import type { ModuleId } from './modules'
 import { TranslationPartSchema } from './moduleParts.schema'
+
+// ── Part metadata (derived automatically in mergeParts) ──────────────────────
+
+export interface PartMeta {
+  steps: number
+  materials: number
+  videos: number
+}
+
+// ── Content-page helper types ─────────────────────────────────────────────────
+
+export interface TeachersGuide {
+  ariaLabel?: string
+  download?: string
+}
+
+export interface RelatedModuleCard {
+  moduleId: ModuleId
+  brand: string
+  href: string
+  imageSrc?: string
+  description: string
+  parts?: number
+  materials?: number
+  videos?: number
+  challenges?: number
+  games?: number
+}
 
 // ── Non-translatable asset interfaces ────────────────────────────────────────
 
 export interface PartBundle { href: string }
-export interface PartMaterialAssets { id?: string; href: string }
+export interface PartMaterialAssets { id?: string; href: string; isGuide?: boolean }
 export interface VideoDownload { href: string; filename?: string }
 export interface SubtitleTrack { label: string; srclang: string; src: string }
 
@@ -54,7 +81,7 @@ export interface TranslationActivityStep {
 export interface TranslationMaterial {
   kind: string
   name: string
-  filename: string
+  filename?: string
   ariaLabel: string
 }
 
@@ -215,12 +242,18 @@ export function mergeParts(
         } as MergedFeaturedVideo
       : undefined
 
+    const meta: PartMeta = {
+      steps:     activityPlan?.length ?? 0,
+      materials: assetMaterials.filter(m => m.href !== '' && !m.isGuide).length,
+      videos:    assets?.featuredVideo?.videoSrc ? 1 : 0,
+    }
+
     return {
       ...tp,
       number,
       anchorId: partDef.anchorId,
       titleKey,
-      meta:     modulePartsMeta[partDef.anchorId],
+      meta,
       bundle,
       included: tp.included
         ? { ...tp.included, ...(materials !== undefined ? { materials } : {}), activityPlan }
@@ -251,14 +284,14 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What Is a Digital Environment?
           id: '1.1.2',
-          posterSrc: '/src/assets/images/learning-hub/video-posters/1.1.2_DigitalEnvironment_video_thumbnail.png',
+          posterSrc: '/images/video-posters/1.1.2_DigitalEnvironment_video_thumbnail.png',
           videoSrc: '/materials/digital-citizenship/part1/videos/1.1.2_DigitalEnvironment_video.mp4',
           downloads: {
             video: 
             { href: '/materials/digital-citizenship/part1/videos/1.1.2_DigitalEnvironment_video.mp4'
             },
             subtitles: 
-            { href: '/materials/digital-citizenship/part1/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-citizenship/part1/videos/subtitles.zip'
             },
           },
           tracks: [
@@ -295,15 +328,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Responsible Citizen
           { id: '1.2.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet A: Rights, Responsibilities and Respect
           { id: '1.2.2a',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet B: Rights, Responsibilities and Respect
           { id: '1.2.2b',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -317,19 +350,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Feeling Safe
           { id: '1.3.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Feeling Unsafe
           { id: '1.3.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Application Privacy Settings
           { id: '1.3.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Privacy Settings Strategy
           { id: '1.3.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -342,7 +375,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-citizenship/part3/videos/1.3.3_PrivacySettings_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-citizenship/part3/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-citizenship/part3/videos/subtitles.zip'
             },
           },
           tracks: [
@@ -352,19 +385,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -386,7 +419,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-citizenship/part4/videos/1.4.1_Resilience_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-citizenship/part4/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-citizenship/part4/videos/subtitles.zip'
             },
           },
           tracks: [
@@ -396,19 +429,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -423,15 +456,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Digital Footprint
           { id: '1.5.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Scenario Cards: Good and Bad to Post
           { id: '1.5.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Scenario Cards: Social Media Posts
           { id: '1.5.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -449,11 +482,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Worksheet: Trusteees: People Around Me
           { id: '2.1.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Circles of Trust
           { id: '2.1.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -467,19 +500,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Cards: Identify the Behaviour
           { id: '2.2.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Cards: Recognise the Characters
           { id: '2.2.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Attacker Motivations
           { id: '2.2.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Attack Analysis
           { id: '2.2.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -492,29 +525,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/attacker-perspective/part2/videos/2.2.3_WhoIsBehindCyberAttacks_video.mp4'
             },
             subtitles:
-            { href: '/materials/attacker-perspective/part2/videos/subtitles/subtitles.zip'
+            { href: '/materials/attacker-perspective/part2/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -529,11 +562,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Situation: Smishing and Impersonation
           { id: '2.3.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Common Adversary Techniques
           { id: '2.3.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -551,19 +584,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Online Identity
           { id: '3.1.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Images: Examples of Personal Digital Assets
           { id: '3.1.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: What Would Happen if ...?
           { id: '3.1.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: My Digital Assets
           { id: '3.1.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -576,29 +609,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part1/videos/3.1.2_WhatIsDigitalIdentity_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part1/videos/subtitles/subtitles.zip'
+            { href: '/materials/authentication/part1/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -613,15 +646,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Images: Real-world Authentication Examples
           { id: '3.2.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Logging Into a Digital System
           { id: '3.2.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Authentication in Everday Life
           { id: '3.2.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -634,29 +667,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part2/videos/3.2.2_WhatIsAuthentication_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part2/videos/subtitles/subtitles.zip'
+            { href: '/materials/authentication/part2/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -671,23 +704,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Examples of Weak Passwords
           { id: '3.3.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Examples of Strong Passwords
           { id: '3.3.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Cards: Create a Strong Password
           { id: '3.3.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Check your Password
           { id: '3.3.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: My Strong Password Rules
           { id: '3.3.6',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -700,29 +733,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part3/videos/3.3.1_StrongAndWeakPasswords_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part3/videos/subtitles/subtitles.zip'
+            { href: '/materials/authentication/part3/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -737,39 +770,39 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Two Different Types of Authentication Used Together
           { id: '3.4.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Schema: Set of Money Coins
           { id: '3.4.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Schema: Set of Groups
           { id: '3.4.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Schema: PIN Cards
           { id: '3.4.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Images: How to Use a Password Manager
           { id: '3.4.6',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Password Manager Vault
           { id: '3.4.7',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Password Manager as a Digital Keyring
           { id: '3.4.8',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Steps of Saving Passwords
           { id: '3.4.9',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Password Problems and Solutions
           { id: '3.4.10',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -782,29 +815,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part4/videos/3.4.5_WhatIsPasswordManager_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part4/videos/subtitles/subtitles.zip'
+            { href: '/materials/authentication/part4/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -819,50 +852,50 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Safe and Unsafe Online Behaviours
           { id: '3.5.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Digital Identity and Authentication Scenarios
           { id: '3.5.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: How I Protect My Digital Identity
           { id: '3.5.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
           // Protecting Your Digital Identity
           id: '3.5.2',
-          posterSrc: '/materials/authentication/part5/videos/3.5.2_ProtectingYourDigitalIdentity_video.mp4',
-          videoSrc: '',
+          posterSrc: '',
+          videoSrc: '/materials/authentication/part5/videos/3.5.2_ProtectingYourDigitalIdentity_video.mp4',
           downloads: {
             video:
             { href: '/materials/authentication/part5/videos/3.5.2_ProtectingYourDigitalIdentity_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part5/videos/subtitles/subtitles.zip'
+            { href: '/materials/authentication/part5/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -881,11 +914,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Sorting Cards: Public or Private
           { id: '4.1.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Reflection on Public vs Private Data
           { id: '4.1.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -898,29 +931,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/data-privacy/part1/videos/4.1.2_WhatIsPrivateData_video.mp4'
             },
             subtitles:
-            { href: '/materials/data-privacy/part1/videos/subtitles/subtitles.zip'
+            { href: '/materials/data-privacy/part1/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -935,15 +968,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Scenario Cards: Roleplay
           { id: '4.2.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Sharing Online: Safe vs Risky
           { id: '4.2.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Share or Don't Share?
           { id: '4.2.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -957,11 +990,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Comic Story: A Day in the Life of Sam Online
           { id: '4.3.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Track Sam's Footprint
           { id: '4.3.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -974,29 +1007,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/data-privacy/part3/videos/4.3.1_WhatIsDigitalFootprint_video.mp4'
             },
             subtitles:
-            { href: '/materials/data-privacy/part3/videos/subtitles/subtitles.zip'
+            { href: '/materials/data-privacy/part3/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1011,11 +1044,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Checklist: Digital Footprint Cleanup Checklist
           { id: '4.4.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Privacy Settings Guide
           { id: '4.4.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -1033,19 +1066,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Tricking People vs Hacking Systems
           { id: '5.1.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Image: Examples of Social Engineering Messages
           { id: '5.1.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Situation Assessment: What Does an Attacker Want?
           { id: '5.1.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Understanding Social Engineering
           { id: '5.1.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1058,29 +1091,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/social-engineering/part1/videos/5.1.1_WhatIsSocialEngineering_video.mp4'
             },
             subtitles:
-            { href: '/materials/social-engineering/part1/videos/subtitles/subtitles.zip'
+            { href: '/materials/social-engineering/part1/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1095,19 +1128,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Human Decision-making vs Computer Decision-making
           { id: '5.2.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Scenario Cards: Emotional Manipulation Examples
           { id: '5.2.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Game Cards: Attacker Tactics
           { id: '5.2.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Why Social Engineering Works
           { id: '5.2.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -1121,15 +1154,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Examples of Social Engineering Messages
           { id: '5.3.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Scenario Cards: Social Engineering Situations
           { id: '5.3.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Spot the Social Engineering
           { id: '5.3.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1142,29 +1175,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/social-engineering/part3/videos/5.3.1_TypesOfSocialEngineering_video.mp4'
             },
             subtitles:
-            { href: '/materials/social-engineering/part3/videos/subtitles/subtitles.zip'
+            { href: '/materials/social-engineering/part3/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1179,23 +1212,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Scenario Cards: What Would You Do?
           { id: '5.4.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Checklist: Stop, Think, Check, Ask
           { id: '5.4.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Stop, Think, Check, Ask
           { id: '5.4.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Role Cards: Target, Helper, Bystander
           { id: '5.4.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Protecting Myself and Others
           { id: '5.4.5',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -1213,11 +1246,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Malicious + Software = Malware
           { id: '6.1.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: Related to Malware or Not?
           { id: '6.1.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1230,29 +1263,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/malware/part1/videos/6.1.2_WhatIsMalware_video.mp4'
             },
             subtitles:
-            { href: '/materials/malware/part1/videos/subtitles/subtitles.zip'
+            { href: '/materials/malware/part1/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1267,15 +1300,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Schema: Set of Coins
           { id: '6.2.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Schema: Knot Ties Board
           { id: '6.2.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Sheet: Malware Properties
           { id: '6.2.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1288,29 +1321,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/malware/part2/videos/6.2.1_IntroducingMalwareTypes_video.mp4'
             },
             subtitles:
-            { href: '/materials/malware/part2/videos/subtitles/subtitles.zip'
+            { href: '/materials/malware/part2/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1325,19 +1358,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Worksheet: List of Indicators
           { id: '6.3.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Reading: Recognising Malware
           { id: '6.3.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Poster: Seven Indicators
           { id: '6.3.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Table: Situation and Indicators
           { id: '6.3.4',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -1351,15 +1384,15 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Situation: Malware and Data Theft?
           { id: '6.4.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Poster: DOs and DON'Ts
           { id: '6.4.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
           // Worksheet: A Shield Against Malware
           { id: '6.4.3',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -1377,7 +1410,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Game: Truth Detectives
           { id: '7.1.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1390,29 +1423,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part1/videos/7.1.1_WhatIsMisinformation_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part1/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-abuse/part1/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1435,29 +1468,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part2/videos/7.2.2_WhatIsDisinformation_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part2/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-abuse/part2/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1472,7 +1505,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Game: Act it Out!
           { id: '7.3.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1485,29 +1518,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part3/videos/7.3.2_WhatIsCyberbullying_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part3/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-abuse/part3/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1522,7 +1555,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Game: Real or Fake?
           { id: '7.4.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
@@ -1536,7 +1569,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Scenarios: Examples of Influencers Posts That Are Potentially Harmful and Not Harmful
           { id: '7.5.2',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
@@ -1549,29 +1582,29 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part5/videos/7.5.1_SocialMediaInfluencers_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part5/videos/subtitles/subtitles.zip'
+            { href: '/materials/digital-abuse/part5/videos/subtitles.zip'
             },
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Czech',
               srclang: 'cs',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Norwegian',
               srclang: 'no',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'Lithuanian',
               srclang: 'lt',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
             { label: 'German',
               srclang: 'de',
-              src: ''
+              src: '/materials/placeholder.vtt'
             },
           ],
         },
@@ -1586,10 +1619,25 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Activity: Safety Superhero Suggestion Pack
           { id: '7.6.1',
-            href: ''
+            href: '/materials/placeholder.txt'
           },
         ],
       },
     },
   ],
+}
+
+// ── Count helpers (derived from modulePartsData) ──────────────────────────────
+
+export function getModuleMaterialCount(id: ModuleId): number {
+  return (modulePartsData[id] ?? []).reduce(
+    (sum, p) => sum + (p.assets?.materials?.filter(m => m.href !== '' && !m.isGuide).length ?? 0),
+    0
+  )
+}
+
+export function getModuleVideoCount(id: ModuleId): number {
+  return (modulePartsData[id] ?? []).filter(
+    p => !!p.assets?.featuredVideo?.videoSrc
+  ).length
 }

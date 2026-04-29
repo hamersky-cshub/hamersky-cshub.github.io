@@ -3,28 +3,20 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
 import { localizePath } from 'src/i18n/i18n'
 import { useTranslations } from 'src/i18n/index'
-import Image from 'astro/components/Image.astro'
 import { modules as moduleData } from 'src/data/modules'
 import { modulePartsData } from 'src/data/moduleParts'
-import DigitalCitizenship from '/src/assets/images/learning-hub/01_digital-citizenship.png'
-import AttackerPerspective from '/src/assets/images/learning-hub/02_attacker-perspective.png'
-import AuthenticationImage from '/src/assets/images/learning-hub/03_authentication.png'
-import DataPrivacyImage from '/src/assets/images/learning-hub/04_data-privacy.png'
-import SocialEngineeringImage from '/src/assets/images/learning-hub/05_social-engineering.png'
-import MalwareImage from '/src/assets/images/learning-hub/06_malware.png'
-import DigitalAbuseImage from '/src/assets/images/learning-hub/07_digital-abuse.png'
 
 const locale = Astro.currentLocale
 const { t } = useTranslations(locale)
 
-const imageMap = {
-  dc: DigitalCitizenship,
-  ap: AttackerPerspective,
-  at: AuthenticationImage,
-  dp: DataPrivacyImage,
-  se: SocialEngineeringImage,
-  mw: MalwareImage,
-  da: DigitalAbuseImage,
+const imageMap: Record<string, string> = {
+  dc: '/images/learning-hub/01_digital-citizenship.png',
+  ap: '/images/learning-hub/02_attacker-perspective.png',
+  at: '/images/learning-hub/03_authentication.png',
+  dp: '/images/learning-hub/04_data-privacy.png',
+  se: '/images/learning-hub/05_social-engineering.png',
+  mw: '/images/learning-hub/06_malware.png',
+  da: '/images/learning-hub/07_digital-abuse.png',
 }
 
 const modules = moduleData.map(m => ({
@@ -123,7 +115,7 @@ const localizedModules = modules.map((module) => {
     panelSurface: rgba(module.color, 0.08),
     panelSurfaceStrong: rgba(module.color, 0.14),
     dividerColor: rgba(module.color, 0.28),
-    parts: introParts.length,
+    parts: modulePartsData[module.id].length,
     introParts,
   }
 })
@@ -147,7 +139,7 @@ const localizedModules = modules.map((module) => {
             >
               <div class="module-intro-grid">
                 <div class="module-poster">
-                  <Image class="module-poster-image" src={module.img} alt={module.title} loading="lazy" />
+                  <img class="module-poster-image" src={module.img} alt={module.title} loading="lazy" />
                 </div>
 
                 <div class="module-copy">
@@ -156,40 +148,46 @@ const localizedModules = modules.map((module) => {
                   </h2>
 
                   <div class="module-meta" aria-label={`${module.title} ${t('hub.moduleSummaryAriaSuffix')}`}>
-                    <span class="meta-item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-                      </svg>
-                      {t('hub.parts')}: {module.parts}
-                    </span>
-                    <span class="meta-item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/>
-                      </svg>
-                      {t('hub.materials')}: {module.materials}
-                    </span>
-                    <span class="meta-item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
-                      </svg>
-                      {t('hub.videos')}: {module.videos}
-                    </span>
-                    <span class="meta-item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                      </svg>
-                       {t('hub.challenges')}: {module.challenges}
-                    </span>
-                    {
-                      module.games ? (
-                        <span class="meta-item">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="0.8" fill="currentColor" stroke="none"/><circle cx="17" cy="13" r="0.8" fill="currentColor" stroke="none"/><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1c0 1-0.5 2-1 2.5L19 17a3 3 0 0 1-2.5 1.5h-9A3 3 0 0 1 5 17l-2-4.5C2.5 12 2 11 2 10V9z"/>
-                          </svg>
-                          {t('hub.games')}: {module.games}
-                        </span>
-                      ) : null
-                    }
+                    {module.parts ? (
+                      <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        {t('hub.parts')}: {module.parts}
+                      </span>
+                    ) : null}
+                    {module.materials ? (
+                      <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/>
+                        </svg>
+                        {t('hub.materials')}: {module.materials}
+                      </span>
+                    ) : null}
+                    {module.videos ? (
+                      <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+                        </svg>
+                        {t('hub.videos')}: {module.videos}
+                      </span>
+                    ) : null}
+                    {module.challenges ? (
+                      <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                        {t('hub.challenges')}: {module.challenges}
+                      </span>
+                    ) : null}
+                    {module.games ? (
+                      <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="0.8" fill="currentColor" stroke="none"/><circle cx="17" cy="13" r="0.8" fill="currentColor" stroke="none"/><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1c0 1-0.5 2-1 2.5L19 17a3 3 0 0 1-2.5 1.5h-9A3 3 0 0 1 5 17l-2-4.5C2.5 12 2 11 2 10V9z"/>
+                        </svg>
+                        {t('hub.games')}: {module.games}
+                      </span>
+                    ) : null}
                   </div>
 
                   <p class="module-description">{module.description}</p>

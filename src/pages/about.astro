@@ -1,18 +1,6 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
-import { Image } from 'astro:assets'
-import Mission from '/src/assets/images/about/mission.png'
-import Collaboration from '/src/assets/images/about/collaboration.png'
-import Impact from '/src/assets/images/about/scalable.png'
-import International from '/src/assets/images/about/international.png'
-import Adaptable from '/src/assets/images/about/adaptable.png'
-import Cohesion from '/src/assets/images/about/european.png'
-import LogoUniLi from '/src/assets/images/about/Universität_Liechtenstein_logo.svg'
-import LogoCSH from '/src/assets/images/about/cyberSecurityHubCZ-logo-black_cut.png'
-import LogoInland from '/src/assets/images/about/University_of_Inland_Norway_logo.svg.png'
-import LogoInnsbruck from '/src/assets/images/about/Universitaet-innsbruck-logo-rgb-farbe.svg.png'
-import LogoVilnius from '/src/assets/images/about/Logo_vilnius_university.png'
 import { useTranslations } from '../i18n/index'
 
 const { t } = useTranslations(Astro.currentLocale)
@@ -39,7 +27,7 @@ const { t } = useTranslations(Astro.currentLocale)
         <p class="text-xl mt-8">{t('about.missionP2')}</p>
         <p class="text-xl mt-8">{t('about.missionP3')}</p>
         </div>
-        <Image class="float" src={Mission} alt="" decoding="async" loading="eager" />
+        <img class="float" src="/images/about/mission.png" alt="" decoding="async" loading="eager" />
         </div>
 
   <div class="divider" style="margin-top: var(--space-2xl); margin-bottom: var(--space-2xl);"></div>
@@ -56,7 +44,7 @@ const { t } = useTranslations(Astro.currentLocale)
               <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniLiechtenstein')}</h3>
               <p class="mt-4">{t('about.uniLiechtensteinDesc')}</p>
             </div>
-            <Image class="justify-self-center logo-image" src={LogoUniLi} alt="University of Liechtenstein logo" loading="lazy" />
+            <img class="justify-self-center logo-image" src="/images/about/Universität_Liechtenstein_logo.svg" alt="University of Liechtenstein logo" loading="lazy" />
           </div>
         </article>
 
@@ -66,7 +54,7 @@ const { t } = useTranslations(Astro.currentLocale)
               <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.cyberSecurityHub')}</h3>
               <p class="mt-4">{t('about.cyberSecurityHubDesc')}</p>
             </div>
-            <Image class="justify-self-center logo-image" src={LogoCSH} alt="CyberSecurity Hub logo" loading="lazy" />
+            <img class="justify-self-center logo-image" src="/images/about/cyberSecurityHubCZ-logo-black_cut.png" alt="CyberSecurity Hub logo" loading="lazy" />
           </div>
         </article>
 
@@ -76,7 +64,7 @@ const { t } = useTranslations(Astro.currentLocale)
               <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniInlandNorway')}</h3>
               <p class="mt-4">{t('about.uniInlandNorwayDesc')}</p>
             </div>
-            <Image class="justify-self-center logo-image" src={LogoInland} alt="University of Inland Norway logo" loading="lazy" />
+            <img class="justify-self-center logo-image" src="/images/about/University_of_Inland_Norway_logo.svg.png" alt="University of Inland Norway logo" loading="lazy" />
           </div>
         </article>
 
@@ -86,7 +74,7 @@ const { t } = useTranslations(Astro.currentLocale)
               <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniInnsbruck')}</h3>
               <p class="mt-4">{t('about.uniInnsbruckDesc')}</p>
             </div>
-            <Image class="justify-self-center logo-image" src={LogoInnsbruck} alt="University of Innsbruck logo" loading="lazy" />
+            <img class="justify-self-center logo-image" src="/images/about/Universitaet-innsbruck-logo-rgb-farbe.svg.png" alt="University of Innsbruck logo" loading="lazy" />
           </div>
         </article>
 
@@ -96,7 +84,7 @@ const { t } = useTranslations(Astro.currentLocale)
               <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.vilniusUni')}</h3>
               <p class="mt-4">{t('about.vilniusUniDesc')}</p>
             </div>
-            <Image class="justify-self-center logo-image" src={LogoVilnius} alt="Vilnius University logo" loading="lazy" />
+            <img class="justify-self-center logo-image" src="/images/about/Logo_vilnius_university.png" alt="Vilnius University logo" loading="lazy" />
           </div>
         </article>
       </div>
@@ -111,28 +99,28 @@ const { t } = useTranslations(Astro.currentLocale)
       <div class="core-values-grid mt-8 mb-16">
         <article class="core-value-card">
           <div class="core-value-media">
-            <Image src={Impact} alt="Scalable impact illustration" width={1000} height={1000} loading="lazy" />
+            <img src="/images/about/scalable.png" alt="Scalable impact illustration" loading="lazy" />
           </div>
           <h3 class="core-value-title">{t('about.scalableImpact')}</h3>
           <p class="core-value-description">{t('about.scalableImpactDesc')}</p>
         </article>
         <article class="core-value-card">
           <div class="core-value-media">
-            <Image src={International} alt="International collaboration illustration" width={1000} height={1000} loading="lazy" />
+            <img src="/images/about/international.png" alt="International collaboration illustration" loading="lazy" />
           </div>
           <h3 class="core-value-title">{t('about.internationalCollab')}</h3>
           <p class="core-value-description">{t('about.internationalCollabDesc')}</p>
         </article>
         <article class="core-value-card">
           <div class="core-value-media">
-            <Image src={Adaptable} alt="Practical and adaptable education illustration" width={1000} height={1000} loading="lazy" />
+            <img src="/images/about/adaptable.png" alt="Practical and adaptable education illustration" loading="lazy" />
           </div>
           <h3 class="core-value-title" set:html={t('about.practicalAdaptable')}></h3>
           <p class="core-value-description">{t('about.practicalAdaptableDesc')}</p>
         </article>
         <article class="core-value-card">
           <div class="core-value-media">
-            <Image src={Cohesion} alt="European digital cohesion illustration" width={1000} height={1000} loading="lazy" />
+            <img src="/images/about/european.png" alt="European digital cohesion illustration" loading="lazy" />
           </div>
           <h3 class="core-value-title">{t('about.europeanCohesion')}</h3>
           <p class="core-value-description">{t('about.europeanCohesionDesc')}</p>
@@ -149,7 +137,7 @@ const { t } = useTranslations(Astro.currentLocale)
 
 
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-center join grid-right">
-          <Image class="float" src={Collaboration} alt="" decoding="async" loading="eager" style="transform:scale(0.7)"/>
+          <img class="float" src="/images/about/collaboration.png" alt="" decoding="async" loading="eager" style="transform:scale(0.7)" />
           <div>
           <p class="text-xl mt-4">{t('about.getInvolvedP1')}</p>
           <p class="text-xl mt-8">{t('about.getInvolvedP2')}</p>

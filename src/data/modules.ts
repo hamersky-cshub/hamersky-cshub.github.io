@@ -1,4 +1,21 @@
+import { getModuleMaterialCount, getModuleVideoCount } from './moduleParts'
+
+const challengePages = import.meta.glob('../pages/learning-hub/*/challenge.astro')
+const gamePages = import.meta.glob('../pages/learning-hub/*/game.astro')
+
+function hasChallengeFile(slug: string): boolean {
+  return Object.keys(challengePages).some(k => k.includes(`/${slug}/`))
+}
+
+function hasGameFile(slug: string): boolean {
+  return Object.keys(gamePages).some(k => k.includes(`/${slug}/`))
+}
+
 export type ModuleId = 'dc' | 'ap' | 'at' | 'dp' | 'se' | 'mw' | 'da'
+
+export interface TeachersGuideAsset {
+  href: string
+}
 
 export interface ModuleData {
   id: ModuleId
@@ -8,6 +25,7 @@ export interface ModuleData {
   videos: number
   challenges: number
   games: number
+  teachersGuide: TeachersGuideAsset
 }
 
 export const modules: ModuleData[] = [
@@ -15,113 +33,87 @@ export const modules: ModuleData[] = [
     id: 'dc',
     slug: 'digital-citizenship',
     color: '#22C55E',
-    materials: 11,
-    videos: 3,
-    challenges: 1,
-    games: 0,
+    materials: getModuleMaterialCount('dc'),
+    videos: getModuleVideoCount('dc'),
+    challenges: hasChallengeFile('digital-citizenship') ? 1 : 0,
+    games: hasGameFile('digital-citizenship') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/digital-citizenship/teaching-guide/teaching-guide.zip',
+    },
   },
   {
     id: 'ap',
     slug: 'attacker-perspective',
     color: '#8850DF',
-    materials: 7,
-    videos: 1,
-    challenges: 1,
-    games: 0,
+    materials: getModuleMaterialCount('ap'),
+    videos: getModuleVideoCount('ap'),
+    challenges: hasChallengeFile('attacker-perspective') ? 1 : 0,
+    games: hasGameFile('attacker-perspective') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/attacker-perspective/teaching-guide/teaching-guide.zip',
+    },
   },
   {
     id: 'at',
     slug: 'authentication',
     color: '#F59E0B',
-    materials: 21,
-    videos: 5,
-    challenges: 1,
-    games: 1,
+    materials: getModuleMaterialCount('at'),
+    videos: getModuleVideoCount('at'),
+    challenges: hasChallengeFile('authentication') ? 1 : 0,
+    games: hasGameFile('authentication') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/authentication/teaching-guide/teaching-guide.zip',
+    },
   },
   {
     id: 'dp',
     slug: 'data-privacy',
     color: '#14B8A6',
-    materials: 9,
-    videos: 2,
-    challenges: 1,
-    games: 1,
+    materials: getModuleMaterialCount('dp'),
+    videos: getModuleVideoCount('dp'),
+    challenges: hasChallengeFile('data-privacy') ? 1 : 0,
+    games: hasGameFile('data-privacy') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/data-privacy/teaching-guide/teaching-guide.zip',
+    },
   },
   {
     id: 'se',
     slug: 'social-engineering',
     color: '#D946EF',
-    materials: 16,
-    videos: 2,
-    challenges: 1,
-    games: 1,
+    materials: getModuleMaterialCount('se'),
+    videos: getModuleVideoCount('se'),
+    challenges: hasChallengeFile('social-engineering') ? 1 : 0,
+    games: hasGameFile('social-engineering') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/social-engineering/teaching-guide/teaching-guide.zip',
+    },
   },
   {
     id: 'mw',
     slug: 'malware',
     color: '#93CC16',
-    materials: 13,
-    videos: 2,
-    challenges: 1,
-    games: 1,
+    materials: getModuleMaterialCount('mw'),
+    videos: getModuleVideoCount('mw'),
+    challenges: hasChallengeFile('malware') ? 1 : 0,
+    games: hasGameFile('malware') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/malware/teaching-guide/teaching-guide.zip',
+    },
   },
   {
     id: 'da',
     slug: 'digital-abuse',
     color: '#EF4444',
-    materials: 5,
-    videos: 4,
-    challenges: 1,
-    games: 1,
+    materials: getModuleMaterialCount('da'),
+    videos: getModuleVideoCount('da'),
+    challenges: hasChallengeFile('digital-abuse') ? 1 : 0,
+    games: hasGameFile('digital-abuse') ? 1 : 0,
+    teachersGuide: {
+      href: '/materials/digital-abuse/teaching-guide/teaching-guide.zip',
+    },
   },
 ]
-
-export interface PartMeta {
-  steps: number
-  materials: number
-  videos: number
-}
-
-export const modulePartsMeta: Record<string, PartMeta> = {
-  // Digital Citizenship
-  'digital-environments':                   { steps: 3, materials: 1, videos: 1 },
-  'digital-citizen':                        { steps: 4, materials: 3, videos: 0 },
-  'privacy-settings':                       { steps: 4, materials: 4, videos: 1 },
-  'wise-and-resilient':                     { steps: 4, materials: 0, videos: 1 },
-  'act-responsibly':                        { steps: 4, materials: 4, videos: 0 },
-  // Attacker Perspective
-  'circle-of-trustees':                     { steps: 2, materials: 2, videos: 0 },
-  'what-is-an-adversary':                   { steps: 4, materials: 3, videos: 1 },
-  'attacker-techniques':                    { steps: 4, materials: 2, videos: 0 },
-  // Authentication
-  'identity-and-digital-assets':            { steps: 1, materials: 1, videos: 1 },
-  'what-is-authentication':                 { steps: 5, materials: 3, videos: 1 },
-  'strong-usernames-and-passwords':         { steps: 5, materials: 7, videos: 1 },
-  'how-to-manage-passwords-securely':       { steps: 5, materials: 8, videos: 1 },
-  'how-to-protect-your-digital-identity':   { steps: 4, materials: 3, videos: 1 },
-  // Data Privacy
-  'what-is-private-data':                   { steps: 3, materials: 2, videos: 1 },
-  'data-sharing':                           { steps: 4, materials: 2, videos: 0 },
-  'digital-footprints':                     { steps: 4, materials: 3, videos: 1 },
-  'clean-up-digital-footprint':             { steps: 4, materials: 2, videos: 0 },
-  // Social Engineering
-  'what-is-social-engineering':             { steps: 5, materials: 4, videos: 1 },
-  'why-is-social-engineering-used':         { steps: 5, materials: 4, videos: 0 },
-  'recognising-social-engineering':         { steps: 5, materials: 3, videos: 1 },
-  'protecting-from-social-engineering':     { steps: 5, materials: 5, videos: 0 },
-  // Malware
-  'what-is-malware':                        { steps: 3, materials: 3, videos: 1 },
-  'malware-types':                          { steps: 3, materials: 3, videos: 1 },
-  'recognising-malware':                    { steps: 3, materials: 4, videos: 0 },
-  'protection-measures':                    { steps: 4, materials: 3, videos: 0 },
-  // Digital Abuse
-  'misinformation':                         { steps: 3, materials: 1, videos: 1 },
-  'disinformation':                         { steps: 4, materials: 0, videos: 1 },
-  'cyber-bullying':                         { steps: 3, materials: 1, videos: 1 },
-  'stranger-danger':                        { steps: 2, materials: 1, videos: 0 },
-  'influencers':                            { steps: 3, materials: 1, videos: 1 },
-  'deal-with-digital-abusers':              { steps: 2, materials: 1, videos: 0 },
-}
 
 export const moduleCount = modules.length
 export const challengeCount = modules.filter(m => m.challenges > 0).length

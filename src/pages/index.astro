@@ -4,10 +4,6 @@ import Hero from '@components/Hero.astro'
 import { Icon } from 'astro-icon/components'
 import { localizePath } from '../i18n/i18n'
 import { useTranslations } from '../i18n/index'
-import { Image } from 'astro:assets'
-import LearningModules from '/src/assets/images/index/learning-modules.png'
-import Challenges from '/src/assets/images/index/challenges.png'
-import CybersecurityGames from '/src/assets/images/index/cybersecurity-games.png'
 import { moduleCount, challengeCount, gameCount } from '../data/modules'
 
 const about = localizePath(Astro.currentLocale, '/about')
@@ -38,7 +34,7 @@ const { t } = useTranslations(Astro.currentLocale)
 
       <div class="learning-modules-grid-left">
         <div class="modules-image">
-          <Image class="hidden xl:block floating-image1" src={LearningModules} alt="Open learning module book illustration" decoding="async" loading="eager" />
+          <img class="hidden xl:block floating-image1" src="/images/index/learning-modules.png" alt="Open learning module book illustration" decoding="async" loading="eager" />
         </div>
         <div class="modules-content">
           <div>
@@ -56,13 +52,13 @@ const { t } = useTranslations(Astro.currentLocale)
           <p class="md:text-2xl">{t('home.challengesText')}</p>
         </div>
         <div class="modules-image">
-          <Image class="hidden xl:block floating-image2" src={Challenges} alt="Puzzle pieces illustration representing interactive challenges" decoding="async" loading="eager" />
+          <img class="hidden xl:block floating-image2" src="/images/index/challenges.png" alt="Puzzle pieces illustration representing interactive challenges" decoding="async" loading="eager" />
         </div>
       </div>
 
       <div class="learning-modules-grid-left">
         <div class="modules-image">
-          <Image class="hidden xl:block floating-image3" src={CybersecurityGames} alt="Game controller illustration representing cybersecurity games" decoding="async" loading="eager" />
+          <img class="hidden xl:block floating-image3" src="/images/index/cybersecurity-games.png" alt="Game controller illustration representing cybersecurity games" decoding="async" loading="eager" />
         </div>
         <div class="modules-content">
           <div>

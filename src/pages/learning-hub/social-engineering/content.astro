@@ -6,43 +6,34 @@ import { localizePath } from 'src/i18n/i18n'
 import { getModule } from 'src/data/modules'
 import type { ModuleId } from 'src/data/modules'
 import { modulePartsData, mergeParts } from 'src/data/moduleParts'
+import type { TranslationPart, TeachersGuide, RelatedModuleCard, MergedPart, MergedMaterial, MergedActivityStep } from 'src/data/moduleParts'
 import { useTranslations } from 'src/i18n/index'
-import { Image } from 'astro:assets'
-import Aim from '/src/assets/images/learning-hub/aim.png'
-import Objectives from '/src/assets/images/learning-hub/objectives.png'
-import Outcomes from '/src/assets/images/learning-hub/outcomes.png'
-import DigitalCitizenship from '/src/assets/images/learning-hub/01_digital-citizenship.png'
-import AttackerPerspective from '/src/assets/images/learning-hub/02_attacker-perspective.png'
-import AuthenticationImage from '/src/assets/images/learning-hub/03_authentication.png'
-import DataPrivacyImage from '/src/assets/images/learning-hub/04_data-privacy.png'
-import SocialEngineeringImage from '/src/assets/images/learning-hub/05_social-engineering.png'
-import MalwareImage from '/src/assets/images/learning-hub/06_malware.png'
-import DigitalAbuseImage from '/src/assets/images/learning-hub/07_digital-abuse.png'
 
 const locale = Astro.currentLocale
 const { t, v } = useTranslations(locale)
 
 const objectives = v<ReadonlyArray<string>>('contentSE.objectives') ?? []
 const outcomes = v<ReadonlyArray<string>>('contentSE.outcomes') ?? []
-const teachersGuide = v<Record<string, any>>('contentSE.teachersGuide') ?? {}
-const parts = mergeParts('se', v<ReadonlyArray<Record<string, any>>>('contentSE.parts') ?? [])
-const relatedModuleCards = (v<ReadonlyArray<Record<string, any>>>('contentSE.relatedModuleCards') ?? []).map(card => { const mod = getModule(card.moduleId as ModuleId); if (!mod) return card; return { ...card, parts: modulePartsData[mod.id].length, materials: mod.materials, videos: mod.videos, challenges: mod.challenges, games: mod.games } })
+const teachersGuide = v<TeachersGuide>('contentSE.teachersGuide') ?? {}
+const currentModule = getModule('se')!
+const parts = mergeParts('se', v<ReadonlyArray<TranslationPart>>('contentSE.parts') ?? [])
+const relatedModuleCards = (v<ReadonlyArray<RelatedModuleCard>>('contentSE.relatedModuleCards') ?? []).map(card => { const mod = getModule(card.moduleId); if (!mod) return card; return { ...card, parts: modulePartsData[mod.id].length, materials: mod.materials, videos: mod.videos, challenges: mod.challenges, games: mod.games } })
 
 const hasCount = (value: unknown): value is number => typeof value === 'number' && value > 0
 
 const formatCount = (count: number, singularKey: string, pluralKey: string) =>
   `${count} ${t(count === 1 ? singularKey : pluralKey)}`
 
-const getPartTitle = (part: Record<string, any>) => (part.titleKey ? t(part.titleKey) : String(part.title ?? ''))
+const getPartTitle = (part: MergedPart) => (part.titleKey ? t(part.titleKey) : String(part.title ?? ''))
 
 const moduleImages = {
-  dc: DigitalCitizenship,
-  ap: AttackerPerspective,
-  at: AuthenticationImage,
-  dp: DataPrivacyImage,
-  se: SocialEngineeringImage,
-  mw: MalwareImage,
-  da: DigitalAbuseImage,
+  dc: '/images/learning-hub/01_digital-citizenship.png',
+  ap: '/images/learning-hub/02_attacker-perspective.png',
+  at: '/images/learning-hub/03_authentication.png',
+  dp: '/images/learning-hub/04_data-privacy.png',
+  se: '/images/learning-hub/05_social-engineering.png',
+  mw: '/images/learning-hub/06_malware.png',
+  da: '/images/learning-hub/07_digital-abuse.png',
 }
 ---
 
@@ -55,10 +46,10 @@ const moduleImages = {
       buttons={[
         { 
           text: t('contentPage.downloadGuide'), 
-          href: "/materials/social-engineering/teaching-guide/teaching-guide.zip", 
-          variant: "primary", 
-          icon: "lucide:download", 
-          download: "Social Engineering Teaching Guide" 
+          href: currentModule.teachersGuide.href,
+          variant: "primary",
+          icon: "lucide:download",
+          download: teachersGuide.download ?? '',
         },
         { 
           text: t('contentPage.downloadAll'), 
@@ -79,16 +70,16 @@ const moduleImages = {
         <div class="se-tabs">
           <div class="se-tabs__bar" role="tablist">
             <button class="se-tab" role="tab" aria-selected="true" data-panel="aoo-aim">
-              <img class="se-tab-img-icon" src={Aim.src} alt="" aria-hidden="true" />
+              <img class="se-tab-img-icon" src="/images/learning-hub/aim.png" alt="" aria-hidden="true" />
               {t('contentPage.aimTitle')}
             </button>
             <button class="se-tab" role="tab" aria-selected="false" data-panel="aoo-objectives">
-              <img class="se-tab-img-icon" src={Objectives.src} alt="" aria-hidden="true" />
+              <img class="se-tab-img-icon" src="/images/learning-hub/objectives.png" alt="" aria-hidden="true" />
               {t('contentPage.objectivesTitle')}
               <span class="se-tab__badge">{objectives.length}</span>
             </button>
             <button class="se-tab" role="tab" aria-selected="false" data-panel="aoo-outcomes">
-              <img class="se-tab-img-icon" src={Outcomes.src} alt="" aria-hidden="true" />
+              <img class="se-tab-img-icon" src="/images/learning-hub/outcomes.png" alt="" aria-hidden="true" />
               {t('contentPage.outcomesTitle')}
               <span class="se-tab__badge">{outcomes.length}</span>
             </button>
@@ -140,8 +131,8 @@ const moduleImages = {
               <div class="se-package-btn-wrap">
                 <a
                   class="button has-icon se-package-btn"
-                  href="/materials/social-engineering/teaching-guide/teaching-guide.zip"
-                  download="Social Engineering Teaching Guide"
+                  href={currentModule.teachersGuide.href}
+                  download={teachersGuide.download ?? ''}
                   aria-label={String(teachersGuide.ariaLabel ?? '')}
                 >
                   <Icon name="lucide:download" />
@@ -253,7 +244,7 @@ const moduleImages = {
                             hidden={firstPanel !== 'materials'}
                           >
                             <ul class="se-step-list">
-                              {partMaterials.map((item: any, i: number) => (
+                              {partMaterials.map((item: MergedMaterial, i: number) => (
                                 <li class="se-step-item">
                                   <span class="se-step-num">{String(i + 1).padStart(2, '0')}</span>
                                   <p class="se-step-title"><b>{String(item.kind ?? '')}:</b> {String(item.name ?? '')}</p>
@@ -280,7 +271,7 @@ const moduleImages = {
                             hidden={firstPanel !== 'activity'}
                           >
                             <ul class="se-step-list">
-                              {partActivity.map((step: any) => (
+                              {partActivity.map((step: MergedActivityStep) => (
                                 <li class="se-step-item se-step-item--plain">
                                   <span class="se-step-num">{String(step.stepNumber ?? 0).padStart(2, '0')}</span>
                                   <p class="se-step-title"><b>{t('contentPage.stepSingular')} {String(step.stepNumber ?? '')}:</b> {String(step.title ?? '')}</p>
@@ -305,7 +296,7 @@ const moduleImages = {
                                   poster={String(featuredVideo.posterSrc ?? '')}
                                 >
                                   <source src={String(featuredVideo.videoSrc ?? '')} />
-                                  {((featuredVideo.tracks ?? []) as any[]).map((track: any) => (
+                                  {(featuredVideo.tracks ?? []).map((track) => (
                                     <track
                                       label={String(track.label ?? '')}
                                       kind="subtitles"
@@ -381,7 +372,7 @@ const moduleImages = {
                 style={`--rm-color: ${brandVar};`}
               >
                 <div class="se-rm-icon">
-                  <Image src={image} alt="" decoding="async" loading="eager" />
+                  <img src={image} alt="" decoding="async" loading="eager" />
                 </div>
                 <div class="se-rm-body">
                   <strong class="se-rm-title">{title}</strong>

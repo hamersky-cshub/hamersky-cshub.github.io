@@ -1,7 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { Image } from 'astro:assets'
-import heroImg from '../assets/images/index/robot-intro.png'
 import { localizePath } from '../i18n/i18n'
 import { useTranslations } from '../i18n/index'
 
@@ -43,7 +41,7 @@ const { t } = useTranslations(Astro.currentLocale)
         </div>
       </div>
       <div style="z-index: 5;">
-        <Image class="hidden xl:block floating-image" src={heroImg} alt="" decoding="async" loading="eager" />
+        <img class="hidden xl:block floating-image" src="/images/index/robot-intro.png" alt="" decoding="async" loading="eager" />
       </div>
     </div>
   </div>

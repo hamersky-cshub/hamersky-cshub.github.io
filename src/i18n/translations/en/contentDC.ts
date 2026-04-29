@@ -49,6 +49,10 @@ export const contentDC = {
     'I can explain what digital citizenship is and why it is important.',
     'I can discuss the principles of rights, responsibility and respect in digital environments, including how to stay safe, act savvy and engage socially.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Digital Citizenship Teaching Guide',
+  },
   parts: [
     {
       goal: 'Help students understand what a digital environment is and positive aspects of this.',
@@ -258,18 +262,21 @@ export const contentDC = {
             // ID: 1.5.1
             kind: 'Image',
             name: 'Digital Footprint',
+            filename: 'Image - Digital Footprint',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.5.2
             kind: 'Scenario Cards',
             name: 'Good and Bad to Post',
+            filename: 'Scenario Cards - Good and Bad to Post',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.5.3
             kind: 'Scenario Cards',
             name: 'Social Media Posts',
+            filename: 'Scenario Cards - Social Media Posts',
             ariaLabel: 'Download material',
           },
         ],
@@ -295,7 +302,7 @@ export const contentDC = {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/src/assets/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
       description:
         'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
@@ -303,7 +310,7 @@ export const contentDC = {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/src/assets/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.png',
       description:
         'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
@@ -311,7 +318,7 @@ export const contentDC = {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/src/assets/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.png',
       description:
         'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
@@ -319,7 +326,7 @@ export const contentDC = {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/src/assets/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.png',
       description:
         'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
@@ -327,7 +334,7 @@ export const contentDC = {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/src/assets/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.png',
       description:
         'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
@@ -335,7 +342,7 @@ export const contentDC = {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/src/assets/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.png',
       description:
         'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },

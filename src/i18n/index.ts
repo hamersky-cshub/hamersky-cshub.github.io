@@ -8,13 +8,14 @@ type DeepString<T> =
   T extends string ? string :
   T extends number ? number :
   T extends boolean ? boolean :
-  T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepString<U>> :
+  T extends ReadonlyArray<infer U> ? DeepString<U>[] :
   T extends object ? { [K in keyof T]: DeepString<T[K]> } :
   T
 export type Translations = DeepString<typeof en>
 
 // Locales may be partially translated; `t()` will fall back to English per-key.
-const translationMap: Record<string, Partial<Translations>> = { en, cs, de, lt, no }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const translationMap: Record<string, Partial<Translations>> = { en, cs, de, lt, no } as any
 
 function resolve(obj: unknown, path: string): unknown {
   return path.split('.').reduce<unknown>((cur, key) => {

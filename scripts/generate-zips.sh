@@ -15,7 +15,7 @@ while IFS= read -r dir; do
   (cd "$dir" && rm -f "teaching-guide.zip" && zip -r "teaching-guide.zip" . -x "teaching-guide.zip")
 done < <(find "$MATERIALS" -type d -name "teaching-guide")
 
-# 3. partN/partN.zip — full part content; subtitles.zip at root (not inside videos/subtitles/ folder)
+# 3. partN/partN.zip — full part content; subtitles.zip inside videos/ folder
 while IFS= read -r dir; do
   part=$(basename "$dir")
   echo "Zipping part: $dir"
@@ -24,7 +24,9 @@ while IFS= read -r dir; do
     rm -f "${part}.zip"
     zip -r "${part}.zip" . -x "${part}.zip" -x "videos/subtitles/*"
     if [ -f "videos/subtitles/subtitles.zip" ]; then
-      zip -j "${part}.zip" "videos/subtitles/subtitles.zip"
+      cp "videos/subtitles/subtitles.zip" "videos/subtitles.zip"
+      zip "${part}.zip" "videos/subtitles.zip"
+      rm "videos/subtitles.zip"
     fi
   )
 done < <(find "$MATERIALS" -mindepth 2 -maxdepth 2 -type d -name "part*")
