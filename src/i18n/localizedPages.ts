@@ -1,3 +1,16 @@
+// ---------------------------------------------------------------------------
+// Localized routing helper
+//
+// English pages in src/pages/ are the canonical source — they are written
+// once and served at their natural URL (e.g. /learning-hub/malware/content).
+// Every non-English locale gets a catch-all route (pages/cs/[...slug].astro,
+// pages/de/[...slug].astro, etc.) that dynamically renders the matching
+// English source component while Astro supplies the correct locale context.
+//
+// This file builds the map that makes that handoff work:
+//   route string  →  lazy page loader function
+// ---------------------------------------------------------------------------
+
 type PageLoader = () => Promise<{ default: unknown }>
 
 const pageModules = import.meta.glob('../pages/**/*.{astro,md,mdx}') as Record<string, PageLoader>
@@ -13,6 +26,8 @@ const toRoute = (filePath: string): string => {
   return routePath.endsWith('/index') ? routePath.slice(0, -'/index'.length) : routePath
 }
 
+// Pages under pages/cs/, pages/de/, etc. ARE the locale wrappers themselves —
+// they must not be registered as source pages or we'd get infinite recursion.
 const isLocalizedWrapper = (filePath: string): boolean => {
   const relativePath = filePath.replace('../pages/', '')
   const firstSegment = relativePath.split('/')[0]
@@ -27,10 +42,13 @@ const isRoutableSourcePage = (filePath: string): boolean => {
 
   const route = toRoute(filePath)
 
+  // 404 is locale-independent; Astro handles it separately.
   if (route === '404') {
     return false
   }
 
+  // Dynamic routes (e.g. [slug].astro) manage their own getStaticPaths —
+  // registering them here would produce duplicate or conflicting entries.
   return !route.split('/').some((segment) => segment.startsWith('[') && segment.endsWith(']'))
 }
 
@@ -38,6 +56,8 @@ const localizedPageEntries = Object.entries(pageModules)
   .filter(([filePath]) => isRoutableSourcePage(filePath))
   .map(([filePath, loadPage]) => [toRoute(filePath), loadPage] as const)
 
+// Keyed by route string so LocalizedPageRoute.astro can look up a loader
+// for any slug the catch-all receives at request time.
 const localizedPageMap = new Map(localizedPageEntries)
 
 export const getLocalizedPageLoader = (route: string) => localizedPageMap.get(route)

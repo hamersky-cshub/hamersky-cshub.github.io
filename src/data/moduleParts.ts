@@ -291,7 +291,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-citizenship/part1/videos/1.1.2_DigitalEnvironment_video.mp4'
             },
             subtitles: 
-            { href: '/materials/digital-citizenship/part1/videos/subtitles.zip'
+            { href: '/materials/digital-citizenship/part1/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -375,7 +375,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-citizenship/part3/videos/1.3.3_PrivacySettings_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-citizenship/part3/videos/subtitles.zip'
+            { href: '/materials/digital-citizenship/part3/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -419,7 +419,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-citizenship/part4/videos/1.4.1_Resilience_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-citizenship/part4/videos/subtitles.zip'
+            { href: '/materials/digital-citizenship/part4/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -525,7 +525,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/attacker-perspective/part2/videos/2.2.3_WhoIsBehindCyberAttacks_video.mp4'
             },
             subtitles:
-            { href: '/materials/attacker-perspective/part2/videos/subtitles.zip'
+            { href: '/materials/attacker-perspective/part2/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -609,7 +609,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part1/videos/3.1.2_WhatIsDigitalIdentity_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part1/videos/subtitles.zip'
+            { href: '/materials/authentication/part1/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -667,7 +667,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part2/videos/3.2.2_WhatIsAuthentication_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part2/videos/subtitles.zip'
+            { href: '/materials/authentication/part2/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -733,7 +733,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part3/videos/3.3.1_StrongAndWeakPasswords_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part3/videos/subtitles.zip'
+            { href: '/materials/authentication/part3/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -815,7 +815,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part4/videos/3.4.5_WhatIsPasswordManager_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part4/videos/subtitles.zip'
+            { href: '/materials/authentication/part4/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -873,7 +873,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/authentication/part5/videos/3.5.2_ProtectingYourDigitalIdentity_video.mp4'
             },
             subtitles:
-            { href: '/materials/authentication/part5/videos/subtitles.zip'
+            { href: '/materials/authentication/part5/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -931,7 +931,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/data-privacy/part1/videos/4.1.2_WhatIsPrivateData_video.mp4'
             },
             subtitles:
-            { href: '/materials/data-privacy/part1/videos/subtitles.zip'
+            { href: '/materials/data-privacy/part1/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1007,7 +1007,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/data-privacy/part3/videos/4.3.1_WhatIsDigitalFootprint_video.mp4'
             },
             subtitles:
-            { href: '/materials/data-privacy/part3/videos/subtitles.zip'
+            { href: '/materials/data-privacy/part3/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1091,7 +1091,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/social-engineering/part1/videos/5.1.1_WhatIsSocialEngineering_video.mp4'
             },
             subtitles:
-            { href: '/materials/social-engineering/part1/videos/subtitles.zip'
+            { href: '/materials/social-engineering/part1/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1175,7 +1175,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/social-engineering/part3/videos/5.3.1_TypesOfSocialEngineering_video.mp4'
             },
             subtitles:
-            { href: '/materials/social-engineering/part3/videos/subtitles.zip'
+            { href: '/materials/social-engineering/part3/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1263,7 +1263,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/malware/part1/videos/6.1.2_WhatIsMalware_video.mp4'
             },
             subtitles:
-            { href: '/materials/malware/part1/videos/subtitles.zip'
+            { href: '/materials/malware/part1/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1321,7 +1321,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/malware/part2/videos/6.2.1_IntroducingMalwareTypes_video.mp4'
             },
             subtitles:
-            { href: '/materials/malware/part2/videos/subtitles.zip'
+            { href: '/materials/malware/part2/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1423,7 +1423,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part1/videos/7.1.1_WhatIsMisinformation_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part1/videos/subtitles.zip'
+            { href: '/materials/digital-abuse/part1/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1468,7 +1468,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part2/videos/7.2.2_WhatIsDisinformation_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part2/videos/subtitles.zip'
+            { href: '/materials/digital-abuse/part2/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1518,7 +1518,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part3/videos/7.3.2_WhatIsCyberbullying_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part3/videos/subtitles.zip'
+            { href: '/materials/digital-abuse/part3/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [
@@ -1582,7 +1582,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             { href: '/materials/digital-abuse/part5/videos/7.5.1_SocialMediaInfluencers_video.mp4'
             },
             subtitles:
-            { href: '/materials/digital-abuse/part5/videos/subtitles.zip'
+            { href: '/materials/digital-abuse/part5/videos/subtitles/subtitles.zip'
             },
           },
           tracks: [

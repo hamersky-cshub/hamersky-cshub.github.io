@@ -34,4 +34,4 @@ pnpm-debug.log*
 .vercel
 
 # Other
-.gitattributes
+README_backup.md

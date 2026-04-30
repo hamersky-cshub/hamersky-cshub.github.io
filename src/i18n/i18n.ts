@@ -5,6 +5,9 @@ export const SUPPORTED_LOCALES = ['en', 'cs', 'de', 'lt', 'no'] as const
 
 export type SiteLocale = (typeof SUPPORTED_LOCALES)[number]
 
+// Matches paths that end with a filename + extension (e.g. /fonts/foo.woff2,
+// /materials/guide.pdf). These are static assets — prefixing them with a
+// locale segment would produce broken URLs, so localizePath skips them.
 const PUBLIC_FILE_PATTERN = /\/[^/?#]+\.[a-z0-9]+$/i
 
 const splitUrlParts = (href: string) => {

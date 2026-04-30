@@ -33,6 +33,9 @@ const games = moduleData
   .filter(m => m.games > 0)
   .map(m => ({ id: m.id, href: `/learning-hub/${m.slug}/game/` }))
 
+// Builds the collapsible parts list shown inside each module panel.
+// Each entry is a deep link into the module's content page using the part's
+// anchorId, so clicking "Part 2" jumps straight to that section and expands it.
 const modulePartsOverrides = Object.fromEntries(
   moduleData.map(m => [
     m.id,
@@ -51,6 +54,10 @@ const modulePartsOverrides = Object.fromEntries(
   ])
 )
 
+// Each module panel uses the module's brand color for borders, backgrounds, and
+// hover effects at multiple opacity levels. CSS custom properties (--brand-DC,
+// etc.) are not available at Astro build time, so we compute rgba() values from
+// the hex stored in modules.ts and pass them as inline style variables instead.
 const normalizeHex = (hex: string): string => {
   const raw = hex.replace('#', '')
   if (raw.length === 3) {
@@ -77,6 +84,8 @@ const rgba = (hex: string, alpha: number): string => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
+// Keyed by module ID so the template can look up challenge/game data with
+// module.id rather than iterating the whole array on each card render.
 const localizedChallenges = Object.fromEntries(
   challenges.map((challenge) => [
     challenge.id,
@@ -726,6 +735,9 @@ const localizedModules = modules.map((module) => {
     return `${prefix} ${title} ${suffix}`.trim().replace(/\s+/g, ' ')
   }
 
+  // data-toggle-bound guards against attaching duplicate click listeners when
+  // Astro view transitions cause initializeModuleToggles to run again on the
+  // same DOM nodes that were carried over from the previous page visit.
   const initializeModuleToggles = () => {
     document.querySelectorAll<HTMLButtonElement>('[data-module-toggle]').forEach((btn) => {
       if (btn.dataset.toggleBound === 'true') return

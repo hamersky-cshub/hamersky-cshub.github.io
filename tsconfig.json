@@ -6,6 +6,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@assets/*": ["./src/assets/*"],
       "src/i18n/*": ["./src/i18n/*"],
+      "src/data/*": ["./src/data/*"],
       "public/*": ["./public/*"]
     }
   }

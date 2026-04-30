@@ -309,6 +309,7 @@ export const shared = {
     partSingular: 'Part',
     partPlural: 'Parts',
     moduleContent: 'Module Content',
+    moduleContentSubtitle: 'Explore each part of this module — activities, materials, and videos to teach with.',
     resources: 'Resources',
     activityPlan: 'Activity Plan',
     readingMaterials: 'Reading Materials',

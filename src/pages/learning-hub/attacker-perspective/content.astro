@@ -6,7 +6,7 @@ import { localizePath } from 'src/i18n/i18n'
 import { getModule } from 'src/data/modules'
 import type { ModuleId } from 'src/data/modules'
 import { modulePartsData, mergeParts } from 'src/data/moduleParts'
-import type { TranslationPart, TeachersGuide, RelatedModuleCard, MergedPart, MergedMaterial, MergedActivityStep } from 'src/data/moduleParts'
+import type { TranslationPart, TeachersGuide, RelatedModuleCard, MergedPart, MergedMaterial, MergedActivityStep, PartMeta } from 'src/data/moduleParts'
 import { useTranslations } from 'src/i18n/index'
 
 const locale = Astro.currentLocale
@@ -16,7 +16,15 @@ const objectives = v<ReadonlyArray<string>>('contentAP.objectives') ?? []
 const outcomes = v<ReadonlyArray<string>>('contentAP.outcomes') ?? []
 const teachersGuide = v<TeachersGuide>('contentAP.teachersGuide') ?? {}
 const currentModule = getModule('ap')!
+// mergeParts combines structural asset data (file paths, video sources) from
+// modulePartsData with the locale-specific text from contentAP.parts. The
+// result is what the template consumes — neither source alone is sufficient.
 const parts = mergeParts('ap', v<ReadonlyArray<TranslationPart>>('contentAP.parts') ?? [])
+
+// Related module cards are authored in the translation file but their counts
+// (parts, materials, videos, etc.) are overwritten here with live values from
+// modulePartsData. This keeps cards accurate when a module gains new content
+// without requiring editors to update every locale's translation file.
 const relatedModuleCards = (v<ReadonlyArray<RelatedModuleCard>>('contentAP.relatedModuleCards') ?? []).map(card => { const mod = getModule(card.moduleId); if (!mod) return card; return { ...card, parts: modulePartsData[mod.id].length, materials: mod.materials, videos: mod.videos, challenges: mod.challenges, games: mod.games } })
 
 const hasCount = (value: unknown): value is number => typeof value === 'number' && value > 0
@@ -24,7 +32,7 @@ const hasCount = (value: unknown): value is number => typeof value === 'number' 
 const formatCount = (count: number, singularKey: string, pluralKey: string) =>
   `${count} ${t(count === 1 ? singularKey : pluralKey)}`
 
-const getPartTitle = (part: MergedPart) => (part.titleKey ? t(part.titleKey) : String(part.title ?? ''))
+const getPartTitle = (part: MergedPart) => part.titleKey ? t(part.titleKey) : ''
 
 const moduleImages = {
   dc: '/images/learning-hub/01_digital-citizenship.png',
@@ -115,11 +123,15 @@ const moduleImages = {
         </div>
       </div>
 
-      <!-- Section Divider: Module Content -->
-      <div class="ap-divider ap-divider--center" style="margin-top: var(--space-xl);" id="module-content"><b>{t('contentPage.moduleContent')}</b></div>
+      <!-- Section Divider -->
+      <div class="ap-divider ap-divider--center" style="margin-top: var(--space-xl);">What's inside</div>
 
-      <!-- Module Parts List -->
-      <div class="ap-section">
+      <!-- Module Content -->
+      <div class="ap-section" id="module-content">
+        <div class="ap-section__header">
+          <h2>{t('contentPage.moduleContent')}</h2>
+          <p class="ap-section__subtitle">{t('contentPage.moduleContentSubtitle')}</p>
+        </div>
         <div class="ap-module-list">
           <div class="ap-module-row">
             <a class="ap-part-button" href="#teachers-guide">{t('contentPage.guideLabel')}</a>
@@ -143,12 +155,14 @@ const moduleImages = {
           </div>
 
           {parts.map((part) => {
-            const meta = part.meta ?? {}
+            const meta: PartMeta = part.meta ?? { steps: 0, materials: 0, videos: 0 }
             const included = part.included ?? {}
             const partMaterials = included.materials ?? []
             const partActivity = included.activityPlan ?? []
             const featuredVideo = part.featuredVideo
             const title = getPartTitle(part)
+            // Activity plan opens first when present — it is the primary teaching
+            // sequence. Materials are secondary. Video is the fallback tab.
             const firstPanel = partActivity.length ? 'activity' : partMaterials.length ? 'materials' : 'video'
 
             return (
@@ -230,7 +244,7 @@ const moduleImages = {
                               data-panel={`video-${part.anchorId}`}
                             >
                               <Icon name="lucide:video" />
-                              {t('contentPage.videoSingular')}
+                              {t('contentPage.videoPlural')}
                               <span class="ap-tab__badge">1</span>
                             </button>
                           ) : null}
@@ -347,8 +361,8 @@ const moduleImages = {
         </div>
       </div>
 
-      <!-- Section Divider: Related Modules -->
-      <div class="ap-divider ap-divider--center"><b>{t('contentPage.relatedModules')}</b></div>
+      <!-- Section Divider -->
+      <div class="ap-divider ap-divider--center">More resources</div>
 
       <!-- Related Modules -->
       <div class="ap-section">
@@ -425,6 +439,11 @@ const moduleImages = {
 </DefaultLayout>
 
 <script>
+  // When a URL contains a hash that targets a <details> element (e.g. a direct
+  // link to a module part like /content#digital-environments), open it and
+  // scroll to it. requestAnimationFrame gives the browser one paint cycle to
+  // render the newly open details before scrollIntoView fires — without it the
+  // element may not yet have layout and scrolling lands in the wrong position.
   const expandFromHash = () => {
     const hash = window.location.hash.slice(1)
     if (!hash) return
@@ -438,6 +457,8 @@ const moduleImages = {
     }
   }
 
+  // astro:page-load fires on every view-transition navigation, so both handlers
+  // must be re-registered here to stay active after client-side routing.
   document.addEventListener('astro:page-load', expandFromHash)
   expandFromHash()
 
