@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Deutsch translation index — assembles all per-module and shared files
+// German translation index — assembles all per-module and shared files
 // ---------------------------------------------------------------------------
 //
 // Do NOT edit content here. Edit the individual files:

@@ -11,9 +11,15 @@
 //   route string  →  lazy page loader function
 // ---------------------------------------------------------------------------
 
+import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from './i18n'
+
 type PageLoader = () => Promise<{ default: unknown }>
 
 const pageModules = import.meta.glob('../pages/**/*.{astro,md,mdx}') as Record<string, PageLoader>
+
+// Locales that have their own pages/ subdirectory acting as a catch-all wrapper.
+// Derived from SUPPORTED_LOCALES so adding a new locale only requires updating i18n.ts.
+const LOCALE_WRAPPER_SEGMENTS = new Set(SUPPORTED_LOCALES.filter((l) => l !== DEFAULT_LOCALE))
 
 const toRoute = (filePath: string): string => {
   const relativePath = filePath.replace('../pages/', '')
@@ -32,7 +38,7 @@ const isLocalizedWrapper = (filePath: string): boolean => {
   const relativePath = filePath.replace('../pages/', '')
   const firstSegment = relativePath.split('/')[0]
 
-  return ['cs', 'de', 'lt', 'no'].includes(firstSegment)
+  return LOCALE_WRAPPER_SEGMENTS.has(firstSegment as Exclude<typeof SUPPORTED_LOCALES[number], typeof DEFAULT_LOCALE>)
 }
 
 const isRoutableSourcePage = (filePath: string): boolean => {

@@ -51,3 +51,312 @@ import { SUPPORTED_LOCALES } from 'src/i18n/i18n'
   document.addEventListener('astro:page-load', initializeNavigation)
   initializeNavigation()
 </script>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/mixins' as *;
+  @use '../assets/scss/base/breakpoint' as *;
+
+  #main-navigation {
+    font-family: var(--font-ui);
+
+    > .container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-s);
+
+      > a {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      > .wrapper {
+        flex-shrink: 0;
+      }
+    }
+
+    /* ── Mobile-first: hide both menus by default ── */
+    .mobile-menu {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    .responsive-toggle {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xs);
+    }
+
+    .desktop-menu {
+      display: none;
+    }
+
+    /* ── Desktop breakpoint (900px) ── */
+    @include breakpoint('nav') {
+      .mobile-menu {
+        display: none;
+      }
+
+      .responsive-toggle {
+        display: none;
+      }
+
+      .desktop-menu {
+        display: block;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--space-m);
+    }
+
+    a,
+    button {
+      color: var(--foreground-color);
+    }
+
+    /* ── Shared menu styles ── */
+    nav {
+      > ul {
+        display: flex;
+        gap: var(--space-m);
+        list-style-type: none;
+
+        li {
+          align-content: center;
+        }
+
+        /* Active/hover states use wavy underline for brand consistency */
+        a:hover,
+        a:focus-visible,
+        .is-active,
+        button[aria-expanded='true'],
+        .has-dropdown > button:hover,
+        .has-dropdown > button:focus-visible {
+          text-decoration: underline;
+          text-decoration-style: wavy;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 7px;
+          color: var(--link-color);
+        }
+
+        .is-active {
+          font-weight: 700;
+        }
+
+        .highlight .is-active {
+          font-weight: 900;
+          background-color: var(--background-color);
+          color: var(--link-color) !important;
+        }
+
+        .highlight a {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2xs);
+          transition: all var(--animation-speed-fast) var(--cubic-bezier);
+          margin-block-start: calc(var(--space-4xs) * -1);
+          border: 3px solid var(--link-color);
+          border-radius: var(--radius-large);
+          padding: var(--space-4xs) var(--space-2xs);
+          text-decoration: none;
+          background-color: var(--link-color);
+          color: var(--button-text-color) !important;
+
+          &:where(:hover, :focus-visible) {
+            background-color: var(--background-color);
+            color: var(--link-color) !important;
+          }
+        }
+
+        /* ── Language switcher ── */
+        .menu-item--language {
+          @include breakpoint('nav') {
+            margin-inline-start: auto;
+          }
+
+          > button {
+            border: 2px solid var(--border-color-subtle);
+            border-radius: 999px;
+            background: var(--background-color);
+            padding: 0.45rem 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+          }
+
+          > ul {
+            min-inline-size: 210px;
+            inset-inline-start: auto;
+            inset-inline-end: 0;
+          }
+
+          .language-switcher__toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2xs);
+            border-radius: var(--radius-large);
+            padding: var(--space-4xs) var(--space-2xs);
+            border: 3px solid var(--border-color-subtle);
+          }
+
+          .language-switcher__toggle:hover,
+          .language-switcher__toggle:focus-visible,
+          .language-switcher__item:hover,
+          .language-switcher__item:focus-visible {
+            text-decoration: none;
+          }
+
+          .language-switcher__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-s);
+            border-radius: var(--radius-m);
+            padding: 0.35rem 0.5rem;
+          }
+
+          .language-switcher__item:hover,
+          .language-switcher__item:focus-visible,
+          .language-switcher__item.is-active {
+            background: color-mix(in srgb, var(--link-color) 12%, transparent);
+            color: var(--link-color);
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 7px;
+          }
+
+          .language-switcher__code {
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+          }
+
+          .language-switcher__label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: none;
+          }
+        }
+      }
+    }
+
+    /* ── Mobile menu panel ── */
+    .mobile-menu {
+      margin-block-start: var(--space-m);
+      border: 1px solid var(--border-color-subtle);
+      border-radius: var(--radius-l);
+      padding: var(--space-m);
+
+      > ul {
+        flex-direction: column;
+        align-items: flex-start;
+
+        ul {
+          position: relative;
+          margin-block-start: var(--space-m);
+        }
+      }
+
+      a,
+      button {
+        display: block;
+        padding: var(--space-2xs) 0;
+        inline-size: 100%;
+      }
+    }
+
+    /* ── Dropdown menus ── */
+    .has-dropdown {
+      position: relative;
+
+      > button {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4xs);
+        margin-block-start: -1px;
+
+        svg {
+          transition: all var(--animation-speed-instant) var(--cubic-bezier);
+        }
+
+        &.show svg {
+          scale: -1;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        gap: var(--space-2xs);
+        translate: 0 1rem;
+        opacity: 0;
+        z-index: 100;
+        inset-block-start: 125%; // 100% clears the button height; extra 25% adds a visible gap before the dropdown
+        inset-inline-end: 0;
+        inset-inline-start: 0;
+        box-shadow: var(--elevation-4);
+        border: 2px solid var(--border-color-subtle);
+        border-radius: var(--radius-l);
+        background-color: var(--background-color);
+        padding: var(--space-m);
+        min-inline-size: 275px;
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition-behavior: allow-discrete;
+          transition-duration: var(--animation-speed-fast);
+          transition-property: display, opacity, translate;
+          transition-timing-function: var(--cubic-bezier);
+        }
+      }
+
+      > button.show ~ ul {
+        display: flex;
+        translate: 0;
+        opacity: 1;
+
+        @starting-style {
+          translate: 0 1rem;
+          opacity: 0;
+        }
+      }
+    }
+
+    /* ── Dark mode toggle ── */
+    .darkmode-toggle {
+      border: none;
+      padding: 0;
+
+      .icon {
+        inline-size: 30px;
+        block-size: 30px;
+      }
+
+      &:where(:hover, :focus-visible) {
+        box-shadow: none;
+      }
+
+      &:focus {
+        @include outline;
+
+        &:not(:focus-visible) {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+</style>
