@@ -50,6 +50,10 @@ export const contentDP = {
     'Explain how data can travel and be stored online.',
     'Apply simple privacy rules before sharing or posting.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Data Privacy Teaching Guide',
+  },
   parts: [
     {
       goal: 'Help students understand what personal data is, identify different types of sensitive information, and recognise why protecting it matters.',
@@ -237,6 +241,22 @@ export const contentDP = {
             title: 'Plenary – Summary and Informal Assessment',
           },
         ],
+      },
+      featuredVideo: {
+        // ID: 4.4.4
+        title: 'Protecting Your Personal Data Online',
+        supportText:
+          'Use this video to introduce the concept of personal data and spark discussion about the types of information students share every day.',
+        downloads: {
+          video: {
+            filename: 'Protecting Your Personal Data Online',
+            ariaLabel: 'Download video',
+          },
+          subtitles: {
+            filename: 'Protecting Your Personal Data Online - Subtitles',
+            ariaLabel: 'Download subtitles',
+          },
+        },
       },
     },
   ],

@@ -50,6 +50,10 @@ export const contentDA = {
     'Use simple safety steps like blocking or reporting.',
     'Know trusted adults and support channels to reach out to.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Digital Abuse Teaching Guide',
+  },
   relatedModules: [
     {
       title: 'Digital Citizenship',

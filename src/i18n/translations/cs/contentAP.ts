@@ -48,6 +48,10 @@ export const contentAP = {
     'I understand the attacker motives and can give examples related to psychological, social and economic factors.',
     'I can recognize attacker techniques in given scenarios.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Attacker Perspective Teaching Guide',
+  },
   parts: [
     {
       goal:

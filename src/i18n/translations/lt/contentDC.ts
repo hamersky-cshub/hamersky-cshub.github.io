@@ -49,6 +49,10 @@ export const contentDC = {
     'I can explain what digital citizenship is and why it is important.',
     'I can discuss the principles of rights, responsibility and respect in digital environments, including how to stay safe, act savvy and engage socially.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Digital Citizenship Teaching Guide',
+  },
   parts: [
     {
       goal: 'Help students understand what a digital environment is and positive aspects of this.',
@@ -258,18 +262,21 @@ export const contentDC = {
             // ID: 1.5.1
             kind: 'Image',
             name: 'Digital Footprint',
+            filename: 'Image - Digital Footprint',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.5.2
             kind: 'Scenario Cards',
             name: 'Good and Bad to Post',
+            filename: 'Scenario Cards - Good and Bad to Post',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.5.3
             kind: 'Scenario Cards',
             name: 'Social Media Posts',
+            filename: 'Scenario Cards - Social Media Posts',
             ariaLabel: 'Download material',
           },
         ],

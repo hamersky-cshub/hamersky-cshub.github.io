@@ -50,6 +50,10 @@ export const contentMW = {
     'Recognize warning signs of suspicious downloads.',
     'Use trusted sources and ask for help when unsure.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Malware Teaching Guide',
+  },
   parts: [
     {
       goal: 'Help students understand the concept of malware.',

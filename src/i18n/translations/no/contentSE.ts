@@ -50,6 +50,10 @@ export const contentSE = {
     'Use a pause-and-check routine before acting.',
     'Know when and how to report suspicious behavior.',
   ],
+  teachersGuide: {
+    ariaLabel: 'Download Teaching Guide',
+    download: 'Social Engineering Teaching Guide',
+  },
   parts: [
     {
       goal: 'Help students understand what social engineering is by first recognising how people can be influenced or manipulated in everyday situations, and then connecting this understanding to digital environments and attacker behaviour.',

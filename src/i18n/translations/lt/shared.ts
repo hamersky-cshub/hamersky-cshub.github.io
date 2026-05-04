@@ -1,4 +1,6 @@
 // ---------------------------------------------------------------------------
+// LITHUANIAN
+// ---------------------------------------------------------------------------
 // Shared UI translations — navigation, layout, labels, 404
 // ---------------------------------------------------------------------------
 //
@@ -8,371 +10,371 @@
 
 export const shared = {
   nav: {
-    home: 'Namai',
-    about: 'Apie',
-    learningHub: 'Mokymų centras',
+    home: 'Pradžia',
+    about: 'Apie projektą',
+    learningHub: 'Mokymosi centras',
   },
 
   footer: {
-    navigation: 'Navigation',
-    learningModules: 'Learning Modules',
+    navigation: 'Navigacija',
+    learningModules: 'Mokymosi moduliai',
     tagline:
-      'Build smart, safe online habits with lessons, challenges, and games designed for upper elementary classrooms.',
-    madeWith: 'Made with support by',
+      'Ugdykite išmaniuosius ir saugius įpročius internete su pamokomis, iššūkiais ir žaidimais, skirtais pradinių klasių mokiniams.',
+    madeWith: 'Sukurta su parama',
   },
 
   hero: {
     subtitle:
-      'Build smart, safe online habits with lessons, challenges, and games designed for upper elementary classrooms.',
-    explore: 'Explore the Learning Hub',
-    moreInfo: 'More Information',
+      'Ugdykite išmaniuosius ir saugius įpročius internete su pamokomis, iššūkiais ir žaidimais, skirtais pradinių klasių mokiniams.',
+    explore: 'Naršyti mokymosi centrą',
+    moreInfo: 'Daugiau informacijos',
   },
 
   home: {
-    title: 'Home',
-    statModulesLabel: 'Learning',
-    statModulesLabel2: 'Modules',
-    statChallengesLabel: 'Interactive',
-    statChallengesLabel2: 'Challenges',
-    statGamesLabel: 'Cyber',
-    statGamesLabel2: 'Games',
+    title: 'Pradžia',
+    statModulesLabel: 'Mokymosi',
+    statModulesLabel2: 'Moduliai',
+    statChallengesLabel: 'Interaktyvūs',
+    statChallengesLabel2: 'Iššūkiai',
+    statGamesLabel: 'Kibernetiniai',
+    statGamesLabel2: 'Žaidimai',
 
-    learningModulesTitle: 'Learning Modules',
+    learningModulesTitle: 'Mokymosi moduliai',
     learningModulesText:
-      'Empower your students with the digital literacy skills they need to navigate today\'s connected world safely and responsibly. Our seven structured learning modules guide learners step by step — from foundational concepts like digital citizenship and online privacy, to more advanced topics such as recognizing phishing attempts and social engineering tactics. Each module blends clear explanations with hands-on activities, making complex cybersecurity concepts accessible and memorable regardless of prior tech experience. Designed with classroom flexibility in mind, modules can be taught sequentially as a full course or integrated individually into your existing curriculum.',
+      'Suteikite savo mokiniams skaitmeninio raštingumo įgūdžių, reikalingų saugiai ir atsakingai naršyti šiandieniniame prijungtame pasaulyje. Mūsų septyni struktūruoti mokymosi moduliai veda besimokančiuosius žingsnis po žingsnio – nuo pagrindinių konceptų, tokių kaip skaitmeninė pilietybė ir privatumas internete, iki pažangesnių temų, pavyzdžiui, sukčiavimo bandymų atpažinimo ir socialinės inžinerijos taktikų. Kiekvienas modulis derina aiškius paaiškinimus su praktinėmis veiklomis, padarydamas sudėtingus kibernetinio saugumo konceptus prieinamus ir įsimintinus nepriklausomai nuo ankstesnės technologinės patirties. Moduliai suprojektuoti atsižvelgiant į klasės lankstumą – juos galima dėstyti nuosekliai kaip visą kursą arba individualiai integruoti į esamus mokymo planus.',
 
-    challengesTitle: 'Interactive Challenges',
+    challengesTitle: 'Interaktyvūs iššūkiai',
     challengesText:
-      'Put knowledge into action with scenario-based challenges that place kids in the role of problem-solver. Each challenge presents a realistic situation — a suspicious email, an unsecured account, a deceptive link — and asks kids to think critically, make decisions, and see the consequences unfold. Immediate feedback helps learners understand not just what the right answer is, but why, reinforcing lasting understanding over rote memorization. As an educator, you get a clear window into each kid\'s reasoning, making these challenges as useful for formative assessment as they are for engagement.',
+      'Paverskite žinias veiksmais su scenarijais pagrįstais iššūkiais, kurie vaikus pastato į problemų sprendėjų vaidmenį. Kiekvienas iššūkis pateikia realistišką situaciją – įtartiną el. laišką, neapsaugotą paskyrą, apgaulingą nuorodą – ir prašo vaikus mąstyti kritiškai, priimti sprendimus ir stebėti pasekmes. Momentinis grįžtamasis ryšys padeda besimokančiesiems suprasti ne tik teisingą atsakymą, bet ir kodėl jis teisingas, stiprinant ilgalaikį supratimą vietoje mechaninio įsiminimo. Kaip pedagogas, jūs gaunate aiškų langą į kiekvieno vaiko samprotavimą, todėl šie iššūkiai yra tokie pat naudingi formuojamajam vertinimui kaip ir įsitraukimui.',
 
-    gamesTitle: 'Cybersecurity Games',
+    gamesTitle: 'Kibernetinio saugumo žaidimai',
     gamesText:
-      'Learning sticks when it\'s fun — and our cybersecurity games are built with exactly that in mind. Covering everything from password security to identifying online threats, each game transforms key curriculum concepts into play-driven experiences that kids genuinely want to return to. Whether used as a warm-up, a reward, or a full lesson activity, the games keep learners motivated while quietly reinforcing the skills that matter most. Appropriate for a range of ages and ability levels, they\'re easy to launch in class, in a computer lab, or as an independent take-home activity.',
+      'Mokymasis įsitvirtina, kai jis yra smagus – o mūsų kibernetinio saugumo žaidimai sukurti būtent tuo tikslu. Apimantys viską nuo slaptažodžių saugumo iki internetinių grėsmių atpažinimo, kiekvienas žaidimas paverčia pagrindinius mokymo plano konceptus žaidimais grįstais patyrimais, prie kurių vaikai tikrai nori grįžti. Nesvarbu, ar naudojami kaip apšilimas, atlygis, ar pilnavertė pamokos veikla, žaidimai išlaiko besimokančiuosius motyvuotus, tyliai stiprinant svarbiausius įgūdžius. Tinkami skirtingo amžiaus ir gebėjimų lygiams, juos lengva paleisti klasėje, kompiuterių laboratorijoje arba kaip savarankišką namų veiklą.',
 
-    wantToKnowMore: 'Want to Know More?',
-    wantToKnowMoreSub: 'Learn more about our mission to create a safer digital environment.',
-    aboutInitiative: 'About This Initiative',
+    wantToKnowMore: 'Norite sužinoti daugiau?',
+    wantToKnowMoreSub: 'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką.',
+    aboutInitiative: 'Apie šią iniciatyvą',
   },
 
   about: {
-    title: 'About',
+    title: 'Apie projektą',
     subtitle:
-      'Learn more about our mission to create a safer digital environment. Dive into our learning modules designed to teach individuals about digital citizenship, authentication, data privacy, and more.',
+      'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką. Susipažinkite su mūsų mokymosi moduliais, skirtais mokyti asmenis apie skaitmeninę pilietybę, autentifikavimą, duomenų privatumą ir kt.',
 
-    missionTitle: 'Our Mission',
+    missionTitle: 'Mūsų misija',
     missionP1:
-      'The internet, smartphones, and social media are now a natural part of children\'s everyday lives — full of opportunity, but also real risks. As young people spend more time online, cybersecurity has become an essential life skill, not just a topic for specialists.',
+      'Internetas, išmanieji telefonai ir socialiniai tinklai dabar yra natūrali vaikų kasdieninio gyvenimo dalis – pilna galimybių, bet taip pat ir realių pavojų. Kai jauni žmonės praleidžia daugiau laiko internete, kibernetinis saugumas tapo būtinu gyvenimo įgūdžiu, o ne tik specialistų tema.',
     missionP2:
-      'Yet many educators face a genuine challenge: without specialist training or ready-to-use materials, bringing these topics into the classroom in a clear, age-appropriate way can feel daunting. That\'s exactly why this platform exists.',
+      'Tačiau daugelis pedagogų susiduria su tikru iššūkiu: be specializuoto mokymo ar paruoštos naudoti medžiagos, šių temų pristatymas klasėje aiškiu, amžiui tinkamu būdu gali atrodyti bauginančiai. Būtent todėl ši platforma egzistuoja.',
     missionP3:
-      'We provide accessible, engaging resources designed specifically for teachers and kids, so that every classroom — regardless of technical background — can equip young people with the knowledge, confidence, and practical skills to explore the digital world safely and responsibly.',
+      'Mes teikiame prieinamus, patrauklius išteklius, sukurtus specialiai mokytojams ir vaikams, kad kiekviena klasė – nepriklausomai nuo techninio išsilavinimo – galėtų suteikti jauniems žmonėms žinių, pasitikėjimo savimi ir praktinių įgūdžių tyrinėti skaitmeninį pasaulį saugiai ir atsakingai.',
 
-    partnersTitle: 'Initiative Partners',
-    uniLiechtenstein: 'University of Liechtenstein',
+    partnersTitle: 'Iniciatyvos partneriai',
+    uniLiechtenstein: 'Lichtenšteino universitetas',
     uniLiechtensteinDesc:
-      'A research-driven institution with expertise in information systems and digital technologies, the University of Liechtenstein brings a strong foundation in applied tech research to the project, helping shape evidence-based approaches to cybersecurity education.',
+      'Tyrimus skatinanti institucija, turinti informacinių sistemų ir skaitmeninių technologijų patirtį, Lichtenšteino universitetas į projektą įneša tvirtą taikomųjų technologijų tyrimų pagrindą, padėdamas formuoti įrodymais pagrįstus kibernetinio saugumo ugdymo metodus.',
     cyberSecurityHub: 'CyberSecurity Hub',
     cyberSecurityHubDesc:
-      'A dedicated cybersecurity organisation focused on making digital safety knowledge accessible to everyone. CyberSecurity Hub drives the project\'s educational content and outreach, ensuring resources are practical, engaging, and relevant for real classroom use.',
-    uniInlandNorway: 'University of Inland Norway',
+      'Specializuota kibernetinio saugumo organizacija, orientuota į skaitmeninio saugumo žinių prieinamumą visiems. „CyberSecurity Hub" skatina projekto edukacinį turinį ir informavimą, užtikrindamas, kad ištekliai būtų praktiški, patrauklūs ir aktualūs tikram naudojimui klasėje.',
+    uniInlandNorway: 'Inland Norway University of Applied Sciences',
     uniInlandNorwayDesc:
-      'With a strong commitment to inclusive and future-ready education, the University of Inland Norway contributes pedagogical expertise and experience in developing learning materials that are effective across diverse school environments.',
-    uniInnsbruck: 'University of Innsbruck',
+      'Turėdama tvirtą įsipareigojimą integraciniam ir ateičiai paruoštam ugdymui, Inland Norway University of Applied Sciences prisideda pedagogine patirtimi ir mokymosi medžiagos kūrimo patirtimi, veiksminga įvairiose mokyklinėse aplinkose.',
+    uniInnsbruck: 'Insbruko universitetas',
     uniInnsbruckDesc:
-      'One of Central Europe\'s leading research universities, the University of Innsbruck brings academic depth and technical expertise to the project, supporting the development of rigorous, curriculum-aligned cybersecurity content for young learners.',
-    vilniusUni: 'Vilnius University',
+      'Vienas iš pirmaujančių Vidurio Europos tyrimų universitetų, Insbruko universitetas į projektą įneša akademinį gilumą ir techninę kompetenciją, palaikydamas griežto, mokymo planui pritaikyto kibernetinio saugumo turinio jauniems besimokantiesiems kūrimą.',
+    vilniusUni: 'Vilniaus universitetas',
     vilniusUniDesc:
-      'As one of the oldest and most respected universities in the Baltic region, Vilnius University contributes both research capacity and a broad regional perspective, helping ensure the project\'s resources reflect the diverse needs of European classrooms.',
+      'Kaip vienas seniausių ir labiausiai gerbiamų universitetų Baltijos regione, Vilniaus universitetas prisideda tiek tyrimo pajėgumais, tiek plačia regionine perspektyva, padėdamas užtikrinti, kad projekto ištekliai atspindėtų įvairius Europos klasių poreikius.',
 
-    coreValuesTitle: 'Our Core Values',
-    scalableImpact: 'Scalable Impact',
+    coreValuesTitle: 'Mūsų pagrindinės vertybės',
+    scalableImpact: 'Išplečiamas poveikis',
     scalableImpactDesc:
-      'Good cybersecurity education shouldn\'t depend on where a child goes to school. By equipping educators with ready-to-use materials and practical guidance, our resources are designed to reach kids across diverse schools and classrooms — growing in reach without growing in complexity.',
-    internationalCollab: 'International Collaboration',
+      'Geras kibernetinio saugumo ugdymas neturėtų priklausyti nuo to, į kurią mokyklą vaikas eina. Aprūpindami pedagogus paruošta naudoti medžiaga ir praktiniais patarimais, mūsų ištekliai yra skirti pasiekti vaikus skirtingose mokyklose ir klasėse – plečiant pasiekiamumą nepadidėjant sudėtingumui.',
+    internationalCollab: 'Tarptautinis bendradarbiavimas',
     internationalCollabDesc:
-      'Cyber threats don\'t stop at borders, and neither does our approach. By connecting educators, researchers, and institutions across countries, we build a richer, more diverse pool of knowledge — so that every resource we create benefits from real classroom experience across Europe.',
-    practicalAdaptable: 'Practical &\u00a0Adaptable',
+      'Kibernetinės grėsmės nesustoja ties sienomis – ir mūsų metodas taip pat ne. Sujungdami pedagogus, tyrėjus ir institucijas įvairiose šalyse, kuriame turtingesnę, įvairesnę žinių bazę – kad kiekvienas mūsų sukurtas išteklius gautų naudos iš realios klasės patirties visoje Europoje.',
+    practicalAdaptable: 'Praktiškas ir pritaikomas',
     practicalAdaptableDesc:
-      'We know that no two classrooms are the same. That\'s why every module, challenge, and game is built to be flexible — easy to integrate into existing lessons, adaptable to different teaching styles, and accessible to educators regardless of their technical background.',
-    europeanCohesion: 'European Digital Cohesion',
+      'Žinome, kad nėra dviejų vienodų klasių. Todėl kiekvienas modulis, iššūkis ir žaidimas yra sukurtas būti lankstus – lengvai integruojamas į esamas pamokas, pritaikomas skirtingiems mokymo stiliams ir prieinamas pedagogams nepriklausomai nuo jų techninio išsilavinimo.',
+    europeanCohesion: 'Europos skaitmeninė sanglauda',
     europeanCohesionDesc:
-      'Based on the European Digital Competence Framework (DigComp), we\'re working towards a shared standard of cybersecurity literacy for young learners across Europe. By encouraging the exchange of best practices between countries, we help ensure that every child — wherever they are — has access to consistent, high-quality digital safety education.',
+      'Remiantis Europos skaitmeninių kompetencijų sistema (DigComp), dirbame siekdami bendro kibernetinio saugumo raštingumo standarto jauniems besimokantiesiems visoje Europoje. Skatindami geriausios praktikos mainus tarp šalių, padedame užtikrinti, kad kiekvienas vaikas – kur jis bebūtų – turėtų prieigą prie nuoseklaus, aukštos kokybės skaitmeninio saugumo ugdymo.',
 
-    getInvolvedTitle: 'How to Get Involved',
+    getInvolvedTitle: 'Kaip įsitraukti',
     getInvolvedP1:
-      'This project is an open, evolving initiative, and we believe the best cybersecurity education grows through collaboration.',
+      'Šis projektas yra atvira, besivystanti iniciatyva, ir mes tikime, kad geriausias kibernetinio saugumo ugdymas auga per bendradarbiavimą.',
     getInvolvedP2:
-      'Whether you\'re an educator with classroom experience, a researcher, a practitioner, or an organisation working with young learners, your perspective matters — and we\'d love to hear from you. If you have feedback on our materials, ideas for new learning activities, or proposals for partnership, your input directly shapes how these resources develop and improve.',
+      'Nesvarbu, ar esate pedagogas su klasės patirtimi, tyrėjas, praktikuotojas ar organizacija, dirbanti su jaunais besimokančiaisiais, jūsų perspektyva svarbi – ir mes norėtume iš jūsų išgirsti. Jei turite atsiliepimų apie mūsų medžiagą, idėjų naujoms mokymosi veikloms ar partnerystės pasiūlymų, jūsų indėlis tiesiogiai formuoja, kaip šie ištekliai vystosi ir tobulėja.',
     getInvolvedP3:
-      'Getting involved is simple: reach out to any of the project partners listed on this website, and let\'s work together to make quality cybersecurity education accessible to every child.',
+      'Įsitraukimas yra paprastas: kreipkitės į bet kurį iš šioje svetainėje išvardintų projekto partnerių, ir dirbkime kartu, kad aukštos kokybės kibernetinio saugumo ugdymas būtų prieinamas kiekvienam vaikui.',
   },
 
   hub: {
-    title: 'Learning Hub',
+    title: 'Mokymosi centras',
     subtitle:
-      'This is the central space for all project modules, training materials, and educational resources. Here you will find ready-to-use lessons, practical activities, and guidance designed to support cybersecurity education in diverse classroom settings. All materials are structured, adaptable, and created to help educators confidently introduce digital safety topics to children. Whether you are looking for complete modules or individual teaching resources, the Learning Hub provides everything you need in one place.',
-    content: 'Content',
-    challenge: 'Challenge',
-    game: 'Game',
-    parts: 'Parts',
-    materials: 'Materials',
-    videos: 'Videos',
-    challenges: 'Challenges',
-    games: 'Games',
+      'Tai yra centrinė erdvė visiems projekto moduliams, mokymo medžiagai ir edukaciniams ištekliams. Čia rasite paruoštų naudoti pamokų, praktinių veiklų ir patarimų, skirtų palaikyti kibernetinio saugumo ugdymą įvairiose klasių aplinkose. Visa medžiaga yra struktūruota, pritaikoma ir sukurta padėti pedagogams drąsiai supažindinti vaikus su skaitmeninio saugumo temomis. Nesvarbu, ar ieškote pilnų modulių, ar atskirų mokymo išteklių, Mokymosi centras suteikia viską, ko jums reikia, vienoje vietoje.',
+    content: 'Turinys',
+    challenge: 'Iššūkis',
+    game: 'Žaidimas',
+    parts: 'Dalys',
+    materials: 'Medžiaga',
+    videos: 'Vaizdo įrašai',
+    challenges: 'Iššūkiai',
+    games: 'Žaidimai',
 
-    partLabel: 'Part',
-    learningModulesAriaLabel: 'Learning modules',
-    partsHeading: 'Parts',
-    interactiveChallengeLabel: 'Interactive Challenge',
-    cybersecurityGameLabel: 'Cybersecurity Game',
-    openChallengeCta: 'Open Challenge',
-    playGameCta: 'Play Game',
-    challengeFallbackTitle: 'Challenge',
-    challengeFallbackDescription: 'Open the module challenge and explore the activity.',
-    noGameTitle: 'No Game Available',
-    noGameDescription: 'No game is currently available for this module.',
-    noGameCta: 'No Game Available',
-    modulePosterAltSuffix: 'module poster',
-    moduleSummaryAriaSuffix: 'module summary',
-    partListAriaSuffix: 'part list',
-    expandDetailsAriaPrefix: 'Expand',
-    collapseDetailsAriaPrefix: 'Collapse',
-    expandDetailsAriaSuffix: 'details',
+    partLabel: 'Dalis',
+    learningModulesAriaLabel: 'Mokymosi moduliai',
+    partsHeading: 'Dalys',
+    interactiveChallengeLabel: 'Interaktyvus iššūkis',
+    cybersecurityGameLabel: 'Kibernetinio saugumo žaidimas',
+    openChallengeCta: 'Atidaryti iššūkį',
+    playGameCta: 'Žaisti',
+    challengeFallbackTitle: 'Iššūkis',
+    challengeFallbackDescription: 'Atidarykite modulio iššūkį ir tyrinėkite veiklą.',
+    noGameTitle: 'Žaidimas nepasiekiamas',
+    noGameDescription: 'Šiam moduliui šiuo metu nėra prieinamo žaidimo.',
+    noGameCta: 'Žaidimas nepasiekiamas',
+    modulePosterAltSuffix: 'modulio plakatas',
+    moduleSummaryAriaSuffix: 'modulio santrauka',
+    partListAriaSuffix: 'dalių sąrašas',
+    expandDetailsAriaPrefix: 'Išskleisti',
+    collapseDetailsAriaPrefix: 'Sutraukti',
+    expandDetailsAriaSuffix: 'informaciją',
 
     challengeCards: {
       dc: {
         description:
-          'Decide what’s safe and responsible to share online by reviewing different types of content and making thoughtful choices about what to post.',
+          'Nuspręskite, ką saugu ir atsakinga dalintis internete – peržiūrėkite skirtingus turinio tipus ir apgalvotai pasirinkite, ką skelbti.',
       },
       ap: {
         description:
-          'Examine this social media profile as if you were a hacker looking for weak spots. What information would you target?',
+          'Išnagrinėkite šį socialinės medijos profilį tarsi būtumėte įsilaužėlis, ieškantis silpnų vietų. Kokią informaciją nukreiptumėte?',
       },
       at: {
         description:
-          'Build a stronger password one round at a time. Each level adds a new ingredient to your password recipe!',
+          'Kurkite stipresnį slaptažodį raundas po raundo. Kiekvienas lygis prideda naują ingredientą jūsų slaptažodžio receptui!',
       },
       dp: {
         description:
-          'Decide what information is safe to share and what to keep private. Sort different types of data into the right categories to protect your digital footprint.',
+          'Nuspręskite, kokią informaciją saugu dalintis ir ką palikti privačia. Rūšiuokite skirtingus duomenų tipus į tinkamas kategorijas, kad apsaugotumėte savo skaitmeninį pėdsaką.',
       },
       se: {
         description:
-          'Become a Message Detective and spot which messages are safe and which are phishing attempts. Use clues to make the right call.',
+          'Tapkite žinučių detektyvu ir atpažinkite, kurios žinutės yra saugios, o kurios – sukčiavimo bandymai. Naudokite užuominas teisingam sprendimui priimti.',
       },
       mw: {
-        description: 'Make smart choices to keep devices healthy and fast.',
+        description: 'Priimkite išmintingus sprendimus, kad prietaisai išliktų sveiki ir greiti.',
       },
       da: {
         description:
-          'Make choices. See consequences. Learn how to handle cyberbullying, online pressure, and digital abuse.',
+          'Priimkite sprendimus. Stebėkite pasekmes. Sužinokite, kaip susidoroti su kibernetiniu patyčiomis, internetiniu spaudimu ir skaitmeniniu smurtu.',
       },
     },
 
     gameCards: {
       at: {
         description:
-          'Step into a fantasy world where your knowledge of authentication becomes the key to progress.',
+          'Patekite į fantazijos pasaulį, kur jūsų žinios apie autentifikavimą tampa pažangos raktu.',
       },
       dp: {
         description:
-          'Step into a whimsical world where your choices shape how well you protect your personal information.',
+          'Patekite į žavingą pasaulį, kur jūsų pasirinkimai lemia, kaip gerai apsaugote savo asmeninę informaciją.',
       },
       se: {
         description:
-          'Step into a high-stakes challenge where your ability to spot deception is the key to survival.',
+          'Patekite į didelio pavojaus iššūkį, kur jūsų gebėjimas pastebėti apgaulę yra išlikimo raktas.',
       },
       mw: {
         description:
-          'Step into a fast-paced race where understanding malware gives you the edge.',
+          'Patekite į sparčias lenktynes, kur kenkėjiškų programų supratimas suteikia jums pranašumą.',
       },
       da: {
         description:
-          'Step into a lively city where digital conflicts have caused tension among its inhabitants.',
+          'Patekite į gyvybingą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų.',
       },
     },
 
     moduleParts: {
       dc: {
-        p1Title: 'Digital Environments',
-        p2Title: 'What Does it Mean to be a Digital Citizen?',
-        p3Title: 'How to Stay Safe in Digital Environments – Privacy Settings',
-        p4Title: 'How to Act Savvy in Digital Environments – Being Wise and Resilient',
+        p1Title: 'Skaitmeninės aplinkos',
+        p2Title: 'Ką reiškia būti skaitmeniniu piliečiu?',
+        p3Title: 'Kaip išlikti saugiam skaitmeninėse aplinkose – privatumo nustatymai',
+        p4Title: 'Kaip elgtis išmintingai skaitmeninėse aplinkose – būti išmintingam ir atspariam',
         p5Title:
-          'How to Act Responsibly in Digital Environments - Respecting Ourselves and Others in Digital Environments',
+          'Kaip elgtis atsakingai skaitmeninėse aplinkose – gerbti save ir kitus skaitmeninėse aplinkose',
       },
       ap: {
-        p1Title: 'Let us Define The Circle of Trustees',
-        p2Title: 'What Is an Adversary?',
-        p3Title: 'What Are the Attacker Techniques?',
+        p1Title: 'Apibrėžkime patikimų asmenų ratą',
+        p2Title: 'Kas yra priešininkas?',
+        p3Title: 'Kokias technikas naudoja užpuolikai?',
       },
       at: {
-        p1Title: 'What Is Identity and What Are Digital Assets?',
-        p2Title: 'What Is Authentication and Why Is It Important?',
-        p3Title: 'How to Create Strong Usernames and Passwords',
-        p4Title: 'How to Manage Passwords Securely – Using a Password Manager',
-        p5Title: 'How to Protect Our Digital Identity – Making Safe and Responsible Choices',
+        p1Title: 'Kas yra tapatybė ir kas yra skaitmeniniai ištekliai?',
+        p2Title: 'Kas yra autentifikavimas ir kodėl jis svarbus?',
+        p3Title: 'Kaip kurti stiprius naudotojo vardus ir slaptažodžius',
+        p4Title: 'Kaip saugiai tvarkyti slaptažodžius – naudojant slaptažodžių tvarkyklę',
+        p5Title: 'Kaip apsaugoti mūsų skaitmeninę tapatybę – priimti saugius ir atsakingus sprendimus',
       },
       dp: {
-        p1Title: 'What Is Private Data?',
-        p2Title: 'Data Sharing',
-        p3Title: 'Data Detectives – Digital Footprints',
-        p4Title: 'Data Detectives – Clean Up Your Digital Footprint',
+        p1Title: 'Kas yra privatūs duomenys?',
+        p2Title: 'Dalijimasis duomenimis',
+        p3Title: 'Duomenų detektyvai – skaitmeniniai pėdsakai',
+        p4Title: 'Duomenų detektyvai – išvalykite savo skaitmeninį pėdsaką',
       },
       se: {
-        p1Title: 'What Is Social Engineering?',
-        p2Title: 'Why Is Social Engineering Used by Attackers?',
-        p3Title: 'Recognising Social Engineering in Everyday Contexts',
-        p4Title: 'Protecting Yourself and Others From Social Engineering',
+        p1Title: 'Kas yra socialinė inžinerija?',
+        p2Title: 'Kodėl užpuolikai naudoja socialinę inžineriją?',
+        p3Title: 'Socialinės inžinerijos atpažinimas kasdieniniame kontekste',
+        p4Title: 'Savęs ir kitų apsauga nuo socialinės inžinerijos',
       },
       mw: {
-        p1Title: 'What is Malware?',
-        p2Title: 'Malware Types',
-        p3Title: 'Recognising Malware',
-        p4Title: 'Protection Measures Against Malware',
+        p1Title: 'Kas yra kenkėjiška programa?',
+        p2Title: 'Kenkėjiškų programų tipai',
+        p3Title: 'Kenkėjiškų programų atpažinimas',
+        p4Title: 'Apsaugos priemonės nuo kenkėjiškų programų',
       },
       da: {
-        p1Title: 'Misinformation',
-        p2Title: 'Disinformation',
-        p3Title: 'Cyber Bullying',
-        p4Title: 'Stranger Danger',
-        p5Title: 'Influencers',
-        p6Title: 'How Can We Deal With the Behaviour of Digital Abusers?',
+        p1Title: 'Klaidinga informacija',
+        p2Title: 'Dezinformacija',
+        p3Title: 'Kibernetinės patyčios',
+        p4Title: 'Pavojus iš nepažįstamųjų',
+        p5Title: 'Influenceriai',
+        p6Title: 'Kaip galime susidoroti su skaitmeninių smurtautojų elgesiu?',
       },
     },
   },
 
   modules: {
     dc: {
-      title: 'Digital Citizenship',
+      title: 'Skaitmeninė pilietybė',
       description:
-        'Digital citizenship helps students navigate online spaces with confidence, empathy, and responsibility. This module supports educators in teaching safe habits, respectful communication, and thoughtful decision-making in digital environments.',
+        'Skaitmeninė pilietybė padeda mokiniams naršyti internetinėse erdvėse su pasitikėjimu, empatija ir atsakomybe. Šis modulis padeda pedagogams mokyti saugių įpročių, pagarbaus bendravimo ir apgalvoto sprendimų priėmimo skaitmeninėse aplinkose.',
     },
     ap: {
-      title: 'Attacker Perspective',
+      title: 'Užpuoliko perspektyva',
       description:
-        'This module helps children understand how attackers might try to gain their trust and how to make safer choices. The attacker perspective module supports educators in teaching children about the tactics that adversaries use to gain trust and how to recognize and respond to these tactics.',
+        'Šis modulis padeda vaikams suprasti, kaip užpuolikai gali bandyti pelnyti jų pasitikėjimą, ir kaip priimti saugesnius sprendimus. Užpuoliko perspektyvos modulis padeda pedagogams mokyti vaikus apie taktikas, kurias priešininkai naudoja pasitikėjimui pelnyti, ir kaip šias taktikas atpažinti ir į jas reaguoti.',
     },
     at: {
-      title: 'Authentication',
+      title: 'Autentifikavimas',
       description:
-        'Authentication helps students understand how we prove who we are online. This module supports educators in teaching strong sign-in habits, why extra verification matters, and how to keep accounts protected.',
+        'Autentifikavimas padeda mokiniams suprasti, kaip mes internete įrodome, kas esame. Šis modulis padeda pedagogams mokyti stiprių prisijungimo įpročių, kodėl svarbus papildomas patikrinimas ir kaip apsaugoti paskyras.',
     },
     dp: {
-      title: 'Data Privacy',
+      title: 'Duomenų privatumas',
       description:
-        'Data privacy helps students understand what information is personal, why it matters, and how to make careful choices when sharing online. This module supports educators in building safe, confident decision-making around personal data.',
+        'Duomenų privatumas padeda mokiniams suprasti, kokia informacija yra asmeninė, kodėl ji svarbi ir kaip atsargiai pasirinkti dalijantis internete. Šis modulis padeda pedagogams ugdyti saugų, pasitikintį sprendimų priėmimą apie asmeninius duomenis.',
     },
     se: {
-      title: 'Social Engineering',
+      title: 'Socialinė inžinerija',
       description:
-        'Social engineering is when someone uses pressure, tricks, or false trust to get information or access. This module helps educators teach students how to spot manipulation and respond safely.',
+        'Socialinė inžinerija – tai kai kas nors naudoja spaudimą, gudrybę ar klaidingą pasitikėjimą, norėdamas gauti informacijos ar prieigos. Šis modulis padeda pedagogams mokyti mokinius, kaip pastebėti manipuliavimą ir saugiai reaguoti.',
     },
     mw: {
-      title: 'Malware',
+      title: 'Kenkėjiška programa',
       description:
-        'Malware is harmful software that can slow devices, steal information, or cause damage. This module helps educators teach students how malware spreads and how to keep devices safe.',
+        'Kenkėjiška programa yra žalinga programinė įranga, galinti sulėtinti įrenginius, vogti informaciją ar sukelti žalą. Šis modulis padeda pedagogams mokyti mokinius, kaip kenkėjiška programa plinta ir kaip išlaikyti įrenginius saugius.',
     },
     da: {
-      title: 'Digital Abuse',
+      title: 'Skaitmeninis smurtas',
       description:
-        'Digital abuse includes harmful behavior online such as threats, harassment, or unwanted contact. This module helps educators teach students to recognize unsafe behavior, set boundaries, and find support.',
+        'Skaitmeninis smurtas apima žalingą elgesį internete, pvz., grasinimus, priekabiavimą ar nepageidaujamą kontaktą. Šis modulis padeda pedagogams mokyti mokinius atpažinti nesaugų elgesį, nustatyti ribas ir ieškoti paramos.',
     },
   },
 
   contentPage: {
-    downloadGuide: 'Download Teaching Guide',
-    downloadAll: 'Download All Materials',
-    aimTitle: 'Aim of the Module',
-    aimShort: 'Aim',
-    objectivesTitle: 'Learning Objectives',
-    outcomesTitle: 'Learning Outcomes',
-    guideDescription: 'This teaching guide offers essential context for each source and provides clear descriptions to help you effectively use the provided materials in your classroom.',
-    goalLabel: 'Goal:',
-    whatsIncluded: 'What’s Included',
-    download: 'Download',
-    downloadVideo: 'Download Video',
-    downloadSubtitles: 'Download Subtitles',
-    downloadPartIntro: 'Download all the materials for this part of the module.',
-    downloadGuideIntro: 'Download the teaching guide for this module.',
-    startExploring: 'Start Exploring',
-    stepSingular: 'Step',
-    stepPlural: 'Steps',
-    materialSingular: 'Material',
-    materialPlural: 'Materials',
-    videoSingular: 'Video',
-    videoPlural: 'Videos',
-    challengeSingular: 'Challenge',
-    challengePlural: 'Challenges',
-    gameSingular: 'Game',
-    gamePlural: 'Games',
-    partSingular: 'Part',
-    partPlural: 'Parts',
-    moduleContent: 'Module Content',
-    moduleContentSubtitle: 'Explore each part of this module — activities, materials, and videos to teach with.',
-    resources: 'Resources',
-    activityPlan: 'Activity Plan',
-    readingMaterials: 'Reading Materials',
-    preparationMaterials: 'Preparation Materials',
-    featuredVideo: 'Featured Video',
-    downloadBundle: 'Download all materials for this part',
-    relatedModules: 'Related Modules',
-    relatedModulesSubtitle: 'Continue building your students\' cybersecurity knowledge with these connected topics.',
-    explore: 'Explore',
-    guideLabel: 'Guide',
-    teachersGuideTitle: "Teaching Guide",
-    teachersGuideDownload: 'Download Guide',
-    materialPackage: 'Material Package',
-    materialPackageSub: 'Everything for this part, zipped and ready.',
-    downloadPart: 'Download Package',
-    subtitlesSingular: 'Subtitles',
+    downloadGuide: 'Atsisiųsti mokymo vadovą',
+    downloadAll: 'Atsisiųsti visą medžiagą',
+    aimTitle: 'Modulio tikslas',
+    aimShort: 'Tikslas',
+    objectivesTitle: 'Mokymosi tikslai',
+    outcomesTitle: 'Mokymosi rezultatai',
+    guideDescription: 'Šis mokymo vadovas siūlo esminį kontekstą kiekvienam šaltiniui ir pateikia aiškius aprašymus, kurie padės jums efektyviai naudoti pateiktą medžiagą savo klasėje.',
+    goalLabel: 'Tikslas:',
+    whatsIncluded: 'Kas įtraukta',
+    download: 'Atsisiųsti',
+    downloadVideo: 'Atsisiųsti vaizdo įrašą',
+    downloadSubtitles: 'Atsisiųsti subtitrus',
+    downloadPartIntro: 'Atsisiųskite visą šios modulio dalies medžiagą.',
+    downloadGuideIntro: 'Atsisiųskite šio modulio mokymo vadovą.',
+    startExploring: 'Pradėti tyrinėti',
+    stepSingular: 'Žingsnis',
+    stepPlural: 'Žingsniai',
+    materialSingular: 'Medžiaga',
+    materialPlural: 'Medžiaga',
+    videoSingular: 'Vaizdo įrašas',
+    videoPlural: 'Vaizdo įrašai',
+    challengeSingular: 'Iššūkis',
+    challengePlural: 'Iššūkiai',
+    gameSingular: 'Žaidimas',
+    gamePlural: 'Žaidimai',
+    partSingular: 'Dalis',
+    partPlural: 'Dalys',
+    moduleContent: 'Modulio turinys',
+    moduleContentSubtitle: 'Tyrinėkite kiekvieną šio modulio dalį – veiklas, medžiagą ir vaizdo įrašus mokymo tikslais.',
+    resources: 'Ištekliai',
+    activityPlan: 'Veiklų planas',
+    readingMaterials: 'Skaitymo medžiaga',
+    preparationMaterials: 'Parengiamoji medžiaga',
+    featuredVideo: 'Rekomenduojamas vaizdo įrašas',
+    downloadBundle: 'Atsisiųsti visą šios dalies medžiagą',
+    relatedModules: 'Kiti moduliai',
+    relatedModulesSubtitle: 'Tęskite mokinių kibernetinio saugumo žinių ugdymą su šiomis susijusiomis temomis.',
+    explore: 'Tyrinėti',
+    guideLabel: 'Vadovas',
+    teachersGuideTitle: 'Mokymo vadovas',
+    teachersGuideDownload: 'Atsisiųsti vadovą',
+    materialPackage: 'Medžiagos paketas',
+    materialPackageSub: 'Viskas šiai daliai, supakuota ir paruošta.',
+    downloadPart: 'Atsisiųsti paketą',
+    subtitlesSingular: 'Subtitrai',
   },
 
   gamePage: {
-    howItWorks: 'How It Works',
-    tipLabel: 'Tip',
+    howItWorks: 'Kaip tai veikia',
+    tipLabel: 'Patarimas',
     gameInstructions:
-      'To play the game, you need to have the Roblox app installed on your device. After clicking the Play button, the game will open in the Roblox application. If you don\'t have Roblox installed yet, you will be prompted to download and install it first.',
-    tip: 'For the best experience, make sure you have the Roblox app installed on your device before clicking the Play button.',
-    playGame: 'Play',
-    playAriaLabel: 'Play game in Roblox app',
+      'Norint žaisti žaidimą, jūsų įrenginyje turi būti įdiegta „Roblox" programa. Paspaudę mygtuką „Žaisti", žaidimas atsidarys „Roblox" programoje. Jei „Roblox" dar neįdiegta, būsite paraginti ją pirma atsisiųsti ir įdiegti.',
+    tip: 'Geresnei patirčiai užtikrinti prieš paspaudžiant mygtuką „Žaisti" įsitikinkite, kad jūsų įrenginyje įdiegta „Roblox" programa.',
+    playGame: 'Žaisti',
+    playAriaLabel: 'Žaisti žaidimą „Roblox" programoje',
   },
 
   games: {
     at: {
-      title: 'Master Spell: Unlock the Vault',
-      subtitle: 'Step into a fantasy world where your knowledge of authentication becomes the key to progress. Begin by choosing the stronger of two passwords to build a bridge, then face a castle challenge where you’ll test your understanding of two-factor authentication by tracking the correct knight. As you continue, identify which items are digital and secure them by creating strong passwords, storing each one in a magical book. After repeating this process, craft a powerful Master Spell and use it to unlock hidden chests—proving you’ve mastered the principles of strong passwords and authentication before returning to your home room.',
-      altText: 'Game thumbnail',
+      title: 'Meistro burtai: Atrakink saugyklą',
+      subtitle: 'Patekite į fantazijos pasaulį, kur jūsų žinios apie autentifikavimą tampa pažangos raktu. Pradėkite pasirinkdami stipresnį iš dviejų slaptažodžių tiltui statyti, tada susidurkite su pilies iššūkiu, kuriame išbandysite savo dviejų faktorių autentifikavimo supratimą sekdami teisingą riterį. Tęsdami identifikuokite, kurie daiktai yra skaitmeniniai, ir apsaugokite juos kurdami stiprius slaptažodžius, kiekvieną saugodami stebuklingoje knygoje. Pakartojus šį procesą, sukurkite galingus Meistro burtus ir panaudokite juos paslėptoms skrynioms atidaryti – taip įrodydami, kad įvaldėte stiprių slaptažodžių ir autentifikavimo principus, prieš grįžtant į savo namų kambarį.',
+      altText: 'Žaidimo miniatiūra',
     },
     dp: {
-      title: 'Secrets of the Pearl & Shell',
-      subtitle: 'Step into a whimsical world where your choices shape how well you protect your personal information. Begin by sorting information as public or private, using seashells and pearls to decide what should be shared and what should stay hidden. Then move to a social media challenge, where you’ll review posts on a phone-like interface and decide whether they are safe to share or reveal sensitive data. As you continue, follow a mysterious gnome to uncover your digital traces, answering questions about topics like cookies and VPNs. In the final stage, respond to phone alerts about managing and cleaning up your digital footprint, proving your understanding of data privacy before completing your journey.',
-      altText: 'Game thumbnail',
+      title: 'Perlų ir kriauklių paslaptys',
+      subtitle: 'Patekite į žavingą pasaulį, kur jūsų pasirinkimai lemia, kaip gerai apsaugote savo asmeninę informaciją. Pradėkite rūšiuodami informaciją kaip viešą arba privačią – naudodami kriaukles ir perlus nuspręskite, kuo dalintis ir kas turi likti paslėpta. Tada pereikite prie socialinių tinklų iššūkio, kuriame peržiūrėsite įrašus telefono tipo sąsajoje ir nuspręsite, ar jie saugūs dalintis, ar atskleidžia jautrius duomenis. Tęsdami sekite paslaptingą nykštuką atrasti savo skaitmeninius pėdsakus, atsakydami į klausimus apie tokias temas kaip slapukai ir VPN. Galutiniame etape reaguokite į telefono perspėjimus apie skaitmeninio pėdsako tvarkymą ir valymą – taip įrodydami duomenų privatumo supratimą prieš baigdami savo kelionę.',
+      altText: 'Žaidimo miniatiūra',
     },
     se: {
-      title: 'Scam or Safe? Don’t Fall for It!',
-      subtitle: 'Step into a high-stakes challenge where your ability to spot deception is the key to survival. Begin by jumping between platforms and identifying whether examples like websites, messages, or emails are legitimate or phishing attempts—choose correctly to move forward, but make a mistake and risk losing your shield and falling. As the challenge intensifies, continue across a more demanding path where each step presents a new scenario, requiring you to decide whether it is phishing, safe, or uncertain. Prove your awareness of social engineering tactics and sharpen your instincts as you navigate this dangerous path.',
-      altText: 'Game thumbnail',
+      title: 'Sukčiavimas ar saugu? Nepasiduokite!',
+      subtitle: 'Patekite į didelio pavojaus iššūkį, kur jūsų gebėjimas pastebėti apgaulę yra išlikimo raktas. Pradėkite šokdami tarp platformų ir nustatydami, ar tokie pavyzdžiai kaip svetainės, žinutės ar el. laiškai yra teisėti, ar sukčiavimo bandymai – pasirinkite teisingai, kad judėtumėte į priekį, bet padarykite klaidą ir rizikuokite prarasti skydą bei nukristi. Kai iššūkis didėja, tęskite sudėtingesniu keliu, kur kiekvienas žingsnis pateikia naują scenarijų, reikalaujantį nuspręsti, ar tai sukčiavimas, saugi situacija, ar neapibrėžta. Įrodykite savo socialinės inžinerijos taktikų supratimą ir paaštrinkite instinktus naršydami šiuo pavojingu keliu.',
+      altText: 'Žaidimo miniatiūra',
     },
     mw: {
-      title: 'Malware Madness Race',
-      subtitle: 'Step into a fast-paced race where understanding malware gives you the edge. Begin by exploring different items on the track—such as viruses, worms, ransomware, and protective tools like antivirus software, firewalls, and updates—each with its own effect and real-world meaning. Then speed through three laps, collecting items that can either boost your performance or slow you down, depending on whether they represent threats or protections. At the finish line, review what you’ve gathered and learn how each element connects to real-world cybersecurity, along with practical tips on how to stay protected.',
-      altText: 'Game thumbnail',
+      title: 'Kenkėjiškų programų lenktynių beprotybė',
+      subtitle: 'Patekite į sparčias lenktynes, kur kenkėjiškų programų supratimas suteikia jums pranašumą. Pradėkite tyrinėdami skirtingus daiktus trasoje – tokius kaip virusai, kirminai, išpirkos reikalaujančios programos ir apsaugos įrankiai kaip antivirusinė programinė įranga, ugniasienės ir atnaujinimai – kiekvienas su savo poveikiu ir realaus pasaulio reikšme. Tada minkite tris ratus, rinkdami daiktus, kurie gali arba padidinti jūsų našumą, arba sulėtinti jus, priklausomai nuo to, ar jie atstovauja grėsmes, ar apsaugą. Finišo linijoje peržiūrėkite tai, ką surinkote, ir sužinokite, kaip kiekvienas elementas susijęs su kibernetiniu saugumu realiame pasaulyje, kartu su praktiniais patarimais, kaip išlikti apsaugotiems.',
+      altText: 'Žaidimo miniatiūra',
     },
     da: {
-      title: 'Kindness Quest: Save the City',
-      subtitle: 'Step into a lively city where digital conflicts have caused tension among its inhabitants. Take on the role of a problem-solver as you help people navigate issues like cyberbullying, deepfakes, and online misuse, making thoughtful choices to resolve their disputes. With each conflict you successfully address, relationships improve and the city grows more welcoming. Watch as your actions transform the atmosphere—leading to a joyful celebration where the community comes together and the once-distant mascot becomes increasingly friendly.',
-      altText: 'Game thumbnail',
+      title: 'Gerumo misija: Išgelbėkite miestą',
+      subtitle: 'Patekite į gyvybingą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų. Prisiimkite problemų sprendėjo vaidmenį, kai padediate žmonėms spręsti tokias problemas kaip kibernetinis patyčiomis, giliosios klastotės ir internetinis piktnaudžiavimas, apgalvotai pasirinkdami jų ginčų sprendimo būdus. Su kiekvienu sėkmingai išspręstu konfliktu santykiai gerėja ir miestas tampa svetingesnis. Stebėkite, kaip jūsų veiksmai keičia atmosferą – vedant į džiaugsmingą šventimą, kur bendruomenė susivienija ir kadaise tolimas maskotis tampa vis draugiškesnis.',
+      altText: 'Žaidimo miniatiūra',
     },
   },
 
   notFound: {
-    title: '404 - Page Not Found',
+    title: '404 - Puslapis nerastas',
     code: '404',
-    heading: 'You\'ve Wandered Off the Digital Path!',
+    heading: 'Jūs nukrypote nuo skaitmeninio kelio!',
     message:
-      'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let\'s get you back to safe shores.',
-    backHome: 'Navigate Back Home',
+      'Ieškomo puslapio galbūt buvo atsisakyta, pakeistas jo pavadinimas arba jis laikinai nepasiekiamas. Grąžinkime jus į saugų krantą.',
+    backHome: 'Grįžti į pradžią',
   },
 
 }

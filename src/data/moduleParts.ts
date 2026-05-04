@@ -1051,6 +1051,42 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
             href: '/materials/placeholder.txt'
           },
         ],
+        featuredVideo: {
+          // Protecting Your Personal Data Online
+          id: '4.4.4',
+          posterSrc: '',
+          videoSrc: '/materials/data-privacy/part4/videos/4.4.4_ProtectingYourPersonalDataOnline_video.mp4',
+          downloads: {
+            video:
+            { href: '/materials/data-privacy/part4/videos/4.4.4_ProtectingYourPersonalDataOnline_video.mp4'
+            },
+            subtitles:
+            { href: '/materials/data-privacy/part4/videos/subtitles/subtitles.zip'
+            },
+          },
+          tracks: [
+            { label: 'English',
+              srclang: 'en',
+              src: '/materials/placeholder.vtt'
+            },
+            { label: 'Czech',
+              srclang: 'cs',
+              src: '/materials/placeholder.vtt'
+            },
+            { label: 'Norwegian',
+              srclang: 'no',
+              src: '/materials/placeholder.vtt'
+            },
+            { label: 'Lithuanian',
+              srclang: 'lt',
+              src: '/materials/placeholder.vtt'
+            },
+            { label: 'German',
+              srclang: 'de',
+              src: '/materials/placeholder.vtt'
+            },
+          ],
+        },
       },
     },
   ],
