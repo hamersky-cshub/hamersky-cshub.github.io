@@ -1,8 +1,8 @@
-import { en } from 'src/i18n/translations/en/index.ts'
-import { cs } from 'src/i18n/translations/cs/index.ts'
-import { de } from 'src/i18n/translations/de/index.ts'
-import { lt } from 'src/i18n/translations/lt/index.ts'
-import { no } from 'src/i18n/translations/no/index.ts'
+import { en } from './translations/en/index'
+import { cs } from './translations/cs/index'
+import { de } from './translations/de/index'
+import { lt } from './translations/lt/index'
+import { no } from './translations/no/index'
 
 type DeepString<T> =
   T extends string ? string :

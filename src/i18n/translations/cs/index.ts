@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Czech translation index — assembles all per-module and shared files
+// English translation index — assembles all per-module and shared files
 // ---------------------------------------------------------------------------
 //
 // Do NOT edit content here. Edit the individual files:

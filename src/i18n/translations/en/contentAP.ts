@@ -84,7 +84,7 @@ export const contentAP = {
             title: 'Define the Circle of Trustees',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -136,7 +136,7 @@ export const contentAP = {
             title: "Understand the Attacker's Motivation",
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -190,7 +190,7 @@ export const contentAP = {
             title: 'Understand Attack Paths',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },

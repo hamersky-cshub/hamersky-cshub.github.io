@@ -43,9 +43,9 @@ export const contentAT = {
   objectives: [
     'To stress the importance of secure identity management.',
     'To introduce the concept of authentication and its different types.',
-    'To develop students understanding of digital assets and access control awareness.',
-    'To develop students’ knowledge and skills for creating secure usernames and passwords following recommendations and good practices.',
-    'To build students skills for managing passwords securely.',
+    'To develop students\' understanding of digital assets and access control awareness.',
+    'To develop students\' knowledge and skills for creating secure usernames and passwords following recommendations and good practices.',
+    'To build students\' skills for managing passwords securely.',
   ],
   outcomes: [
     'I can identify my personal digital assets and explain the risks they face in both physical and digital environments.',
@@ -105,7 +105,7 @@ export const contentAT = {
             title: 'Understanding Digital Assets',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -169,7 +169,7 @@ export const contentAT = {
             title: 'Applying Authentication to Digital Assets',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -248,7 +248,7 @@ export const contentAT = {
             title: 'Creating Strong Passwords Safely',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -355,7 +355,7 @@ export const contentAT = {
             title: 'Applying Password Managers Safely',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -417,7 +417,7 @@ export const contentAT = {
             title: 'Digital Identity and Authentication',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -516,7 +516,7 @@ export const challengeAT = {
   roundBadgeTemplate: 'Round {n} of {total}',
   criteriaTitle: 'Password Recipe — Round {n}:',
   criterionLength: 'Length > 10 characters',
-  criterionNumber: 'Contains a number (0–9)',
+  criterionNumber: 'Contains a number (0-9)',
   criterionSymbol: 'Contains a symbol (! @ # $ % ^ & * ?)',
   criterionUppercase: 'Contains an UPPERCASE letter',
   criterionLowercase: 'Contains a lowercase letter',
@@ -528,7 +528,7 @@ export const challengeAT = {
   almostThereTemplate: 'Almost there! Try to {hint}.',
   hints: {
     length: 'make it longer (10+ characters)',
-    number: 'add a number (0–9)',
+    number: 'add a number (0-9)',
     symbol: 'add a symbol like ! @ # $ %',
     upper: 'add an UPPERCASE letter',
     lower: 'add a lowercase letter',

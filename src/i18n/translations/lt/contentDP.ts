@@ -146,7 +146,7 @@ export const contentDP = {
             title: 'Consent and Permissions',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -184,7 +184,7 @@ export const contentDP = {
             title: 'Mapping Your Online Traces',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },
@@ -238,7 +238,7 @@ export const contentDP = {
             title: 'Managing Privacy Settings',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary - Summary and Informal Assessment',
           },
         ],
       },

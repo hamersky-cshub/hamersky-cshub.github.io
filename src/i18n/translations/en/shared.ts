@@ -144,7 +144,7 @@ export const shared = {
     challengeCards: {
       dc: {
         description:
-          'Decide what’s safe and responsible to share online by reviewing different types of content and making thoughtful choices about what to post.',
+          'Decide what\'s safe and responsible to share online by reviewing different types of content and making thoughtful choices about what to post.',
       },
       ap: {
         description:
@@ -198,8 +198,8 @@ export const shared = {
       dc: {
         p1Title: 'Digital Environments',
         p2Title: 'What Does it Mean to be a Digital Citizen?',
-        p3Title: 'How to Stay Safe in Digital Environments – Privacy Settings',
-        p4Title: 'How to Act Savvy in Digital Environments – Being Wise and Resilient',
+        p3Title: 'How to Stay Safe in Digital Environments - Privacy Settings',
+        p4Title: 'How to Act Savvy in Digital Environments - Being Wise and Resilient',
         p5Title:
           'How to Act Responsibly in Digital Environments - Respecting Ourselves and Others in Digital Environments',
       },
@@ -212,14 +212,14 @@ export const shared = {
         p1Title: 'What Is Identity and What Are Digital Assets?',
         p2Title: 'What Is Authentication and Why Is It Important?',
         p3Title: 'How to Create Strong Usernames and Passwords',
-        p4Title: 'How to Manage Passwords Securely – Using a Password Manager',
-        p5Title: 'How to Protect Our Digital Identity – Making Safe and Responsible Choices',
+        p4Title: 'How to Manage Passwords Securely - Using a Password Manager',
+        p5Title: 'How to Protect Our Digital Identity - Making Safe and Responsible Choices',
       },
       dp: {
         p1Title: 'What Is Private Data?',
         p2Title: 'Data Sharing',
-        p3Title: 'Data Detectives – Digital Footprints',
-        p4Title: 'Data Detectives – Clean Up Your Digital Footprint',
+        p3Title: 'Data Detectives - Digital Footprints',
+        p4Title: 'Data Detectives - Clean Up Your Digital Footprint',
       },
       se: {
         p1Title: 'What Is Social Engineering?',
@@ -291,7 +291,7 @@ export const shared = {
     outcomesTitle: 'Learning Outcomes',
     guideDescription: 'This teaching guide offers essential context for each source and provides clear descriptions to help you effectively use the provided materials in your classroom.',
     goalLabel: 'Goal:',
-    whatsIncluded: 'What’s Included',
+    whatsIncluded: 'What\'s Included',
     download: 'Download',
     downloadVideo: 'Download Video',
     downloadSubtitles: 'Download Subtitles',
@@ -343,22 +343,22 @@ export const shared = {
   games: {
     at: {
       title: 'Master Spell: Unlock the Vault',
-      subtitle: 'Step into a fantasy world where your knowledge of authentication becomes the key to progress. Begin by choosing the stronger of two passwords to build a bridge, then face a castle challenge where you’ll test your understanding of two-factor authentication by tracking the correct knight. As you continue, identify which items are digital and secure them by creating strong passwords, storing each one in a magical book. After repeating this process, craft a powerful Master Spell and use it to unlock hidden chests—proving you’ve mastered the principles of strong passwords and authentication before returning to your home room.',
+      subtitle: 'Step into a fantasy world where your knowledge of authentication becomes the key to progress. Begin by choosing the stronger of two passwords to build a bridge, then face a castle challenge where you\'ll test your understanding of two-factor authentication by tracking the correct knight. As you continue, identify which items are digital and secure them by creating strong passwords, storing each one in a magical book. After repeating this process, craft a powerful Master Spell and use it to unlock hidden chests—proving you\'ve mastered the principles of strong passwords and authentication before returning to your home room.',
       altText: 'Game thumbnail',
     },
     dp: {
       title: 'Secrets of the Pearl & Shell',
-      subtitle: 'Step into a whimsical world where your choices shape how well you protect your personal information. Begin by sorting information as public or private, using seashells and pearls to decide what should be shared and what should stay hidden. Then move to a social media challenge, where you’ll review posts on a phone-like interface and decide whether they are safe to share or reveal sensitive data. As you continue, follow a mysterious gnome to uncover your digital traces, answering questions about topics like cookies and VPNs. In the final stage, respond to phone alerts about managing and cleaning up your digital footprint, proving your understanding of data privacy before completing your journey.',
+      subtitle: 'Step into a whimsical world where your choices shape how well you protect your personal information. Begin by sorting information as public or private, using seashells and pearls to decide what should be shared and what should stay hidden. Then move to a social media challenge, where you\'ll review posts on a phone-like interface and decide whether they are safe to share or reveal sensitive data. As you continue, follow a mysterious gnome to uncover your digital traces, answering questions about topics like cookies and VPNs. In the final stage, respond to phone alerts about managing and cleaning up your digital footprint, proving your understanding of data privacy before completing your journey.',
       altText: 'Game thumbnail',
     },
     se: {
-      title: 'Scam or Safe? Don’t Fall for It!',
+      title: 'Scam or Safe? Don\'t Fall for It!',
       subtitle: 'Step into a high-stakes challenge where your ability to spot deception is the key to survival. Begin by jumping between platforms and identifying whether examples like websites, messages, or emails are legitimate or phishing attempts—choose correctly to move forward, but make a mistake and risk losing your shield and falling. As the challenge intensifies, continue across a more demanding path where each step presents a new scenario, requiring you to decide whether it is phishing, safe, or uncertain. Prove your awareness of social engineering tactics and sharpen your instincts as you navigate this dangerous path.',
       altText: 'Game thumbnail',
     },
     mw: {
       title: 'Malware Madness Race',
-      subtitle: 'Step into a fast-paced race where understanding malware gives you the edge. Begin by exploring different items on the track—such as viruses, worms, ransomware, and protective tools like antivirus software, firewalls, and updates—each with its own effect and real-world meaning. Then speed through three laps, collecting items that can either boost your performance or slow you down, depending on whether they represent threats or protections. At the finish line, review what you’ve gathered and learn how each element connects to real-world cybersecurity, along with practical tips on how to stay protected.',
+      subtitle: 'Step into a fast-paced race where understanding malware gives you the edge. Begin by exploring different items on the track—such as viruses, worms, ransomware, and protective tools like antivirus software, firewalls, and updates—each with its own effect and real-world meaning. Then speed through three laps, collecting items that can either boost your performance or slow you down, depending on whether they represent threats or protections. At the finish line, review what you\'ve gathered and learn how each element connects to real-world cybersecurity, along with practical tips on how to stay protected.',
       altText: 'Game thumbnail',
     },
     da: {
