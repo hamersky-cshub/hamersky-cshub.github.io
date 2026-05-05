@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url'
 export default defineConfig({
   compressHTML: true,
   site: 'https://hamersky-cshub.github.io/',
+  trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'cs', 'de', 'lt', 'no'],
@@ -19,6 +20,9 @@ export default defineConfig({
   output: 'static',
   integrations: [mdx(), icon(), compress()],
   vite: {
+    build: {
+      cssCodeSplit: false,
+    },
     css: {
       preprocessorOptions: {
         scss: {

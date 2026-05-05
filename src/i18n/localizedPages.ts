@@ -15,7 +15,12 @@ import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from './i18n'
 
 type PageLoader = () => Promise<{ default: unknown }>
 
-const pageModules = import.meta.glob('../pages/**/*.{astro,md,mdx}') as Record<string, PageLoader>
+// Eager imports force Vite to include all page modules in the static CSS graph,
+// so localized pages get the same CSS bundles as their English source pages.
+const _eagerModules = import.meta.glob('../pages/**/*.{astro,md,mdx}', { eager: true }) as Record<string, { default: unknown }>
+const pageModules: Record<string, PageLoader> = Object.fromEntries(
+  Object.entries(_eagerModules).map(([path, mod]) => [path, () => Promise.resolve(mod)]),
+)
 
 // Locales that have their own pages/ subdirectory acting as a catch-all wrapper.
 // Derived from SUPPORTED_LOCALES so adding a new locale only requires updating i18n.ts.
