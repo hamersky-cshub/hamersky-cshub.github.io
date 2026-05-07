@@ -21,14 +21,14 @@ const learningHubHref = localizePath(locale, '/learning-hub/introduction')
   <SkipLink />
   <Navigation>
     <li class="menu-item">
-      <a href={homeHref} data-nav-match="root">{t('nav.home')}</a>
+      <a href={homeHref} data-nav-match="root">{t('layout.nav.home')}</a>
     </li>
     <li class="menu-item">
-      <a href={aboutHref} data-nav-match="exact">{t('nav.about')}</a>
+      <a href={aboutHref} data-nav-match="exact">{t('layout.nav.about')}</a>
     </li>
     <li class="menu-item highlight" style="font-weight: 900;">
       <a href={learningHubHref} data-nav-match="section" data-nav-section="learning-hub">
-        {t('nav.learningHub')}
+        {t('layout.nav.learningHub')}
       </a>
     </li>
     <LanguageSwitcher />

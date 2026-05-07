@@ -6,75 +6,26 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDA = {
-  subtitle:
-    'Digital abuse includes harmful behavior online such as threats, harassment, or unwanted contact. This module helps educators teach students to recognize unsafe behavior, set boundaries, and find support.',
-  aim: 'To help students recognize harmful online behavior, understand that boundaries matter, and know the steps they can take to get support and stay safe.',
+  aim: 'Å hjelpe elever med å gjenkjenne skadelig nettadferd, forstå at grenser er viktige, og vite hvilke steg de kan ta for å få støtte og holde seg trygge.',
   objectives: [
-    'Define digital abuse in age-appropriate, supportive terms.',
-    'Recognize warning signs and unhealthy online behaviors.',
-    'Practice safe help-seeking and reporting steps.',
+    'Definere digitalt overgrep i aldersvennlige, støttende termer.',
+    'Gjenkjenne advarseltegn og usunne nettadferdsmønstre.',
+    'Øve på trygge måter å søke hjelp og rapportere på.',
   ],
   outcomes: [
-    'Identify behaviors that cross boundaries or cause harm.',
-    'Use simple safety steps like blocking or reporting.',
-    'Know trusted adults and support channels to reach out to.',
+    'Identifisere atferd som krysser grenser eller forårsaker skade.',
+    'Bruke enkle sikkerhetstiltak som blokkering eller rapportering.',
+    'Kjenne til betrodde voksne og støttekanaler å oppsøke.',
   ],
   teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Abuse Teaching Guide',
+    ariaLabel: 'Last ned lærerveiledning',
+    download: 'Lærerveiledning for digitalt misbruk',
   },
-  relatedModules: [
-    {
-      title: 'Digital Citizenship',
-      description: 'Build a strong foundation of rights, responsibility, and respect online.',
-      cta: 'Explore',
-    },
-    {
-      title: 'Attacker Perspective',
-      description: 'Understand how trust can be manipulated and learn to spot risky behavior.',
-      cta: 'Explore',
-    },
-    {
-      title: 'Social Engineering',
-      description: 'Learn how scammers and manipulators use persuasion and false urgency.',
-      cta: 'Explore',
-    },
-  ],
   parts: [
     {
-      title: 'Misinformation',
-      goal: 'Help students understand what misinformation is, what motivates people to do it and how to recognise it.',
+      title: 'Feilinformasjon',
+      goal: 'Hjelpe elever til å forstå hva feilinformasjon er, hva som motiverer folk til å spre det og hvordan man gjenkjenner det.',
       bundle: {
         filename: 'Digital Abuse Part 1 Package',
       },
@@ -82,44 +33,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.1.2
-            kind: 'Game',
-            name: 'Truth Detectives',
+            kind: 'Spill',
+            name: 'Sannhetsdetektivene',
             filename: 'Game - Truth Detectives',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What is Misinformation?',
+            title: 'Hva er feilinformasjon?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.1.1
-        title: 'What is Misinformation?',
+        title: 'Hva er feilinformasjon?',
         supportText:
-          'Use this video to introduce misinformation as false or inaccurate content that can spread online without harmful intent. Pause to ask students if they have ever shared something that later turned out not to be true.',
+          'Bruk denne videoen til å introdusere feilinformasjon som falskt eller unøyaktig innhold som kan spre seg på nettet uten skadelig hensikt. Pause for å spørre elever om de noen gang har delt noe som senere viste seg å ikke stemme.',
         downloads: {
           video: {
             filename: 'What is Misinformation',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What is Misinformation - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      title: 'Disinformation',
-      goal: 'Help students understand what disinformation is, the motivations behind it and how to recognise it.',
+      title: 'Desinformasjon',
+      goal: 'Hjelpe elever til å forstå hva desinformasjon er, motivasjonene bak det og hvordan man gjenkjenner det.',
       bundle: {
         filename: 'Digital Abuse Part 2 Package',
       },
@@ -127,39 +78,39 @@ export const contentDA = {
         materials: [],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What is Disinformation?',
+            title: 'Hva er desinformasjon?',
           },
           {
-            title: 'Algorithms',
+            title: 'Algoritmer',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.2.1
-        title: 'What is Disinformation?',
+        title: 'Hva er desinformasjon?',
         supportText:
-          'Use this video to help students distinguish disinformation — deliberately deceptive content — from misinformation. Pause to discuss how intent changes the way we evaluate and respond to false information.',
+          'Bruk denne videoen til å hjelpe elever med å skille desinformasjon — bevisst villedende innhold — fra feilinformasjon. Pause for å diskutere hvordan hensikten endrer måten vi vurderer og reagerer på falsk informasjon.',
         downloads: {
           video: {
             filename: 'What is Disinformation',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What is Disinformation - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      title: 'Cyber Bullying',
-      goal: 'Help students understand what cyber bullying is, the motivations behind it and how to recognise it.',
+      title: 'Nettmobbing',
+      goal: 'Hjelpe elever til å forstå hva nettmobbing er, motivasjonene bak det og hvordan man gjenkjenner det.',
       bundle: {
         filename: 'Digital Abuse Part 3 Package',
       },
@@ -167,44 +118,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Game',
-            name: 'Act it Out!',
+            kind: 'Spill',
+            name: 'Spill det ut!',
             filename: 'Game - Act it Out',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What is Cyber Bullying?',
+            title: 'Hva er nettmobbing?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.3.2
-        title: 'What is Cyber Bullying?',
+        title: 'Hva er nettmobbing?',
         supportText:
-          'Use this video to help students define cyber bullying and understand how online behaviour can cause real emotional harm. Pause to discuss what makes a bystander\'s response important in these situations.',
+          'Bruk denne videoen til å hjelpe elever med å definere nettmobbing og forstå hvordan nettadferd kan forårsake reell emosjonell skade. Pause for å diskutere hvorfor tilskueres respons er viktig i disse situasjonene.',
         downloads: {
           video: {
             filename: 'What is Cyber Bullying',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What is Cyber Bullying - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      title: 'Stranger Danger',
-      goal: 'Help students understand what stranger danger is, the motivations behind it and how to recognise it.',
+      title: 'Fremmedes fare',
+      goal: 'Hjelpe elever til å forstå hva fremmedes fare er, motivasjonene bak det og hvordan man gjenkjenner det.',
       bundle: {
         filename: 'Digital Abuse Part 4 Package',
       },
@@ -212,25 +163,25 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Game',
-            name: 'Real or Fake?',
+            kind: 'Spill',
+            name: 'Ekte eller falsk?',
             filename: 'Game - Real or Fake',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
     },
     {
-      title: 'Influencers',
-      goal: 'Help students understand what influencers are and what motivates them.',
+      title: 'Influencere',
+      goal: 'Hjelpe elever til å forstå hva influencere er og hva som motiverer dem.',
       bundle: {
         filename: 'Digital Abuse Part 5 Package',
       },
@@ -238,44 +189,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scenarios',
-            name: 'Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scenarier',
+            name: 'Eksempler på influencer-innlegg som er potensielt skadelige og ikke skadelige',
             filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Social Media Influencers',
+            title: 'Influencere på sosiale medier',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.5.1
-        title: 'Social Media Influencers',
+        title: 'Influencere på sosiale medier',
         supportText:
-          'Use this video to explore how influencers shape opinions and behaviours on social media, and the responsibilities that come with that reach. Pause to ask students which influencers they follow and what makes them trustworthy.',
+          'Bruk denne videoen til å utforske hvordan influencere former meninger og atferd på sosiale medier, og ansvaret som følger med den rekkevidden. Pause for å spørre elever hvilke influencere de følger og hva som gjør dem troverdige.',
         downloads: {
           video: {
             filename: 'Social Media Influencers',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'Social Media Influencers - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      title: 'How Can We Deal With the Behaviour of Digital Abusers?',
-      goal: 'Help students to know what they can do to protect themselves from digital abuse.',
+      title: 'Hvordan kan vi håndtere atferden til digitale overgripere?',
+      goal: 'Hjelpe elever til å vite hva de kan gjøre for å beskytte seg mot digitalt misbruk.',
       bundle: {
         filename: 'Digital Abuse Part 6 Package',
       },
@@ -283,18 +234,18 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Activity',
-            name: 'Safety Superhero Suggestion Pack',
+            kind: 'Aktivitet',
+            name: 'Sikkerhets-superhelt forslagspakke',
             filename: 'Activity - Safety Superhero Suggestion Pack',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -306,570 +257,564 @@ export const contentDA = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
   ],
 }
 
 export const challengeDA = {
-  title: 'Real Talk Stories',
+  title: 'Ekte historier',
   subtitle:
-    'Make choices. See consequences. Learn how to handle cyberbullying, online pressure, and digital abuse.',
-  howItWorks: 'How It Works',
+    'Ta valg. Se konsekvenser. Lær hvordan du håndterer nettmobbing, nettpress og digitalt misbruk.',
+  howItWorks: 'Slik fungerer det',
   instruction:
-    'Work through 10 real-life digital abuse scenarios. At each key moment you choose what to do — and different choices lead to genuinely different outcomes. Earn up to 3 stars per story by finding the safest path. If you get a tough ending, retry the story to discover a better route!',
-  tip: 'Each story branches in multiple directions. There is always at least one path that leads to a safe, positive outcome — but you have to make the right calls to find it!',
-  tipLabel: 'Tip',
-  yourBestScore: 'Your Best Score',
-  bestResultDesc: 'Best result from each story',
-  storiesTitle: '📖 Stories',
-  watchOutTitle: '🚩 Watch Out For',
+    'Gå gjennom 10 virkelige scenarier om digitalt misbruk. I hvert nøkkeløyeblikk velger du hva du gjør — og ulike valg fører til genuint forskjellige utfall. Tjen opptil 3 stjerner per historie ved å finne den tryggeste veien. Hvis du får en vanskelig slutt, prøv historien igjen for å oppdage en bedre rute!',
+  tip: 'Hver historie forgrener seg i flere retninger. Det er alltid minst én vei som fører til et trygt, positivt utfall — men du må ta de riktige valgene for å finne den!',
+  tipLabel: 'Tips',
+  yourBestScore: 'Din beste poengsum',
+  bestResultDesc: 'Beste resultat fra hver historie',
+  storiesTitle: '📖 Historier',
+  watchOutTitle: '🚩 Pass opp for',
   watchOutItems: [
-    '🚩 Anyone asking for private photos',
-    '🚩 Password demands from partners',
-    '🚩 Strangers asking your address or school',
-    '🚩 "Keep this a secret" pressure',
-    '🚩 Mean posts, screenshots, fake profiles',
+    '🚩 Noen som ber om private bilder',
+    '🚩 Passordkrav fra partnere',
+    '🚩 Fremmede som spør om adressen din eller skolen din',
+    '🚩 «Hold dette hemmelig»-press',
+    '🚩 Slemme innlegg, skjermbilder, falske profiler',
   ],
-  welcomeDesc: 'Make your choices carefully — different paths lead to very different outcomes.',
-  startStory: 'Start Story →',
-  whatWeLearned: '💡 What we learned:',
-  tryDifferentPath: '↩ Try a Different Path',
-  nextStory: 'Next Story →',
-  seeFinalScore: '🎉 See Final Score',
-  allStoriesComplete: 'All Stories Complete!',
-  finalScoreDesc: "Here's how you did across all 10 stories:",
-  playAgain: 'Play Again',
-  rankChampion: '🏆 Safety Champion',
-  rankChampionMsg: 'Outstanding! You found the safest path in nearly every situation.',
-  rankDefender: '🛡️ Digital Defender',
-  rankDefenderMsg: 'Great work! You handled most situations wisely and safely.',
-  rankNavigator: '📚 Learning Navigator',
-  rankNavigatorMsg: 'Good effort! Replay some stories to find the better paths and earn more stars.',
-  rankBeginning: '🌱 Getting Started',
-  rankBeginningMsg: 'Keep trying different paths — every replay teaches you something new!',
+  welcomeDesc: 'Ta valgene dine nøye — forskjellige veier fører til svært forskjellige utfall.',
+  startStory: 'Start historie →',
+  whatWeLearned: '💡 Det vi lærte:',
+  tryDifferentPath: '↩ Prøv en annen vei',
+  nextStory: 'Neste historie →',
+  seeFinalScore: '🎉 Se sluttpoengsum',
+  allStoriesComplete: 'Alle historier fullført!',
+  finalScoreDesc: 'Slik gikk det i alle 10 historiene:',
+  playAgain: 'Spill igjen',
+  rankChampion: '🏆 Sikkerhets-mester',
+  rankChampionMsg: 'Enestående! Du fant den tryggeste veien i nesten alle situasjoner.',
+  rankDefender: '🛡️ Digital forsvarer',
+  rankDefenderMsg: 'Flott arbeid! Du håndterte de fleste situasjoner klokt og trygt.',
+  rankNavigator: '📚 Læringsnavigator',
+  rankNavigatorMsg: 'Bra innsats! Spill noen historier på nytt for å finne bedre veier og tjene flere stjerner.',
+  rankBeginning: '🌱 Kommer i gang',
+  rankBeginningMsg: 'Fortsett å prøve forskjellige veier — hvert nytt spill lærer deg noe nytt!',
   stories: [
     {
-      id: 1, title: 'The Meme Problem', emoji: '😟', topic: 'Cyberbullying',
+      id: 1, title: 'Meme-problemet', emoji: '😟', topic: 'Nettmobbing',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You open your phone and see a group chat. Someone named Jake posted a mean meme about your classmate Emma, making fun of her appearance. 23 people already liked it. What do you do?', 
-          choices: ['👍 Like the meme to fit in with everyone', '📲 Scroll past and ignore it', '💬 Send Emma a private supportive message'] 
+        {
+          id: 'start',
+          text: 'Du åpner telefonen og ser en gruppechat. Noen som heter Jake har postet et stygt meme om klassekameraten Emma din, som gjør narr av utseendet hennes. 23 personer har allerede likt det. Hva gjør du?',
+          choices: ['👍 Like memet for å passe inn med alle', '📲 Scrolle forbi og ignorere det', '💬 Sende Emma en privat støttemelding'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Part of the Problem',  
-          text: 'You liked the meme. Jake posts more, even meaner ones. Emma sees your name in the likes and is devastated. A teacher finds out and contacts your parents.', 
-          lesson: 'Liking mean content is a form of cyberbullying. Your "like" is never invisible — the target always sees who supported it.' 
+        {
+          id: 'end_a',
+          title: 'En del av problemet',
+          text: 'Du likte memet. Jake poster mer, enda slemme. Emma ser navnet ditt i likesene og er knust. En lærer finner ut av det og kontakter foreldrene dine.',
+          lesson: 'Å like slemt innhold er en form for nettmobbing. Ditt «liker» er aldri usynlig — målet ser alltid hvem som støttet det.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You scroll past, but the posts keep coming. The next day, Emma sits alone at lunch looking very upset. The bullying has gotten worse.', 
-          choices: ['😶 Keep ignoring it — not your problem', '🏫 Tell a teacher what has been happening'] 
+        {
+          id: 'mid_b',
+          text: 'Du scroller forbi, men innleggene fortsetter å komme. Neste dag sitter Emma alene til lunsj og ser veldig lei seg ut. Mobbingen har blitt verre.',
+          choices: ['😶 Fortsette å ignorere — ikke ditt problem', '🏫 Fortelle en lærer hva som har skjedd'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'The Silent Witness',   
-          text: 'Weeks pass. Emma misses school. You feel guilty but say nothing. The bullying continues unchallenged.', 
-          lesson: 'Ignoring bullying does not make it stop. Bystanders have real power to help — staying silent is still a choice.' 
+        {
+          id: 'end_b1',
+          title: 'Det tause vitnet',
+          text: 'Uker går. Emma er borte fra skolen. Du føler deg skyldig, men sier ingenting. Mobbingen fortsetter uutfordret.',
+          lesson: 'Å ignorere mobbing får det ikke til å stoppe. Tilskuere har reell makt til å hjelpe — å være stille er fortsatt et valg.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'The Brave Reporter',   
-          text: 'The teacher acts immediately. Jake and his parents are called in. Emma gets support from the school counsellor. The bullying stops.', 
-          lesson: 'Telling a trusted adult is one of the most powerful things you can do. It is not snitching — it is protecting someone who needs help.' 
+        {
+          id: 'end_b2',
+          title: 'Den modige melder',
+          text: 'Læreren handler umiddelbart. Jake og foreldrene hans blir innkalt. Emma får støtte fra skolerådgiveren. Mobbingen stopper.',
+          lesson: 'Å fortelle en betrodd voksen er en av de mest kraftfulle tingene du kan gjøre. Det er ikke sladring — det er å beskytte noen som trenger hjelp.',
         },
-        { 
-          id: 'mid_c',  
-          text: "Emma replies: \"Thank you so much… it really hurt. I didn't know what to do.\" She is grateful but scared. The posts are still up.", 
-          choices: ['📢 Help Emma report every post to the platform', '🤷 Tell Emma to just ignore it, it will blow over'] 
+        {
+          id: 'mid_c',
+          text: 'Emma svarer: «Tusen takk… det såret virkelig. Jeg visste ikke hva jeg skulle gjøre.» Hun er takknemlig, men redd. Innleggene er fortsatt oppe.',
+          choices: ['📢 Hjelpe Emma med å rapportere hvert innlegg til plattformen', '🤷 Fortelle Emma å bare ignorere det, det vil gå over'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'The Digital Defender', 
-          text: 'You and Emma report every post together. Most are removed within a day. You also visit the school counsellor, who supports Emma further. The bullying stops.', 
-          lesson: 'Reaching out AND taking action — reporting online and involving trusted adults — is the gold standard response to cyberbullying.' },
-        { 
-          id: 'end_c2', 
-          title: 'Kind but Not Enough',  
-          text: 'Emma tries to ignore it but the posts keep coming. Your kind message helped, but without reporting or adult support the bullying continues.', 
-          lesson: 'Kindness is a great start, but reporting bullying and involving trusted adults is what actually makes it stop.' 
+        {
+          id: 'end_c1',
+          title: 'Den digitale forsvareren',
+          text: 'Du og Emma rapporterer hvert innlegg sammen. De fleste fjernes i løpet av en dag. Dere oppsøker også skolerådgiveren, som støtter Emma videre. Mobbingen stopper.',
+          lesson: 'Å ta kontakt OG handle — rapportere på nett og involvere betrodde voksne — er gullstandarden for respons på nettmobbing.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Snill, men ikke nok',
+          text: 'Emma prøver å ignorere det, men innleggene fortsetter. Din snille melding hjalp, men uten rapportering eller voksenstøtte fortsetter mobbingen.',
+          lesson: 'Vennlighet er en flott start, men å rapportere mobbing og involvere betrodde voksne er det som faktisk stopper det.',
         },
       ],
     },
     {
-      id: 2, title: 'Screenshot Trap', emoji: '📸', topic: 'Privacy & Betrayal',
+      id: 2, title: 'Skjermbilde-fellen', emoji: '📸', topic: 'Personvern og svik',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You sent a private message to your friend Zoe about having a crush on someone. Zoe screenshotted it and shared it in a big group chat without asking you. Everyone is commenting. What do you do?', 
-          choices: ['😡 Post an angry public callout about what Zoe did', '📱 Confront Zoe privately in a DM', '📸 Save the evidence and tell a trusted adult'] 
+        {
+          id: 'start',
+          text: 'Du sendte en privat melding til venninnen Zoe om at du er forelsket i noen. Zoe tok et skjermbilde og delte det i en stor gruppechat uten å spørre deg. Alle kommenterer. Hva gjør du?',
+          choices: ['😡 Poste en sint offentlig uthenging av hva Zoe gjorde', '📱 Konfrontere Zoe privat i en DM', '📸 Lagre bevisene og fortelle en betrodd voksen'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Fire Meets Fire',      
-          text: 'You post publicly calling Zoe out. Zoe fights back. Dozens of people join the drama. Now it is a full online war and you both look bad.', 
-          lesson: 'Public call-outs online almost always escalate things. They rarely bring the resolution you are hoping for.' 
+        {
+          id: 'end_a',
+          title: 'Ild møter ild',
+          text: 'Du poster offentlig og henger ut Zoe. Zoe slår tilbake. Dusinvis av mennesker blander seg inn i dramaet. Nå er det en fullstendig nettkrig og dere begge ser dårlige ut.',
+          lesson: 'Offentlig uthenging på nett eskalerer nesten alltid. Det gir sjelden den løsningen du håper på.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You DM Zoe: "Why did you share that? It was private!" Zoe says "It was just a joke, chill out." But she has not deleted it.', 
-          choices: ['😔 Accept her "apology" and move on quietly', '🗣️ Firmly ask her to delete it and involve a trusted adult'] 
+        {
+          id: 'mid_b',
+          text: 'Du DM-er Zoe: «Hvorfor delte du det? Det var privat!» Zoe sier «Det var bare en spøk, slapp av.» Men hun har ikke slettet det.',
+          choices: ['😔 Godta «unnskyldningen» hennes og gå videre stille', '🗣️ Be bestemt om at hun sletter det og involver en betrodd voksen'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Swept Under the Rug', 
-          text: 'Zoe does not really understand why it was wrong. The screenshot stays up. You feel hurt but nothing is truly resolved.', 
-          lesson: '"Just a joke" is never an excuse for sharing private messages. Accepting bad behaviour without consequence means it may happen again.' 
+        {
+          id: 'end_b1',
+          title: 'Feid under teppet',
+          text: 'Zoe forstår egentlig ikke hvorfor det var galt. Skjermbildet er fortsatt oppe. Du føler deg såret, men ingenting er virkelig løst.',
+          lesson: '«Bare en spøk» er aldri en unnskyldning for å dele private meldinger. Å akseptere dårlig oppførsel uten konsekvenser betyr at det kan skje igjen.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Real Resolution',      
-          text: 'Under pressure and with adult involvement, Zoe deletes it and has a real conversation about consent and privacy. Your friendship recovers on healthier terms.', 
-          lesson: 'Standing up for your privacy calmly but firmly — with adult support — leads to genuine change, not just temporary calm.' 
+        {
+          id: 'end_b2',
+          title: 'Ekte løsning',
+          text: 'Under press og med vokseninvolvering sletter Zoe det og har en ekte samtale om samtykke og personvern. Vennskapet ditt gjenopprettes på sunnere vilkår.',
+          lesson: 'Å stå opp for personvernet ditt rolig, men bestemt — med voksenstøtte — fører til ekte endring, ikke bare midlertidig ro.',
         },
-        { 
-          id: 'mid_c',  
-          text: "A trusted adult helps report it to the platform and contacts Zoe's parents. The screenshot is removed. Zoe apologises.", 
-          choices: ['🤝 Accept her apology and work to rebuild the friendship', '🚫 Block Zoe — you do not want her as a friend anymore'] },
-        { 
-          id: 'end_c1', 
-          title: 'Trust Rebuilt',        
-          text: 'With adult support and a genuine apology, the situation resolves properly. Zoe understands consent. You both move forward.', 
-          lesson: 'Documenting, reporting, and giving space for a real apology turns a painful experience into a genuine learning moment.' 
+        {
+          id: 'mid_c',
+          text: 'En betrodd voksen hjelper med å rapportere det til plattformen og kontakter Zoes foreldre. Skjermbildet fjernes. Zoe unnskylder seg.',
+          choices: ['🤝 Godta unnskyldningen hennes og jobbe for å gjenoppbygge vennskapet', '🚫 Blokkere Zoe — du vil ikke ha henne som venn lenger'],
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safe Distance',        
-          text: 'The screenshot is gone and you are protected. Blocking is a valid boundary when trust is broken. A safe outcome through the right actions.', 
-          lesson: 'Protecting yourself is always valid. Involving adults to handle the situation was exactly the right move.' 
+        {
+          id: 'end_c1',
+          title: 'Tillit gjenoppbygget',
+          text: 'Med voksenstøtte og en ekte unnskyldning løser situasjonen seg skikkelig. Zoe forstår samtykke. Dere begge går videre.',
+          lesson: 'Å dokumentere, rapportere og gi rom for en ekte unnskyldning gjør en smertefull opplevelse om til et genuint læringsøyeblikk.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Trygg avstand',
+          text: 'Skjermbildet er borte og du er beskyttet. Blokkering er en gyldig grense når tillit er brutt. Et trygt utfall gjennom riktige handlinger.',
+          lesson: 'Å beskytte deg selv er alltid gyldig. Å involvere voksne for å håndtere situasjonen var akkurat det riktige grepet.',
         },
       ],
     },
     {
-      id: 3, title: 'Gaming Rage', emoji: '🎮', topic: 'Online Gaming Harassment',
+      id: 3, title: 'Gaming-raseri', emoji: '🎮', topic: 'Trakassering i nettspill',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You are playing your favourite online game and another player starts spamming hateful messages — calling you names and making threats. Others in the lobby are watching. What do you do?', 
-          choices: ['💢 Fight back with insults of your own', '🙉 Ignore the messages and keep playing', '🔇 Mute, screenshot, and report the player in-game'] 
+        {
+          id: 'start',
+          text: 'Du spiller favoritt-nettspillet ditt og en annen spiller begynner å spamme hatefulle meldinger — kaller deg navn og fremsetter trusler. Andre i lobbyen ser på. Hva gjør du?',
+          choices: ['💢 Slå tilbake med egne fornærmelser', '🙉 Ignorere meldingene og fortsette å spille', '🔇 Mute, ta skjermbilde og rapportere spilleren i spillet'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Both Banned',          
-          text: 'You argue back. Both of you get reported. The system flags your account. You both get banned — the toxic player reported you first.', 
-          lesson: 'Responding to hate with hate puts you at risk too. Game platforms often ban both sides of toxic exchanges.' 
+        {
+          id: 'end_a',
+          title: 'Begge utestengt',
+          text: 'Du krangler tilbake. Dere begge rapporteres. Systemet markerer kontoen din. Dere begge utestenges — den toksiske spilleren rapporterte deg først.',
+          lesson: 'Å svare på hat med hat setter deg i fare også. Spillplattformer utestenger ofte begge sider av toksiske utvekslinger.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You ignore them, but they escalate. Now they have found your public game profile and are posting abuse there for others to see.', 
-          choices: ['🗑️ Delete your profile to make them stop', '📢 Report to the platform and tell a trusted adult'] },
-        { 
-          id: 'end_b1', 
-          title: 'Running Away',         
-          text: 'Deleting your profile stops this harasser for now. But they move on to the next target. No consequence, no real change.', 
-          lesson: 'Protecting yourself matters, but reporting ensures the harasser faces consequences and cannot keep doing it to others.' 
+        {
+          id: 'mid_b',
+          text: 'Du ignorerer dem, men de eskalerer. Nå har de funnet den offentlige spillprofilen din og poster overgrep der for andre å se.',
+          choices: ['🗑️ Slette profilen din for å få dem til å stoppe', '📢 Rapportere til plattformen og fortelle en betrodd voksen'],
         },
-        { 
-          id: 'end_b2', 
-          title: 'Player Banned',        
-          text: "The platform investigates and bans the harasser's account. A trusted adult helps you review your privacy settings and feel supported.", 
-          lesson: 'Reporting gaming harassment works. Platforms take these reports seriously, especially when screenshots are saved as evidence.' 
+        {
+          id: 'end_b1',
+          title: 'Å løpe unna',
+          text: 'Å slette profilen din stopper denne trakassereren foreløpig. Men de går videre til neste mål. Ingen konsekvens, ingen reell endring.',
+          lesson: 'Å beskytte deg selv er viktig, men rapportering sikrer at trakassereren får konsekvenser og ikke kan fortsette å gjøre det mot andre.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'You have muted and reported the player with screenshots. The report is under review. But you are still shaken by what was said.', 
-          choices: ['🗣️ Tell a trusted adult how the experience made you feel', '😶 Keep it to yourself — you already handled it'] 
+        {
+          id: 'end_b2',
+          title: 'Spiller utestengt',
+          text: 'Plattformen undersøker og utestenger trakassererens konto. En betrodd voksen hjelper deg med å gjennomgå personverninnstillingene og du føler deg støttet.',
+          lesson: 'Å rapportere spilltrakassering fungerer. Plattformer tar disse rapportene alvorlig, særlig når skjermbilder er lagret som bevis.',
         },
-        { 
-          id: 'end_c1', 
-          title: 'Report and Support',   
-          text: 'A trusted adult validates your feelings and helps you adjust privacy settings. The platform confirms the player was banned.', 
-          lesson: 'Reporting is important, but so is processing how online abuse makes you feel. Trusted adults can help with both.' 
+        {
+          id: 'mid_c',
+          text: 'Du har muted og rapportert spilleren med skjermbilder. Rapporten er under gjennomgang. Men du er fortsatt rystet av det som ble sagt.',
+          choices: ['🗣️ Fortelle en betrodd voksen hvordan opplevelsen gjorde deg følte', '😶 Holde det for deg selv — du har allerede håndtert det'],
         },
-        { 
-          id: 'end_c2', 
-          title: 'Half the Solution',    
-          text: 'The player gets banned but you carry the experience alone. You feel safer online but still unsettled.', 
-          lesson: 'You handled the technical side perfectly! Remember: talking to someone about how online abuse feels is just as important.' 
+        {
+          id: 'end_c1',
+          title: 'Rapporter og støtte',
+          text: 'En betrodd voksen bekrefter følelsene dine og hjelper deg med å justere personverninnstillingene. Plattformen bekrefter at spilleren ble utestengt.',
+          lesson: 'Rapportering er viktig, men det er like viktig å bearbeide hvordan nettovergrep får deg til å føle deg. Betrodde voksne kan hjelpe med begge deler.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Halv løsning',
+          text: 'Spilleren utestenges, men du bærer opplevelsen alene. Du føler deg tryggere på nett, men er fortsatt urolig.',
+          lesson: 'Du håndterte den tekniske siden perfekt! Husk: å snakke med noen om hvordan nettovergrep føles er like viktig.',
         },
       ],
     },
     {
-      id: 4, title: 'Fake Profile', emoji: '👤', topic: 'Impersonation',
+      id: 4, title: 'Falskt profil', emoji: '👤', topic: 'Identitetsforfalskning',
       nodes: [
-        { 
-          id: 'start',  
-          text: "You spot a fake social media account using your friend Sam's photos. It is posting embarrassing things and adding Sam's classmates. Sam does not know yet. What do you do?", 
-          choices: ['💬 Message the fake account and tell them to stop', '📞 Tell Sam immediately so they know', '🚩 Report the fake account AND tell Sam straight away'] 
+        {
+          id: 'start',
+          text: 'Du oppdager en falsk sosiale medier-konto som bruker bildene til vennen Sam. Den poster pinlige ting og legger til klassekameratene til Sam. Sam vet det ikke ennå. Hva gjør du?',
+          choices: ['💬 Melde den falske kontoen og si at de skal stoppe', '📞 Fortelle Sam umiddelbart så de vet', '🚩 Rapportere den falske kontoen OG fortelle Sam med en gang'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Do Not Feed the Troll', 
-          text: 'The fake account blocks you and speeds up posting. Now it starts targeting you too. Engaging directly made things worse.', 
-          lesson: 'Contacting a fake or abusive account directly almost always makes things worse. Report to the platform instead.' 
+        {
+          id: 'end_a',
+          title: 'Ikke mat trollet',
+          text: 'Den falske kontoen blokkerer deg og øker postingen. Nå begynner den å målrette deg også. Å engasjere seg direkte gjorde ting verre.',
+          lesson: 'Å kontakte en falsk eller misbrukende konto direkte gjør nesten alltid ting verre. Rapporter til plattformen i stedet.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'Sam is shocked and upset. Sam wants to message everyone to explain it is fake, but is not sure what else to do. The account is still live.', 
-          choices: ['📢 Help Sam report the account to the platform', '🗣️ Suggest Sam just tell people in person it is fake'] 
+        {
+          id: 'mid_b',
+          text: 'Sam er sjokkert og opprørt. Sam vil melde til alle for å forklare at det er falskt, men er ikke sikker på hva annet de skal gjøre. Kontoen er fortsatt aktiv.',
+          choices: ['📢 Hjelpe Sam med å rapportere kontoen til plattformen', '🗣️ Foreslå at Sam bare forteller folk personlig at det er falskt'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Teamwork Wins',        
-          text: 'You and Sam report the account together. The platform removes it within hours. Sam also tells a trusted adult who helps monitor for future attempts.', 
-          lesson: 'Reporting fake accounts together is highly effective. Platforms take impersonation very seriously and act quickly.' 
+        {
+          id: 'end_b1',
+          title: 'Teamarbeid vinner',
+          text: 'Du og Sam rapporterer kontoen sammen. Plattformen fjerner den i løpet av timer. Sam forteller også en betrodd voksen som hjelper med å overvåke fremtidige forsøk.',
+          lesson: 'Å rapportere falske kontoer sammen er svært effektivt. Plattformer tar etterligning svært alvorlig og handler raskt.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Slow Response',        
-          text: 'Sam explains to people in person, but the fake account stays up for days causing more embarrassment before someone else finally reports it.', 
-          lesson: 'Reporting fake accounts to the platform directly is much faster and more effective than trying to explain to everyone individually.' 
+        {
+          id: 'end_b2',
+          title: 'Langsom respons',
+          text: 'Sam forklarer til folk personlig, men den falske kontoen er oppe i dager og forårsaker mer pinlighet før noen andre til slutt rapporterer den.',
+          lesson: 'Å rapportere falske kontoer direkte til plattformen er mye raskere og mer effektivt enn å prøve å forklare til alle enkeltvis.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'The platform receives your report and begins reviewing the account. Sam is grateful you acted so quickly.', 
-          choices: ['🏠 Also tell a trusted adult to help Sam feel supported', '⏳ Just wait for the platform to act'] 
+        {
+          id: 'mid_c',
+          text: 'Plattformen mottar rapporten din og begynner å gjennomgå kontoen. Sam er takknemlig for at du handlet så raskt.',
+          choices: ['🏠 Også fortelle en betrodd voksen for å hjelpe Sam til å føle seg støttet', '⏳ Bare vente på at plattformen skal handle'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Full Protection',      
-          text: "With adult support and the platform's action, the account is removed. Sam feels genuinely cared for. The school is alerted to watch for further attempts.", 
-          lesson: 'Reporting to the platform AND involving a trusted adult gives the best possible protection when someone is being impersonated.' 
+        {
+          id: 'end_c1',
+          title: 'Full beskyttelse',
+          text: 'Med voksenstøtte og plattformens handling fjernes kontoen. Sam føler seg genuint ivaretatt. Skolen varsles om å passe på fremtidige forsøk.',
+          lesson: 'Å rapportere til plattformen OG involvere en betrodd voksen gir best mulig beskyttelse når noen etterligner en annen person.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Swift Action',         
-          text: 'The platform removes the account. Sam is relieved. A great outcome through quick, correct action.', 
-          lesson: 'Reporting fake accounts immediately to the platform is exactly the right move. Quick reporting means faster removal.' 
+        {
+          id: 'end_c2',
+          title: 'Rask handling',
+          text: 'Plattformen fjerner kontoen. Sam er lettet. Et flott utfall gjennom rask, riktig handling.',
+          lesson: 'Å rapportere falske kontoer umiddelbart til plattformen er akkurat riktig grep. Rask rapportering betyr raskere fjerning.',
         },
       ],
     },
     {
-      id: 5, title: 'Left Out Online', emoji: '😔', topic: 'Online Exclusion',
+      id: 5, title: 'Utestengt på nett', emoji: '😔', topic: 'Digital utestengning',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You discover your friend group created a new group chat without you. They are planning a party you were not invited to, and you can see them posting about it publicly. You feel hurt and humiliated.', 
-          choices: ['📣 Post publicly about being hurt and left out', '💬 Send an angry message to the whole group', '🤝 Message your closest friend in the group privately'] 
+        {
+          id: 'start',
+          text: 'Du oppdager at vennegjengen din opprettet en ny gruppechat uten deg. De planlegger en fest du ikke ble invitert til, og du kan se at de poster om det offentlig. Du føler deg såret og ydmyket.',
+          choices: ['📣 Poste offentlig om å bli såret og holdt utenfor', '💬 Sende en sint melding til hele gruppen', '🤝 Melde til din nærmeste venn i gruppen privat'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Public Meltdown',      
-          text: 'Your public post attracts attention but mostly embarrassment. The friend group gets defensive. The drama spreads across the whole school online.', 
-          lesson: 'Venting publicly about being excluded rarely helps and usually makes things worse. Direct private conversations are far more effective.' 
+        {
+          id: 'end_a',
+          title: 'Offentlig sammenbrudd',
+          text: 'Det offentlige innlegget ditt tiltrekker seg oppmerksomhet, men mest pinlighet. Vennegjengen blir defensiv. Dramaet sprer seg over hele skolen på nett.',
+          lesson: 'Å lufte offentlig om å bli holdt utenfor hjelper sjelden og gjør vanligvis ting verre. Direkte private samtaler er mye mer effektive.',
         },
-        { 
-          id: 'end_b',  
-          title: 'Group Chat Drama',     
-          text: 'The group chat gets awkward. Some friends feel guilty; others get annoyed. Nothing is really resolved and tensions remain for weeks.', 
-          lesson: 'Confronting a whole group at once puts everyone on the defensive. One-to-one private conversations work much better.' 
+        {
+          id: 'end_b',
+          title: 'Gruppechat-drama',
+          text: 'Gruppechatten blir ubehagelig. Noen venner føler seg skyldige; andre blir irriterte. Ingenting løses virkelig og spenningene varer i uker.',
+          lesson: 'Å konfrontere en hel gruppe på en gang setter alle på defensiven. En-til-en private samtaler fungerer mye bedre.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'Your closest friend Mia admits she felt pressured to leave you out by someone else in the group. She apologises and says she wants to help fix things.', 
-          choices: ['🤝 Ask Mia to speak up for you to the group', '🏫 Tell a trusted adult about the deliberate exclusion'] 
+        {
+          id: 'mid_c',
+          text: 'Din nærmeste venn Mia innrømmer at hun følte seg presset til å holde deg utenfor av noen andre i gruppen. Hun unnskylder seg og sier hun vil hjelpe med å rette opp tingene.',
+          choices: ['🤝 Be Mia tale din sak til gruppen', '🏫 Fortelle en betrodd voksen om den bevisste utestengingen'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'True Ally',            
-          text: 'Mia speaks up. You are included again and the person who was excluding you is called out. The friendship group gets stronger through honesty.', 
-          lesson: 'When someone is willing to help, let them. Real friends speak up for each other — even when it is uncomfortable.' },
-        { 
-          id: 'end_c2', 
-          title: 'Adult Ally',           
-          text: 'The trusted adult helps mediate. Everyone reflects on how deliberate exclusion hurts. The group dynamic shifts for the better.', 
-          lesson: 'Deliberate social exclusion online is a form of bullying. A trusted adult can help reset unhealthy group dynamics.' 
+        {
+          id: 'end_c1',
+          title: 'Ekte alliert',
+          text: 'Mia taler. Du blir inkludert igjen og personen som holdt deg utenfor blir konfrontert. Vennegjengen blir sterkere gjennom ærlighet.',
+          lesson: 'Når noen er villige til å hjelpe, la dem. Ekte venner taler for hverandre — selv når det er ubehagelig.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Voksen alliert',
+          text: 'Den betrodde voksne hjelper til med megling. Alle reflekterer over hvordan bevisst utestenging skader. Gruppedynamikken skifter til det bedre.',
+          lesson: 'Bevisst sosial utestengning på nett er en form for mobbing. En betrodd voksen kan hjelpe med å tilbakestille usunne gruppedynamikker.',
         },
       ],
     },
     {
-      id: 6, title: 'Private Photos', emoji: '📷', topic: 'Image-Based Pressure',
+      id: 6, title: 'Private bilder', emoji: '📷', topic: 'Bildebasert press',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone you have been chatting with online for two weeks says they really like you and asks for a private photo. They promise to send one first and say to keep it secret from everyone.', 
-          choices: ['📸 Send a photo — they seem genuinely nice', '😐 Say you are not comfortable but keep talking to them', '🚫 Refuse, stop talking to them, and tell a trusted adult now'] 
+        {
+          id: 'start',
+          text: 'Noen du har chattet med på nett i to uker sier de virkelig liker deg og ber om et privat bilde. De lover å sende ett først og sier du skal holde det hemmelig for alle.',
+          choices: ['📸 Sende et bilde — de virker genuint snille', '😐 Si at du ikke er komfortabel, men fortsette å snakke med dem', '🚫 Nekte, slutte å snakke med dem og fortelle en betrodd voksen nå'],
         },
-        { 
-          id: 'end_a',  
-          title: 'The Trap',             
-          text: 'They never send anything back. Instead they demand more photos or they will share yours with everyone. You are trapped. This is called sextortion.', 
-          lesson: 'Sending private photos to someone you only know online is extremely dangerous. Sextortion — blackmailing with images — is a crime. If this happens, tell a trusted adult immediately.' 
+        {
+          id: 'end_a',
+          title: 'Fellen',
+          text: 'De sender aldri noe tilbake. I stedet krever de flere bilder, eller de deler dine med alle. Du er fanget. Dette kalles sextortion.',
+          lesson: 'Å sende private bilder til noen du bare kjenner på nett er ekstremt farlig. Sextortion — utpressing med bilder — er en forbrytelse. Hvis dette skjer, fortell en betrodd voksen umiddelbart.',
         },
-        { 
-          id: 'mid_b',  
-          text: '"If you do not send one, you obviously do not trust me." They say the whole thing is over if you refuse. You feel confused and pressured.', 
-          choices: ['📸 Give in and send a photo to keep the peace', '🚫 Block them and tell a trusted adult immediately'] 
+        {
+          id: 'mid_b',
+          text: '«Hvis du ikke sender ett, stoler du åpenbart ikke på meg.» De sier hele greia er over hvis du nekter. Du føler deg forvirret og presset.',
+          choices: ['📸 Gi etter og sende et bilde for å bevare freden', '🚫 Blokkere dem og fortelle en betrodd voksen umiddelbart'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'The Trap (Part 2)',    
-          text: 'You send the photo and the blackmail starts immediately. You realise this person planned this from the very first message.', 
-          lesson: 'Healthy relationships never involve ultimatums. "Send a photo or we are done" is a major warning sign of a predator. Tell a trusted adult if this ever happens.' 
+        {
+          id: 'end_b1',
+          title: 'Fellen (del 2)',
+          text: 'Du sender bildet og utpressingen starter umiddelbart. Du innser at denne personen planla dette fra den aller første meldingen.',
+          lesson: 'Sunne relasjoner involverer aldri ultimatumer. «Send et bilde, eller vi er ferdige» er et stort advarselstegn på en rovdyr. Fortell en betrodd voksen hvis dette noen gang skjer.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Good Instincts',       
-          text: 'You block the account and tell a trusted adult. They help report it to the platform and explain this is a classic grooming tactic used by criminals.', 
-          lesson: 'Refusing pressure and involving a trusted adult is always right. You were being manipulated — recognising it and acting takes real courage.' 
+        {
+          id: 'end_b2',
+          title: 'Gode instinkter',
+          text: 'Du blokkerer kontoen og forteller en betrodd voksen. De hjelper med å rapportere det til plattformen og forklarer at dette er en klassisk groomingtaktikk brukt av kriminelle.',
+          lesson: 'Å avslå press og involvere en betrodd voksen er alltid riktig. Du ble manipulert — å gjenkjenne det og handle krever ekte mot.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'A trusted adult looks at the conversation and is very concerned. They explain this looks like grooming — someone pretending to be friendly to gain your trust. They want to report it.', 
-          choices: ['📋 Share the full conversation history to strengthen the report', '😳 Leave out some details because you feel embarrassed'] 
+        {
+          id: 'mid_c',
+          text: 'En betrodd voksen ser på samtalen og er svært bekymret. De forklarer at dette ser ut som grooming — noen som later som de er vennlige for å vinne tilliten din. De vil rapportere det.',
+          choices: ['📋 Dele hele samtalehistorikken for å styrke rapporten', '😳 Utelate noen detaljer fordi du føler deg flau'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Full Disclosure',      
-          text: 'With full evidence, the adult and platform take strong action. The account is removed and reported to authorities who can investigate properly.', 
-          lesson: 'Sharing the full story with a trusted adult — even embarrassing parts — gives them the best chance to protect you and stop the criminal.' 
+        {
+          id: 'end_c1',
+          title: 'Full avsløring',
+          text: 'Med fullt bevis iverksetter den voksne og plattformen sterke tiltak. Kontoen fjernes og rapporteres til myndighetene som kan etterforske skikkelig.',
+          lesson: 'Å dele hele historien med en betrodd voksen — selv pinlige deler — gir dem best sjanse til å beskytte deg og stoppe den kriminelle.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Partial Report',       
-          text: 'Some protective action is taken with limited details. You are safer, but the full picture would have helped the investigation much more.', 
-          lesson: 'You were brave to speak up. Sharing all the details — even embarrassing ones — helps adults fully protect you and stop it happening to others.' 
+        {
+          id: 'end_c2',
+          title: 'Delvis rapport',
+          text: 'Noen beskyttende tiltak iverksettes med begrensede detaljer. Du er tryggere, men det fulle bildet ville ha hjulpet etterforskningen mye mer.',
+          lesson: 'Du var modig som sa fra. Å dele alle detaljer — selv pinlige — hjelper voksne med å fullt ut beskytte deg og hindre at det skjer andre.',
         },
       ],
     },
     {
-      id: 7, title: 'The Helpful Stranger', emoji: '🕵️', topic: 'Online Grooming',
+      id: 7, title: 'Den hjelpfulle fremmede', emoji: '🕵️', topic: 'Online grooming',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone in a game chat says they are 14 and has been messaging you for a week. They now ask where you go to school, your home address, and what time you get home alone each day. What do you do?', 
-          choices: ['💬 Answer the questions — they seem like a normal kid', '🤔 Give vague answers and keep chatting', '🚫 Stop responding, block them, and tell a trusted adult now'] 
+        {
+          id: 'start',
+          text: 'Noen i en spillchat sier de er 14 og har sendt deg meldinger i en uke. De spør nå hvor du går på skole, hjemmeadressen din og når du kommer hjem alene hver dag. Hva gjør du?',
+          choices: ['💬 Svare på spørsmålene — de virker som et normalt barn', '🤔 Gi vage svar og fortsette å chatte', '🚫 Slutte å svare, blokkere dem og fortelle en betrodd voksen nå'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Too Much Information', 
-          text: 'Over the next week they know your school, your schedule, and your address. They suggest meeting up in person. You realise something is very wrong.', 
-          lesson: 'Anyone asking for your home address, school name, or daily schedule online is a serious danger signal — even if they claim to be your age.' 
+        {
+          id: 'end_a',
+          title: 'For mye informasjon',
+          text: 'I løpet av neste uke kjenner de skolen din, timeplanen din og adressen din. De foreslår å møtes personlig. Du innser at noe er veldig galt.',
+          lesson: 'Noen som spør om hjemmeadressen din, skolenavnet ditt eller daglige timeplan på nett er et alvorlig faresignal — selv om de hevder å være på din alder.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You give vague answers but they keep pushing harder and now ask for your phone number. Something feels off, but you do not want to seem rude.', 
-          choices: ['📱 Give your number — they have been so kind', '🚫 Block them and tell a trusted adult'] 
+        {
+          id: 'mid_b',
+          text: 'Du gir vage svar, men de presser hardere og ber nå om telefonnummeret ditt. Noe føles rart, men du vil ikke virke uhøflig.',
+          choices: ['📱 Gi nummeret ditt — de har vært så snille', '🚫 Blokkere dem og fortelle en betrodd voksen'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Connected Too Much',   
-          text: 'They use your number to find your other social accounts and track your activity. A trusted adult finds out and is very alarmed.', 
-          lesson: 'You do not owe anyone your phone number or personal contact details online. Anyone pushing for them has bad intentions.' 
+        {
+          id: 'end_b1',
+          title: 'For mye tilknyttet',
+          text: 'De bruker nummeret ditt til å finne andre sosiale kontoer dine og spore aktiviteten din. En betrodd voksen finner ut av det og er svært alarmert.',
+          lesson: 'Du skylder ingen telefonnummeret ditt eller personlige kontaktdetaljer på nett. Alle som presser på etter dem har dårlige hensikter.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Trusted Instinct',     
-          text: 'A trusted adult confirms the account looks like a fake profile used by an adult. They help you report it and review your privacy settings together.', 
-          lesson: 'Acting on a gut feeling and involving a trusted adult is always the right move when something feels off online.' 
+        {
+          id: 'end_b2',
+          title: 'Betrodd instinkt',
+          text: 'En betrodd voksen bekrefter at kontoen ser ut som en falsk profil brukt av en voksen. De hjelper deg med å rapportere det og gjennomgå personverninnstillingene dine sammen.',
+          lesson: 'Å handle på en magefølelse og involvere en betrodd voksen er alltid riktig grep når noe føles rart på nett.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'A trusted adult reviews the conversation and is very worried. They explain this is likely a grooming attempt — an adult pretending to be a child to gain your trust.', 
-          choices: ['📋 Provide the full conversation for a proper report', '🤐 Ask to handle it quietly without involving authorities'] 
+        {
+          id: 'mid_c',
+          text: 'En betrodd voksen gjennomgår samtalen og er svært bekymret. De forklarer at dette sannsynligvis er et groomingforsøk — en voksen som later som å være et barn for å vinne tilliten din.',
+          choices: ['📋 Gi den fulle samtalen for en skikkelig rapport', '🤐 Be om å håndtere det stille uten å involvere myndighetene'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Protected and Strong', 
-          text: 'The account is reported to the platform and to the police. The adult helps you tighten your privacy settings. You may have protected yourself and other children.', 
-          lesson: 'Grooming is a serious crime. Reporting with full evidence helps authorities stop it from happening to other children.' 
+        {
+          id: 'end_c1',
+          title: 'Beskyttet og sterk',
+          text: 'Kontoen rapporteres til plattformen og politiet. Den betrodde voksne hjelper deg med å stramme opp personverninnstillingene. Du kan ha beskyttet deg selv og andre barn.',
+          lesson: 'Grooming er en alvorlig forbrytelse. Å rapportere med fullt bevis hjelper myndighetene med å stoppe det fra å skje med andre barn.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safer but Incomplete', 
-          text: 'The account is blocked but not formally reported. You are safer, but the person may simply move on and target someone else.', 
-          lesson: 'Grooming is too serious to handle alone. Trusting adults to handle the report properly protects both you and potential future victims.' 
+        {
+          id: 'end_c2',
+          title: 'Tryggere, men ufullstendig',
+          text: 'Kontoen blokkeres, men rapporteres ikke formelt. Du er tryggere, men personen kan rett og slett gå videre og målrette seg noen andre.',
+          lesson: 'Grooming er for alvorlig til å håndtere alene. Å stole på voksne til å håndtere rapporten skikkelig beskytter både deg og potensielle fremtidige ofre.',
         },
       ],
     },
     {
-      id: 8, title: 'Hate in the Comments', emoji: '💬', topic: 'Hate Speech',
+      id: 8, title: 'Hat i kommentarfeltet', emoji: '💬', topic: 'Hatytringer',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You are watching a live gaming stream and the chat fills with racist and hateful comments targeting one of the players. The comments are coming fast. The targeted player looks visibly upset.', 
-          choices: ['😂 Laugh at some comments — it is just internet humour', '😶 Watch quietly without joining in', '🚩 Report the hate speech and speak up in the chat'] 
+        {
+          id: 'start',
+          text: 'Du ser på en live gaming-strøm og chatten fylles med rasistiske og hatefulle kommentarer rettet mot en av spillerne. Kommentarene kommer raskt. Den targeterte spilleren ser tydelig opprørt ut.',
+          choices: ['😂 Le av noen kommentarer — det er bare internetthumor', '😶 Se stille på uten å bli med', '🚩 Rapportere hatytringene og si fra i chatten'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Not Just a Joke',      
-          text: 'You laughed. The player leaves the stream in tears. Screenshots of your comment surface later. You feel ashamed and are reported by other viewers.', 
-          lesson: 'Racial slurs and targeted hate speech are never "just internet humour." Laughing along makes you part of the harm being caused.' 
+        {
+          id: 'end_a',
+          title: 'Ikke bare en spøk',
+          text: 'Du lo. Spilleren forlater strømmen i tårer. Skjermbilder av kommentaren din dukker opp senere. Du føler deg skamfull og blir rapportert av andre seere.',
+          lesson: 'Rasistiske slengord og målrettede hatytringer er aldri «bare internetthumor». Å le med gjør deg til en del av skaden som påføres.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You stay quiet. The targeted player disconnects from the stream. The chat celebrates chasing them away. You feel uneasy about what you just witnessed.', 
-          choices: ['💬 Post a supportive message defending the player', '❌ Close the stream and try to forget about it'] 
+        {
+          id: 'mid_b',
+          text: 'Du er stille. Den targeterte spilleren kobler fra strømmen. Chatten feirer at de jaget ham bort. Du er urolig over det du nettopp så.',
+          choices: ['💬 Poste en støttemelding som forsvarer spilleren', '❌ Lukke strømmen og prøve å glemme det'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'One Voice Changes Things', 
-          text: 'Other viewers see your message and start standing up too. The mood shifts in the chat. Multiple people report the worst offenders and some accounts get banned.', 
-          lesson: 'One person standing up in a hostile chat can shift the entire dynamic. Bystanders have real power to change the mood of a space.' 
+        {
+          id: 'end_b1',
+          title: 'En stemme endrer alt',
+          text: 'Andre seere ser meldingen din og begynner også å si fra. Stemningen i chatten skifter. Flere personer rapporterer de verste lovbryterne og noen kontoer utestenges.',
+          lesson: 'Én person som sier fra i en fiendtlig chat kan endre hele dynamikken. Tilskuere har reell makt til å endre stemningen i et rom.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'The Cost of Silence',  
-          text: 'You walk away, but the hate continues. The targeted player may never stream again. Your silence felt safer but contributed to the problem.', 
-          lesson: 'Walking away protects your own wellbeing, but reporting hate speech before you go helps prevent it from continuing.' 
+        {
+          id: 'end_b2',
+          title: 'Stillhetens pris',
+          text: 'Du går bort, men hatet fortsetter. Den targeterte spilleren streamer kanskje aldri igjen. Stillheten din føltes tryggere, men bidro til problemet.',
+          lesson: 'Å gå bort beskytter din egen velferd, men å rapportere hatytringer før du går hjelper med å forhindre at det fortsetter.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'You report the worst comments and post a supportive message. Several other viewers follow your lead and report too. The player notices and feels less alone.', 
-          choices: ['📣 Also talk to a trusted adult or teacher about what you saw', '✅ You have done enough — leave the rest to the platform'] 
+        {
+          id: 'mid_c',
+          text: 'Du rapporterer de verste kommentarene og poster en støttemelding. Flere andre seere følger eksemplet ditt og rapporterer også. Spilleren legger merke til det og føler seg mindre alene.',
+          choices: ['📣 Også snakke med en betrodd voksen eller lærer om det du så', '✅ Du har gjort nok — la resten opp til plattformen'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Ripple Effect',        
-          text: 'Multiple reports are actioned quickly. Raising awareness with a trusted adult about hate speech in gaming spaces helps create broader change.', 
-          lesson: 'Reporting hate speech AND raising awareness with trusted adults makes platforms safer for everyone — now and in the future.' 
+        {
+          id: 'end_c1',
+          title: 'Ringvirkning',
+          text: 'Flere rapporter behandles raskt. Å øke bevisstheten om hatytringer i gamingmiljøer hos en betrodd voksen hjelper med å skape bredere endring.',
+          lesson: 'Å rapportere hatytringer OG øke bevisstheten hos betrodde voksne gjør plattformer tryggere for alle — nå og i fremtiden.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Good Citizen',         
-          text: 'Reports are actioned and some accounts are flagged. The player later thanks you for standing up in the chat.', 
-          lesson: 'Reporting hate speech AND speaking up in the moment is a powerful combination. Well done for taking action!' 
+        {
+          id: 'end_c2',
+          title: 'God borger',
+          text: 'Rapporter behandles og noen kontoer flagges. Spilleren takker deg senere for at du sa fra i chatten.',
+          lesson: 'Å rapportere hatytringer OG si fra i øyeblikket er en kraftfull kombinasjon. Godt gjort for å handle!',
         },
       ],
     },
     {
-      id: 9, title: 'The Call-Out Post', emoji: '📣', topic: 'False Rumours Online',
+      id: 9, title: 'Hengeut-innlegget', emoji: '📣', topic: 'Falske rykter på nett',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone from school posts completely false rumours about you on social media. It is spreading fast — people are sharing it and writing mean comments. You do not know who started it and you are very upset.', 
-          choices: ['😡 Post an angry response to publicly defend yourself', '💬 Message every person you know to tell them the truth', '📸 Screenshot everything and tell a trusted adult straight away'] 
+        {
+          id: 'start',
+          text: 'Noen fra skolen poster helt falske rykter om deg på sosiale medier. Det sprer seg raskt — folk deler det og skriver slemme kommentarer. Du vet ikke hvem som startet det og er veldig opprørt.',
+          choices: ['😡 Poste et sint svar for å forsvare deg offentlig', '💬 Melde til alle du kjenner for å fortelle dem sannheten', '📸 Ta skjermbilde av alt og fortelle en betrodd voksen med en gang'],
         },
-        { 
-          id: 'mid_a',  
-          text: 'Your response goes viral. People argue about it. The original poster knows they got to you and posts even more, enjoying the reaction.', 
-          choices: ['💢 Keep fighting back to clear your name', '🗑️ Delete your response and step away'] 
+        {
+          id: 'mid_a',
+          text: 'Svaret ditt blir viralt. Folk krangler om det. Den opprinnelige posteren vet at de traff deg og poster enda mer, og nyter reaksjonen.',
+          choices: ['💢 Fortsette å sloss for å rydde opp i ryktet', '🗑️ Slette svaret ditt og trekke deg unna'],
         },
-        { 
-          id: 'end_a1', 
-          title: 'Playing Their Game',   
-          text: 'The argument spirals badly. Teachers get involved. Both of you face school consequences — even though they started it.', 
-          lesson: 'Reacting angrily to false rumours online feeds the drama and puts you at risk of consequences too. Do not give them the reaction they want.' 
+        {
+          id: 'end_a1',
+          title: 'Å spille spillet deres',
+          text: 'Krangelen eskalerer ille. Lærere involveres. Dere begge møter skolekonsekvenser — selv om de startet det.',
+          lesson: 'Å reagere sint på falske rykter på nett mater dramaet og setter deg i fare for konsekvenser også. Gi dem ikke reaksjonen de vil ha.',
         },
-        { 
-          id: 'end_a2', 
-          title: 'Step Away',            
-          text: 'Deleting your response was smart. The drama slowly dies down, but the original post stays up without any real consequence for the person who posted it.', 
-          lesson: 'Deleting a reactive post is a smart move. Pair it with reporting the original content and involving a trusted adult for a real resolution.' 
+        {
+          id: 'end_a2',
+          title: 'Trekke seg unna',
+          text: 'Å slette svaret ditt var smart. Dramaet dør sakte ned, men det opprinnelige innlegget er fortsatt oppe uten noen reell konsekvens for personen som postet det.',
+          lesson: 'Å slette et reaktivt innlegg er et smart grep. Par det med å rapportere det opprinnelige innholdet og involvere en betrodd voksen for en reell løsning.',
         },
-        { 
-          id: 'end_b',  
-          title: 'Damage Control',       
-          text: 'You spend hours messaging people. Some believe you; others do not. It is exhausting and the post is still up, reaching new people all the time.', 
-          lesson: 'Messaging everyone individually is draining and often ineffective. Reporting the post and involving a trusted adult is faster and more powerful.' 
+        {
+          id: 'end_b',
+          title: 'Skadekontroll',
+          text: 'Du bruker timer på å melde til folk. Noen tror deg; andre gjør det ikke. Det er utmattende og innlegget er fortsatt oppe og når nye folk hele tiden.',
+          lesson: 'Å melde til alle enkeltvis er drenerende og ofte ineffektivt. Å rapportere innlegget og involvere en betrodd voksen er raskere og mer kraftfullt.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'The trusted adult helps you report the post for harassment. It gets taken down quickly. Together you figure out who most likely posted it.', 
-          choices: ['🤝 Agree to a mediated conversation with the person who posted it', '🚫 Block them and move on now the post is down'] 
+        {
+          id: 'mid_c',
+          text: 'Den betrodde voksne hjelper deg med å rapportere innlegget for trakassering. Det tas ned raskt. Sammen finner dere ut hvem som mest sannsynlig postet det.',
+          choices: ['🤝 Gå med på en megling med personen som postet det', '🚫 Blokkere dem og gå videre nå som innlegget er nede'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Real Resolution',      
-          text: 'A mediated conversation with adult support uncovers what was behind the rumour. The other person apologises. The school creates new guidelines to prevent future incidents.', 
-          lesson: 'Documenting, reporting, and — when safe — addressing the root cause leads to the best and most lasting outcomes.' 
+        {
+          id: 'end_c1',
+          title: 'Ekte løsning',
+          text: 'En megling med voksenstøtte avdekker hva som lå bak ryktet. Den andre personen unnskylder seg. Skolen lager nye retningslinjer for å forhindre fremtidige hendelser.',
+          lesson: 'Å dokumentere, rapportere og — når det er trygt — ta tak i rotårsaken fører til de beste og mest varige utfallene.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safe and Resolved',    
-          text: 'The post is removed and you are protected. Blocking keeps you safe going forward. A strong outcome through the right actions.', 
-          lesson: 'Getting a harmful post removed quickly through adult help is a great outcome. Blocking to stay safe is a smart boundary.' 
+        {
+          id: 'end_c2',
+          title: 'Trygt og løst',
+          text: 'Innlegget fjernes og du er beskyttet. Blokkering holder deg trygg fremover. Et sterkt utfall gjennom riktige handlinger.',
+          lesson: 'Å få et skadelig innlegg fjernet raskt gjennom voksenhjelp er et flott utfall. Blokkering for å holde seg trygg er en smart grense.',
         },
       ],
     },
     {
-      id: 10, title: 'Password Pressure', emoji: '🔐', topic: 'Digital Relationship Abuse',
+      id: 10, title: 'Passordpress', emoji: '🔐', topic: 'Digitalt overgrep i forholdet',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You have been in a relationship for two months. Your partner says: "If you really loved me and trusted me, you would give me your password so I can check your messages." You feel uncomfortable. What do you do?', 
-          choices: ['🔑 Give them your password — you have nothing to hide', '🤥 Give a fake password to stop the argument', '🗣️ Explain calmly that healthy relationships do not need password sharing'] 
+        {
+          id: 'start',
+          text: 'Du har vært i et forhold i to måneder. Partneren din sier: «Hvis du virkelig elsket meg og stolte på meg, ville du gi meg passordet ditt slik at jeg kan sjekke meldingene dine.» Du føler deg ukomfortabel. Hva gjør du?',
+          choices: ['🔑 Gi dem passordet ditt — du har ingenting å skjule', '🤥 Gi et falskt passord for å stoppe krangelen', '🗣️ Forklare rolig at sunne forhold ikke trenger passorddeling'],
         },
-        { 
-          id: 'end_a',  
-          title: 'The Control Begins',   text: 'Your partner reads all your messages and uses your accounts to message your friends. They accuse you of things based on misread conversations. The control escalates.', 
-          lesson: 'A partner demanding your passwords is a form of digital relationship abuse. No healthy relationship requires this. Talk to a trusted adult if this happens to you.' 
+        {
+          id: 'end_a',
+          title: 'Kontrollen begynner',
+          text: 'Partneren din leser alle meldingene dine og bruker kontoene dine til å melde til vennene dine. De anklager deg for ting basert på misforståtte samtaler. Kontrollen eskalerer.',
+          lesson: 'En partner som krever passordene dine er en form for digitalt overgrep i et forhold. Ingen sunne forhold krever dette. Snakk med en betrodd voksen hvis dette skjer deg.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'Your partner figures out the password is fake and gets very angry, accusing you of lying. The pressure doubles and they demand the real one.', 
-          choices: ['🔑 Give in and share the real password', '🚪 End the relationship and tell a trusted adult about the pressure'] 
+        {
+          id: 'mid_b',
+          text: 'Partneren din finner ut at passordet er falskt og blir veldig sint, og anklager deg for å lyve. Presset dobler seg og de krever det ekte.',
+          choices: ['🔑 Gi etter og dele det ekte passordet', '🚪 Avslutte forholdet og fortelle en betrodd voksen om presset'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Trapped',              
-          text: 'Once they have access they use it to control who you talk to. This pattern of controlling behaviour escalates further and further.', 
-          lesson: 'Giving in to digital control rarely ends the problem — it usually makes the controlling behaviour escalate over time.' },
-        { 
-          id: 'end_b2', 
-          title: 'Breaking Free',        
-          text: 'Leaving a controlling relationship is hard but right. A trusted adult confirms this is digital abuse and helps you understand what healthy relationship boundaries look like.', 
-          lesson: 'Recognising and leaving controlling behaviour — even in a relationship — takes real courage. It is always the right call for your safety.'
+        {
+          id: 'end_b1',
+          title: 'Fanget',
+          text: 'Når de får tilgang, bruker de det til å kontrollere hvem du snakker med. Dette mønsteret av kontrollerende atferd eskalerer videre og videre.',
+          lesson: 'Å gi etter for digital kontroll løser sjelden problemet — det får vanligvis den kontrollerende atferden til å eskalere over tid.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'Your partner reacts badly, saying you obviously do not love them. You hold your ground, but they keep pushing and the pressure is building.', 
-          choices: ['💪 Hold your boundary and talk to a trusted adult about the pressure', '😔 Eventually share your password just to calm things down'] 
+        {
+          id: 'end_b2',
+          title: 'Å frigjøre seg',
+          text: 'Å forlate et kontrollerende forhold er vanskelig, men riktig. En betrodd voksen bekrefter at dette er digitalt overgrep og hjelper deg med å forstå hvordan sunne relasjongrenser ser ut.',
+          lesson: 'Å gjenkjenne og forlate kontrollerende atferd — selv i et forhold — krever ekte mot. Det er alltid riktig valg for sikkerheten din.',
         },
-        { 
-          id: 'end_c1', 
-          title: 'Healthy Boundaries',   
-          text: 'A trusted adult affirms that demanding passwords is control, not love. With their support, you make a clear decision about the relationship on your own terms.', 
-          lesson: 'A good partner respects your privacy. Demanding passwords is a red flag for a controlling relationship. You deserve a relationship built on trust, not surveillance.' 
+        {
+          id: 'mid_c',
+          text: 'Partneren din reagerer dårlig og sier du åpenbart ikke elsker dem. Du holder fast ved standpunktet ditt, men de fortsetter å presse og presset bygger seg opp.',
+          choices: ['💪 Holde grensen din og fortelle en betrodd voksen om presset', '😔 Til slutt dele passordet for å roe ting ned'],
         },
-        { 
-          id: 'end_c2', 
-          title: 'Temporary Peace',      
-          text: 'You feel relieved short-term but the controlling behaviour continues — now they expect this going forward. The demand for more access grows.', 
-          lesson: 'Giving in to password pressure does not resolve the control issue. It sets a precedent. Controlling behaviour needs to be addressed, not accommodated.' 
+        {
+          id: 'end_c1',
+          title: 'Sunne grenser',
+          text: 'En betrodd voksen bekrefter at å kreve passord er kontroll, ikke kjærlighet. Med deres støtte tar du en klar beslutning om forholdet på egne premisser.',
+          lesson: 'En god partner respekterer personvernet ditt. Å kreve passord er et rødt flagg for et kontrollerende forhold. Du fortjener et forhold bygget på tillit, ikke overvåkning.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Midlertidig fred',
+          text: 'Du føler deg lettet på kort sikt, men den kontrollerende atferden fortsetter — nå forventer de dette fremover. Kravet om mer tilgang vokser.',
+          lesson: 'Å gi etter for passordpress løser ikke kontrollproblemet. Det setter en presedens. Kontrollerende atferd må adresseres, ikke imøtekommes.',
         },
       ],
     },

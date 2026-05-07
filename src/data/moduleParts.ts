@@ -192,7 +192,7 @@ export function mergeParts(
     const tp     = translationParts[i] ?? {}
     const { assets } = partDef
     const number   = i + 1
-    const titleKey = `hub.moduleParts.${moduleId}.p${number}Title`
+    const titleKey = `pages.hub.modules.${moduleId}.parts.p${number}.title`
 
     // ── Bundle ────────────────────────────────────────────────────────────────
     const bundle = assets?.bundle || tp.bundle
@@ -299,19 +299,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/digital-citizenship/part1/videos/subtitles/en/1.1.2_DigitalEnvironment_subtitles_EN.vtt' 
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/digital-citizenship/part1/videos/subtitles/cs/1.1.2_DigitalEnvironment_subtitles_CS.vtt' 
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/digital-citizenship/part1/videos/subtitles/no/1.1.2_DigitalEnvironment_subtitles_NO.vtt' 
             },
-            { label: 'Lithuanian', 
+            { label: 'Lietuvių', 
               srclang: 'lt', 
               src: '/materials/digital-citizenship/part1/videos/subtitles/lt/1.1.2_DigitalEnvironment_subtitles_LT.vtt' 
             },
-            { label: 'German', 
+            { label: 'Deutsch', 
               srclang: 'de', 
               src: '/materials/digital-citizenship/part1/videos/subtitles/de/1.1.2_DigitalEnvironment_subtitles_DE.vtt' 
             },
@@ -383,19 +383,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/digital-citizenship/part3/videos/subtitles/en/1.3.3_PrivacySettings_subtitles_EN.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -427,19 +427,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/digital-citizenship/part4/videos/subtitles/en/1.4.1_Resilience_subtitles_EN.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -533,19 +533,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -617,19 +617,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -675,19 +675,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -741,19 +741,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -823,19 +823,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -881,19 +881,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -939,19 +939,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1015,19 +1015,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1069,19 +1069,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1135,19 +1135,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1219,19 +1219,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1307,19 +1307,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1365,19 +1365,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1467,19 +1467,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1512,19 +1512,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1562,19 +1562,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },
@@ -1626,19 +1626,19 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
               srclang: 'en',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Czech',
+            { label: 'Čeština',
               srclang: 'cs',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Norwegian',
+            { label: 'Norsk',
               srclang: 'no',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'Lithuanian',
+            { label: 'Lietuvių',
               srclang: 'lt',
               src: '/materials/placeholder.vtt'
             },
-            { label: 'German',
+            { label: 'Deutsch',
               srclang: 'de',
               src: '/materials/placeholder.vtt'
             },

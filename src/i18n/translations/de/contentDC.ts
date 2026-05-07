@@ -6,56 +6,24 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDC = {
-  subtitle:
-    'Digital citizenship helps students navigate online spaces with confidence, empathy, and responsibility. This module supports educators in teaching safe habits, respectful communication, and thoughtful decision-making in digital environments.',
-  aim: 'To provide an understanding of what digital citizenship is and how to follow its core principles.',
+  aim: 'Ein Verständnis dafür zu vermitteln, was digitale Staatsbürgerschaft ist und wie man ihre Grundprinzipien befolgt.',
   objectives: [
-    'To stress the importance of digital citizenship.',
-    'To introduce the concept of digital citizenship and its principles of rights, responsibility and respect in digital environments.',
-    'To develop students understanding of how to apply these principles of rights, responsibility and respect in digital environments - to be safe, savvy, and social.',
+    'Die Bedeutung der digitalen Staatsbürgerschaft zu betonen.',
+    'Das Konzept der digitalen Staatsbürgerschaft und ihre Prinzipien von Rechten, Verantwortung und Respekt in digitalen Umgebungen einzuführen.',
+    'Das Verständnis der Schülerinnen und Schüler dafür zu entwickeln, wie diese Prinzipien von Rechten, Verantwortung und Respekt in digitalen Umgebungen angewendet werden können — um sicher, klug und sozial zu sein.',
   ],
   outcomes: [
-    'I can explain what digital citizenship is and why it is important.',
-    'I can discuss the principles of rights, responsibility and respect in digital environments, including how to stay safe, act savvy and engage socially.',
+    'Ich kann erklären, was digitale Staatsbürgerschaft ist und warum sie wichtig ist.',
+    'Ich kann die Prinzipien von Rechten, Verantwortung und Respekt in digitalen Umgebungen diskutieren, einschließlich wie man sicher bleibt, klug handelt und sich sozial engagiert.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Citizenship Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Unterrichtsleitfaden herunterladen',
+    download: 'Unterrichtsleitfaden Digitale Staatsbürgerschaft',
   },
   parts: [
     {
-      goal: 'Help students understand what a digital environment is and positive aspects of this.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was eine digitale Umgebung ist und welche positiven Aspekte diese hat.',
       bundle: {
         filename: 'Digital Citizenship Part 1 Package',
       },
@@ -63,43 +31,43 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.1.1
-            kind: 'Scenario Cards',
-            name: 'Physical and Digital Worlds',
+            kind: 'Szenariokarten',
+            name: 'Physische und digitale Welten',
             filename: 'Scenario Cards - Physical and Digital Worlds',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'What is a digital environment?',
+            title: 'Was ist eine digitale Umgebung?',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'What Is a Digital Environment?',
+        title: 'Was ist eine digitale Umgebung?',
         supportText:
-          'Use this video to spark discussion about online spaces students already use, from learning platforms to games and messaging apps. Pause for quick reflections on where students spend time online.',
+          'Verwenden Sie dieses Video, um eine Diskussion über Online-Räume anzuregen, die Schülerinnen und Schüler bereits nutzen, von Lernplattformen bis hin zu Spielen und Messaging-Apps. Pausieren Sie für kurze Reflexionen darüber, wo Schülerinnen und Schüler Zeit online verbringen.',
         downloads: {
           video: {
             filename: 'What Is a Digital Environment',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What Is a Digital Environment - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
-      goal: 'Help students understand what digital citizenship is and why it is important.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was digitale Staatsbürgerschaft ist und warum sie wichtig ist.',
       bundle: {
         filename: 'Digital Citizenship Part 2 Package',
       },
@@ -107,45 +75,45 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.2.1
-            kind: 'Image',
-            name: 'Responsible Citizen',
+            kind: 'Bild',
+            name: 'Verantwortungsbewusster Bürger',
             filename: 'Worksheet A - Rights Responsibilities and Respect',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.2.2a
-            kind: 'Worksheet A',
-            name: 'Rights, Responsibilities and Respect',
+            kind: 'Arbeitsblatt A',
+            name: 'Rechte, Verantwortlichkeiten und Respekt',
             filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.2.2b
-            kind: 'Worksheet B',
-            name: 'Rights, Responsibilities and Respect',
+            kind: 'Arbeitsblatt B',
+            name: 'Rechte, Verantwortlichkeiten und Respekt',
             filename: 'Image - Feeling Safe',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Digitel Citizenship',
+            title: 'Digitale Staatsbürgerschaft',
           },
           {
-            title: 'Rights, Respect and Responsibilities in Digital Environments',
+            title: 'Rechte, Respekt und Verantwortlichkeiten in digitalen Umgebungen',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
     },
     {
       goal:
-        'Help students to know how to be safe in digital environments by thinking critically and acting responsibly with privacy settings.',
+        'Den Schülerinnen und Schülern helfen zu wissen, wie sie in digitalen Umgebungen sicher sein können, indem sie kritisch denken und verantwortungsvoll mit Datenschutzeinstellungen umgehen.',
       bundle: {
         filename: 'Digital Citizenship Part 3 Package',
       },
@@ -153,106 +121,106 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.3.1
-            kind: 'Image',
-            name: 'Feeling Safe',
+            kind: 'Bild',
+            name: 'Sicherheitsgefühl',
             filename: 'Image - Feeling Unsafe',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.3.2
-            kind: 'Image',
-            name: 'Feeling Unsafe',
+            kind: 'Bild',
+            name: 'Unsicherheitsgefühl',
             filename: 'Image - Application Privacy Settings',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.3.4
-            kind: 'Image',
-            name: 'Application Privacy Settings',
+            kind: 'Bild',
+            name: 'Datenschutzeinstellungen der Anwendung',
             filename: 'Image - Privacy Settings Strategy',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.3.5
-            kind: 'Image',
-            name: 'Privacy Settings Strategy',
+            kind: 'Bild',
+            name: 'Datenschutzeinstellungsstrategie',
             filename: 'Image - Digital Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Understanding the Connections Between the Physical and Digital Environment',
+            title: 'Die Verbindungen zwischen der physischen und digitalen Umgebung verstehen',
           },
           {
-            title: 'Privacy Settings',
+            title: 'Datenschutzeinstellungen',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 1.3.3
-        title: 'What Are Privacy Settings?',
+        title: 'Was sind Datenschutzeinstellungen?',
         supportText:
-          'Use this video to introduce privacy settings as a practical tool students can control on the apps and devices they already own. Pause to ask which settings they have checked or changed before.',
+          'Verwenden Sie dieses Video, um Datenschutzeinstellungen als praktisches Werkzeug einzuführen, das Schülerinnen und Schüler bei den Apps und Geräten, die sie bereits besitzen, kontrollieren können. Pausieren Sie, um zu fragen, welche Einstellungen sie bereits überprüft oder geändert haben.',
         downloads: {
           video: {
             filename: 'What Are Privacy Settings',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What Are Privacy Settings - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
-      goal: 'Help students understand how being wise and resilient can help them to be savvy in digital environments.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, wie Weisheit und Resilienz ihnen helfen können, klug in digitalen Umgebungen zu agieren.',
       bundle: {
         filename: 'Digital Citizenship Part 4 Package',
       },
       included: {
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Challenges in Digital Environments',
+            title: 'Herausforderungen in digitalen Umgebungen',
           },
           {
-            title: 'Understanding How to Develop Resilience',
+            title: 'Verstehen, wie man Resilienz entwickelt',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 1.4.1
-        title: 'Resilience in Digital Environments',
+        title: 'Resilienz in digitalen Umgebungen',
         supportText:
-          'Use this video to explore how students can recover and adapt when things go wrong online, from account issues to unwanted contact. Pause to ask who students turn to for help in those situations.',
+          'Verwenden Sie dieses Video, um zu erkunden, wie Schülerinnen und Schüler sich erholen und anpassen können, wenn online etwas schiefläuft, von Kontoproblemen bis hin zu unerwünschtem Kontakt. Pausieren Sie, um zu fragen, an wen sich Schülerinnen und Schüler in solchen Situationen um Hilfe wenden.',
         downloads: {
           video: {
             filename: 'Resilience in Digital Environments',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'Resilience in Digital Environments - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand how to act responsibly, showing respect for themselves and others when engaging socially in digital environments.',
+        'Den Schülerinnen und Schülern helfen zu verstehen, wie sie verantwortungsvoll handeln und Respekt für sich selbst und andere zeigen können, wenn sie sich sozial in digitalen Umgebungen engagieren.',
       bundle: {
         filename: 'Digital Citizenship Part 5 Package',
       },
@@ -260,38 +228,38 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.5.1
-            kind: 'Image',
-            name: 'Digital Footprint',
+            kind: 'Bild',
+            name: 'Digitaler Fußabdruck',
             filename: 'Image - Digital Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.5.2
-            kind: 'Scenario Cards',
-            name: 'Good and Bad to Post',
+            kind: 'Szenariokarten',
+            name: 'Gut und schlecht zu Posten',
             filename: 'Scenario Cards - Good and Bad to Post',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.5.3
-            kind: 'Scenario Cards',
-            name: 'Social Media Posts',
+            kind: 'Szenariokarten',
+            name: 'Social-Media-Beiträge',
             filename: 'Scenario Cards - Social Media Posts',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Acting Responsibly in Digital Environments',
+            title: 'Verantwortungsvolles Handeln in digitalen Umgebungen',
           },
           {
-            title: 'Curating a Positive Digital Footprint',
+            title: 'Einen positiven digitalen Fußabdruck gestalten',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -303,174 +271,136 @@ export const contentDC = {
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
-    },
-  ],
-  relatedModules: [
-    { title: 'Attacker Perspective', 
-      description: 'Understand how trust can be manipulated and learn to spot risky behavior.', 
-      cta: 'Explore' 
-    },
-    { title: 'Authentication', 
-      description: 'Teach students how to secure their accounts with strong, memorable routines.', 
-      cta: 'Explore' 
-    },
-    { title: 'Data Privacy', 
-      description: 'Explore how personal information is shared and ways to keep it safe.', 
-      cta: 'Explore' 
-    },
-    { title: 'Social Engineering', 
-      description: 'Learn how scammers and manipulators use persuasion and false urgency.', 
-      cta: 'Explore' 
-    },
-    { title: 'Malware', 
-      description: 'Help students recognize suspicious downloads and protect devices.', 
-      cta: 'Explore' 
-    },
-    { title: 'Digital Abuse', 
-      description: 'Identify harmful online behavior and learn how to get help safely.', 
-      cta: 'Explore' 
     },
   ],
 }
 
 export const challengeDC = {
-  title: 'GOOD or BAD Content to Post?',
-  subtitle: 'Drag each post into the correct category. Learn what\'s safe to share online!',
-  howItWorks: 'How It Works',
-  instruction: 'Drag each post card into the zone where it belongs. On mobile, tap a card to select it, then tap a drop zone.',
-  tip: 'Think about whether the information could identify you or put you in danger if a stranger saw it.',
-  tipLabel: 'Tip',
-  tryAgain: 'Try Again',
-  correctCountLabel: 'Correct',
-  postsToSort: 'Posts to Sort',
-  safeToShare: 'Safe to Share',
-  dragSafeHere: 'Drag safe posts here',
-  doNotShare: 'Do NOT Share',
-  dragUnsafeHere: 'Drag unsafe posts here',
-  safeZoneAriaLabel: 'Safe to Share drop zone',
-  unsafeZoneAriaLabel: 'Do NOT Share drop zone',
-  correct: 'Correct!',
-  tryOtherZone: 'Not quite — try the other zone!',
-  winTitle: 'Perfect! You sorted them all correctly!',
-  winMessage: 'You\'re a digital citizenship expert. Remember these lessons when posting online!',
-  playAgain: 'Play Again',
+  title: 'GUTER oder SCHLECHTER Inhalt zum Posten?',
+  subtitle: 'Ziehen Sie jeden Beitrag in die richtige Kategorie. Lernen Sie, was sicher online zu teilen ist!',
+  howItWorks: 'So funktioniert es',
+  instruction: 'Ziehen Sie jede Beitragskarte in die zugehörige Zone. Auf dem Handy tippen Sie auf eine Karte, um sie auszuwählen, dann tippen Sie auf eine Ablagezone.',
+  tip: 'Überlegen Sie, ob die Information Sie identifizieren oder in Gefahr bringen könnte, wenn ein Fremder sie sähe.',
+  tipLabel: 'Tipp',
+  tryAgain: 'Erneut versuchen',
+  correctCountLabel: 'Richtig',
+  postsToSort: 'Zu sortierende Beiträge',
+  safeToShare: 'Sicher zu teilen',
+  dragSafeHere: 'Sichere Beiträge hierher ziehen',
+  doNotShare: 'NICHT teilen',
+  dragUnsafeHere: 'Unsichere Beiträge hierher ziehen',
+  safeZoneAriaLabel: 'Ablagezone „Sicher zu teilen"',
+  unsafeZoneAriaLabel: 'Ablagezone „NICHT teilen"',
+  correct: 'Richtig!',
+  tryOtherZone: 'Nicht ganz — versuchen Sie die andere Zone!',
+  winTitle: 'Perfekt! Sie haben alle richtig sortiert!',
+  winMessage: 'Sie sind ein Experte für digitale Staatsbürgerschaft. Denken Sie beim Online-Posten an diese Lektionen!',
+  playAgain: 'Nochmal spielen',
   posts: [
-    { text: 'My home address is 123 Main Street', 
-      category: 'unsafe', 
-      emoji: '🏠', 
-      explanation: 'Your home address is private — never share it online! Strangers could use it to find where you live.' 
-    },
-    { text: 'I love playing football!', 
-      category: 'safe', 
-      emoji: '⚽', 
-      explanation: 'Sharing hobbies is totally fine and a great way to connect with others!' 
-    },
-    { text: 'My password is Fluffy123', 
-      category: 'unsafe', 
-      emoji: '🔑', 
-      explanation: 'Never share passwords with anyone online — not even your best friends!' 
-    },
-    { text: 'I got an A on my science test!', 
-      category: 'safe', 
-      emoji: '🎉', 
-      explanation: 'Celebrating achievements is safe to share — way to go!' 
-    },
-    { text: 'My phone number is 555-0123', 
+    { text: 'Meine Heimadresse ist Hauptstraße 123',
       category: 'unsafe',
-      emoji: '📱', 
-      explanation: 'Phone numbers are personal — keep them private so strangers can\'t contact you.' 
+      emoji: '🏠',
+      explanation: 'Ihre Heimadresse ist privat — teilen Sie sie nie online! Fremde könnten sie nutzen, um herauszufinden, wo Sie wohnen.'
     },
-    { text: 'I\'m home alone until 6 PM', 
-      category: 'unsafe', 
-      emoji: '🏡', 
-      explanation: 'Never tell anyone online that you\'re home alone — it puts your safety at risk!' 
+    { text: 'Ich liebe es, Fußball zu spielen!',
+      category: 'safe',
+      emoji: '⚽',
+      explanation: 'Hobbys zu teilen ist völlig in Ordnung und eine tolle Möglichkeit, mit anderen in Kontakt zu treten!'
     },
-    { text: 'Our school play is next Friday!', 
-      category: 'safe', 
-      emoji: '🎭', 
-      explanation: 'School events are fine to share with friends!' 
+    { text: 'Mein Passwort ist Fluffy123',
+      category: 'unsafe',
+      emoji: '🔑',
+      explanation: 'Teilen Sie Passwörter niemals mit jemandem online — nicht einmal mit Ihren besten Freunden!'
     },
-    { text: 'Check out my new drawing!', 
-      category: 'safe', 
-      emoji: '🎨', 
-      explanation: 'Sharing creative work is a great way to express yourself!' 
+    { text: 'Ich habe eine Eins in meinem Naturwissenschaftstest!',
+      category: 'safe',
+      emoji: '🎉',
+      explanation: 'Erfolge zu feiern ist sicher zu teilen — weiter so!'
     },
-    { text: 'My mom\'s credit card number is...', 
-      category: 'unsafe', 
-      emoji: '💳', 
-      explanation: 'Financial info like credit card numbers must always stay private!' 
+    { text: 'Meine Telefonnummer ist 555-0123',
+      category: 'unsafe',
+      emoji: '📱',
+      explanation: 'Telefonnummern sind persönlich — halten Sie sie privat, damit Fremde Sie nicht kontaktieren können.'
     },
-    { text: 'My favourite movie is Toy Story!', 
-      category: 'safe', 
-      emoji: '🎬', 
-      explanation: 'Talking about movies you enjoy is totally safe and fun!' 
+    { text: 'Ich bin bis 18 Uhr allein zu Hause',
+      category: 'unsafe',
+      emoji: '🏡',
+      explanation: 'Sagen Sie niemals jemandem online, dass Sie allein zu Hause sind — das gefährdet Ihre Sicherheit!'
     },
-    { text: 'My full name is Emily Rose Johnson', 
-      category: 'unsafe', 
-      emoji: '📛', 
-      explanation: 'Sharing your full real name online can help strangers identify and track you.' 
+    { text: 'Unser Schulstück ist nächsten Freitag!',
+      category: 'safe',
+      emoji: '🎭',
+      explanation: 'Schulveranstaltungen können mit Freunden geteilt werden!'
     },
-    { text: 'I just learned to ride a bike!', 
-      category: 'safe', 
-      emoji: '🚲', 
-      explanation: 'Sharing milestones and new skills is a great thing to post!' 
+    { text: 'Schau dir meine neue Zeichnung an!',
+      category: 'safe',
+      emoji: '🎨',
+      explanation: 'Kreative Arbeiten zu teilen ist eine tolle Möglichkeit, sich auszudrücken!'
     },
-    { text: 'My school locker combo is 24-8-16', 
-      category: 'unsafe', 
-      emoji: '🔒', 
-      explanation: 'Locker combinations are private — someone could break into your locker!' 
+    { text: 'Die Kreditkartennummer meiner Mutter ist...',
+      category: 'unsafe',
+      emoji: '💳',
+      explanation: 'Finanzinformationen wie Kreditkartennummern müssen immer privat bleiben!'
     },
-    { text: 'We got a new puppy named Max!', 
-      category: 'safe', 
-      emoji: '🐶', 
-      explanation: 'Sharing about your pets is safe and fun for everyone!' 
+    { text: 'Mein Lieblingsfilm ist Toy Story!',
+      category: 'safe',
+      emoji: '🎬',
+      explanation: 'Über Filme zu reden, die man mag, ist völlig sicher und macht Spaß!'
     },
-    { text: 'I walk home alone through the park at 3:30', 
-      category: 'unsafe', 
-      emoji: '🚶', 
-      explanation: 'Sharing your daily routine and route tells strangers exactly where to find you.' 
+    { text: 'Mein vollständiger Name ist Emily Rose Johnson',
+      category: 'unsafe',
+      emoji: '📛',
+      explanation: 'Ihren vollständigen echten Namen online zu teilen kann Fremden helfen, Sie zu identifizieren und zu verfolgen.'
+    },
+    { text: 'Ich habe gerade gelernt, Fahrrad zu fahren!',
+      category: 'safe',
+      emoji: '🚲',
+      explanation: 'Meilensteine und neue Fähigkeiten zu teilen ist eine tolle Sache zum Posten!'
+    },
+    { text: 'Meine Schulspindkombination ist 24-8-16',
+      category: 'unsafe',
+      emoji: '🔒',
+      explanation: 'Spindkombinationen sind privat — jemand könnte in Ihren Spind einbrechen!'
+    },
+    { text: 'Wir haben einen neuen Welpen namens Max bekommen!',
+      category: 'safe',
+      emoji: '🐶',
+      explanation: 'Über Haustiere zu berichten ist für alle sicher und macht Spaß!'
+    },
+    { text: 'Ich gehe um 15:30 Uhr allein durch den Park nach Hause',
+      category: 'unsafe',
+      emoji: '🚶',
+      explanation: 'Ihre tägliche Routine und Route zu teilen sagt Fremden genau, wo sie Sie finden können.'
     },
   ],
 }

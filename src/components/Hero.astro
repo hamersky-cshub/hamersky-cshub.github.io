@@ -27,16 +27,16 @@ const { t } = useTranslations(Astro.currentLocale)
           <slot><span style="color: var(--link-color);">W</span>ise <span style="color: var(--link-color);">W</span>eb <br/><span style="color: var(--link-color);">W</span>anderers</slot>
         </h1>
         <p class="text-xl md:text-3xl text-center md:text-left">
-          {t('hero.subtitle')}
+          {t('layout.hero.subtitle')}
         </p>
         <div class="flex flex-col gap-3 min-[600px]:flex-row items-center">
           <a class="button has-icon" href={learningHubHref}>
             <Icon name="lucide:graduation-cap" />
-            {t('hero.explore')}
+            {t('layout.hero.explore')}
           </a>
           <a class="button has-icon is-outline" href="#learning-modules">
             <Icon name="lucide:info" />
-            {t('hero.moreInfo')}
+            {t('layout.hero.moreInfo')}
           </a>
         </div>
       </div>

@@ -66,3 +66,14 @@ const currentLocaleLabel = localeLinks.find((entry) => entry.isActive)?.shortLab
     }
   </ul>
 </li>
+
+<script>
+  const STORAGE_KEY = 'kidcy-locale-pref'
+  document.querySelectorAll<HTMLAnchorElement>('.language-switcher__item[lang]').forEach((link) => {
+    link.addEventListener('click', () => {
+      try {
+        localStorage.setItem(STORAGE_KEY, link.getAttribute('lang') ?? 'en')
+      } catch (_) {}
+    })
+  })
+</script>

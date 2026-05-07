@@ -6,75 +6,26 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDA = {
-  subtitle:
-    'Digital abuse includes harmful behavior online such as threats, harassment, or unwanted contact. This module helps educators teach students to recognize unsafe behavior, set boundaries, and find support.',
-  aim: 'To help students recognize harmful online behavior, understand that boundaries matter, and know the steps they can take to get support and stay safe.',
+  aim: 'Padėti mokiniams atpažinti žalingą elgesį internete, suprasti, kad ribos yra svarbios, ir žinoti, kokių veiksmų jie gali imtis, kad gautų paramą ir liktų saugūs.',
   objectives: [
-    'Define digital abuse in age-appropriate, supportive terms.',
-    'Recognize warning signs and unhealthy online behaviors.',
-    'Practice safe help-seeking and reporting steps.',
+    'Apibūdinti skaitmeninį smurtą tinkamais amžiui, palaikomais terminais.',
+    'Atpažinti įspėjamuosius ženklus ir nesveikąjį elgesį internete.',
+    'Praktikuoti saugų pagalbos ieškojimą ir pranešimo veiksmus.',
   ],
   outcomes: [
-    'Identify behaviors that cross boundaries or cause harm.',
-    'Use simple safety steps like blocking or reporting.',
-    'Know trusted adults and support channels to reach out to.',
+    'Identifikuoti elgesio būdus, kurie pažeidžia ribas arba sukelia žalą.',
+    'Naudoti paprastus saugumo veiksmus, tokius kaip blokavimas arba pranešimas.',
+    'Žinoti patikimus suaugusiuosius ir palaikymo kanalus, su kuriais galima susisiekti.',
   ],
   teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Abuse Teaching Guide',
+    ariaLabel: 'Atsisiųsti mokymo vadovą',
+    download: 'Skaitmeninio smurto mokymo vadovas',
   },
-  relatedModules: [
-    {
-      title: 'Digital Citizenship',
-      description: 'Build a strong foundation of rights, responsibility, and respect online.',
-      cta: 'Explore',
-    },
-    {
-      title: 'Attacker Perspective',
-      description: 'Understand how trust can be manipulated and learn to spot risky behavior.',
-      cta: 'Explore',
-    },
-    {
-      title: 'Social Engineering',
-      description: 'Learn how scammers and manipulators use persuasion and false urgency.',
-      cta: 'Explore',
-    },
-  ],
   parts: [
     {
-      title: 'Misinformation',
-      goal: 'Help students understand what misinformation is, what motivates people to do it and how to recognise it.',
+      title: 'Dezinformacija',
+      goal: 'Padėti mokiniams suprasti, kas yra dezinformacija, kas motyvuoja žmones tai daryti ir kaip ją atpažinti.',
       bundle: {
         filename: 'Digital Abuse Part 1 Package',
       },
@@ -82,44 +33,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.1.2
-            kind: 'Game',
-            name: 'Truth Detectives',
+            kind: 'Žaidimas',
+            name: 'Tiesos detektyvai',
             filename: 'Game - Truth Detectives',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'What is Misinformation?',
+            title: 'Kas yra dezinformacija?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.1.1
-        title: 'What is Misinformation?',
+        title: 'Kas yra dezinformacija?',
         supportText:
-          'Use this video to introduce misinformation as false or inaccurate content that can spread online without harmful intent. Pause to ask students if they have ever shared something that later turned out not to be true.',
+          'Naudokite šį vaizdo įrašą, kad supažindintumėte su dezinformacija kaip klaidingais ar netiksliais turinio fragmentais, kurie gali plisti internete be žalingos intencijos. Sustokite ir paklauskite mokinių, ar jie kada nors pasidalino kuo nors, kas vėliau pasirodė esąs netiesa.',
         downloads: {
           video: {
             filename: 'What is Misinformation',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'What is Misinformation - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
     },
     {
-      title: 'Disinformation',
-      goal: 'Help students understand what disinformation is, the motivations behind it and how to recognise it.',
+      title: 'Klaidinformacija',
+      goal: 'Padėti mokiniams suprasti, kas yra klaidinformacija, motyvacijas už jos ir kaip ją atpažinti.',
       bundle: {
         filename: 'Digital Abuse Part 2 Package',
       },
@@ -127,39 +78,39 @@ export const contentDA = {
         materials: [],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'What is Disinformation?',
+            title: 'Kas yra klaidinformacija?',
           },
           {
-            title: 'Algorithms',
+            title: 'Algoritmai',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.2.1
-        title: 'What is Disinformation?',
+        title: 'Kas yra klaidinformacija?',
         supportText:
-          'Use this video to help students distinguish disinformation — deliberately deceptive content — from misinformation. Pause to discuss how intent changes the way we evaluate and respond to false information.',
+          'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams atskirti klaidinformaciją — tyčia apgaulingą turinį — nuo dezinformacijos. Sustokite aptarti, kaip intencija keičia tai, kaip mes vertiname ir reaguojame į melagingą informaciją.',
         downloads: {
           video: {
             filename: 'What is Disinformation',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'What is Disinformation - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
     },
     {
-      title: 'Cyber Bullying',
-      goal: 'Help students understand what cyber bullying is, the motivations behind it and how to recognise it.',
+      title: 'Kibernetinis patyčiavimasis',
+      goal: 'Padėti mokiniams suprasti, kas yra kibernetinis patyčiavimasis, motyvacijas už jo ir kaip jį atpažinti.',
       bundle: {
         filename: 'Digital Abuse Part 3 Package',
       },
@@ -167,44 +118,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Game',
-            name: 'Act it Out!',
+            kind: 'Žaidimas',
+            name: 'Suvaidink tai!',
             filename: 'Game - Act it Out',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'What is Cyber Bullying?',
+            title: 'Kas yra kibernetinis patyčiavimasis?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.3.2
-        title: 'What is Cyber Bullying?',
+        title: 'Kas yra kibernetinis patyčiavimasis?',
         supportText:
-          'Use this video to help students define cyber bullying and understand how online behaviour can cause real emotional harm. Pause to discuss what makes a bystander\'s response important in these situations.',
+          'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams apibrėžti kibernetinį patyčiavimąsi ir suprasti, kaip elgesys internete gali sukelti tikrą emocinę žalą. Sustokite aptarti, kodėl stebėtojų reakcija šiose situacijose yra svarbi.',
         downloads: {
           video: {
             filename: 'What is Cyber Bullying',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'What is Cyber Bullying - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
     },
     {
-      title: 'Stranger Danger',
-      goal: 'Help students understand what stranger danger is, the motivations behind it and how to recognise it.',
+      title: 'Nepažįstamųjų pavojus',
+      goal: 'Padėti mokiniams suprasti, kas yra nepažįstamųjų pavojus, motyvacijas už jo ir kaip jį atpažinti.',
       bundle: {
         filename: 'Digital Abuse Part 4 Package',
       },
@@ -212,25 +163,25 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Game',
-            name: 'Real or Fake?',
+            kind: 'Žaidimas',
+            name: 'Tikra ar netikra?',
             filename: 'Game - Real or Fake',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
     },
     {
-      title: 'Influencers',
-      goal: 'Help students understand what influencers are and what motivates them.',
+      title: 'Influenceriai',
+      goal: 'Padėti mokiniams suprasti, kas yra influenceriai ir kas juos motyvuoja.',
       bundle: {
         filename: 'Digital Abuse Part 5 Package',
       },
@@ -238,44 +189,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scenarios',
-            name: 'Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scenarijai',
+            name: 'Influencerių įrašų, kurie gali būti žalingi ir nežalingi, pavyzdžiai',
             filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Social Media Influencers',
+            title: 'Socialinių medijų influenceriai',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.5.1
-        title: 'Social Media Influencers',
+        title: 'Socialinių medijų influenceriai',
         supportText:
-          'Use this video to explore how influencers shape opinions and behaviours on social media, and the responsibilities that come with that reach. Pause to ask students which influencers they follow and what makes them trustworthy.',
+          'Naudokite šį vaizdo įrašą, kad ištirtumėte, kaip influenceriai formuoja nuomones ir elgesį socialiniuose tinkluose, ir kokia atsakomybė kyla dėl šios pasiekiamumo galios. Sustokite ir paklauskite mokinių, kuriuos influencerius jie seka ir kas daro juos patikimais.',
         downloads: {
           video: {
             filename: 'Social Media Influencers',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'Social Media Influencers - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
     },
     {
-      title: 'How Can We Deal With the Behaviour of Digital Abusers?',
-      goal: 'Help students to know what they can do to protect themselves from digital abuse.',
+      title: 'Kaip galime susidoroti su skaitmeninių nusikaltėlių elgesiu?',
+      goal: 'Padėti mokiniams žinoti, ką jie gali padaryti, kad apsisaugotų nuo skaitmeninio smurto.',
       bundle: {
         filename: 'Digital Abuse Part 6 Package',
       },
@@ -283,18 +234,18 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Activity',
-            name: 'Safety Superhero Suggestion Pack',
+            kind: 'Veikla',
+            name: 'Saugumo superherojaus pasiūlymų paketas',
             filename: 'Activity - Safety Superhero Suggestion Pack',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -306,570 +257,564 @@ export const contentDA = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
   ],
 }
 
 export const challengeDA = {
-  title: 'Real Talk Stories',
+  title: 'Tikros istorijos',
   subtitle:
-    'Make choices. See consequences. Learn how to handle cyberbullying, online pressure, and digital abuse.',
-  howItWorks: 'How It Works',
+    'Priimk sprendimus. Patirk pasekmes. Išmok, kaip susidoroti su kibernetiniu patyčiavimuisi, spaudimu internete ir skaitmeniniu smurtu.',
+  howItWorks: 'Kaip tai veikia',
   instruction:
-    'Work through 10 real-life digital abuse scenarios. At each key moment you choose what to do — and different choices lead to genuinely different outcomes. Earn up to 3 stars per story by finding the safest path. If you get a tough ending, retry the story to discover a better route!',
-  tip: 'Each story branches in multiple directions. There is always at least one path that leads to a safe, positive outcome — but you have to make the right calls to find it!',
-  tipLabel: 'Tip',
-  yourBestScore: 'Your Best Score',
-  bestResultDesc: 'Best result from each story',
-  storiesTitle: '📖 Stories',
-  watchOutTitle: '🚩 Watch Out For',
+    'Peržiūrėk 10 tikrų skaitmeninio smurto scenarijų. Kiekvienu svarbiu momentu tu pasirinksi, ką daryti — ir skirtingi pasirinkimai lemia tikrai skirtingus rezultatus. Uždirbk iki 3 žvaigždžių už kiekvieną istoriją, radęs saugiausią kelią. Jei gauni sunkią pabaigą, bandyk istoriją iš naujo, kad atrastum geresnį kelią!',
+  tip: 'Kiekviena istorija šakojasi keliomis kryptimis. Visada yra bent vienas kelias, vedantis į saugų, teigiamą rezultatą — bet turi priimti teisingus sprendimus jį rasti!',
+  tipLabel: 'Patarimas',
+  yourBestScore: 'Tavo geriausias rezultatas',
+  bestResultDesc: 'Geriausias rezultatas iš kiekvienos istorijos',
+  storiesTitle: '📖 Istorijos',
+  watchOutTitle: '🚩 Atkreipk dėmesį',
   watchOutItems: [
-    '🚩 Anyone asking for private photos',
-    '🚩 Password demands from partners',
-    '🚩 Strangers asking your address or school',
-    '🚩 "Keep this a secret" pressure',
-    '🚩 Mean posts, screenshots, fake profiles',
+    '🚩 Bet kas, prašantis privačių nuotraukų',
+    '🚩 Slaptažodžio reikalavimai iš partnerių',
+    '🚩 Nepažįstamieji, klausiami tavo adreso ar mokyklos',
+    '🚩 Spaudimas „Laikyk tai paslaptyje"',
+    '🚩 Negeri įrašai, ekrano kopijos, netikri profiliai',
   ],
-  welcomeDesc: 'Make your choices carefully — different paths lead to very different outcomes.',
-  startStory: 'Start Story →',
-  whatWeLearned: '💡 What we learned:',
-  tryDifferentPath: '↩ Try a Different Path',
-  nextStory: 'Next Story →',
-  seeFinalScore: '🎉 See Final Score',
-  allStoriesComplete: 'All Stories Complete!',
-  finalScoreDesc: "Here's how you did across all 10 stories:",
-  playAgain: 'Play Again',
-  rankChampion: '🏆 Safety Champion',
-  rankChampionMsg: 'Outstanding! You found the safest path in nearly every situation.',
-  rankDefender: '🛡️ Digital Defender',
-  rankDefenderMsg: 'Great work! You handled most situations wisely and safely.',
-  rankNavigator: '📚 Learning Navigator',
-  rankNavigatorMsg: 'Good effort! Replay some stories to find the better paths and earn more stars.',
-  rankBeginning: '🌱 Getting Started',
-  rankBeginningMsg: 'Keep trying different paths — every replay teaches you something new!',
+  welcomeDesc: 'Priimk sprendimus atsargiai — skirtingi keliai veda į labai skirtingus rezultatus.',
+  startStory: 'Pradėti istoriją →',
+  whatWeLearned: '💡 Ką išmokome:',
+  tryDifferentPath: '↩ Išbandyti kitą kelią',
+  nextStory: 'Kita istorija →',
+  seeFinalScore: '🎉 Žiūrėti galutinį rezultatą',
+  allStoriesComplete: 'Visos istorijos baigtos!',
+  finalScoreDesc: 'Štai kaip sekėsi visose 10 istorijų:',
+  playAgain: 'Žaisti dar kartą',
+  rankChampion: '🏆 Saugos čempionas',
+  rankChampionMsg: 'Puiku! Beveik kiekvienoje situacijoje radai saugiausią kelią.',
+  rankDefender: '🛡️ Skaitmeninis gynėjas',
+  rankDefenderMsg: 'Puikus darbas! Didžiąją dalį situacijų suvaldei išmintingai ir saugiai.',
+  rankNavigator: '📚 Mokymosi navigatorius',
+  rankNavigatorMsg: 'Geros pastangos! Iš naujo žaisk kai kurias istorijas, kad rastum geresnius kelius ir uždirbk daugiau žvaigždžių.',
+  rankBeginning: '🌱 Pradedantysis',
+  rankBeginningMsg: 'Toliau bandyk skirtingus kelius — kiekvienas pakartojimas moko ką nors naujo!',
   stories: [
     {
-      id: 1, title: 'The Meme Problem', emoji: '😟', topic: 'Cyberbullying',
+      id: 1, title: 'Memo problema', emoji: '😟', topic: 'Kibernetinis patyčiavimasis',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You open your phone and see a group chat. Someone named Jake posted a mean meme about your classmate Emma, making fun of her appearance. 23 people already liked it. What do you do?', 
-          choices: ['👍 Like the meme to fit in with everyone', '📲 Scroll past and ignore it', '💬 Send Emma a private supportive message'] 
+        {
+          id: 'start',
+          text: 'Atidarei telefoną ir matai grupinį pokalbį. Kažkas vardu Jake paskelbė negražų memą apie tavo klasioką Emma, šaipydamasis iš jos išvaizdos. 23 žmonės jau patiko. Ką darai?',
+          choices: ['👍 Patikti memą, kad priklausytum grupei', '📲 Praslinkti pro šalį ir ignoruoti', '💬 Nusiųsti Emma privačią palaikomąją žinutę'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Part of the Problem',  
-          text: 'You liked the meme. Jake posts more, even meaner ones. Emma sees your name in the likes and is devastated. A teacher finds out and contacts your parents.', 
-          lesson: 'Liking mean content is a form of cyberbullying. Your "like" is never invisible — the target always sees who supported it.' 
+        {
+          id: 'end_a',
+          title: 'Problemos dalis',
+          text: 'Patikote memą. Jake skelbia daugiau, dar negražesnių. Emma mato tavo vardą tarp mylinčių ir yra sudaužyta. Mokytojas sužino ir susisiekia su tavo tėvais.',
+          lesson: 'Negražaus turinio patikimas yra kibernetinio patyčiavimosi forma. Tavo „patinka" niekada nematomas — tikslas visada mato, kas jį palaikė.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You scroll past, but the posts keep coming. The next day, Emma sits alone at lunch looking very upset. The bullying has gotten worse.', 
-          choices: ['😶 Keep ignoring it — not your problem', '🏫 Tell a teacher what has been happening'] 
+        {
+          id: 'mid_b',
+          text: 'Praslinksti pro šalį, bet įrašai tęsiasi. Kitą dieną Emma sėdi viena per pietus ir atrodo labai nusiminusi. Patyčiavimasis pablogėjo.',
+          choices: ['😶 Toliau ignoruoti — ne tavo problema', '🏫 Pasakyti mokytojui, kas vyko'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'The Silent Witness',   
-          text: 'Weeks pass. Emma misses school. You feel guilty but say nothing. The bullying continues unchallenged.', 
-          lesson: 'Ignoring bullying does not make it stop. Bystanders have real power to help — staying silent is still a choice.' 
+        {
+          id: 'end_b1',
+          title: 'Tylus stebėtojas',
+          text: 'Praeina savaitės. Emma praleidžia mokyklą. Jautiesi kaltas, bet nieko nesakai. Patyčiavimasis tęsiasi be pasipriešinimo.',
+          lesson: 'Patyčiavimosi ignoravimas jo nesustabdo. Stebėtojai turi tikrą galią padėti — tylėjimas vis tiek yra pasirinkimas.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'The Brave Reporter',   
-          text: 'The teacher acts immediately. Jake and his parents are called in. Emma gets support from the school counsellor. The bullying stops.', 
-          lesson: 'Telling a trusted adult is one of the most powerful things you can do. It is not snitching — it is protecting someone who needs help.' 
+        {
+          id: 'end_b2',
+          title: 'Drąsus pranešėjas',
+          text: 'Mokytojas veikia nedelsiant. Jake ir jo tėvai iškviečiami. Emma gauna paramą iš mokyklos konsultanto. Patyčiavimasis sustoja.',
+          lesson: 'Pasakyti patikimam suaugusiajam yra vienas iš galingiausių dalykų, ką gali padaryti. Tai ne skundimas — tai apsaugoti ką nors, kam reikia pagalbos.',
         },
-        { 
-          id: 'mid_c',  
-          text: "Emma replies: \"Thank you so much… it really hurt. I didn't know what to do.\" She is grateful but scared. The posts are still up.", 
-          choices: ['📢 Help Emma report every post to the platform', '🤷 Tell Emma to just ignore it, it will blow over'] 
+        {
+          id: 'mid_c',
+          text: 'Emma atsako: „Labai ačiū… tai tikrai skaudėjo. Nežinojau, ką daryti." Ji dėkinga, bet išsigandusi. Įrašai vis dar yra.',
+          choices: ['📢 Padėti Emma pranešti kiekvieną įrašą platformai', '🤷 Pasakyti Emma tiesiog ignoruoti, praeis'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'The Digital Defender', 
-          text: 'You and Emma report every post together. Most are removed within a day. You also visit the school counsellor, who supports Emma further. The bullying stops.', 
-          lesson: 'Reaching out AND taking action — reporting online and involving trusted adults — is the gold standard response to cyberbullying.' },
-        { 
-          id: 'end_c2', 
-          title: 'Kind but Not Enough',  
-          text: 'Emma tries to ignore it but the posts keep coming. Your kind message helped, but without reporting or adult support the bullying continues.', 
-          lesson: 'Kindness is a great start, but reporting bullying and involving trusted adults is what actually makes it stop.' 
+        {
+          id: 'end_c1',
+          title: 'Skaitmeninis gynėjas',
+          text: 'Tu ir Emma kartu praneši kiekvieną įrašą. Dauguma pašalinami per dieną. Taip pat lankote mokyklos konsultantą, kuris toliau palaiko Emma. Patyčiavimasis sustoja.',
+          lesson: 'Kreipimasis IR veikimas — pranešimas internete ir patikimų suaugusiųjų įtraukimas — yra geriausias atsakas į kibernetinį patyčiavimąsi.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Malonus, bet nepakankamai',
+          text: 'Emma bando ignoruoti, bet įrašai tęsiasi. Tavo maloni žinutė padėjo, bet be pranešimo ar suaugusiųjų palaikymo patyčiavimasis tęsiasi.',
+          lesson: 'Malonumas yra puiki pradžia, tačiau patyčiavimosi pranešimas ir patikimų suaugusiųjų įtraukimas iš tikrųjų jį sustabdo.',
         },
       ],
     },
     {
-      id: 2, title: 'Screenshot Trap', emoji: '📸', topic: 'Privacy & Betrayal',
+      id: 2, title: 'Ekrano kopijos spąstai', emoji: '📸', topic: 'Privatumas ir išdavystė',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You sent a private message to your friend Zoe about having a crush on someone. Zoe screenshotted it and shared it in a big group chat without asking you. Everyone is commenting. What do you do?', 
-          choices: ['😡 Post an angry public callout about what Zoe did', '📱 Confront Zoe privately in a DM', '📸 Save the evidence and tell a trusted adult'] 
+        {
+          id: 'start',
+          text: 'Išsiuntei draugei Zoe privačią žinutę apie simpatiją. Zoe padarė ekrano kopiją ir be leidimo pasidalijo didelėje grupinėje pokalbyje. Visi komentuoja. Ką darai?',
+          choices: ['😡 Paskelbti piktą viešą įrašą apie tai, ką Zoe padarė', '📱 Susisiekti su Zoe privačiai', '📸 Išsaugoti įrodymus ir pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Fire Meets Fire',      
-          text: 'You post publicly calling Zoe out. Zoe fights back. Dozens of people join the drama. Now it is a full online war and you both look bad.', 
-          lesson: 'Public call-outs online almost always escalate things. They rarely bring the resolution you are hoping for.' 
+        {
+          id: 'end_a',
+          title: 'Ugnis susitinka ugnį',
+          text: 'Skelbi viešai, apkaltindamas Zoe. Zoe atsako. Dešimtys žmonių prisijungia prie dramos. Dabar tai visiškas interneto karas ir abu atrodote blogai.',
+          lesson: 'Viešas apkaltinimas internete beveik visada eskaluoja situaciją. Jis retai atneša sprendimą, kurio tikiesi.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You DM Zoe: "Why did you share that? It was private!" Zoe says "It was just a joke, chill out." But she has not deleted it.', 
-          choices: ['😔 Accept her "apology" and move on quietly', '🗣️ Firmly ask her to delete it and involve a trusted adult'] 
+        {
+          id: 'mid_b',
+          text: 'Rašai Zoe: „Kodėl pasidalinai? Tai buvo privatu!" Zoe sako „Tai buvo tik pokštas, nusiramink." Bet ji neištrynė.',
+          choices: ['😔 Priimti jos „atsiprašymą" ir tyliai tęsti', '🗣️ Tvirtai paprašyti ištrinti ir įtraukti patikimą suaugusįjį'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Swept Under the Rug', 
-          text: 'Zoe does not really understand why it was wrong. The screenshot stays up. You feel hurt but nothing is truly resolved.', 
-          lesson: '"Just a joke" is never an excuse for sharing private messages. Accepting bad behaviour without consequence means it may happen again.' 
+        {
+          id: 'end_b1',
+          title: 'Nušluota po kilimu',
+          text: 'Zoe iš tikrųjų nesupranta, kodėl tai buvo neteisinga. Ekrano kopija lieka. Jautiesi įskaudintas, bet nieko iš tikrųjų neišspręsta.',
+          lesson: '„Tik pokštas" niekada nėra pasiteisinimas dalinantis privačiomis žinutėmis. Priimant blogą elgesį be pasekmių reiškia, kad tai gali pasikartoti.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Real Resolution',      
-          text: 'Under pressure and with adult involvement, Zoe deletes it and has a real conversation about consent and privacy. Your friendship recovers on healthier terms.', 
-          lesson: 'Standing up for your privacy calmly but firmly — with adult support — leads to genuine change, not just temporary calm.' 
+        {
+          id: 'end_b2',
+          title: 'Tikrasis sprendimas',
+          text: 'Veikiama spaudimo ir su suaugusiųjų įtraukimu Zoe ją ištrina ir veda tikrą pokalbį apie sutikimą ir privatumą. Jūsų draugystė atsigauna sveikesniais pagrindais.',
+          lesson: 'Ramus, bet tvirtas savo privatumo gynimas — su suaugusiųjų parama — veda prie tikro pokyčio, o ne tik laikinos ramybės.',
         },
-        { 
-          id: 'mid_c',  
-          text: "A trusted adult helps report it to the platform and contacts Zoe's parents. The screenshot is removed. Zoe apologises.", 
-          choices: ['🤝 Accept her apology and work to rebuild the friendship', '🚫 Block Zoe — you do not want her as a friend anymore'] },
-        { 
-          id: 'end_c1', 
-          title: 'Trust Rebuilt',        
-          text: 'With adult support and a genuine apology, the situation resolves properly. Zoe understands consent. You both move forward.', 
-          lesson: 'Documenting, reporting, and giving space for a real apology turns a painful experience into a genuine learning moment.' 
+        {
+          id: 'mid_c',
+          text: 'Patikimas suaugusysis padeda pranešti platformai ir susisiekia su Zoe tėvais. Ekrano kopija pašalinama. Zoe atsiprašo.',
+          choices: ['🤝 Priimti jos atsiprašymą ir stengtis atkurti draugystę', '🚫 Blokuoti Zoe — nebenori jos kaip draugės'],
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safe Distance',        
-          text: 'The screenshot is gone and you are protected. Blocking is a valid boundary when trust is broken. A safe outcome through the right actions.', 
-          lesson: 'Protecting yourself is always valid. Involving adults to handle the situation was exactly the right move.' 
+        {
+          id: 'end_c1',
+          title: 'Pasitikėjimas atkurtas',
+          text: 'Su suaugusiųjų parama ir tikru atsiprašymu situacija tinkamai išsprendžiama. Zoe supranta sutikimą. Abi judite į priekį.',
+          lesson: 'Dokumentavimas, pranešimas ir tikro atsiprašymo erdvės suteikimas paverčia skausmingą patirtį tikru mokymosi momentu.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Saugi distancija',
+          text: 'Ekrano kopija pašalinta ir esi apsaugotas. Blokavimas yra tinkama riba, kai pasitikėjimas sulaužytas. Saugus rezultatas teisingų veiksmų dėka.',
+          lesson: 'Savęs apsaugojimas visada teisingas. Suaugusiųjų įtraukimas situacijai spręsti buvo tiksliai teisingas žingsnis.',
         },
       ],
     },
     {
-      id: 3, title: 'Gaming Rage', emoji: '🎮', topic: 'Online Gaming Harassment',
+      id: 3, title: 'Žaidimų įniršis', emoji: '🎮', topic: 'Priekabiavimas žaidžiant internete',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You are playing your favourite online game and another player starts spamming hateful messages — calling you names and making threats. Others in the lobby are watching. What do you do?', 
-          choices: ['💢 Fight back with insults of your own', '🙉 Ignore the messages and keep playing', '🔇 Mute, screenshot, and report the player in-game'] 
+        {
+          id: 'start',
+          text: 'Žaidi mėgstamiausią internetinį žaidimą ir kitas žaidėjas pradeda siuntinėti neapykantingas žinutes — vadina pravardėmis ir grasina. Kiti lobilyje stebi. Ką darai?',
+          choices: ['💢 Atsakyti savo įžeidimais', '🙉 Ignoruoti žinutes ir toliau žaisti', '🔇 Nutildyti, padaryti ekrano kopiją ir pranešti apie žaidėją žaidime'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Both Banned',          
-          text: 'You argue back. Both of you get reported. The system flags your account. You both get banned — the toxic player reported you first.', 
-          lesson: 'Responding to hate with hate puts you at risk too. Game platforms often ban both sides of toxic exchanges.' 
+        {
+          id: 'end_a',
+          title: 'Abu užblokuoti',
+          text: 'Ginčijiesi atgal. Abu pranešate vienas apie kitą. Sistema pažymi tavo paskyrą. Abu užblokuojami — toksiškas žaidėjas pranešė apie tave pirmas.',
+          lesson: 'Neapykanta atsakant į neapykantą kelia riziką ir tau. Žaidimų platformos dažnai blokuoja abi toksinio keitimosi puses.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You ignore them, but they escalate. Now they have found your public game profile and are posting abuse there for others to see.', 
-          choices: ['🗑️ Delete your profile to make them stop', '📢 Report to the platform and tell a trusted adult'] },
-        { 
-          id: 'end_b1', 
-          title: 'Running Away',         
-          text: 'Deleting your profile stops this harasser for now. But they move on to the next target. No consequence, no real change.', 
-          lesson: 'Protecting yourself matters, but reporting ensures the harasser faces consequences and cannot keep doing it to others.' 
+        {
+          id: 'mid_b',
+          text: 'Ignoruoji juos, bet jie eskaluoja. Dabar rado tavo viešą žaidimo profilį ir skelbia ten įžeidimus kitiems matyti.',
+          choices: ['🗑️ Ištrinti profilį, kad sustabdytum juos', '📢 Pranešti platformai ir pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'end_b2', 
-          title: 'Player Banned',        
-          text: "The platform investigates and bans the harasser's account. A trusted adult helps you review your privacy settings and feel supported.", 
-          lesson: 'Reporting gaming harassment works. Platforms take these reports seriously, especially when screenshots are saved as evidence.' 
+        {
+          id: 'end_b1',
+          title: 'Bėgimas',
+          text: 'Profilio ištrynimas kol kas sustabdo šį priekabiavimą. Bet jis pereina prie kito taikinio. Jokių pasekmių, jokio tikro pokyčio.',
+          lesson: 'Savęs apsaugojimas svarbus, bet pranešimas užtikrina, kad priekabiaujantiems kiltų pasekmės ir jie negalėtų toliau to daryti kitiems.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'You have muted and reported the player with screenshots. The report is under review. But you are still shaken by what was said.', 
-          choices: ['🗣️ Tell a trusted adult how the experience made you feel', '😶 Keep it to yourself — you already handled it'] 
+        {
+          id: 'end_b2',
+          title: 'Žaidėjas užblokuotas',
+          text: 'Platforma tiria ir blokuoja priekabiautojo paskyrą. Patikimas suaugusysis padeda peržiūrėti privatumo nustatymus ir jautiesi palaikomas.',
+          lesson: 'Pranešimas apie žaidimų priekabiavimą veikia. Platformos rimtai žiūri į šiuos pranešimus, ypač kai ekrano kopijos išsaugotos kaip įrodymai.',
         },
-        { 
-          id: 'end_c1', 
-          title: 'Report and Support',   
-          text: 'A trusted adult validates your feelings and helps you adjust privacy settings. The platform confirms the player was banned.', 
-          lesson: 'Reporting is important, but so is processing how online abuse makes you feel. Trusted adults can help with both.' 
+        {
+          id: 'mid_c',
+          text: 'Nutildei ir pranešei apie žaidėją su ekrano kopijomis. Pranešimas peržiūrimas. Bet vis dar esi sukrėstas to, kas buvo pasakyta.',
+          choices: ['🗣️ Pasakyti patikimam suaugusiajam, kaip patirtis privertė tave jaustis', '😶 Pasilikti sau — jau susitvarkei'],
         },
-        { 
-          id: 'end_c2', 
-          title: 'Half the Solution',    
-          text: 'The player gets banned but you carry the experience alone. You feel safer online but still unsettled.', 
-          lesson: 'You handled the technical side perfectly! Remember: talking to someone about how online abuse feels is just as important.' 
+        {
+          id: 'end_c1',
+          title: 'Pranešimas ir palaikymas',
+          text: 'Patikimas suaugusysis patvirtina tavo jausmus ir padeda sureguliuoti privatumo nustatymus. Platforma patvirtina, kad žaidėjas buvo užblokuotas.',
+          lesson: 'Pranešimas svarbus, bet taip pat svarbu apdoroti, kaip internetinis smurtas verčia tave jaustis. Patikimi suaugusieji gali padėti abiem.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Pusinis sprendimas',
+          text: 'Žaidėjas užblokuojamas, bet tu pats nešioji patirtį. Jautiesi saugesnis internete, bet vis dar nerimauji.',
+          lesson: 'Puikiai susitvarkai su technine puse! Prisimink: kalbėjimasis su kuo nors apie tai, kaip internetinis smurtas verčia jaustis, yra lygiai taip pat svarbu.',
         },
       ],
     },
     {
-      id: 4, title: 'Fake Profile', emoji: '👤', topic: 'Impersonation',
+      id: 4, title: 'Netikras profilis', emoji: '👤', topic: 'Apsimetimas kitu asmeniu',
       nodes: [
-        { 
-          id: 'start',  
-          text: "You spot a fake social media account using your friend Sam's photos. It is posting embarrassing things and adding Sam's classmates. Sam does not know yet. What do you do?", 
-          choices: ['💬 Message the fake account and tell them to stop', '📞 Tell Sam immediately so they know', '🚩 Report the fake account AND tell Sam straight away'] 
+        {
+          id: 'start',
+          text: 'Pastebėjai netikrą socialinių medijų paskyrą, naudojančią draugo Sam nuotraukas. Ji skelbia gėdinančius dalykus ir prideda Sam klasiokus. Sam dar nežino. Ką darai?',
+          choices: ['💬 Parašyti netikrai paskyrai ir liepti jai sustoti', '📞 Nedelsiant pasakyti Sam, kad jis žinotų', '🚩 Pranešti apie netikrą paskyrą IR nedelsiant pasakyti Sam'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Do Not Feed the Troll', 
-          text: 'The fake account blocks you and speeds up posting. Now it starts targeting you too. Engaging directly made things worse.', 
-          lesson: 'Contacting a fake or abusive account directly almost always makes things worse. Report to the platform instead.' 
+        {
+          id: 'end_a',
+          title: 'Nekurstyk trolio',
+          text: 'Netikra paskyra tave blokuoja ir pagreitina skelbimus. Dabar pradeda taikytis ir į tave. Tiesioginis įsikišimas padėtį pablogino.',
+          lesson: 'Tiesioginis susisiekimas su netikra ar piktnaudžiaujančia paskyra beveik visada padaro dalykus blogiau. Vietoj to pranešk platformai.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'Sam is shocked and upset. Sam wants to message everyone to explain it is fake, but is not sure what else to do. The account is still live.', 
-          choices: ['📢 Help Sam report the account to the platform', '🗣️ Suggest Sam just tell people in person it is fake'] 
+        {
+          id: 'mid_b',
+          text: 'Sam šokiruotas ir nusiminęs. Sam nori parašyti visiems, kad paaiškintų, jog tai netikra, bet nežino, ką dar daryti. Paskyra vis dar veikia.',
+          choices: ['📢 Padėti Sam pranešti apie paskyrą platformai', '🗣️ Pasiūlyti Sam tik asmeniškai paaiškinti, kad tai netikra'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Teamwork Wins',        
-          text: 'You and Sam report the account together. The platform removes it within hours. Sam also tells a trusted adult who helps monitor for future attempts.', 
-          lesson: 'Reporting fake accounts together is highly effective. Platforms take impersonation very seriously and act quickly.' 
+        {
+          id: 'end_b1',
+          title: 'Komandinis darbas laimi',
+          text: 'Tu ir Sam kartu pranešate apie paskyrą. Platforma ją pašalina per kelias valandas. Sam taip pat pasako patikimam suaugusiajam, kuris padeda stebėti būsimus bandymus.',
+          lesson: 'Bendras netikrų paskyrų pranešimas yra labai efektyvus. Platformos labai rimtai žiūri į apsimetimą ir veikia greitai.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Slow Response',        
-          text: 'Sam explains to people in person, but the fake account stays up for days causing more embarrassment before someone else finally reports it.', 
-          lesson: 'Reporting fake accounts to the platform directly is much faster and more effective than trying to explain to everyone individually.' 
+        {
+          id: 'end_b2',
+          title: 'Lėta reakcija',
+          text: 'Sam asmeniškai paaiškina žmonėms, bet netikra paskyra lieka dienų dienas, sukeldama daugiau gėdos, kol galų gale kažkas kitas ją praneša.',
+          lesson: 'Pranešimas apie netikras paskyras tiesiogiai platformai yra daug greitesnis ir efektyvesnis nei bandymas paaiškinti kiekvienam atskirai.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'The platform receives your report and begins reviewing the account. Sam is grateful you acted so quickly.', 
-          choices: ['🏠 Also tell a trusted adult to help Sam feel supported', '⏳ Just wait for the platform to act'] 
+        {
+          id: 'mid_c',
+          text: 'Platforma gauna tavo pranešimą ir pradeda tikrinti paskyrą. Sam dėkingas, kad taip greitai veikei.',
+          choices: ['🏠 Taip pat pasakyti patikimam suaugusiajam, kad Sam jaustųsi palaikomas', '⏳ Tiesiog laukti, kol platforma veiks'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Full Protection',      
-          text: "With adult support and the platform's action, the account is removed. Sam feels genuinely cared for. The school is alerted to watch for further attempts.", 
-          lesson: 'Reporting to the platform AND involving a trusted adult gives the best possible protection when someone is being impersonated.' 
+        {
+          id: 'end_c1',
+          title: 'Visapusiška apsauga',
+          text: 'Su suaugusiųjų parama ir platformos veiksmais paskyra pašalinama. Sam jaučiasi tikrai rūpinamasi. Mokykla įspėjama stebėti tolesnius bandymus.',
+          lesson: 'Pranešimas platformai IR patikimo suaugusiojo įtraukimas suteikia geriausią įmanomą apsaugą, kai kažkas apsimeta kitu.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Swift Action',         
-          text: 'The platform removes the account. Sam is relieved. A great outcome through quick, correct action.', 
-          lesson: 'Reporting fake accounts immediately to the platform is exactly the right move. Quick reporting means faster removal.' 
+        {
+          id: 'end_c2',
+          title: 'Greiti veiksmai',
+          text: 'Platforma pašalina paskyrą. Sam palengvėja. Puikus rezultatas greito, teisingo veikimo dėka.',
+          lesson: 'Nedelsiant pranešti apie netikras paskyras platformai yra tiksliai teisingas žingsnis. Greitas pranešimas reiškia greitesnį pašalinimą.',
         },
       ],
     },
     {
-      id: 5, title: 'Left Out Online', emoji: '😔', topic: 'Online Exclusion',
+      id: 5, title: 'Išstumtas internete', emoji: '😔', topic: 'Atskirtis internete',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You discover your friend group created a new group chat without you. They are planning a party you were not invited to, and you can see them posting about it publicly. You feel hurt and humiliated.', 
-          choices: ['📣 Post publicly about being hurt and left out', '💬 Send an angry message to the whole group', '🤝 Message your closest friend in the group privately'] 
+        {
+          id: 'start',
+          text: 'Sužinai, kad tavo draugų grupė sukūrė naują grupinį pokalbį be tavęs. Jie planuoja vakarėlį, į kurį nepakvietė tavęs, ir gali matyti, kaip jie viešai apie tai skelbia. Jautiesi įskaudintas ir pažemintas.',
+          choices: ['📣 Viešai skelbti apie skausmą ir atskirtį', '💬 Siųsti piktą žinutę visai grupei', '🤝 Privačiai parašyti artimiausiam draugui grupėje'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Public Meltdown',      
-          text: 'Your public post attracts attention but mostly embarrassment. The friend group gets defensive. The drama spreads across the whole school online.', 
-          lesson: 'Venting publicly about being excluded rarely helps and usually makes things worse. Direct private conversations are far more effective.' 
+        {
+          id: 'end_a',
+          title: 'Viešas protrūkis',
+          text: 'Tavo viešas įrašas sulaukia dėmesio, daugiausia gėdos. Draugų grupė apsigina. Drama plinta po visą mokyklą internete.',
+          lesson: 'Viešas skundimasis dėl atskirties retai padeda ir dažniausiai padaro dalykus blogiau. Tiesioginiai privatūs pokalbiai yra daug efektyvesni.',
         },
-        { 
-          id: 'end_b',  
-          title: 'Group Chat Drama',     
-          text: 'The group chat gets awkward. Some friends feel guilty; others get annoyed. Nothing is really resolved and tensions remain for weeks.', 
-          lesson: 'Confronting a whole group at once puts everyone on the defensive. One-to-one private conversations work much better.' 
+        {
+          id: 'end_b',
+          title: 'Grupinio pokalbio drama',
+          text: 'Grupinis pokalbis tampa nejaukus. Kai kurie draugai jaučiasi kalti; kiti susierzina. Nieko iš tikrųjų neišsprendžiama ir įtampa išlieka savaitėmis.',
+          lesson: 'Konfrontuoti visą grupę iš karto pastato visus į gynybinę poziciją. Asmeniniai pokalbiai akis į akį veikia daug geriau.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'Your closest friend Mia admits she felt pressured to leave you out by someone else in the group. She apologises and says she wants to help fix things.', 
-          choices: ['🤝 Ask Mia to speak up for you to the group', '🏫 Tell a trusted adult about the deliberate exclusion'] 
+        {
+          id: 'mid_c',
+          text: 'Artimiausia draugė Mia prisipažįsta, kad jautėsi spaudžiama tave pašalinti kažkieno kito iš grupės. Ji atsiprašo ir sako, kad nori padėti ištaisyti situaciją.',
+          choices: ['🤝 Paprašyti Mia kalbėti už tave grupėje', '🏫 Pasakyti patikimam suaugusiajam apie tyčinę atskirtį'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'True Ally',            
-          text: 'Mia speaks up. You are included again and the person who was excluding you is called out. The friendship group gets stronger through honesty.', 
-          lesson: 'When someone is willing to help, let them. Real friends speak up for each other — even when it is uncomfortable.' },
-        { 
-          id: 'end_c2', 
-          title: 'Adult Ally',           
-          text: 'The trusted adult helps mediate. Everyone reflects on how deliberate exclusion hurts. The group dynamic shifts for the better.', 
-          lesson: 'Deliberate social exclusion online is a form of bullying. A trusted adult can help reset unhealthy group dynamics.' 
+        {
+          id: 'end_c1',
+          title: 'Tikrasis sąjungininkas',
+          text: 'Mia kalba. Tu vėl įtraukiamas ir asmuo, kuris tave šalino, prikalbinamas. Draugų grupė tampa stipresnė per sąžiningumą.',
+          lesson: 'Kai kas nors nori padėti, leisk. Tikri draugai stoja vieni už kitus — net kai tai nepatogu.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Suaugusiojo sąjungininkas',
+          text: 'Patikimas suaugusysis padeda tarpininkauti. Visi apmąsto, kaip tyčinė atskirtis skaudo. Grupės dinamika keičiasi į gerąją pusę.',
+          lesson: 'Tyčinė socialinė atskirtis internete yra patyčiavimosi forma. Patikimas suaugusysis gali padėti pakeisti nesveikąją grupės dinamiką.',
         },
       ],
     },
     {
-      id: 6, title: 'Private Photos', emoji: '📷', topic: 'Image-Based Pressure',
+      id: 6, title: 'Privačios nuotraukos', emoji: '📷', topic: 'Spaudimas dėl nuotraukų',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone you have been chatting with online for two weeks says they really like you and asks for a private photo. They promise to send one first and say to keep it secret from everyone.', 
-          choices: ['📸 Send a photo — they seem genuinely nice', '😐 Say you are not comfortable but keep talking to them', '🚫 Refuse, stop talking to them, and tell a trusted adult now'] 
+        {
+          id: 'start',
+          text: 'Kažkas, su kuriuo dvi savaites bendrauji internete, sako, kad tikrai tau patinka, ir prašo privačios nuotraukos. Jis žada pirmiausia nusiųsti savo ir sako laikyti tai paslaptyje nuo visų.',
+          choices: ['📸 Nusiųsti nuotrauką — jis atrodo tikrai malonus', '😐 Pasakyti, kad jautiesi nepatogiai, bet toliau su juo kalbėti', '🚫 Atsisakyti, nustoti su juo bendrauti ir nedelsiant pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'end_a',  
-          title: 'The Trap',             
-          text: 'They never send anything back. Instead they demand more photos or they will share yours with everyone. You are trapped. This is called sextortion.', 
-          lesson: 'Sending private photos to someone you only know online is extremely dangerous. Sextortion — blackmailing with images — is a crime. If this happens, tell a trusted adult immediately.' 
+        {
+          id: 'end_a',
+          title: 'Spąstai',
+          text: 'Jis niekada nieko neatsiunčia atgal. Vietoj to reikalauja daugiau nuotraukų arba pasidalins tavo su visais. Esi įkliuvęs. Tai vadinama sekstorsionu.',
+          lesson: 'Siųsti privačias nuotraukas kam nors, kurį pažįsti tik internete, yra labai pavojinga. Sekstoršonas — šantažas nuotraukomis — yra nusikaltimas. Jei tai atsitiktų, nedelsiant pasakyk patikimam suaugusiajam.',
         },
-        { 
-          id: 'mid_b',  
-          text: '"If you do not send one, you obviously do not trust me." They say the whole thing is over if you refuse. You feel confused and pressured.', 
-          choices: ['📸 Give in and send a photo to keep the peace', '🚫 Block them and tell a trusted adult immediately'] 
+        {
+          id: 'mid_b',
+          text: '„Jei nesiųsi, akivaizdu, kad manimi nepasitiki." Jis sako, viskas baigta, jei atsisakysi. Jautiesi sutrikęs ir spaudžiamas.',
+          choices: ['📸 Nusileisti ir nusiųsti nuotrauką, kad išsaugotum taiką', '🚫 Blokuoti jį ir nedelsiant pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'The Trap (Part 2)',    
-          text: 'You send the photo and the blackmail starts immediately. You realise this person planned this from the very first message.', 
-          lesson: 'Healthy relationships never involve ultimatums. "Send a photo or we are done" is a major warning sign of a predator. Tell a trusted adult if this ever happens.' 
+        {
+          id: 'end_b1',
+          title: 'Spąstai (2 dalis)',
+          text: 'Nusiųsti nuotrauką ir šantažas prasideda iš karto. Supranti, kad šis asmuo tai planavo nuo pirmosios žinutės.',
+          lesson: 'Sveiki santykiai niekada neapima ultimatumų. „Nusiųsk nuotrauką arba viskas baigta" yra didelis įspėjamasis signalas apie plėšrūną. Pasakyk patikimam suaugusiajam, jei tai kada nors atsitiktų.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Good Instincts',       
-          text: 'You block the account and tell a trusted adult. They help report it to the platform and explain this is a classic grooming tactic used by criminals.', 
-          lesson: 'Refusing pressure and involving a trusted adult is always right. You were being manipulated — recognising it and acting takes real courage.' 
+        {
+          id: 'end_b2',
+          title: 'Geri instinktai',
+          text: 'Bloguoji paskyrą ir pasakai patikimam suaugusiajam. Jis padeda pranešti platformai ir paaiškina, kad tai klasikinė nusikaltėlių naudojama groominingo taktika.',
+          lesson: 'Atsisakyti spaudimo ir įtraukti patikimą suaugusįjį visada teisinga. Buvai manipuliuojamas — tai atpažinti ir veikti reikia tikros drąsos.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'A trusted adult looks at the conversation and is very concerned. They explain this looks like grooming — someone pretending to be friendly to gain your trust. They want to report it.', 
-          choices: ['📋 Share the full conversation history to strengthen the report', '😳 Leave out some details because you feel embarrassed'] 
+        {
+          id: 'mid_c',
+          text: 'Patikimas suaugusysis peržiūri pokalbį ir yra labai susirūpinęs. Jis paaiškina, kad tai atrodo kaip groomingąs — kažkas apsimetantis draugišku, siekiant laimėti tavo pasitikėjimą. Jis nori pranešti.',
+          choices: ['📋 Pateikti visą pokalbio istoriją, kad pranešimas būtų stipresnis', '😳 Praleisti kai kurias detales, nes jautiesi sugėdintas'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Full Disclosure',      
-          text: 'With full evidence, the adult and platform take strong action. The account is removed and reported to authorities who can investigate properly.', 
-          lesson: 'Sharing the full story with a trusted adult — even embarrassing parts — gives them the best chance to protect you and stop the criminal.' 
+        {
+          id: 'end_c1',
+          title: 'Visiškas atskleidimas',
+          text: 'Turėdami visus įrodymus, suaugusysis ir platforma imasi ryžtingų veiksmų. Paskyra pašalinama ir perduodama valdžios institucijoms, kurios gali tinkamai tirti.',
+          lesson: 'Pasakoti patikimam suaugusiajam visą istoriją — net gėdinančias dalis — suteikia jiems geriausias galimybes apsaugoti tave ir sustabdyti nusikaltėlį.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Partial Report',       
-          text: 'Some protective action is taken with limited details. You are safer, but the full picture would have helped the investigation much more.', 
-          lesson: 'You were brave to speak up. Sharing all the details — even embarrassing ones — helps adults fully protect you and stop it happening to others.' 
+        {
+          id: 'end_c2',
+          title: 'Dalinis pranešimas',
+          text: 'Imamasi kai kurių apsaugos priemonių su ribotomis detalėmis. Esi saugesnis, bet visa informacija būtų labai padėjusi tyrimui.',
+          lesson: 'Buvai drąsus prabilus. Visų detalių dalijimasis — net gėdinančių — padeda suaugusiesiems visiškai apsaugoti tave ir neleisti tam atsitikti kitiems.',
         },
       ],
     },
     {
-      id: 7, title: 'The Helpful Stranger', emoji: '🕵️', topic: 'Online Grooming',
+      id: 7, title: 'Naudingas nepažįstamasis', emoji: '🕵️', topic: 'Vaiko tvirkinimas internete',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone in a game chat says they are 14 and has been messaging you for a week. They now ask where you go to school, your home address, and what time you get home alone each day. What do you do?', 
-          choices: ['💬 Answer the questions — they seem like a normal kid', '🤔 Give vague answers and keep chatting', '🚫 Stop responding, block them, and tell a trusted adult now'] 
+        {
+          id: 'start',
+          text: 'Kažkas žaidimo pokalbyje sako esąs 14 metų ir rašo tau savaitę. Dabar klausia, kur eini į mokyklą, tavo namų adreso ir kada kasdien grįžti namo vienas. Ką darai?',
+          choices: ['💬 Atsakyti į klausimus — jis atrodo kaip normalus vaikas', '🤔 Duoti neaiškius atsakymus ir toliau kalbėtis', '🚫 Nustoti atsakyti, jį blokuoti ir nedelsiant pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Too Much Information', 
-          text: 'Over the next week they know your school, your schedule, and your address. They suggest meeting up in person. You realise something is very wrong.', 
-          lesson: 'Anyone asking for your home address, school name, or daily schedule online is a serious danger signal — even if they claim to be your age.' 
+        {
+          id: 'end_a',
+          title: 'Per daug informacijos',
+          text: 'Per kitą savaitę jis žino tavo mokyklą, tvarkaraštį ir adresą. Jis siūlo susitikti asmeniškai. Supranti, kad kažkas labai negerai.',
+          lesson: 'Bet kas, kas internete klausia tavo namų adreso, mokyklos pavadinimo ar kasdienio tvarkaraščio, yra rimtas pavojaus signalas — net jei tvirtina esantis tavo amžiaus.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You give vague answers but they keep pushing harder and now ask for your phone number. Something feels off, but you do not want to seem rude.', 
-          choices: ['📱 Give your number — they have been so kind', '🚫 Block them and tell a trusted adult'] 
+        {
+          id: 'mid_b',
+          text: 'Duodi neaiškius atsakymus, bet jis spaudžia vis labiau ir dabar prašo tavo telefono numerio. Kažkas atrodo keistai, bet nenori būti nemandagus.',
+          choices: ['📱 Duoti savo numerį — jis buvo toks malonus', '🚫 Jį blokuoti ir pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Connected Too Much',   
-          text: 'They use your number to find your other social accounts and track your activity. A trusted adult finds out and is very alarmed.', 
-          lesson: 'You do not owe anyone your phone number or personal contact details online. Anyone pushing for them has bad intentions.' 
+        {
+          id: 'end_b1',
+          title: 'Per daug susijęs',
+          text: 'Jis naudoja tavo numerį, kad rastų kitas tavo socialines paskyras ir sektų tavo veiklą. Patikimas suaugusysis sužino ir yra labai sunerimęs.',
+          lesson: 'Niekam nesiskolini telefono numerio ar asmeninių kontaktinių duomenų internete. Kas jų reikalauja, turi blogų ketinimų.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'Trusted Instinct',     
-          text: 'A trusted adult confirms the account looks like a fake profile used by an adult. They help you report it and review your privacy settings together.', 
-          lesson: 'Acting on a gut feeling and involving a trusted adult is always the right move when something feels off online.' 
+        {
+          id: 'end_b2',
+          title: 'Patikimas instinktas',
+          text: 'Patikimas suaugusysis patvirtina, kad paskyra atrodo kaip suaugusiojo naudojamas netikras profilis. Jis padeda pranešti ir kartu peržiūrėti privatumo nustatymus.',
+          lesson: 'Klausyti nuojautos ir įtraukti patikimą suaugusįjį visada yra teisingas sprendimas, kai kažkas internete atrodo keistai.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'A trusted adult reviews the conversation and is very worried. They explain this is likely a grooming attempt — an adult pretending to be a child to gain your trust.', 
-          choices: ['📋 Provide the full conversation for a proper report', '🤐 Ask to handle it quietly without involving authorities'] 
+        {
+          id: 'mid_c',
+          text: 'Patikimas suaugusysis peržiūri pokalbį ir yra labai susirūpinęs. Jis paaiškina, kad tai greičiausiai groomingo bandymas — suaugusysis apsimeta vaiku, siekdamas laimėti tavo pasitikėjimą.',
+          choices: ['📋 Pateikti visą pokalbį tinkamam pranešimui', '🤐 Paprašyti tyliai sutvarkyti be valdžios institucijų'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Protected and Strong', 
-          text: 'The account is reported to the platform and to the police. The adult helps you tighten your privacy settings. You may have protected yourself and other children.', 
-          lesson: 'Grooming is a serious crime. Reporting with full evidence helps authorities stop it from happening to other children.' 
+        {
+          id: 'end_c1',
+          title: 'Apsaugotas ir stiprus',
+          text: 'Paskyra pranešama platformai ir policijai. Patikimas suaugusysis padeda sustiprinti privatumo nustatymus. Galbūt apsaugojai save ir kitus vaikus.',
+          lesson: 'Groomingąs yra rimtas nusikaltimas. Pranešimas su visais įrodymais padeda valdžios institucijoms neleisti tam atsitikti kitiems vaikams.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safer but Incomplete', 
-          text: 'The account is blocked but not formally reported. You are safer, but the person may simply move on and target someone else.', 
-          lesson: 'Grooming is too serious to handle alone. Trusting adults to handle the report properly protects both you and potential future victims.' 
+        {
+          id: 'end_c2',
+          title: 'Saugesnis, bet nebaigta',
+          text: 'Paskyra blokuojama, bet oficialiai nepranešama. Esi saugesnis, bet asmuo gali tiesiog tęsti ir taikytis į kitą.',
+          lesson: 'Groomingąs yra per rimtas, kad jį spręstum vienas. Pasitikėjimas suaugusiaisiais tinkamai sutvarkyti pranešimą apsaugo ir tave, ir galimas būsimas aukas.',
         },
       ],
     },
     {
-      id: 8, title: 'Hate in the Comments', emoji: '💬', topic: 'Hate Speech',
+      id: 8, title: 'Neapykanta komentaruose', emoji: '💬', topic: 'Neapykantos kalba',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You are watching a live gaming stream and the chat fills with racist and hateful comments targeting one of the players. The comments are coming fast. The targeted player looks visibly upset.', 
-          choices: ['😂 Laugh at some comments — it is just internet humour', '😶 Watch quietly without joining in', '🚩 Report the hate speech and speak up in the chat'] 
+        {
+          id: 'start',
+          text: 'Žiūri tiesioginį žaidimų srautą ir pokalbis prisipildo rasistinių ir neapykantingų komentarų, nukreiptų prieš vieną iš žaidėjų. Komentarai ateina greitai. Taikomas žaidėjas atrodo akivaizdžiai nusiminęs.',
+          choices: ['😂 Juoktis iš kai kurių komentarų — tai tik interneto humoras', '😶 Tyliai stebėti nesijungiant', '🚩 Pranešti apie neapykantos kalbą ir pasisakyti pokalbyje'],
         },
-        { 
-          id: 'end_a',  
-          title: 'Not Just a Joke',      
-          text: 'You laughed. The player leaves the stream in tears. Screenshots of your comment surface later. You feel ashamed and are reported by other viewers.', 
-          lesson: 'Racial slurs and targeted hate speech are never "just internet humour." Laughing along makes you part of the harm being caused.' 
+        {
+          id: 'end_a',
+          title: 'Ne tik pokštas',
+          text: 'Juokeisi. Žaidėjas palieka srautą ašarodamas. Tavo komentaro ekrano kopijos iškyla vėliau. Jautiesi sugėdintas ir kiti žiūrovai apie tave praneša.',
+          lesson: 'Rasiniai įžeidimai ir tikslinė neapykantos kalba niekada nėra „tik interneto humoras". Juokimasis kartu daro tave sukeliamos žalos dalimi.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'You stay quiet. The targeted player disconnects from the stream. The chat celebrates chasing them away. You feel uneasy about what you just witnessed.', 
-          choices: ['💬 Post a supportive message defending the player', '❌ Close the stream and try to forget about it'] 
+        {
+          id: 'mid_b',
+          text: 'Lieki tylus. Taikomas žaidėjas atsijungia nuo srauto. Pokalbis švenčia jį išvijęs. Jautiesi nepatogiai dėl to, ką ką tik matei.',
+          choices: ['💬 Paskelbti palaikomąją žinutę ginant žaidėją', '❌ Uždaryti srautą ir stengtis pamiršti'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'One Voice Changes Things', 
-          text: 'Other viewers see your message and start standing up too. The mood shifts in the chat. Multiple people report the worst offenders and some accounts get banned.', 
-          lesson: 'One person standing up in a hostile chat can shift the entire dynamic. Bystanders have real power to change the mood of a space.' 
+        {
+          id: 'end_b1',
+          title: 'Vienas balsas keičia viską',
+          text: 'Kiti žiūrovai mato tavo žinutę ir pradeda taip pat stoti. Pokalbio nuotaika keičiasi. Keli žmonės praneša apie blogiausius nusikaltėlius ir kai kurios paskyros užblokuojamos.',
+          lesson: 'Kai vienas žmogus pasisako priešiškame pokalbyje, visa dinamika gali pasikeisti. Stebėtojai turi tikrą galią keisti erdvės nuotaiką.',
         },
-        { 
-          id: 'end_b2', 
-          title: 'The Cost of Silence',  
-          text: 'You walk away, but the hate continues. The targeted player may never stream again. Your silence felt safer but contributed to the problem.', 
-          lesson: 'Walking away protects your own wellbeing, but reporting hate speech before you go helps prevent it from continuing.' 
+        {
+          id: 'end_b2',
+          title: 'Tylos kaina',
+          text: 'Išeini, bet neapykanta tęsiasi. Taikomas žaidėjas galbūt niekada daugiau nestreamins. Tavo tyla atrodė saugiau, bet prisidėjo prie problemos.',
+          lesson: 'Išėjimas apsaugo tavo gerovę, bet pranešimas apie neapykantos kalbą prieš išeinant padeda neleisti jai tęstis.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'You report the worst comments and post a supportive message. Several other viewers follow your lead and report too. The player notices and feels less alone.', 
-          choices: ['📣 Also talk to a trusted adult or teacher about what you saw', '✅ You have done enough — leave the rest to the platform'] 
+        {
+          id: 'mid_c',
+          text: 'Praneši apie blogiausius komentarus ir paskelbti palaikomąją žinutę. Keli kiti žiūrovai seka tavo pavyzdžiu ir taip pat praneša. Žaidėjas pastebi ir jaučiasi mažiau vienas.',
+          choices: ['📣 Taip pat pasikalbėti su patikimu suaugusiuoju ar mokytoju apie tai, ką matei', '✅ Padarei pakankamai — leisk likusiam platformai'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Ripple Effect',        
-          text: 'Multiple reports are actioned quickly. Raising awareness with a trusted adult about hate speech in gaming spaces helps create broader change.', 
-          lesson: 'Reporting hate speech AND raising awareness with trusted adults makes platforms safer for everyone — now and in the future.' 
+        {
+          id: 'end_c1',
+          title: 'Bangos efektas',
+          text: 'Keli pranešimai greitai imami sprendžiami. Informuojant patikimą suaugusįjį apie neapykantos kalbą žaidimų erdvėse padeda kurti platesnį pokytį.',
+          lesson: 'Pranešimas apie neapykantos kalbą IR informavimas patikimų suaugusiųjų daro platformas saugesnes visiems — dabar ir ateityje.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Good Citizen',         
-          text: 'Reports are actioned and some accounts are flagged. The player later thanks you for standing up in the chat.', 
-          lesson: 'Reporting hate speech AND speaking up in the moment is a powerful combination. Well done for taking action!' 
+        {
+          id: 'end_c2',
+          title: 'Geras pilietis',
+          text: 'Pranešimai imami sprendžiami ir kai kurios paskyros pažymimos. Žaidėjas vėliau dėkoja tau, kad pasisakei pokalbyje.',
+          lesson: 'Pranešimas apie neapykantos kalbą IR pasisakymas tuo metu yra galinga kombinacija. Puikiai padaryta, kad ėmeisi veiksmų!',
         },
       ],
     },
     {
-      id: 9, title: 'The Call-Out Post', emoji: '📣', topic: 'False Rumours Online',
+      id: 9, title: 'Apkaltinantis įrašas', emoji: '📣', topic: 'Melagingi gandai internete',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone from school posts completely false rumours about you on social media. It is spreading fast — people are sharing it and writing mean comments. You do not know who started it and you are very upset.', 
-          choices: ['😡 Post an angry response to publicly defend yourself', '💬 Message every person you know to tell them the truth', '📸 Screenshot everything and tell a trusted adult straight away'] 
+        {
+          id: 'start',
+          text: 'Kažkas iš mokyklos socialiniuose tinkluose paskelbia visiškai melagingus gandus apie tave. Tai sparčiai plinta — žmonės dalinasi ir rašo negražius komentarus. Nežinai, kas tai pradėjo, ir esi labai nusiminęs.',
+          choices: ['😡 Paskelbti piktą atsakymą, kad viešai apsigintum', '💬 Parašyti kiekvienam, kurį pažįsti, kad pasakytum tiesą', '📸 Išsaugoti viską ir nedelsiant pasakyti patikimam suaugusiajam'],
         },
-        { 
-          id: 'mid_a',  
-          text: 'Your response goes viral. People argue about it. The original poster knows they got to you and posts even more, enjoying the reaction.', 
-          choices: ['💢 Keep fighting back to clear your name', '🗑️ Delete your response and step away'] 
+        {
+          id: 'mid_a',
+          text: 'Tavo atsakymas tampa virusinis. Žmonės ginčijasi dėl jo. Pradinis autorius žino, kad jį paveikei, ir skelbia dar daugiau, mėgaudamasis reakcija.',
+          choices: ['💢 Toliau kovoti, kad išvalytum savo vardą', '🗑️ Ištrinti savo atsakymą ir atsitraukti'],
         },
-        { 
-          id: 'end_a1', 
-          title: 'Playing Their Game',   
-          text: 'The argument spirals badly. Teachers get involved. Both of you face school consequences — even though they started it.', 
-          lesson: 'Reacting angrily to false rumours online feeds the drama and puts you at risk of consequences too. Do not give them the reaction they want.' 
+        {
+          id: 'end_a1',
+          title: 'Jų žaidimo žaidimas',
+          text: 'Ginčas labai eskaluoja. Mokytojai įsitraukia. Jūs abu susiduriate su mokyklos pasekmėmis — nors jie tai pradėjo.',
+          lesson: 'Piktas reagavimas į melagingus gandus internete maitina dramą ir kelia riziką ir tau. Neduok jiems reakcijos, kurios jie nori.',
         },
-        { 
-          id: 'end_a2', 
-          title: 'Step Away',            
-          text: 'Deleting your response was smart. The drama slowly dies down, but the original post stays up without any real consequence for the person who posted it.', 
-          lesson: 'Deleting a reactive post is a smart move. Pair it with reporting the original content and involving a trusted adult for a real resolution.' 
+        {
+          id: 'end_a2',
+          title: 'Atsitraukimas',
+          text: 'Atsakymo ištrynimas buvo protingas. Drama lėtai rimsta, bet pradinis įrašas lieka be tikrų pasekmių jį paskelbusiam asmeniui.',
+          lesson: 'Reaktyvaus įrašo ištrynimas yra protingas žingsnis. Jį sujunk su pradinio turinio pranešimu ir patikimo suaugusiojo įtraukimu, kad gautum tikrą sprendimą.',
         },
-        { 
-          id: 'end_b',  
-          title: 'Damage Control',       
-          text: 'You spend hours messaging people. Some believe you; others do not. It is exhausting and the post is still up, reaching new people all the time.', 
-          lesson: 'Messaging everyone individually is draining and often ineffective. Reporting the post and involving a trusted adult is faster and more powerful.' 
+        {
+          id: 'end_b',
+          title: 'Žalos kontrolė',
+          text: 'Praleidi valandas rašydamas žmonėms. Kai kurie tiki; kiti ne. Tai išsekina ir įrašas vis dar internete, pasiekdamas naujus žmones.',
+          lesson: 'Individualus rašymas kiekvienam yra varginantis ir dažnai neefektyvus. Pranešimas apie įrašą ir patikimo suaugusiojo įtraukimas yra greitesnis ir galingesnis.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'The trusted adult helps you report the post for harassment. It gets taken down quickly. Together you figure out who most likely posted it.', 
-          choices: ['🤝 Agree to a mediated conversation with the person who posted it', '🚫 Block them and move on now the post is down'] 
+        {
+          id: 'mid_c',
+          text: 'Patikimas suaugusysis padeda pranešti apie įrašą dėl priekabiavimo. Jis greitai pašalinamas. Kartu išsiaiškinate, kas greičiausiai jį paskelbė.',
+          choices: ['🤝 Sutikti su tarpininkautu pokalbiu su asmeniu, kuris jį paskelbė', '🚫 Jį blokuoti ir judėti toliau, kai įrašas pašalintas'],
         },
-        { 
-          id: 'end_c1', 
-          title: 'Real Resolution',      
-          text: 'A mediated conversation with adult support uncovers what was behind the rumour. The other person apologises. The school creates new guidelines to prevent future incidents.', 
-          lesson: 'Documenting, reporting, and — when safe — addressing the root cause leads to the best and most lasting outcomes.' 
+        {
+          id: 'end_c1',
+          title: 'Tikrasis sprendimas',
+          text: 'Tarpininkaujamas pokalbis su suaugusiųjų parama atskleidžia, kas buvo už gando. Kitas asmuo atsiprašo. Mokykla sukuria naujas gaires, kad būtų išvengta būsimų incidentų.',
+          lesson: 'Dokumentavimas, pranešimas ir — kai saugu — pagrindinės priežasties sprendimas veda prie geriausių ir ilgalaikių rezultatų.',
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safe and Resolved',    
-          text: 'The post is removed and you are protected. Blocking keeps you safe going forward. A strong outcome through the right actions.', 
-          lesson: 'Getting a harmful post removed quickly through adult help is a great outcome. Blocking to stay safe is a smart boundary.' 
+        {
+          id: 'end_c2',
+          title: 'Saugus ir išspręstas',
+          text: 'Įrašas pašalinamas ir esi apsaugotas. Blokavimas laikys tave saugų ateityje. Stiprus rezultatas teisingų veiksmų dėka.',
+          lesson: 'Greitai pašalinti žalingą įrašą suaugusiųjų pagalba yra puikus rezultatas. Blokavimas saugumui yra protinga riba.',
         },
       ],
     },
     {
-      id: 10, title: 'Password Pressure', emoji: '🔐', topic: 'Digital Relationship Abuse',
+      id: 10, title: 'Slaptažodžio spaudimas', emoji: '🔐', topic: 'Skaitmeninis santykių smurtas',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You have been in a relationship for two months. Your partner says: "If you really loved me and trusted me, you would give me your password so I can check your messages." You feel uncomfortable. What do you do?', 
-          choices: ['🔑 Give them your password — you have nothing to hide', '🤥 Give a fake password to stop the argument', '🗣️ Explain calmly that healthy relationships do not need password sharing'] 
+        {
+          id: 'start',
+          text: 'Esi du mėnesius santykiuose. Tavo partneris sako: „Jei tikrai mane mylėtum ir pasitikėtum manimi, duotum man savo slaptažodį, kad galėčiau patikrinti tavo žinutes." Jautiesi nepatogiai. Ką darai?',
+          choices: ['🔑 Duoti slaptažodį — neturi ko slėpti', '🤥 Duoti netikrą slaptažodį, kad sustabdytum ginčą', '🗣️ Ramiai paaiškinti, kad sveikie santykiai nereikalauja slaptažodžių dalijimosi'],
         },
-        { 
-          id: 'end_a',  
-          title: 'The Control Begins',   text: 'Your partner reads all your messages and uses your accounts to message your friends. They accuse you of things based on misread conversations. The control escalates.', 
-          lesson: 'A partner demanding your passwords is a form of digital relationship abuse. No healthy relationship requires this. Talk to a trusted adult if this happens to you.' 
+        {
+          id: 'end_a',
+          title: 'Kontrolė prasideda',
+          text: 'Tavo partneris skaito visas tavo žinutes ir naudoja tavo paskyras rašyti tavo draugams. Jis kaltina tave dalykais, pagrįstais klaidingai suprastais pokalbiais. Kontrolė eskaluoja.',
+          lesson: 'Partneris, reikalaujantis tavo slaptažodžių, yra skaitmeninio santykių smurto forma. Jokie sveiki santykiai to nereikalauja. Kalbėk su patikimu suaugusiuoju, jei tai atsitiktų tau.',
         },
-        { 
-          id: 'mid_b',  
-          text: 'Your partner figures out the password is fake and gets very angry, accusing you of lying. The pressure doubles and they demand the real one.', 
-          choices: ['🔑 Give in and share the real password', '🚪 End the relationship and tell a trusted adult about the pressure'] 
+        {
+          id: 'mid_b',
+          text: 'Tavo partneris supranta, kad slaptažodis yra netikras, ir labai supyksta, apkaltindamas tave melavimu. Spaudimas padvigubėja ir jis reikalauja tikrojo.',
+          choices: ['🔑 Nusileisti ir pasidalinti tikruoju slaptažodžiu', '🚪 Baigti santykius ir pasakyti patikimam suaugusiajam apie spaudimą'],
         },
-        { 
-          id: 'end_b1', 
-          title: 'Trapped',              
-          text: 'Once they have access they use it to control who you talk to. This pattern of controlling behaviour escalates further and further.', 
-          lesson: 'Giving in to digital control rarely ends the problem — it usually makes the controlling behaviour escalate over time.' },
-        { 
-          id: 'end_b2', 
-          title: 'Breaking Free',        
-          text: 'Leaving a controlling relationship is hard but right. A trusted adult confirms this is digital abuse and helps you understand what healthy relationship boundaries look like.', 
-          lesson: 'Recognising and leaving controlling behaviour — even in a relationship — takes real courage. It is always the right call for your safety.'
+        {
+          id: 'end_b1',
+          title: 'Įstrigęs',
+          text: 'Kai tik jis gauna prieigą, naudoja ją kontroliuoti, su kuo kalbi. Šis kontroliuojančio elgesio modelis eskaluoja vis labiau.',
+          lesson: 'Nusileisti skaitmeninei kontrolei retai išsprendžia problemą — paprastai tai verčia kontroliuojantį elgesį eskaluoti.',
         },
-        { 
-          id: 'mid_c',  
-          text: 'Your partner reacts badly, saying you obviously do not love them. You hold your ground, but they keep pushing and the pressure is building.', 
-          choices: ['💪 Hold your boundary and talk to a trusted adult about the pressure', '😔 Eventually share your password just to calm things down'] 
+        {
+          id: 'end_b2',
+          title: 'Išsivadavimas',
+          text: 'Palikti kontroliuojančius santykius yra sunku, bet teisinga. Patikimas suaugusysis patvirtina, kad tai yra skaitmeninis smurtas, ir padeda suprasti, kaip atrodo sveikos santykių ribos.',
+          lesson: 'Kontroliuojančio elgesio atpažinimas ir palikimas — net santykiuose — reikalauja tikros drąsos. Tai visada teisingas sprendimas tavo saugumui.',
         },
-        { 
-          id: 'end_c1', 
-          title: 'Healthy Boundaries',   
-          text: 'A trusted adult affirms that demanding passwords is control, not love. With their support, you make a clear decision about the relationship on your own terms.', 
-          lesson: 'A good partner respects your privacy. Demanding passwords is a red flag for a controlling relationship. You deserve a relationship built on trust, not surveillance.' 
+        {
+          id: 'mid_c',
+          text: 'Tavo partneris reaguoja blogai, sakydamas, akivaizdu, kad jo nemyli. Laikaisi savo pozicijos, bet jis toliau spaudžia ir spaudimas didėja.',
+          choices: ['💪 Laikytis savo ribos ir pasakyti patikimam suaugusiajam apie spaudimą', '😔 Galiausiai pasidalinti slaptažodžiu, kad nuramintumy situaciją'],
         },
-        { 
-          id: 'end_c2', 
-          title: 'Temporary Peace',      
-          text: 'You feel relieved short-term but the controlling behaviour continues — now they expect this going forward. The demand for more access grows.', 
-          lesson: 'Giving in to password pressure does not resolve the control issue. It sets a precedent. Controlling behaviour needs to be addressed, not accommodated.' 
+        {
+          id: 'end_c1',
+          title: 'Sveikos ribos',
+          text: 'Patikimas suaugusysis patvirtina, kad slaptažodžių reikalavimas yra kontrolė, o ne meilė. Su jų parama priimi aiškų sprendimą dėl santykių savo sąlygomis.',
+          lesson: 'Geras partneris gerbia tavo privatumą. Slaptažodžių reikalavimas yra raudonas vėliavėlis kontroliuojantiems santykiams. Nusipelnai santykių, pagrįstų pasitikėjimu, o ne stebėjimu.',
+        },
+        {
+          id: 'end_c2',
+          title: 'Laikina taika',
+          text: 'Trumpam jautiesi palengvėjęs, bet kontroliuojantis elgesys tęsiasi — dabar jis to tikisi ateityje. Reikalavimas dėl daugiau prieigos auga.',
+          lesson: 'Nusileisti slaptažodžio spaudimui neišsprendžia kontrolės problemos. Tai nustato precedentą. Kontroliuojantis elgesys turi būti sprendžiamas, o ne patenkinamas.',
         },
       ],
     },

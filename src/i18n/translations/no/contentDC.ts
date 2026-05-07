@@ -6,56 +6,24 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDC = {
-  subtitle:
-    'Digital citizenship helps students navigate online spaces with confidence, empathy, and responsibility. This module supports educators in teaching safe habits, respectful communication, and thoughtful decision-making in digital environments.',
-  aim: 'To provide an understanding of what digital citizenship is and how to follow its core principles.',
+  aim: 'Å gi en forståelse av hva digitalt medborgerskap er og hvordan man følger kjerneprinsippene.',
   objectives: [
-    'To stress the importance of digital citizenship.',
-    'To introduce the concept of digital citizenship and its principles of rights, responsibility and respect in digital environments.',
-    'To develop students understanding of how to apply these principles of rights, responsibility and respect in digital environments - to be safe, savvy, and social.',
+    'Å understreke viktigheten av digitalt medborgerskap.',
+    'Å introdusere konseptet digitalt medborgerskap og dets prinsipper om rettigheter, ansvar og respekt i digitale miljøer.',
+    'Å utvikle elevenes forståelse av hvordan man anvender disse prinsippene om rettigheter, ansvar og respekt i digitale miljøer – å være trygg, klok og sosial.',
   ],
   outcomes: [
-    'I can explain what digital citizenship is and why it is important.',
-    'I can discuss the principles of rights, responsibility and respect in digital environments, including how to stay safe, act savvy and engage socially.',
+    'Jeg kan forklare hva digitalt medborgerskap er og hvorfor det er viktig.',
+    'Jeg kan diskutere prinsippene om rettigheter, ansvar og respekt i digitale miljøer, inkludert hvordan man holder seg trygg, opptrer klokt og engasjerer seg sosialt.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Citizenship Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Last ned lærerveiledning',
+    download: 'Lærerveiledning for digitalt medborgerskap',
   },
   parts: [
     {
-      goal: 'Help students understand what a digital environment is and positive aspects of this.',
+      goal: 'Hjelpe elever til å forstå hva et digitalt miljø er og positive aspekter ved dette.',
       bundle: {
         filename: 'Digital Citizenship Part 1 Package',
       },
@@ -63,43 +31,43 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.1.1
-            kind: 'Scenario Cards',
-            name: 'Physical and Digital Worlds',
+            kind: 'Scenariokort',
+            name: 'Fysiske og digitale verdener',
             filename: 'Scenario Cards - Physical and Digital Worlds',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What is a digital environment?',
+            title: 'Hva er et digitalt miljø?',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'What Is a Digital Environment?',
+        title: 'Hva er et digitalt miljø?',
         supportText:
-          'Use this video to spark discussion about online spaces students already use, from learning platforms to games and messaging apps. Pause for quick reflections on where students spend time online.',
+          'Bruk denne videoen til å starte en diskusjon om nettrom elevene allerede bruker, fra læringsplattformer til spill og meldingsapper. Pause for raske refleksjoner om hvor elever tilbringer tid på nettet.',
         downloads: {
           video: {
             filename: 'What Is a Digital Environment',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What Is a Digital Environment - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      goal: 'Help students understand what digital citizenship is and why it is important.',
+      goal: 'Hjelpe elever til å forstå hva digitalt medborgerskap er og hvorfor det er viktig.',
       bundle: {
         filename: 'Digital Citizenship Part 2 Package',
       },
@@ -107,45 +75,45 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.2.1
-            kind: 'Image',
-            name: 'Responsible Citizen',
+            kind: 'Bilde',
+            name: 'Ansvarlig borger',
             filename: 'Worksheet A - Rights Responsibilities and Respect',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.2.2a
-            kind: 'Worksheet A',
-            name: 'Rights, Responsibilities and Respect',
+            kind: 'Arbeidsark A',
+            name: 'Rettigheter, ansvar og respekt',
             filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.2.2b
-            kind: 'Worksheet B',
-            name: 'Rights, Responsibilities and Respect',
+            kind: 'Arbeidsark B',
+            name: 'Rettigheter, ansvar og respekt',
             filename: 'Image - Feeling Safe',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Digitel Citizenship',
+            title: 'Digitalt medborgerskap',
           },
           {
-            title: 'Rights, Respect and Responsibilities in Digital Environments',
+            title: 'Rettigheter, respekt og ansvar i digitale miljøer',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
     },
     {
       goal:
-        'Help students to know how to be safe in digital environments by thinking critically and acting responsibly with privacy settings.',
+        'Hjelpe elever til å vite hvordan de kan være trygge i digitale miljøer ved å tenke kritisk og handle ansvarlig med personverninnstillinger.',
       bundle: {
         filename: 'Digital Citizenship Part 3 Package',
       },
@@ -153,106 +121,106 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.3.1
-            kind: 'Image',
-            name: 'Feeling Safe',
+            kind: 'Bilde',
+            name: 'Følelse av trygghet',
             filename: 'Image - Feeling Unsafe',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.3.2
-            kind: 'Image',
-            name: 'Feeling Unsafe',
+            kind: 'Bilde',
+            name: 'Følelse av utrygghet',
             filename: 'Image - Application Privacy Settings',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.3.4
-            kind: 'Image',
-            name: 'Application Privacy Settings',
+            kind: 'Bilde',
+            name: 'Personverninnstillinger for apper',
             filename: 'Image - Privacy Settings Strategy',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.3.5
-            kind: 'Image',
-            name: 'Privacy Settings Strategy',
+            kind: 'Bilde',
+            name: 'Strategi for personverninnstillinger',
             filename: 'Image - Digital Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Understanding the Connections Between the Physical and Digital Environment',
+            title: 'Forstå forbindelsene mellom det fysiske og digitale miljøet',
           },
           {
-            title: 'Privacy Settings',
+            title: 'Personverninnstillinger',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 1.3.3
-        title: 'What Are Privacy Settings?',
+        title: 'Hva er personverninnstillinger?',
         supportText:
-          'Use this video to introduce privacy settings as a practical tool students can control on the apps and devices they already own. Pause to ask which settings they have checked or changed before.',
+          'Bruk denne videoen til å introdusere personverninnstillinger som et praktisk verktøy elevene kan kontrollere på appene og enhetene de allerede eier. Pause for å spørre hvilke innstillinger de har sjekket eller endret tidligere.',
         downloads: {
           video: {
             filename: 'What Are Privacy Settings',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What Are Privacy Settings - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      goal: 'Help students understand how being wise and resilient can help them to be savvy in digital environments.',
+      goal: 'Hjelpe elever til å forstå hvordan visdom og motstandskraft kan hjelpe dem å være kloke i digitale miljøer.',
       bundle: {
         filename: 'Digital Citizenship Part 4 Package',
       },
       included: {
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Challenges in Digital Environments',
+            title: 'Utfordringer i digitale miljøer',
           },
           {
-            title: 'Understanding How to Develop Resilience',
+            title: 'Forstå hvordan man utvikler motstandskraft',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 1.4.1
-        title: 'Resilience in Digital Environments',
+        title: 'Motstandskraft i digitale miljøer',
         supportText:
-          'Use this video to explore how students can recover and adapt when things go wrong online, from account issues to unwanted contact. Pause to ask who students turn to for help in those situations.',
+          'Bruk denne videoen til å utforske hvordan elever kan komme seg og tilpasse seg når ting går galt på nettet, fra kontoproblemer til uønsket kontakt. Pause for å spørre hvem elever henvender seg til for hjelp i slike situasjoner.',
         downloads: {
           video: {
             filename: 'Resilience in Digital Environments',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'Resilience in Digital Environments - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand how to act responsibly, showing respect for themselves and others when engaging socially in digital environments.',
+        'Hjelpe elever til å forstå hvordan de handler ansvarlig, viser respekt for seg selv og andre når de engasjerer seg sosialt i digitale miljøer.',
       bundle: {
         filename: 'Digital Citizenship Part 5 Package',
       },
@@ -260,38 +228,38 @@ export const contentDC = {
         materials: [
           {
             // ID: 1.5.1
-            kind: 'Image',
-            name: 'Digital Footprint',
+            kind: 'Bilde',
+            name: 'Digitalt fotavtrykk',
             filename: 'Image - Digital Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.5.2
-            kind: 'Scenario Cards',
-            name: 'Good and Bad to Post',
+            kind: 'Scenariokort',
+            name: 'Godt og dårlig å dele',
             filename: 'Scenario Cards - Good and Bad to Post',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.5.3
-            kind: 'Scenario Cards',
-            name: 'Social Media Posts',
+            kind: 'Scenariokort',
+            name: 'Innlegg på sosiale medier',
             filename: 'Scenario Cards - Social Media Posts',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Acting Responsibly in Digital Environments',
+            title: 'Handle ansvarlig i digitale miljøer',
           },
           {
-            title: 'Curating a Positive Digital Footprint',
+            title: 'Skape et positivt digitalt fotavtrykk',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -303,174 +271,136 @@ export const contentDC = {
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
-    },
-  ],
-  relatedModules: [
-    { title: 'Attacker Perspective', 
-      description: 'Understand how trust can be manipulated and learn to spot risky behavior.', 
-      cta: 'Explore' 
-    },
-    { title: 'Authentication', 
-      description: 'Teach students how to secure their accounts with strong, memorable routines.', 
-      cta: 'Explore' 
-    },
-    { title: 'Data Privacy', 
-      description: 'Explore how personal information is shared and ways to keep it safe.', 
-      cta: 'Explore' 
-    },
-    { title: 'Social Engineering', 
-      description: 'Learn how scammers and manipulators use persuasion and false urgency.', 
-      cta: 'Explore' 
-    },
-    { title: 'Malware', 
-      description: 'Help students recognize suspicious downloads and protect devices.', 
-      cta: 'Explore' 
-    },
-    { title: 'Digital Abuse', 
-      description: 'Identify harmful online behavior and learn how to get help safely.', 
-      cta: 'Explore' 
     },
   ],
 }
 
 export const challengeDC = {
-  title: 'GOOD or BAD Content to Post?',
-  subtitle: 'Drag each post into the correct category. Learn what\'s safe to share online!',
-  howItWorks: 'How It Works',
-  instruction: 'Drag each post card into the zone where it belongs. On mobile, tap a card to select it, then tap a drop zone.',
-  tip: 'Think about whether the information could identify you or put you in danger if a stranger saw it.',
-  tipLabel: 'Tip',
-  tryAgain: 'Try Again',
-  correctCountLabel: 'Correct',
-  postsToSort: 'Posts to Sort',
-  safeToShare: 'Safe to Share',
-  dragSafeHere: 'Drag safe posts here',
-  doNotShare: 'Do NOT Share',
-  dragUnsafeHere: 'Drag unsafe posts here',
-  safeZoneAriaLabel: 'Safe to Share drop zone',
-  unsafeZoneAriaLabel: 'Do NOT Share drop zone',
-  correct: 'Correct!',
-  tryOtherZone: 'Not quite — try the other zone!',
-  winTitle: 'Perfect! You sorted them all correctly!',
-  winMessage: 'You\'re a digital citizenship expert. Remember these lessons when posting online!',
-  playAgain: 'Play Again',
+  title: 'GODT eller DÅRLIG innhold å dele?',
+  subtitle: 'Dra hvert innlegg inn i riktig kategori. Lær hva som er trygt å dele på nettet!',
+  howItWorks: 'Slik fungerer det',
+  instruction: 'Dra hvert innleggskort inn i sonen det tilhører. På mobil, trykk på et kort for å velge det, deretter trykk på en slippsone.',
+  tip: 'Tenk på om informasjonen kan identifisere deg eller sette deg i fare hvis en fremmed så den.',
+  tipLabel: 'Tips',
+  tryAgain: 'Prøv igjen',
+  correctCountLabel: 'Riktig',
+  postsToSort: 'Innlegg å sortere',
+  safeToShare: 'Trygt å dele',
+  dragSafeHere: 'Dra trygge innlegg hit',
+  doNotShare: 'IKKE del',
+  dragUnsafeHere: 'Dra utrygge innlegg hit',
+  safeZoneAriaLabel: 'Slippsone for «Trygt å dele»',
+  unsafeZoneAriaLabel: 'Slippsone for «IKKE del»',
+  correct: 'Riktig!',
+  tryOtherZone: 'Ikke helt – prøv den andre sonen!',
+  winTitle: 'Perfekt! Du sorterte alle riktig!',
+  winMessage: 'Du er en ekspert på digitalt medborgerskap. Husk disse leksjonene når du legger ut på nettet!',
+  playAgain: 'Spill igjen',
   posts: [
-    { text: 'My home address is 123 Main Street', 
-      category: 'unsafe', 
-      emoji: '🏠', 
-      explanation: 'Your home address is private — never share it online! Strangers could use it to find where you live.' 
-    },
-    { text: 'I love playing football!', 
-      category: 'safe', 
-      emoji: '⚽', 
-      explanation: 'Sharing hobbies is totally fine and a great way to connect with others!' 
-    },
-    { text: 'My password is Fluffy123', 
-      category: 'unsafe', 
-      emoji: '🔑', 
-      explanation: 'Never share passwords with anyone online — not even your best friends!' 
-    },
-    { text: 'I got an A on my science test!', 
-      category: 'safe', 
-      emoji: '🎉', 
-      explanation: 'Celebrating achievements is safe to share — way to go!' 
-    },
-    { text: 'My phone number is 555-0123', 
+    { text: 'Hjemmeadressen min er Hovedgaten 123',
       category: 'unsafe',
-      emoji: '📱', 
-      explanation: 'Phone numbers are personal — keep them private so strangers can\'t contact you.' 
+      emoji: '🏠',
+      explanation: 'Hjemmeadressen din er privat – del den aldri på nettet! Fremmede kan bruke den til å finne ut hvor du bor.'
     },
-    { text: 'I\'m home alone until 6 PM', 
-      category: 'unsafe', 
-      emoji: '🏡', 
-      explanation: 'Never tell anyone online that you\'re home alone — it puts your safety at risk!' 
+    { text: 'Jeg elsker å spille fotball!',
+      category: 'safe',
+      emoji: '⚽',
+      explanation: 'Å dele hobbyer er helt greit og en fin måte å knytte kontakt med andre!'
     },
-    { text: 'Our school play is next Friday!', 
-      category: 'safe', 
-      emoji: '🎭', 
-      explanation: 'School events are fine to share with friends!' 
+    { text: 'Passordet mitt er Fluffy123',
+      category: 'unsafe',
+      emoji: '🔑',
+      explanation: 'Del aldri passord med noen på nettet – ikke engang med bestevennen din!'
     },
-    { text: 'Check out my new drawing!', 
-      category: 'safe', 
-      emoji: '🎨', 
-      explanation: 'Sharing creative work is a great way to express yourself!' 
+    { text: 'Jeg fikk toppkarakter på naturfagsprøven!',
+      category: 'safe',
+      emoji: '🎉',
+      explanation: 'Å feire prestasjoner er trygt å dele – bra jobba!'
     },
-    { text: 'My mom\'s credit card number is...', 
-      category: 'unsafe', 
-      emoji: '💳', 
-      explanation: 'Financial info like credit card numbers must always stay private!' 
+    { text: 'Telefonnummeret mitt er 555-0123',
+      category: 'unsafe',
+      emoji: '📱',
+      explanation: 'Telefonnumre er personlige – hold dem private så fremmede ikke kan kontakte deg.'
     },
-    { text: 'My favourite movie is Toy Story!', 
-      category: 'safe', 
-      emoji: '🎬', 
-      explanation: 'Talking about movies you enjoy is totally safe and fun!' 
+    { text: 'Jeg er alene hjemme til klokken 18',
+      category: 'unsafe',
+      emoji: '🏡',
+      explanation: 'Fortell aldri noen på nettet at du er alene hjemme – det setter sikkerheten din i fare!'
     },
-    { text: 'My full name is Emily Rose Johnson', 
-      category: 'unsafe', 
-      emoji: '📛', 
-      explanation: 'Sharing your full real name online can help strangers identify and track you.' 
+    { text: 'Skolestykket vårt er neste fredag!',
+      category: 'safe',
+      emoji: '🎭',
+      explanation: 'Skolearrangementer er greit å dele med venner!'
     },
-    { text: 'I just learned to ride a bike!', 
-      category: 'safe', 
-      emoji: '🚲', 
-      explanation: 'Sharing milestones and new skills is a great thing to post!' 
+    { text: 'Se på den nye tegningen min!',
+      category: 'safe',
+      emoji: '🎨',
+      explanation: 'Å dele kreativt arbeid er en fin måte å uttrykke deg på!'
     },
-    { text: 'My school locker combo is 24-8-16', 
-      category: 'unsafe', 
-      emoji: '🔒', 
-      explanation: 'Locker combinations are private — someone could break into your locker!' 
+    { text: 'Mammaens kredittkortnummer er...',
+      category: 'unsafe',
+      emoji: '💳',
+      explanation: 'Finansiell informasjon som kredittkortnumre må alltid forbli privat!'
     },
-    { text: 'We got a new puppy named Max!', 
-      category: 'safe', 
-      emoji: '🐶', 
-      explanation: 'Sharing about your pets is safe and fun for everyone!' 
+    { text: 'Favorittfilmen min er Toy Story!',
+      category: 'safe',
+      emoji: '🎬',
+      explanation: 'Å snakke om filmer du liker er helt trygt og morsomt!'
     },
-    { text: 'I walk home alone through the park at 3:30', 
-      category: 'unsafe', 
-      emoji: '🚶', 
-      explanation: 'Sharing your daily routine and route tells strangers exactly where to find you.' 
+    { text: 'Hele navnet mitt er Emily Rose Johnson',
+      category: 'unsafe',
+      emoji: '📛',
+      explanation: 'Å dele ditt fulle navn på nettet kan hjelpe fremmede med å identifisere og spore deg.'
+    },
+    { text: 'Jeg lærte nettopp å sykle!',
+      category: 'safe',
+      emoji: '🚲',
+      explanation: 'Å dele milepæler og nye ferdigheter er en fin ting å legge ut!'
+    },
+    { text: 'Skapkoden min på skolen er 24-8-16',
+      category: 'unsafe',
+      emoji: '🔒',
+      explanation: 'Skapkoder er private – noen kan bryte seg inn i skapet ditt!'
+    },
+    { text: 'Vi fikk en ny valp som heter Max!',
+      category: 'safe',
+      emoji: '🐶',
+      explanation: 'Å dele om kjæledyrene dine er trygt og morsomt for alle!'
+    },
+    { text: 'Jeg går hjem alene gjennom parken klokken 15:30',
+      category: 'unsafe',
+      emoji: '🚶',
+      explanation: 'Å dele din daglige rutine og rute forteller fremmede nøyaktig hvor de kan finne deg.'
     },
   ],
 }

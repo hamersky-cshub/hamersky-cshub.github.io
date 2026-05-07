@@ -6,39 +6,7 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDP = {
-  subtitle:
-    'Data privacy helps students understand what information is personal, why it matters, and how to make careful choices when sharing online. This module supports educators in building safe, confident decision-making around personal data.',
   aim: 'To help students recognize what counts as personal data, understand why privacy matters, and make safer choices before sharing information online.',
   objectives: [
     'Define personal data and identify what is sensitive.',
@@ -50,7 +18,7 @@ export const contentDP = {
     'Explain how data can travel and be stored online.',
     'Apply simple privacy rules before sharing or posting.',
   ],
-  teachersGuide: {
+  teachingGuide: {
     ariaLabel: 'Download Teaching Guide',
     download: 'Data Privacy Teaching Guide',
   },
@@ -266,48 +234,36 @@ export const contentDP = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
   ],
 }

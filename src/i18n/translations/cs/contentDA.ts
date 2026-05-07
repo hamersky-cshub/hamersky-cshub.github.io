@@ -6,75 +6,26 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDA = {
-  subtitle:
-    'Digital abuse includes harmful behavior online such as threats, harassment, or unwanted contact. This module helps educators teach students to recognize unsafe behavior, set boundaries, and find support.',
-  aim: 'To help students recognize harmful online behavior, understand that boundaries matter, and know the steps they can take to get support and stay safe.',
+  aim: 'Pomoci žákům rozpoznat škodlivé online chování, pochopit, že hranice jsou důležité, a znát kroky, které mohou podniknout, aby získali pomoc a zůstali v bezpečí.',
   objectives: [
-    'Define digital abuse in age-appropriate, supportive terms.',
-    'Recognize warning signs and unhealthy online behaviors.',
-    'Practice safe help-seeking and reporting steps.',
+    'Definovat digitální zneužívání věku přiměřeným a podpůrným způsobem.',
+    'Rozpoznat varovné signály a nezdravé online chování.',
+    'Procvičit bezpečné kroky pro hledání pomoci a nahlašování.',
   ],
   outcomes: [
-    'Identify behaviors that cross boundaries or cause harm.',
-    'Use simple safety steps like blocking or reporting.',
-    'Know trusted adults and support channels to reach out to.',
+    'Identifikovat chování, které překračuje hranice nebo způsobuje újmu.',
+    'Používat jednoduché bezpečnostní kroky, jako je blokování nebo nahlášení.',
+    'Znát důvěryhodné dospělé a podpůrné kanály, na které se lze obrátit.',
   ],
   teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Abuse Teaching Guide',
+    ariaLabel: 'Stáhnout výukového průvodce',
+    download: 'Průvodce výukou digitálního zneužívání',
   },
-  relatedModules: [
-    {
-      title: 'Digital Citizenship',
-      description: 'Build a strong foundation of rights, responsibility, and respect online.',
-      cta: 'Explore',
-    },
-    {
-      title: 'Attacker Perspective',
-      description: 'Understand how trust can be manipulated and learn to spot risky behavior.',
-      cta: 'Explore',
-    },
-    {
-      title: 'Social Engineering',
-      description: 'Learn how scammers and manipulators use persuasion and false urgency.',
-      cta: 'Explore',
-    },
-  ],
   parts: [
     {
-      title: 'Misinformation',
-      goal: 'Help students understand what misinformation is, what motivates people to do it and how to recognise it.',
+      title: 'Dezinformace',
+      goal: 'Pomoci žákům pochopit, co jsou dezinformace, co lidi motivuje k jejich šíření a jak je rozpoznat.',
       bundle: {
         filename: 'Digital Abuse Part 1 Package',
       },
@@ -82,44 +33,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.1.2
-            kind: 'Game',
-            name: 'Truth Detectives',
+            kind: 'Hra',
+            name: 'Detektivové pravdy',
             filename: 'Game - Truth Detectives',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'What is Misinformation?',
+            title: 'Co jsou dezinformace?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.1.1
-        title: 'What is Misinformation?',
+        title: 'Co jsou dezinformace?',
         supportText:
-          'Use this video to introduce misinformation as false or inaccurate content that can spread online without harmful intent. Pause to ask students if they have ever shared something that later turned out not to be true.',
+          'Použijte toto video k představení dezinformací jako nepravdivého nebo nepřesného obsahu, který se může šířit online bez škodlivého úmyslu. Pozastavte a zeptejte se žáků, zda někdy sdíleli něco, co se později ukázalo jako nepravdivé.',
         downloads: {
           video: {
             filename: 'What is Misinformation',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'What is Misinformation - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
-      title: 'Disinformation',
-      goal: 'Help students understand what disinformation is, the motivations behind it and how to recognise it.',
+      title: 'Disinformace',
+      goal: 'Pomoci žákům pochopit, co jsou disinformace, motivace za nimi a jak je rozpoznat.',
       bundle: {
         filename: 'Digital Abuse Part 2 Package',
       },
@@ -127,39 +78,39 @@ export const contentDA = {
         materials: [],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'What is Disinformation?',
+            title: 'Co jsou disinformace?',
           },
           {
-            title: 'Algorithms',
+            title: 'Algoritmy',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.2.1
-        title: 'What is Disinformation?',
+        title: 'Co jsou disinformace?',
         supportText:
-          'Use this video to help students distinguish disinformation — deliberately deceptive content — from misinformation. Pause to discuss how intent changes the way we evaluate and respond to false information.',
+          'Použijte toto video, aby žáci dokázali rozlišit disinformace – záměrně klamný obsah – od dezinformací. Pozastavte a diskutujte o tom, jak úmysl mění způsob, jakým hodnotíme nepravdivé informace a reagujeme na ně.',
         downloads: {
           video: {
             filename: 'What is Disinformation',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'What is Disinformation - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
-      title: 'Cyber Bullying',
-      goal: 'Help students understand what cyber bullying is, the motivations behind it and how to recognise it.',
+      title: 'Kyberšikana',
+      goal: 'Pomoci žákům pochopit, co je kyberšikana, motivace za ní a jak ji rozpoznat.',
       bundle: {
         filename: 'Digital Abuse Part 3 Package',
       },
@@ -167,44 +118,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Game',
-            name: 'Act it Out!',
+            kind: 'Hra',
+            name: 'Zahraj to!',
             filename: 'Game - Act it Out',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'What is Cyber Bullying?',
+            title: 'Co je kyberšikana?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.3.2
-        title: 'What is Cyber Bullying?',
+        title: 'Co je kyberšikana?',
         supportText:
-          'Use this video to help students define cyber bullying and understand how online behaviour can cause real emotional harm. Pause to discuss what makes a bystander\'s response important in these situations.',
+          'Použijte toto video, aby žáci definovali kyberšikanu a pochopili, jak online chování může způsobit skutečnou emocionální újmu. Pozastavte a diskutujte o tom, proč je reakce přihlížejícího v těchto situacích důležitá.',
         downloads: {
           video: {
             filename: 'What is Cyber Bullying',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'What is Cyber Bullying - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
-      title: 'Stranger Danger',
-      goal: 'Help students understand what stranger danger is, the motivations behind it and how to recognise it.',
+      title: 'Nebezpečí od cizinců',
+      goal: 'Pomoci žákům pochopit, co je nebezpečí od cizinců online, motivace za ním a jak ho rozpoznat.',
       bundle: {
         filename: 'Digital Abuse Part 4 Package',
       },
@@ -212,25 +163,25 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Game',
-            name: 'Real or Fake?',
+            kind: 'Hra',
+            name: 'Skutečné nebo falešné?',
             filename: 'Game - Real or Fake',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Shrnutí a neformální hodnocení',
           },
         ],
       },
     },
     {
-      title: 'Influencers',
-      goal: 'Help students understand what influencers are and what motivates them.',
+      title: 'Influenceři',
+      goal: 'Pomoci žákům pochopit, co jsou influenceři a co je motivuje.',
       bundle: {
         filename: 'Digital Abuse Part 5 Package',
       },
@@ -238,44 +189,44 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scenarios',
-            name: 'Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scénáře',
+            name: 'Příklady příspěvků influencerů, které jsou potenciálně škodlivé a které nejsou',
             filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Social Media Influencers',
+            title: 'Influenceři na sociálních sítích',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 7.5.1
-        title: 'Social Media Influencers',
+        title: 'Influenceři na sociálních sítích',
         supportText:
-          'Use this video to explore how influencers shape opinions and behaviours on social media, and the responsibilities that come with that reach. Pause to ask students which influencers they follow and what makes them trustworthy.',
+          'Použijte toto video k prozkoumání toho, jak influenceři formují názory a chování na sociálních sítích, a jaká odpovědnost s tímto dosahem přichází. Pozastavte a zeptejte se žáků, které influencery sledují a co je dělá důvěryhodné.',
         downloads: {
           video: {
             filename: 'Social Media Influencers',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'Social Media Influencers - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
-      title: 'How Can We Deal With the Behaviour of Digital Abusers?',
-      goal: 'Help students to know what they can do to protect themselves from digital abuse.',
+      title: 'Jak se vypořádat s chováním digitálních agresorů?',
+      goal: 'Pomoci žákům vědět, co mohou udělat, aby se chránili před digitálním zneužíváním.',
       bundle: {
         filename: 'Digital Abuse Part 6 Package',
       },
@@ -283,18 +234,18 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Activity',
-            name: 'Safety Superhero Suggestion Pack',
+            kind: 'Aktivita',
+            name: 'Balíček návrhů od Bezpečnostního superhrdiny',
             filename: 'Activity - Safety Superhero Suggestion Pack',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenum – Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -306,570 +257,564 @@ export const contentDA = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
   ],
 }
 
 export const challengeDA = {
-  title: 'Real Talk Stories',
+  title: 'Příběhy ze skutečného života',
   subtitle:
-    'Make choices. See consequences. Learn how to handle cyberbullying, online pressure, and digital abuse.',
-  howItWorks: 'How It Works',
+    'Rozhoduj se. Sleduj důsledky. Nauč se, jak zvládnout kyberšikanu, online tlak a digitální zneužívání.',
+  howItWorks: 'Jak to funguje',
   instruction:
-    'Work through 10 real-life digital abuse scenarios. At each key moment you choose what to do — and different choices lead to genuinely different outcomes. Earn up to 3 stars per story by finding the safest path. If you get a tough ending, retry the story to discover a better route!',
-  tip: 'Each story branches in multiple directions. There is always at least one path that leads to a safe, positive outcome — but you have to make the right calls to find it!',
+    'Projdi 10 scénářů digitálního zneužívání ze skutečného života. V každém klíčovém okamžiku si vyber, co dělat – a různé volby vedou k opravdu různým výsledkům. Získej až 3 hvězdičky za každý příběh tím, že najdeš nejbezpečnější cestu. Pokud dostaneš těžký konec, zkus příběh znovu a objev lepší cestu!',
+  tip: 'Každý příběh se větví mnoha směry. Vždy existuje alespoň jedna cesta vedoucí k bezpečnému, pozitivnímu výsledku – ale musíš udělat správná rozhodnutí, abys ji našel!',
   tipLabel: 'Tip',
-  yourBestScore: 'Your Best Score',
-  bestResultDesc: 'Best result from each story',
-  storiesTitle: '📖 Stories',
-  watchOutTitle: '🚩 Watch Out For',
+  yourBestScore: 'Tvé nejlepší skóre',
+  bestResultDesc: 'Nejlepší výsledek z každého příběhu',
+  storiesTitle: '📖 Příběhy',
+  watchOutTitle: '🚩 Dávej pozor na',
   watchOutItems: [
-    '🚩 Anyone asking for private photos',
-    '🚩 Password demands from partners',
-    '🚩 Strangers asking your address or school',
-    '🚩 "Keep this a secret" pressure',
-    '🚩 Mean posts, screenshots, fake profiles',
+    '🚩 Kohokoli, kdo žádá o soukromé fotografie',
+    '🚩 Požadavky na heslo od partnera',
+    '🚩 Cizince, kteří se ptají na tvou adresu nebo školu',
+    '🚩 Tlak „Drž to v tajnosti"',
+    '🚩 Zlomyslné příspěvky, screenshoty, falešné profily',
   ],
-  welcomeDesc: 'Make your choices carefully — different paths lead to very different outcomes.',
-  startStory: 'Start Story →',
-  whatWeLearned: '💡 What we learned:',
-  tryDifferentPath: '↩ Try a Different Path',
-  nextStory: 'Next Story →',
-  seeFinalScore: '🎉 See Final Score',
-  allStoriesComplete: 'All Stories Complete!',
-  finalScoreDesc: "Here's how you did across all 10 stories:",
-  playAgain: 'Play Again',
-  rankChampion: '🏆 Safety Champion',
-  rankChampionMsg: 'Outstanding! You found the safest path in nearly every situation.',
-  rankDefender: '🛡️ Digital Defender',
-  rankDefenderMsg: 'Great work! You handled most situations wisely and safely.',
-  rankNavigator: '📚 Learning Navigator',
-  rankNavigatorMsg: 'Good effort! Replay some stories to find the better paths and earn more stars.',
-  rankBeginning: '🌱 Getting Started',
-  rankBeginningMsg: 'Keep trying different paths — every replay teaches you something new!',
+  welcomeDesc: 'Rozhoduj se pečlivě – různé cesty vedou k velmi odlišným výsledkům.',
+  startStory: 'Začít příběh →',
+  whatWeLearned: '💡 Co jsme se naučili:',
+  tryDifferentPath: '↩ Zkus jinou cestu',
+  nextStory: 'Další příběh →',
+  seeFinalScore: '🎉 Zobrazit konečné skóre',
+  allStoriesComplete: 'Všechny příběhy dokončeny!',
+  finalScoreDesc: 'Takto si vedl ve všech 10 příbězích:',
+  playAgain: 'Hrát znovu',
+  rankChampion: '🏆 Šampion bezpečnosti',
+  rankChampionMsg: 'Skvělé! Našel jsi nejbezpečnější cestu téměř v každé situaci.',
+  rankDefender: '🛡️ Digitální obránce',
+  rankDefenderMsg: 'Výborná práce! Zvládl jsi většinu situací moudře a bezpečně.',
+  rankNavigator: '📚 Navigátor učení',
+  rankNavigatorMsg: 'Dobrá snaha! Zopakuj některé příběhy, abys našel lepší cesty a získal více hvězdiček.',
+  rankBeginning: '🌱 Začínám',
+  rankBeginningMsg: 'Zkoušej různé cesty – každé opakování tě naučí něco nového!',
   stories: [
     {
-      id: 1, title: 'The Meme Problem', emoji: '😟', topic: 'Cyberbullying',
+      id: 1, title: 'Problém s memem', emoji: '😟', topic: 'Kyberšikana',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You open your phone and see a group chat. Someone named Jake posted a mean meme about your classmate Emma, making fun of her appearance. 23 people already liked it. What do you do?', 
-          choices: ['👍 Like the meme to fit in with everyone', '📲 Scroll past and ignore it', '💬 Send Emma a private supportive message'] 
+        {
+          id: 'start',
+          text: 'Otevřeš telefon a uvidíš skupinový chat. Někdo jménem Jake zveřejnil zlý mem o tvé spolužačce Emmě, který si dělá legraci z jejího vzhledu. Už se mu líbilo 23 lidem. Co uděláš?',
+          choices: ['👍 Lajkni mem, aby ses přizpůsobil ostatním', '📲 Přejeď dál a ignoruj to', '💬 Pošli Emmě soukromou podpůrnou zprávu']
         },
-        { 
-          id: 'end_a',  
-          title: 'Part of the Problem',  
-          text: 'You liked the meme. Jake posts more, even meaner ones. Emma sees your name in the likes and is devastated. A teacher finds out and contacts your parents.', 
-          lesson: 'Liking mean content is a form of cyberbullying. Your "like" is never invisible — the target always sees who supported it.' 
+        {
+          id: 'end_a',
+          title: 'Součást problému',
+          text: 'Lajknul jsi mem. Jake zveřejňuje další, ještě horší. Emma vidí tvé jméno v lajcích a je zničená. Učitel se to dozví a kontaktuje tvé rodiče.',
+          lesson: 'Lajkování zlého obsahu je formou kyberšikany. Tvůj „lajk" není nikdy neviditelný – oběť vždy vidí, kdo ji podpořil.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'You scroll past, but the posts keep coming. The next day, Emma sits alone at lunch looking very upset. The bullying has gotten worse.', 
-          choices: ['😶 Keep ignoring it — not your problem', '🏫 Tell a teacher what has been happening'] 
+        {
+          id: 'mid_b',
+          text: 'Přejedeš dál, ale příspěvky přibývají. Druhý den Emma sedí sama u oběda a vypadá velmi rozrušeně. Šikana se zhoršila.',
+          choices: ['😶 Dál to ignoruj – není to tvůj problém', '🏫 Řekni učiteli, co se děje']
         },
-        { 
-          id: 'end_b1', 
-          title: 'The Silent Witness',   
-          text: 'Weeks pass. Emma misses school. You feel guilty but say nothing. The bullying continues unchallenged.', 
-          lesson: 'Ignoring bullying does not make it stop. Bystanders have real power to help — staying silent is still a choice.' 
+        {
+          id: 'end_b1',
+          title: 'Tichý svědek',
+          text: 'Uplyne několik týdnů. Emma chybí ve škole. Cítíš vinu, ale nic neřekneš. Šikana pokračuje bez výzvy.',
+          lesson: 'Ignorování šikany ji nezastaví. Přihlížející mají skutečnou moc pomoci – mlčení je stále volba.'
         },
-        { 
-          id: 'end_b2', 
-          title: 'The Brave Reporter',   
-          text: 'The teacher acts immediately. Jake and his parents are called in. Emma gets support from the school counsellor. The bullying stops.', 
-          lesson: 'Telling a trusted adult is one of the most powerful things you can do. It is not snitching — it is protecting someone who needs help.' 
+        {
+          id: 'end_b2',
+          title: 'Statečný oznamovatel',
+          text: 'Učitel okamžitě jedná. Jake a jeho rodiče jsou přivoláni. Emma dostane podporu od školního poradce. Šikana přestane.',
+          lesson: 'Říct důvěryhodné dospělé osobě je jedna z nejmocnějších věcí, které můžeš udělat. Není to práskání – je to ochrana někoho, kdo potřebuje pomoc.'
         },
-        { 
-          id: 'mid_c',  
-          text: "Emma replies: \"Thank you so much… it really hurt. I didn't know what to do.\" She is grateful but scared. The posts are still up.", 
-          choices: ['📢 Help Emma report every post to the platform', '🤷 Tell Emma to just ignore it, it will blow over'] 
+        {
+          id: 'mid_c',
+          text: 'Emma odpovídá: „Moc díky… opravdu to bolelo. Nevěděla jsem, co dělat." Je vděčná, ale vystrašená. Příspěvky jsou stále nahoře.',
+          choices: ['📢 Pomoz Emmě nahlásit každý příspěvek na platformě', '🤷 Řekni Emmě, aby to ignorovala, samo to přejde']
         },
-        { 
-          id: 'end_c1', 
-          title: 'The Digital Defender', 
-          text: 'You and Emma report every post together. Most are removed within a day. You also visit the school counsellor, who supports Emma further. The bullying stops.', 
-          lesson: 'Reaching out AND taking action — reporting online and involving trusted adults — is the gold standard response to cyberbullying.' },
-        { 
-          id: 'end_c2', 
-          title: 'Kind but Not Enough',  
-          text: 'Emma tries to ignore it but the posts keep coming. Your kind message helped, but without reporting or adult support the bullying continues.', 
-          lesson: 'Kindness is a great start, but reporting bullying and involving trusted adults is what actually makes it stop.' 
+        {
+          id: 'end_c1',
+          title: 'Digitální obránce',
+          text: 'Ty a Emma nahlásíte každý příspěvek společně. Většina je odstraněna do dne. Navštívíte také školního poradce, který Emmu dále podpoří. Šikana přestane.',
+          lesson: 'Oslovit PLUS podniknout kroky – nahlásit online a zapojit důvěryhodné dospělé – je zlatý standard reakce na kyberšikanu.'
+        },
+        {
+          id: 'end_c2',
+          title: 'Laskavost nestačí',
+          text: 'Emma se snaží to ignorovat, ale příspěvky přibývají. Tvá laskavá zpráva pomohla, ale bez nahlášení nebo podpory dospělých šikana pokračuje.',
+          lesson: 'Laskavost je skvělý začátek, ale to, co šikanu skutečně zastaví, je nahlášení a zapojení důvěryhodných dospělých.'
         },
       ],
     },
     {
-      id: 2, title: 'Screenshot Trap', emoji: '📸', topic: 'Privacy & Betrayal',
+      id: 2, title: 'Past screenshotů', emoji: '📸', topic: 'Soukromí a zrada',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You sent a private message to your friend Zoe about having a crush on someone. Zoe screenshotted it and shared it in a big group chat without asking you. Everyone is commenting. What do you do?', 
-          choices: ['😡 Post an angry public callout about what Zoe did', '📱 Confront Zoe privately in a DM', '📸 Save the evidence and tell a trusted adult'] 
+        {
+          id: 'start',
+          text: 'Poslal jsi soukromou zprávu své kamarádce Zoe o tom, že máš někoho rád. Zoe ji screenshotovala a bez tvého svolení sdílela ve velkém skupinovém chatu. Všichni komentují. Co uděláš?',
+          choices: ['😡 Zveřejni rozzlobený veřejný příspěvek o tom, co Zoe udělala', '📱 Konfrontuj Zoe soukromě v DM', '📸 Ulož důkazy a řekni to důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'end_a',  
-          title: 'Fire Meets Fire',      
-          text: 'You post publicly calling Zoe out. Zoe fights back. Dozens of people join the drama. Now it is a full online war and you both look bad.', 
-          lesson: 'Public call-outs online almost always escalate things. They rarely bring the resolution you are hoping for.' 
+        {
+          id: 'end_a',
+          title: 'Oheň se oheňem',
+          text: 'Veřejně zavoláš Zoe k zodpovědnosti. Zoe bojuje zpět. Desítky lidí se zapojí do dramatu. Teď je to plnohodnotná online válka a oba vypadáte špatně.',
+          lesson: 'Veřejné odhalení online téměř vždy věci eskaluje. Zřídka přináší řešení, které hledáš.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'You DM Zoe: "Why did you share that? It was private!" Zoe says "It was just a joke, chill out." But she has not deleted it.', 
-          choices: ['😔 Accept her "apology" and move on quietly', '🗣️ Firmly ask her to delete it and involve a trusted adult'] 
+        {
+          id: 'mid_b',
+          text: 'Pošleš Zoe DM: „Proč jsi to sdílela? Bylo to soukromé!" Zoe říká: „To byl jen vtip, zklidni se." Ale screenshot ještě nesmazala.',
+          choices: ['😔 Přijmi její „omluvu" a tiše jdi dál', '🗣️ Pevně ji požádej, aby to smazala, a zapoj důvěryhodnou dospělou osobu']
         },
-        { 
-          id: 'end_b1', 
-          title: 'Swept Under the Rug', 
-          text: 'Zoe does not really understand why it was wrong. The screenshot stays up. You feel hurt but nothing is truly resolved.', 
-          lesson: '"Just a joke" is never an excuse for sharing private messages. Accepting bad behaviour without consequence means it may happen again.' 
+        {
+          id: 'end_b1',
+          title: 'Zameteno pod koberec',
+          text: 'Zoe vlastně nechápe, proč to bylo špatné. Screenshot zůstává nahoře. Cítíš se ublíženě, ale nic se skutečně nevyřeší.',
+          lesson: '„Byl to jen vtip" nikdy není omluva za sdílení soukromých zpráv. Přijmout špatné chování bez následků znamená, že se to může opakovat.'
         },
-        { 
-          id: 'end_b2', 
-          title: 'Real Resolution',      
-          text: 'Under pressure and with adult involvement, Zoe deletes it and has a real conversation about consent and privacy. Your friendship recovers on healthier terms.', 
-          lesson: 'Standing up for your privacy calmly but firmly — with adult support — leads to genuine change, not just temporary calm.' 
+        {
+          id: 'end_b2',
+          title: 'Skutečné řešení',
+          text: 'Pod tlakem a se zapojením dospělé osoby Zoe screenshot smaže a vede skutečný rozhovor o souhlasu a soukromí. Vaše přátelství se obnoví na zdravějších základech.',
+          lesson: 'Klidná, ale pevná obhajoba soukromí – s podporou dospělé osoby – vede ke skutečné změně, nejen dočasnému klidu.'
         },
-        { 
-          id: 'mid_c',  
-          text: "A trusted adult helps report it to the platform and contacts Zoe's parents. The screenshot is removed. Zoe apologises.", 
-          choices: ['🤝 Accept her apology and work to rebuild the friendship', '🚫 Block Zoe — you do not want her as a friend anymore'] },
-        { 
-          id: 'end_c1', 
-          title: 'Trust Rebuilt',        
-          text: 'With adult support and a genuine apology, the situation resolves properly. Zoe understands consent. You both move forward.', 
-          lesson: 'Documenting, reporting, and giving space for a real apology turns a painful experience into a genuine learning moment.' 
+        {
+          id: 'mid_c',
+          text: 'Důvěryhodná dospělá osoba pomůže nahlásit příspěvek na platformě a kontaktuje rodiče Zoe. Screenshot je odstraněn. Zoe se omluví.',
+          choices: ['🤝 Přijmi její omluvu a pracuj na obnově přátelství', '🚫 Zablokuj Zoe – nechceš ji jako kamarádku']
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safe Distance',        
-          text: 'The screenshot is gone and you are protected. Blocking is a valid boundary when trust is broken. A safe outcome through the right actions.', 
-          lesson: 'Protecting yourself is always valid. Involving adults to handle the situation was exactly the right move.' 
+        {
+          id: 'end_c1',
+          title: 'Obnovená důvěra',
+          text: 'S podporou dospělé osoby a upřímnou omluvou se situace správně vyřeší. Zoe chápe souhlas. Oba jdete dál.',
+          lesson: 'Zdokumentování, nahlášení a prostor pro skutečnou omluvu proměňuje bolestnou zkušenost ve skutečný moment učení.'
+        },
+        {
+          id: 'end_c2',
+          title: 'Bezpečná vzdálenost',
+          text: 'Screenshot je pryč a jsi chráněn. Blokování je platná hranice, když je důvěra narušena. Bezpečný výsledek správnými kroky.',
+          lesson: 'Chránit sebe je vždy platné. Zapojení dospělé osoby k řešení situace byl přesně správný tah.'
         },
       ],
     },
     {
-      id: 3, title: 'Gaming Rage', emoji: '🎮', topic: 'Online Gaming Harassment',
+      id: 3, title: 'Herní vztek', emoji: '🎮', topic: 'Online herní obtěžování',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You are playing your favourite online game and another player starts spamming hateful messages — calling you names and making threats. Others in the lobby are watching. What do you do?', 
-          choices: ['💢 Fight back with insults of your own', '🙉 Ignore the messages and keep playing', '🔇 Mute, screenshot, and report the player in-game'] 
+        {
+          id: 'start',
+          text: 'Hraješ svou oblíbenou online hru a jiný hráč začne spamovat nenávistné zprávy – nadává ti a vyhrožuje. Ostatní v lobby to sledují. Co uděláš?',
+          choices: ['💢 Odplať mu to vlastními urážkami', '🙉 Ignoruj zprávy a hraj dál', '🔇 Umlč ho, pořiď screenshot a nahlásit ho ve hře']
         },
-        { 
-          id: 'end_a',  
-          title: 'Both Banned',          
-          text: 'You argue back. Both of you get reported. The system flags your account. You both get banned — the toxic player reported you first.', 
-          lesson: 'Responding to hate with hate puts you at risk too. Game platforms often ban both sides of toxic exchanges.' 
+        {
+          id: 'end_a',
+          title: 'Oba zabanováni',
+          text: 'Hádáš se zpět. Oba jste nahlášeni. Systém označí tvůj účet. Oba dostanete ban – toxický hráč tě nahlásil jako první.',
+          lesson: 'Reagovat nenávistí na nenávist tě také vystavuje riziku. Herní platformy často banují obě strany toxických výměn.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'You ignore them, but they escalate. Now they have found your public game profile and are posting abuse there for others to see.', 
-          choices: ['🗑️ Delete your profile to make them stop', '📢 Report to the platform and tell a trusted adult'] },
-        { 
-          id: 'end_b1', 
-          title: 'Running Away',         
-          text: 'Deleting your profile stops this harasser for now. But they move on to the next target. No consequence, no real change.', 
-          lesson: 'Protecting yourself matters, but reporting ensures the harasser faces consequences and cannot keep doing it to others.' 
+        {
+          id: 'mid_b',
+          text: 'Ignoruješ ho, ale eskaluje. Teď našel tvůj veřejný herní profil a zveřejňuje tam urážky, aby je viděli ostatní.',
+          choices: ['🗑️ Smaž svůj profil, aby přestal', '📢 Nahlásit na platformě a říct to důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'end_b2', 
-          title: 'Player Banned',        
-          text: "The platform investigates and bans the harasser's account. A trusted adult helps you review your privacy settings and feel supported.", 
-          lesson: 'Reporting gaming harassment works. Platforms take these reports seriously, especially when screenshots are saved as evidence.' 
+        {
+          id: 'end_b1',
+          title: 'Útěk',
+          text: 'Smazání profilu tohoto obtěžovatele prozatím zastaví. Ale přejde na další oběť. Žádné důsledky, žádná skutečná změna.',
+          lesson: 'Chránit sebe je důležité, ale nahlášení zajistí, že obtěžovatel bude čelit důsledkům a nemůže to dělat ostatním.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'You have muted and reported the player with screenshots. The report is under review. But you are still shaken by what was said.', 
-          choices: ['🗣️ Tell a trusted adult how the experience made you feel', '😶 Keep it to yourself — you already handled it'] 
+        {
+          id: 'end_b2',
+          title: 'Hráč zabanován',
+          text: 'Platforma prošetří a zabanuje účet obtěžovatele. Důvěryhodná dospělá osoba ti pomůže zkontrolovat nastavení soukromí a budeš se cítit podporován.',
+          lesson: 'Nahlášení herního obtěžování funguje. Platformy berou tato hlášení vážně, zejména když jsou screenshoty uloženy jako důkaz.'
         },
-        { 
-          id: 'end_c1', 
-          title: 'Report and Support',   
-          text: 'A trusted adult validates your feelings and helps you adjust privacy settings. The platform confirms the player was banned.', 
-          lesson: 'Reporting is important, but so is processing how online abuse makes you feel. Trusted adults can help with both.' 
+        {
+          id: 'mid_c',
+          text: 'Umlčel jsi hráče a nahlásil ho se screenshoty. Hlášení je v přezkumu. Ale stále tě otřásá, co bylo řečeno.',
+          choices: ['🗣️ Řekni důvěryhodné dospělé osobě, jak tě ta zkušenost ovlivnila', '😶 Nech si to pro sebe – už jsi to zvládl']
         },
-        { 
-          id: 'end_c2', 
-          title: 'Half the Solution',    
-          text: 'The player gets banned but you carry the experience alone. You feel safer online but still unsettled.', 
-          lesson: 'You handled the technical side perfectly! Remember: talking to someone about how online abuse feels is just as important.' 
+        {
+          id: 'end_c1',
+          title: 'Nahlášení a podpora',
+          text: 'Důvěryhodná dospělá osoba potvrdí tvé pocity a pomůže ti upravit nastavení soukromí. Platforma potvrdí, že hráč byl zabanován.',
+          lesson: 'Nahlášení je důležité, ale stejně důležité je zpracování toho, jak tě online zneužívání zasáhlo. Důvěryhodné dospělé osoby mohou pomoci s obojím.'
+        },
+        {
+          id: 'end_c2',
+          title: 'Půl řešení',
+          text: 'Hráč je zabanován, ale zážitek nesete sami. Cítíš se online bezpečněji, ale stále neklidně.',
+          lesson: 'Technickou stránku jsi zvládl dokonale! Pamatuj: mluvit s někým o tom, jak se cítíš po online zneužití, je stejně důležité.'
         },
       ],
     },
     {
-      id: 4, title: 'Fake Profile', emoji: '👤', topic: 'Impersonation',
+      id: 4, title: 'Falešný profil', emoji: '👤', topic: 'Vydávání se za jiného',
       nodes: [
-        { 
-          id: 'start',  
-          text: "You spot a fake social media account using your friend Sam's photos. It is posting embarrassing things and adding Sam's classmates. Sam does not know yet. What do you do?", 
-          choices: ['💬 Message the fake account and tell them to stop', '📞 Tell Sam immediately so they know', '🚩 Report the fake account AND tell Sam straight away'] 
+        {
+          id: 'start',
+          text: 'Všimneš si falešného účtu na sociálních sítích používajícího fotky tvého kamaráda Sama. Zveřejňuje trapné věci a přidává Samovy spolužáky. Sam o tom ještě neví. Co uděláš?',
+          choices: ['💬 Napiš falešnému účtu, ať přestane', '📞 Okamžitě řekni Samovi, aby věděl', '🚩 Nahlásit falešný účet A okamžitě říct Samovi']
         },
-        { 
-          id: 'end_a',  
-          title: 'Do Not Feed the Troll', 
-          text: 'The fake account blocks you and speeds up posting. Now it starts targeting you too. Engaging directly made things worse.', 
-          lesson: 'Contacting a fake or abusive account directly almost always makes things worse. Report to the platform instead.' 
+        {
+          id: 'end_a',
+          title: 'Nekrmte trolla',
+          text: 'Falešný účet tě zablokuje a zrychlí zveřejňování. Teď začne cílit i na tebe. Přímé zapojení věci zhoršilo.',
+          lesson: 'Kontaktování falešného nebo zneužívajícího účtu přímo věci téměř vždy zhorší. Nahlaste to raději platformě.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'Sam is shocked and upset. Sam wants to message everyone to explain it is fake, but is not sure what else to do. The account is still live.', 
-          choices: ['📢 Help Sam report the account to the platform', '🗣️ Suggest Sam just tell people in person it is fake'] 
+        {
+          id: 'mid_b',
+          text: 'Sam je v šoku a rozrušen. Chce napsat všem, aby vysvětlil, že je to falešné, ale neví, co jiného dělat. Účet je stále aktivní.',
+          choices: ['📢 Pomoz Samovi nahlásit účet na platformě', '🗣️ Navrhni Samovi, aby lidem osobně řekl, že je to falešné']
         },
-        { 
-          id: 'end_b1', 
-          title: 'Teamwork Wins',        
-          text: 'You and Sam report the account together. The platform removes it within hours. Sam also tells a trusted adult who helps monitor for future attempts.', 
-          lesson: 'Reporting fake accounts together is highly effective. Platforms take impersonation very seriously and act quickly.' 
+        {
+          id: 'end_b1',
+          title: 'Týmová práce vítězí',
+          text: 'Ty a Sam nahlásíte účet společně. Platforma ho odstraní během několika hodin. Sam také řekne důvěryhodné dospělé osobě, která pomůže monitorovat budoucí pokusy.',
+          lesson: 'Společné nahlášení falešných účtů je velmi účinné. Platformy berou vydávání se za jiného velmi vážně a jednají rychle.'
         },
-        { 
-          id: 'end_b2', 
-          title: 'Slow Response',        
-          text: 'Sam explains to people in person, but the fake account stays up for days causing more embarrassment before someone else finally reports it.', 
-          lesson: 'Reporting fake accounts to the platform directly is much faster and more effective than trying to explain to everyone individually.' 
+        {
+          id: 'end_b2',
+          title: 'Pomalá reakce',
+          text: 'Sam lidem osobně vysvětluje, ale falešný účet zůstává aktivní několik dní a způsobuje další trapas, než ho někdo jiný nakonec nahlásí.',
+          lesson: 'Přímé nahlášení falešných účtů platformě je mnohem rychlejší a účinnější než snaha vysvětlit to každému individuálně.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'The platform receives your report and begins reviewing the account. Sam is grateful you acted so quickly.', 
-          choices: ['🏠 Also tell a trusted adult to help Sam feel supported', '⏳ Just wait for the platform to act'] 
+        {
+          id: 'mid_c',
+          text: 'Platforma obdrží tvé hlášení a začne účet přezkoumávat. Sam je vděčný, že jsi jednal tak rychle.',
+          choices: ['🏠 Řekni také důvěryhodné dospělé osobě, aby Sam cítil podporu', '⏳ Prostě počkej, až platforma zasáhne']
         },
-        { 
-          id: 'end_c1', 
-          title: 'Full Protection',      
-          text: "With adult support and the platform's action, the account is removed. Sam feels genuinely cared for. The school is alerted to watch for further attempts.", 
-          lesson: 'Reporting to the platform AND involving a trusted adult gives the best possible protection when someone is being impersonated.' 
+        {
+          id: 'end_c1',
+          title: 'Plná ochrana',
+          text: 'S podporou dospělé osoby a zásahem platformy je účet odstraněn. Sam se cítí skutečně chráněn. Škola je upozorněna, aby sledovala další pokusy.',
+          lesson: 'Nahlášení platformě A zapojení důvěryhodné dospělé osoby poskytuje nejlepší možnou ochranu, když se někdo vydává za jinou osobu.'
         },
-        { 
-          id: 'end_c2', 
-          title: 'Swift Action',         
-          text: 'The platform removes the account. Sam is relieved. A great outcome through quick, correct action.', 
-          lesson: 'Reporting fake accounts immediately to the platform is exactly the right move. Quick reporting means faster removal.' 
+        {
+          id: 'end_c2',
+          title: 'Rychlá akce',
+          text: 'Platforma odstraní účet. Sam je v úlevou. Skvělý výsledek díky rychlé a správné akci.',
+          lesson: 'Okamžité nahlášení falešných účtů platformě je přesně správný tah. Rychlé nahlášení znamená rychlejší odstranění.'
         },
       ],
     },
     {
-      id: 5, title: 'Left Out Online', emoji: '😔', topic: 'Online Exclusion',
+      id: 5, title: 'Vyloučen online', emoji: '😔', topic: 'Online vyloučení',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You discover your friend group created a new group chat without you. They are planning a party you were not invited to, and you can see them posting about it publicly. You feel hurt and humiliated.', 
-          choices: ['📣 Post publicly about being hurt and left out', '💬 Send an angry message to the whole group', '🤝 Message your closest friend in the group privately'] 
+        {
+          id: 'start',
+          text: 'Zjistíš, že tvá parta přátel vytvořila nový skupinový chat bez tebe. Plánují párty, na kterou jsi nebyl pozván, a ty vidíš, jak o tom veřejně píší. Cítíš se ublíženě a poníženě.',
+          choices: ['📣 Zveřejni příspěvek o tom, jak tě bolí vyloučení', '💬 Pošli rozzlobenou zprávu celé skupině', '🤝 Napiš soukromě svému nejbližšímu příteli ve skupině']
         },
-        { 
-          id: 'end_a',  
-          title: 'Public Meltdown',      
-          text: 'Your public post attracts attention but mostly embarrassment. The friend group gets defensive. The drama spreads across the whole school online.', 
-          lesson: 'Venting publicly about being excluded rarely helps and usually makes things worse. Direct private conversations are far more effective.' 
+        {
+          id: 'end_a',
+          title: 'Veřejné zhroucení',
+          text: 'Tvůj veřejný příspěvek přitáhne pozornost, ale hlavně trapas. Parta přátel se postaví do obrany. Drama se šíří po celé škole online.',
+          lesson: 'Veřejné ventilování pocitů z vyloučení zřídka pomáhá a obvykle věci zhorší. Přímé soukromé rozhovory jsou mnohem účinnější.'
         },
-        { 
-          id: 'end_b',  
-          title: 'Group Chat Drama',     
-          text: 'The group chat gets awkward. Some friends feel guilty; others get annoyed. Nothing is really resolved and tensions remain for weeks.', 
-          lesson: 'Confronting a whole group at once puts everyone on the defensive. One-to-one private conversations work much better.' 
+        {
+          id: 'end_b',
+          title: 'Drama ve skupinovém chatu',
+          text: 'Skupinový chat je nepříjemný. Někteří přátelé se cítí vinoví; jiní se naštvaní. Nic se skutečně nevyřeší a napětí přetrvává týdny.',
+          lesson: 'Konfrontace celé skupiny najednou staví každého do obrany. Soukromé rozhovory jeden na jednoho fungují mnohem lépe.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'Your closest friend Mia admits she felt pressured to leave you out by someone else in the group. She apologises and says she wants to help fix things.', 
-          choices: ['🤝 Ask Mia to speak up for you to the group', '🏫 Tell a trusted adult about the deliberate exclusion'] 
+        {
+          id: 'mid_c',
+          text: 'Tvá nejbližší kamarádka Mia přizná, že se cítila nucena tě vyloučit někým jiným ve skupině. Omluví se a říká, že chce pomoci věci napravit.',
+          choices: ['🤝 Požádej Mii, aby za tebe promluvila ke skupině', '🏫 Řekni důvěryhodné dospělé osobě o záměrném vyloučení']
         },
-        { 
-          id: 'end_c1', 
-          title: 'True Ally',            
-          text: 'Mia speaks up. You are included again and the person who was excluding you is called out. The friendship group gets stronger through honesty.', 
-          lesson: 'When someone is willing to help, let them. Real friends speak up for each other — even when it is uncomfortable.' },
-        { 
-          id: 'end_c2', 
-          title: 'Adult Ally',           
-          text: 'The trusted adult helps mediate. Everyone reflects on how deliberate exclusion hurts. The group dynamic shifts for the better.', 
-          lesson: 'Deliberate social exclusion online is a form of bullying. A trusted adult can help reset unhealthy group dynamics.' 
+        {
+          id: 'end_c1',
+          title: 'Skutečný spojenec',
+          text: 'Mia promluví. Jsi znovu zahrnut a ten, kdo tě vylučoval, je konfrontován. Parta přátel se posílí díky upřímnosti.',
+          lesson: 'Když je někdo ochoten pomoci, nech ho. Skuteční přátelé mluví za sebe navzájem – i když je to nepříjemné.'
+        },
+        {
+          id: 'end_c2',
+          title: 'Spojenec-dospělý',
+          text: 'Důvěryhodná dospělá osoba pomůže zprostředkovat. Každý přemýšlí o tom, jak záměrné vyloučení bolí. Dynamika skupiny se mění k lepšímu.',
+          lesson: 'Záměrné sociální vyloučení online je formou šikany. Důvěryhodná dospělá osoba může pomoci resetovat nezdravou dynamiku skupiny.'
         },
       ],
     },
     {
-      id: 6, title: 'Private Photos', emoji: '📷', topic: 'Image-Based Pressure',
+      id: 6, title: 'Soukromé fotografie', emoji: '📷', topic: 'Tlak na základě obrázků',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone you have been chatting with online for two weeks says they really like you and asks for a private photo. They promise to send one first and say to keep it secret from everyone.', 
-          choices: ['📸 Send a photo — they seem genuinely nice', '😐 Say you are not comfortable but keep talking to them', '🚫 Refuse, stop talking to them, and tell a trusted adult now'] 
+        {
+          id: 'start',
+          text: 'Někdo, s kým chatuje online dva týdny, říká, že tě má opravdu rád, a žádá o soukromou fotografii. Slibuje, že nejdřív pošle svou, a říká, abys to před všemi tajil.',
+          choices: ['📸 Pošli fotografii – zdají se skutečně milí', '😐 Řekni, že se s tím necítíš, ale pokračuj v chatování', '🚫 Odmítni, přestaň s nimi mluvit a okamžitě řekni důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'end_a',  
-          title: 'The Trap',             
-          text: 'They never send anything back. Instead they demand more photos or they will share yours with everyone. You are trapped. This is called sextortion.', 
-          lesson: 'Sending private photos to someone you only know online is extremely dangerous. Sextortion — blackmailing with images — is a crime. If this happens, tell a trusted adult immediately.' 
+        {
+          id: 'end_a',
+          title: 'Past',
+          text: 'Nikdy nic nepošlou zpět. Místo toho požadují více fotografií, nebo tvou sdílí se všemi. Jsi v pasti. Tomu se říká sextortion.',
+          lesson: 'Posílání soukromých fotografií někomu, koho znáš pouze online, je extrémně nebezpečné. Sextortion – vydírání s obrázky – je trestný čin. Pokud se to stane, okamžitě řekni důvěryhodné dospělé osobě.'
         },
-        { 
-          id: 'mid_b',  
-          text: '"If you do not send one, you obviously do not trust me." They say the whole thing is over if you refuse. You feel confused and pressured.', 
-          choices: ['📸 Give in and send a photo to keep the peace', '🚫 Block them and tell a trusted adult immediately'] 
+        {
+          id: 'mid_b',
+          text: '„Pokud mi nepošleš fotografii, očividně mi nevěříš." Říkají, že je se vším konec, pokud odmítneš. Cítíš se zmaten a pod tlakem.',
+          choices: ['📸 Povolí a pošli fotografii, aby byl klid', '🚫 Zablokuj ho a okamžitě řekni důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'end_b1', 
-          title: 'The Trap (Part 2)',    
-          text: 'You send the photo and the blackmail starts immediately. You realise this person planned this from the very first message.', 
-          lesson: 'Healthy relationships never involve ultimatums. "Send a photo or we are done" is a major warning sign of a predator. Tell a trusted adult if this ever happens.' 
+        {
+          id: 'end_b1',
+          title: 'Past (část 2)',
+          text: 'Pošleš fotografii a vydírání začne okamžitě. Uvědomíš si, že tato osoba to plánovala od první zprávy.',
+          lesson: 'Zdravé vztahy nikdy nezahrnují ultimáta. „Pošli fotografii, nebo je konec" je hlavní varovný signál predátora. Pokud se to kdy stane, řekni důvěryhodné dospělé osobě.'
         },
-        { 
-          id: 'end_b2', 
-          title: 'Good Instincts',       
-          text: 'You block the account and tell a trusted adult. They help report it to the platform and explain this is a classic grooming tactic used by criminals.', 
-          lesson: 'Refusing pressure and involving a trusted adult is always right. You were being manipulated — recognising it and acting takes real courage.' 
+        {
+          id: 'end_b2',
+          title: 'Dobrý instinkt',
+          text: 'Zablokuješ účet a řekneš to důvěryhodné dospělé osobě. Pomůže to nahlásit na platformě a vysvětlí, že se jedná o klasickou grooming taktiku používanou zločinci.',
+          lesson: 'Odmítnutí tlaku a zapojení důvěryhodné dospělé osoby je vždy správné. Byl jsi manipulován – rozpoznání toho a jednání vyžaduje skutečnou odvahu.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'A trusted adult looks at the conversation and is very concerned. They explain this looks like grooming — someone pretending to be friendly to gain your trust. They want to report it.', 
-          choices: ['📋 Share the full conversation history to strengthen the report', '😳 Leave out some details because you feel embarrassed'] 
+        {
+          id: 'mid_c',
+          text: 'Důvěryhodná dospělá osoba se podívá na konverzaci a je velmi znepokojená. Vysvětlí, že to vypadá jako grooming – někdo předstírající přátelskost, aby získal tvou důvěru. Chce to nahlásit.',
+          choices: ['📋 Sdílej celou historii konverzace, aby bylo hlášení silnější', '😳 Vynech některé detaily, protože se stydíš']
         },
-        { 
-          id: 'end_c1', 
-          title: 'Full Disclosure',      
-          text: 'With full evidence, the adult and platform take strong action. The account is removed and reported to authorities who can investigate properly.', 
-          lesson: 'Sharing the full story with a trusted adult — even embarrassing parts — gives them the best chance to protect you and stop the criminal.' 
+        {
+          id: 'end_c1',
+          title: 'Úplné přiznání',
+          text: 'S úplnými důkazy dospělá osoba a platforma podniknou razantní kroky. Účet je odstraněn a nahlášen úřadům, které mohou řádně vyšetřovat.',
+          lesson: 'Sdílení celého příběhu s důvěryhodnou dospělou osobou – i trapných části – jim dává nejlepší šanci tě chránit a zastavit zločince.'
         },
-        { 
-          id: 'end_c2', 
-          title: 'Partial Report',       
-          text: 'Some protective action is taken with limited details. You are safer, but the full picture would have helped the investigation much more.', 
-          lesson: 'You were brave to speak up. Sharing all the details — even embarrassing ones — helps adults fully protect you and stop it happening to others.' 
+        {
+          id: 'end_c2',
+          title: 'Částečné hlášení',
+          text: 'S omezenými detaily jsou přijata ochranná opatření. Jsi bezpečnější, ale celkový obraz by vyšetřování pomohl mnohem více.',
+          lesson: 'Byl jsi statečný, že jsi promluvil. Sdílení všech detailů – i trapných – pomáhá dospělým tě plně chránit a zabránit tomu, aby se to stalo ostatním.'
         },
       ],
     },
     {
-      id: 7, title: 'The Helpful Stranger', emoji: '🕵️', topic: 'Online Grooming',
+      id: 7, title: 'Nápomocný cizinec', emoji: '🕵️', topic: 'Online grooming',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone in a game chat says they are 14 and has been messaging you for a week. They now ask where you go to school, your home address, and what time you get home alone each day. What do you do?', 
-          choices: ['💬 Answer the questions — they seem like a normal kid', '🤔 Give vague answers and keep chatting', '🚫 Stop responding, block them, and tell a trusted adult now'] 
+        {
+          id: 'start',
+          text: 'Někdo v herním chatu říká, že je mu 14 let, a posílá ti zprávy týden. Nyní se ptá, kam chodíš do školy, na tvou domácí adresu a v kolik hodin se vracíš domů sám každý den. Co uděláš?',
+          choices: ['💬 Odpověz na otázky – zdají se jako normální dítě', '🤔 Dej vágní odpovědi a pokračuj v chatování', '🚫 Přestaň reagovat, zablokuj ho a okamžitě řekni důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'end_a',  
-          title: 'Too Much Information', 
-          text: 'Over the next week they know your school, your schedule, and your address. They suggest meeting up in person. You realise something is very wrong.', 
-          lesson: 'Anyone asking for your home address, school name, or daily schedule online is a serious danger signal — even if they claim to be your age.' 
+        {
+          id: 'end_a',
+          title: 'Příliš mnoho informací',
+          text: 'Během příštího týdne znají tvou školu, rozvrh a adresu. Navrhnou osobní setkání. Uvědomíš si, že je něco velmi špatně.',
+          lesson: 'Kdokoli se ptá online na tvou domácí adresu, název školy nebo denní rozvrh je vážný varovný signál – i když tvrdí, že je tvého věku.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'You give vague answers but they keep pushing harder and now ask for your phone number. Something feels off, but you do not want to seem rude.', 
-          choices: ['📱 Give your number — they have been so kind', '🚫 Block them and tell a trusted adult'] 
+        {
+          id: 'mid_b',
+          text: 'Daješ vágní odpovědi, ale tlačí stále silněji a teď žádají tvé telefonní číslo. Něco se zdá divné, ale nechceš vypadat nezdvořile.',
+          choices: ['📱 Dej jim číslo – byli tak laskavi', '🚫 Zablokuj ho a řekni to důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'end_b1', 
-          title: 'Connected Too Much',   
-          text: 'They use your number to find your other social accounts and track your activity. A trusted adult finds out and is very alarmed.', 
-          lesson: 'You do not owe anyone your phone number or personal contact details online. Anyone pushing for them has bad intentions.' 
+        {
+          id: 'end_b1',
+          title: 'Příliš propojeni',
+          text: 'Použijí tvé číslo k nalezení tvých ostatních sociálních účtů a sledování tvé aktivity. Důvěryhodná dospělá osoba se to dozví a je velmi znepokojena.',
+          lesson: 'Nikomu online nedlužíš své telefonní číslo ani osobní kontaktní údaje. Kdokoli, kdo je vymáhá, má špatné úmysly.'
         },
-        { 
-          id: 'end_b2', 
-          title: 'Trusted Instinct',     
-          text: 'A trusted adult confirms the account looks like a fake profile used by an adult. They help you report it and review your privacy settings together.', 
-          lesson: 'Acting on a gut feeling and involving a trusted adult is always the right move when something feels off online.' 
+        {
+          id: 'end_b2',
+          title: 'Důvěryhodný instinkt',
+          text: 'Důvěryhodná dospělá osoba potvrdí, že účet vypadá jako falešný profil dospělého. Pomohou ti ho nahlásit a společně zkontrolovat nastavení soukromí.',
+          lesson: 'Jednat podle střevního pocitu a zapojit důvěryhodnou dospělou osobu je vždy správný krok, když se něco online zdá špatně.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'A trusted adult reviews the conversation and is very worried. They explain this is likely a grooming attempt — an adult pretending to be a child to gain your trust.', 
-          choices: ['📋 Provide the full conversation for a proper report', '🤐 Ask to handle it quietly without involving authorities'] 
+        {
+          id: 'mid_c',
+          text: 'Důvěryhodná dospělá osoba přezkoumá konverzaci a je velmi znepokojena. Vysvětlí, že se pravděpodobně jedná o grooming pokus – dospělý předstírající, že je dítě, aby získal tvou důvěru.',
+          choices: ['📋 Poskytni celou konverzaci pro řádné hlášení', '🤐 Požádej, aby to bylo vyřízeno tiše bez zapojení úřadů']
         },
-        { 
-          id: 'end_c1', 
-          title: 'Protected and Strong', 
-          text: 'The account is reported to the platform and to the police. The adult helps you tighten your privacy settings. You may have protected yourself and other children.', 
-          lesson: 'Grooming is a serious crime. Reporting with full evidence helps authorities stop it from happening to other children.' 
+        {
+          id: 'end_c1',
+          title: 'Chráněn a silný',
+          text: 'Účet je nahlášen platformě a policii. Dospělá osoba ti pomůže zpřísnit nastavení soukromí. Možná jsi ochránil sebe i ostatní děti.',
+          lesson: 'Grooming je závažný trestný čin. Nahlášení s úplnými důkazy pomáhá úřadům zabránit tomu, aby se to stalo ostatním dětem.'
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safer but Incomplete', 
-          text: 'The account is blocked but not formally reported. You are safer, but the person may simply move on and target someone else.', 
-          lesson: 'Grooming is too serious to handle alone. Trusting adults to handle the report properly protects both you and potential future victims.' 
+        {
+          id: 'end_c2',
+          title: 'Bezpečnější, ale neúplné',
+          text: 'Účet je zablokován, ale formálně nenahlášen. Jsi bezpečnější, ale tato osoba může jednoduše přejít na dalšího a zacílit na něj.',
+          lesson: 'Grooming je příliš závažný, aby se dal řešit sám. Důvěra dospělé osobě při řádném podání hlášení chrání tebe i potenciální budoucí oběti.'
         },
       ],
     },
     {
-      id: 8, title: 'Hate in the Comments', emoji: '💬', topic: 'Hate Speech',
+      id: 8, title: 'Nenávist v komentářích', emoji: '💬', topic: 'Nenávistné projevy',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You are watching a live gaming stream and the chat fills with racist and hateful comments targeting one of the players. The comments are coming fast. The targeted player looks visibly upset.', 
-          choices: ['😂 Laugh at some comments — it is just internet humour', '😶 Watch quietly without joining in', '🚩 Report the hate speech and speak up in the chat'] 
+        {
+          id: 'start',
+          text: 'Sleduješ živý herní stream a chat se plní rasistickými a nenávistnými komentáři zaměřenými na jednoho z hráčů. Komentáře přicházejí rychle. Napadený hráč vypadá viditelně rozrušeně.',
+          choices: ['😂 Zasměj se na některých komentářích – je to jen internetový humor', '😶 Sleduj tiše bez zapojení', '🚩 Nahlásit nenávistné projevy a vyjadřovat se v chatu']
         },
-        { 
-          id: 'end_a',  
-          title: 'Not Just a Joke',      
-          text: 'You laughed. The player leaves the stream in tears. Screenshots of your comment surface later. You feel ashamed and are reported by other viewers.', 
-          lesson: 'Racial slurs and targeted hate speech are never "just internet humour." Laughing along makes you part of the harm being caused.' 
+        {
+          id: 'end_a',
+          title: 'Ne jen vtip',
+          text: 'Zasmál ses. Hráč opustí stream v slzách. Screenshots tvého komentáře se objeví později. Cítíš stud a ostatní diváci tě nahlásí.',
+          lesson: 'Rasistické urážky a cílené nenávistné projevy nikdy nejsou „jen internetový humor." Smát se s nimi tě dělá součástí způsobené újmy.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'You stay quiet. The targeted player disconnects from the stream. The chat celebrates chasing them away. You feel uneasy about what you just witnessed.', 
-          choices: ['💬 Post a supportive message defending the player', '❌ Close the stream and try to forget about it'] 
+        {
+          id: 'mid_b',
+          text: 'Mlčíš. Napadený hráč se odpojí od streamu. Chat slaví, že ho prohnal. Cítíš se nesvůj z toho, co jsi právě viděl.',
+          choices: ['💬 Zveřejni podpůrnou zprávu na obranu hráče', '❌ Zavři stream a zkus na to zapomenout']
         },
-        { 
-          id: 'end_b1', 
-          title: 'One Voice Changes Things', 
-          text: 'Other viewers see your message and start standing up too. The mood shifts in the chat. Multiple people report the worst offenders and some accounts get banned.', 
-          lesson: 'One person standing up in a hostile chat can shift the entire dynamic. Bystanders have real power to change the mood of a space.' 
+        {
+          id: 'end_b1',
+          title: 'Jeden hlas mění věci',
+          text: 'Ostatní diváci uvidí tvou zprávu a začnou se také stavit. Nálada v chatu se mění. Více lidí nahlásí nejhorší přestupníky a některé účty jsou zabanují.',
+          lesson: 'Jeden člověk, který se v nepřátelském chatu postaví za pravdu, může změnit celou dynamiku. Přihlížející mají skutečnou moc měnit náladu prostoru.'
         },
-        { 
-          id: 'end_b2', 
-          title: 'The Cost of Silence',  
-          text: 'You walk away, but the hate continues. The targeted player may never stream again. Your silence felt safer but contributed to the problem.', 
-          lesson: 'Walking away protects your own wellbeing, but reporting hate speech before you go helps prevent it from continuing.' 
+        {
+          id: 'end_b2',
+          title: 'Cena mlčení',
+          text: 'Odejdeš, ale nenávist pokračuje. Napadený hráč možná nikdy nebude streamovat znovu. Tvé mlčení se zdálo bezpečnější, ale přispělo k problému.',
+          lesson: 'Odejít chrání tvoji pohodu, ale nahlášení nenávistných projevů, než odejdeš, pomáhá zabránit jejich pokračování.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'You report the worst comments and post a supportive message. Several other viewers follow your lead and report too. The player notices and feels less alone.', 
-          choices: ['📣 Also talk to a trusted adult or teacher about what you saw', '✅ You have done enough — leave the rest to the platform'] 
+        {
+          id: 'mid_c',
+          text: 'Nahlásíš nejhorší komentáře a zveřejníš podpůrnou zprávu. Několik dalších diváků následuje tvůj příklad a také nahlásí. Hráč si toho všimne a cítí se méně sám.',
+          choices: ['📣 Pohovor také s důvěryhodnou dospělou osobou nebo učitelem o tom, co jsi viděl', '✅ Udělal jsi dost – nech zbytek na platformě']
         },
-        { 
-          id: 'end_c1', 
-          title: 'Ripple Effect',        
-          text: 'Multiple reports are actioned quickly. Raising awareness with a trusted adult about hate speech in gaming spaces helps create broader change.', 
-          lesson: 'Reporting hate speech AND raising awareness with trusted adults makes platforms safer for everyone — now and in the future.' 
+        {
+          id: 'end_c1',
+          title: 'Vlnový efekt',
+          text: 'Více hlášení je rychle zpracováno. Zvyšování povědomí o nenávistných projevech v herních prostorech u důvěryhodné dospělé osoby pomáhá vytvářet širší změnu.',
+          lesson: 'Nahlášení nenávistných projevů A zvyšování povědomí u důvěryhodných dospělých dělá platformy bezpečnějšími pro všechny – nyní i v budoucnu.'
         },
-        { 
-          id: 'end_c2', 
-          title: 'Good Citizen',         
-          text: 'Reports are actioned and some accounts are flagged. The player later thanks you for standing up in the chat.', 
-          lesson: 'Reporting hate speech AND speaking up in the moment is a powerful combination. Well done for taking action!' 
+        {
+          id: 'end_c2',
+          title: 'Dobrý občan',
+          text: 'Hlášení jsou zpracována a některé účty jsou označeny. Hráč ti později poděkuje za to, že ses ozval v chatu.',
+          lesson: 'Nahlášení nenávistných projevů A vyjadřování se v daném okamžiku je mocná kombinace. Výborně, žes podnikl kroky!'
         },
       ],
     },
     {
-      id: 9, title: 'The Call-Out Post', emoji: '📣', topic: 'False Rumours Online',
+      id: 9, title: 'Příspěvek s obviněním', emoji: '📣', topic: 'Falešné fámy online',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'Someone from school posts completely false rumours about you on social media. It is spreading fast — people are sharing it and writing mean comments. You do not know who started it and you are very upset.', 
-          choices: ['😡 Post an angry response to publicly defend yourself', '💬 Message every person you know to tell them the truth', '📸 Screenshot everything and tell a trusted adult straight away'] 
+        {
+          id: 'start',
+          text: 'Někdo ze školy zveřejní na sociálních sítích o tobě zcela nepravdivé fámy. Rychle se to šíří – lidé to sdílejí a píšou zlé komentáře. Nevíš, kdo to zahájil, a jsi velmi rozrušen.',
+          choices: ['😡 Zveřejni rozzlobenou odpověď, abys se veřejně bránil', '💬 Napiš každému, koho znáš, abys jim řekl pravdu', '📸 Vyfotograf vše a okamžitě řekni důvěryhodné dospělé osobě']
         },
-        { 
-          id: 'mid_a',  
-          text: 'Your response goes viral. People argue about it. The original poster knows they got to you and posts even more, enjoying the reaction.', 
-          choices: ['💢 Keep fighting back to clear your name', '🗑️ Delete your response and step away'] 
+        {
+          id: 'mid_a',
+          text: 'Tvá odpověď se stane virální. Lidé se o ní hádají. Původní pisatel ví, že tě zasáhl, a zveřejňuje ještě více, protože si reakce užívá.',
+          choices: ['💢 Pokračuj v boji, abys vyčistil své jméno', '🗑️ Smaž svou odpověď a ucouvni']
         },
-        { 
-          id: 'end_a1', 
-          title: 'Playing Their Game',   
-          text: 'The argument spirals badly. Teachers get involved. Both of you face school consequences — even though they started it.', 
-          lesson: 'Reacting angrily to false rumours online feeds the drama and puts you at risk of consequences too. Do not give them the reaction they want.' 
+        {
+          id: 'end_a1',
+          title: 'Hraješ jejich hru',
+          text: 'Hádka se špatně spiráluje. Učitelé se zapojí. Oba čelíte školním důsledkům – i když oni to zahájili.',
+          lesson: 'Rozzlobená reakce na falešné fámy online živí drama a vystavuje tě také riziku důsledků. Nedávej jim reakci, kterou chtějí.'
         },
-        { 
-          id: 'end_a2', 
-          title: 'Step Away',            
-          text: 'Deleting your response was smart. The drama slowly dies down, but the original post stays up without any real consequence for the person who posted it.', 
-          lesson: 'Deleting a reactive post is a smart move. Pair it with reporting the original content and involving a trusted adult for a real resolution.' 
+        {
+          id: 'end_a2',
+          title: 'Ustoupit',
+          text: 'Smazání odpovědi bylo chytré. Drama se pomalu uklidní, ale původní příspěvek zůstává nahoře bez jakéhokoli skutečného důsledku pro osobu, která ho zveřejnila.',
+          lesson: 'Smazání reaktivního příspěvku je chytrý tah. Doplň ho nahlášením původního obsahu a zapojením důvěryhodné dospělé osoby pro skutečné řešení.'
         },
-        { 
-          id: 'end_b',  
-          title: 'Damage Control',       
-          text: 'You spend hours messaging people. Some believe you; others do not. It is exhausting and the post is still up, reaching new people all the time.', 
-          lesson: 'Messaging everyone individually is draining and often ineffective. Reporting the post and involving a trusted adult is faster and more powerful.' 
+        {
+          id: 'end_b',
+          title: 'Kontrola škod',
+          text: 'Strávíš hodiny psaním lidem. Někteří ti věří; jiní ne. Je to vyčerpávající a příspěvek je stále nahoře, dosahující stále nové lidi.',
+          lesson: 'Psaní každému individuálně je vyčerpávající a často neúčinné. Nahlášení příspěvku a zapojení důvěryhodné dospělé osoby je rychlejší a mocnější.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'The trusted adult helps you report the post for harassment. It gets taken down quickly. Together you figure out who most likely posted it.', 
-          choices: ['🤝 Agree to a mediated conversation with the person who posted it', '🚫 Block them and move on now the post is down'] 
+        {
+          id: 'mid_c',
+          text: 'Důvěryhodná dospělá osoba ti pomůže nahlásit příspěvek pro obtěžování. Rychle je stažen. Společně přijdete na to, kdo ho s největší pravděpodobností zveřejnil.',
+          choices: ['🤝 Souhlasit s zprostředkovaným rozhovorem s osobou, která to zveřejnila', '🚫 Zablokuj ho a jdi dál, když je příspěvek smazán']
         },
-        { 
-          id: 'end_c1', 
-          title: 'Real Resolution',      
-          text: 'A mediated conversation with adult support uncovers what was behind the rumour. The other person apologises. The school creates new guidelines to prevent future incidents.', 
-          lesson: 'Documenting, reporting, and — when safe — addressing the root cause leads to the best and most lasting outcomes.' 
+        {
+          id: 'end_c1',
+          title: 'Skutečné řešení',
+          text: 'Zprostředkovaný rozhovor s podporou dospělé osoby odhalí, co stálo za fámou. Druhá osoba se omluví. Škola vytvoří nová pravidla, aby zabránila budoucím incidentům.',
+          lesson: 'Dokumentování, nahlášení a – když je to bezpečné – řešení základní příčiny vede k nejlepším a nejtrvalejším výsledkům.'
         },
-        { 
-          id: 'end_c2', 
-          title: 'Safe and Resolved',    
-          text: 'The post is removed and you are protected. Blocking keeps you safe going forward. A strong outcome through the right actions.', 
-          lesson: 'Getting a harmful post removed quickly through adult help is a great outcome. Blocking to stay safe is a smart boundary.' 
+        {
+          id: 'end_c2',
+          title: 'Bezpečně a vyřešeno',
+          text: 'Příspěvek je odstraněn a jsi chráněn. Blokování tě chrání do budoucna. Silný výsledek správnými kroky.',
+          lesson: 'Rychlé odstranění škodlivého příspěvku pomocí dospělé osoby je skvělý výsledek. Blokování pro bezpečnost je chytrá hranice.'
         },
       ],
     },
     {
-      id: 10, title: 'Password Pressure', emoji: '🔐', topic: 'Digital Relationship Abuse',
+      id: 10, title: 'Tlak na heslo', emoji: '🔐', topic: 'Digitální zneužívání ve vztahu',
       nodes: [
-        { 
-          id: 'start',  
-          text: 'You have been in a relationship for two months. Your partner says: "If you really loved me and trusted me, you would give me your password so I can check your messages." You feel uncomfortable. What do you do?', 
-          choices: ['🔑 Give them your password — you have nothing to hide', '🤥 Give a fake password to stop the argument', '🗣️ Explain calmly that healthy relationships do not need password sharing'] 
+        {
+          id: 'start',
+          text: 'Jsi ve vztahu dva měsíce. Tvůj partner říká: „Kdybys mě skutečně miloval a věřil mi, dal bys mi heslo, abych mohl kontrolovat tvé zprávy." Cítíš se nepříjemně. Co uděláš?',
+          choices: ['🔑 Dej mu heslo – nemáš co skrývat', '🤥 Dej falešné heslo, aby přestala hádka', '🗣️ Klidně vysvětli, že zdravé vztahy nepotřebují sdílení hesel']
         },
-        { 
-          id: 'end_a',  
-          title: 'The Control Begins',   text: 'Your partner reads all your messages and uses your accounts to message your friends. They accuse you of things based on misread conversations. The control escalates.', 
-          lesson: 'A partner demanding your passwords is a form of digital relationship abuse. No healthy relationship requires this. Talk to a trusted adult if this happens to you.' 
+        {
+          id: 'end_a',
+          title: 'Kontrola začíná',
+          text: 'Partner čte všechny tvé zprávy a používá tvé účty k psaní tvým přátelům. Obviňuje tě z věcí na základě nesprávně pochopených konverzací. Kontrola se stupňuje.',
+          lesson: 'Partner vyžadující hesla je formou digitálního zneužívání ve vztahu. Žádný zdravý vztah to nevyžaduje. Pokud se to stane tobě, pohovoř s důvěryhodnou dospělou osobou.'
         },
-        { 
-          id: 'mid_b',  
-          text: 'Your partner figures out the password is fake and gets very angry, accusing you of lying. The pressure doubles and they demand the real one.', 
-          choices: ['🔑 Give in and share the real password', '🚪 End the relationship and tell a trusted adult about the pressure'] 
+        {
+          id: 'mid_b',
+          text: 'Tvůj partner přijde na to, že heslo je falešné, a velmi se rozzlobí, obviňuje tě ze lhaní. Tlak se zdvojnásobí a požaduje skutečné heslo.',
+          choices: ['🔑 Povolí a sdílej skutečné heslo', '🚪 Ukonči vztah a řekni důvěryhodné dospělé osobě o tlaku']
         },
-        { 
-          id: 'end_b1', 
-          title: 'Trapped',              
-          text: 'Once they have access they use it to control who you talk to. This pattern of controlling behaviour escalates further and further.', 
-          lesson: 'Giving in to digital control rarely ends the problem — it usually makes the controlling behaviour escalate over time.' },
-        { 
-          id: 'end_b2', 
-          title: 'Breaking Free',        
-          text: 'Leaving a controlling relationship is hard but right. A trusted adult confirms this is digital abuse and helps you understand what healthy relationship boundaries look like.', 
-          lesson: 'Recognising and leaving controlling behaviour — even in a relationship — takes real courage. It is always the right call for your safety.'
+        {
+          id: 'end_b1',
+          title: 'V pasti',
+          text: 'Jakmile mají přístup, používají ho ke kontrole toho, s kým mluvíš. Tento vzorec kontrolního chování se stále více stupňuje.',
+          lesson: 'Podvolit se digitální kontrole zřídka problém ukončí – obvykle způsobuje, že se kontrolní chování v průběhu času stupňuje.'
         },
-        { 
-          id: 'mid_c',  
-          text: 'Your partner reacts badly, saying you obviously do not love them. You hold your ground, but they keep pushing and the pressure is building.', 
-          choices: ['💪 Hold your boundary and talk to a trusted adult about the pressure', '😔 Eventually share your password just to calm things down'] 
+        {
+          id: 'end_b2',
+          title: 'Osvobození',
+          text: 'Opustit kontrolující vztah je těžké, ale správné. Důvěryhodná dospělá osoba potvrdí, že se jedná o digitální zneužívání, a pomůže ti pochopit, jak vypadají zdravé hranice ve vztahu.',
+          lesson: 'Rozpoznání a opuštění kontrolního chování – i ve vztahu – vyžaduje skutečnou odvahu. Pro tvou bezpečnost je to vždy správné rozhodnutí.'
         },
-        { 
-          id: 'end_c1', 
-          title: 'Healthy Boundaries',   
-          text: 'A trusted adult affirms that demanding passwords is control, not love. With their support, you make a clear decision about the relationship on your own terms.', 
-          lesson: 'A good partner respects your privacy. Demanding passwords is a red flag for a controlling relationship. You deserve a relationship built on trust, not surveillance.' 
+        {
+          id: 'mid_c',
+          text: 'Tvůj partner reaguje špatně a říká, že ho očividně nemilujete. Držíš svůj postoj, ale stále tlačí a tlak se stupňuje.',
+          choices: ['💪 Drž svou hranici a pohovoř s důvěryhodnou dospělou osobou o tlaku', '😔 Nakonec sdílej heslo, jen aby byl klid']
         },
-        { 
-          id: 'end_c2', 
-          title: 'Temporary Peace',      
-          text: 'You feel relieved short-term but the controlling behaviour continues — now they expect this going forward. The demand for more access grows.', 
-          lesson: 'Giving in to password pressure does not resolve the control issue. It sets a precedent. Controlling behaviour needs to be addressed, not accommodated.' 
+        {
+          id: 'end_c1',
+          title: 'Zdravé hranice',
+          text: 'Důvěryhodná dospělá osoba potvrdí, že vyžadování hesel je kontrola, ne láska. S jejich podporou uděláš jasné rozhodnutí o vztahu za svých vlastních podmínek.',
+          lesson: 'Dobrý partner respektuje tvé soukromí. Vyžadování hesel je červená vlajka pro kontrolující vztah. Zasloužíš si vztah postavený na důvěře, ne dohledu.'
+        },
+        {
+          id: 'end_c2',
+          title: 'Dočasný klid',
+          text: 'Krátkodobě se cítíš v úlevou, ale kontrolní chování pokračuje – teď to od tebe očekávají i nadále. Požadavek na větší přístup roste.',
+          lesson: 'Podvoluji se tlaku na heslo nevyřeší problém kontroly. Stanovuje precedens. Kontrolní chování je třeba řešit, ne tolerovat.'
         },
       ],
     },

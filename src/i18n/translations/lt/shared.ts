@@ -3,378 +3,395 @@
 // ---------------------------------------------------------------------------
 // Shared UI translations — navigation, layout, labels, 404
 // ---------------------------------------------------------------------------
-//
-// Edit this file for any text that is not specific to a single module.
-// Module-specific content lives in the per-module files (contentDC.ts, etc.).
-// ---------------------------------------------------------------------------
 
 export const shared = {
-  nav: {
-    home: 'Pradžia',
-    about: 'Apie projektą',
-    learningHub: 'Mokymosi centras',
-  },
 
-  footer: {
-    navigation: 'Navigacija',
-    learningModules: 'Mokymosi moduliai',
-    tagline:
-      'Ugdykite išmaniuosius ir saugius įpročius internete su pamokomis, iššūkiais ir žaidimais, skirtais pradinių klasių mokiniams.',
-    madeWith: 'Sukurta su parama',
-  },
-
-  hero: {
-    subtitle:
-      'Ugdykite išmaniuosius ir saugius įpročius internete su pamokomis, iššūkiais ir žaidimais, skirtais pradinių klasių mokiniams.',
-    explore: 'Naršyti mokymosi centrą',
-    moreInfo: 'Daugiau informacijos',
-  },
-
-  home: {
-    title: 'Pradžia',
-    statModulesLabel: 'Mokymosi',
-    statModulesLabel2: 'Moduliai',
-    statChallengesLabel: 'Interaktyvūs',
-    statChallengesLabel2: 'Iššūkiai',
-    statGamesLabel: 'Kibernetiniai',
-    statGamesLabel2: 'Žaidimai',
-
-    learningModulesTitle: 'Mokymosi moduliai',
-    learningModulesText:
-      'Suteikite savo mokiniams skaitmeninio raštingumo įgūdžių, reikalingų saugiai ir atsakingai naršyti šiandieniniame prijungtame pasaulyje. Mūsų septyni struktūruoti mokymosi moduliai veda besimokančiuosius žingsnis po žingsnio – nuo pagrindinių konceptų, tokių kaip skaitmeninė pilietybė ir privatumas internete, iki pažangesnių temų, pavyzdžiui, sukčiavimo bandymų atpažinimo ir socialinės inžinerijos taktikų. Kiekvienas modulis derina aiškius paaiškinimus su praktinėmis veiklomis, padarydamas sudėtingus kibernetinio saugumo konceptus prieinamus ir įsimintinus nepriklausomai nuo ankstesnės technologinės patirties. Moduliai suprojektuoti atsižvelgiant į klasės lankstumą – juos galima dėstyti nuosekliai kaip visą kursą arba individualiai integruoti į esamus mokymo planus.',
-
-    challengesTitle: 'Interaktyvūs iššūkiai',
-    challengesText:
-      'Paverskite žinias veiksmais su scenarijais pagrįstais iššūkiais, kurie vaikus pastato į problemų sprendėjų vaidmenį. Kiekvienas iššūkis pateikia realistišką situaciją – įtartiną el. laišką, neapsaugotą paskyrą, apgaulingą nuorodą – ir prašo vaikus mąstyti kritiškai, priimti sprendimus ir stebėti pasekmes. Momentinis grįžtamasis ryšys padeda besimokančiesiems suprasti ne tik teisingą atsakymą, bet ir kodėl jis teisingas, stiprinant ilgalaikį supratimą vietoje mechaninio įsiminimo. Kaip pedagogas, jūs gaunate aiškų langą į kiekvieno vaiko samprotavimą, todėl šie iššūkiai yra tokie pat naudingi formuojamajam vertinimui kaip ir įsitraukimui.',
-
-    gamesTitle: 'Kibernetinio saugumo žaidimai',
-    gamesText:
-      'Mokymasis įsitvirtina, kai jis yra smagus – o mūsų kibernetinio saugumo žaidimai sukurti būtent tuo tikslu. Apimantys viską nuo slaptažodžių saugumo iki internetinių grėsmių atpažinimo, kiekvienas žaidimas paverčia pagrindinius mokymo plano konceptus žaidimais grįstais patyrimais, prie kurių vaikai tikrai nori grįžti. Nesvarbu, ar naudojami kaip apšilimas, atlygis, ar pilnavertė pamokos veikla, žaidimai išlaiko besimokančiuosius motyvuotus, tyliai stiprinant svarbiausius įgūdžius. Tinkami skirtingo amžiaus ir gebėjimų lygiams, juos lengva paleisti klasėje, kompiuterių laboratorijoje arba kaip savarankišką namų veiklą.',
-
-    wantToKnowMore: 'Norite sužinoti daugiau?',
-    wantToKnowMoreSub: 'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką.',
-    aboutInitiative: 'Apie šią iniciatyvą',
-  },
-
-  about: {
-    title: 'Apie projektą',
-    subtitle:
-      'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką. Susipažinkite su mūsų mokymosi moduliais, skirtais mokyti asmenis apie skaitmeninę pilietybę, autentifikavimą, duomenų privatumą ir kt.',
-
-    missionTitle: 'Mūsų misija',
-    missionP1:
-      'Internetas, išmanieji telefonai ir socialiniai tinklai dabar yra natūrali vaikų kasdieninio gyvenimo dalis – pilna galimybių, bet taip pat ir realių pavojų. Kai jauni žmonės praleidžia daugiau laiko internete, kibernetinis saugumas tapo būtinu gyvenimo įgūdžiu, o ne tik specialistų tema.',
-    missionP2:
-      'Tačiau daugelis pedagogų susiduria su tikru iššūkiu: be specializuoto mokymo ar paruoštos naudoti medžiagos, šių temų pristatymas klasėje aiškiu, amžiui tinkamu būdu gali atrodyti bauginančiai. Būtent todėl ši platforma egzistuoja.',
-    missionP3:
-      'Mes teikiame prieinamus, patrauklius išteklius, sukurtus specialiai mokytojams ir vaikams, kad kiekviena klasė – nepriklausomai nuo techninio išsilavinimo – galėtų suteikti jauniems žmonėms žinių, pasitikėjimo savimi ir praktinių įgūdžių tyrinėti skaitmeninį pasaulį saugiai ir atsakingai.',
-
-    partnersTitle: 'Iniciatyvos partneriai',
-    uniLiechtenstein: 'Lichtenšteino universitetas',
-    uniLiechtensteinDesc:
-      'Tyrimus skatinanti institucija, turinti informacinių sistemų ir skaitmeninių technologijų patirtį, Lichtenšteino universitetas į projektą įneša tvirtą taikomųjų technologijų tyrimų pagrindą, padėdamas formuoti įrodymais pagrįstus kibernetinio saugumo ugdymo metodus.',
-    cyberSecurityHub: 'CyberSecurity Hub',
-    cyberSecurityHubDesc:
-      'Specializuota kibernetinio saugumo organizacija, orientuota į skaitmeninio saugumo žinių prieinamumą visiems. „CyberSecurity Hub" skatina projekto edukacinį turinį ir informavimą, užtikrindamas, kad ištekliai būtų praktiški, patrauklūs ir aktualūs tikram naudojimui klasėje.',
-    uniInlandNorway: 'Inland Norway University of Applied Sciences',
-    uniInlandNorwayDesc:
-      'Turėdama tvirtą įsipareigojimą integraciniam ir ateičiai paruoštam ugdymui, Inland Norway University of Applied Sciences prisideda pedagogine patirtimi ir mokymosi medžiagos kūrimo patirtimi, veiksminga įvairiose mokyklinėse aplinkose.',
-    uniInnsbruck: 'Insbruko universitetas',
-    uniInnsbruckDesc:
-      'Vienas iš pirmaujančių Vidurio Europos tyrimų universitetų, Insbruko universitetas į projektą įneša akademinį gilumą ir techninę kompetenciją, palaikydamas griežto, mokymo planui pritaikyto kibernetinio saugumo turinio jauniems besimokantiesiems kūrimą.',
-    vilniusUni: 'Vilniaus universitetas',
-    vilniusUniDesc:
-      'Kaip vienas seniausių ir labiausiai gerbiamų universitetų Baltijos regione, Vilniaus universitetas prisideda tiek tyrimo pajėgumais, tiek plačia regionine perspektyva, padėdamas užtikrinti, kad projekto ištekliai atspindėtų įvairius Europos klasių poreikius.',
-
-    coreValuesTitle: 'Mūsų pagrindinės vertybės',
-    scalableImpact: 'Išplečiamas poveikis',
-    scalableImpactDesc:
-      'Geras kibernetinio saugumo ugdymas neturėtų priklausyti nuo to, į kurią mokyklą vaikas eina. Aprūpindami pedagogus paruošta naudoti medžiaga ir praktiniais patarimais, mūsų ištekliai yra skirti pasiekti vaikus skirtingose mokyklose ir klasėse – plečiant pasiekiamumą nepadidėjant sudėtingumui.',
-    internationalCollab: 'Tarptautinis bendradarbiavimas',
-    internationalCollabDesc:
-      'Kibernetinės grėsmės nesustoja ties sienomis – ir mūsų metodas taip pat ne. Sujungdami pedagogus, tyrėjus ir institucijas įvairiose šalyse, kuriame turtingesnę, įvairesnę žinių bazę – kad kiekvienas mūsų sukurtas išteklius gautų naudos iš realios klasės patirties visoje Europoje.',
-    practicalAdaptable: 'Praktiškas ir pritaikomas',
-    practicalAdaptableDesc:
-      'Žinome, kad nėra dviejų vienodų klasių. Todėl kiekvienas modulis, iššūkis ir žaidimas yra sukurtas būti lankstus – lengvai integruojamas į esamas pamokas, pritaikomas skirtingiems mokymo stiliams ir prieinamas pedagogams nepriklausomai nuo jų techninio išsilavinimo.',
-    europeanCohesion: 'Europos skaitmeninė sanglauda',
-    europeanCohesionDesc:
-      'Remiantis Europos skaitmeninių kompetencijų sistema (DigComp), dirbame siekdami bendro kibernetinio saugumo raštingumo standarto jauniems besimokantiesiems visoje Europoje. Skatindami geriausios praktikos mainus tarp šalių, padedame užtikrinti, kad kiekvienas vaikas – kur jis bebūtų – turėtų prieigą prie nuoseklaus, aukštos kokybės skaitmeninio saugumo ugdymo.',
-
-    getInvolvedTitle: 'Kaip įsitraukti',
-    getInvolvedP1:
-      'Šis projektas yra atvira, besivystanti iniciatyva, ir mes tikime, kad geriausias kibernetinio saugumo ugdymas auga per bendradarbiavimą.',
-    getInvolvedP2:
-      'Nesvarbu, ar esate pedagogas su klasės patirtimi, tyrėjas, praktikuotojas ar organizacija, dirbanti su jaunais besimokančiaisiais, jūsų perspektyva svarbi – ir mes norėtume iš jūsų išgirsti. Jei turite atsiliepimų apie mūsų medžiagą, idėjų naujoms mokymosi veikloms ar partnerystės pasiūlymų, jūsų indėlis tiesiogiai formuoja, kaip šie ištekliai vystosi ir tobulėja.',
-    getInvolvedP3:
-      'Įsitraukimas yra paprastas: kreipkitės į bet kurį iš šioje svetainėje išvardintų projekto partnerių, ir dirbkime kartu, kad aukštos kokybės kibernetinio saugumo ugdymas būtų prieinamas kiekvienam vaikui.',
-  },
-
-  hub: {
-    title: 'Mokymosi centras',
-    subtitle:
-      'Tai yra centrinė erdvė visiems projekto moduliams, mokymo medžiagai ir edukaciniams ištekliams. Čia rasite paruoštų naudoti pamokų, praktinių veiklų ir patarimų, skirtų palaikyti kibernetinio saugumo ugdymą įvairiose klasių aplinkose. Visa medžiaga yra struktūruota, pritaikoma ir sukurta padėti pedagogams drąsiai supažindinti vaikus su skaitmeninio saugumo temomis. Nesvarbu, ar ieškote pilnų modulių, ar atskirų mokymo išteklių, Mokymosi centras suteikia viską, ko jums reikia, vienoje vietoje.',
-    content: 'Turinys',
-    challenge: 'Iššūkis',
-    game: 'Žaidimas',
-    parts: 'Dalys',
-    materials: 'Medžiaga',
-    videos: 'Vaizdo įrašai',
-    challenges: 'Iššūkiai',
-    games: 'Žaidimai',
-
-    partLabel: 'Dalis',
-    learningModulesAriaLabel: 'Mokymosi moduliai',
-    partsHeading: 'Dalys',
-    interactiveChallengeLabel: 'Interaktyvus iššūkis',
-    cybersecurityGameLabel: 'Kibernetinio saugumo žaidimas',
-    openChallengeCta: 'Atidaryti iššūkį',
-    playGameCta: 'Žaisti',
-    challengeFallbackTitle: 'Iššūkis',
-    challengeFallbackDescription: 'Atidarykite modulio iššūkį ir tyrinėkite veiklą.',
-    noGameTitle: 'Žaidimas nepasiekiamas',
-    noGameDescription: 'Šiam moduliui šiuo metu nėra prieinamo žaidimo.',
-    noGameCta: 'Žaidimas nepasiekiamas',
-    modulePosterAltSuffix: 'modulio plakatas',
-    moduleSummaryAriaSuffix: 'modulio santrauka',
-    partListAriaSuffix: 'dalių sąrašas',
-    expandDetailsAriaPrefix: 'Išskleisti',
-    collapseDetailsAriaPrefix: 'Sutraukti',
-    expandDetailsAriaSuffix: 'informaciją',
-
-    challengeCards: {
-      dc: {
-        description:
-          'Nuspręskite, ką saugu ir atsakinga dalintis internete – peržiūrėkite skirtingus turinio tipus ir apgalvotai pasirinkite, ką skelbti.',
-      },
-      ap: {
-        description:
-          'Išnagrinėkite šį socialinės medijos profilį tarsi būtumėte įsilaužėlis, ieškantis silpnų vietų. Kokią informaciją nukreiptumėte?',
-      },
-      at: {
-        description:
-          'Kurkite stipresnį slaptažodį raundas po raundo. Kiekvienas lygis prideda naują ingredientą jūsų slaptažodžio receptui!',
-      },
-      dp: {
-        description:
-          'Nuspręskite, kokią informaciją saugu dalintis ir ką palikti privačia. Rūšiuokite skirtingus duomenų tipus į tinkamas kategorijas, kad apsaugotumėte savo skaitmeninį pėdsaką.',
-      },
-      se: {
-        description:
-          'Tapkite žinučių detektyvu ir atpažinkite, kurios žinutės yra saugios, o kurios – sukčiavimo bandymai. Naudokite užuominas teisingam sprendimui priimti.',
-      },
-      mw: {
-        description: 'Priimkite išmintingus sprendimus, kad prietaisai išliktų sveiki ir greiti.',
-      },
-      da: {
-        description:
-          'Priimkite sprendimus. Stebėkite pasekmes. Sužinokite, kaip susidoroti su kibernetiniu patyčiomis, internetiniu spaudimu ir skaitmeniniu smurtu.',
-      },
+  layout: {
+    nav: {
+      home: 'Pradžia',
+      about: 'Apie',
+      learningHub: 'Mokymosi centras',
     },
-
-    gameCards: {
-      at: {
-        description:
-          'Patekite į fantazijos pasaulį, kur jūsų žinios apie autentifikavimą tampa pažangos raktu.',
-      },
-      dp: {
-        description:
-          'Patekite į žavingą pasaulį, kur jūsų pasirinkimai lemia, kaip gerai apsaugote savo asmeninę informaciją.',
-      },
-      se: {
-        description:
-          'Patekite į didelio pavojaus iššūkį, kur jūsų gebėjimas pastebėti apgaulę yra išlikimo raktas.',
-      },
-      mw: {
-        description:
-          'Patekite į sparčias lenktynes, kur kenkėjiškų programų supratimas suteikia jums pranašumą.',
-      },
-      da: {
-        description:
-          'Patekite į gyvybingą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų.',
-      },
+    hero: {
+      subtitle:
+      'Ugdykite išmaniuosius ir saugius įpročius internete su pamokomis, iššūkiais ir žaidimais, skirtais pradinių klasių moksleiviams.',
+      explore: 'Tyrinėkite mokymosi centrą',
+      moreInfo: 'Daugiau informacijos',
     },
-
-    moduleParts: {
-      dc: {
-        p1Title: 'Skaitmeninės aplinkos',
-        p2Title: 'Ką reiškia būti skaitmeniniu piliečiu?',
-        p3Title: 'Kaip išlikti saugiam skaitmeninėse aplinkose – privatumo nustatymai',
-        p4Title: 'Kaip elgtis išmintingai skaitmeninėse aplinkose – būti išmintingam ir atspariam',
-        p5Title:
-          'Kaip elgtis atsakingai skaitmeninėse aplinkose – gerbti save ir kitus skaitmeninėse aplinkose',
-      },
-      ap: {
-        p1Title: 'Apibrėžkime patikimų asmenų ratą',
-        p2Title: 'Kas yra priešininkas?',
-        p3Title: 'Kokias technikas naudoja užpuolikai?',
-      },
-      at: {
-        p1Title: 'Kas yra tapatybė ir kas yra skaitmeniniai ištekliai?',
-        p2Title: 'Kas yra autentifikavimas ir kodėl jis svarbus?',
-        p3Title: 'Kaip kurti stiprius naudotojo vardus ir slaptažodžius',
-        p4Title: 'Kaip saugiai tvarkyti slaptažodžius – naudojant slaptažodžių tvarkyklę',
-        p5Title: 'Kaip apsaugoti mūsų skaitmeninę tapatybę – priimti saugius ir atsakingus sprendimus',
-      },
-      dp: {
-        p1Title: 'Kas yra privatūs duomenys?',
-        p2Title: 'Dalijimasis duomenimis',
-        p3Title: 'Duomenų detektyvai – skaitmeniniai pėdsakai',
-        p4Title: 'Duomenų detektyvai – išvalykite savo skaitmeninį pėdsaką',
-      },
-      se: {
-        p1Title: 'Kas yra socialinė inžinerija?',
-        p2Title: 'Kodėl užpuolikai naudoja socialinę inžineriją?',
-        p3Title: 'Socialinės inžinerijos atpažinimas kasdieniniame kontekste',
-        p4Title: 'Savęs ir kitų apsauga nuo socialinės inžinerijos',
-      },
-      mw: {
-        p1Title: 'Kas yra kenkėjiška programa?',
-        p2Title: 'Kenkėjiškų programų tipai',
-        p3Title: 'Kenkėjiškų programų atpažinimas',
-        p4Title: 'Apsaugos priemonės nuo kenkėjiškų programų',
-      },
-      da: {
-        p1Title: 'Klaidinga informacija',
-        p2Title: 'Dezinformacija',
-        p3Title: 'Kibernetinės patyčios',
-        p4Title: 'Pavojus iš nepažįstamųjų',
-        p5Title: 'Influenceriai',
-        p6Title: 'Kaip galime susidoroti su skaitmeninių smurtautojų elgesiu?',
-      },
+    footer: {
+      navigation: 'Navigacija',
+      learningContent: 'Mokymosi turinys',
+      madeWith: 'Sukurta su parama',
     },
   },
 
-  modules: {
-    dc: {
-      title: 'Skaitmeninė pilietybė',
-      description:
-        'Skaitmeninė pilietybė padeda mokiniams naršyti internetinėse erdvėse su pasitikėjimu, empatija ir atsakomybe. Šis modulis padeda pedagogams mokyti saugių įpročių, pagarbaus bendravimo ir apgalvoto sprendimų priėmimo skaitmeninėse aplinkose.',
-    },
-    ap: {
-      title: 'Užpuoliko perspektyva',
-      description:
-        'Šis modulis padeda vaikams suprasti, kaip užpuolikai gali bandyti pelnyti jų pasitikėjimą, ir kaip priimti saugesnius sprendimus. Užpuoliko perspektyvos modulis padeda pedagogams mokyti vaikus apie taktikas, kurias priešininkai naudoja pasitikėjimui pelnyti, ir kaip šias taktikas atpažinti ir į jas reaguoti.',
-    },
-    at: {
-      title: 'Autentifikavimas',
-      description:
-        'Autentifikavimas padeda mokiniams suprasti, kaip mes internete įrodome, kas esame. Šis modulis padeda pedagogams mokyti stiprių prisijungimo įpročių, kodėl svarbus papildomas patikrinimas ir kaip apsaugoti paskyras.',
-    },
-    dp: {
-      title: 'Duomenų privatumas',
-      description:
-        'Duomenų privatumas padeda mokiniams suprasti, kokia informacija yra asmeninė, kodėl ji svarbi ir kaip atsargiai pasirinkti dalijantis internete. Šis modulis padeda pedagogams ugdyti saugų, pasitikintį sprendimų priėmimą apie asmeninius duomenis.',
-    },
-    se: {
-      title: 'Socialinė inžinerija',
-      description:
-        'Socialinė inžinerija – tai kai kas nors naudoja spaudimą, gudrybę ar klaidingą pasitikėjimą, norėdamas gauti informacijos ar prieigos. Šis modulis padeda pedagogams mokyti mokinius, kaip pastebėti manipuliavimą ir saugiai reaguoti.',
-    },
-    mw: {
-      title: 'Kenkėjiška programa',
-      description:
-        'Kenkėjiška programa yra žalinga programinė įranga, galinti sulėtinti įrenginius, vogti informaciją ar sukelti žalą. Šis modulis padeda pedagogams mokyti mokinius, kaip kenkėjiška programa plinta ir kaip išlaikyti įrenginius saugius.',
-    },
-    da: {
-      title: 'Skaitmeninis smurtas',
-      description:
-        'Skaitmeninis smurtas apima žalingą elgesį internete, pvz., grasinimus, priekabiavimą ar nepageidaujamą kontaktą. Šis modulis padeda pedagogams mokyti mokinius atpažinti nesaugų elgesį, nustatyti ribas ir ieškoti paramos.',
-    },
-  },
+  pages: {
+    home: {
+      title: 'Pradžia',
 
-  contentPage: {
-    downloadGuide: 'Atsisiųsti mokymo vadovą',
-    downloadAll: 'Atsisiųsti visą medžiagą',
-    aimTitle: 'Modulio tikslas',
-    aimShort: 'Tikslas',
-    objectivesTitle: 'Mokymosi tikslai',
-    outcomesTitle: 'Mokymosi rezultatai',
-    guideDescription: 'Šis mokymo vadovas siūlo esminį kontekstą kiekvienam šaltiniui ir pateikia aiškius aprašymus, kurie padės jums efektyviai naudoti pateiktą medžiagą savo klasėje.',
-    goalLabel: 'Tikslas:',
-    whatsIncluded: 'Kas įtraukta',
-    download: 'Atsisiųsti',
-    downloadVideo: 'Atsisiųsti vaizdo įrašą',
-    downloadSubtitles: 'Atsisiųsti subtitrus',
-    downloadPartIntro: 'Atsisiųskite visą šios modulio dalies medžiagą.',
-    downloadGuideIntro: 'Atsisiųskite šio modulio mokymo vadovą.',
-    startExploring: 'Pradėti tyrinėti',
-    stepSingular: 'Žingsnis',
-    stepPlural: 'Žingsniai',
-    materialSingular: 'Medžiaga',
-    materialPlural: 'Medžiaga',
-    videoSingular: 'Vaizdo įrašas',
-    videoPlural: 'Vaizdo įrašai',
-    challengeSingular: 'Iššūkis',
-    challengePlural: 'Iššūkiai',
-    gameSingular: 'Žaidimas',
-    gamePlural: 'Žaidimai',
-    partSingular: 'Dalis',
-    partPlural: 'Dalys',
-    moduleContent: 'Modulio turinys',
-    moduleContentSubtitle: 'Tyrinėkite kiekvieną šio modulio dalį – veiklas, medžiagą ir vaizdo įrašus mokymo tikslais.',
-    resources: 'Ištekliai',
-    activityPlan: 'Veiklų planas',
-    readingMaterials: 'Skaitymo medžiaga',
-    preparationMaterials: 'Parengiamoji medžiaga',
-    featuredVideo: 'Rekomenduojamas vaizdo įrašas',
-    downloadBundle: 'Atsisiųsti visą šios dalies medžiagą',
-    relatedModules: 'Kiti moduliai',
-    relatedModulesSubtitle: 'Tęskite mokinių kibernetinio saugumo žinių ugdymą su šiomis susijusiomis temomis.',
-    explore: 'Tyrinėti',
-    guideLabel: 'Vadovas',
-    teachersGuideTitle: 'Mokymo vadovas',
-    teachersGuideDownload: 'Atsisiųsti vadovą',
-    materialPackage: 'Medžiagos paketas',
-    materialPackageSub: 'Viskas šiai daliai, supakuota ir paruošta.',
-    downloadPart: 'Atsisiųsti paketą',
-    subtitlesSingular: 'Subtitrai',
-  },
+      statModulesLabel: 'Mokymosi \nmoduliai',
+      statChallengesLabel: 'Interaktyvūs \niššūkiai',
+      statGamesLabel: 'Kibernetinio \nsaugumo žaidimai',
 
-  gamePage: {
-    howItWorks: 'Kaip tai veikia',
-    tipLabel: 'Patarimas',
-    gameInstructions:
-      'Norint žaisti žaidimą, jūsų įrenginyje turi būti įdiegta „Roblox" programa. Paspaudę mygtuką „Žaisti", žaidimas atsidarys „Roblox" programoje. Jei „Roblox" dar neįdiegta, būsite paraginti ją pirma atsisiųsti ir įdiegti.',
-    tip: 'Geresnei patirčiai užtikrinti prieš paspaudžiant mygtuką „Žaisti" įsitikinkite, kad jūsų įrenginyje įdiegta „Roblox" programa.',
-    playGame: 'Žaisti',
-    playAriaLabel: 'Žaisti žaidimą „Roblox" programoje',
-  },
+      learningModulesTitle: 'Mokymosi \nmoduliai',
+      learningModulesText:
+        'Suteikite savo mokiniams skaitmeninio raštingumo įgūdžių, reikalingų saugiai ir atsakingai naršyti šiandienos jungtiniame pasaulyje. Septyni mūsų struktūruoti mokymosi moduliai veda mokinius žingsnis po žingsnio — nuo pagrindinių sąvokų, tokių kaip skaitmeninis pilietiškumas ir privatumas internete, iki pažangesnių temų, pvz., sukčiavimo bandymų atpažinimo ir socialinės inžinerijos taktikų. Kiekvienas modulis jungia aiškius paaiškinimus su praktinėmis veiklomis, paversdamas sudėtingas kibernetinio saugumo sąvokas prieinamomis ir lengvai įsimenomis, neatsižvelgiant į ankstesnę technologinę patirtį. Moduliai suprojektuoti atsižvelgiant į klasės lankstumą — jie gali būti mokomi nuosekliai kaip visas kursas arba integruoti po vieną į esantį mokymo planą.',
 
-  games: {
-    at: {
-      title: 'Meistro burtai: Atrakink saugyklą',
-      subtitle: 'Patekite į fantazijos pasaulį, kur jūsų žinios apie autentifikavimą tampa pažangos raktu. Pradėkite pasirinkdami stipresnį iš dviejų slaptažodžių tiltui statyti, tada susidurkite su pilies iššūkiu, kuriame išbandysite savo dviejų faktorių autentifikavimo supratimą sekdami teisingą riterį. Tęsdami identifikuokite, kurie daiktai yra skaitmeniniai, ir apsaugokite juos kurdami stiprius slaptažodžius, kiekvieną saugodami stebuklingoje knygoje. Pakartojus šį procesą, sukurkite galingus Meistro burtus ir panaudokite juos paslėptoms skrynioms atidaryti – taip įrodydami, kad įvaldėte stiprių slaptažodžių ir autentifikavimo principus, prieš grįžtant į savo namų kambarį.',
-      altText: 'Žaidimo miniatiūra',
-    },
-    dp: {
-      title: 'Perlų ir kriauklių paslaptys',
-      subtitle: 'Patekite į žavingą pasaulį, kur jūsų pasirinkimai lemia, kaip gerai apsaugote savo asmeninę informaciją. Pradėkite rūšiuodami informaciją kaip viešą arba privačią – naudodami kriaukles ir perlus nuspręskite, kuo dalintis ir kas turi likti paslėpta. Tada pereikite prie socialinių tinklų iššūkio, kuriame peržiūrėsite įrašus telefono tipo sąsajoje ir nuspręsite, ar jie saugūs dalintis, ar atskleidžia jautrius duomenis. Tęsdami sekite paslaptingą nykštuką atrasti savo skaitmeninius pėdsakus, atsakydami į klausimus apie tokias temas kaip slapukai ir VPN. Galutiniame etape reaguokite į telefono perspėjimus apie skaitmeninio pėdsako tvarkymą ir valymą – taip įrodydami duomenų privatumo supratimą prieš baigdami savo kelionę.',
-      altText: 'Žaidimo miniatiūra',
-    },
-    se: {
-      title: 'Sukčiavimas ar saugu? Nepasiduokite!',
-      subtitle: 'Patekite į didelio pavojaus iššūkį, kur jūsų gebėjimas pastebėti apgaulę yra išlikimo raktas. Pradėkite šokdami tarp platformų ir nustatydami, ar tokie pavyzdžiai kaip svetainės, žinutės ar el. laiškai yra teisėti, ar sukčiavimo bandymai – pasirinkite teisingai, kad judėtumėte į priekį, bet padarykite klaidą ir rizikuokite prarasti skydą bei nukristi. Kai iššūkis didėja, tęskite sudėtingesniu keliu, kur kiekvienas žingsnis pateikia naują scenarijų, reikalaujantį nuspręsti, ar tai sukčiavimas, saugi situacija, ar neapibrėžta. Įrodykite savo socialinės inžinerijos taktikų supratimą ir paaštrinkite instinktus naršydami šiuo pavojingu keliu.',
-      altText: 'Žaidimo miniatiūra',
-    },
-    mw: {
-      title: 'Kenkėjiškų programų lenktynių beprotybė',
-      subtitle: 'Patekite į sparčias lenktynes, kur kenkėjiškų programų supratimas suteikia jums pranašumą. Pradėkite tyrinėdami skirtingus daiktus trasoje – tokius kaip virusai, kirminai, išpirkos reikalaujančios programos ir apsaugos įrankiai kaip antivirusinė programinė įranga, ugniasienės ir atnaujinimai – kiekvienas su savo poveikiu ir realaus pasaulio reikšme. Tada minkite tris ratus, rinkdami daiktus, kurie gali arba padidinti jūsų našumą, arba sulėtinti jus, priklausomai nuo to, ar jie atstovauja grėsmes, ar apsaugą. Finišo linijoje peržiūrėkite tai, ką surinkote, ir sužinokite, kaip kiekvienas elementas susijęs su kibernetiniu saugumu realiame pasaulyje, kartu su praktiniais patarimais, kaip išlikti apsaugotiems.',
-      altText: 'Žaidimo miniatiūra',
-    },
-    da: {
-      title: 'Gerumo misija: Išgelbėkite miestą',
-      subtitle: 'Patekite į gyvybingą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų. Prisiimkite problemų sprendėjo vaidmenį, kai padediate žmonėms spręsti tokias problemas kaip kibernetinis patyčiomis, giliosios klastotės ir internetinis piktnaudžiavimas, apgalvotai pasirinkdami jų ginčų sprendimo būdus. Su kiekvienu sėkmingai išspręstu konfliktu santykiai gerėja ir miestas tampa svetingesnis. Stebėkite, kaip jūsų veiksmai keičia atmosferą – vedant į džiaugsmingą šventimą, kur bendruomenė susivienija ir kadaise tolimas maskotis tampa vis draugiškesnis.',
-      altText: 'Žaidimo miniatiūra',
-    },
-  },
+      challengesTitle: 'Interaktyvūs \niššūkiai',
+      challengesText:
+        'Pavertykite žinias veiksmais su scenarijais pagrįstais iššūkiais, kurie leidžia vaikams tapti problemų sprendėjais. Kiekvienas iššūkis pristato realistišką situaciją — įtartiną el. laišką, neapsaugotą paskyrą, apgaulingą nuorodą — ir prašo vaikus kritiškai mąstyti, priimti sprendimus ir matyti pasekmes. Nedelsiant grįžtamasis ryšys padeda besimokančiajam suprasti ne tik tai, koks yra teisingas atsakymas, bet ir kodėl, stiprinant ilgalaikį supratimą vietoj paprastinio įsiminimo. Kaip pedagogas, jūs gaunate aiškų langą į kiekvieno vaiko mąstymą, todėl šie iššūkiai yra naudingi tiek formatyviniam vertinimui, tiek mokinių įsitraukimui.',
 
-  notFound: {
-    title: '404 - Puslapis nerastas',
-    code: '404',
-    heading: 'Jūs nukrypote nuo skaitmeninio kelio!',
-    message:
-      'Ieškomo puslapio galbūt buvo atsisakyta, pakeistas jo pavadinimas arba jis laikinai nepasiekiamas. Grąžinkime jus į saugų krantą.',
-    backHome: 'Grįžti į pradžią',
-  },
+      gamesTitle: 'Kibernetinio \nsaugumo žaidimai',
+      gamesText:
+        'Mokymasis pasilieka, kai jis smagus — ir mūsų kibernetinio saugumo žaidimai sukurti lygiai su šia mintimi. Apimantys viską nuo slaptažodžių saugumo iki interneto grėsmių identifikavimo, kiekvienas žaidimas paverčia pagrindinius mokymo plano konceptus žaidimu grindžiamais išgyvenimais, prie kurių vaikai nuoširdžiai nori sugrįžti. Nesvarbu, ar naudojami kaip apšilimas, atlygis ar visa pamokos veikla, žaidimai išlaiko besimokančiuosius motyvuotus, tyliai stiprinant svarbiausius įgūdžius. Tinkami įvairaus amžiaus ir gebėjimų lygio asmenims, juos lengva paleisti klasėje, kompiuterių laboratorijoje arba kaip savarankišką namų veiklą.',
 
+      wantToKnowMore: 'Norite sužinoti daugiau?',
+      wantToKnowMoreSub: 'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką.',
+      aboutInitiative: 'Apie šią iniciatyvą',
+    },
+
+    about: {
+      title: 'Apie',
+      subtitle:
+        'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką. Susipažinkite su mūsų mokymosi moduliais, skirtais asmenims mokyti apie skaitmeninį pilietiškumą, autentifikavimą, duomenų privatumą ir daugiau.',
+
+      missionTitle: 'Mūsų misija',
+      missionP1:
+        'Internetas, išmanieji telefonai ir socialiniai tinklai dabar yra natūrali vaikų kasdienio gyvenimo dalis — pilna galimybių, bet ir realių pavojų. Jauniems žmonėms vis daugiau laiko praleidžiant internete, kibernetinis saugumas tapo būtinu gyvenimo įgūdžiu, o ne tik specialistams skirta tema.',
+      missionP2:
+        'Tačiau daugelis pedagogų susiduria su tikru iššūkiu: be specializuoto mokymo ar paruoštų naudoti medžiagų, įtraukti šias temas į pamokas aiškiu ir amžiui tinkamu būdu gali atrodyti bauginančiai. Lygiai todėl ši platforma egzistuoja.',
+      missionP3:
+        'Teikiame prieinamus, patrauklius išteklius, specialiai sukurtus mokytojams ir vaikams, kad kiekviena klasė — nepriklausomai nuo techninio išsilavinimo — galėtų suteikti jauniems žmonėms žinių, pasitikėjimo ir praktinių įgūdžių saugiai ir atsakingai tyrinėti skaitmeninį pasaulį.',
+
+      partnersTitle: 'Iniciatyvos partneriai',
+      uniLiechtenstein: 'Lichtenšteino universitetas',
+      uniLiechtensteinDesc:
+        'Moksliniais tyrimais grįsta institucija, turinti informacinių sistemų ir skaitmeninių technologijų srities kompetenciją. Lichtenšteino universitetas įneša tvirtą taikomųjų technologijų tyrimų pagrindą į projektą, padėdamas formuoti įrodymais pagrįstus požiūrius į kibernetinio saugumo ugdymą.',
+      cyberSecurityHub: 'CyberSecurity Hub',
+      cyberSecurityHubDesc:
+        'Specializuota kibernetinio saugumo organizacija, orientuota į skaitmeninio saugumo žinių prieinamumo užtikrinimą visiems. CyberSecurity Hub vadovauja projekto edukaciniam turiniui ir informavimui, užtikrindamas, kad ištekliai būtų praktiški, patrauklūs ir aktualūs tikram naudojimui klasėse.',
+      uniInlandNorway: 'Innlandet universitetas (Norvegija)',
+      uniInlandNorwayDesc:
+        'Turėdamas stiprią įsipareigojimą prie įtraukiojo ir į ateitį orientuoto ugdymo, Innlandet universitetas prisideda su pedagogine kompetencija ir patirtimi kuriant mokymosi medžiagą, kuri yra veiksminga įvairiose mokyklų aplinkose.',
+      uniInnsbruck: 'Insbruko universitetas',
+      uniInnsbruckDesc:
+        'Vienas iš pirmaujančių Vidurio Europos mokslinių tyrimų universitetų. Insbruko universitetas įneša akademinį gilumą ir techninę kompetenciją į projektą, remiant griežto, mokymo planui pritaikyto kibernetinio saugumo turinio kūrimą jauniems besimokančiajam.',
+      vilniusUni: 'Vilniaus universitetas',
+      vilniusUniDesc:
+        'Kaip vienas seniausių ir labiausiai gerbiamų universitetų Baltijos regione, Vilniaus universitetas prisideda tiek tyrimų pajėgumu, tiek plačia regionine perspektyva, padėdamas užtikrinti, kad projekto ištekliai atspindėtų įvairius Europos klasių poreikius.',
+
+      coreValuesTitle: 'Mūsų pagrindinės vertybės',
+      scalableImpact: 'Keičiamo masto poveikis',
+      scalableImpactDesc:
+        'Geras kibernetinio saugumo ugdymas neturėtų priklausyti nuo to, į kurią mokyklą vaikas eina. Aprūpindami pedagogus paruošta naudoti medžiaga ir praktiniais nurodymais, mūsų ištekliai suprojektuoti taip, kad pasiektų vaikus įvairiose mokyklose ir klasėse — augant aprėpčiai be augančio sudėtingumo.',
+      internationalCollab: 'Tarptautinis bendradarbiavimas',
+      internationalCollabDesc:
+        'Kibernetinės grėsmės nesustoja ties sienomis, ir mūsų požiūris taip pat. Jungdami pedagogus, tyrėjus ir institucijas iš skirtingų šalių, kuriame turtingesnį ir įvairesnį žinių telkinį — kad kiekvienas mūsų sukurtas išteklius naudotųsi realia klasės patirtimi visoje Europoje.',
+      practicalAdaptable: 'Praktiškas ir pritaikomas',
+      practicalAdaptableDesc:
+        'Žinome, kad nėra dviejų vienodų klasių. Todėl kiekvienas modulis, iššūkis ir žaidimas suprojektuotas taip, kad būtų lankstus — lengvai integruojamas į esamas pamokas, pritaikomas skirtingiems mokymo stiliams ir prieinamas pedagogams nepriklausomai nuo jų techninio išsilavinimo.',
+      europeanCohesion: 'Europos skaitmeninė sanglauda',
+      europeanCohesionDesc:
+        'Remiantis Europos skaitmeninių kompetencijų sistema (DigComp), dirbame link bendro kibernetinio raštingumo standarto jauniems besimokančiajam visoje Europoje. Skatindami geriausios praktikos mainus tarp šalių, padedame užtikrinti, kad kiekvienas vaikas — kur jis bebūtų — turėtų prieigą prie nuoseklaus, aukštos kokybės skaitmeninio saugumo ugdymo.',
+
+      getInvolvedTitle: 'Kaip dalyvauti',
+      getInvolvedP1:
+        'Šis projektas yra atvira, besivystanti iniciatyva, ir tikime, kad geriausias kibernetinio saugumo ugdymas auga per bendradarbiavimą.',
+      getInvolvedP2:
+        'Nesvarbu, ar esate pedagogas su klasės patirtimi, tyrėjas, praktikantas ar organizacija, dirbanti su jaunaisiais besimokančiaisiais — jūsų perspektyva svarbi, ir mes norėtume iš jūsų išgirsti. Jei turite atsiliepimų apie mūsų medžiagą, idėjų naujoms mokymosi veikloms ar partnerystės pasiūlymų, jūsų indėlis tiesiogiai formuoja, kaip šie ištekliai vystosi ir tobulėja.',
+      getInvolvedP3:
+        'Dalyvauti paprasta: susisiekite su bet kuriuo šioje svetainėje nurodytu projekto partneriu ir dirbkime kartu, kad kokybiško kibernetinio saugumo ugdymas būtų prieinamas kiekvienam vaikui.',
+    },
+
+
+    hub: {
+      title: 'Mokymosi centras',
+      subtitle:
+        'Tai yra centrinis erdvė visiems projekto moduliams, mokymo medžiagai ir švietimo ištekliams. Čia rasite paruoštas naudoti pamokas, praktines veiklas ir gaires, skirtas kibernetinio saugumo ugdymui įvairiose klasės aplinkose. Visa medžiaga yra struktūruota, pritaikoma ir sukurta taip, kad padėtų pedagogams užtikrintai supažindinti vaikus su skaitmeninio saugumo temomis. Nesvarbu, ar ieškote pilnų modulių, ar atskirų mokymo išteklių, Mokymosi centras suteikia viską, ko reikia, vienoje vietoje.',
+
+      labels: {
+        goal: 'Tikslas',
+        challenge: 'Iššūkis',
+        challenges: 'Iššūkiai',
+        part: 'Dalis',
+        parts: 'Dalys',
+        step: 'Žingsnis',
+        steps: 'Žingsniai',
+        material: 'Medžiaga',
+        materials: 'Medžiagos',
+        video: 'Vaizdo įrašas',
+        videos: 'Vaizdo įrašai',
+        subtitles: 'Subtitrai',
+        game: 'Žaidimas',
+        games: 'Žaidimai',
+        activityPlan: 'Veiklos planas',
+        guide: 'Vadovas',
+        interactiveChallenge: 'Interaktyvus iššūkis',
+        cybersecurityGame: 'Kibernetinio saugumo žaidimas',
+      },
+
+      contentPage: {
+
+        download: 'Atsisiųsti',
+        downloadGuide: 'Atsisiųsti mokymo vadovą',
+        downloadAll: 'Atsisiųsti visą medžiagą',
+        downloadPackage: 'Atsisiųsti paketą',
+
+        aimTitle: 'Modulio tikslas',
+        objectivesTitle: 'Mokymosi tikslai',
+        outcomesTitle: 'Mokymosi rezultatai',
+
+        guideTitle: 'Mokymo vadovas',
+        guideDescription: 'Šis mokymo vadovas siūlo esminį kontekstą kiekvienam šaltiniui ir pateikia aiškius aprašymus, padedančius efektyviai naudoti pateiktą medžiagą savo klasėje.',
+
+        materialPackage: 'Medžiagos paketas',
+        materialPackageSub: 'Viskas šiai daliai, suarchyvuota ir paruošta.',
+
+        dividerContent: 'Kas viduje',
+        dividerMore: 'Daugiau išteklių',
+
+        moduleContent: 'Modulio turinys',
+        moduleContentSubtitle: 'Tyrinėkite kiekvieną šio modulio dalį — veiklas, medžiagą ir vaizdo įrašus, kuriais mokyti.',
+
+        relatedModules: 'Kiti moduliai',
+        relatedModulesSubtitle: 'Toliau kurkite savo mokinių kibernetinio saugumo žinias su šiomis susijusiomis temomis.',
+      },
+
+      aria: {
+        learningModulesAriaLabel: 'Mokymosi moduliai',
+        moduleSummaryAriaSuffix: 'modulio santrauka',
+        partListAriaSuffix: 'dalių sąrašas',
+        expandDetailsAriaPrefix: 'Išplėsti',
+        collapseDetailsAriaPrefix: 'Sutraukti',
+        expandDetailsAriaSuffix: 'išsamią informaciją',
+        playAriaLabel: 'Žaisti žaidimą Roblox programėlėje',
+      },
+
+      modules: {
+        dc: {
+          title: 'Skaitmeninis pilietiškumas',
+          description:
+            'Skaitmeninis pilietiškumas padeda mokiniams naršyti internetinėse erdvėse su pasitikėjimu, empatija ir atsakomybe. Šis modulis remia pedagogus mokant saugių įpročių, pagarbaus bendravimo ir apgalvoto sprendimų priėmimo skaitmeninėje aplinkoje.',
+          parts: {
+            p1: {
+              title: 'Skaitmeninės aplinkos',
+            },
+            p2: {
+              title: 'Ką reiškia būti skaitmeniniu piliečiu?',
+            },
+            p3: {
+              title: 'Kaip išlikti saugiam skaitmeninėse aplinkose – privatumo nustatymai',
+            },
+            p4: {
+              title: 'Kaip protingai elgtis skaitmeninėse aplinkose – būti išmintingam ir atspariam',
+            },
+            p5: {
+              title: 'Kaip atsakingai elgtis skaitmeninėse aplinkose – gerbti save ir kitus skaitmeninėse aplinkose',
+            },
+          },
+        },
+        ap: {
+          title: 'Užpuoliko perspektyva',
+          description:
+            'Šis modulis padeda vaikams suprasti, kaip užpuolikai gali bandyti įgyti jų pasitikėjimą ir kaip priimti saugesnius sprendimus. Užpuoliko perspektyvos modulis remia pedagogus mokant vaikus apie taktikas, kurias priešininkai naudoja pasitikėjimui įgyti, ir kaip šias taktikas atpažinti bei į jas reaguoti.',
+          parts: {
+            p1: {
+              title: 'Apibrėžkime patikimų asmenų ratą',
+            },
+            p2: {
+              title: 'Kas yra priešininkas?',
+            },
+            p3: {
+              title: 'Kokios yra užpuoliko technikos?',
+            },
+          },
+        },
+        at: {
+          title: 'Autentifikavimas',
+          description:
+            'Autentifikavimas padeda mokiniams suprasti, kaip mes internetine įrodome, kas esame. Šis modulis remia pedagogus mokant stiprių prisijungimo įpročių, kodėl svarbus papildomas patikrinimas ir kaip apsaugoti paskyras.',
+          parts: {
+            p1: {
+              title: 'Kas yra tapatybė ir kas yra skaitmeninis turtas?',
+            },
+            p2: {
+              title: 'Kas yra autentifikavimas ir kodėl jis svarbus?',
+            },
+            p3: {
+              title: 'Kaip sukurti stiprius vartotojų vardus ir slaptažodžius',
+            },
+            p4: {
+              title: 'Kaip saugiai valdyti slaptažodžius – slaptažodžių tvarkyklės naudojimas',
+            },
+            p5: {
+              title: 'Kaip apsaugoti mūsų skaitmeninę tapatybę – saugūs ir atsakingi sprendimai',
+            },
+          },
+        },
+        dp: {
+          title: 'Duomenų privatumas',
+          description:
+            'Duomenų privatumas padeda mokiniams suprasti, kokia informacija yra asmeninė, kodėl ji svarbi ir kaip priimti atsargius sprendimus dalinantis informacija internete. Šis modulis remia pedagogus kuriant saugų, užtikrintą sprendimų priėmimą dėl asmens duomenų.',
+          parts: {
+            p1: {
+              title: 'Kas yra privatūs duomenys?',
+            },
+            p2: {
+              title: 'Duomenų dalijimasis',
+            },
+            p3: {
+              title: 'Duomenų detektyvai – skaitmeniniai pėdsakai',
+            },
+            p4: {
+              title: 'Duomenų detektyvai – išvalykite savo skaitmeninį pėdsaką',
+            },
+          },
+        },
+        se: {
+          title: 'Socialinė inžinerija',
+          description:
+            'Socialinė inžinerija yra tada, kai kažkas naudoja spaudimą, gudrybes ar melagingą pasitikėjimą, norėdamas gauti informacijos ar prieigos. Šis modulis padeda pedagogams mokyti mokinius, kaip pastebėti manipuliavimą ir saugiai reaguoti.',
+          parts: {
+            p1: {
+              title: 'Kas yra socialinė inžinerija?',
+            },
+            p2: {
+              title: 'Kodėl užpuolikai naudoja socialinę inžineriją?',
+            },
+            p3: {
+              title: 'Socialinės inžinerijos atpažinimas kasdieniuose kontekstuose',
+            },
+            p4: {
+              title: 'Savęs ir kitų apsauga nuo socialinės inžinerijos',
+            },
+          },
+        },
+        mw: {
+          title: 'Kenkėjiška programinė įranga',
+          description:
+            'Kenkėjiška programinė įranga yra žalinga programinė įranga, galinti sulėtinti įrenginius, vogti informaciją ar padaryti žalos. Šis modulis padeda pedagogams mokyti mokinius, kaip plinta kenkėjiška programinė įranga ir kaip išlaikyti įrenginius saugius.',
+          parts: {
+            p1: {
+              title: 'Kas yra kenkėjiška programinė įranga?',
+            },
+            p2: {
+              title: 'Kenkėjiškos programinės įrangos tipai',
+            },
+            p3: {
+              title: 'Kenkėjiškos programinės įrangos atpažinimas',
+            },
+            p4: {
+              title: 'Apsaugos nuo kenkėjiškos programinės įrangos priemonės',
+            },
+          },
+        },
+        da: {
+          title: 'Skaitmeninis piktnaudžiavimas',
+          description:
+            'Skaitmeninis piktnaudžiavimas apima žalingą elgesį internete, pvz., grasinimus, priekabiavimą ar nepageidaujamą kontaktą. Šis modulis padeda pedagogams mokyti mokinius atpažinti nesaugų elgesį, nustatyti ribas ir rasti pagalbą.',
+          parts: {
+            p1: {
+              title: 'Dezinformacija',
+            },
+            p2: {
+              title: 'Klaidinga informacija',
+            },
+            p3: {
+              title: 'Kibernetinis patyčias',
+            },
+            p4: {
+              title: 'Nepažįstamųjų pavojus',
+            },
+            p5: {
+              title: 'Influenceriai',
+            },
+            p6: {
+              title: 'Kaip galime susidoroti su skaitmeninių piktadarių elgesiu?',
+            },
+          },
+        },
+      },
+
+      challenges: {
+        openChallengeCta: 'Atidaryti iššūkį',
+        challengeFallbackDescription: 'Atidarykite modulio iššūkį ir tyrinėkite veiklą.',
+
+        dc: {
+          description:
+            'Nuspręskite, ką saugu ir atsakinga dalytis internete, peržiūrėdami skirtingus turinio tipus ir apgalvotai pasirinkdami, ką skelbti.',
+        },
+        ap: {
+          description:
+            'Ištirkite šį socialinio tinklo profilį tarsi būtumėte hakeris, ieškantis silpnų vietų. Kokią informaciją nukreiptumėte?',
+        },
+        at: {
+          description:
+            'Kurkite stipresnį slaptažodį po vieną raundą. Kiekvienas lygis prideda naują ingredientą prie jūsų slaptažodžio recepto!',
+        },
+        dp: {
+          description:
+            'Nuspręskite, kokia informacija yra saugu dalytis, o kokią laikyti privačią. Rūšiuokite skirtingus duomenų tipus į tinkamas kategorijas, kad apsaugotumėte savo skaitmeninį pėdsaką.',
+        },
+        se: {
+          description:
+            'Tapkite žinučių detektyvu ir nustatykite, kurios žinutės yra saugios, o kurios yra sukčiavimo bandymai. Naudokite užuominas teisingam sprendimui priimti.',
+        },
+        mw: {
+          description: 'Priimkite protingus sprendimus, kad įrenginiai išliktų sveiki ir greiti.',
+        },
+        da: {
+          description:
+            'Priimkite sprendimus. Matykite pasekmes. Išmokite, kaip susidoroti su kibernetiniu priekabiavimu, spaudimu internete ir skaitmeniniu piktnaudžiavimu.',
+        },
+      },
+
+      games: {
+        playGameCta: 'Žaisti žaidimą',
+        noGame: 'Žaidimo nėra',
+        noGameDescription: 'Šiuo metu šiam moduliui nėra prieinamo žaidimo.',
+
+        howItWorks: 'Kaip tai veikia',
+        tipLabel: 'Patarimas',
+        gameInstructions:
+          'Norėdami žaisti žaidimą, turite turėti savo įrenginyje įdiegtą Roblox programėlę. Paspaudus mygtuką Žaisti, žaidimas atsidarys Roblox programoje. Jei dar neturite įdiegto Roblox, būsite paraginti jį atsisiųsti ir įdiegti.',
+        tip: 'Geresniam patyrimui prieš paspausdami mygtuką Žaisti įsitikinkite, kad jūsų įrenginyje įdiegta Roblox programėlė.',
+        playGame: 'Žaisti',
+
+        at: {
+          title: 'Meistro burtažodis: Atidaryk saugyklą',
+          subtitle: 'Ženkite į fantastinį pasaulį, kuriame jūsų autentifikavimo žinios tampa pažangos raktu. Pradėkite pasirinkdami stipresnį iš dviejų slaptažodžių tilto statybai, tada stokite į pilies iššūkį, kuriame tikrinsite savo dviejų faktorių autentifikavimo supratimą sekdami tinkamą riterį. Tęsdami nustatykite, kurie daiktai yra skaitmeniniai, ir apsaugokite juos kurdami stiprius slaptažodžius, kiekvieną iš jų saugodami magiškoj knygoj. Pakartojus šį procesą, sukurkite galingą Meistro burtažodį ir naudokite jį paslėptų skrynių atidarymui — tuo įrodydami, kad įvaldėte stiprių slaptažodžių ir autentifikavimo principus, prieš grįždami į savo namus.',
+          altText: 'Žaidimo miniatiūra',
+        },
+        dp: {
+          title: 'Perlų ir kriauklių paslaptys',
+          subtitle: 'Ženkite į žavų pasaulį, kuriame jūsų sprendimai lemia, kaip gerai apsaugote savo asmeninę informaciją. Pradėkite rūšiuodami informaciją į viešą ar privačią, naudodami kriaukles ir perlus sprendžiant, kuo turėtų būti dalijamasi ir kas turėtų likti paslėpta. Tada pereikite prie socialinių tinklų iššūkio, kuriame peržiūrėsite įrašus telefono tipo sąsajoje ir nuspręsite, ar juos saugu dalytis, ar jie atskleidžia slaptus duomenis. Tęsdami sekite paslaptingą gnomą, kad atskleistumėte savo skaitmeninius pėdsakus ir atsakytumėte į klausimus apie temas, tokias kaip slapukai ir VPN. Paskutiniame etape atsakykite į telefono pranešimus apie jūsų skaitmeninio pėdsako valdymą ir valymą, įrodydami savo duomenų privatumo supratimą prieš baigdami kelionę.',
+          altText: 'Žaidimo miniatiūra',
+        },
+        se: {
+          title: 'Sukčiavimas ar saugu? Nepasiduokite!',
+          subtitle: 'Ženkite į didelių statymų iššūkį, kuriame jūsų gebėjimas pastebėti apgaulę yra išgyvenimo raktas. Pradėkite šokdami tarp platformų ir identifikuodami, ar tokie pavyzdžiai, kaip svetainės, žinutės ar el. laiškai, yra teisėti ar sukčiavimo bandymai — rinkitės teisingai, kad judėtumėte pirmyn, tačiau suklyskite ir rizikuokite prarasti skydą bei nukristi. Iššūkiui intensyvėjant, tęskite sudėtingesniu keliu, kur kiekvienas žingsnis pristato naują scenarijų, reikalaujantį nuspręsti, ar tai sukčiavimas, saugu ar neaišku. Įrodykite savo socialinės inžinerijos taktikų suvokimą ir paaštrinkite savo instinktus naršydami šiuo pavojingu keliu.',
+          altText: 'Žaidimo miniatiūra',
+        },
+        mw: {
+          title: 'Kenkėjiškos programinės įrangos lenktynės',
+          subtitle: 'Ženkite į spartų lenktynių žaidimą, kuriame kenkėjiškos programinės įrangos supratimas suteikia jums pranašumą. Pradėkite tyrinėdami skirtingus daiktus trasoje — pvz., virusus, kirminus, išpirkos reikalaujančias programas ir apsaugines priemones, tokias kaip antivirusinė programinė įranga, ugniasienės ir naujinimai — kiekvienas su savo efektu ir realaus pasaulio reikšme. Tada skriekite per tris ratus, rinkdami daiktus, kurie gali arba sustiprinti jūsų veikimą, arba sulėtinti jus, priklausomai nuo to, ar jie atstovauja grėsmėms, ar apsaugoms. Finišo tiesiojoje peržiūrėkite, ką surinkote, ir sužinokite, kaip kiekvienas elementas susijęs su realiu kibernetiniu saugumu, kartu su praktiniais patarimais, kaip išlikti apsaugotiems.',
+          altText: 'Žaidimo miniatiūra',
+        },
+        da: {
+          title: 'Gerumo misija: Išgelbėkite miestą',
+          subtitle: 'Ženkite į gyvą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų. Prisiimkite problemų sprendėjo vaidmenį, padėdami žmonėms spręsti tokias problemas kaip kibernetinis priekabiavimas, deepfake\'ai ir piktnaudžiavimas internete, priimant apgalvotus sprendimus jų ginčams išspręsti. Su kiekvienu sėkmingai išspręstu konfliktu santykiai gerėja ir miestas tampa svetingesnis. Stebėkite, kaip jūsų veiksmai keičia atmosferą — vedant į džiugią šventę, kur bendruomenė susiburia ir kadaise tolimas maskote tampa vis draugiškesnis.',
+          altText: 'Žaidimo miniatiūra',
+        },
+      },
+    },
+
+    notFound: {
+      title: '404 – Puslapis nerastas',
+      code: '404',
+      heading: 'Jūs pasiklydote skaitmeniniame kelyje!',
+      message:
+        'Puslapis, kurio ieškote, galėjo būti pašalintas, pervadintas arba laikinai neprieinamas. Grąžinkime jus į saugius krantus.',
+      backHome: 'Grįžti į pradžią',
+    }
+  },
 }

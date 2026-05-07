@@ -6,26 +6,26 @@ import { useTranslations } from 'src/i18n/index'
 const { t } = useTranslations(Astro.currentLocale)
 ---
 
-<DefaultLayout title={t('games.da.title')}>
+<DefaultLayout title={t('pages.hub.games.da.title')}>
   <PageHeader
-      title={t('games.da.title')}
-      subtitle={t('games.da.subtitle')}
+      title={t('pages.hub.games.da.title')}
+      subtitle={t('pages.hub.games.da.subtitle')}
       underlineColor="var(--brand-DA)"
       bgType="module"
   />
   <section class="my-12">
   <div class="container mb-12">
         <div class="mb-10 flex flex-col gap-6">
-        <h2 class="mb-2">{t('gamePage.howItWorks')}</h2>
+        <h2 class="mb-2">{t('pages.hub.games.howItWorks')}</h2>
         <p>
-          {t('gamePage.gameInstructions')}
+          {t('pages.hub.games.gameInstructions')}
         </p>
         <div class="tip-card">
           <div class="tip-card__lead">
             <span class="tip-card__icon" aria-hidden="true">💬</span>
-            <strong class="tip-card__label">{t('gamePage.tipLabel')}</strong>
+            <strong class="tip-card__label">{t('pages.hub.games.tipLabel')}</strong>
           </div>
-          <div class="tip-card__body">{t('gamePage.tip')}</div>
+          <div class="tip-card__body">{t('pages.hub.games.tip')}</div>
         </div>
       </div>
     <div class="roblox-embed">
@@ -35,12 +35,12 @@ const { t } = useTranslations(Astro.currentLocale)
     <img
       src="https://cms-media.roblox.com/resize=width:1280,fit:max/GnaqqRBTcCuoRELL938w"
       class="game-thumbnail"
-      alt={t('games.da.altText')}
+      alt={t('pages.hub.games.da.altText')}
     />
 
     <div class="play-overlay">
-      <a href="roblox://placeId=85447363856674" class="button" rel="noopener noreferrer" aria-label={t('gamePage.playAriaLabel')}>
-        &#9654; {t('gamePage.playGame')}
+      <a href="roblox://placeId=85447363856674" class="button" rel="noopener noreferrer" aria-label={t('pages.hub.aria.playAriaLabel')}>
+        &#9654; {t('pages.hub.games.playGame')}
       </a>
     </div>
 

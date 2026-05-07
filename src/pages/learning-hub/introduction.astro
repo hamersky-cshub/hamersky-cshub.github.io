@@ -41,13 +41,13 @@ const modulePartsOverrides = Object.fromEntries(
     m.id,
     [
       {
-        label: t('contentPage.guideLabel'),
-        title: t('contentPage.teachersGuideTitle'),
+        label: t('pages.hub.labels.guide'),
+        title: t('pages.hub.contentPage.guideTitle'),
         href: `/learning-hub/${m.slug}/content/#teachers-guide`,
       },
       ...(modulePartsData[m.id] ?? []).map((p, i) => ({
-        label: `${t('hub.partLabel')} ${i + 1}`,
-        title: t(`hub.moduleParts.${m.id}.p${i + 1}Title`),
+        label: `${t('pages.hub.labels.part')} ${i + 1}`,
+        title: t(`pages.hub.modules.${m.id}.parts.p${i + 1}.title`),
         href: `/learning-hub/${m.slug}/content/#${p.anchorId}`,
       })),
     ],
@@ -93,7 +93,7 @@ const localizedChallenges = Object.fromEntries(
       ...challenge,
       href: localizePath(locale, challenge.href),
       title: t(`challenge${challenge.id.toUpperCase()}.title`),
-      description: t(`hub.challengeCards.${challenge.id}.description`),
+      description: t(`pages.hub.challenges.${challenge.id}.description`),
     },
   ]),
 )
@@ -104,8 +104,8 @@ const localizedGames = Object.fromEntries(
     {
       ...game,
       href: localizePath(locale, game.href),
-      title: t(`games.${game.id}.title`),
-      description: t(`hub.gameCards.${game.id}.description`),
+      title: t(`pages.hub.games.${game.id}.title`),
+      description: t(`pages.hub.games.${game.id}.subtitle`),
     },
   ]),
 )
@@ -115,8 +115,8 @@ const localizedModules = modules.map((module) => {
 
   return {
     ...module,
-    title: t(`modules.${module.id}.title`),
-    description: t(`modules.${module.id}.description`),
+    title: t(`pages.hub.modules.${module.id}.title`),
+    description: t(`pages.hub.modules.${module.id}.description`),
     url: localizePath(locale, module.url),
     challenge: localizedChallenges[module.id],
     game: localizedGames[module.id],
@@ -130,14 +130,14 @@ const localizedModules = modules.map((module) => {
 })
 ---
 
-<DefaultLayout title={t('hub.title')}>
+<DefaultLayout title={t('pages.hub.title')}>
   <PageHeader
-    title={t('hub.title')}
-    subtitle={t('hub.subtitle')}
+    title={t('pages.hub.title')}
+    subtitle={t('pages.hub.subtitle')}
     bgType="module"
   />
 
-  <section class="learning-hub-modules my-12" aria-label={t('hub.learningModulesAriaLabel')}>
+  <section class="learning-hub-modules my-12" aria-label={t('pages.hub.aria.learningModulesAriaLabel')}>
     <div class="container">
       <div class="module-stack">
         {
@@ -156,13 +156,13 @@ const localizedModules = modules.map((module) => {
                     <a href={module.url}>{module.title}</a>
                   </h2>
 
-                  <div class="module-meta" aria-label={`${module.title} ${t('hub.moduleSummaryAriaSuffix')}`}>
+                  <div class="module-meta" aria-label={`${module.title} ${t('pages.hub.aria.moduleSummaryAriaSuffix')}`}>
                     {module.parts ? (
                       <span class="meta-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
                         </svg>
-                        {t('hub.parts')}: {module.parts}
+                        {t('pages.hub.labels.parts')}: {module.parts}
                       </span>
                     ) : null}
                     {module.materials ? (
@@ -170,7 +170,7 @@ const localizedModules = modules.map((module) => {
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/>
                         </svg>
-                        {t('hub.materials')}: {module.materials}
+                        {t('pages.hub.labels.materials')}: {module.materials}
                       </span>
                     ) : null}
                     {module.videos ? (
@@ -178,7 +178,7 @@ const localizedModules = modules.map((module) => {
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
                         </svg>
-                        {t('hub.videos')}: {module.videos}
+                        {t('pages.hub.labels.videos')}: {module.videos}
                       </span>
                     ) : null}
                     {module.challenges ? (
@@ -186,7 +186,7 @@ const localizedModules = modules.map((module) => {
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
                         </svg>
-                        {t('hub.challenges')}: {module.challenges}
+                        {t('pages.hub.labels.challenges')}: {module.challenges}
                       </span>
                     ) : null}
                     {module.games ? (
@@ -194,7 +194,7 @@ const localizedModules = modules.map((module) => {
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="0.8" fill="currentColor" stroke="none"/><circle cx="17" cy="13" r="0.8" fill="currentColor" stroke="none"/><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1c0 1-0.5 2-1 2.5L19 17a3 3 0 0 1-2.5 1.5h-9A3 3 0 0 1 5 17l-2-4.5C2.5 12 2 11 2 10V9z"/>
                         </svg>
-                        {t('hub.games')}: {module.games}
+                        {t('pages.hub.labels.games')}: {module.games}
                       </span>
                     ) : null}
                   </div>
@@ -205,12 +205,12 @@ const localizedModules = modules.map((module) => {
                 <button
                   class="module-toggle"
                   aria-expanded="false"
-                  aria-label={`${t('hub.expandDetailsAriaPrefix')} ${module.title} ${t('hub.expandDetailsAriaSuffix')}`}
+                  aria-label={`${t('pages.hub.aria.expandDetailsAriaPrefix')} ${module.title} ${t('pages.hub.aria.expandDetailsAriaSuffix')}`}
                   data-module-toggle
                   data-module-title={module.title}
-                  data-expand-prefix={t('hub.expandDetailsAriaPrefix')}
-                  data-collapse-prefix={t('hub.collapseDetailsAriaPrefix')}
-                  data-details-suffix={t('hub.expandDetailsAriaSuffix')}
+                  data-expand-prefix={t('pages.hub.aria.expandDetailsAriaPrefix')}
+                  data-collapse-prefix={t('pages.hub.aria.collapseDetailsAriaPrefix')}
+                  data-details-suffix={t('pages.hub.aria.expandDetailsAriaSuffix')}
                 >
                   <svg class="toggle-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M8 5l8 7-8 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -221,8 +221,8 @@ const localizedModules = modules.map((module) => {
               <div class="module-collapsible" data-module-collapsible hidden>
                 <div class="module-divider" role="presentation"></div>
 
-                <div class="module-parts" aria-label={`${module.title} ${t('hub.partListAriaSuffix')}`}>
-                  <p class="label">{t('hub.partsHeading')}</p>
+                <div class="module-parts" aria-label={`${module.title} ${t('pages.hub.aria.partListAriaSuffix')}`}>
+                  <p class="label">{t('pages.hub.labels.parts')}</p>
                   <ol class="parts-timeline">
                     {
                       module.introParts.map((part) => (
@@ -248,23 +248,23 @@ const localizedModules = modules.map((module) => {
                 <div class="module-actions-grid">
                   <div class="activity-card-wrapper">
                     <div class="activity-card">
-                      <p class="label">{t('hub.interactiveChallengeLabel')}</p>
-                      <h3>{module.challenge?.title ?? t('hub.challengeFallbackTitle')}</h3>
+                      <p class="label">{t('pages.hub.labels.interactiveChallenge')}</p>
+                      <h3>{module.challenge?.title ?? t('pages.hub.labels.challenge')}</h3>
                       <p>
                         {module.challenge?.description ??
-                          t('hub.challengeFallbackDescription')}
+                          t('pages.hub.challenges.challengeFallbackDescription')}
                       </p>
-                      <a class="activity-cta" href={module.challenge?.href ?? module.url}>{t('hub.openChallengeCta')}</a>
+                      <a class="activity-cta" href={module.challenge?.href ?? module.url}>{t('pages.hub.challenges.openChallengeCta')}</a>
                     </div>
                   </div>
 
                   <div class="activity-card-wrapper">
                     <div class={module.game ? 'activity-card' : 'activity-card activity-card--disabled'}>
-                      <p class="label">{t('hub.cybersecurityGameLabel')}</p>
-                      <h3>{module.game?.title ?? t('hub.noGameTitle')}</h3>
+                      <p class="label">{t('pages.hub.labels.cybersecurityGame')}</p>
+                      <h3>{module.game?.title ?? t('pages.hub.games.noGame')}</h3>
                       <p>
                         {module.game?.description ??
-                          t('hub.noGameDescription')}
+                          t('pages.hub.games.noGameDescription')}
                       </p>
                       <a
                         class={module.game ? 'activity-cta' : 'activity-cta activity-cta--disabled'}
@@ -272,7 +272,7 @@ const localizedModules = modules.map((module) => {
                         aria-disabled={module.game ? 'false' : 'true'}
                         tabindex={module.game ? 0 : -1}
                       >
-                        {module.game ? t('hub.playGameCta') : t('hub.noGameCta')}
+                        {module.game ? t('pages.hub.games.playGameCta') : t('pages.hub.games.noGame')}
                       </a>
                     </div>
                   </div>
@@ -449,6 +449,7 @@ const localizedModules = modules.map((module) => {
   }
 
   .learning-hub-modules .parts-timeline {
+    --badge-width: clamp(88px, 10vw, 110px);
     list-style: none;
     margin: 0;
     padding-top: 10px;
@@ -457,10 +458,11 @@ const localizedModules = modules.map((module) => {
   }
 
   .learning-hub-modules .parts-timeline-item {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: var(--badge-width) minmax(0, 1fr);
     gap: 1rem;
     position: relative;
+    align-items: center;
   }
 
   /* dashed connector between items */
@@ -482,8 +484,8 @@ const localizedModules = modules.map((module) => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    min-width: 80px;
+    width: 100%;
+
     padding: 0.35rem 0.85rem;
     border-radius: 0.5rem;
     border: 2px solid var(--module-color);
@@ -709,9 +711,9 @@ const localizedModules = modules.map((module) => {
     }
 
     .learning-hub-modules .parts-timeline-item {
-      flex-direction: column;
-      align-items: flex-start;
+      grid-template-columns: 1fr;
       gap: 0.4rem;
+      align-items: flex-start;
     }
 
     .learning-hub-modules .parts-timeline-item + .parts-timeline-item::before {

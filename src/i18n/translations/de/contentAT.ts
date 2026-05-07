@@ -6,60 +6,28 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentAT = {
-  subtitle:
-    'Authentication helps students understand how we prove who we are online. This module supports educators in teaching strong sign-in habits, why extra verification matters, and how to keep accounts protected.',
-  aim: 'To provide core knowledge of authentication and identity management principles for protecting personal digital assets.',
+  aim: 'Grundlegende Kenntnisse der Authentifizierungs- und Identitätsverwaltungsprinzipien zum Schutz persönlicher digitaler Assets zu vermitteln.',
   objectives: [
-    'To stress the importance of secure identity management.',
-    'To introduce the concept of authentication and its different types.',
-    'To develop students\' understanding of digital assets and access control awareness.',
-    'To develop students\' knowledge and skills for creating secure usernames and passwords following recommendations and good practices.',
-    'To build students\' skills for managing passwords securely.',
+    'Die Bedeutung sicherer Identitätsverwaltung zu betonen.',
+    'Das Konzept der Authentifizierung und ihre verschiedenen Typen einzuführen.',
+    'Das Verständnis der Schülerinnen und Schüler für digitale Assets und das Bewusstsein für Zugangskontrolle zu entwickeln.',
+    'Die Kenntnisse und Fähigkeiten der Schülerinnen und Schüler zur Erstellung sicherer Benutzernamen und Passwörter gemäß Empfehlungen und bewährten Praktiken zu entwickeln.',
+    'Die Fähigkeiten der Schülerinnen und Schüler zur sicheren Verwaltung von Passwörtern aufzubauen.',
   ],
   outcomes: [
-    'I can identify my personal digital assets and explain the risks they face in both physical and digital environments.',
-    'I can explain what authentication is, why it is important, and list different types of authentications.',
-    'I can distinguish between weak and strong usernames and passwords.',
-    'I can demonstrate how to use a password manager to store passwords and justify why I made those choices.',
+    'Ich kann meine persönlichen digitalen Assets identifizieren und die Risiken erklären, denen sie in physischen und digitalen Umgebungen ausgesetzt sind.',
+    'Ich kann erklären, was Authentifizierung ist, warum sie wichtig ist, und verschiedene Arten der Authentifizierung auflisten.',
+    'Ich kann zwischen schwachen und starken Benutzernamen und Passwörtern unterscheiden.',
+    'Ich kann demonstrieren, wie ich einen Passwort-Manager zur Speicherung von Passwörtern nutze, und begründen, warum ich diese Entscheidungen getroffen habe.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Authentication Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Unterrichtsleitfaden herunterladen',
+    download: 'Unterrichtsleitfaden Authentifizierung',
   },
   parts: [
     {
-      goal: 'Help students create strong, memorable secrets and understand why reuse is risky.',
+      goal: 'Schülerinnen und Schülern helfen, starke, einprägsame Geheimnisse zu erstellen und zu verstehen, warum Wiederverwendung riskant ist.',
       bundle: {
         filename: 'Authentication Part 1 Package',
       },
@@ -67,67 +35,67 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.1.1
-            kind: 'Image',
-            name: 'Online Identity',
+            kind: 'Bild',
+            name: 'Online-Identität',
             filename: 'Image - Online Identity',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.1.2
-            kind: 'Images',
-            name: 'Examples of Personal Digital Assets',
+            kind: 'Bilder',
+            name: 'Beispiele persönlicher digitaler Assets',
             filename: 'Images - Examples of Personal Digital Assets',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.1.4
-            kind: 'Worksheet',
-            name: 'What Would Happen if ...?',
+            kind: 'Arbeitsblatt',
+            name: 'Was würde passieren, wenn...?',
             filename: 'Worksheet - What Would Happen if',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.1.5
-            kind: 'Worksheet',
-            name: 'My Digital Assets',
+            kind: 'Arbeitsblatt',
+            name: 'Meine digitalen Assets',
             filename: 'Worksheet - My Digital Assets',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'What is Digital Identity?',
+            title: 'Was ist digitale Identität?',
           },
           {
-            title: 'Understanding Digital Assets',
+            title: 'Digitale Assets verstehen',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
-        title: 'What is Digital Identity?',
+        title: 'Was ist digitale Identität?',
         supportText:
-          'Use this video to help students understand that their digital identity is made up of the information and behaviours they share online. Pause to ask which parts of their digital identity they think they can control.',
+          'Verwenden Sie dieses Video, damit Schülerinnen und Schüler verstehen, dass ihre digitale Identität aus den Informationen und Verhaltensweisen besteht, die sie online teilen. Pausieren Sie, um zu fragen, welche Teile ihrer digitalen Identität sie ihrer Meinung nach kontrollieren können.',
         downloads: {
           video: {
             filename: 'What is Digital Identity',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What is Digital Identity - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand what authentication is, why it is important, and how it helps protect their digital identity and digital assets by controlling who is allowed access.',
+        'Schülerinnen und Schülern helfen zu verstehen, was Authentifizierung ist, warum sie wichtig ist und wie sie hilft, ihre digitale Identität und digitale Assets zu schützen, indem kontrolliert wird, wem Zugang gewährt wird.',
       bundle: {
         filename: 'Authentication Part 2 Package',
       },
@@ -135,64 +103,64 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.2.1
-            kind: 'Images',
-            name: 'Real-world Authentication Examples',
+            kind: 'Bilder',
+            name: 'Authentifizierungsbeispiele aus dem realen Leben',
             filename: 'Images - Real-world Authentication Examples',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.2.3
-            kind: 'Image',
-            name: 'Logging Into a Digital System',
+            kind: 'Bild',
+            name: 'Anmeldung bei einem digitalen System',
             filename: 'Image - Logging Into a Digital System',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.2.4
-            kind: 'Worksheet',
-            name: 'Authentication in Everday Life',
+            kind: 'Arbeitsblatt',
+            name: 'Authentifizierung im Alltag',
             filename: 'Worksheet - Authentication in Everday Life',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Authentication',
+            title: 'Authentifizierung',
           },
           {
-            title: 'Understanding Types of Authentication',
+            title: 'Arten der Authentifizierung verstehen',
           },
           {
-            title: 'Applying Authentication to Digital Assets',
+            title: 'Authentifizierung auf digitale Assets anwenden',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'What is Authentication and Why is It Important?',
+        title: 'Was ist Authentifizierung und warum ist sie wichtig?',
         supportText:
-          'Use this video to introduce authentication as the everyday mechanism that guards students\' digital accounts. Pause to ask how they currently prove their identity on the apps they use most.',
+          'Verwenden Sie dieses Video, um Authentifizierung als den alltäglichen Mechanismus einzuführen, der die digitalen Konten der Schülerinnen und Schüler schützt. Pausieren Sie, um zu fragen, wie sie ihre Identität aktuell in den Apps nachweisen, die sie am häufigsten nutzen.',
         downloads: {
           video: {
             filename: 'What is Authentication and Why is It Important',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What is Authentication and Why is It Important - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand what authentication is, why it is important, and how it helps protect their digital identity and digital assets by controlling who is allowed access.',
+        'Schülerinnen und Schülern helfen zu verstehen, was Authentifizierung ist, warum sie wichtig ist und wie sie hilft, ihre digitale Identität und digitale Assets zu schützen, indem kontrolliert wird, wem Zugang gewährt wird.',
       bundle: {
         filename: 'Authentication Part 3 Package',
        },
@@ -200,78 +168,78 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.3.2
-            kind: 'Image',
-            name: 'Examples of Weak Passwords',
+            kind: 'Bild',
+            name: 'Beispiele schwacher Passwörter',
             filename: 'Image - Examples of Strong Passwords',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.3
-            kind: 'Image',
-            name: 'Examples of Strong Passwords',
+            kind: 'Bild',
+            name: 'Beispiele starker Passwörter',
             filename: 'Image - Check your Password',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.4
-            kind: 'Cards',
-            name: 'Create a Strong Password',
+            kind: 'Karten',
+            name: 'Ein starkes Passwort erstellen',
             filename: 'Cards - Create a Strong Password',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.5
-            kind: 'Image',
-            name: 'Check your Password',
+            kind: 'Bild',
+            name: 'Ihr Passwort überprüfen',
             filename: 'Image - Two Different Types of Authentication Used Together',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.6
-            kind: 'Worksheet',
-            name: 'My Strong Password Rules',
+            kind: 'Arbeitsblatt',
+            name: 'Meine Regeln für starke Passwörter',
             filename: 'Worksheet - My Strong Password Rules',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Passwords',
+            title: 'Passwörter',
           },
           {
-            title: 'Strong vs Weak Passwords',
+            title: 'Starke vs. schwache Passwörter',
           },
           {
-            title: 'Creating Strong Passwords Safely',
+            title: 'Starke Passwörter sicher erstellen',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.3.1
-        title: 'Strong and Weak Passwords',
+        title: 'Starke und schwache Passwörter',
         supportText:
-          'Use this video to show students the difference between passwords that protect accounts and passwords that put them at risk. Invite them to reflect on whether their own passwords meet the criteria for strength.',
+          'Verwenden Sie dieses Video, um Schülerinnen und Schülern den Unterschied zwischen Passwörtern zu zeigen, die Konten schützen, und solchen, die sie gefährden. Laden Sie sie ein zu überlegen, ob ihre eigenen Passwörter die Kriterien für Stärke erfüllen.',
         downloads: {
           video: {
             filename: 'Strong and Weak Passwords',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'Strong and Weak Passwords - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand I can explain what two-factor authentication is and why managing many passwords is difficult, introduce the concept of a password manager, and explain how password managers help protect digital identities and digital assets when used responsibly with support from a trusted adult.',
+        'Schülerinnen und Schülern helfen zu verstehen, was Zwei-Faktor-Authentifizierung ist und warum die Verwaltung vieler Passwörter schwierig ist, das Konzept eines Passwort-Managers einzuführen und zu erklären, wie Passwort-Manager dabei helfen, digitale Identitäten und Assets zu schützen, wenn sie verantwortungsvoll mit Unterstützung eines vertrauenswürdigen Erwachsenen verwendet werden.',
       bundle: {
         filename: 'Authentication Part 4 Package',
        },
@@ -280,105 +248,105 @@ export const contentAT = {
           {
             // ID: 3.4.1
             kind: 'Schema',
-            name: 'Set of Groups',
+            name: 'Gruppensatz',
             filename: 'Schema - Set of Groups',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.2
             kind: 'Schema',
-            name: 'Set of Money Coins',
+            name: 'Münzsatz',
             filename: 'Schema - Set of Coins',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.3
             kind: 'Schema',
-            name: 'Set of Groups',
+            name: 'Gruppensatz',
             filename: 'Schema - Set of Groups',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.4
             kind: 'Schema',
-            name: 'PIN Cards',
+            name: 'PIN-Karten',
             filename: 'Schema - PIN Cards',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.6
-            kind: 'Images',
-            name: 'How to Use a Password Manager',
+            kind: 'Bilder',
+            name: 'So verwenden Sie einen Passwort-Manager',
             filename: 'Images - How to Use a Password Manager',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.7
-            kind: 'Image',
-            name: 'Password Manager Vault',
+            kind: 'Bild',
+            name: 'Passwort-Manager-Tresor',
             filename: 'Image - Password Manager Vault',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.8
-            kind: 'Image',
-            name: 'Password Manager as a Digital Keyring',
+            kind: 'Bild',
+            name: 'Passwort-Manager als digitaler Schlüsselbund',
             filename: 'Image - Password Manager as a Digital Keyring',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.9
-            kind: 'Image',
-            name: 'Steps of Saving Passwords',
+            kind: 'Bild',
+            name: 'Schritte zum Speichern von Passwörtern',
             filename: 'Image - Steps of Saving Passwords',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.10
-            kind: 'Worksheet',
-            name: 'Password Problems and Solutions',
+            kind: 'Arbeitsblatt',
+            name: 'Passwortprobleme und Lösungen',
             filename: 'Worksheet - Password Problems and Solutions',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Passwords',
+            title: 'Passwörter',
           },
           {
-            title: 'Password Managers',
+            title: 'Passwort-Manager',
           },
           {
-            title: 'Applying Password Managers Safely',
+            title: 'Passwort-Manager sicher anwenden',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.4.5
-        title: 'What Is a Password Manager?',
+        title: 'Was ist ein Passwort-Manager?',
         supportText:
-          'Use this video to introduce password managers as a practical solution for creating and storing strong, unique passwords for every account. Pause to ask students if they have heard of or used one before.',
+          'Verwenden Sie dieses Video, um Passwort-Manager als praktische Lösung zum Erstellen und Speichern starker, einzigartiger Passwörter für jedes Konto einzuführen. Pausieren Sie, um Schülerinnen und Schüler zu fragen, ob sie davon gehört oder einen bereits benutzt haben.',
         downloads: {
           video: {
             filename: 'What Is a Password Manager',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What Is a Password Manager - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand how their choices and behaviour affect the security of their digital identity, and how acting responsibly helps protect their digital assets, themselves, and others in digital environments.',
+        'Schülerinnen und Schülern helfen zu verstehen, wie ihre Entscheidungen und ihr Verhalten die Sicherheit ihrer digitalen Identität beeinflussen und wie verantwortungsvolles Handeln dabei hilft, ihre digitalen Assets, sich selbst und andere in digitalen Umgebungen zu schützen.',
       bundle: {
         filename: 'Authentication Part 5 Package',
        },
@@ -386,210 +354,193 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.5.1
-            kind: 'Image',
-            name: 'Safe and Unsafe Online Behaviours',
+            kind: 'Bild',
+            name: 'Sicheres und unsicheres Online-Verhalten',
             filename: 'Image - Safe and Unsafe Online Behaviours',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.5.3
-            kind: 'Worksheet',
-            name: 'Digital Identity and Authentication Scenarios',
+            kind: 'Arbeitsblatt',
+            name: 'Szenarien zu digitaler Identität und Authentifizierung',
             filename: 'Worksheet - Digital Identity and Authentication Scenarios',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.5.4
-            kind: 'Worksheet',
-            name: 'How I Protect My Digital Identity',
+            kind: 'Arbeitsblatt',
+            name: 'Wie ich meine digitale Identität schütze',
             filename: 'Worksheet - How I Protect My Digital Identity',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Protecting Digital Identity',
+            title: 'Schutz der digitalen Identität',
           },
           {
-            title: 'Digital Identity and Authentication',
+            title: 'Digitale Identität und Authentifizierung',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.5.2
-        title: 'Protecting Your Digital Identity',
+        title: 'Schutz Ihrer digitalen Identität',
         supportText:
-          'Use this video to bring together the strategies students have learned for keeping their digital identity safe. Encourage them to identify one specific habit they will change or start after watching.',
+          'Verwenden Sie dieses Video, um die Strategien zusammenzuführen, die die Schülerinnen und Schüler zum Schutz ihrer digitalen Identität gelernt haben. Ermutigen Sie sie, eine konkrete Gewohnheit zu identifizieren, die sie nach dem Ansehen ändern oder beginnen werden.',
         downloads: {
           video: {
             filename: 'Protecting Your Digital Identity',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'Protecting Your Digital Identity - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
   ],
-  otherModulesDivider: 'Explore Other Topics',
-  otherModulesTitle: 'Other Modules',
-  otherModulesSubtitle: 'Browse related modules and continue learning.',
+  otherModulesDivider: 'Weitere Themen erkunden',
+  otherModulesTitle: 'Weitere Module',
+  otherModulesSubtitle: 'Verwandte Module durchsuchen und weiterlernen.',
   relatedModuleCards: [
     {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
-  ],
-  relatedModules: [
-    { title: 'Digital Citizenship', description: 'Build a strong foundation of rights, responsibility, and respect online.', cta: 'Explore' },
-    { title: 'Data Privacy', description: 'Explore how personal information is shared and ways to keep it safe.', cta: 'Explore' },
-    { title: 'Social Engineering', description: 'Learn how scammers and manipulators use persuasion and false urgency.', cta: 'Explore' },
   ],
 }
 
 export const challengeAT = {
-  title: 'Password Lab',
+  title: 'Passwort-Labor',
   subtitle:
-    'Build a stronger password one round at a time. Each level adds a new ingredient to your password recipe!',
-  howItWorks: 'How It Works',
+    'Bauen Sie ein stärkeres Passwort Runde für Runde auf. Jede Stufe fügt eine neue Zutat zu Ihrem Passwort-Rezept hinzu!',
+  howItWorks: 'So funktioniert es',
   instruction:
-    "Each round introduces a new password requirement. Meet all the current round's criteria to advance — and watch your password become harder and harder to crack!",
-  tipLabel: 'Tip',
-  tip: 'Check the sidebar on the right to track your round progress and get password tips!',
-  yourPassword: 'Your Password',
-  placeholder: 'Type your password here...',
-  passwordInputAriaLabel: 'Password input',
-  showPassword: 'Show password',
-  strengthAriaLabel: 'Password strength',
-  roundBadgeTemplate: 'Round {n} of {total}',
-  criteriaTitle: 'Password Recipe — Round {n}:',
-  criterionLength: 'Length > 10 characters',
-  criterionNumber: 'Contains a number (0-9)',
-  criterionSymbol: 'Contains a symbol (! @ # $ % ^ & * ?)',
-  criterionUppercase: 'Contains an UPPERCASE letter',
-  criterionLowercase: 'Contains a lowercase letter',
-  strengthWeak: 'Weak',
-  strengthOkay: 'Getting there',
-  strengthStrong: 'Strong ✓',
-  feedbackDefault: 'Start typing to see your password strength!',
-  feedbackAllMet: '🎉 All requirements met! Hit Next Round to continue.',
-  almostThereTemplate: 'Almost there! Try to {hint}.',
+    'Jede Runde führt eine neue Passwortanforderung ein. Erfüllen Sie alle Kriterien der aktuellen Runde, um voranzukommen – und beobachten Sie, wie Ihr Passwort immer schwerer zu knacken wird!',
+  tipLabel: 'Tipp',
+  tip: 'Überprüfen Sie die rechte Seitenleiste, um Ihren Rundenfortschritt zu verfolgen und Passwort-Tipps zu erhalten!',
+  yourPassword: 'Ihr Passwort',
+  placeholder: 'Passwort hier eingeben...',
+  passwordInputAriaLabel: 'Passworteingabe',
+  showPassword: 'Passwort anzeigen',
+  strengthAriaLabel: 'Passwortstärke',
+  roundBadgeTemplate: 'Runde {n} von {total}',
+  criteriaTitle: 'Passwort-Rezept — Runde {n}:',
+  criterionLength: 'Länge > 10 Zeichen',
+  criterionNumber: 'Enthält eine Zahl (0-9)',
+  criterionSymbol: 'Enthält ein Symbol (! @ # $ % ^ & * ?)',
+  criterionUppercase: 'Enthält einen GROSSBUCHSTABEN',
+  criterionLowercase: 'Enthält einen Kleinbuchstaben',
+  strengthWeak: 'Schwach',
+  strengthOkay: 'Auf dem Weg',
+  strengthStrong: 'Stark ✓',
+  feedbackDefault: 'Beginnen Sie zu tippen, um die Stärke Ihres Passworts zu sehen!',
+  feedbackAllMet: '🎉 Alle Anforderungen erfüllt! Klicken Sie auf Nächste Runde, um fortzufahren.',
+  almostThereTemplate: 'Fast geschafft! Versuchen Sie, {hint}.',
   hints: {
-    length: 'make it longer (10+ characters)',
-    number: 'add a number (0-9)',
-    symbol: 'add a symbol like ! @ # $ %',
-    upper: 'add an UPPERCASE letter',
-    lower: 'add a lowercase letter',
+    length: 'es länger zu machen (10+ Zeichen)',
+    number: 'eine Zahl hinzuzufügen (0-9)',
+    symbol: 'ein Symbol wie ! @ # $ % hinzuzufügen',
+    upper: 'einen GROSSBUCHSTABEN hinzuzufügen',
+    lower: 'einen Kleinbuchstaben hinzuzufügen',
   },
-  keepGoing: 'Keep going!',
-  nextRound: 'Next Round →',
-  finish: 'Finish! 🏆',
-  nextRoundAriaLabel: 'Proceed to next round',
-  tryAgain: 'Try Again',
-  tryAgainAriaLabel: 'Clear password and start over',
-  completionTitle: 'Password Master!',
-  completionText: "You've completed all 4 rounds and learned how to create unbreakable passwords!",
-  completionRounds: '4 / 4 Rounds Completed',
-  completionTips: 'Strong passwords protect your digital life. Use these skills everywhere you create an account!',
-  startOver: 'Start Over',
-  roundProgressTitle: 'Round Progress',
-  roundProgressDesc: 'Complete all 4 rounds to master passwords',
+  keepGoing: 'Weiter so!',
+  nextRound: 'Nächste Runde →',
+  finish: 'Fertig! 🏆',
+  nextRoundAriaLabel: 'Zur nächsten Runde gehen',
+  tryAgain: 'Erneut versuchen',
+  tryAgainAriaLabel: 'Passwort löschen und neu beginnen',
+  completionTitle: 'Passwort-Meister!',
+  completionText: 'Sie haben alle 4 Runden abgeschlossen und gelernt, unknackbare Passwörter zu erstellen!',
+  completionRounds: '4 / 4 Runden abgeschlossen',
+  completionTips: 'Starke Passwörter schützen Ihr digitales Leben. Nutzen Sie diese Fähigkeiten überall, wo Sie ein Konto erstellen!',
+  startOver: 'Von vorne beginnen',
+  roundProgressTitle: 'Rundenfortschritt',
+  roundProgressDesc: 'Schließen Sie alle 4 Runden ab, um Passwörter zu meistern',
   rounds: [
-    { 
-      icon: '🎮', 
-      title: 'Create a password for your game account',  
-      description: 'Just start with a good length — at least 10 characters!',                                         
-      label: 'Round 1', 
-      desc: 'Length only' 
+    {
+      icon: '🎮',
+      title: 'Erstellen Sie ein Passwort für Ihr Spielkonto',
+      description: 'Beginnen Sie mit einer guten Länge – mindestens 10 Zeichen!',
+      label: 'Runde 1',
+      desc: 'Nur Länge'
     },
-    { 
-      icon: '📧', 
-      title: 'Create a password for your email',          
-      description: 'Great start! Now add a number to make it harder to crack.',                                        
-      label: 'Round 2', 
-      desc: '+ Number' 
+    {
+      icon: '📧',
+      title: 'Erstellen Sie ein Passwort für Ihre E-Mail',
+      description: 'Super Start! Fügen Sie nun eine Zahl hinzu, um es schwerer zu knacken.',
+      label: 'Runde 2',
+      desc: '+ Zahl'
     },
-    { 
-      icon: '📱', 
-      title: 'Create a password for your social media',   
-      description: 'Good progress! Now throw in a symbol to really mix things up.',                                   
-      label: 'Round 3', 
-      desc: '+ Symbol' 
+    {
+      icon: '📱',
+      title: 'Erstellen Sie ein Passwort für Ihre sozialen Medien',
+      description: 'Guter Fortschritt! Fügen Sie nun ein Symbol hinzu, um es richtig durchzumischen.',
+      label: 'Runde 3',
+      desc: '+ Symbol'
     },
-    { 
-      icon: '📔', 
-      title: 'Create a password for your secret diary',   
-      description: 'Final round! Add both UPPERCASE and lowercase letters to complete the full recipe.',               
-      label: 'Round 4', 
-      desc: '+ Upper & lowercase' 
+    {
+      icon: '📔',
+      title: 'Erstellen Sie ein Passwort für Ihr geheimes Tagebuch',
+      description: 'Letzte Runde! Fügen Sie GROSS- und Kleinbuchstaben hinzu, um das vollständige Rezept abzuschließen.',
+      label: 'Runde 4',
+      desc: '+ Groß- und Kleinbuchstaben'
     },
   ],
-  dosTitle: "✅ Do's",
+  dosTitle: '✅ Das sollten Sie tun',
   dos: [
-    'Mix UPPER and lowercase letters',
-    'Add numbers in the middle',
-    'Use symbols like ! @ # $ %',
-    'Make it 12+ characters long',
-    'Use random combinations',
+    'GROSS- und Kleinbuchstaben mischen',
+    'Zahlen in der Mitte hinzufügen',
+    'Symbole wie ! @ # $ % verwenden',
+    'Mindestens 12 Zeichen lang machen',
+    'Zufällige Kombinationen verwenden',
   ],
-  dontsTitle: "❌ Don'ts",
+  dontsTitle: '❌ Das sollten Sie nicht tun',
   donts: [
-    'Use your real name or birthday',
-    'Use "123456" or simple patterns',
-    'Repeat the same character',
-    'Use common dictionary words',
-    "Use your school or pet's name",
+    'Ihren echten Namen oder Geburtstag verwenden',
+    '"123456" oder einfache Muster verwenden',
+    'Dasselbe Zeichen wiederholen',
+    'Gängige Wörterbuchbegriffe verwenden',
+    'Ihren Schul- oder Haustiernamen verwenden',
   ],
 }

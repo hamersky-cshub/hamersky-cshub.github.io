@@ -6,60 +6,28 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentAT = {
-  subtitle:
-    'Authentication helps students understand how we prove who we are online. This module supports educators in teaching strong sign-in habits, why extra verification matters, and how to keep accounts protected.',
-  aim: 'To provide core knowledge of authentication and identity management principles for protecting personal digital assets.',
+  aim: 'Å gi grunnleggende kunnskap om autentisering og prinsipper for identitetsstyring for å beskytte personlige digitale eiendeler.',
   objectives: [
-    'To stress the importance of secure identity management.',
-    'To introduce the concept of authentication and its different types.',
-    'To develop students\' understanding of digital assets and access control awareness.',
-    'To develop students\' knowledge and skills for creating secure usernames and passwords following recommendations and good practices.',
-    'To build students\' skills for managing passwords securely.',
+    'Å understreke viktigheten av sikker identitetsstyring.',
+    'Å introdusere konseptet autentisering og dens ulike typer.',
+    'Å utvikle elevenes forståelse av digitale eiendeler og bevissthet om tilgangskontroll.',
+    'Å utvikle elevenes kunnskap og ferdigheter for å opprette sikre brukernavn og passord i tråd med anbefalinger og god praksis.',
+    'Å bygge elevenes ferdigheter for sikker håndtering av passord.',
   ],
   outcomes: [
-    'I can identify my personal digital assets and explain the risks they face in both physical and digital environments.',
-    'I can explain what authentication is, why it is important, and list different types of authentications.',
-    'I can distinguish between weak and strong usernames and passwords.',
-    'I can demonstrate how to use a password manager to store passwords and justify why I made those choices.',
+    'Jeg kan identifisere mine personlige digitale eiendeler og forklare risikoene de møter i både fysiske og digitale miljøer.',
+    'Jeg kan forklare hva autentisering er, hvorfor det er viktig, og liste opp ulike typer autentisering.',
+    'Jeg kan skille mellom svake og sterke brukernavn og passord.',
+    'Jeg kan demonstrere hvordan jeg bruker en passordbehandler til å lagre passord og begrunne valgene mine.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Authentication Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Last ned lærerveiledning',
+    download: 'Lærerveiledning for autentisering',
   },
   parts: [
     {
-      goal: 'Help students create strong, memorable secrets and understand why reuse is risky.',
+      goal: 'Hjelpe elever med å opprette sterke, minneverdige hemmeligheter og forstå hvorfor gjenbruk er risikabelt.',
       bundle: {
         filename: 'Authentication Part 1 Package',
       },
@@ -67,67 +35,67 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.1.1
-            kind: 'Image',
-            name: 'Online Identity',
+            kind: 'Bilde',
+            name: 'Nettidentitet',
             filename: 'Image - Online Identity',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.1.2
-            kind: 'Images',
-            name: 'Examples of Personal Digital Assets',
+            kind: 'Bilder',
+            name: 'Eksempler på personlige digitale eiendeler',
             filename: 'Images - Examples of Personal Digital Assets',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.1.4
-            kind: 'Worksheet',
-            name: 'What Would Happen if ...?',
+            kind: 'Arbeidsark',
+            name: 'Hva ville skje hvis ...?',
             filename: 'Worksheet - What Would Happen if',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.1.5
-            kind: 'Worksheet',
-            name: 'My Digital Assets',
+            kind: 'Arbeidsark',
+            name: 'Mine digitale eiendeler',
             filename: 'Worksheet - My Digital Assets',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What is Digital Identity?',
+            title: 'Hva er digital identitet?',
           },
           {
-            title: 'Understanding Digital Assets',
+            title: 'Forstå digitale eiendeler',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
-        title: 'What is Digital Identity?',
+        title: 'Hva er digital identitet?',
         supportText:
-          'Use this video to help students understand that their digital identity is made up of the information and behaviours they share online. Pause to ask which parts of their digital identity they think they can control.',
+          'Bruk denne videoen til å hjelpe elever med å forstå at deres digitale identitet består av informasjonen og atferden de deler på nett. Pause for å spørre hvilke deler av deres digitale identitet de tror de kan kontrollere.',
         downloads: {
           video: {
             filename: 'What is Digital Identity',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What is Digital Identity - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand what authentication is, why it is important, and how it helps protect their digital identity and digital assets by controlling who is allowed access.',
+        'Hjelpe elever med å forstå hva autentisering er, hvorfor det er viktig, og hvordan det bidrar til å beskytte deres digitale identitet og digitale eiendeler ved å kontrollere hvem som får tilgang.',
       bundle: {
         filename: 'Authentication Part 2 Package',
       },
@@ -135,64 +103,64 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.2.1
-            kind: 'Images',
-            name: 'Real-world Authentication Examples',
+            kind: 'Bilder',
+            name: 'Eksempler på autentisering fra den virkelige verden',
             filename: 'Images - Real-world Authentication Examples',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.2.3
-            kind: 'Image',
-            name: 'Logging Into a Digital System',
+            kind: 'Bilde',
+            name: 'Logge inn på et digitalt system',
             filename: 'Image - Logging Into a Digital System',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.2.4
-            kind: 'Worksheet',
-            name: 'Authentication in Everday Life',
+            kind: 'Arbeidsark',
+            name: 'Autentisering i hverdagen',
             filename: 'Worksheet - Authentication in Everday Life',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Authentication',
+            title: 'Autentisering',
           },
           {
-            title: 'Understanding Types of Authentication',
+            title: 'Forstå typer autentisering',
           },
           {
-            title: 'Applying Authentication to Digital Assets',
+            title: 'Anvende autentisering på digitale eiendeler',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'What is Authentication and Why is It Important?',
+        title: 'Hva er autentisering og hvorfor er det viktig?',
         supportText:
-          'Use this video to introduce authentication as the everyday mechanism that guards students\' digital accounts. Pause to ask how they currently prove their identity on the apps they use most.',
+          'Bruk denne videoen til å introdusere autentisering som den daglige mekanismen som beskytter elevenes digitale kontoer. Pause for å spørre hvordan de for øyeblikket bekrefter identiteten sin i appene de bruker mest.',
         downloads: {
           video: {
             filename: 'What is Authentication and Why is It Important',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What is Authentication and Why is It Important - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand what authentication is, why it is important, and how it helps protect their digital identity and digital assets by controlling who is allowed access.',
+        'Hjelpe elever med å forstå hva autentisering er, hvorfor det er viktig, og hvordan det bidrar til å beskytte deres digitale identitet og digitale eiendeler ved å kontrollere hvem som får tilgang.',
       bundle: {
         filename: 'Authentication Part 3 Package',
        },
@@ -200,78 +168,78 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.3.2
-            kind: 'Image',
-            name: 'Examples of Weak Passwords',
+            kind: 'Bilde',
+            name: 'Eksempler på svake passord',
             filename: 'Image - Examples of Strong Passwords',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.3
-            kind: 'Image',
-            name: 'Examples of Strong Passwords',
+            kind: 'Bilde',
+            name: 'Eksempler på sterke passord',
             filename: 'Image - Check your Password',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.4
-            kind: 'Cards',
-            name: 'Create a Strong Password',
+            kind: 'Kort',
+            name: 'Lag et sterkt passord',
             filename: 'Cards - Create a Strong Password',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.5
-            kind: 'Image',
-            name: 'Check your Password',
+            kind: 'Bilde',
+            name: 'Sjekk passordet ditt',
             filename: 'Image - Two Different Types of Authentication Used Together',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.6
-            kind: 'Worksheet',
-            name: 'My Strong Password Rules',
+            kind: 'Arbeidsark',
+            name: 'Mine regler for sterke passord',
             filename: 'Worksheet - My Strong Password Rules',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Passwords',
+            title: 'Passord',
           },
           {
-            title: 'Strong vs Weak Passwords',
+            title: 'Sterke vs. svake passord',
           },
           {
-            title: 'Creating Strong Passwords Safely',
+            title: 'Lage sterke passord på en trygg måte',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.3.1
-        title: 'Strong and Weak Passwords',
+        title: 'Sterke og svake passord',
         supportText:
-          'Use this video to show students the difference between passwords that protect accounts and passwords that put them at risk. Invite them to reflect on whether their own passwords meet the criteria for strength.',
+          'Bruk denne videoen til å vise elever forskjellen mellom passord som beskytter kontoer og passord som setter dem i fare. Inviter dem til å reflektere over om deres egne passord oppfyller kriteriene for styrke.',
         downloads: {
           video: {
             filename: 'Strong and Weak Passwords',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'Strong and Weak Passwords - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand I can explain what two-factor authentication is and why managing many passwords is difficult, introduce the concept of a password manager, and explain how password managers help protect digital identities and digital assets when used responsibly with support from a trusted adult.',
+        'Hjelpe elever med å forstå hva tofaktorautentisering er og hvorfor det er vanskelig å håndtere mange passord, introdusere konseptet passordbehandler, og forklare hvordan passordbehandlere bidrar til å beskytte digitale identiteter og digitale eiendeler når de brukes ansvarlig med støtte fra en betrodd voksen.',
       bundle: {
         filename: 'Authentication Part 4 Package',
        },
@@ -279,106 +247,106 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Schema',
-            name: 'Set of Groups',
+            kind: 'Skjema',
+            name: 'Sett med grupper',
             filename: 'Schema - Set of Groups',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.2
-            kind: 'Schema',
-            name: 'Set of Money Coins',
+            kind: 'Skjema',
+            name: 'Sett med mynter',
             filename: 'Schema - Set of Coins',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.3
-            kind: 'Schema',
-            name: 'Set of Groups',
+            kind: 'Skjema',
+            name: 'Sett med grupper',
             filename: 'Schema - Set of Groups',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.4
-            kind: 'Schema',
-            name: 'PIN Cards',
+            kind: 'Skjema',
+            name: 'PIN-kort',
             filename: 'Schema - PIN Cards',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.6
-            kind: 'Images',
-            name: 'How to Use a Password Manager',
+            kind: 'Bilder',
+            name: 'Slik bruker du en passordbehandler',
             filename: 'Images - How to Use a Password Manager',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.7
-            kind: 'Image',
-            name: 'Password Manager Vault',
+            kind: 'Bilde',
+            name: 'Passordbehandlerens hvelv',
             filename: 'Image - Password Manager Vault',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.8
-            kind: 'Image',
-            name: 'Password Manager as a Digital Keyring',
+            kind: 'Bilde',
+            name: 'Passordbehandler som digital nøkkelring',
             filename: 'Image - Password Manager as a Digital Keyring',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.9
-            kind: 'Image',
-            name: 'Steps of Saving Passwords',
+            kind: 'Bilde',
+            name: 'Trinn for lagring av passord',
             filename: 'Image - Steps of Saving Passwords',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.10
-            kind: 'Worksheet',
-            name: 'Password Problems and Solutions',
+            kind: 'Arbeidsark',
+            name: 'Passordproblemer og løsninger',
             filename: 'Worksheet - Password Problems and Solutions',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Passwords',
+            title: 'Passord',
           },
           {
-            title: 'Password Managers',
+            title: 'Passordbehandlere',
           },
           {
-            title: 'Applying Password Managers Safely',
+            title: 'Bruke passordbehandlere på en trygg måte',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.4.5
-        title: 'What Is a Password Manager?',
+        title: 'Hva er en passordbehandler?',
         supportText:
-          'Use this video to introduce password managers as a practical solution for creating and storing strong, unique passwords for every account. Pause to ask students if they have heard of or used one before.',
+          'Bruk denne videoen til å introdusere passordbehandlere som en praktisk løsning for å opprette og lagre sterke, unike passord for hver konto. Pause for å spørre elever om de har hørt om eller brukt en passordbehandler før.',
         downloads: {
           video: {
             filename: 'What Is a Password Manager',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What Is a Password Manager - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand how their choices and behaviour affect the security of their digital identity, and how acting responsibly helps protect their digital assets, themselves, and others in digital environments.',
+        'Hjelpe elever med å forstå hvordan deres valg og atferd påvirker sikkerheten til deres digitale identitet, og hvordan ansvarlig atferd bidrar til å beskytte deres digitale eiendeler, dem selv og andre i digitale miljøer.',
       bundle: {
         filename: 'Authentication Part 5 Package',
        },
@@ -386,210 +354,193 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.5.1
-            kind: 'Image',
-            name: 'Safe and Unsafe Online Behaviours',
+            kind: 'Bilde',
+            name: 'Trygg og utrygg nettadferd',
             filename: 'Image - Safe and Unsafe Online Behaviours',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.5.3
-            kind: 'Worksheet',
-            name: 'Digital Identity and Authentication Scenarios',
+            kind: 'Arbeidsark',
+            name: 'Scenarioer for digital identitet og autentisering',
             filename: 'Worksheet - Digital Identity and Authentication Scenarios',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.5.4
-            kind: 'Worksheet',
-            name: 'How I Protect My Digital Identity',
+            kind: 'Arbeidsark',
+            name: 'Slik beskytter jeg min digitale identitet',
             filename: 'Worksheet - How I Protect My Digital Identity',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Protecting Digital Identity',
+            title: 'Beskytte digital identitet',
           },
           {
-            title: 'Digital Identity and Authentication',
+            title: 'Digital identitet og autentisering',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.5.2
-        title: 'Protecting Your Digital Identity',
+        title: 'Beskytte din digitale identitet',
         supportText:
-          'Use this video to bring together the strategies students have learned for keeping their digital identity safe. Encourage them to identify one specific habit they will change or start after watching.',
+          'Bruk denne videoen til å samle strategiene elevene har lært for å holde sin digitale identitet trygg. Oppmuntre dem til å identifisere én spesifikk vane de vil endre eller starte etter å ha sett den.',
         downloads: {
           video: {
             filename: 'Protecting Your Digital Identity',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'Protecting Your Digital Identity - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
   ],
-  otherModulesDivider: 'Explore Other Topics',
-  otherModulesTitle: 'Other Modules',
-  otherModulesSubtitle: 'Browse related modules and continue learning.',
+  otherModulesDivider: 'Utforsk andre emner',
+  otherModulesTitle: 'Andre moduler',
+  otherModulesSubtitle: 'Bla gjennom relaterte moduler og fortsett å lære.',
   relatedModuleCards: [
     {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
-  ],
-  relatedModules: [
-    { title: 'Digital Citizenship', description: 'Build a strong foundation of rights, responsibility, and respect online.', cta: 'Explore' },
-    { title: 'Data Privacy', description: 'Explore how personal information is shared and ways to keep it safe.', cta: 'Explore' },
-    { title: 'Social Engineering', description: 'Learn how scammers and manipulators use persuasion and false urgency.', cta: 'Explore' },
   ],
 }
 
 export const challengeAT = {
-  title: 'Password Lab',
+  title: 'Passordlab',
   subtitle:
-    'Build a stronger password one round at a time. Each level adds a new ingredient to your password recipe!',
-  howItWorks: 'How It Works',
+    'Bygg et sterkere passord én runde om gangen. Hvert nivå legger til en ny ingrediens i passordoppskriften din!',
+  howItWorks: 'Slik fungerer det',
   instruction:
-    "Each round introduces a new password requirement. Meet all the current round's criteria to advance — and watch your password become harder and harder to crack!",
-  tipLabel: 'Tip',
-  tip: 'Check the sidebar on the right to track your round progress and get password tips!',
-  yourPassword: 'Your Password',
-  placeholder: 'Type your password here...',
-  passwordInputAriaLabel: 'Password input',
-  showPassword: 'Show password',
-  strengthAriaLabel: 'Password strength',
-  roundBadgeTemplate: 'Round {n} of {total}',
-  criteriaTitle: 'Password Recipe — Round {n}:',
-  criterionLength: 'Length > 10 characters',
-  criterionNumber: 'Contains a number (0-9)',
-  criterionSymbol: 'Contains a symbol (! @ # $ % ^ & * ?)',
-  criterionUppercase: 'Contains an UPPERCASE letter',
-  criterionLowercase: 'Contains a lowercase letter',
-  strengthWeak: 'Weak',
-  strengthOkay: 'Getting there',
-  strengthStrong: 'Strong ✓',
-  feedbackDefault: 'Start typing to see your password strength!',
-  feedbackAllMet: '🎉 All requirements met! Hit Next Round to continue.',
-  almostThereTemplate: 'Almost there! Try to {hint}.',
+    'Hver runde introduserer et nytt passordkrav. Oppfyll alle kriteriene for gjeldende runde for å komme videre — og se passordet ditt bli vanskeligere og vanskeligere å knekke!',
+  tipLabel: 'Tips',
+  tip: 'Sjekk sidefeltet til høyre for å spore rundefremgangen din og få passordtips!',
+  yourPassword: 'Ditt passord',
+  placeholder: 'Skriv passordet ditt her...',
+  passwordInputAriaLabel: 'Passordinndata',
+  showPassword: 'Vis passord',
+  strengthAriaLabel: 'Passordstyrke',
+  roundBadgeTemplate: 'Runde {n} av {total}',
+  criteriaTitle: 'Passordoppskrift — Runde {n}:',
+  criterionLength: 'Lengde > 10 tegn',
+  criterionNumber: 'Inneholder et tall (0-9)',
+  criterionSymbol: 'Inneholder et symbol (! @ # $ % ^ & * ?)',
+  criterionUppercase: 'Inneholder en STOR bokstav',
+  criterionLowercase: 'Inneholder en liten bokstav',
+  strengthWeak: 'Svakt',
+  strengthOkay: 'På vei',
+  strengthStrong: 'Sterkt ✓',
+  feedbackDefault: 'Begynn å skrive for å se passordstyrken din!',
+  feedbackAllMet: '🎉 Alle krav oppfylt! Trykk Neste runde for å fortsette.',
+  almostThereTemplate: 'Nesten der! Prøv å {hint}.',
   hints: {
-    length: 'make it longer (10+ characters)',
-    number: 'add a number (0-9)',
-    symbol: 'add a symbol like ! @ # $ %',
-    upper: 'add an UPPERCASE letter',
-    lower: 'add a lowercase letter',
+    length: 'gjøre det lengre (10+ tegn)',
+    number: 'legge til et tall (0-9)',
+    symbol: 'legge til et symbol som ! @ # $ %',
+    upper: 'legge til en STOR bokstav',
+    lower: 'legge til en liten bokstav',
   },
-  keepGoing: 'Keep going!',
-  nextRound: 'Next Round →',
-  finish: 'Finish! 🏆',
-  nextRoundAriaLabel: 'Proceed to next round',
-  tryAgain: 'Try Again',
-  tryAgainAriaLabel: 'Clear password and start over',
-  completionTitle: 'Password Master!',
-  completionText: "You've completed all 4 rounds and learned how to create unbreakable passwords!",
-  completionRounds: '4 / 4 Rounds Completed',
-  completionTips: 'Strong passwords protect your digital life. Use these skills everywhere you create an account!',
-  startOver: 'Start Over',
-  roundProgressTitle: 'Round Progress',
-  roundProgressDesc: 'Complete all 4 rounds to master passwords',
+  keepGoing: 'Fortsett!',
+  nextRound: 'Neste runde →',
+  finish: 'Fullfør! 🏆',
+  nextRoundAriaLabel: 'Gå til neste runde',
+  tryAgain: 'Prøv igjen',
+  tryAgainAriaLabel: 'Tøm passordet og start på nytt',
+  completionTitle: 'Passordmester!',
+  completionText: 'Du har fullført alle 4 rundene og lært hvordan du lager uknuselige passord!',
+  completionRounds: '4 / 4 runder fullført',
+  completionTips: 'Sterke passord beskytter ditt digitale liv. Bruk disse ferdighetene overalt der du oppretter en konto!',
+  startOver: 'Start på nytt',
+  roundProgressTitle: 'Rundefremgang',
+  roundProgressDesc: 'Fullfør alle 4 rundene for å mestre passord',
   rounds: [
-    { 
-      icon: '🎮', 
-      title: 'Create a password for your game account',  
-      description: 'Just start with a good length — at least 10 characters!',                                         
-      label: 'Round 1', 
-      desc: 'Length only' 
+    {
+      icon: '🎮',
+      title: 'Lag et passord for spillkontoen din',
+      description: 'Bare start med en god lengde — minst 10 tegn!',
+      label: 'Runde 1',
+      desc: 'Kun lengde'
     },
-    { 
-      icon: '📧', 
-      title: 'Create a password for your email',          
-      description: 'Great start! Now add a number to make it harder to crack.',                                        
-      label: 'Round 2', 
-      desc: '+ Number' 
+    {
+      icon: '📧',
+      title: 'Lag et passord for e-posten din',
+      description: 'Bra start! Nå legger du til et tall for å gjøre det vanskeligere å knekke.',
+      label: 'Runde 2',
+      desc: '+ Tall'
     },
-    { 
-      icon: '📱', 
-      title: 'Create a password for your social media',   
-      description: 'Good progress! Now throw in a symbol to really mix things up.',                                   
-      label: 'Round 3', 
-      desc: '+ Symbol' 
+    {
+      icon: '📱',
+      title: 'Lag et passord for sosiale medier',
+      description: 'Bra fremgang! Nå legger du til et symbol for å virkelig blande det opp.',
+      label: 'Runde 3',
+      desc: '+ Symbol'
     },
-    { 
-      icon: '📔', 
-      title: 'Create a password for your secret diary',   
-      description: 'Final round! Add both UPPERCASE and lowercase letters to complete the full recipe.',               
-      label: 'Round 4', 
-      desc: '+ Upper & lowercase' 
+    {
+      icon: '📔',
+      title: 'Lag et passord for den hemmelige dagboken din',
+      description: 'Siste runde! Legg til både STORE og små bokstaver for å fullføre hele oppskriften.',
+      label: 'Runde 4',
+      desc: '+ Store og små'
     },
   ],
-  dosTitle: "✅ Do's",
+  dosTitle: '✅ Gjør dette',
   dos: [
-    'Mix UPPER and lowercase letters',
-    'Add numbers in the middle',
-    'Use symbols like ! @ # $ %',
-    'Make it 12+ characters long',
-    'Use random combinations',
+    'Bland STORE og små bokstaver',
+    'Legg til tall i midten',
+    'Bruk symboler som ! @ # $ %',
+    'Gjør det 12+ tegn langt',
+    'Bruk tilfeldige kombinasjoner',
   ],
-  dontsTitle: "❌ Don'ts",
+  dontsTitle: '❌ Unngå dette',
   donts: [
-    'Use your real name or birthday',
-    'Use "123456" or simple patterns',
-    'Repeat the same character',
-    'Use common dictionary words',
-    "Use your school or pet's name",
+    'Bruk ikke ditt virkelige navn eller fødselsdato',
+    'Bruk ikke «123456» eller enkle mønstre',
+    'Ikke gjenta samme tegn',
+    'Bruk ikke vanlige ordbokord',
+    'Bruk ikke skolens eller kjæledyrets navn',
   ],
 }

@@ -6,10 +6,10 @@ import { useTranslations } from '../i18n/index'
 const { t } = useTranslations(Astro.currentLocale)
 ---
 
-<DefaultLayout title={t('about.title')}>
+<DefaultLayout title={t('pages.about.title')}>
   <PageHeader
-    title={t('about.title')}
-    subtitle={t('about.subtitle')}
+    title={t('pages.about.title')}
+    subtitle={t('pages.about.subtitle')}
     bgType="module"
   />
 
@@ -18,14 +18,14 @@ const { t } = useTranslations(Astro.currentLocale)
 
       <!-- Intro Section -->
       <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
-          <h2 class="section-heading">{t('about.missionTitle')}</h2>
+          <h2 class="section-heading">{t('pages.about.missionTitle')}</h2>
       </div>
 
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-center mission">
         <div>
-        <p class="text-xl mt-4">{t('about.missionP1')}</p>
-        <p class="text-xl mt-8">{t('about.missionP2')}</p>
-        <p class="text-xl mt-8">{t('about.missionP3')}</p>
+        <p class="text-xl mt-4">{t('pages.about.missionP1')}</p>
+        <p class="text-xl mt-8">{t('pages.about.missionP2')}</p>
+        <p class="text-xl mt-8">{t('pages.about.missionP3')}</p>
         </div>
         <img class="float" src="/images/about/mission.png" alt="" decoding="async" loading="eager" />
         </div>
@@ -34,15 +34,15 @@ const { t } = useTranslations(Astro.currentLocale)
 
       <!-- Project Partners Section -->
       <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
-          <h2 class="section-heading">{t('about.partnersTitle')}</h2>
+          <h2 class="section-heading">{t('pages.about.partnersTitle')}</h2>
       </div>
 
       <div class="initiative-partners-grid mt-8 mb-16">
         <article class="core-value-card initiative-partner-card">
           <div class="initiative-partner-content">
             <div>
-              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniLiechtenstein')}</h3>
-              <p class="mt-4">{t('about.uniLiechtensteinDesc')}</p>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('pages.about.uniLiechtenstein')}</h3>
+              <p class="mt-4">{t('pages.about.uniLiechtensteinDesc')}</p>
             </div>
             <img class="justify-self-center logo-image" src="/images/about/Universität_Liechtenstein_logo.svg" alt="University of Liechtenstein logo" loading="lazy" />
           </div>
@@ -51,8 +51,8 @@ const { t } = useTranslations(Astro.currentLocale)
         <article class="core-value-card initiative-partner-card">
           <div class="initiative-partner-content">
             <div>
-              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.cyberSecurityHub')}</h3>
-              <p class="mt-4">{t('about.cyberSecurityHubDesc')}</p>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('pages.about.cyberSecurityHub')}</h3>
+              <p class="mt-4">{t('pages.about.cyberSecurityHubDesc')}</p>
             </div>
             <img class="justify-self-center logo-image" src="/images/about/cyberSecurityHubCZ-logo-black_cut.png" alt="CyberSecurity Hub logo" loading="lazy" />
           </div>
@@ -61,8 +61,8 @@ const { t } = useTranslations(Astro.currentLocale)
         <article class="core-value-card initiative-partner-card">
           <div class="initiative-partner-content">
             <div>
-              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniInlandNorway')}</h3>
-              <p class="mt-4">{t('about.uniInlandNorwayDesc')}</p>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('pages.about.uniInlandNorway')}</h3>
+              <p class="mt-4">{t('pages.about.uniInlandNorwayDesc')}</p>
             </div>
             <img class="justify-self-center logo-image" src="/images/about/University_of_Inland_Norway_logo.svg.png" alt="University of Inland Norway logo" loading="lazy" />
           </div>
@@ -71,8 +71,8 @@ const { t } = useTranslations(Astro.currentLocale)
         <article class="core-value-card initiative-partner-card">
           <div class="initiative-partner-content">
             <div>
-              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.uniInnsbruck')}</h3>
-              <p class="mt-4">{t('about.uniInnsbruckDesc')}</p>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('pages.about.uniInnsbruck')}</h3>
+              <p class="mt-4">{t('pages.about.uniInnsbruckDesc')}</p>
             </div>
             <img class="justify-self-center logo-image" src="/images/about/Universitaet-innsbruck-logo-rgb-farbe.svg.png" alt="University of Innsbruck logo" loading="lazy" />
           </div>
@@ -81,8 +81,8 @@ const { t } = useTranslations(Astro.currentLocale)
         <article class="core-value-card initiative-partner-card">
           <div class="initiative-partner-content">
             <div>
-              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('about.vilniusUni')}</h3>
-              <p class="mt-4">{t('about.vilniusUniDesc')}</p>
+              <h3 class="text-2xl font-bold" style="font-weight: 800;">{t('pages.about.vilniusUni')}</h3>
+              <p class="mt-4">{t('pages.about.vilniusUniDesc')}</p>
             </div>
             <img class="justify-self-center logo-image" src="/images/about/Logo_vilnius_university.png" alt="Vilnius University logo" loading="lazy" />
           </div>
@@ -93,7 +93,7 @@ const { t } = useTranslations(Astro.currentLocale)
 
       <!-- Values Section -->
       <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6" id="our-values">
-          <h2 class="section-heading">{t('about.coreValuesTitle')}</h2>
+          <h2 class="section-heading">{t('pages.about.coreValuesTitle')}</h2>
       </div>
 
       <div class="core-values-grid mt-8 mb-16">
@@ -101,29 +101,29 @@ const { t } = useTranslations(Astro.currentLocale)
           <div class="core-value-media">
             <img src="/images/about/scalable.png" alt="Scalable impact illustration" loading="lazy" />
           </div>
-          <h3 class="core-value-title">{t('about.scalableImpact')}</h3>
-          <p class="core-value-description">{t('about.scalableImpactDesc')}</p>
+          <h3 class="core-value-title">{t('pages.about.scalableImpact')}</h3>
+          <p class="core-value-description">{t('pages.about.scalableImpactDesc')}</p>
         </article>
         <article class="core-value-card">
           <div class="core-value-media">
             <img src="/images/about/international.png" alt="International collaboration illustration" loading="lazy" />
           </div>
-          <h3 class="core-value-title">{t('about.internationalCollab')}</h3>
-          <p class="core-value-description">{t('about.internationalCollabDesc')}</p>
+          <h3 class="core-value-title">{t('pages.about.internationalCollab')}</h3>
+          <p class="core-value-description">{t('pages.about.internationalCollabDesc')}</p>
         </article>
         <article class="core-value-card">
           <div class="core-value-media">
             <img src="/images/about/adaptable.png" alt="Practical and adaptable education illustration" loading="lazy" />
           </div>
-          <h3 class="core-value-title" set:html={t('about.practicalAdaptable')}></h3>
-          <p class="core-value-description">{t('about.practicalAdaptableDesc')}</p>
+          <h3 class="core-value-title" set:html={t('pages.about.practicalAdaptable')}></h3>
+          <p class="core-value-description">{t('pages.about.practicalAdaptableDesc')}</p>
         </article>
         <article class="core-value-card">
           <div class="core-value-media">
             <img src="/images/about/european.png" alt="European digital cohesion illustration" loading="lazy" />
           </div>
-          <h3 class="core-value-title">{t('about.europeanCohesion')}</h3>
-          <p class="core-value-description">{t('about.europeanCohesionDesc')}</p>
+          <h3 class="core-value-title">{t('pages.about.europeanCohesion')}</h3>
+          <p class="core-value-description">{t('pages.about.europeanCohesionDesc')}</p>
         </article>
       </div>
 
@@ -132,16 +132,16 @@ const { t } = useTranslations(Astro.currentLocale)
       <!-- Joining Section -->
 
       <div class="section-title mt-[3.5rem] flex items-center gap-4 sm:gap-6">
-          <h2 class="section-heading">{t('about.getInvolvedTitle')}</h2>
+          <h2 class="section-heading">{t('pages.about.getInvolvedTitle')}</h2>
       </div>
 
 
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-center join grid-right">
           <img class="float" src="/images/about/collaboration.png" alt="" decoding="async" loading="eager" style="transform:scale(0.7)" />
           <div>
-          <p class="text-xl mt-4">{t('about.getInvolvedP1')}</p>
-          <p class="text-xl mt-8">{t('about.getInvolvedP2')}</p>
-          <p class="text-xl mt-8">{t('about.getInvolvedP3')}</p>
+          <p class="text-xl mt-4">{t('pages.about.getInvolvedP1')}</p>
+          <p class="text-xl mt-8">{t('pages.about.getInvolvedP2')}</p>
+          <p class="text-xl mt-8">{t('pages.about.getInvolvedP3')}</p>
           </div>
         </div>  
     </div>

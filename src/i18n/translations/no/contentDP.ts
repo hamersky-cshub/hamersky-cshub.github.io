@@ -6,57 +6,25 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDP = {
-  subtitle:
-    'Data privacy helps students understand what information is personal, why it matters, and how to make careful choices when sharing online. This module supports educators in building safe, confident decision-making around personal data.',
-  aim: 'To help students recognize what counts as personal data, understand why privacy matters, and make safer choices before sharing information online.',
+  aim: 'Å hjelpe elever med å gjenkjenne hva som teller som personopplysninger, forstå hvorfor personvern er viktig, og ta tryggere valg før de deler informasjon på nett.',
   objectives: [
-    'Define personal data and identify what is sensitive.',
-    'Encourage thoughtful sharing and consent-based choices.',
-    'Build awareness of privacy settings and safe defaults.',
+    'Definere personopplysninger og identifisere hva som er sensitivt.',
+    'Oppmuntre til gjennomtenkt deling og samtykkebaserte valg.',
+    'Bygge bevissthet om personverninnstillinger og trygge standarder.',
   ],
   outcomes: [
-    'Recognize common types of personal information.',
-    'Explain how data can travel and be stored online.',
-    'Apply simple privacy rules before sharing or posting.',
+    'Gjenkjenne vanlige typer personlig informasjon.',
+    'Forklare hvordan data kan overføres og lagres på nett.',
+    'Anvende enkle personvernregler før deling eller posting.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Data Privacy Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Last ned lærerveiledning',
+    download: 'Lærerveiledning for personvern',
   },
   parts: [
     {
-      goal: 'Help students understand what personal data is, identify different types of sensitive information, and recognise why protecting it matters.',
+      goal: 'Hjelpe elever til å forstå hva personopplysninger er, identifisere ulike typer sensitiv informasjon og gjenkjenne hvorfor det er viktig å beskytte dem.',
       bundle: {
         filename: 'Data Privacy Part 1 Package',
       },
@@ -64,50 +32,50 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.1.3
-            kind: 'Sorting Cards',
-            name: 'Public or Private',
+            kind: 'Sorteringskort',
+            name: 'Offentlig eller privat',
             filename: 'Sorting Cards - Public or Private',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.1.5
-            kind: 'Worksheet',
-            name: 'Reflection on Public vs Private Data',
+            kind: 'Arbeidsark',
+            name: 'Refleksjon over offentlige vs. private data',
             filename: 'Worksheet - Reflection on Public vs Private Data',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What Is Personal Data?',
+            title: 'Hva er personopplysninger?',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenum – Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.1.2
-        title: 'What Is Private Data?',
+        title: 'Hva er private data?',
         supportText:
-          'Use this video to introduce the concept of private data and spark discussion about the types of information students share every day. Pause to ask students which details they consider private.',
+          'Bruk denne videoen til å introdusere konseptet med private data og starte en diskusjon om typer informasjon elever deler hver dag. Pause for å spørre elever hvilke detaljer de anser som private.',
         downloads: {
           video: {
             filename: 'What Is Private Data',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What Is Private Data - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      goal: 'Help students understand how and why data gets shared online, the importance of consent, and how to make thoughtful decisions before sharing personal information.',
+      goal: 'Hjelpe elever til å forstå hvordan og hvorfor data deles på nett, viktigheten av samtykke og hvordan man tar gjennomtenkte beslutninger før man deler personlig informasjon.',
       bundle: {
         filename: 'Data Privacy Part 2 Package',
       },
@@ -115,44 +83,44 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.2.2
-            kind: 'Scenario Cards',
-            name: 'Roleplay',
+            kind: 'Scenariokort',
+            name: 'Rollespill',
             filename: 'Scenario Cards - Roleplay',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.2.3
-            kind: 'Image',
-            name: 'Sharing Online: Safe vs Risky',
+            kind: 'Bilde',
+            name: 'Del på nett: Trygt vs. risikabelt',
             filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.2.4
-            kind: 'Worksheet',
-            name: 'Share or Don\'t Share?',
+            kind: 'Arbeidsark',
+            name: 'Del eller ikke del?',
             filename: 'Worksheet - Share or Don\'t Share',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'How Is Data Shared?',
+            title: 'Hvordan deles data?',
           },
           {
-            title: 'Consent and Permissions',
+            title: 'Samtykke og tillatelser',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum - Oppsummering og uformell vurdering',
           },
         ],
       },
     },
     {
-      goal: 'Help students discover what a digital footprint is, understand how everyday online activities leave lasting traces, and consider the long-term impact of their online behaviour.',
+      goal: 'Hjelpe elever til å oppdage hva et digitalt fotavtrykk er, forstå hvordan hverdagslige nettaktiviteter etterlater varige spor, og vurdere den langsiktige innvirkningen av nettadferd.',
       bundle: {
         filename: 'Data Privacy Part 3 Package',
       },
@@ -160,53 +128,53 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.3.3
-            kind: 'Comic Story',
-            name: 'A Day in the Life of Sam Online',
+            kind: 'Tegneseriehistorie',
+            name: 'En dag i Sams nettliv',
             filename: 'Comic Story - A Day in the Life of Sam Online',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.3.4
-            kind: 'Worksheet',
-            name: 'Track Sam\'s Footprint',
+            kind: 'Arbeidsark',
+            name: 'Spor Sams fotavtrykk',
             filename: 'Worksheet - Track Sam\'s Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'What Is a Digital Footprint?',
+            title: 'Hva er et digitalt fotavtrykk?',
           },
           {
-            title: 'Mapping Your Online Traces',
+            title: 'Kartlegge dine nettspor',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum - Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.3.1
-        title: 'What Is a Digital Footprint?',
+        title: 'Hva er et digitalt fotavtrykk?',
         supportText:
-          'Use this video to help students visualise the trail of data they leave behind online. Encourage reflection on which of their recent activities might have created a footprint.',
+          'Bruk denne videoen til å hjelpe elever med å visualisere datasporen de etterlater på nett. Oppmuntre til refleksjon over hvilke av deres nylige aktiviteter som kan ha skapt et fotavtrykk.',
         downloads: {
           video: {
             filename: 'What Is a Digital Footprint',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'What Is a Digital Footprint - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
     },
     {
-      goal: 'Help students learn practical strategies for reviewing and managing their digital footprint, including how to adjust privacy settings and remove unwanted data.',
+      goal: 'Hjelpe elever til å lære praktiske strategier for å gjennomgå og administrere det digitale fotavtrykket sitt, inkludert hvordan man justerer personverninnstillinger og fjerner uønskede data.',
       bundle: {
         filename: 'Data Privacy Part 4 Package',
       },
@@ -214,47 +182,47 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Checklist',
-            name: 'Digital Footprint Cleanup Checklist',
+            kind: 'Sjekkliste',
+            name: 'Sjekkliste for opprydding av digitalt fotavtrykk',
             filename: 'Checklist - Digital Footprint Cleanup Checklist',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.4.2
-            kind: 'Worksheet',
-            name: 'Privacy Settings Guide',
+            kind: 'Arbeidsark',
+            name: 'Veiledning for personverninnstillinger',
             filename: 'Worksheet - Privacy Settings Guide',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Introduksjon',
           },
           {
-            title: 'Reviewing Your Digital Footprint',
+            title: 'Gjennomgå det digitale fotavtrykket ditt',
           },
           {
-            title: 'Managing Privacy Settings',
+            title: 'Administrere personverninnstillinger',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenum - Oppsummering og uformell vurdering',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.4.4
-        title: 'Protecting Your Personal Data Online',
+        title: 'Beskytte personopplysningene dine på nett',
         supportText:
-          'Use this video to introduce the concept of personal data and spark discussion about the types of information students share every day.',
+          'Bruk denne videoen til å introdusere konseptet med personopplysninger og starte en diskusjon om typer informasjon elever deler hver dag.',
         downloads: {
           video: {
             filename: 'Protecting Your Personal Data Online',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
             filename: 'Protecting Your Personal Data Online - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
@@ -266,160 +234,148 @@ export const contentDP = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
   ],
 }
 
 export const challengeDP = {
-  title: 'Digital Footprint Sorter',
-  subtitle: 'Sort each activity into the right category. Learn which of your everyday actions leave traces online!',
-  howItWorks: 'How It Works',
-  instruction: 'Drag each activity card into the zone where it belongs. On mobile, tap a card to select it, then tap a drop zone.',
-  tip: 'Think about whether the activity involves the internet, an app, or a website. If it does, it probably leaves a digital footprint!',
-  tipLabel: 'Tip',
-  tryAgain: 'Try Again',
-  activitiesToSort: 'Activities to Sort',
-  leavesFootprint: 'Leaves a Footprint',
-  dragOnlineHere: 'Drag online activities here',
-  noFootprint: 'No Footprint',
-  dragOfflineHere: 'Drag offline activities here',
-  correct: 'Correct! 🎯',
-  tryOtherZone: 'Not quite — try the other zone!',
-  winTitle: 'Amazing! You sorted them all!',
-  winMessage: 'You now know which activities leave a digital footprint. Remember: every click, search, and post creates a trail online!',
-  playAgain: 'Play Again',
+  title: 'Digitalt fotavtrykk-sortering',
+  subtitle: 'Sorter hver aktivitet i riktig kategori. Lær hvilke av dine hverdagslige handlinger som etterlater spor på nett!',
+  howItWorks: 'Slik fungerer det',
+  instruction: 'Dra hvert aktivitetskort inn i sonen det hører til. På mobil, trykk på et kort for å velge det, deretter trykk på en slippsone.',
+  tip: 'Tenk over om aktiviteten involverer internett, en app eller et nettsted. Hvis den gjør det, etterlater den sannsynligvis et digitalt fotavtrykk!',
+  tipLabel: 'Tips',
+  tryAgain: 'Prøv igjen',
+  activitiesToSort: 'Aktiviteter å sortere',
+  leavesFootprint: 'Etterlater et fotavtrykk',
+  dragOnlineHere: 'Dra nettaktiviteter hit',
+  noFootprint: 'Ingen fotavtrykk',
+  dragOfflineHere: 'Dra frakoblede aktiviteter hit',
+  correct: 'Riktig! 🎯',
+  tryOtherZone: 'Ikke helt — prøv den andre sonen!',
+  winTitle: 'Fantastisk! Du sorterte dem alle!',
+  winMessage: 'Du vet nå hvilke aktiviteter som etterlater et digitalt fotavtrykk. Husk: hvert klikk, søk og innlegg skaper et spor på nett!',
+  playAgain: 'Spill igjen',
   activities: [
-    { 
-      text: 'Posting a photo on Instagram', 
-      category: 'footprint', 
-      emoji: '📸', 
-      explanation: 'Photos you share online stay on servers and can be found by anyone — even years later!' 
+    {
+      text: 'Poste et bilde på Instagram',
+      category: 'footprint',
+      emoji: '📸',
+      explanation: 'Bilder du deler på nett, forblir på servere og kan finnes av hvem som helst — til og med år senere!',
     },
-    { 
-      text: 'Reading a paper book at home', 
-      category: 'no-footprint', 
-      emoji: '📖', 
-      explanation: 'No internet connection means no digital trace is created.' 
+    {
+      text: 'Lese en papirbok hjemme',
+      category: 'no-footprint',
+      emoji: '📖',
+      explanation: 'Ingen internettforbindelse betyr at det ikke opprettes noe digitalt spor.',
     },
-    { 
-      text: 'Searching for answers on Google', 
-      category: 'footprint', 
-      emoji: '🔍', 
-      explanation: 'Search engines record what you look for and use it to show you personalised results.' 
+    {
+      text: 'Søke etter svar på Google',
+      category: 'footprint',
+      emoji: '🔍',
+      explanation: 'Søkemotorer registrerer hva du leter etter og bruker det til å vise deg personaliserte resultater.',
     },
-    { 
-      text: 'Playing soccer outside', 
-      category: 'no-footprint', 
-      emoji: '⚽', 
-      explanation: 'Outdoor activities without a phone or app leave no digital record.' 
+    {
+      text: 'Spille fotball ute',
+      category: 'no-footprint',
+      emoji: '⚽',
+      explanation: 'Utendørsaktiviteter uten telefon eller app etterlater ingen digital registrering.',
     },
-    { 
-      text: 'Sending a message on WhatsApp', 
-      category: 'footprint', 
-      emoji: '💬', 
-      explanation: 'Messages are stored on servers and create a permanent record of your conversations.' 
+    {
+      text: 'Sende en melding på WhatsApp',
+      category: 'footprint',
+      emoji: '💬',
+      explanation: 'Meldinger lagres på servere og oppretter en permanent registrering av samtalene dine.',
     },
-    { 
-      text: 'Drawing a picture with crayons', 
-      category: 'no-footprint', 
-      emoji: '🖍️', 
-      explanation: 'Traditional art with physical materials doesn\'t create any online data.' 
+    {
+      text: 'Tegne et bilde med fargestifter',
+      category: 'no-footprint',
+      emoji: '🖍️',
+      explanation: 'Tradisjonell kunst med fysiske materialer oppretter ingen nettdata.',
     },
-    { 
-      text: 'Creating an account on a game website', 
-      category: 'footprint', 
-      emoji: '🎮', 
-      explanation: 'Signing up stores your name, email, and every action you take on the site.' 
+    {
+      text: 'Opprette en konto på en spillnettside',
+      category: 'footprint',
+      emoji: '🎮',
+      explanation: 'Registrering lagrer navnet ditt, e-postadressen og hver handling du utfører på siden.',
     },
-    { 
-      text: 'Riding your bike around the neighbourhood', 
-      category: 'no-footprint', 
-      emoji: '🚲', 
-      explanation: 'Unless you use a tracking app, cycling is a purely offline activity.' 
+    {
+      text: 'Sykle rundt i nabolaget',
+      category: 'no-footprint',
+      emoji: '🚲',
+      explanation: 'Med mindre du bruker en sporingsapp, er sykling en rent frakoblet aktivitet.',
     },
-    { 
-      text: 'Watching videos on YouTube', 
-      category: 'footprint', 
-      emoji: '▶️', 
-      explanation: 'YouTube tracks every video you watch and uses it to recommend more content.' 
+    {
+      text: 'Se videoer på YouTube',
+      category: 'footprint',
+      emoji: '▶️',
+      explanation: 'YouTube sporer hver video du ser og bruker det til å anbefale mer innhold.',
     },
-    { 
-      text: 'Writing in your paper diary', 
-      category: 'no-footprint', 
-      emoji: '📓', 
-      explanation: 'A paper diary has no internet connection — your thoughts stay truly private.' 
+    {
+      text: 'Skrive i dagboken din på papir',
+      category: 'no-footprint',
+      emoji: '📓',
+      explanation: 'En papirdagbok har ingen internettforbindelse — tankene dine forblir virkelig private.',
     },
-    { 
-      text: 'Liking a friend\'s TikTok video', 
-      category: 'footprint', 
-      emoji: '❤️', 
-      explanation: 'Every like you give is recorded and shapes your online profile and recommendations.' 
+    {
+      text: 'Like en venns TikTok-video',
+      category: 'footprint',
+      emoji: '❤️',
+      explanation: 'Hvert like du gir, registreres og former din nettilstedeværelse og anbefalinger.',
     },
-    { 
-      text: 'Playing a board game with family', 
-      category: 'no-footprint', 
-      emoji: '🎲', 
-      explanation: 'Board games are offline fun — no data is created or stored anywhere.' 
+    {
+      text: 'Spille et brettspill med familien',
+      category: 'no-footprint',
+      emoji: '🎲',
+      explanation: 'Brettspill er frakoblet moro — ingen data opprettes eller lagres noe sted.',
     },
-    { 
-      text: 'Filling out an online quiz', 
-      category: 'footprint', 
-      emoji: '📝', 
-      explanation: 'Websites collect every answer you type in and may share it with others.' 
+    {
+      text: 'Fylle ut en nettquiz',
+      category: 'footprint',
+      emoji: '📝',
+      explanation: 'Nettsteder samler hvert svar du skriver inn og kan dele det med andre.',
     },
-    { 
-      text: 'Talking to friends at school', 
-      category: 'no-footprint', 
-      emoji: '🗣️', 
-      explanation: 'Face-to-face conversations leave no digital trace at all.' 
+    {
+      text: 'Snakke med venner på skolen',
+      category: 'no-footprint',
+      emoji: '🗣️',
+      explanation: 'Ansikt-til-ansikt samtaler etterlater ingen digitalt spor i det hele tatt.',
     },
-    { 
-      text: 'Leaving a comment on a blog', 
-      category: 'footprint', 
-      emoji: '💻', 
-      explanation: 'Comments are public, linked to your name, and stay on the website forever.' 
+    {
+      text: 'Legge igjen en kommentar på en blogg',
+      category: 'footprint',
+      emoji: '💻',
+      explanation: 'Kommentarer er offentlige, koblet til navnet ditt og forblir på nettstedet for alltid.',
     },
   ],
 }

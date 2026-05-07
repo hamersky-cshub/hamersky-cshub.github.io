@@ -14,7 +14,7 @@ const { t, v } = useTranslations(locale)
 
 const objectives = v<ReadonlyArray<string>>('contentAT.objectives') ?? []
 const outcomes = v<ReadonlyArray<string>>('contentAT.outcomes') ?? []
-const teachersGuide = v<TeachersGuide>('contentAT.teachersGuide') ?? {}
+const teachersGuide = v<TeachersGuide>('contentAT.teachingGuide') ?? {}
 const currentModule = getModule('at')!
 // mergeParts combines structural asset data (file paths, video sources) from
 // modulePartsData with the locale-specific text from contentAT.parts. The
@@ -45,22 +45,22 @@ const moduleImages = {
 }
 ---
 
-<DefaultLayout title={t('modules.at.title')}>
+<DefaultLayout title={t('pages.hub.modules.at.title')}>
   <PageHeader
-    title={t('modules.at.title')}
-    subtitle={t('contentAT.subtitle')}
+    title={t('pages.hub.modules.at.title')}
+    subtitle={t('pages.hub.modules.at.description')}
     underlineColor="var(--brand-AT)"
     bgType="module"
     buttons={[
       { 
-        text: t('contentPage.downloadGuide'), 
+        text: t('pages.hub.contentPage.downloadGuide'), 
         href: currentModule.teachersGuide.href,
         variant: "primary",
         icon: "lucide:download",
         download: teachersGuide.download ?? '',
       },
       { 
-        text: t('contentPage.downloadAll'), 
+        text: t('pages.hub.contentPage.downloadAll'), 
         href: '/materials/authentication/authentication.zip', 
         variant: 'primary', 
         icon: 'lucide:download', 
@@ -79,16 +79,16 @@ const moduleImages = {
           <div class="auth-tabs__bar" role="tablist">
             <button class="auth-tab" role="tab" aria-selected="true" data-panel="aoo-aim">
               <img class="auth-tab-img-icon" src="/images/learning-hub/aim.png" alt="" aria-hidden="true" />
-              {t('contentPage.aimTitle')}
+              {t('pages.hub.contentPage.aimTitle')}
             </button>
             <button class="auth-tab" role="tab" aria-selected="false" data-panel="aoo-objectives">
               <img class="auth-tab-img-icon" src="/images/learning-hub/objectives.png" alt="" aria-hidden="true" />
-              {t('contentPage.objectivesTitle')}
+              {t('pages.hub.contentPage.objectivesTitle')}
               <span class="auth-tab__badge">{objectives.length}</span>
             </button>
             <button class="auth-tab" role="tab" aria-selected="false" data-panel="aoo-outcomes">
               <img class="auth-tab-img-icon" src="/images/learning-hub/outcomes.png" alt="" aria-hidden="true" />
-              {t('contentPage.outcomesTitle')}
+              {t('pages.hub.contentPage.outcomesTitle')}
               <span class="auth-tab__badge">{outcomes.length}</span>
             </button>
           </div>
@@ -124,21 +124,21 @@ const moduleImages = {
       </div>
 
       <!-- Section Divider -->
-      <div class="auth-divider auth-divider--center" style="margin-top: var(--space-xl);">What's inside</div>
+      <div class="auth-divider auth-divider--center" style="margin-top: var(--space-xl);">{t('pages.hub.contentPage.dividerContent')}</div>
 
       <!-- Module Content -->
       <div class="auth-section" id="module-content">
         <div class="auth-section__header">
-          <h2>{t('contentPage.moduleContent')}</h2>
-          <p class="auth-section__subtitle">{t('contentPage.moduleContentSubtitle')}</p>
+          <h2>{t('pages.hub.contentPage.moduleContent')}</h2>
+          <p class="auth-section__subtitle">{t('pages.hub.contentPage.moduleContentSubtitle')}</p>
         </div>
         <div class="auth-module-list">
           <div class="auth-module-row">
-            <a class="auth-part-button" href="#teachers-guide">{t('contentPage.guideLabel')}</a>
+            <a class="auth-part-button" href="#teachers-guide">{t('pages.hub.labels.guide')}</a>
             <div class="auth-teaching-guide" id="teachers-guide">
               <div class="auth-package-banner__copy">
-                <h3>{t('contentPage.teachersGuideTitle')}</h3>
-                <p class="auth-package-banner__sub">{t('contentPage.guideDescription')}</p>
+                <h3>{t('pages.hub.contentPage.guideTitle')}</h3>
+                <p class="auth-package-banner__sub">{t('pages.hub.contentPage.guideDescription')}</p>
               </div>
               <div class="auth-package-btn-wrap">
                 <a
@@ -148,7 +148,7 @@ const moduleImages = {
                   aria-label={String(teachersGuide.ariaLabel ?? '')}
                 >
                   <Icon name="lucide:download" />
-                  {t('contentPage.teachersGuideDownload')}
+                  {t('pages.hub.contentPage.downloadGuide')}
                 </a>
               </div>
             </div>
@@ -167,23 +167,23 @@ const moduleImages = {
 
             return (
               <div class="auth-module-row">
-                <a class="auth-part-button" href={`#${String(part.anchorId ?? '')}`}>{t('hub.partLabel')} {String(part.number ?? '')}</a>
+                <a class="auth-part-button" href={`#${String(part.anchorId ?? '')}`}>{t('pages.hub.labels.part')} {String(part.number ?? '')}</a>
                 <details class="auth-module" id={String(part.anchorId ?? '')}>
                   <summary class="auth-module__header">
                     <div class="auth-module__copy">
                       <h3>{title}</h3>
                       <div class="auth-module__meta">
                         {hasCount(meta.steps) ? (
-                          <span class="auth-meta-item"><Icon name="lucide:list-checks" /> {formatCount(meta.steps, 'contentPage.stepSingular', 'contentPage.stepPlural')}</span>
+                          <span class="auth-meta-item"><Icon name="lucide:list-checks" /> {formatCount(meta.steps, 'pages.hub.labels.step', 'pages.hub.labels.steps')}</span>
                         ) : null}
                         {hasCount(meta.materials) ? (
-                          <span class="auth-meta-item"><Icon name="lucide:file-text" /> {formatCount(meta.materials, 'contentPage.materialSingular', 'contentPage.materialPlural')}</span>
+                          <span class="auth-meta-item"><Icon name="lucide:file-text" /> {formatCount(meta.materials, 'pages.hub.labels.material', 'pages.hub.labels.materials')}</span>
                         ) : null}
                         {hasCount(meta.videos) ? (
-                          <span class="auth-meta-item"><Icon name="lucide:play-circle" /> {formatCount(meta.videos, 'contentPage.videoSingular', 'contentPage.videoPlural')}</span>
+                          <span class="auth-meta-item"><Icon name="lucide:play-circle" /> {formatCount(meta.videos, 'pages.hub.labels.video', 'pages.hub.labels.videos')}</span>
                         ) : null}
                       </div>
-                      <p class="auth-goal"><b>{t('contentPage.goalLabel')}</b> {String(part.goal ?? '')}</p>
+                      <p class="auth-goal"><b>{t('pages.hub.labels.goal')}</b> {String(part.goal ?? '')}</p>
                     </div>
                     <span class="auth-module__toggle" aria-hidden="true">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -194,8 +194,8 @@ const moduleImages = {
                   <div class="auth-module__content">
                     <div class="auth-package-banner">
                       <div class="auth-package-banner__copy">
-                        <p class="auth-package-banner__title">{t('contentPage.materialPackage')}</p>
-                        <p class="auth-package-banner__sub">{t('contentPage.materialPackageSub')}</p>
+                        <p class="auth-package-banner__title">{t('pages.hub.contentPage.materialPackage')}</p>
+                        <p class="auth-package-banner__sub">{t('pages.hub.contentPage.materialPackageSub')}</p>
                       </div>
                       <div class="auth-package-btn-wrap">
                         <a
@@ -204,7 +204,7 @@ const moduleImages = {
                           download={String(part.bundle?.filename ?? '')}
                         >
                           <Icon name="lucide:download" />
-                          {t('contentPage.downloadPart')}
+                          {t('pages.hub.contentPage.downloadPackage')}
                         </a>
                       </div>
                     </div>
@@ -220,7 +220,7 @@ const moduleImages = {
                               data-panel={`activity-${part.anchorId}`}
                             >
                               <Icon name="lucide:list" />
-                              {t('contentPage.activityPlan')}
+                              {t('pages.hub.labels.activityPlan')}
                               <span class="auth-tab__badge">{partActivity.length}</span>
                             </button>
                           ) : null}
@@ -232,7 +232,7 @@ const moduleImages = {
                               data-panel={`materials-${part.anchorId}`}
                             >
                               <Icon name="lucide:file-text" />
-                              {t('contentPage.materialPlural')}
+                              {t('pages.hub.labels.materials')}
                               <span class="auth-tab__badge">{partMaterials.length}</span>
                             </button>
                           ) : null}
@@ -244,7 +244,7 @@ const moduleImages = {
                               data-panel={`video-${part.anchorId}`}
                             >
                               <Icon name="lucide:video" />
-                              {t('contentPage.videoPlural')}
+                              {t('pages.hub.labels.videos')}
                               <span class="auth-tab__badge">1</span>
                             </button>
                           ) : null}
@@ -269,7 +269,7 @@ const moduleImages = {
                                     aria-label={String(item.ariaLabel ?? '')}
                                   >
                                     <Icon name="lucide:download" />
-                                    <span>{t('contentPage.download')}</span>
+                                    <span>{t('pages.hub.contentPage.download')}</span>
                                   </a>
                                 </li>
                               ))}
@@ -288,7 +288,7 @@ const moduleImages = {
                               {partActivity.map((step: MergedActivityStep) => (
                                 <li class="auth-step-item auth-step-item--plain">
                                   <span class="auth-step-num">{String(step.stepNumber ?? 0).padStart(2, '0')}</span>
-                                  <p class="auth-step-title"><b>{t('contentPage.stepSingular')} {String(step.stepNumber ?? '')}:</b> {String(step.title ?? '')}</p>
+                                  <p class="auth-step-title"><b>{t('pages.hub.labels.step')} {String(step.stepNumber ?? '')}:</b> {String(step.title ?? '')}</p>
                                 </li>
                               ))}
                             </ul>
@@ -332,7 +332,7 @@ const moduleImages = {
                                       aria-label={String(featuredVideo.downloads?.video?.ariaLabel ?? '')}
                                     >
                                       <Icon name="lucide:download" />
-                                      <span>{t('contentPage.videoSingular')}</span>
+                                      <span>{t('pages.hub.labels.video')}</span>
                                     </a>
                                   </div>
                                   <div class="auth-video-action-wrap">
@@ -343,7 +343,7 @@ const moduleImages = {
                                       aria-label={String(featuredVideo.downloads?.subtitles?.ariaLabel ?? '')}
                                     >
                                       <Icon name="lucide:captions" />
-                                      <span>{t('contentPage.subtitlesSingular')}</span>
+                                      <span>{t('pages.hub.labels.subtitles')}</span>
                                     </a>
                                   </div>
                                 </div>
@@ -362,19 +362,19 @@ const moduleImages = {
       </div>
 
       <!-- Section Divider -->
-      <div class="auth-divider auth-divider--center">More resources</div>
+      <div class="auth-divider auth-divider--center">{t('pages.hub.contentPage.dividerMore')}</div>
 
       <!-- Related Modules -->
       <div class="auth-section">
         <div class="auth-section__header">
-          <h2>{t('contentPage.relatedModules')}</h2>
-          <p class="auth-section__subtitle">{t('contentPage.relatedModulesSubtitle')}</p>
+          <h2>{t('pages.hub.contentPage.relatedModules')}</h2>
+          <p class="auth-section__subtitle">{t('pages.hub.contentPage.relatedModulesSubtitle')}</p>
         </div>
 
         <div class="auth-rm-list">
           {relatedModuleCards.map((card, idx) => {
             const moduleId = String(card.moduleId ?? '')
-            const title = t(`modules.${moduleId}.title`)
+            const title = t(`pages.hub.modules.${moduleId}.title`)
             const href = localizePath(locale, String(card.href ?? ''))
             const image = moduleImages[moduleId as keyof typeof moduleImages]
             const brandVar = `var(--brand-${String(card.brand ?? '')})`
@@ -390,7 +390,7 @@ const moduleImages = {
                 </div>
                 <div class="auth-rm-body">
                   <strong class="auth-rm-title">{title}</strong>
-                  <span class="auth-rm-desc">{String(card.description ?? '')}</span>
+                  <span class="auth-rm-desc">{t(`pages.hub.modules.${moduleId}.description`)}</span>
                 </div>
                 <div class="auth-rm-meta" aria-label={title}>
                   {hasCount(card.parts) ? (

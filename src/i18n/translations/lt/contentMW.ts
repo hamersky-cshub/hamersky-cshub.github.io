@@ -6,57 +6,25 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentMW = {
-  subtitle:
-    'Malware is harmful software that can slow devices, steal information, or cause damage. This module helps educators teach students how malware spreads and how to keep devices safe.',
-  aim: 'To help students understand what malware is, how infections happen, and which habits reduce the risk of unsafe downloads, files, and installations.',
+  aim: 'Padėti mokiniams suprasti, kas yra kenkėjiška programa, kaip vyksta užkrėtimai ir kokios įpročiai mažina nesaugių atsisiuntimų, failų ir diegimų riziką.',
   objectives: [
-    'Introduce what malware is and why it is risky.',
-    'Identify common ways malware spreads.',
-    'Build habits for safer downloads and updates.',
+    'Pristatyti, kas yra kenkėjiška programa ir kodėl ji pavojinga.',
+    'Nustatyti įprastus kenkėjiškų programų plitimo būdus.',
+    'Ugdyti įpročius saugesniam atsisiuntimui ir atnaujinimams.',
   ],
   outcomes: [
-    'Explain the difference between safe and unsafe files or links.',
-    'Recognize warning signs of suspicious downloads.',
-    'Use trusted sources and ask for help when unsure.',
+    'Paaiškinti skirtumą tarp saugių ir nesaugių failų ar nuorodų.',
+    'Atpažinti įtartinų atsisiuntimų įspėjamuosius ženklus.',
+    'Naudotis patikimais šaltiniais ir prašyti pagalbos, kai neaišku.',
   ],
-  teachersGuide: {
+  teachingGuide: {
     ariaLabel: 'Download Teaching Guide',
-    download: 'Malware Teaching Guide',
+    download: 'Kenkėjiškų programų mokymo vadovas',
   },
   parts: [
     {
-      goal: 'Help students understand the concept of malware.',
+      goal: 'Padėti mokiniams suprasti kenkėjiškos programos sąvoką.',
       bundle: {
         filename: 'Malware Part 1 Package',
       },
@@ -64,36 +32,36 @@ export const contentMW = {
         materials: [
           {
             // ID: 6.1.1
-            kind: 'Image',
-            name: 'Malicious + Software = Malware',
+            kind: 'Paveikslėlis',
+            name: 'Kenkėjiška + programa = kenkėjiška programa',
             filename: 'Image - Malicious + Software = Malware',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.1.3
-            kind: 'Worksheet',
-            name: 'Related to Malware or Not?',
+            kind: 'Darbalapas',
+            name: 'Susiję su kenkėjiška programa ar ne?',
             filename: 'Worksheet - Related to Malware or Not',
             ariaLabel: 'Download material',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Defining Malware',
+            title: 'Kenkėjiškos programos apibrėžimas',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 6.1.2
-        title: 'What is Malware?',
+        title: 'Kas yra kenkėjiška programa?',
         supportText:
-          'Use this video to introduce malware as software designed to cause harm, giving students a foundation before they explore specific types in more depth. Pause to ask what they already know or have heard about computer viruses.',
+          'Naudokite šį vaizdo įrašą, kad pristatytumėte kenkėjišką programą kaip programinę įrangą, skirtą padaryti žalą, suteikdami mokiniams pagrindą prieš gilinantis į konkrečius tipus. Padarykite pauzę ir paklauskite, ką jie jau žino ar girdėjo apie kompiuterinius virusus.',
         downloads: {
           video: {
             filename: 'What is Malware',
@@ -107,7 +75,7 @@ export const contentMW = {
       },
     },
     {
-      goal: 'Introduce common types of malwares.',
+      goal: 'Pristatyti įprastus kenkėjiškų programų tipus.',
       bundle: {
         filename: 'Malware Part 2 Package',
       },
@@ -116,43 +84,42 @@ export const contentMW = {
           {
             // ID: 6.2.2
             kind: 'Schema',
-            name: 'Set of Coins',
+            name: 'Monetų rinkinys',
             filename: 'Schema - Set of Coins',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.2.3
             kind: 'Schema',
-            name: 'Knot Ties Board',
+            name: 'Mazgų lentelė',
             filename: 'Sheet - Knot Ties Board',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.2.4
-            kind: 'Sheet',
-            name: 'Malware Properties',
+            kind: 'Lapas',
+            name: 'Kenkėjiškų programų savybės',
             filename: 'Sheet - Malware Properties',
             ariaLabel: 'Download material',
           },
         ],
         activityPlan: [
           {
-
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Tie the Knots for Malware Types',
+            title: 'Mazgų rišimas kenkėjiškų programų tipams',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 6.2.1
-        title: 'Introducing Malware Types',
+        title: 'Kenkėjiškų programų tipų pristatymas',
         supportText:
-          'Use this video to give students a clear overview of the different categories of malware and what makes each one distinct. Pause for a brief discussion on which type they think poses the greatest risk and why.',
+          'Naudokite šį vaizdo įrašą, kad suteiktumėte mokiniams aiškią apžvalgą apie skirtingas kenkėjiškų programų kategorijas ir kas kiekvieną iš jų išskiria. Padarykite pauzę trumpai diskusijai, kuris tipas, jų manymu, kelia didžiausią riziką ir kodėl.',
         downloads: {
           video: {
             filename: 'Introducing Malware Types',
@@ -160,12 +127,13 @@ export const contentMW = {
           },
           subtitles: {
             filename: 'Introducing Malware Types - Subtitles',
-            ariaLabel: 'Download subtitles' },
+            ariaLabel: 'Download subtitles',
+          },
         },
       },
     },
     {
-      goal: 'Provide an overview of the characteristics of the malware to recognise and detect it.',
+      goal: 'Pateikti kenkėjiškų programų charakteristikų apžvalgą, kad būtų galima jas atpažinti ir aptikti.',
       bundle: {
         filename: 'Malware Part 3 Package',
       },
@@ -173,48 +141,48 @@ export const contentMW = {
         materials: [
           {
             // ID: 6.3.1
-            kind: 'Worksheet',
-            name: 'List of Indicators',
+            kind: 'Darbalapas',
+            name: 'Indikatorių sąrašas',
             filename: 'Worksheet - List of Indicators',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.3.2
-            kind: 'Reading',
-            name: 'Recognising Malware',
+            kind: 'Skaitymas',
+            name: 'Kenkėjiškų programų atpažinimas',
             filename: 'Reading - Recognising Malware',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.3.3
-            kind: 'Poster',
-            name: 'Seven Indicators',
+            kind: 'Plakatas',
+            name: 'Septyni indikatoriai',
             filename: 'Poster - Seven Indicators',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.3.4
-            kind: 'Table',
-            name: 'Situation and Indicators',
+            kind: 'Lentelė',
+            name: 'Situacija ir indikatoriai',
             filename: 'Table - Situation and Indicators',
             ariaLabel: 'Download material',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Investigating Malware',
+            title: 'Kenkėjiškų programų tyrimas',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
           },
         ],
       },
     },
     {
-      goal: 'Help students understand protection measures against malware.',
+      goal: 'Padėti mokiniams suprasti apsaugos priemones nuo kenkėjiškų programų.',
       bundle: {
         filename: 'Malware Part 4 Package',
       },
@@ -222,38 +190,38 @@ export const contentMW = {
         materials: [
           {
             // ID: 6.4.1
-            kind: 'Situation',
-            name: 'Malware and Data Theft?',
+            kind: 'Situacija',
+            name: 'Kenkėjiška programa ir duomenų vagystė?',
             filename: 'Situation - Malware and Data Theft',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.4.2
-            kind: 'Poster',
-            name: 'DOs and DON\'Ts',
+            kind: 'Plakatas',
+            name: 'KĄ DARYTI ir KO NEDARYTI',
             filename: 'Poster - DOs and DON\'Ts',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.4.3
-            kind: 'Worksheet',
-            name: 'A Shield Against Malware',
+            kind: 'Darbalapas',
+            name: 'Skydas nuo kenkėjiškų programų',
             filename: 'Worksheet - A Shield Against Malware',
             ariaLabel: 'Download material',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Analysing the Situation of Uncareful Behaviour',
+            title: 'Neatsargaus elgesio situacijos analizė',
           },
           {
-            title: 'Learning Basic Protection Measures',
+            title: 'Pagrindinių apsaugos priemonių mokymasis',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
           },
         ],
       },
@@ -265,452 +233,438 @@ export const contentMW = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
   ],
 }
 
 export const challengeMW = {
-  title: 'Malware Detective',
-  subtitle: 'You are a cybersecurity analyst. Inspect files on your virtual computer, scan your inbox, handle suspicious pop-ups, and review app permissions across 4 interactive levels. Can you keep the system clean?',
-  howItWorks: 'How It Works',
-  instruction: 'Work through 4 levels on your virtual computer. Each level presents a different cybersecurity scenario. Examine each case carefully and decide whether it is safe or a threat — then learn from the explanation.',
-  tip: 'Malware often disguises itself as something harmless. Look for suspicious file extensions, misspelled domains, unnecessary permissions, and promises that seem too good to be true.',
-  tipLabel: 'Tip',
-  welcomeTitle: 'Welcome, Cyber Analyst!',
-  welcomeDescription: 'Your computer has received suspicious files, emails, and pop-ups. Work through 4 levels to identify threats and protect the system.',
+  title: 'Kenkėjiškos programos detektyvas',
+  subtitle: 'Esi kibernetinio saugumo analitikas. Tikrink failus savo virtualiame kompiuteryje, skenuok gautuosius, tvarkyk įtartinus iššokančius langus ir peržiūrėk programų leidimus 4 interaktyviuose lygiuose. Ar sugebėsi išlaikyti sistemą švarią?',
+  howItWorks: 'Kaip tai veikia',
+  instruction: 'Dirbk per 4 lygius savo virtualiame kompiuteryje. Kiekvienas lygis pateikia skirtingą kibernetinio saugumo scenarijų. Atidžiai išnagrinėk kiekvieną atvejį ir nuspręsk, ar jis saugus, ar grėsmė — tada mokykis iš paaiškinimo.',
+  tip: 'Kenkėjiška programa dažnai maskuojasi kaip kažkas nekenksmingo. Ieškokite įtartinų failų plėtinių, neteisingai parašytų domenų, nereikalingų leidimų ir pažadų, kurie skamba per gerai, kad būtų tiesa.',
+  tipLabel: 'Patarimas',
+  welcomeTitle: 'Sveiki, kibernetinio saugumo analitike!',
+  welcomeDescription: 'Jūsų kompiuteris gavo įtartinų failų, el. laiškų ir iššokančių langų. Dirbkite per 4 lygius, kad nustatytumėte grėsmes ir apsaugotumėte sistemą.',
   levels: [
-    '💻 Level 1 — File Scanner',
-    '📧 Level 2 — Email Inbox',
-    '🌐 Level 3 — Browser Pop-ups',
-    '🔒 Level 4 — App Permissions',
+    '💻 1 lygis — Failų skaitytuvas',
+    '📧 2 lygis — El. pašto gautusis',
+    '🌐 3 lygis — Naršyklės iššokantys langai',
+    '🔒 4 lygis — Programų leidimai',
   ],
-  bootButton: 'Boot Up Computer →',
-  scoreLabel: 'Score',
-  correctLabel: 'Correct',
-  threatsCaughtLabel: 'Threats Caught',
-  keepFile: '✓ Keep File',
-  quarantine: '🗑️ Quarantine',
-  safeKeep: '✓ Safe / Keep',
-  threatRemove: '⚠️ Threat / Remove',
-  nextButton: 'Next →',
-  malwareTypesTitle: 'Malware Types',
-  malwareTypesSubtitle: 'Common types of malware to watch out for',
+  bootButton: 'Paleisti kompiuterį →',
+  scoreLabel: 'Taškai',
+  correctLabel: 'Teisingai',
+  threatsCaughtLabel: 'Aptiktos grėsmės',
+  keepFile: '✓ Palikti failą',
+  quarantine: '🗑️ Karantinas',
+  safeKeep: '✓ Saugu / Palikti',
+  threatRemove: '⚠️ Grėsmė / Pašalinti',
+  nextButton: 'Toliau →',
+  malwareTypesTitle: 'Kenkėjiškų programų tipai',
+  malwareTypesSubtitle: 'Įprasti kenkėjiškų programų tipai, kurių reikia saugotis',
   malwareTypes: [
-    '🦠 Virus — attaches to files and spreads',
-    '🪱 Worm — self-replicates across networks',
-    '🐴 Trojan — disguised as useful software',
-    '🔐 Ransomware — locks files until you pay',
-    '👁️ Spyware — secretly monitors activity',
-    '📢 Adware — floods you with ads',
+    '🦠 Virusas — prisijungia prie failų ir plinta',
+    '🪱 Kirminas — pats atkartojasi per tinklus',
+    '🐴 Trojos arklys — maskuojasi kaip naudinga programa',
+    '🔐 Išpirkos reikalaujanti programa — užrakina failus, kol sumokėsi',
+    '👁️ Šnipinėjimo programa — slapta stebi veiklą',
+    '📢 Reklaminė programa — užverčia tave reklamomis',
   ],
-  securityGuideTitle: 'Security Guide',
-  securityGuideSubtitle: 'Red flags to watch for',
+  securityGuideTitle: 'Saugumo vadovas',
+  securityGuideSubtitle: 'Raudonos vėliavėlės, kurių reikia saugotis',
   securityRedFlags: [
-    '🚩 .exe, .bat, .vbs from unknown sources',
-    '🚩 Misspelled or fake sender domains',
-    '🚩 Fake virus alerts in your browser',
-    '🚩 Apps requesting unneeded permissions',
-    '🚩 Prizes, free money, or urgent threats',
-    '🚩 Countdown timers creating panic',
+    '🚩 .exe, .bat, .vbs iš nežinomų šaltinių',
+    '🚩 Neteisingai parašytos arba suklastotos siuntėjo domeno',
+    '🚩 Netikros viruso perspėjimai naršyklėje',
+    '🚩 Programos, prašančios nereikalingų leidimų',
+    '🚩 Prizai, nemokamos pinigų ar skubios grėsmės',
+    '🚩 Atgaliniai skaičiavimo laikrodžiai, keliantys paniką',
   ],
-  goldenRule: 'When in doubt, don\'t click. Contact IT support or a trusted adult instead.',
-  levelCompleteTitle: 'Level Complete!',
-  levelCompleteSubtitle: 'Keep going!',
-  levelResultLabel: 'Level Result',
-  correctDecisionsLabel: 'correct decisions',
-  continueButton: 'Continue →',
-  resultsTitle: 'System Secured! 🛡️',
-  resultsDescription: 'Your cybersecurity report is ready.',
-  accuracyLabel: 'Accuracy',
-  threatsCaughtStat: 'Threats Caught',
-  threatsMissedStat: 'Threats Missed',
-  analystRankLabel: 'Analyst Rank',
-  rankTrainee: '📘 Trainee',
-  rankTraineeMsg: 'Keep learning! Review the Security Guide on the right and try again — you\'ll improve!',
-  rankJunior: '🔍 Junior Analyst',
-  rankJuniorMsg: 'Good effort! You\'re building solid malware detection skills. Practice makes perfect.',
-  rankSenior: '🔐 Senior Analyst',
-  rankSeniorMsg: 'Great job! You identified most threats. Keep sharpening your eye for subtle red flags.',
-  rankElite: '🛡️ Elite Cyber Analyst',
-  rankEliteMsg: 'Outstanding work! You caught nearly every threat. Your digital security instincts are excellent.',
-  playAgain: 'Play Again',
+  goldenRule: 'Abejodamas nespausk. Kreipkis į IT palaikymą arba patikimą suaugusįjį.',
+  levelCompleteTitle: 'Lygis baigtas!',
+  levelCompleteSubtitle: 'Tęsk toliau!',
+  levelResultLabel: 'Lygio rezultatas',
+  correctDecisionsLabel: 'teisingi sprendimai',
+  continueButton: 'Tęsti →',
+  resultsTitle: 'Sistema apsaugota! 🛡️',
+  resultsDescription: 'Jūsų kibernetinio saugumo ataskaita paruošta.',
+  accuracyLabel: 'Tikslumas',
+  threatsCaughtStat: 'Aptiktos grėsmės',
+  threatsMissedStat: 'Praleistos grėsmės',
+  analystRankLabel: 'Analitiko rangas',
+  rankTrainee: '📘 Praktikantas',
+  rankTraineeMsg: 'Mokykis toliau! Peržiūrėk saugumo vadovą dešinėje ir bandyk dar kartą — pagerės!',
+  rankJunior: '🔍 Jaunesnysis analitikas',
+  rankJuniorMsg: 'Geras darbas! Kuri tvirtus kenkėjiškų programų aptikimo įgūdžius. Praktika tobulina.',
+  rankSenior: '🔐 Vyresnysis analitikas',
+  rankSeniorMsg: 'Puikus darbas! Nustatei daugumą grėsmių. Toliau aštrina akį subtilioms raudonoms vėliavėlėms.',
+  rankElite: '🛡️ Elitinis kibernetinio saugumo analitikas',
+  rankEliteMsg: 'Puikus darbas! Aptikai beveik kiekvieną grėsmę. Tavo skaitmeninio saugumo instinktai puikūs.',
+  playAgain: 'Žaisti dar kartą',
   levelMeta: [
-    { title: 'Level 1 of 4 — File Scanner', app: '📁 File Explorer', msg: '🔍 Scanning file…' },
-    { title: 'Level 2 of 4 — Email Inbox', app: '📧 Mail', msg: '📧 Reading email…' },
-    { title: 'Level 3 of 4 — Browser Pop-ups', app: '🌐 Browser', msg: '⚠️ Pop-up detected!' },
-    { title: 'Level 4 of 4 — App Permissions', app: '⚙️ App Manager', msg: '⚙️ Reviewing permissions…' },
+    { title: '4 lygių 1 lygis — Failų skaitytuvas', app: '📁 Failų naršyklė', msg: '🔍 Nuskaitomas failas…' },
+    { title: '4 lygių 2 lygis — El. pašto gautusis', app: '📧 Paštas', msg: '📧 Skaitomas el. laiškas…' },
+    { title: '4 lygių 3 lygis — Naršyklės iššokantys langai', app: '🌐 Naršyklė', msg: '⚠️ Aptiktas iššokantis langas!' },
+    { title: '4 lygių 4 lygis — Programų leidimai', app: '⚙️ Programų tvarkytuvė', msg: '⚙️ Peržiūrimi leidimai…' },
   ],
   files: [
     {
-      icon: '💀', name: 'FreeMinecraft_Crack.exe', type: 'Executable (.exe)',
-      source: 'Downloaded from: crack-games-free.ru', size: '14.2 MB', date: 'Today, 3:41 PM',
-      description: 'An installer claiming to give you free Minecraft. Downloaded from an unofficial Russian website.',
+      icon: '💀', name: 'FreeMinecraft_Crack.exe', type: 'Vykdomasis failas (.exe)',
+      source: 'Atsisiųsta iš: crack-games-free.ru', size: '14,2 MB', date: 'Šiandien, 15:41',
+      description: 'Diegimo programa, teigianti, kad suteiks nemokamą Minecraft. Atsisiųsta iš neoficialios rusų svetainės.',
       isThreat: true,
-      explanation: 'Cracked game installers are a classic way to distribute trojans and ransomware. The .exe extension, suspicious domain, and "free crack" premise are major red flags.',
-      tip: 'Always download software only from official, verified websites.',
+      explanation: 'Nulaužtų žaidimų diegimo programos yra klasikinis būdas platinti Trojos arklius ir išpirkos reikalaujančias programas. .exe plėtinys, įtartinas domenas ir „nemokamas nulaužimas" yra dideli perspėjamieji ženklai.',
+      tip: 'Visada atsisiųsk programinę įrangą tik iš oficialių, patikrintų svetainių.',
     },
     {
-      icon: '📄', name: 'History_Essay_Draft.docx', type: 'Word Document (.docx)',
-      source: 'Created locally on this device', size: '48 KB', date: 'Yesterday, 7:15 PM',
-      description: 'A Word document you created yourself for your history class.',
+      icon: '📄', name: 'History_Essay_Draft.docx', type: 'Word dokumentas (.docx)',
+      source: 'Sukurta vietoje šiame įrenginyje', size: '48 KB', date: 'Vakar, 19:15',
+      description: 'Word dokumentas, kurį pats sukūrei istorijos pamokai.',
       isThreat: false,
-      explanation: 'A small Word document you created locally is safe. It has a standard extension, tiny file size, and a local origin.',
-      tip: 'Be cautious with .docx files received from strangers — they can contain malicious macros. But self-created files are fine.',
+      explanation: 'Mažas, vietoje sukurtas Word dokumentas yra saugus. Jis turi standartinį plėtinį, mažą failo dydį ir vietinę kilmę.',
+      tip: 'Būk atsargus su .docx failais iš nepažįstamų žmonių — jie gali turėti kenkėjiškų makrokomandų. Tačiau paties sukurti failai yra saugūs.',
     },
     {
-      icon: '⚡', name: 'speedup_your_pc.bat', type: 'Batch Script (.bat)',
-      source: 'Received via Discord DM from: xX_h4ck3r_Xx', size: '3.1 KB', date: 'Today, 11:02 AM',
-      description: 'A batch script sent via Discord by an unknown user, claiming to speed up your PC.',
+      icon: '⚡', name: 'speedup_your_pc.bat', type: 'Paketo scenarijus (.bat)',
+      source: 'Gauta per Discord DM iš: xX_h4ck3r_Xx', size: '3,1 KB', date: 'Šiandien, 11:02',
+      description: 'Paketo scenarijus, išsiųstas per Discord nežinomo vartotojo, teigiančio, kad pagreitins tavo kompiuterį.',
       isThreat: true,
-      explanation: '.bat files can execute any system command — including installing malware, opening backdoors, or deleting files. Never run scripts from strangers.',
-      tip: 'Never run .bat or .vbs scripts from people you do not know and fully trust, even if they claim it is harmless.',
+      explanation: '.bat failai gali vykdyti bet kokią sistemos komandą — įskaitant kenkėjiškų programų diegimą, galinių durų atidarymą ar failų ištrynimą. Niekada nevykdyk scenarijų iš nepažįstamų žmonių.',
+      tip: 'Niekada nevykdyk .bat ar .vbs scenarijų iš žmonių, kurių nepažįsti ir kurias visiškai pasitiki, net jei jie teigia, kad tai nekenksinga.',
     },
     {
-      icon: '🎵', name: 'Summer_Playlist.mp3', type: 'Audio File (.mp3)',
-      source: 'Saved from Spotify desktop app', size: '8.7 MB', date: '3 days ago',
-      description: 'A music file saved through the official Spotify app.',
+      icon: '🎵', name: 'Summer_Playlist.mp3', type: 'Garso failas (.mp3)',
+      source: 'Išsaugota iš „Spotify" darbalaukio programos', size: '8,7 MB', date: 'Prieš 3 dienas',
+      description: 'Muzikos failas, išsaugotas per oficialią Spotify programą.',
       isThreat: false,
-      explanation: 'This is a standard audio file from a trusted source. .mp3 files are not executable and pose no real risk when they come from legitimate apps.',
-      tip: 'Standard media files (.mp3, .jpg, .mp4) are generally safe. Watch out only for files that disguise their extension, e.g. "song.mp3.exe".',
+      explanation: 'Tai standartinis garso failas iš patikimo šaltinio. .mp3 failai nėra vykdomieji ir nekelia realios rizikos, kai jie gaunami iš teisėtų programų.',
+      tip: 'Standartiniai medijos failai (.mp3, .jpg, .mp4) paprastai yra saugūs. Saugokis tik failų, kurie slepia savo plėtinį, pvz., „song.mp3.exe".',
     },
     {
-      icon: '🔧', name: 'RegFix_Pro_Setup.exe', type: 'Executable (.exe)',
-      source: 'Delivered by browser pop-up advertisement', size: '2.1 MB', date: 'Today, 2:18 PM',
-      description: 'A "registry repair tool" that was pushed by a pop-up ad claiming your PC is damaged.',
+      icon: '🔧', name: 'RegFix_Pro_Setup.exe', type: 'Vykdomasis failas (.exe)',
+      source: 'Pristatyta per naršyklės iššokančią reklamą', size: '2,1 MB', date: 'Šiandien, 14:18',
+      description: '„Registro taisymo įrankis", kurį pasiūlė iššokantis skelbimas, teigiąs, kad tavo kompiuteris yra pažeistas.',
       isThreat: true,
-      explanation: 'Fake "PC repair" tools delivered through pop-up ads are a common vehicle for adware and spyware. Real system tools are not advertised this way.',
-      tip: 'Legitimate antivirus or repair software is never distributed through random browser pop-up ads.',
+      explanation: 'Netikri „kompiuterio taisymo" įrankiai, pristatomi per iššokančius skelbimus, yra įprasta reklaminių ir šnipinėjimo programų skleidimo priemonė. Tikri sistemos įrankiai taip neskelbiami.',
+      tip: 'Teisėta antivirusinė ar taisymo programinė įranga niekada neplatiname per atsitiktinius naršyklės iššokančius skelbimus.',
     },
     {
-      icon: '📸', name: 'Birthday_Party_2024.jpg', type: 'Image File (.jpg)',
-      source: 'Received via WhatsApp from: Grandma', size: '2.9 MB', date: 'Last week',
-      description: 'A photo from your birthday party sent by your grandmother.',
+      icon: '📸', name: 'Birthday_Party_2024.jpg', type: 'Vaizdo failas (.jpg)',
+      source: 'Gauta per WhatsApp iš: Močiutės', size: '2,9 MB', date: 'Praėjusią savaitę',
+      description: 'Gimtadienio vakarėlio nuotrauka, kurią išsiuntė tavo močiutė.',
       isThreat: false,
-      explanation: 'A .jpg photo from a known family member is safe. Standard images from trusted contacts are not malware.',
-      tip: 'Watch out for image files with double extensions like "photo.jpg.exe" — those hide the real, dangerous file type.',
+      explanation: '.jpg nuotrauka iš žinomo šeimos nario yra saugi. Standartiniai vaizdai iš patikimų kontaktų nėra kenkėjiška programa.',
+      tip: 'Saugokis vaizdo failų su dvigubais plėtiniais, pvz., „photo.jpg.exe" — jie slepia tikrąjį, pavojingą failo tipą.',
     },
     {
-      icon: '💎', name: 'FREE_ROBUX_GENERATOR.vbs', type: 'VBScript (.vbs)',
-      source: 'Link from a YouTube comment', size: '1.8 KB', date: 'Today, 9:55 AM',
-      description: 'A script from a YouTube comment claiming to generate unlimited Robux for Roblox.',
+      icon: '💎', name: 'FREE_ROBUX_GENERATOR.vbs', type: 'VBScript scenarijus (.vbs)',
+      source: 'Nuoroda iš YouTube komentaro', size: '1,8 KB', date: 'Šiandien, 09:55',
+      description: 'Scenarijus iš YouTube komentaro, teigiančio, kad generuos neribotus Robux Roblox žaidimui.',
       isThreat: true,
-      explanation: '"Free Robux" generators do not exist — they are 100% scams. .vbs scripts can run powerful system commands. This is a textbook malware distribution technique.',
-      tip: 'Free in-game currency generators are always scams. They exist only to steal accounts, install malware, or both.',
+      explanation: '„Nemokamų Robux" generatoriai neegzistuoja — jie yra 100 % sukčiavimas. .vbs scenarijai gali vykdyti galingas sistemos komandas. Tai yra klasikinis kenkėjiškų programų platinimo būdas.',
+      tip: 'Nemokamų žaidimo valiutos generatoriai visada yra sukčiavimas. Jie egzistuoja tik tam, kad pavogtų paskyras, įdiegtų kenkėjišką programą arba abu dalykus.',
     },
     {
-      icon: '📊', name: 'Science_Project_Data.xlsx', type: 'Excel Spreadsheet (.xlsx)',
-      source: 'Emailed from: johnson.s@westridge-school.edu', size: '156 KB', date: 'Yesterday, 10:33 AM',
-      description: 'An Excel file with science project data sent by your verified school teacher.',
+      icon: '📊', name: 'Science_Project_Data.xlsx', type: 'Excel skaičiuoklė (.xlsx)',
+      source: 'Gauta el. paštu iš: johnson.s@westridge-school.edu', size: '156 KB', date: 'Vakar, 10:33',
+      description: 'Excel failas su gamtos mokslų projekto duomenimis, atsiųstas patikrintos mokyklos mokytojos.',
       isThreat: false,
-      explanation: 'This spreadsheet is from a verified school teacher using an official school domain. The file type is appropriate and the file size is reasonable.',
-      tip: 'Office files from unknown senders can contain malicious macros. Always verify the sender before opening attachments.',
+      explanation: 'Ši skaičiuoklė yra iš patikrintos mokyklos mokytojos, naudojančios oficialų mokyklos domeną. Failo tipas tinkamas, o failo dydis protingas.',
+      tip: 'Office failai iš nežinomų siuntėjų gali turėti kenkėjiškų makrokomandų. Visada patikrink siuntėją prieš atidarydamas priedus.',
     },
   ],
   emails: [
     {
-      fromName: 'IT Security Team', fromAddr: 'security-alert@school-itsupport.xyz', avatarLetter: '🔐',
-      subject: 'URGENT: Your school account has been hacked — reset password NOW',
-      body: `Dear Student,
+      fromName: 'IT saugumo komanda', fromAddr: 'security-alert@school-itsupport.xyz', avatarLetter: '🔐',
+      subject: 'SKUBU: Jūsų mokyklos paskyra buvo nulaužta — iš karto nustatykite naują slaptažodį',
+      body: `Mielas(-a) mokiny(-e),
 
-Our systems detected unauthorised access to your school account from an unknown location.
+Mūsų sistemos aptiko neteisėtą prieigą prie jūsų mokyklos paskyros iš nežinomos vietos.
 
-You must reset your password IMMEDIATELY by running the attached tool. Failure to act within 30 minutes will result in permanent account lockout.
+Turite NEDELSIANT iš naujo nustatyti slaptažodį, paleisdami pridėtą įrankį. Jei nesiimsite veiksmų per 30 minučių, paskyra bus visam laikui užrakinta.
 
-— IT Security Department`,
+— IT saugumo skyrius`,
       attachment: 'PasswordReset_Tool.exe',
       isThreat: true,
-      explanation: 'Multiple red flags: a suspicious ".xyz" domain (not your school\'s real domain), extreme urgency, and a .exe attachment. Real IT departments never send password reset tools as executables — they link to a proper login page.',
-      tip: 'If you get a security alert, contact IT directly using a phone number you already know — never trust contact info from the suspicious email itself.',
+      explanation: 'Keli perspėjamieji ženklai: įtartinas „.xyz" domenas (ne tikrasis jūsų mokyklos domenas), didelis skubumas ir .exe priedas. Tikri IT skyriai niekada nesiunčia slaptažodžio nustatymo įrankių kaip vykdomųjų failų — jie nurodo į tinkamą prisijungimo puslapį.',
+      tip: 'Gavę saugumo perspėjimą, susisiekite su IT tiesiogiai telefono numeriu, kurį jau žinote — niekada nepasitikėkite kontaktine informacija iš paties įtartino el. laiško.',
     },
     {
       fromName: 'Ms. Johnson', fromAddr: 'johnson.s@westridge-school.edu', avatarLetter: 'J',
-      subject: 'Science Fair — project brief attached',
-      body: `Hi class,
+      subject: 'Mokslo mugė — projekto aprašymas pridėtas',
+      body: `Sveiki, klase,
 
-Please find attached the official project brief for the upcoming science fair. It covers the required sections, formatting guidelines, and the submission deadline.
+pridedamas oficialus projekto aprašymas artėjančiai mokslo mugei. Jame pateikiami reikalingi skyriai, formatavimo gairės ir pateikimo terminas.
 
-Bring your completed poster and report to Room 14 by Friday.
+Atneškite užbaigtą plakatą ir ataskaitą į 14 kabinetą iki penktadienio.
 
-Let me know if you have any questions!
+Jei turite klausimų, praneškite!
 
 Ms. Johnson
-Science Department, Westridge School`,
+Gamtos mokslų skyrius, Westridge School`,
       attachment: 'Science_Fair_Project_Brief.docx',
       isThreat: false,
-      explanation: 'This is a legitimate school email. The sender uses a verified .edu school domain, the attachment is a standard Word document relevant to the email\'s purpose, and there are no requests for personal information or urgent threats.',
-      tip: 'A .docx file from a known teacher at an official school domain is safe. Always verify the sender\'s full address before opening any attachment.',
+      explanation: 'Tai teisėtas mokyklos el. laiškas. Siuntėjas naudoja patikrintą .edu mokyklos domeną, priedas yra standartinis Word dokumentas, atitinkantis el. laiško turinį, ir nereikalaujama jokios asmeninės informacijos.',
+      tip: '.docx failas iš žinomos mokytojos oficialiame mokyklos domene yra saugus. Visada patikrink visą siuntėjo adresą prieš atidarydamas bet kokį priedą.',
     },
     {
-      fromName: 'Lucas (Gaming Buddy)', fromAddr: 'lucas.gamer99@gmail.com', avatarLetter: 'L',
-      subject: 'dude run this it gives you infinite coins in the game!!',
-      body: `hey!!
+      fromName: 'Lucas (žaidimų draugas)', fromAddr: 'lucas.gamer99@gmail.com', avatarLetter: 'L',
+      subject: 'draugas paleisk tai, tai duoda tau begalines monetas žaidime!!',
+      body: `ei!!
 
-found this sick script online that gives you unlimited coins in Clash Royale. just run the .bat file and it patches the game automatically lol
+radau internete šį puikų scenarijų, kuris suteikia neribotų monetų Clash Royale. tiesiog paleisk .bat failą ir jis automatiškai pataisys žaidimą lol
 
-my brother tried it and it worked. don\'t tell anyone tho
+mano brolis išbandė ir veikė. bet niekam nesakyk
 
 – Lucas`,
       attachment: 'coin_hack_v3_FINAL.bat',
       isThreat: true,
-      explanation: 'Even messages from real friends can spread malware — Lucas\'s account may be compromised, or he may not know the file is dangerous. A .bat script claiming to "hack" a game is a classic trojan delivery method. Running it could give an attacker full control of your system.',
-      tip: 'Never run .bat or .vbs scripts from anyone, including friends. "Cheat" scripts for online games are almost always malware in disguise.',
+      explanation: 'Net tikrų draugų žinutės gali platinti kenkėjišką programą — Luco paskyra gali būti pažeista arba jis gali nežinoti, kad failas pavojingas. .bat scenarijus, teigiąs, kad „nulaužia" žaidimą, yra klasikinis Trojos arklio platinimo būdas. Paleidus jį, užpuolikas gali gauti visišką kontrolę jūsų sistemoje.',
+      tip: 'Niekada nevykdyk .bat ar .vbs scenarijų iš bet ko, įskaitant draugus. „Cheat" scenarijai interneto žaidimams beveik visada yra užmaskuota kenkėjiška programa.',
     },
     {
-      fromName: 'School Library', fromAddr: 'library@westridge-school.edu', avatarLetter: '📚',
-      subject: 'Summer Reading Programme — your reading list',
-      body: `Hi there,
+      fromName: 'Mokyklos biblioteka', fromAddr: 'library@westridge-school.edu', avatarLetter: '📚',
+      subject: 'Vasaros skaitymo programa — jūsų skaitymo sąrašas',
+      body: `Sveiki,
 
-Thank you for signing up for our Summer Reading Programme! Attached is your personalised reading list based on your age group and interests.
+dėkojame, kad užsiregistravote į vasaros skaitymo programą! Pridedamas jūsų asmeninis skaitymo sąrašas pagal jūsų amžių ir interesus.
 
-You can borrow any of these titles from the school library or request them via the student portal.
+Bet kurią iš šių knygų galite pasiskolinti iš mokyklos bibliotekos arba užsisakyti per mokinių portalą.
 
-Happy reading!
+Smagaus skaitymo!
 
-Westridge School Library Team`,
+Westridge School bibliotekos komanda`,
       attachment: 'Summer_Reading_List_2024.pdf',
       isThreat: false,
-      explanation: 'A legitimate email from the school library using the official .edu domain. The .pdf attachment is a reading list — completely appropriate for the context. No personal information is requested and no links are suspicious.',
-      tip: 'PDF files from trusted, known senders are generally safe. Be more cautious with PDFs from unknown senders, as they can sometimes contain embedded scripts.',
+      explanation: 'Teisėtas mokyklos bibliotekos el. laiškas, naudojantis oficialų .edu domeną. .pdf priedas yra skaitymo sąrašas — visiškai tinkamas kontekstui. Nereikalaujama jokios asmeninės informacijos ir jokios nuorodos nėra įtartinos.',
+      tip: 'PDF failai iš patikimų, žinomų siuntėjų paprastai yra saugūs. Būkite atsargesni su PDF iš nežinomų siuntėjų, nes jie kartais gali turėti įterptų scenarijų.',
     },
     {
-      fromName: 'PRIZE ALERT CENTER', fromAddr: 'winner@free-prize-claim-2024.net', avatarLetter: '🏆',
-      subject: 'YOU HAVE BEEN SELECTED — CLAIM YOUR iPHONE 15 NOW!!!',
-      body: `CONGRATULATIONS!!!
+      fromName: 'PRIZŲ PERSPĖJIMŲ CENTRAS', fromAddr: 'winner@free-prize-claim-2024.net', avatarLetter: '🏆',
+      subject: 'BUVAI ATRINKTAS — PAREIK SAVO iPHONE 15 DABAR!!!',
+      body: `SVEIKINAME!!!
 
-You have been randomly selected as our lucky winner! To claim your iPhone 15 Pro Max, complete and return the attached claim form with your personal details and a $4.99 shipping fee.
+Jūs buvote atsitiktinai atrinktas kaip mūsų laimingasis laimėtojas! Norėdami pareikalauti savo iPhone 15 Pro Max, užpildykite ir grąžinkite pridėtą reikalavimo formą su savo asmeniniais duomenimis ir 4,99 € siuntimo mokesčiu.
 
-Respond within 12 HOURS or your prize expires!
+Atsakykite per 12 VALANDŲ arba jūsų prizas baigs galioti!
 
-[CLAIM MY PRIZE →]`,
+[PAREIKALAUTI SAVO PRIZO →]`,
       attachment: 'WINNER_ClaimForm_URGENT.html',
       isThreat: true,
-      explanation: 'A classic prize scam with an .html attachment — opening it loads a fake webpage designed to steal your personal information and payment details. Red flags: prize you never entered, extreme urgency, suspicious sender domain, and excessive caps.',
-      tip: '.html email attachments that open "forms" are a common way to create convincing fake login or payment pages locally on your device, bypassing web filters.',
+      explanation: 'Klasikinis prizo sukčiavimas su .html priedu — atidarius jį, įkeliamas netikras tinklalapis, sukurtas pavogti jūsų asmeniniams duomenims ir mokėjimo informacijai. Perspėjamieji ženklai: prizas, į kurį niekada neregistravotės, didelis skubumas, įtartinas siuntėjo domenas ir per daug didžiųjų raidžių.',
+      tip: '.html el. pašto priedai, atidarantys „formas", yra įprastas būdas sukurti įtikinamus netikrus prisijungimo ar mokėjimo puslapius vietoje jūsų įrenginyje, apeinant žiniatinklio filtrus.',
     },
   ],
   popups: [
     {
       browserUrl: 'https://free-movies-unlimited.pirate',
-      appName: 'SECURITY ALERT',
+      appName: 'SAUGUMO PERSPĖJIMAS',
       icon: '🚨',
-      message: '⚠️ VIRUS DETECTED! Your computer is infected with 47 viruses! Call 1-800-FIX-NOW immediately or your system will be permanently damaged!',
-      subtext: 'Windows Defender has detected critical threats. Act now!',
-      primaryBtnText: '📞 Call Now & Fix',
+      message: '⚠️ VIRUSAS APTIKTAS! Jūsų kompiuteris užkrėstas 47 virusais! Nedelsdami skambinkite 1-800-FIX-NOW arba jūsų sistema bus visam laikui pažeista!',
+      subtext: '„Windows Defender" aptiko kritinių grėsmių. Veikite dabar!',
+      primaryBtnText: '📞 Skambinti dabar ir taisyti',
       isThreat: true,
-      explanation: 'This is "scareware" — a fake virus alert designed to trick you into calling a scam phone number or installing fake antivirus software. Real security tools never display alerts inside a web browser pop-up.',
-      tip: 'Close suspicious browser pop-ups using the X button. Never call phone numbers shown in browser pop-ups — those are always scam hotlines.',
+      explanation: 'Tai „baimę keliantis scenarijus" — netikras viruso perspėjimas, sukurtas priversti jus paskambinti sukčiavimo telefono numeriu arba įdiegti netikrą antivirusinę programą. Tikri saugumo įrankiai niekada nerodo perspėjimų naršyklės iššokančio lango viduje.',
+      tip: 'Uždarykite įtartinus naršyklės iššokančius langus naudodami mygtuką X. Niekada neskambinkite telefono numeriais, rodomais naršyklės iššokančiuose languose — tai visada sukčiavimo karštosios linijos.',
     },
     {
       browserUrl: 'https://school-portal.edu',
-      appName: 'School Portal',
+      appName: 'Mokyklos portalas',
       icon: '🍪',
-      message: 'This website uses cookies to remember your login and improve your experience.',
-      subtext: 'We only use essential cookies. No personal data is shared with third parties.',
-      primaryBtnText: '✓ Accept Cookies',
+      message: 'Ši svetainė naudoja slapukus, kad prisimintų jūsų prisijungimą ir pagerintų jūsų patirtį.',
+      subtext: 'Naudojame tik būtinus slapukus. Jokie asmeniniai duomenys nėra perduodami trečiosioms šalims.',
+      primaryBtnText: '✓ Priimti slapukus',
       isThreat: false,
-      explanation: 'A legitimate cookie consent notice from your school portal. It is transparent about cookie use and makes no unusual requests. Accepting essential cookies on a trusted site is fine.',
-      tip: 'Cookie consent banners on trusted, familiar websites are required by law in many countries and are completely normal.',
+      explanation: 'Teisėtas slapukų sutikimo pranešimas iš jūsų mokyklos portalo. Jis skaidrus apie slapukų naudojimą ir nepateikia neįprastų prašymų. Būtinų slapukų priėmimas patikimoje svetainėje yra tinkamas.',
+      tip: 'Slapukų sutikimo reklamjuostės patikimose, žinomose svetainėse yra reikalaujamos pagal įstatymą daugelyje šalių ir yra visiškai normalios.',
     },
     {
       browserUrl: 'https://gaming-news-blog.com',
-      appName: 'Congratulations!!!',
+      appName: 'Sveikiname!!!',
       icon: '🎉',
-      message: 'YOU ARE THE 1,000,000th VISITOR! You have won a FREE PlayStation 5! Click below to claim your prize immediately!',
-      subtext: '⏱️ Offer expires in: 00:59 — Claim before time runs out!',
-      primaryBtnText: '🎮 Claim FREE PS5!',
+      message: 'JŪS ESATE 1 000 000-asis LANKYTOJAS! Jūs laimėjote NEMOKAMĄ PlayStation 5! Spustelėkite žemiau, kad nedelsdami pasiimtumėte prizą!',
+      subtext: '⏱️ Pasiūlymas baigiasi po: 00:59 — pasiimkite, kol laikas nepasibaigė!',
+      primaryBtnText: '🎮 Pasiimti NEMOKAMĄ PS5!',
       isThreat: true,
-      explanation: 'A fake prize pop-up — no website randomly awards visitors a PlayStation 5. Clicking the button leads to a scam site asking for personal information or payment. The countdown timer is a pressure tactic.',
-      tip: 'Countdown timers in pop-ups exist to stop you from thinking. Real prizes are never distributed through random browser pop-ups.',
+      explanation: 'Netikras prizo iššokantis langas — jokia svetainė neatsitiktinai apdovanoja lankytojų PlayStation 5. Paspaudus mygtuką, patenkama į sukčiavimo svetainę, prašančią asmeninės informacijos ar mokėjimo. Atgalinės atskaitos laikrodis yra spaudimo taktika.',
+      tip: 'Atgalinės atskaitos laikrodžiai iššokančiuose languose egzistuoja tam, kad sustabdytų tave nuo mąstymo. Tikri prizai niekada neplatiname per atsitiktinius naršyklės iššokančius langus.',
     },
     {
       browserUrl: 'https://youtube.com',
       appName: 'YouTube',
       icon: '🔔',
-      message: 'Allow YouTube to send you notifications about new videos from channels you subscribe to?',
-      subtext: 'You can change this later in your browser settings.',
-      primaryBtnText: 'Allow Notifications',
+      message: 'Leisti YouTube siųsti jums pranešimus apie naujus vaizdo įrašus iš kanalų, kuriais prenumeruojate?',
+      subtext: 'Galite tai pakeisti vėliau naršyklės nustatymuose.',
+      primaryBtnText: 'Leisti pranešimus',
       isThreat: false,
-      explanation: 'Although YouTube itself is legitimate, blocking browser notifications is the safer and cleaner default — even from trusted sites. Once granted, notification permissions can be misused or become spam.',
-      tip: 'Think carefully before allowing browser notifications. Most websites do not need this permission to function properly.',
+      explanation: 'Nors pati YouTube yra teisėta, naršyklės pranešimų blokavimas yra saugesnis ir tvarkesnis numatytasis pasirinkimas — net ir patikimose svetainėse. Suteikus leidimą, pranešimų teisės gali būti piktnaudžiaujamos arba tapti šlamštu.',
+      tip: 'Gerai pagalvokite prieš leisdami naršyklės pranešimus. Daugumai svetainių šis leidimas nereikalingas tinkamam veikimui.',
     },
     {
       browserUrl: 'https://download-cracked-software.cc',
-      appName: 'Download Manager',
+      appName: 'Atsisiuntimų tvarkytuvė',
       icon: '⬇️',
-      message: 'File ready: "Adobe_Photoshop_FULL_CRACK_2024.exe" (87 MB). Our AI verified this file as SAFE.',
-      subtext: 'Powered by VirusSafe™ — scanned and approved. Click to download instantly.',
-      primaryBtnText: '✓ Download Now',
+      message: 'Failas paruoštas: „Adobe_Photoshop_FULL_CRACK_2024.exe" (87 MB). Mūsų DI patvirtino šį failą kaip SAUGŲ.',
+      subtext: 'Valdomos VirusSafe™ — nuskaitytas ir patvirtintas. Spustelėkite, kad nedelsdami atsisiųstumėte.',
+      primaryBtnText: '✓ Atsisiųsti dabar',
       isThreat: true,
-      explanation: 'Multiple red flags: suspicious ".cc" domain, cracked (pirated) software which is almost always bundled with malware, and a fake self-declared "SAFE" badge. The "VirusSafe™" label is invented to manipulate you.',
-      tip: 'Cracked or pirated software almost always contains hidden malware. Only download software from the official publisher\'s website.',
+      explanation: 'Keli perspėjamieji ženklai: įtartinas „.cc" domenas, nulaužta (piratinė) programinė įranga, kuri beveik visada yra komplektuojama su kenkėjiška programa, ir netikras paties paskelbtas „SAUGUS" ženklelis. „VirusSafe™" etiketė yra išgalvota, siekiant jus manipuliuoti.',
+      tip: 'Nulaužta ar piratinė programinė įranga beveik visada turi paslėptos kenkėjiškos programos. Atsisiųsk programinę įrangą tik iš oficialios leidėjo svetainės.',
     },
   ],
   permissions: [
     {
-      appIcon: '🔦', 
+      appIcon: '🔦',
       appName: 'Flashlight Pro',
-      source: 'Publisher: Unknown Developer · ⭐ 2.1 · 500 downloads',
-      description: 'A simple flashlight utility app.',
+      source: 'Leidėjas: Nežinomas kūrėjas · ⭐ 2,1 · 500 atsisiuntimų',
+      description: 'Paprasta žibintuvėlio programa.',
       permissions: [
-        { 
-          icon: '📷', 
-          name: 'Camera', 
-          reason: 'To activate the flash LED', 
-          suspicious: false 
+        {
+          icon: '📷',
+          name: 'Kamera',
+          reason: 'Įjungti blykstės LED',
+          suspicious: false,
         },
-        { 
-          icon: '📍', 
-          name: 'Precise Location (GPS)', 
-          reason: 'No reason given', 
-          suspicious: true 
+        {
+          icon: '📍',
+          name: 'Tiksli vieta (GPS)',
+          reason: 'Priežastis nenurodyta',
+          suspicious: true,
         },
-        { 
-          icon: '📞', 
-          name: 'Read Call Logs', 
-          reason: 'No reason given', 
-          suspicious: true 
+        {
+          icon: '📞',
+          name: 'Skaityti skambučių žurnalą',
+          reason: 'Priežastis nenurodyta',
+          suspicious: true,
         },
-        { 
-          icon: '💾', 
-          name: 'Access All Files', 
-          reason: 'No reason given', 
-          suspicious: true 
+        {
+          icon: '💾',
+          name: 'Prieiga prie visų failų',
+          reason: 'Priežastis nenurodyta',
+          suspicious: true,
         },
       ],
       isThreat: true,
-      explanation: 'A flashlight app needs only camera access for the LED. Location, call logs, and full file access are completely unnecessary — these are hallmarks of spyware that silently harvests your data.',
-      tip: 'Always ask yourself: "Why does this app need this permission?" A flashlight has no legitimate use for your GPS or contacts.',
+      explanation: 'Žibintuvėlio programai reikalinga tik prieiga prie kameros dėl LED. Vieta, skambučių žurnalai ir visų failų prieiga yra visiškai nereikalingi — tai yra šnipinėjimo programos, kuri tyliai renka jūsų duomenis, požymiai.',
+      tip: 'Visada paklausk savęs: „Kodėl šiai programai reikia šio leidimo?" Žibintuvėlis neturi teisėtos priežasties prieigai prie jūsų GPS ar kontaktų.',
     },
     {
-      appIcon: '📷', 
+      appIcon: '📷',
       appName: 'School Photo Editor',
-      source: 'Publisher: Creative Tools Ltd · ⭐ 4.7 · 2M+ downloads',
-      description: 'Edit and enhance photos for school projects.',
+      source: 'Leidėjas: Creative Tools Ltd · ⭐ 4,7 · 2 mln.+ atsisiuntimų',
+      description: 'Redaguoti ir tobulinti nuotraukas mokyklos projektams.',
       permissions: [
-        { 
-          icon: '📷', 
-          name: 'Camera', 
-          reason: 'To take new photos to edit', 
-          suspicious: false 
+        {
+          icon: '📷',
+          name: 'Kamera',
+          reason: 'Fotografuoti naujas nuotraukas redagavimui',
+          suspicious: false,
         },
-        { 
-          icon: '🖼️', 
-          name: 'Access Photos', 
-          reason: 'To open your existing photos', 
-          suspicious: false 
+        {
+          icon: '🖼️',
+          name: 'Prieiga prie nuotraukų',
+          reason: 'Atidaryti esamas nuotraukas',
+          suspicious: false,
         },
-        { 
-          icon: '💾', 
-          name: 'Save to Storage', 
-          reason: 'To save your edited photos', 
-          suspicious: false 
+        {
+          icon: '💾',
+          name: 'Išsaugoti atmintyje',
+          reason: 'Išsaugoti redaguotas nuotraukas',
+          suspicious: false,
         },
       ],
       isThreat: false,
-      explanation: 'All three permissions have clear, logical reasons directly related to photo editing. Camera access, photo library access, and saving files are exactly what a photo editor needs — nothing more.',
-      tip: 'When every permission requested has a clear purpose tied to the app\'s main function, it is a sign of honest, well-designed software.',
+      explanation: 'Visos trys teisės turi aiškias, logiškas priežastis, tiesiogiai susijusias su nuotraukų redagavimu. Prieiga prie kameros, nuotraukų bibliotekos ir failų išsaugojimas yra būtent tai, ko reikia nuotraukų redaktoriui — nieko daugiau.',
+      tip: 'Kai kiekviena prašoma teisė turi aiškų tikslą, susijusį su pagrindine programos funkcija, tai yra sąžiningos, gerai sukurtos programinės įrangos ženklas.',
     },
     {
-      appIcon: '🎮', 
+      appIcon: '🎮',
       appName: 'SuperRun Adventure',
-      source: 'Publisher: FastGame Studio · ⭐ 4.1 · 800K downloads',
-      description: 'A fast-paced side-scrolling platformer game.',
+      source: 'Leidėjas: FastGame Studio · ⭐ 4,1 · 800 tūkst. atsisiuntimų',
+      description: 'Greitas šoninių slinkčių platforminis žaidimas.',
       permissions: [
-        { 
-          icon: '🔊', 
-          name: 'Play Audio', 
-          reason: 'For in-game sound effects', 
-          suspicious: false 
+        {
+          icon: '🔊',
+          name: 'Leisti garsą',
+          reason: 'Žaidimo garso efektams',
+          suspicious: false,
         },
-        { 
-          icon: '📳', 
-          name: 'Vibration', 
-          reason: 'For haptic feedback in gameplay', 
-          suspicious: false 
+        {
+          icon: '📳',
+          name: 'Vibracija',
+          reason: 'Haptiniu grįžtamajam ryšiui žaidžiant',
+          suspicious: false,
         },
-        { 
-          icon: '📍', 
-          name: 'Precise GPS Location', 
-          reason: 'No reason given', 
-          suspicious: true 
+        {
+          icon: '📍',
+          name: 'Tiksli GPS vieta',
+          reason: 'Priežastis nenurodyta',
+          suspicious: true,
         },
-        { 
-          icon: '📱', 
-          name: 'Read Device ID & Info', 
-          reason: 'No reason given', 
-          suspicious: true 
+        {
+          icon: '📱',
+          name: 'Skaityti įrenginio ID ir informaciją',
+          reason: 'Priežastis nenurodyta',
+          suspicious: true,
         },
       ],
       isThreat: true,
-      explanation: 'Audio and vibration are normal for a game. But GPS and device ID have no legitimate use in a platformer — these are used to track and identify you for advertising data brokers or to build a profile.',
-      tip: 'Even apps with good ratings can request unnecessary permissions. Always deny permissions that have no clear link to the app\'s purpose.',
+      explanation: 'Garsas ir vibracija yra įprasti žaidimui. Tačiau GPS ir įrenginio ID neturi teisėto naudojimo platforminiame žaidime — jie naudojami jums sekti ir identifikuoti reklamuotojų duomenų brokerių arba sukurti profilį.',
+      tip: 'Net gerai įvertintos programos gali prašyti nereikalingų leidimų. Visada atsisakyk leidimų, kurie neturi aiškios sąsajos su programos tikslu.',
     },
     {
-      appIcon: '📚', 
+      appIcon: '📚',
       appName: 'CsHub Learning',
-      source: 'Publisher: CsHub Education · ⭐ 4.9 · 50K downloads',
-      description: 'Interactive cybersecurity learning for students.',
+      source: 'Leidėjas: CsHub Education · ⭐ 4,9 · 50 tūkst. atsisiuntimų',
+      description: 'Interaktyvus kibernetinio saugumo mokymasis mokiniams.',
       permissions: [
-        { 
-          icon: '🌐', 
-          name: 'Internet Access', 
-          reason: 'To load lessons and quizzes', 
-          suspicious: false 
-          
+        {
+          icon: '🌐',
+          name: 'Interneto prieiga',
+          reason: 'Pamokoms ir viktorinoms įkelti',
+          suspicious: false,
         },
-        { 
-          icon: '💾', 
-          name: 'Local Storage', 
-          reason: 'To save your progress offline', 
-          suspicious: false 
-          
+        {
+          icon: '💾',
+          name: 'Vietinė atmintis',
+          reason: 'Jūsų pažangai išsaugoti neprisijungus',
+          suspicious: false,
         },
       ],
       isThreat: false,
-      explanation: 'Internet access and local storage are both clearly necessary for an educational app that loads online content and saves your progress. Only what is needed is requested — a good privacy practice.',
-      tip: 'Apps that request only the minimum permissions needed for their core function are examples of privacy-respecting design.',
+      explanation: 'Interneto prieiga ir vietinė atmintis yra aiškiai reikalingos mokymo programai, kuri įkelia internetinį turinį ir išsaugo jūsų pažangą. Prašoma tik tai, kas būtina — gera privatumo praktika.',
+      tip: 'Programos, kurios prašo tik minimalių leidimų, reikalingų pagrindinei funkcijai, yra privatumą gerbiančio dizaino pavyzdžiai.',
     },
   ],
 }

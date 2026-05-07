@@ -6,57 +6,25 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentSE = {
-  subtitle:
-    'Social engineering is when someone uses pressure, tricks, or false trust to get information or access. This module helps educators teach students how to spot manipulation and respond safely.',
-  aim: 'To help students recognize manipulation tactics, pause before acting, and choose safer responses when someone uses pressure, urgency, or false trust.',
+  aim: 'Den Lernenden helfen, Manipulationstaktiken zu erkennen, vor dem Handeln innezuhalten und sicherere Reaktionen zu wählen, wenn jemand Druck, Dringlichkeit oder falsches Vertrauen einsetzt.',
   objectives: [
-    'Explain how manipulation can happen online and in person.',
-    'Identify common tactics like urgency, flattery, or authority.',
-    'Practice safe responses and help-seeking behavior.',
+    'Erklären, wie Manipulation online und persönlich vorkommen kann.',
+    'Häufige Taktiken wie Dringlichkeit, Schmeichelei oder Autorität identifizieren.',
+    'Sichere Reaktionen und hilfesuchendes Verhalten üben.',
   ],
   outcomes: [
-    'Recognize pressure tactics used in messages or chats.',
-    'Use a pause-and-check routine before acting.',
-    'Know when and how to report suspicious behavior.',
+    'Drucktaktiken in Nachrichten oder Chats erkennen.',
+    'Eine Innehalten-und-prüfen-Routine anwenden, bevor man handelt.',
+    'Wissen, wann und wie man verdächtiges Verhalten meldet.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Social Engineering Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Unterrichtsleitfaden herunterladen',
+    download: 'Unterrichtsleitfaden Social Engineering',
   },
   parts: [
     {
-      goal: 'Help students understand what social engineering is by first recognising how people can be influenced or manipulated in everyday situations, and then connecting this understanding to digital environments and attacker behaviour.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Social Engineering ist, indem sie zunächst erkennen, wie Menschen in alltäglichen Situationen beeinflusst oder manipuliert werden können, und dieses Verständnis dann mit digitalen Umgebungen und dem Verhalten von Angreifern verbinden.',
       bundle: {
         filename: 'Social Engineering Part 1 Package',
       },
@@ -64,69 +32,69 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.1.1
-            kind: 'Image',
-            name: 'Tricking People vs Hacking Systems',
+            kind: 'Bild',
+            name: 'Menschen täuschen vs. Systeme hacken',
             filename: 'Image - Tricking People vs Hacking Systems',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.1.2
-            kind: 'Image',
-            name: 'Examples of Social Engineering Messages',
+            kind: 'Bild',
+            name: 'Beispiele für Social-Engineering-Nachrichten',
             filename: 'Image - Examples of Social Engineering Messages',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.1.3
-            kind: 'Situation Assessment',
-            name: 'What Does an Attacker Want?',
+            kind: 'Situationsbewertung',
+            name: 'Was will ein Angreifer?',
             filename: 'Situation Assessment - What Does an Attacker Want',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.1.4
-            kind: 'Worksheet',
-            name: 'Understanding Social Engineering',
+            kind: 'Arbeitsblatt',
+            name: 'Social Engineering verstehen',
             filename: 'Worksheet - Understanding Social Engineering',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 Influence and Persuasion in Everyday Life',
+            title: 'Einführung – Einfluss und Überzeugung im Alltag',
           },
           {
-            title: 'Introducing the Concept of Social Engineering',
+            title: 'Einführung des Konzepts Social Engineering',
           },
           {
-            title: 'What Do Attackers Want?',
+            title: 'Was wollen Angreifer?',
           },
           {
-            title: 'Social Engineering Online and Offline',
+            title: 'Social Engineering online und offline',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
-        title: 'What Is Social Engineering?',
+        title: 'Was ist Social Engineering?',
         supportText:
-          'Use this video to introduce social engineering as a technique that exploits human trust rather than technical systems. Pause to ask students if they can recall a situation where someone tried to trick them online.',
+          'Verwenden Sie dieses Video, um Social Engineering als Technik einzuführen, die menschliches Vertrauen anstatt technischer Systeme ausnutzt. Halten Sie inne und fragen Sie die Schülerinnen und Schüler, ob sie sich an eine Situation erinnern, in der jemand versucht hat, sie online zu täuschen.',
         downloads: {
           video: {
             filename: 'What Is Social Engineering',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            ilename: 'What Is Social Engineering - Subtitles',
-            ariaLabel: 'Download subtitles',
+            filename: 'What Is Social Engineering - Subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
-      goal: 'Help students understand why attackers use social engineering by exploring the psychological and emotional levers that make people vulnerable, and practising how to think critically when they feel pressure.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, warum Angreifer Social Engineering einsetzen, indem sie die psychologischen und emotionalen Hebel erkunden, die Menschen verwundbar machen, und üben, wie man kritisch denkt, wenn man Druck spürt.',
       bundle: {
         filename: 'Social Engineering Part 2 Package',
       },
@@ -134,54 +102,54 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.2.1
-            kind: 'Image',
-            name: 'Human Decision-making vs Computer Decision-making',
+            kind: 'Bild',
+            name: 'Menschliche Entscheidungsfindung vs. Computer-Entscheidungsfindung',
             filename: 'Image - Human Decision-making vs Computer Decision-making',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.2.2
-            kind: 'Scenario Cards',
-            name: 'Emotional Manipulation Examples',
+            kind: 'Szenarienkarten',
+            name: 'Beispiele für emotionale Manipulation',
             filename: 'Scenario Cards - Emotional Manipulation Examples',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.2.3
-            kind: 'Game Cards',
-            name: 'Attacker Tactics',
+            kind: 'Spielkarten',
+            name: 'Taktiken von Angreifern',
             filename: 'Game Cards - Attacker Tactics',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.2.4
-            kind: 'Worksheet',
-            name: 'Why Social Engineering Works',
+            kind: 'Arbeitsblatt',
+            name: 'Warum Social Engineering funktioniert',
             filename: 'Worksheet - Why Social Engineering Works',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 People vs Systems',
+            title: 'Einführung – Menschen vs. Systeme',
           },
           {
-            title: 'Emotions Attackers Use',
+            title: 'Emotionen, die Angreifer nutzen',
           },
           {
-            title: 'Thinking Like an Attacker',
+            title: 'Wie ein Angreifer denken',
           },
           {
-            title: 'Everyday Contexts Where Social Engineering Works',
+            title: 'Alltägliche Kontexte, in denen Social Engineering funktioniert',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
     },
     {
-      goal: 'Help students recognise social engineering attempts by identifying common warning signs and understanding the different contexts in which these attacks may occur, both online and offline.',
+      goal: 'Den Schülerinnen und Schülern helfen, Social-Engineering-Versuche zu erkennen, indem sie häufige Warnsignale identifizieren und die verschiedenen Kontexte verstehen, in denen diese Angriffe auftreten können, sowohl online als auch offline.',
       bundle: {
         filename: 'Social Engineering Part 3 Package',
       },
@@ -189,62 +157,62 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.3.1
-            kind: 'Image',
-            name: 'Examples of Social Engineering Messages',
+            kind: 'Bild',
+            name: 'Beispiele für Social-Engineering-Nachrichten',
             filename: 'Image - Examples of Social Engineering Messages',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.3.2
-            kind: 'Scenario Cards',
-            name: 'Social Engineering Situations',
+            kind: 'Szenarienkarten',
+            name: 'Social-Engineering-Situationen',
             filename: 'Scenario Cards - Social Engineering Situations',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.3.3
-            kind: 'Worksheet',
-            name: 'Spot the Social Engineering',
+            kind: 'Arbeitsblatt',
+            name: 'Social Engineering erkennen',
             filename: 'Worksheet - Spot the Social Engineering',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 Where Can Social Engineering Happen?',
+            title: 'Einführung – Wo kann Social Engineering passieren?',
           },
           {
-            title: 'Common Warning Signs',
+            title: 'Häufige Warnsignale',
           },
           {
-            title: 'Types of Social Engineering',
+            title: 'Arten von Social Engineering',
           },
           {
-            title: 'Practising Recognition',
+            title: 'Erkennen üben',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
-        title: 'Types of Social Engineering',
+        title: 'Arten von Social Engineering',
         supportText:
-          'Use this video to help students recognise the different forms social engineering can take, from phishing emails to phone impersonation. Pause to discuss which type they think would be hardest to spot and why.',
+          'Verwenden Sie dieses Video, um Schülerinnen und Schülern zu helfen, die verschiedenen Formen zu erkennen, die Social Engineering annehmen kann, von Phishing-E-Mails bis zu telefonischer Identitätsvortäuschung. Halten Sie inne, um zu diskutieren, welche Art ihrer Meinung nach am schwierigsten zu erkennen wäre und warum.',
         downloads: {
           video: {
-            ilename: 'Types of Social Engineering',
-            ariaLabel: 'Download video',
+            filename: 'Types of Social Engineering',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            ilename: 'Types of Social Engineering - Subtitles',
-            ariaLabel: 'Download subtitles',
+            filename: 'Types of Social Engineering - Subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
-      goal: 'Help students practise verifying information and choosing safe responses, and empower them to support others when they encounter social engineering attempts.',
+      goal: 'Den Schülerinnen und Schülern helfen, das Überprüfen von Informationen und die Wahl sicherer Reaktionen zu üben, und sie zu befähigen, andere zu unterstützen, wenn sie auf Social-Engineering-Versuche stoßen.',
       bundle: {
         filename: 'Social Engineering Part 4 Package',
       },
@@ -252,55 +220,55 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.4.1
-            kind: 'Scenario Cards',
-            name: 'What Would You Do?',
+            kind: 'Szenarienkarten',
+            name: 'Was würdest du tun?',
             filename: 'Scenario Cards - What Would You Do',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.2
-            kind: 'Checklist',
-            name: 'Stop, Think, Check, Ask',
+            kind: 'Checkliste',
+            name: 'Stopp, denk nach, prüf, frag',
             filename: 'Checklist - Stop, Think, Check, Ask',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.3
-            kind: 'Worksheet',
-            name: 'Stop, Think, Check, Ask',
+            kind: 'Arbeitsblatt',
+            name: 'Stopp, denk nach, prüf, frag',
             filename: 'Worksheet - Stop, Think, Check, Ask',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.4
-            kind: 'Role Cards',
-            name: 'Target, Helper, Bystander',
+            kind: 'Rollenkarten',
+            name: 'Opfer, Helfer, Zuschauer',
             filename: 'Role Cards - Target, Helper, Bystander',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.5
-            kind: 'Worksheet',
-            name: 'Protecting Myself and Others',
+            kind: 'Arbeitsblatt',
+            name: 'Mich und andere schützen',
             filename: 'Worksheet - Protecting Myself and Others',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 From Recognising to Responding',
+            title: 'Einführung – Von der Erkennung zur Reaktion',
           },
           {
-            title: 'A Simple Model for Safe Decisions',
+            title: 'Ein einfaches Modell für sichere Entscheidungen',
           },
           {
-            title: 'Practising Safe Responses',
+            title: 'Sichere Reaktionen üben',
           },
           {
-            title: 'Protecting Others',
+            title: 'Andere schützen',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -312,234 +280,222 @@ export const contentSE = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
   ],
 }
 
 export const challengeSE = {
-  title: 'Phishing Case Files',
-  subtitle: 'Become a Message Detective! Can you spot the scams and phishing tricks? Read each message and decide: Trust It or Ignore / Report.',
-  howItWorks: 'How It Works',
-  instruction: 'Read each message case file and decide if it is trustworthy or should be ignored/reported. Think about urgency, suspicious links, and requests for private information.',
-  tip: 'If you are unsure about some message, check the Detective Notes with some tips about how to identify scams.',
-  tipLabel: 'Tip',
-  startTitle: 'Welcome, Detective!',
-  startDescription: 'You\'re about to investigate 14 suspicious messages. Your job is to decide whether each message is trustworthy or should be ignored/reported. Good luck!',
-  startButton: 'Start Investigation',
-  caseProgress: 'Case Progress',
-  trustButton: '👍 Trust',
-  ignoreButton: '⚠️ Ignore / Report',
-  nextCase: 'Next Case →',
-  completedTitle: 'Investigation Complete!',
-  completedDescription: 'Here\'s how you did:',
-  casesIdentified: 'out of 14 cases correctly identified',
-  detectiveRankLabel: 'Detective Rank',
-  defaultRank: 'Rookie Detective',
-  defaultRankMessage: 'Keep practicing to level up!',
-  performanceSummary: 'Performance Summary',
-  playAgain: 'Play Again',
-  detectiveNotes: 'Detective Notes',
-  detectiveTipsTitle: 'Tips to stay safe online',
+  title: 'Phishing-Fallakten',
+  subtitle: 'Werde ein Nachrichten-Detektiv! Kannst du die Betrugsmaschen und Phishing-Tricks erkennen? Lies jede Nachricht und entscheide: Vertrauen oder Ignorieren / Melden.',
+  howItWorks: 'So funktioniert es',
+  instruction: 'Lies jede Nachrichten-Fallakte und entscheide, ob sie vertrauenswürdig ist oder ignoriert/gemeldet werden sollte. Denke an Dringlichkeit, verdächtige Links und Anfragen nach privaten Informationen.',
+  tip: 'Wenn du dir bei einer Nachricht unsicher bist, schau dir die Detektivnotizen mit Tipps zur Erkennung von Betrug an.',
+  tipLabel: 'Tipp',
+  startTitle: 'Willkommen, Detektiv!',
+  startDescription: 'Du wirst gleich 14 verdächtige Nachrichten untersuchen. Deine Aufgabe ist es zu entscheiden, ob jede Nachricht vertrauenswürdig ist oder ignoriert/gemeldet werden sollte. Viel Glück!',
+  startButton: 'Ermittlung starten',
+  caseProgress: 'Fallfortschritt',
+  trustButton: '👍 Vertrauen',
+  ignoreButton: '⚠️ Ignorieren / Melden',
+  nextCase: 'Nächster Fall →',
+  completedTitle: 'Ermittlung abgeschlossen!',
+  completedDescription: 'Hier ist dein Ergebnis:',
+  casesIdentified: 'von 14 Fällen korrekt identifiziert',
+  detectiveRankLabel: 'Detektiv-Rang',
+  defaultRank: 'Anfänger-Detektiv',
+  defaultRankMessage: 'Übe weiter, um aufzusteigen!',
+  performanceSummary: 'Leistungsübersicht',
+  playAgain: 'Nochmal spielen',
+  detectiveNotes: 'Detektivnotizen',
+  detectiveTipsTitle: 'Tipps, um online sicher zu bleiben',
   redFlags: [
-    '🚩 Asks for passwords',
-    '🚩 Fake email addresses',
-    '🚩 Too-good-to-be-true prizes',
-    '🚩 Urgent deadlines & threats',
-    '🚩 Suspicious downloads',
-    '🚩 Emotional manipulation',
+    '🚩 Fragt nach Passwörtern',
+    '🚩 Gefälschte E-Mail-Adressen',
+    '🚩 Zu-gut-um-wahr-zu-sein-Preise',
+    '🚩 Dringende Fristen & Drohungen',
+    '🚩 Verdächtige Downloads',
+    '🚩 Emotionale Manipulation',
   ],
-  proTip: 'Pro Tip: When in doubt, ask a trusted adult before clicking links or sharing info!',
-  caseLabel: 'Case',
-  ofLabel: 'of',
-  fromLabel: 'From',
-  subjectLabel: 'Subject',
-  messageLabel: 'Message',
-  rankRookie: '🥉 Rookie Detective',
-  rankRookieMsg: 'You\'re just starting your investigation. Keep practicing to spot the red flags!',
-  rankJunior: '🥈 Junior Detective',
-  rankJuniorMsg: 'You\'re getting better at spotting suspicious messages. Well done!',
-  rankSenior: '🥇 Senior Detective',
-  rankSeniorMsg: 'You\'re great at identifying phishing and scams. Nice work!',
-  rankMaster: '👑 Master Detective',
-  rankMasterMsg: 'You\'re a phishing expert! You caught almost all the tricks. Outstanding!',
-  correctLabel: 'Correct',
-  incorrectLabel: 'Incorrect',
+  proTip: 'Profi-Tipp: Im Zweifelsfall frag einen vertrauenswürdigen Erwachsenen, bevor du auf Links klickst oder Informationen teilst!',
+  caseLabel: 'Fall',
+  ofLabel: 'von',
+  fromLabel: 'Von',
+  subjectLabel: 'Betreff',
+  messageLabel: 'Nachricht',
+  rankRookie: '🥉 Anfänger-Detektiv',
+  rankRookieMsg: 'Du beginnst gerade deine Ermittlung. Übe weiter, um die Warnsignale zu erkennen!',
+  rankJunior: '🥈 Junior-Detektiv',
+  rankJuniorMsg: 'Du wirst besser darin, verdächtige Nachrichten zu erkennen. Gut gemacht!',
+  rankSenior: '🥇 Senior-Detektiv',
+  rankSeniorMsg: 'Du bist großartig darin, Phishing und Betrug zu identifizieren. Schöne Arbeit!',
+  rankMaster: '👑 Meister-Detektiv',
+  rankMasterMsg: 'Du bist ein Phishing-Experte! Du hast fast alle Tricks entlarvt. Ausgezeichnet!',
+  correctLabel: 'Richtig',
+  incorrectLabel: 'Falsch',
   scenarios: [
     {
       id: 1,
       type: 'email',
       from: 'Prize Center <winner@free-prizes.net>',
-      subject: 'You Won $1,000!',
-      message: 'Congratulations! You\'ve been selected as our lucky winner! Click here to claim your $1,000 prize. Just enter your parent\'s bank details.',
+      subject: 'Sie haben 1.000 $ gewonnen!',
+      message: 'Herzlichen Glückwunsch! Sie wurden als unser Glücksgewinner ausgewählt! Klicken Sie hier, um Ihren Preis von 1.000 $ zu beanspruchen. Geben Sie einfach die Bankdaten Ihrer Eltern ein.',
       correct: 'ignore-report',
-      explanation: 'This is a classic scam! Real prizes don\'t ask for bank details. The email address looks fake too.',
-      tactic: 'Greed & Urgency',
+      explanation: 'Das ist ein klassischer Betrug! Echte Preise verlangen keine Bankdaten. Die E-Mail-Adresse sieht auch gefälscht aus.',
+      tactic: 'Gier & Dringlichkeit',
     },
     {
       id: 2,
       type: 'chat',
       from: 'BestFriend_2024',
-      message: 'Hey! Check out this cool website I found: www.free-vbucks-4real.com — you can get unlimited V-Bucks!',
+      message: 'Hey! Schau dir diese coole Website an, die ich gefunden habe: www.free-vbucks-4real.com — du kannst unbegrenzte V-Bucks bekommen!',
       correct: 'ignore-report',
-      explanation: 'Even if it looks like it\'s from a friend, their account might be hacked. Free V-Bucks sites are always scams.',
-      tactic: 'Trust Exploitation',
+      explanation: 'Auch wenn es aussieht, als käme es von einem Freund, könnte dessen Konto gehackt worden sein. Seiten mit kostenlosen V-Bucks sind immer Betrug.',
+      tactic: 'Vertrauensausnutzung',
     },
     {
       id: 3,
       type: 'email',
       from: 'School Admin <admin@your-school.edu>',
-      subject: 'Homework reminder',
-      message: 'Just a reminder that your science project is due next Friday. Please check the class portal for details.',
+      subject: 'Hausaufgaben-Erinnerung',
+      message: 'Nur eine Erinnerung, dass dein Naturwissenschaftsprojekt bis nächsten Freitag abgegeben werden muss. Bitte schau für Details im Klassenportal nach.',
       correct: 'trust',
-      explanation: 'This is a normal school email. It comes from a real school domain, doesn\'t ask for personal info, and has no suspicious links.',
-      tactic: 'None — Legitimate',
+      explanation: 'Das ist eine normale Schul-E-Mail. Sie kommt von einer echten Schuldomäne, fragt nicht nach persönlichen Daten und enthält keine verdächtigen Links.',
+      tactic: 'Keiner — Legitim',
     },
     {
       id: 4,
       type: 'chat',
       from: 'CoolGamer99',
-      message: 'I\'m a game developer! Send me your login and I\'ll add 1000 coins to your account for free!',
+      message: 'Ich bin Spieleentwickler! Schick mir deine Anmeldedaten und ich füge deinem Konto kostenlos 1000 Münzen hinzu!',
       correct: 'ignore-report',
-      explanation: 'Real game developers never ask for your password. This person is trying to steal your account!',
-      tactic: 'Authority Impersonation',
+      explanation: 'Echte Spieleentwickler verlangen niemals dein Passwort. Diese Person versucht, deinen Account zu stehlen!',
+      tactic: 'Autoritätsanmaßung',
     },
     {
       id: 5,
       type: 'email',
       from: 'Security Team <alert@g00gle-security.com>',
-      subject: 'URGENT: Your account will be deleted!',
-      message: 'Your account will be permanently deleted in 24 hours unless you verify your password NOW!',
+      subject: 'DRINGEND: Ihr Konto wird gelöscht!',
+      message: 'Ihr Konto wird in 24 Stunden dauerhaft gelöscht, wenn Sie Ihr Passwort nicht JETZT bestätigen!',
       correct: 'ignore-report',
-      explanation: 'Notice the fake domain \'g00gle\' (with zeros). Real companies never threaten to delete your account via email or ask for passwords.',
-      tactic: 'Fear & Urgency',
+      explanation: 'Beachte die gefälschte Domain \'g00gle\' (mit Nullen). Echte Unternehmen drohen niemals per E-Mail mit der Löschung deines Kontos oder verlangen Passwörter.',
+      tactic: 'Angst & Dringlichkeit',
     },
     {
       id: 6,
       type: 'chat',
-      from: 'Mom 💕',
-      message: 'Hey sweetie, can you pick up some milk on the way home? Love you!',
+      from: 'Mama 💕',
+      message: 'Hey Schatz, kannst du auf dem Weg nach Hause Milch kaufen? Ich liebe dich!',
       correct: 'trust',
-      explanation: 'This is a normal message from a family member. No suspicious links or requests for personal information.',
-      tactic: 'None — Legitimate',
+      explanation: 'Das ist eine normale Nachricht von einem Familienmitglied. Keine verdächtigen Links oder Anfragen nach persönlichen Informationen.',
+      tactic: 'Keiner — Legitim',
     },
     {
       id: 7,
       type: 'email',
       from: 'Charity Helper <donate@kids-help-now.org>',
-      subject: 'Help children in need!',
-      message: 'Please donate now! Children are suffering! Send your parent\'s credit card number to help immediately!',
+      subject: 'Helfen Sie bedürftigen Kindern!',
+      message: 'Bitte spenden Sie jetzt! Kinder leiden! Schicken Sie die Kreditkartennummer Ihrer Eltern, um sofort zu helfen!',
       correct: 'ignore-report',
-      explanation: 'Real charities never ask for credit card numbers via email. This is using emotions to trick you.',
-      tactic: 'Emotional Manipulation',
+      explanation: 'Echte Wohltätigkeitsorganisationen verlangen niemals Kreditkartennummern per E-Mail. Hier werden Emotionen eingesetzt, um dich zu täuschen.',
+      tactic: 'Emotionale Manipulation',
     },
     {
       id: 8,
       type: 'chat',
-      from: 'Unknown User',
-      message: 'Hi! I\'m new at your school. What\'s your home address so I can come over and hang out?',
+      from: 'Unbekannter Nutzer',
+      message: 'Hallo! Ich bin neu an deiner Schule. Was ist deine Heimadresse, damit ich vorbeikommen und abhängen kann?',
       correct: 'ignore-report',
-      explanation: 'Never share your address with strangers online, even if they claim to know you. A real new student would ask at school.',
-      tactic: 'Social Pretexting',
+      explanation: 'Teile niemals deine Adresse mit Fremden online, auch wenn sie behaupten, dich zu kennen. Ein echter neuer Schüler würde in der Schule fragen.',
+      tactic: 'Sozialer Vorwand',
     },
     {
       id: 9,
       type: 'email',
       from: 'Cloud Drive Alerts <alerts@cloud-drive-help.com>',
-      subject: 'Shared document locked',
-      message: 'Someone tried to open your file. Verify your login now to keep access to your cloud documents.',
+      subject: 'Geteiltes Dokument gesperrt',
+      message: 'Jemand hat versucht, deine Datei zu öffnen. Bestätige jetzt deine Anmeldung, um den Zugriff auf deine Cloud-Dokumente zu behalten.',
       correct: 'ignore-report',
-      explanation: 'This message creates panic and pushes you to log in through a suspicious link. Open the real app directly instead.',
-      tactic: 'Fear & Urgency',
+      explanation: 'Diese Nachricht erzeugt Panik und drängt dich dazu, dich über einen verdächtigen Link anzumelden. Öffne stattdessen die echte App direkt.',
+      tactic: 'Angst & Dringlichkeit',
     },
     {
       id: 10,
       type: 'chat',
-      from: 'School Office',
-      message: 'Reminder: school closes early at 1 PM tomorrow for staff training. See the notice in the parent portal.',
+      from: 'Schulbüro',
+      message: 'Erinnerung: Die Schule schließt morgen früh um 13:00 Uhr wegen Lehrerfortbildung. Siehe die Mitteilung im Elternportal.',
       correct: 'trust',
-      explanation: 'This is a normal school update and doesn\'t ask for passwords, money, or private account info.',
-      tactic: 'None — Legitimate',
+      explanation: 'Das ist eine normale Schulinformation und fragt nicht nach Passwörtern, Geld oder privaten Kontoinformationen.',
+      tactic: 'Keiner — Legitim',
     },
     {
       id: 11,
       type: 'email',
       from: 'App Store Security <security@app-store-verify.net>',
-      subject: 'Receipt problem: confirm card now',
-      message: 'Your last purchase failed. Confirm your full card number and CVV in 10 minutes to avoid account suspension.',
+      subject: 'Quittungsproblem: Karte jetzt bestätigen',
+      message: 'Dein letzter Kauf ist fehlgeschlagen. Bestätige deine vollständige Kartennummer und CVV innerhalb von 10 Minuten, um eine Kontosperrung zu vermeiden.',
       correct: 'ignore-report',
-      explanation: 'Real app stores never ask for full card details and CVV by email. Urgent deadlines are a common scam trick.',
-      tactic: 'Financial Theft',
+      explanation: 'Echte App-Stores verlangen niemals vollständige Kartendaten und CVV per E-Mail. Dringende Fristen sind ein verbreiteter Betrugs trick.',
+      tactic: 'Finanzieller Diebstahl',
     },
     {
       id: 12,
       type: 'email',
       from: 'School Library <library@your-school.edu>',
-      subject: 'Reading club meeting tomorrow',
-      message: 'Reminder: Reading Club meets tomorrow at lunch in Room 12. Bring your current book if you can.',
+      subject: 'Leseclub-Treffen morgen',
+      message: 'Erinnerung: Der Leseclub trifft sich morgen zur Mittagspause in Raum 12. Bring dein aktuelles Buch mit, wenn du kannst.',
       correct: 'trust',
-      explanation: 'This is a normal school reminder from a trusted domain, with no request for passwords or private account details.',
-      tactic: 'None — Legitimate',
+      explanation: 'Das ist eine normale Schulerinnerung von einer vertrauenswürdigen Domain, ohne Anfragen nach Passwörtern oder privaten Kontodaten.',
+      tactic: 'Keiner — Legitim',
     },
     {
       id: 13,
       type: 'chat',
       from: 'Coach Rivera',
-      message: 'Practice starts 15 minutes later today because of weather. Bring your water bottle.',
+      message: 'Das Training beginnt heute 15 Minuten später wegen des Wetters. Bring deine Wasserflasche mit.',
       correct: 'trust',
-      explanation: 'This is a routine schedule update and does not ask for sensitive information or suspicious actions.',
-      tactic: 'None — Legitimate',
+      explanation: 'Das ist eine routinemäßige Terminaktualisierung und fragt nicht nach sensiblen Informationen oder verdächtigen Aktionen.',
+      tactic: 'Keiner — Legitim',
     },
     {
       id: 14,
       type: 'email',
       from: 'Student Portal <noreply@districtschools.org>',
-      subject: 'New grades posted',
-      message: 'New grades are now available in the student portal. Open the portal from your usual school bookmark to review them.',
+      subject: 'Neue Noten veröffentlicht',
+      message: 'Neue Noten sind jetzt im Schülerportal verfügbar. Öffne das Portal über dein übliches Schullesezeichen, um sie einzusehen.',
       correct: 'trust',
-      explanation: 'This message directs you to your usual school portal and does not ask for passwords, payments, or private data in the message.',
-      tactic: 'None — Legitimate',
+      explanation: 'Diese Nachricht leitet dich zu deinem üblichen Schulportal und fragt nicht nach Passwörtern, Zahlungen oder privaten Daten in der Nachricht.',
+      tactic: 'Keiner — Legitim',
     },
   ],
 }

@@ -6,57 +6,25 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDP = {
-  subtitle:
-    'Data privacy helps students understand what information is personal, why it matters, and how to make careful choices when sharing online. This module supports educators in building safe, confident decision-making around personal data.',
-  aim: 'To help students recognize what counts as personal data, understand why privacy matters, and make safer choices before sharing information online.',
+  aim: 'Padėti mokiniams atpažinti, kas laikoma asmens duomenimis, suprasti, kodėl privatumas yra svarbus, ir priimti saugesnius sprendimus prieš dalinantis informacija internete.',
   objectives: [
-    'Define personal data and identify what is sensitive.',
-    'Encourage thoughtful sharing and consent-based choices.',
-    'Build awareness of privacy settings and safe defaults.',
+    'Apibrėžti asmens duomenis ir identifikuoti, kas yra jautru.',
+    'Skatinti apgalvotą dalijimąsi ir sutikimu pagrįstus sprendimus.',
+    'Ugdyti informuotumą apie privatumo nustatymus ir saugius numatytuosius parametrus.',
   ],
   outcomes: [
-    'Recognize common types of personal information.',
-    'Explain how data can travel and be stored online.',
-    'Apply simple privacy rules before sharing or posting.',
+    'Atpažinti dažniausiai pasitaikančius asmeninės informacijos tipus.',
+    'Paaiškinti, kaip duomenys gali keliauti ir būti saugomi internete.',
+    'Taikyti paprastas privatumo taisykles prieš dalinantis ar skelbiant.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Data Privacy Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Atsisiųsti mokymo vadovą',
+    download: 'Duomenų privatumo mokymo vadovas',
   },
   parts: [
     {
-      goal: 'Help students understand what personal data is, identify different types of sensitive information, and recognise why protecting it matters.',
+      goal: 'Padėti mokiniams suprasti, kas yra asmens duomenys, identifikuoti įvairius jautrių duomenų tipus ir atpažinti, kodėl svarbu juos apsaugoti.',
       bundle: {
         filename: 'Data Privacy Part 1 Package',
       },
@@ -64,50 +32,50 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.1.3
-            kind: 'Sorting Cards',
-            name: 'Public or Private',
+            kind: 'Rūšiavimo kortelės',
+            name: 'Vieši ar privatūs',
             filename: 'Sorting Cards - Public or Private',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.1.5
-            kind: 'Worksheet',
-            name: 'Reflection on Public vs Private Data',
+            kind: 'Darbalapas',
+            name: 'Apmąstymai apie viešus ir privačius duomenis',
             filename: 'Worksheet - Reflection on Public vs Private Data',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'What Is Personal Data?',
+            title: 'Kas yra asmens duomenys?',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.1.2
-        title: 'What Is Private Data?',
+        title: 'Kas yra privatūs duomenys?',
         supportText:
-          'Use this video to introduce the concept of private data and spark discussion about the types of information students share every day. Pause to ask students which details they consider private.',
+          'Naudokite šį vaizdo įrašą, kad supažindintumėte su privačių duomenų konceptu ir išprovokuotumėte diskusiją apie informacijos tipus, kuriais mokiniai dalinasi kiekvieną dieną. Sustokite ir paklauskite mokinių, kokias detales jie laiko privačiomis.',
         downloads: {
           video: {
             filename: 'What Is Private Data',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'What Is Private Data - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
     },
     {
-      goal: 'Help students understand how and why data gets shared online, the importance of consent, and how to make thoughtful decisions before sharing personal information.',
+      goal: 'Padėti mokiniams suprasti, kaip ir kodėl duomenys dalinami internete, sutikimo svarbą ir kaip priimti apgalvotus sprendimus prieš dalinantis asmenine informacija.',
       bundle: {
         filename: 'Data Privacy Part 2 Package',
       },
@@ -115,44 +83,44 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.2.2
-            kind: 'Scenario Cards',
-            name: 'Roleplay',
+            kind: 'Scenarijų kortelės',
+            name: 'Vaidmenų žaidimas',
             filename: 'Scenario Cards - Roleplay',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.2.3
-            kind: 'Image',
-            name: 'Sharing Online: Safe vs Risky',
+            kind: 'Paveikslėlis',
+            name: 'Dalijimasis internete: Saugu vs. rizikinga',
             filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.2.4
-            kind: 'Worksheet',
-            name: 'Share or Don\'t Share?',
+            kind: 'Darbalapas',
+            name: 'Dalintis ar nedalintis?',
             filename: 'Worksheet - Share or Don\'t Share',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'How Is Data Shared?',
+            title: 'Kaip dalinami duomenys?',
           },
           {
-            title: 'Consent and Permissions',
+            title: 'Sutikimas ir leidimai',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas - Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
     },
     {
-      goal: 'Help students discover what a digital footprint is, understand how everyday online activities leave lasting traces, and consider the long-term impact of their online behaviour.',
+      goal: 'Padėti mokiniams sužinoti, kas yra skaitmeninis pėdsakas, suprasti, kaip kasdienė internetinė veikla palieka ilgalaikius pėdsakus, ir apmąstyti ilgalaikį jų elgesio internete poveikį.',
       bundle: {
         filename: 'Data Privacy Part 3 Package',
       },
@@ -160,53 +128,53 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.3.3
-            kind: 'Comic Story',
-            name: 'A Day in the Life of Sam Online',
+            kind: 'Komiksų istorija',
+            name: 'Sam gyvenimo diena internete',
             filename: 'Comic Story - A Day in the Life of Sam Online',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.3.4
-            kind: 'Worksheet',
-            name: 'Track Sam\'s Footprint',
+            kind: 'Darbalapas',
+            name: 'Sek Sam pėdsaką',
             filename: 'Worksheet - Track Sam\'s Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'What Is a Digital Footprint?',
+            title: 'Kas yra skaitmeninis pėdsakas?',
           },
           {
-            title: 'Mapping Your Online Traces',
+            title: 'Jūsų internetinių pėdsakų žemėlapis',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas - Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.3.1
-        title: 'What Is a Digital Footprint?',
+        title: 'Kas yra skaitmeninis pėdsakas?',
         supportText:
-          'Use this video to help students visualise the trail of data they leave behind online. Encourage reflection on which of their recent activities might have created a footprint.',
+          'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams įsivaizduoti duomenų pėdsaką, kurį palieka internete. Skatinkite apmąstymus apie tai, kurios iš pastarojo meto veiklų galėjo palikti pėdsaką.',
         downloads: {
           video: {
             filename: 'What Is a Digital Footprint',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'What Is a Digital Footprint - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
     },
     {
-      goal: 'Help students learn practical strategies for reviewing and managing their digital footprint, including how to adjust privacy settings and remove unwanted data.',
+      goal: 'Padėti mokiniams išmokti praktinių strategijų peržiūrėti ir valdyti savo skaitmeninį pėdsaką, įskaitant privatumo nustatymų koregavimą ir nepageidaujamų duomenų pašalinimą.',
       bundle: {
         filename: 'Data Privacy Part 4 Package',
       },
@@ -214,47 +182,47 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Checklist',
-            name: 'Digital Footprint Cleanup Checklist',
+            kind: 'Kontrolinis sąrašas',
+            name: 'Skaitmeninio pėdsako valymo kontrolinis sąrašas',
             filename: 'Checklist - Digital Footprint Cleanup Checklist',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.4.2
-            kind: 'Worksheet',
-            name: 'Privacy Settings Guide',
+            kind: 'Darbalapas',
+            name: 'Privatumo nustatymų vadovas',
             filename: 'Worksheet - Privacy Settings Guide',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Įvadas',
           },
           {
-            title: 'Reviewing Your Digital Footprint',
+            title: 'Jūsų skaitmeninio pėdsako peržiūra',
           },
           {
-            title: 'Managing Privacy Settings',
+            title: 'Privatumo nustatymų valdymas',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarinis susirinkimas - Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.4.4
-        title: 'Protecting Your Personal Data Online',
+        title: 'Jūsų asmens duomenų apsauga internete',
         supportText:
-          'Use this video to introduce the concept of personal data and spark discussion about the types of information students share every day.',
+          'Naudokite šį vaizdo įrašą, kad supažindintumėte su asmeninių duomenų konceptu ir išprovokuotumėte diskusiją apie informacijos tipus, kuriais mokiniai dalinasi kiekvieną dieną.',
         downloads: {
           video: {
             filename: 'Protecting Your Personal Data Online',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
             filename: 'Protecting Your Personal Data Online - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
       },
@@ -266,160 +234,148 @@ export const contentDP = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
   ],
 }
 
 export const challengeDP = {
-  title: 'Digital Footprint Sorter',
-  subtitle: 'Sort each activity into the right category. Learn which of your everyday actions leave traces online!',
-  howItWorks: 'How It Works',
-  instruction: 'Drag each activity card into the zone where it belongs. On mobile, tap a card to select it, then tap a drop zone.',
-  tip: 'Think about whether the activity involves the internet, an app, or a website. If it does, it probably leaves a digital footprint!',
-  tipLabel: 'Tip',
-  tryAgain: 'Try Again',
-  activitiesToSort: 'Activities to Sort',
-  leavesFootprint: 'Leaves a Footprint',
-  dragOnlineHere: 'Drag online activities here',
-  noFootprint: 'No Footprint',
-  dragOfflineHere: 'Drag offline activities here',
-  correct: 'Correct! 🎯',
-  tryOtherZone: 'Not quite — try the other zone!',
-  winTitle: 'Amazing! You sorted them all!',
-  winMessage: 'You now know which activities leave a digital footprint. Remember: every click, search, and post creates a trail online!',
-  playAgain: 'Play Again',
+  title: 'Skaitmeninio pėdsako rūšiuoklis',
+  subtitle: 'Išrūšiuok kiekvieną veiklą į tinkamą kategoriją. Sužinok, kurie tavo kasdieniai veiksmai palieka pėdsakus internete!',
+  howItWorks: 'Kaip tai veikia',
+  instruction: 'Nutempk kiekvieną veiklos kortelę į zoną, kuriai ji priklauso. Mobiliajame įrenginyje palieski kortelę, kad ją pasirinktum, tada palieski nuleidimo zoną.',
+  tip: 'Pagalvok, ar veikla apima internetą, programėlę ar svetainę. Jei taip, ji greičiausiai palieka skaitmeninį pėdsaką!',
+  tipLabel: 'Patarimas',
+  tryAgain: 'Bandyti dar kartą',
+  activitiesToSort: 'Veiklos rūšiavimui',
+  leavesFootprint: 'Palieka pėdsaką',
+  dragOnlineHere: 'Vilkite interneto veiklas čia',
+  noFootprint: 'Jokio pėdsako',
+  dragOfflineHere: 'Vilkite neprisijungusios veiklas čia',
+  correct: 'Teisingai! 🎯',
+  tryOtherZone: 'Beveik — išbandyk kitą zoną!',
+  winTitle: 'Puiku! Išrūšiavai visas!',
+  winMessage: 'Dabar žinai, kurios veiklos palieka skaitmeninį pėdsaką. Atmink: kiekvienas paspaudimas, paieška ir įrašas sukuria pėdsaką internete!',
+  playAgain: 'Žaisti dar kartą',
   activities: [
-    { 
-      text: 'Posting a photo on Instagram', 
-      category: 'footprint', 
-      emoji: '📸', 
-      explanation: 'Photos you share online stay on servers and can be found by anyone — even years later!' 
+    {
+      text: 'Nuotraukos paskelbimas Instagram',
+      category: 'footprint',
+      emoji: '📸',
+      explanation: 'Nuotraukos, kurias dalinaties internete, lieka serveriuose ir gali jas rasti bet kas — net po daugelio metų!',
     },
-    { 
-      text: 'Reading a paper book at home', 
-      category: 'no-footprint', 
-      emoji: '📖', 
-      explanation: 'No internet connection means no digital trace is created.' 
+    {
+      text: 'Popierinės knygos skaitymas namuose',
+      category: 'no-footprint',
+      emoji: '📖',
+      explanation: 'Jokio ryšio su internetu reiškia, jog nesukuriamas joks skaitmeninis pėdsakas.',
     },
-    { 
-      text: 'Searching for answers on Google', 
-      category: 'footprint', 
-      emoji: '🔍', 
-      explanation: 'Search engines record what you look for and use it to show you personalised results.' 
+    {
+      text: 'Atsakymų paieška Google',
+      category: 'footprint',
+      emoji: '🔍',
+      explanation: 'Paieškos sistemos įrašo, ko ieškote, ir naudoja tai, kad rodytų jums individualizuotus rezultatus.',
     },
-    { 
-      text: 'Playing soccer outside', 
-      category: 'no-footprint', 
-      emoji: '⚽', 
-      explanation: 'Outdoor activities without a phone or app leave no digital record.' 
+    {
+      text: 'Futbolo žaidimas lauke',
+      category: 'no-footprint',
+      emoji: '⚽',
+      explanation: 'Lauko veikla be telefono ar programėlės nepalieka jokio skaitmeninio įrašo.',
     },
-    { 
-      text: 'Sending a message on WhatsApp', 
-      category: 'footprint', 
-      emoji: '💬', 
-      explanation: 'Messages are stored on servers and create a permanent record of your conversations.' 
+    {
+      text: 'Žinutės siuntimas per WhatsApp',
+      category: 'footprint',
+      emoji: '💬',
+      explanation: 'Žinutės saugomos serveriuose ir sukuria nuolatinį jūsų pokalbių įrašą.',
     },
-    { 
-      text: 'Drawing a picture with crayons', 
-      category: 'no-footprint', 
-      emoji: '🖍️', 
-      explanation: 'Traditional art with physical materials doesn\'t create any online data.' 
+    {
+      text: 'Paveikslo piešimas spalvotais pieštukais',
+      category: 'no-footprint',
+      emoji: '🖍️',
+      explanation: 'Tradicinis kūrybiškumas su fizinėmis medžiagomis nekuria jokių internetinių duomenų.',
     },
-    { 
-      text: 'Creating an account on a game website', 
-      category: 'footprint', 
-      emoji: '🎮', 
-      explanation: 'Signing up stores your name, email, and every action you take on the site.' 
+    {
+      text: 'Paskyros kūrimas žaidimų svetainėje',
+      category: 'footprint',
+      emoji: '🎮',
+      explanation: 'Registracija išsaugo jūsų vardą, el. paštą ir kiekvieną veiksmą, kurį atliekate svetainėje.',
     },
-    { 
-      text: 'Riding your bike around the neighbourhood', 
-      category: 'no-footprint', 
-      emoji: '🚲', 
-      explanation: 'Unless you use a tracking app, cycling is a purely offline activity.' 
+    {
+      text: 'Važiavimas dviračiu po apylinkes',
+      category: 'no-footprint',
+      emoji: '🚲',
+      explanation: 'Jei nenaudojate sekimo programėlės, važiavimas dviračiu yra visiškai neprisijungusi veikla.',
     },
-    { 
-      text: 'Watching videos on YouTube', 
-      category: 'footprint', 
-      emoji: '▶️', 
-      explanation: 'YouTube tracks every video you watch and uses it to recommend more content.' 
+    {
+      text: 'Vaizdo įrašų žiūrėjimas YouTube',
+      category: 'footprint',
+      emoji: '▶️',
+      explanation: 'YouTube seka kiekvieną jūsų žiūrimą vaizdo įrašą ir naudoja tai rekomenduodama daugiau turinio.',
     },
-    { 
-      text: 'Writing in your paper diary', 
-      category: 'no-footprint', 
-      emoji: '📓', 
-      explanation: 'A paper diary has no internet connection — your thoughts stay truly private.' 
+    {
+      text: 'Rašymas popieriniame dienoraštyje',
+      category: 'no-footprint',
+      emoji: '📓',
+      explanation: 'Popierinis dienoraštis neturi interneto ryšio — jūsų mintys lieka tikrai privačios.',
     },
-    { 
-      text: 'Liking a friend\'s TikTok video', 
-      category: 'footprint', 
-      emoji: '❤️', 
-      explanation: 'Every like you give is recorded and shapes your online profile and recommendations.' 
+    {
+      text: 'Draugo TikTok vaizdo įrašo patikimas',
+      category: 'footprint',
+      emoji: '❤️',
+      explanation: 'Kiekvienas jūsų patikamas yra įrašomas ir formuoja jūsų internetinį profilį bei rekomendacijas.',
     },
-    { 
-      text: 'Playing a board game with family', 
-      category: 'no-footprint', 
-      emoji: '🎲', 
-      explanation: 'Board games are offline fun — no data is created or stored anywhere.' 
+    {
+      text: 'Stalo žaidimo žaidimas su šeima',
+      category: 'no-footprint',
+      emoji: '🎲',
+      explanation: 'Stalo žaidimai yra neprisijungusi pramoga — jokie duomenys nėra kuriami ar saugomi.',
     },
-    { 
-      text: 'Filling out an online quiz', 
-      category: 'footprint', 
-      emoji: '📝', 
-      explanation: 'Websites collect every answer you type in and may share it with others.' 
+    {
+      text: 'Internetinio viktorinos pildymas',
+      category: 'footprint',
+      emoji: '📝',
+      explanation: 'Svetainės renka kiekvieną jūsų įvestą atsakymą ir gali jais dalintis su kitais.',
     },
-    { 
-      text: 'Talking to friends at school', 
-      category: 'no-footprint', 
-      emoji: '🗣️', 
-      explanation: 'Face-to-face conversations leave no digital trace at all.' 
+    {
+      text: 'Pokalbis su draugais mokykloje',
+      category: 'no-footprint',
+      emoji: '🗣️',
+      explanation: 'Asmeniniai pokalbiai nepalieka jokio skaitmeninio pėdsako.',
     },
-    { 
-      text: 'Leaving a comment on a blog', 
-      category: 'footprint', 
-      emoji: '💻', 
-      explanation: 'Comments are public, linked to your name, and stay on the website forever.' 
+    {
+      text: 'Komentaro palikimas tinklaraštyje',
+      category: 'footprint',
+      emoji: '💻',
+      explanation: 'Komentarai yra vieši, susieti su jūsų vardu ir lieka svetainėje amžinai.',
     },
   ],
 }

@@ -6,57 +6,25 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentDP = {
-  subtitle:
-    'Data privacy helps students understand what information is personal, why it matters, and how to make careful choices when sharing online. This module supports educators in building safe, confident decision-making around personal data.',
-  aim: 'To help students recognize what counts as personal data, understand why privacy matters, and make safer choices before sharing information online.',
+  aim: 'Den Lernenden helfen zu erkennen, was als personenbezogene Daten gilt, zu verstehen, warum Datenschutz wichtig ist, und vor dem Teilen von Informationen online sicherere Entscheidungen zu treffen.',
   objectives: [
-    'Define personal data and identify what is sensitive.',
-    'Encourage thoughtful sharing and consent-based choices.',
-    'Build awareness of privacy settings and safe defaults.',
+    'Personenbezogene Daten definieren und identifizieren, was sensibel ist.',
+    'Überlegtes Teilen und zustimmungsbasierte Entscheidungen fördern.',
+    'Bewusstsein für Datenschutzeinstellungen und sichere Standardwerte aufbauen.',
   ],
   outcomes: [
-    'Recognize common types of personal information.',
-    'Explain how data can travel and be stored online.',
-    'Apply simple privacy rules before sharing or posting.',
+    'Gängige Arten personenbezogener Informationen erkennen.',
+    'Erklären, wie Daten online übertragen und gespeichert werden können.',
+    'Einfache Datenschutzregeln anwenden, bevor man teilt oder postet.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Data Privacy Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Unterrichtsleitfaden herunterladen',
+    download: 'Unterrichtsleitfaden Datenschutz',
   },
   parts: [
     {
-      goal: 'Help students understand what personal data is, identify different types of sensitive information, and recognise why protecting it matters.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was personenbezogene Daten sind, verschiedene Arten sensibler Informationen zu identifizieren und zu erkennen, warum deren Schutz wichtig ist.',
       bundle: {
         filename: 'Data Privacy Part 1 Package',
       },
@@ -64,50 +32,50 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.1.3
-            kind: 'Sorting Cards',
-            name: 'Public or Private',
+            kind: 'Sortierkarten',
+            name: 'Öffentlich oder privat',
             filename: 'Sorting Cards - Public or Private',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.1.5
-            kind: 'Worksheet',
-            name: 'Reflection on Public vs Private Data',
+            kind: 'Arbeitsblatt',
+            name: 'Reflexion über öffentliche vs. private Daten',
             filename: 'Worksheet - Reflection on Public vs Private Data',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'What Is Personal Data?',
+            title: 'Was sind personenbezogene Daten?',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.1.2
-        title: 'What Is Private Data?',
+        title: 'Was sind private Daten?',
         supportText:
-          'Use this video to introduce the concept of private data and spark discussion about the types of information students share every day. Pause to ask students which details they consider private.',
+          'Verwenden Sie dieses Video, um das Konzept privater Daten einzuführen und eine Diskussion über die Arten von Informationen anzuregen, die Schülerinnen und Schüler täglich teilen. Halten Sie inne und fragen Sie die Schülerinnen und Schüler, welche Details sie als privat betrachten.',
         downloads: {
           video: {
             filename: 'What Is Private Data',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What Is Private Data - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
-      goal: 'Help students understand how and why data gets shared online, the importance of consent, and how to make thoughtful decisions before sharing personal information.',
+      goal: 'Den Schülerinnen und Schülern helfen zu verstehen, wie und warum Daten online geteilt werden, die Bedeutung von Zustimmung und wie man überlegte Entscheidungen vor dem Teilen persönlicher Informationen trifft.',
       bundle: {
         filename: 'Data Privacy Part 2 Package',
       },
@@ -115,44 +83,44 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.2.2
-            kind: 'Scenario Cards',
-            name: 'Roleplay',
+            kind: 'Szenarienkarten',
+            name: 'Rollenspiel',
             filename: 'Scenario Cards - Roleplay',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.2.3
-            kind: 'Image',
-            name: 'Sharing Online: Safe vs Risky',
+            kind: 'Bild',
+            name: 'Online teilen: Sicher vs. riskant',
             filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.2.4
-            kind: 'Worksheet',
-            name: 'Share or Don\'t Share?',
+            kind: 'Arbeitsblatt',
+            name: 'Teilen oder nicht teilen?',
             filename: 'Worksheet - Share or Don\'t Share',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'How Is Data Shared?',
+            title: 'Wie werden Daten geteilt?',
           },
           {
-            title: 'Consent and Permissions',
+            title: 'Zustimmung und Berechtigungen',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung - Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
     },
     {
-      goal: 'Help students discover what a digital footprint is, understand how everyday online activities leave lasting traces, and consider the long-term impact of their online behaviour.',
+      goal: 'Den Schülerinnen und Schülern helfen zu entdecken, was ein digitaler Fußabdruck ist, zu verstehen, wie alltägliche Online-Aktivitäten dauerhafte Spuren hinterlassen, und den langfristigen Einfluss ihres Online-Verhaltens zu bedenken.',
       bundle: {
         filename: 'Data Privacy Part 3 Package',
       },
@@ -160,53 +128,53 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.3.3
-            kind: 'Comic Story',
-            name: 'A Day in the Life of Sam Online',
+            kind: 'Comicgeschichte',
+            name: 'Ein Tag im Online-Leben von Sam',
             filename: 'Comic Story - A Day in the Life of Sam Online',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.3.4
-            kind: 'Worksheet',
-            name: 'Track Sam\'s Footprint',
+            kind: 'Arbeitsblatt',
+            name: 'Sams Fußabdruck verfolgen',
             filename: 'Worksheet - Track Sam\'s Footprint',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'What Is a Digital Footprint?',
+            title: 'Was ist ein digitaler Fußabdruck?',
           },
           {
-            title: 'Mapping Your Online Traces',
+            title: 'Ihre Online-Spuren kartieren',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung - Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.3.1
-        title: 'What Is a Digital Footprint?',
+        title: 'Was ist ein digitaler Fußabdruck?',
         supportText:
-          'Use this video to help students visualise the trail of data they leave behind online. Encourage reflection on which of their recent activities might have created a footprint.',
+          'Verwenden Sie dieses Video, um Schülerinnen und Schülern zu helfen, sich die Datenspur vorzustellen, die sie online hinterlassen. Fördern Sie die Reflexion darüber, welche ihrer jüngsten Aktivitäten einen Fußabdruck hinterlassen haben könnten.',
         downloads: {
           video: {
             filename: 'What Is a Digital Footprint',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'What Is a Digital Footprint - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
     },
     {
-      goal: 'Help students learn practical strategies for reviewing and managing their digital footprint, including how to adjust privacy settings and remove unwanted data.',
+      goal: 'Den Schülerinnen und Schülern helfen, praktische Strategien zur Überprüfung und Verwaltung ihres digitalen Fußabdrucks zu erlernen, einschließlich der Anpassung von Datenschutzeinstellungen und der Entfernung unerwünschter Daten.',
       bundle: {
         filename: 'Data Privacy Part 4 Package',
       },
@@ -214,47 +182,47 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Checklist',
-            name: 'Digital Footprint Cleanup Checklist',
+            kind: 'Checkliste',
+            name: 'Checkliste zur Bereinigung des digitalen Fußabdrucks',
             filename: 'Checklist - Digital Footprint Cleanup Checklist',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.4.2
-            kind: 'Worksheet',
-            name: 'Privacy Settings Guide',
+            kind: 'Arbeitsblatt',
+            name: 'Leitfaden für Datenschutzeinstellungen',
             filename: 'Worksheet - Privacy Settings Guide',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Einführung',
           },
           {
-            title: 'Reviewing Your Digital Footprint',
+            title: 'Ihren digitalen Fußabdruck überprüfen',
           },
           {
-            title: 'Managing Privacy Settings',
+            title: 'Datenschutzeinstellungen verwalten',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenarsitzung - Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
       featuredVideo: {
         // ID: 4.4.4
-        title: 'Protecting Your Personal Data Online',
+        title: 'Ihre persönlichen Daten online schützen',
         supportText:
-          'Use this video to introduce the concept of personal data and spark discussion about the types of information students share every day.',
+          'Verwenden Sie dieses Video, um das Konzept persönlicher Daten einzuführen und eine Diskussion über die Arten von Informationen anzuregen, die Schülerinnen und Schüler täglich teilen.',
         downloads: {
           video: {
             filename: 'Protecting Your Personal Data Online',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
             filename: 'Protecting Your Personal Data Online - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
@@ -266,160 +234,148 @@ export const contentDP = {
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
       imageSrc: '/images/learning-hub/03_authentication.png',
-      description:
-        'This module covers the essentials of protecting online accounts through strong, secure authentication habits. Kids learn practical routines around passwords and login safety that are easy to remember and genuinely effective.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
   ],
 }
 
 export const challengeDP = {
-  title: 'Digital Footprint Sorter',
-  subtitle: 'Sort each activity into the right category. Learn which of your everyday actions leave traces online!',
-  howItWorks: 'How It Works',
-  instruction: 'Drag each activity card into the zone where it belongs. On mobile, tap a card to select it, then tap a drop zone.',
-  tip: 'Think about whether the activity involves the internet, an app, or a website. If it does, it probably leaves a digital footprint!',
-  tipLabel: 'Tip',
-  tryAgain: 'Try Again',
-  activitiesToSort: 'Activities to Sort',
-  leavesFootprint: 'Leaves a Footprint',
-  dragOnlineHere: 'Drag online activities here',
-  noFootprint: 'No Footprint',
-  dragOfflineHere: 'Drag offline activities here',
-  correct: 'Correct! 🎯',
-  tryOtherZone: 'Not quite — try the other zone!',
-  winTitle: 'Amazing! You sorted them all!',
-  winMessage: 'You now know which activities leave a digital footprint. Remember: every click, search, and post creates a trail online!',
-  playAgain: 'Play Again',
+  title: 'Digitaler Fußabdruck-Sortierer',
+  subtitle: 'Sortiere jede Aktivität in die richtige Kategorie. Lerne, welche deiner alltäglichen Handlungen online Spuren hinterlassen!',
+  howItWorks: 'So funktioniert es',
+  instruction: 'Ziehe jede Aktivitätskarte in die Zone, in die sie gehört. Auf dem Handy tippst du eine Karte an, um sie auszuwählen, dann tippst du eine Ablagezone an.',
+  tip: 'Überlege, ob die Aktivität das Internet, eine App oder eine Website beinhaltet. Wenn ja, hinterlässt sie wahrscheinlich einen digitalen Fußabdruck!',
+  tipLabel: 'Tipp',
+  tryAgain: 'Erneut versuchen',
+  activitiesToSort: 'Zu sortierende Aktivitäten',
+  leavesFootprint: 'Hinterlässt einen Fußabdruck',
+  dragOnlineHere: 'Online-Aktivitäten hierher ziehen',
+  noFootprint: 'Kein Fußabdruck',
+  dragOfflineHere: 'Offline-Aktivitäten hierher ziehen',
+  correct: 'Richtig! 🎯',
+  tryOtherZone: 'Nicht ganz — probiere die andere Zone!',
+  winTitle: 'Toll! Du hast sie alle sortiert!',
+  winMessage: 'Du weißt jetzt, welche Aktivitäten einen digitalen Fußabdruck hinterlassen. Denk daran: Jeder Klick, jede Suche und jeder Beitrag hinterlässt online eine Spur!',
+  playAgain: 'Nochmal spielen',
   activities: [
-    { 
-      text: 'Posting a photo on Instagram', 
-      category: 'footprint', 
-      emoji: '📸', 
-      explanation: 'Photos you share online stay on servers and can be found by anyone — even years later!' 
+    {
+      text: 'Ein Foto auf Instagram posten',
+      category: 'footprint',
+      emoji: '📸',
+      explanation: 'Fotos, die du online teilst, bleiben auf Servern und können von jedem gefunden werden — sogar Jahre später!',
     },
-    { 
-      text: 'Reading a paper book at home', 
-      category: 'no-footprint', 
-      emoji: '📖', 
-      explanation: 'No internet connection means no digital trace is created.' 
+    {
+      text: 'Ein Papierbuch zu Hause lesen',
+      category: 'no-footprint',
+      emoji: '📖',
+      explanation: 'Keine Internetverbindung bedeutet, dass keine digitale Spur erstellt wird.',
     },
-    { 
-      text: 'Searching for answers on Google', 
-      category: 'footprint', 
-      emoji: '🔍', 
-      explanation: 'Search engines record what you look for and use it to show you personalised results.' 
+    {
+      text: 'Antworten auf Google suchen',
+      category: 'footprint',
+      emoji: '🔍',
+      explanation: 'Suchmaschinen zeichnen auf, was du suchst, und verwenden es, um dir personalisierte Ergebnisse zu zeigen.',
     },
-    { 
-      text: 'Playing soccer outside', 
-      category: 'no-footprint', 
-      emoji: '⚽', 
-      explanation: 'Outdoor activities without a phone or app leave no digital record.' 
+    {
+      text: 'Draußen Fußball spielen',
+      category: 'no-footprint',
+      emoji: '⚽',
+      explanation: 'Outdoor-Aktivitäten ohne Telefon oder App hinterlassen keinen digitalen Nachweis.',
     },
-    { 
-      text: 'Sending a message on WhatsApp', 
-      category: 'footprint', 
-      emoji: '💬', 
-      explanation: 'Messages are stored on servers and create a permanent record of your conversations.' 
+    {
+      text: 'Eine Nachricht auf WhatsApp senden',
+      category: 'footprint',
+      emoji: '💬',
+      explanation: 'Nachrichten werden auf Servern gespeichert und erstellen eine dauerhafte Aufzeichnung deiner Gespräche.',
     },
-    { 
-      text: 'Drawing a picture with crayons', 
-      category: 'no-footprint', 
-      emoji: '🖍️', 
-      explanation: 'Traditional art with physical materials doesn\'t create any online data.' 
+    {
+      text: 'Ein Bild mit Buntstiften malen',
+      category: 'no-footprint',
+      emoji: '🖍️',
+      explanation: 'Traditionelle Kunst mit physischen Materialien erstellt keine Online-Daten.',
     },
-    { 
-      text: 'Creating an account on a game website', 
-      category: 'footprint', 
-      emoji: '🎮', 
-      explanation: 'Signing up stores your name, email, and every action you take on the site.' 
+    {
+      text: 'Ein Konto auf einer Spiele-Website erstellen',
+      category: 'footprint',
+      emoji: '🎮',
+      explanation: 'Durch die Registrierung werden dein Name, deine E-Mail-Adresse und jede Aktion gespeichert, die du auf der Website ausführst.',
     },
-    { 
-      text: 'Riding your bike around the neighbourhood', 
-      category: 'no-footprint', 
-      emoji: '🚲', 
-      explanation: 'Unless you use a tracking app, cycling is a purely offline activity.' 
+    {
+      text: 'Mit dem Fahrrad durch die Nachbarschaft fahren',
+      category: 'no-footprint',
+      emoji: '🚲',
+      explanation: 'Solange du keine Tracking-App verwendest, ist Radfahren eine rein offline Aktivität.',
     },
-    { 
-      text: 'Watching videos on YouTube', 
-      category: 'footprint', 
-      emoji: '▶️', 
-      explanation: 'YouTube tracks every video you watch and uses it to recommend more content.' 
+    {
+      text: 'Videos auf YouTube schauen',
+      category: 'footprint',
+      emoji: '▶️',
+      explanation: 'YouTube verfolgt jedes Video, das du schaust, und nutzt es, um mehr Inhalte zu empfehlen.',
     },
-    { 
-      text: 'Writing in your paper diary', 
-      category: 'no-footprint', 
-      emoji: '📓', 
-      explanation: 'A paper diary has no internet connection — your thoughts stay truly private.' 
+    {
+      text: 'In deinem Papiertagebuch schreiben',
+      category: 'no-footprint',
+      emoji: '📓',
+      explanation: 'Ein Papiertagebuch hat keine Internetverbindung — deine Gedanken bleiben wirklich privat.',
     },
-    { 
-      text: 'Liking a friend\'s TikTok video', 
-      category: 'footprint', 
-      emoji: '❤️', 
-      explanation: 'Every like you give is recorded and shapes your online profile and recommendations.' 
+    {
+      text: 'Das TikTok-Video eines Freundes liken',
+      category: 'footprint',
+      emoji: '❤️',
+      explanation: 'Jedes Like, das du gibst, wird aufgezeichnet und gestaltet dein Online-Profil und deine Empfehlungen.',
     },
-    { 
-      text: 'Playing a board game with family', 
-      category: 'no-footprint', 
-      emoji: '🎲', 
-      explanation: 'Board games are offline fun — no data is created or stored anywhere.' 
+    {
+      text: 'Ein Brettspiel mit der Familie spielen',
+      category: 'no-footprint',
+      emoji: '🎲',
+      explanation: 'Brettspiele sind Offline-Spaß — es werden nirgendwo Daten erstellt oder gespeichert.',
     },
-    { 
-      text: 'Filling out an online quiz', 
-      category: 'footprint', 
-      emoji: '📝', 
-      explanation: 'Websites collect every answer you type in and may share it with others.' 
+    {
+      text: 'Ein Online-Quiz ausfüllen',
+      category: 'footprint',
+      emoji: '📝',
+      explanation: 'Websites sammeln jede Antwort, die du eingibst, und können sie mit anderen teilen.',
     },
-    { 
-      text: 'Talking to friends at school', 
-      category: 'no-footprint', 
-      emoji: '🗣️', 
-      explanation: 'Face-to-face conversations leave no digital trace at all.' 
+    {
+      text: 'Mit Freunden in der Schule reden',
+      category: 'no-footprint',
+      emoji: '🗣️',
+      explanation: 'Persönliche Gespräche hinterlassen überhaupt keine digitale Spur.',
     },
-    { 
-      text: 'Leaving a comment on a blog', 
-      category: 'footprint', 
-      emoji: '💻', 
-      explanation: 'Comments are public, linked to your name, and stay on the website forever.' 
+    {
+      text: 'Einen Kommentar in einem Blog hinterlassen',
+      category: 'footprint',
+      emoji: '💻',
+      explanation: 'Kommentare sind öffentlich, mit deinem Namen verknüpft und bleiben für immer auf der Website.',
     },
   ],
 }

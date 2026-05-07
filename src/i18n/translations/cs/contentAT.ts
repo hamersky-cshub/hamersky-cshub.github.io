@@ -6,60 +6,28 @@
 // Non-translatable data (file paths, IDs, subtitle tracks) → src/data/moduleParts.ts
 // ---------------------------------------------------------------------------
 
-/**
- * Part shape for content editors (translatable fields only).
- *
- * {
- *   goal:          string              // optional — pedagogical objective for this part
- *   bundle: {
- *     filename:    string              // required — display name shown on the download button
- *   }
- *   included: {
- *     material: {                      // optional — one entry per downloadable material
- *       kind:      string              // required — type label, e.g. "Worksheet", "Cards"
- *       name:      string              // required — display name of the material
- *       ariaLabel: string              // required — accessible label for the download button
- *     }
- *     activityPlan: {                  // optional — activity steps
- *       title:      string                  // required — step title
- *     }                                // ⚠️  Steps are numbered automatically (1, 2, 3…).
- *                                      //    ORDER MATTERS — first entry becomes Step 1.
- *   }
- *   featuredVideo: {                   // optional — omit entirely if this part has no video
- *     title:        string             // required — video title
- *     supportText:  string             // optional — teacher guidance text shown below the video
- *     downloads: {
- *       video:     { ariaLabel: string } // accessible label for video download button
- *       subtitles: { ariaLabel: string } // accessible label for subtitles download button
- *     }
- *   }
- * }
- */
-
 export const contentAT = {
-  subtitle:
-    'Authentication helps students understand how we prove who we are online. This module supports educators in teaching strong sign-in habits, why extra verification matters, and how to keep accounts protected.',
-  aim: 'To provide core knowledge of authentication and identity management principles for protecting personal digital assets.',
+  aim: 'Poskytnout základní znalosti principů autentizace a správy identit pro ochranu osobních digitálních aktiv.',
   objectives: [
-    'To stress the importance of secure identity management.',
-    'To introduce the concept of authentication and its different types.',
-    'To develop students\' understanding of digital assets and access control awareness.',
-    'To develop students\' knowledge and skills for creating secure usernames and passwords following recommendations and good practices.',
-    'To build students\' skills for managing passwords securely.',
+    'Zdůraznit důležitost bezpečné správy identit.',
+    'Představit koncept autentizace a její různé typy.',
+    'Rozvíjet porozumění studentů digitálním aktivům a povědomí o řízení přístupu.',
+    'Rozvíjet znalosti a dovednosti studentů pro vytváření bezpečných uživatelských jmen a hesel podle doporučení a osvědčených postupů.',
+    'Budovat dovednosti studentů pro bezpečnou správu hesel.',
   ],
   outcomes: [
-    'I can identify my personal digital assets and explain the risks they face in both physical and digital environments.',
-    'I can explain what authentication is, why it is important, and list different types of authentications.',
-    'I can distinguish between weak and strong usernames and passwords.',
-    'I can demonstrate how to use a password manager to store passwords and justify why I made those choices.',
+    'Dokáži identifikovat svá osobní digitální aktiva a vysvětlit rizika, kterým čelí v fyzickém i digitálním prostředí.',
+    'Dokáži vysvětlit, co je autentizace, proč je důležitá, a vyjmenovat různé typy autentizace.',
+    'Dokáži rozlišit mezi slabými a silnými uživatelskými jmény a hesly.',
+    'Dokáži předvést, jak používat správce hesel k ukládání hesel, a zdůvodnit, proč jsem tyto volby učinil/a.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Authentication Teaching Guide',
+  teachingGuide: {
+    ariaLabel: 'Stáhnout výukového průvodce',
+    download: 'Výukový průvodce autentizací',
   },
   parts: [
     {
-      goal: 'Help students create strong, memorable secrets and understand why reuse is risky.',
+      goal: 'Pomoci studentům vytvořit silná, zapamatovatelná tajemství a pochopit, proč je opakované použití riskantní.',
       bundle: {
         filename: 'Authentication Part 1 Package',
       },
@@ -67,67 +35,67 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.1.1
-            kind: 'Image',
-            name: 'Online Identity',
+            kind: 'Obrázek',
+            name: 'Online identita',
             filename: 'Image - Online Identity',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.1.2
-            kind: 'Images',
-            name: 'Examples of Personal Digital Assets',
+            kind: 'Obrázky',
+            name: 'Příklady osobních digitálních aktiv',
             filename: 'Images - Examples of Personal Digital Assets',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.1.4
-            kind: 'Worksheet',
-            name: 'What Would Happen if ...?',
+            kind: 'Pracovní list',
+            name: 'Co by se stalo, kdyby...?',
             filename: 'Worksheet - What Would Happen if',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.1.5
-            kind: 'Worksheet',
-            name: 'My Digital Assets',
+            kind: 'Pracovní list',
+            name: 'Moje digitální aktiva',
             filename: 'Worksheet - My Digital Assets',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'What is Digital Identity?',
+            title: 'Co je digitální identita?',
           },
           {
-            title: 'Understanding Digital Assets',
+            title: 'Porozumění digitálním aktivům',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
-        title: 'What is Digital Identity?',
+        title: 'Co je digitální identita?',
         supportText:
-          'Use this video to help students understand that their digital identity is made up of the information and behaviours they share online. Pause to ask which parts of their digital identity they think they can control.',
+          'Použijte toto video, aby studenti pochopili, že jejich digitální identita se skládá z informací a chování, které sdílejí online. Zastavte se a zeptejte se, které části digitální identity si myslí, že mohou ovládat.',
         downloads: {
           video: {
             filename: 'What is Digital Identity',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'What is Digital Identity - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand what authentication is, why it is important, and how it helps protect their digital identity and digital assets by controlling who is allowed access.',
+        'Pomoci studentům pochopit, co je autentizace, proč je důležitá a jak pomáhá chránit jejich digitální identitu a digitální aktiva tím, že kontroluje, kdo má povolený přístup.',
       bundle: {
         filename: 'Authentication Part 2 Package',
       },
@@ -135,64 +103,64 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.2.1
-            kind: 'Images',
-            name: 'Real-world Authentication Examples',
+            kind: 'Obrázky',
+            name: 'Příklady autentizace z reálného světa',
             filename: 'Images - Real-world Authentication Examples',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.2.3
-            kind: 'Image',
-            name: 'Logging Into a Digital System',
+            kind: 'Obrázek',
+            name: 'Přihlášení do digitálního systému',
             filename: 'Image - Logging Into a Digital System',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.2.4
-            kind: 'Worksheet',
-            name: 'Authentication in Everday Life',
+            kind: 'Pracovní list',
+            name: 'Autentizace v každodenním životě',
             filename: 'Worksheet - Authentication in Everday Life',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Authentication',
+            title: 'Autentizace',
           },
           {
-            title: 'Understanding Types of Authentication',
+            title: 'Porozumění typům autentizace',
           },
           {
-            title: 'Applying Authentication to Digital Assets',
+            title: 'Aplikace autentizace na digitální aktiva',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'What is Authentication and Why is It Important?',
+        title: 'Co je autentizace a proč je důležitá?',
         supportText:
-          'Use this video to introduce authentication as the everyday mechanism that guards students\' digital accounts. Pause to ask how they currently prove their identity on the apps they use most.',
+          'Použijte toto video k představení autentizace jako každodenního mechanismu, který chrání digitální účty studentů. Zastavte se a zeptejte se, jak aktuálně prokazují svou identitu v aplikacích, které nejčastěji používají.',
         downloads: {
           video: {
             filename: 'What is Authentication and Why is It Important',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'What is Authentication and Why is It Important - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand what authentication is, why it is important, and how it helps protect their digital identity and digital assets by controlling who is allowed access.',
+        'Pomoci studentům pochopit, co je autentizace, proč je důležitá a jak pomáhá chránit jejich digitální identitu a digitální aktiva tím, že kontroluje, kdo má povolený přístup.',
       bundle: {
         filename: 'Authentication Part 3 Package',
        },
@@ -200,78 +168,78 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.3.2
-            kind: 'Image',
-            name: 'Examples of Weak Passwords',
+            kind: 'Obrázek',
+            name: 'Příklady slabých hesel',
             filename: 'Image - Examples of Strong Passwords',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.3
-            kind: 'Image',
-            name: 'Examples of Strong Passwords',
+            kind: 'Obrázek',
+            name: 'Příklady silných hesel',
             filename: 'Image - Check your Password',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.4
-            kind: 'Cards',
-            name: 'Create a Strong Password',
+            kind: 'Karty',
+            name: 'Vytvořit silné heslo',
             filename: 'Cards - Create a Strong Password',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.5
-            kind: 'Image',
-            name: 'Check your Password',
+            kind: 'Obrázek',
+            name: 'Zkontrolujte své heslo',
             filename: 'Image - Two Different Types of Authentication Used Together',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.6
-            kind: 'Worksheet',
-            name: 'My Strong Password Rules',
+            kind: 'Pracovní list',
+            name: 'Moje pravidla pro silná hesla',
             filename: 'Worksheet - My Strong Password Rules',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Passwords',
+            title: 'Hesla',
           },
           {
-            title: 'Strong vs Weak Passwords',
+            title: 'Silná vs. slabá hesla',
           },
           {
-            title: 'Creating Strong Passwords Safely',
+            title: 'Bezpečné vytváření silných hesel',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.3.1
-        title: 'Strong and Weak Passwords',
+        title: 'Silná a slabá hesla',
         supportText:
-          'Use this video to show students the difference between passwords that protect accounts and passwords that put them at risk. Invite them to reflect on whether their own passwords meet the criteria for strength.',
+          'Použijte toto video, abyste studentům ukázali rozdíl mezi hesly, která chrání účty, a hesly, která je vystavují riziku. Vyzvěte je, aby zamysleli nad tím, zda jejich vlastní hesla splňují kritéria silných hesel.',
         downloads: {
           video: {
             filename: 'Strong and Weak Passwords',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'Strong and Weak Passwords - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand I can explain what two-factor authentication is and why managing many passwords is difficult, introduce the concept of a password manager, and explain how password managers help protect digital identities and digital assets when used responsibly with support from a trusted adult.',
+        'Pomoci studentům pochopit, co je dvoufaktorová autentizace a proč je správa mnoha hesel obtížná, představit koncept správce hesel a vysvětlit, jak správci hesel pomáhají chránit digitální identity a digitální aktiva při zodpovědném používání s podporou důvěryhodného dospělého.',
       bundle: {
         filename: 'Authentication Part 4 Package',
        },
@@ -279,106 +247,106 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Schema',
-            name: 'Set of Groups',
+            kind: 'Schéma',
+            name: 'Sada skupin',
             filename: 'Schema - Set of Groups',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.2
-            kind: 'Schema',
-            name: 'Set of Money Coins',
+            kind: 'Schéma',
+            name: 'Sada mincí',
             filename: 'Schema - Set of Coins',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.3
-            kind: 'Schema',
-            name: 'Set of Groups',
+            kind: 'Schéma',
+            name: 'Sada skupin',
             filename: 'Schema - Set of Groups',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.4
-            kind: 'Schema',
-            name: 'PIN Cards',
+            kind: 'Schéma',
+            name: 'PIN karty',
             filename: 'Schema - PIN Cards',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.6
-            kind: 'Images',
-            name: 'How to Use a Password Manager',
+            kind: 'Obrázky',
+            name: 'Jak používat správce hesel',
             filename: 'Images - How to Use a Password Manager',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.7
-            kind: 'Image',
-            name: 'Password Manager Vault',
+            kind: 'Obrázek',
+            name: 'Trezor správce hesel',
             filename: 'Image - Password Manager Vault',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.8
-            kind: 'Image',
-            name: 'Password Manager as a Digital Keyring',
+            kind: 'Obrázek',
+            name: 'Správce hesel jako digitální klíčenka',
             filename: 'Image - Password Manager as a Digital Keyring',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.9
-            kind: 'Image',
-            name: 'Steps of Saving Passwords',
+            kind: 'Obrázek',
+            name: 'Kroky ukládání hesel',
             filename: 'Image - Steps of Saving Passwords',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.10
-            kind: 'Worksheet',
-            name: 'Password Problems and Solutions',
+            kind: 'Pracovní list',
+            name: 'Problémy s hesly a řešení',
             filename: 'Worksheet - Password Problems and Solutions',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Passwords',
+            title: 'Hesla',
           },
           {
-            title: 'Password Managers',
+            title: 'Správci hesel',
           },
           {
-            title: 'Applying Password Managers Safely',
+            title: 'Bezpečné používání správců hesel',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.4.5
-        title: 'What Is a Password Manager?',
+        title: 'Co je správce hesel?',
         supportText:
-          'Use this video to introduce password managers as a practical solution for creating and storing strong, unique passwords for every account. Pause to ask students if they have heard of or used one before.',
+          'Použijte toto video k představení správců hesel jako praktického řešení pro vytváření a ukládání silných, jedinečných hesel pro každý účet. Zastavte se a zeptejte se studentů, zda o správci hesel slyšeli nebo jej již používali.',
         downloads: {
           video: {
             filename: 'What Is a Password Manager',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'What Is a Password Manager - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
     {
       goal:
-        'Help students understand how their choices and behaviour affect the security of their digital identity, and how acting responsibly helps protect their digital assets, themselves, and others in digital environments.',
+        'Pomoci studentům pochopit, jak jejich volby a chování ovlivňují bezpečnost jejich digitální identity a jak zodpovědné jednání pomáhá chránit jejich digitální aktiva, je samotné a ostatní v digitálním prostředí.',
       bundle: {
         filename: 'Authentication Part 5 Package',
        },
@@ -386,210 +354,193 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.5.1
-            kind: 'Image',
-            name: 'Safe and Unsafe Online Behaviours',
+            kind: 'Obrázek',
+            name: 'Bezpečné a nebezpečné online chování',
             filename: 'Image - Safe and Unsafe Online Behaviours',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.5.3
-            kind: 'Worksheet',
-            name: 'Digital Identity and Authentication Scenarios',
+            kind: 'Pracovní list',
+            name: 'Scénáře digitální identity a autentizace',
             filename: 'Worksheet - Digital Identity and Authentication Scenarios',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.5.4
-            kind: 'Worksheet',
-            name: 'How I Protect My Digital Identity',
+            kind: 'Pracovní list',
+            name: 'Jak chráním svou digitální identitu',
             filename: 'Worksheet - How I Protect My Digital Identity',
-            ariaLabel: 'Download material',
+            ariaLabel: 'Stáhnout materiál',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction',
+            title: 'Úvod',
           },
           {
-            title: 'Protecting Digital Identity',
+            title: 'Ochrana digitální identity',
           },
           {
-            title: 'Digital Identity and Authentication',
+            title: 'Digitální identita a autentizace',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
           },
         ],
       },
       featuredVideo: {
         // ID: 3.5.2
-        title: 'Protecting Your Digital Identity',
+        title: 'Ochrana vaší digitální identity',
         supportText:
-          'Use this video to bring together the strategies students have learned for keeping their digital identity safe. Encourage them to identify one specific habit they will change or start after watching.',
+          'Použijte toto video ke spojení strategií, které se studenti naučili pro zachování bezpečnosti své digitální identity. Povzbuďte je, aby identifikovali jeden konkrétní zvyk, který změní nebo zavedou po shlédnutí.',
         downloads: {
           video: {
             filename: 'Protecting Your Digital Identity',
-            ariaLabel: 'Download video',
+            ariaLabel: 'Stáhnout video',
           },
           subtitles: {
             filename: 'Protecting Your Digital Identity - Subtitles',
-            ariaLabel: 'Download subtitles',
+            ariaLabel: 'Stáhnout titulky',
           },
         },
       },
     },
   ],
-  otherModulesDivider: 'Explore Other Topics',
-  otherModulesTitle: 'Other Modules',
-  otherModulesSubtitle: 'Browse related modules and continue learning.',
+  otherModulesDivider: 'Prozkoumejte další témata',
+  otherModulesTitle: 'Další moduly',
+  otherModulesSubtitle: 'Procházejte příbuzné moduly a pokračujte v učení.',
   relatedModuleCards: [
     {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
       imageSrc: '/images/learning-hub/01_digital-citizenship.png',
-      description:
-        'This module helps kids develop responsible habits for communicating, sharing, and behaving respectfully in online spaces. It covers the core principles of ethical digital behaviour and sets a solid foundation for navigating the internet with confidence and care.',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
       imageSrc: '/images/learning-hub/02_attacker-perspective.png',
-      description:
-        'This module shows kids how online trust can be exploited and what risky behaviour looks like from the other side. Understanding how attacks happen is a key step in recognising and avoiding them in everyday digital life.',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
       imageSrc: '/images/learning-hub/04_data-privacy.png',
-      description:
-        'This module explores what personal information actually is, how it gets shared — often without us realising — and what kids can do to stay in control of their digital footprint. It builds awareness of privacy as an active, everyday responsibility.',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
       imageSrc: '/images/learning-hub/05_social-engineering.png',
-      description:
-        'This module dives into the human side of cybercrime — how scammers use persuasion, false urgency, and deception to manipulate people into giving up information or access. Kids learn to pause, question, and verify before they act.',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
       imageSrc: '/images/learning-hub/06_malware.png',
-      description:
-        'This module helps kids recognise suspicious links, downloads, and software that can harm their devices. It builds practical awareness of how malware spreads and how simple, consistent habits can prevent it.',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
       imageSrc: '/images/learning-hub/07_digital-abuse.png',
-      description:
-        'This module addresses harmful online behaviour including cyberbullying, harassment, and coercion. Kids learn to identify when a situation has crossed a line and, importantly, how to seek help safely and confidently.',
     },
-  ],
-  relatedModules: [
-    { title: 'Digital Citizenship', description: 'Build a strong foundation of rights, responsibility, and respect online.', cta: 'Explore' },
-    { title: 'Data Privacy', description: 'Explore how personal information is shared and ways to keep it safe.', cta: 'Explore' },
-    { title: 'Social Engineering', description: 'Learn how scammers and manipulators use persuasion and false urgency.', cta: 'Explore' },
   ],
 }
 
 export const challengeAT = {
-  title: 'Password Lab',
+  title: 'Laboratoř hesel',
   subtitle:
-    'Build a stronger password one round at a time. Each level adds a new ingredient to your password recipe!',
-  howItWorks: 'How It Works',
+    'Budujte silnější heslo jedno kolo za druhým. Každá úroveň přidává novou ingredienci do vašeho receptu na heslo!',
+  howItWorks: 'Jak to funguje',
   instruction:
-    "Each round introduces a new password requirement. Meet all the current round's criteria to advance — and watch your password become harder and harder to crack!",
+    'Každé kolo zavádí nový požadavek na heslo. Splňte všechna kritéria aktuálního kola, abyste postoupili – a sledujte, jak vaše heslo je stále těžší prolomit!',
   tipLabel: 'Tip',
-  tip: 'Check the sidebar on the right to track your round progress and get password tips!',
-  yourPassword: 'Your Password',
-  placeholder: 'Type your password here...',
-  passwordInputAriaLabel: 'Password input',
-  showPassword: 'Show password',
-  strengthAriaLabel: 'Password strength',
-  roundBadgeTemplate: 'Round {n} of {total}',
-  criteriaTitle: 'Password Recipe — Round {n}:',
-  criterionLength: 'Length > 10 characters',
-  criterionNumber: 'Contains a number (0-9)',
-  criterionSymbol: 'Contains a symbol (! @ # $ % ^ & * ?)',
-  criterionUppercase: 'Contains an UPPERCASE letter',
-  criterionLowercase: 'Contains a lowercase letter',
-  strengthWeak: 'Weak',
-  strengthOkay: 'Getting there',
-  strengthStrong: 'Strong ✓',
-  feedbackDefault: 'Start typing to see your password strength!',
-  feedbackAllMet: '🎉 All requirements met! Hit Next Round to continue.',
-  almostThereTemplate: 'Almost there! Try to {hint}.',
+  tip: 'Zkontrolujte pravý postranní panel, abyste sledovali pokrok v kolech a získali tipy na hesla!',
+  yourPassword: 'Vaše heslo',
+  placeholder: 'Zadejte heslo zde...',
+  passwordInputAriaLabel: 'Zadání hesla',
+  showPassword: 'Zobrazit heslo',
+  strengthAriaLabel: 'Síla hesla',
+  roundBadgeTemplate: 'Kolo {n} z {total}',
+  criteriaTitle: 'Recept na heslo — Kolo {n}:',
+  criterionLength: 'Délka > 10 znaků',
+  criterionNumber: 'Obsahuje číslo (0-9)',
+  criterionSymbol: 'Obsahuje symbol (! @ # $ % ^ & * ?)',
+  criterionUppercase: 'Obsahuje VELKÉ písmeno',
+  criterionLowercase: 'Obsahuje malé písmeno',
+  strengthWeak: 'Slabé',
+  strengthOkay: 'Skoro tam',
+  strengthStrong: 'Silné ✓',
+  feedbackDefault: 'Začněte psát a zjistěte sílu svého hesla!',
+  feedbackAllMet: '🎉 Všechny požadavky splněny! Klikněte na Další kolo pro pokračování.',
+  almostThereTemplate: 'Skoro tam! Zkuste {hint}.',
   hints: {
-    length: 'make it longer (10+ characters)',
-    number: 'add a number (0-9)',
-    symbol: 'add a symbol like ! @ # $ %',
-    upper: 'add an UPPERCASE letter',
-    lower: 'add a lowercase letter',
+    length: 'prodloužit (10+ znaků)',
+    number: 'přidat číslo (0-9)',
+    symbol: 'přidat symbol jako ! @ # $ %',
+    upper: 'přidat VELKÉ písmeno',
+    lower: 'přidat malé písmeno',
   },
-  keepGoing: 'Keep going!',
-  nextRound: 'Next Round →',
-  finish: 'Finish! 🏆',
-  nextRoundAriaLabel: 'Proceed to next round',
-  tryAgain: 'Try Again',
-  tryAgainAriaLabel: 'Clear password and start over',
-  completionTitle: 'Password Master!',
-  completionText: "You've completed all 4 rounds and learned how to create unbreakable passwords!",
-  completionRounds: '4 / 4 Rounds Completed',
-  completionTips: 'Strong passwords protect your digital life. Use these skills everywhere you create an account!',
-  startOver: 'Start Over',
-  roundProgressTitle: 'Round Progress',
-  roundProgressDesc: 'Complete all 4 rounds to master passwords',
+  keepGoing: 'Pokračujte!',
+  nextRound: 'Další kolo →',
+  finish: 'Dokončit! 🏆',
+  nextRoundAriaLabel: 'Přejít na další kolo',
+  tryAgain: 'Zkusit znovu',
+  tryAgainAriaLabel: 'Vymazat heslo a začít znovu',
+  completionTitle: 'Mistr hesel!',
+  completionText: 'Dokončili jste všechna 4 kola a naučili se vytvářet neprolomitelná hesla!',
+  completionRounds: '4 / 4 kola dokončena',
+  completionTips: 'Silná hesla chrání váš digitální život. Používejte tyto dovednosti všude, kde si vytváříte účet!',
+  startOver: 'Začít znovu',
+  roundProgressTitle: 'Pokrok v kolech',
+  roundProgressDesc: 'Dokončete všechna 4 kola, abyste ovládli hesla',
   rounds: [
-    { 
-      icon: '🎮', 
-      title: 'Create a password for your game account',  
-      description: 'Just start with a good length — at least 10 characters!',                                         
-      label: 'Round 1', 
-      desc: 'Length only' 
+    {
+      icon: '🎮',
+      title: 'Vytvořte heslo pro herní účet',
+      description: 'Začněte s dobrou délkou – alespoň 10 znaků!',
+      label: 'Kolo 1',
+      desc: 'Pouze délka'
     },
-    { 
-      icon: '📧', 
-      title: 'Create a password for your email',          
-      description: 'Great start! Now add a number to make it harder to crack.',                                        
-      label: 'Round 2', 
-      desc: '+ Number' 
+    {
+      icon: '📧',
+      title: 'Vytvořte heslo pro e-mail',
+      description: 'Skvělý začátek! Nyní přidejte číslo, aby bylo těžší jej prolomit.',
+      label: 'Kolo 2',
+      desc: '+ Číslo'
     },
-    { 
-      icon: '📱', 
-      title: 'Create a password for your social media',   
-      description: 'Good progress! Now throw in a symbol to really mix things up.',                                   
-      label: 'Round 3', 
-      desc: '+ Symbol' 
+    {
+      icon: '📱',
+      title: 'Vytvořte heslo pro sociální sítě',
+      description: 'Dobrý pokrok! Nyní přidejte symbol, abyste to pořádně zamíchali.',
+      label: 'Kolo 3',
+      desc: '+ Symbol'
     },
-    { 
-      icon: '📔', 
-      title: 'Create a password for your secret diary',   
-      description: 'Final round! Add both UPPERCASE and lowercase letters to complete the full recipe.',               
-      label: 'Round 4', 
-      desc: '+ Upper & lowercase' 
+    {
+      icon: '📔',
+      title: 'Vytvořte heslo pro tajný deník',
+      description: 'Závěrečné kolo! Přidejte VELKÁ i malá písmena a dokončete celý recept.',
+      label: 'Kolo 4',
+      desc: '+ Velká a malá písmena'
     },
   ],
-  dosTitle: "✅ Do's",
+  dosTitle: '✅ Dělat',
   dos: [
-    'Mix UPPER and lowercase letters',
-    'Add numbers in the middle',
-    'Use symbols like ! @ # $ %',
-    'Make it 12+ characters long',
-    'Use random combinations',
+    'Kombinujte VELKÁ a malá písmena',
+    'Přidejte čísla uprostřed',
+    'Používejte symboly jako ! @ # $ %',
+    'Délka 12+ znaků',
+    'Používejte náhodné kombinace',
   ],
-  dontsTitle: "❌ Don'ts",
+  dontsTitle: '❌ Nedělat',
   donts: [
-    'Use your real name or birthday',
-    'Use "123456" or simple patterns',
-    'Repeat the same character',
-    'Use common dictionary words',
-    "Use your school or pet's name",
+    'Používejte své skutečné jméno nebo datum narození',
+    'Používejte „123456" nebo jednoduché vzory',
+    'Opakujte stejný znak',
+    'Používejte běžná slovníková slova',
+    'Používejte název školy nebo jméno mazlíčka',
   ],
 }
