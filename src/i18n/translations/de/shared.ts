@@ -29,15 +29,15 @@ export const shared = {
     home: {
       title: 'Startseite',
 
-      statModulesLabel: 'Lern-\nmodule',
-      statChallengesLabel: 'Interaktive \nHerausforderungen',
+      statModulesLabel: 'Lernmodule',
+      statChallengesLabel: 'Interaktive\nHerausforderungen',
       statGamesLabel: 'Cybersicherheits-\nSpiele',
 
-      learningModulesTitle: 'Lern-\nmodule',
+      learningModulesTitle: 'Lernmodule',
       learningModulesText:
         'Stärken Sie Ihre Schülerinnen und Schüler mit den digitalen Kompetenzen, die sie benötigen, um die vernetzte Welt von heute sicher und verantwortungsvoll zu navigieren. Unsere sieben strukturierten Lernmodule führen die Lernenden Schritt für Schritt — von grundlegenden Konzepten wie digitaler Staatsbürgerschaft und Online-Datenschutz bis hin zu fortgeschritteneren Themen wie der Erkennung von Phishing-Versuchen und Social-Engineering-Taktiken. Jedes Modul verbindet klare Erklärungen mit praktischen Aktivitäten und macht komplexe Cybersicherheitskonzepte zugänglich und einprägsam — unabhängig von technischen Vorkenntnissen. Mit Blick auf die Flexibilität im Unterricht können die Module sequenziell als vollständiger Kurs oder einzeln in Ihren bestehenden Lehrplan integriert werden.',
 
-      challengesTitle: 'Interaktive \nHerausforderungen',
+      challengesTitle: 'Interaktive\nHerausforderungen',
       challengesText:
         'Setzen Sie Wissen in die Praxis um mit szenariobasierten Herausforderungen, die Kinder in die Rolle des Problemlösers versetzen. Jede Herausforderung stellt eine realistische Situation vor — eine verdächtige E-Mail, ein ungesichertes Konto, ein irreführender Link — und fordert Kinder auf, kritisch zu denken, Entscheidungen zu treffen und die Konsequenzen zu beobachten. Sofortiges Feedback hilft den Lernenden zu verstehen, nicht nur was die richtige Antwort ist, sondern auch warum, was zu einem dauerhaften Verständnis anstelle von bloßem Auswendiglernen beiträgt. Als Pädagoge erhalten Sie einen klaren Einblick in das Denken jedes Kindes, was diese Herausforderungen sowohl für die formative Beurteilung als auch für das Engagement nützlich macht.',
 
@@ -64,6 +64,7 @@ export const shared = {
         'Wir stellen zugängliche, ansprechende Ressourcen bereit, die speziell für Lehrkräfte und Kinder entwickelt wurden, damit jedes Klassenzimmer — unabhängig von technischen Vorkenntnissen — junge Menschen mit dem Wissen, dem Selbstvertrauen und den praktischen Fähigkeiten ausstatten kann, um die digitale Welt sicher und verantwortungsvoll zu erkunden.',
 
       partnersTitle: 'Projektpartner',
+      initiativeDesc: 'Dieses Toolkit basiert auf dem KidCy-Projekt – einer Zusammenarbeit führender Institutionen in der Cybersicherheitsbildung und -forschung in ganz Europa, von denen jede einzigartige Expertise und Perspektiven einbringt, um ein umfassendes Lernerlebnis für junge Lernende zu schaffen.',
       uniLiechtenstein: 'Universität Liechtenstein',
       uniLiechtensteinDesc:
         'Eine forschungsorientierte Institution mit Expertise in Informationssystemen und digitalen Technologien bringt die Universität Liechtenstein eine starke Grundlage in angewandter Technologieforschung in das Projekt ein und hilft, evidenzbasierte Ansätze zur Cybersicherheitsausbildung zu gestalten.',
@@ -359,26 +360,31 @@ export const shared = {
 
         at: {
           title: 'Meisterzauber: Öffne den Tresor',
+          description: 'Treten Sie in eine Fantasiewelt ein, in der Ihr Wissen über Authentifizierung zum Schlüssel des Fortschritts wird.',
           subtitle: 'Treten Sie in eine Fantasiewelt ein, in der Ihr Wissen über Authentifizierung zum Schlüssel des Fortschritts wird. Beginnen Sie damit, das stärkere von zwei Passwörtern auszuwählen, um eine Brücke zu bauen, und stellen Sie sich dann einer Burgherausforderung, bei der Sie Ihr Verständnis der Zwei-Faktor-Authentifizierung testen, indem Sie den richtigen Ritter verfolgen. Während Sie fortfahren, identifizieren Sie, welche Gegenstände digital sind, und sichern Sie sie, indem Sie starke Passwörter erstellen und jedes in einem magischen Buch speichern. Nach der Wiederholung dieses Prozesses kreieren Sie einen mächtigen Meisterzauber und nutzen ihn, um versteckte Truhen zu öffnen — und beweisen, dass Sie die Prinzipien starker Passwörter und Authentifizierung gemeistert haben, bevor Sie in Ihr Heimzimmer zurückkehren.',
           altText: 'Spielvorschau',
         },
         dp: {
           title: 'Geheimnisse der Perle & Muschel',
+          description: 'Treten Sie in eine märchenhafte Welt ein, in der Ihre Entscheidungen bestimmen, wie gut Sie Ihre persönlichen Informationen schützen.',
           subtitle: 'Treten Sie in eine märchenhafte Welt ein, in der Ihre Entscheidungen bestimmen, wie gut Sie Ihre persönlichen Informationen schützen. Beginnen Sie damit, Informationen als öffentlich oder privat einzustufen und verwenden Sie Muscheln und Perlen, um zu entscheiden, was geteilt werden soll und was verborgen bleiben soll. Wechseln Sie dann zu einer Social-Media-Herausforderung, bei der Sie Beiträge auf einer telefonähnlichen Oberfläche überprüfen und entscheiden, ob sie sicher zu teilen sind oder sensible Daten offenbaren. Folgen Sie einem geheimnisvollen Gnomen, um Ihre digitalen Spuren aufzudecken, und beantworten Sie Fragen zu Themen wie Cookies und VPNs. In der letzten Phase reagieren Sie auf Telefonbenachrichtigungen über die Verwaltung und Bereinigung Ihres digitalen Fußabdrucks und beweisen Ihr Verständnis des Datenschutzes, bevor Sie Ihre Reise abschließen.',
           altText: 'Spielvorschau',
         },
         se: {
           title: 'Betrug oder sicher? Lassen Sie sich nicht täuschen!',
+          description: 'Treten Sie in eine hochriskante Herausforderung ein, bei der Ihre Fähigkeit, Täuschung zu erkennen, der Schlüssel zum Überleben ist.',
           subtitle: 'Treten Sie in eine hochriskante Herausforderung ein, bei der Ihre Fähigkeit, Täuschung zu erkennen, der Schlüssel zum Überleben ist. Beginnen Sie damit, zwischen Plattformen zu springen und zu identifizieren, ob Beispiele wie Websites, Nachrichten oder E-Mails legitim oder Phishing-Versuche sind — wählen Sie richtig, um voranzukommen, aber machen Sie einen Fehler und riskieren Sie, Ihren Schild zu verlieren und zu fallen. Wenn die Herausforderung sich intensiviert, setzen Sie Ihren Weg auf einem anspruchsvolleren Pfad fort, wo jeder Schritt ein neues Szenario präsentiert, das eine Entscheidung erfordert, ob es Phishing, sicher oder unsicher ist. Beweisen Sie Ihr Bewusstsein für Social-Engineering-Taktiken und schärfen Sie Ihren Instinkt, während Sie diesen gefährlichen Weg navigieren.',
           altText: 'Spielvorschau',
         },
         mw: {
           title: 'Malware-Wahnsinn-Rennen',
+          description: 'Treten Sie in ein rasantes Rennen ein, bei dem das Verständnis von Malware Ihnen den Vorteil verschafft.',
           subtitle: 'Treten Sie in ein rasantes Rennen ein, bei dem das Verständnis von Malware Ihnen den Vorteil verschafft. Beginnen Sie damit, verschiedene Gegenstände auf der Strecke zu erkunden — wie Viren, Würmer, Ransomware und Schutzwerkzeuge wie Antivirensoftware, Firewalls und Updates — jedes mit seiner eigenen Wirkung und realer Bedeutung. Fahren Sie dann durch drei Runden und sammeln Sie Gegenstände, die je nachdem, ob sie Bedrohungen oder Schutzmaßnahmen darstellen, entweder Ihre Leistung steigern oder Sie verlangsamen können. An der Ziellinie überprüfen Sie, was Sie gesammelt haben, und erfahren, wie jedes Element mit realer Cybersicherheit verbunden ist, zusammen mit praktischen Tipps, wie Sie geschützt bleiben.',
           altText: 'Spielvorschau',
         },
         da: {
           title: 'Freundlichkeitsquest: Rettet die Stadt',
+          description: 'Treten Sie in eine lebhafte Stadt ein, in der digitale Konflikte für Spannungen unter den Bewohnern gesorgt haben.',
           subtitle: 'Treten Sie in eine lebhafte Stadt ein, in der digitale Konflikte für Spannungen unter den Bewohnern gesorgt haben. Übernehmen Sie die Rolle eines Problemlösers und helfen Sie den Menschen, mit Problemen wie Cybermobbing, Deepfakes und Online-Missbrauch umzugehen, und treffen Sie durchdachte Entscheidungen, um ihre Streitigkeiten zu lösen. Mit jedem Konflikt, den Sie erfolgreich lösen, verbessern sich die Beziehungen und die Stadt wird einladender. Beobachten Sie, wie Ihre Handlungen die Atmosphäre verwandeln — was zu einer freudvollen Feier führt, bei der die Gemeinschaft zusammenkommt und das einst distanzierte Maskottchen zunehmend freundlicher wird.',
           altText: 'Spielvorschau',
         },

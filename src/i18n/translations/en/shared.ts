@@ -29,19 +29,19 @@ export const shared = {
     home: {
       title: 'Home',
 
-      statModulesLabel: 'Learning \nModules',
-      statChallengesLabel: 'Interactive \nChallenges',
-      statGamesLabel: 'Cybersecurity \nGames',
+      statModulesLabel: 'Learning\nModules',
+      statChallengesLabel: 'Interactive\nChallenges',
+      statGamesLabel: 'Cybersecurity\nGames',
 
-      learningModulesTitle: 'Learning \nModules',
+      learningModulesTitle: 'Learning\nModules',
       learningModulesText:
         'Empower your students with the digital literacy skills they need to navigate today\'s connected world safely and responsibly. Our seven structured learning modules guide learners step by step — from foundational concepts like digital citizenship and online privacy, to more advanced topics such as recognizing phishing attempts and social engineering tactics. Each module blends clear explanations with hands-on activities, making complex cybersecurity concepts accessible and memorable regardless of prior tech experience. Designed with classroom flexibility in mind, modules can be taught sequentially as a full course or integrated individually into your existing curriculum.',
 
-      challengesTitle: 'Interactive \nChallenges',
+      challengesTitle: 'Interactive\nChallenges',
       challengesText:
         'Put knowledge into action with scenario-based challenges that place kids in the role of problem-solver. Each challenge presents a realistic situation — a suspicious email, an unsecured account, a deceptive link — and asks kids to think critically, make decisions, and see the consequences unfold. Immediate feedback helps learners understand not just what the right answer is, but why, reinforcing lasting understanding over rote memorization. As an educator, you get a clear window into each kid\'s reasoning, making these challenges as useful for formative assessment as they are for engagement.',
 
-      gamesTitle: 'Cybersecurity \nGames',
+      gamesTitle: 'Cybersecurity\nGames',
       gamesText:
         'Learning sticks when it\'s fun — and our cybersecurity games are built with exactly that in mind. Covering everything from password security to identifying online threats, each game transforms key curriculum concepts into play-driven experiences that kids genuinely want to return to. Whether used as a warm-up, a reward, or a full lesson activity, the games keep learners motivated while quietly reinforcing the skills that matter most. Appropriate for a range of ages and ability levels, they\'re easy to launch in class, in a computer lab, or as an independent take-home activity.',
 
@@ -64,6 +64,7 @@ export const shared = {
         'We provide accessible, engaging resources designed specifically for teachers and kids, so that every classroom — regardless of technical background — can equip young people with the knowledge, confidence, and practical skills to explore the digital world safely and responsibly.',
 
       partnersTitle: 'Initiative Partners',
+      initiativeDesc: 'This toolkit is based on the KidCy Project – a collaborative effort between leading institutions in cybersecurity education and research across Europe, each bringing unique expertise and perspectives to create a comprehensive learning experience for young learners.',
       uniLiechtenstein: 'University of Liechtenstein',
       uniLiechtensteinDesc:
         'A research-driven institution with expertise in information systems and digital technologies, the University of Liechtenstein brings a strong foundation in applied tech research to the project, helping shape evidence-based approaches to cybersecurity education.',
@@ -359,26 +360,31 @@ export const shared = {
 
         at: {
           title: 'Master Spell: Unlock the Vault',
+          description: 'Step into a fantasy world where your knowledge of authentication becomes the key to progress.',
           subtitle: 'Step into a fantasy world where your knowledge of authentication becomes the key to progress. Begin by choosing the stronger of two passwords to build a bridge, then face a castle challenge where you\'ll test your understanding of two-factor authentication by tracking the correct knight. As you continue, identify which items are digital and secure them by creating strong passwords, storing each one in a magical book. After repeating this process, craft a powerful Master Spell and use it to unlock hidden chests—proving you\'ve mastered the principles of strong passwords and authentication before returning to your home room.',
           altText: 'Game thumbnail',
         },
         dp: {
           title: 'Secrets of the Pearl & Shell',
+          description: 'Step into a whimsical world where your choices shape how well you protect your personal information.',
           subtitle: 'Step into a whimsical world where your choices shape how well you protect your personal information. Begin by sorting information as public or private, using seashells and pearls to decide what should be shared and what should stay hidden. Then move to a social media challenge, where you\'ll review posts on a phone-like interface and decide whether they are safe to share or reveal sensitive data. As you continue, follow a mysterious gnome to uncover your digital traces, answering questions about topics like cookies and VPNs. In the final stage, respond to phone alerts about managing and cleaning up your digital footprint, proving your understanding of data privacy before completing your journey.',
           altText: 'Game thumbnail',
         },
         se: {
           title: 'Scam or Safe? Don\'t Fall for It!',
+          description: 'Step into a high-stakes challenge where your ability to spot deception is the key to survival.',
           subtitle: 'Step into a high-stakes challenge where your ability to spot deception is the key to survival. Begin by jumping between platforms and identifying whether examples like websites, messages, or emails are legitimate or phishing attempts—choose correctly to move forward, but make a mistake and risk losing your shield and falling. As the challenge intensifies, continue across a more demanding path where each step presents a new scenario, requiring you to decide whether it is phishing, safe, or uncertain. Prove your awareness of social engineering tactics and sharpen your instincts as you navigate this dangerous path.',
           altText: 'Game thumbnail',
         },
         mw: {
           title: 'Malware Madness Race',
+          description: 'Step into a fast-paced race where understanding malware gives you the edge.',
           subtitle: 'Step into a fast-paced race where understanding malware gives you the edge. Begin by exploring different items on the track—such as viruses, worms, ransomware, and protective tools like antivirus software, firewalls, and updates—each with its own effect and real-world meaning. Then speed through three laps, collecting items that can either boost your performance or slow you down, depending on whether they represent threats or protections. At the finish line, review what you\'ve gathered and learn how each element connects to real-world cybersecurity, along with practical tips on how to stay protected.',
           altText: 'Game thumbnail',
         },
         da: {
           title: 'Kindness Quest: Save the City',
+          description: 'Step into a lively city where digital conflicts have caused tension among its inhabitants.',
           subtitle: 'Step into a lively city where digital conflicts have caused tension among its inhabitants. Take on the role of a problem-solver as you help people navigate issues like cyberbullying, deepfakes, and online misuse, making thoughtful choices to resolve their disputes. With each conflict you successfully address, relationships improve and the city grows more welcoming. Watch as your actions transform the atmosphere—leading to a joyful celebration where the community comes together and the once-distant mascot becomes increasingly friendly.',
           altText: 'Game thumbnail',
         },

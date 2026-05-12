@@ -29,19 +29,19 @@ export const shared = {
     home: {
       title: 'Pradžia',
 
-      statModulesLabel: 'Mokymosi \nmoduliai',
-      statChallengesLabel: 'Interaktyvūs \niššūkiai',
-      statGamesLabel: 'Kibernetinio \nsaugumo žaidimai',
+      statModulesLabel: 'Mokymosi\nmoduliai',
+      statChallengesLabel: 'Interaktyvūs\niššūkiai',
+      statGamesLabel: 'Kibernetinio\nsaugumo žaidimai',
 
-      learningModulesTitle: 'Mokymosi \nmoduliai',
+      learningModulesTitle: 'Mokymosi\nmoduliai',
       learningModulesText:
         'Suteikite savo mokiniams skaitmeninio raštingumo įgūdžių, reikalingų saugiai ir atsakingai naršyti šiandienos jungtiniame pasaulyje. Septyni mūsų struktūruoti mokymosi moduliai veda mokinius žingsnis po žingsnio — nuo pagrindinių sąvokų, tokių kaip skaitmeninis pilietiškumas ir privatumas internete, iki pažangesnių temų, pvz., sukčiavimo bandymų atpažinimo ir socialinės inžinerijos taktikų. Kiekvienas modulis jungia aiškius paaiškinimus su praktinėmis veiklomis, paversdamas sudėtingas kibernetinio saugumo sąvokas prieinamomis ir lengvai įsimenomis, neatsižvelgiant į ankstesnę technologinę patirtį. Moduliai suprojektuoti atsižvelgiant į klasės lankstumą — jie gali būti mokomi nuosekliai kaip visas kursas arba integruoti po vieną į esantį mokymo planą.',
 
-      challengesTitle: 'Interaktyvūs \niššūkiai',
+      challengesTitle: 'Interaktyvūs\niššūkiai',
       challengesText:
         'Pavertykite žinias veiksmais su scenarijais pagrįstais iššūkiais, kurie leidžia vaikams tapti problemų sprendėjais. Kiekvienas iššūkis pristato realistišką situaciją — įtartiną el. laišką, neapsaugotą paskyrą, apgaulingą nuorodą — ir prašo vaikus kritiškai mąstyti, priimti sprendimus ir matyti pasekmes. Nedelsiant grįžtamasis ryšys padeda besimokančiajam suprasti ne tik tai, koks yra teisingas atsakymas, bet ir kodėl, stiprinant ilgalaikį supratimą vietoj paprastinio įsiminimo. Kaip pedagogas, jūs gaunate aiškų langą į kiekvieno vaiko mąstymą, todėl šie iššūkiai yra naudingi tiek formatyviniam vertinimui, tiek mokinių įsitraukimui.',
 
-      gamesTitle: 'Kibernetinio \nsaugumo žaidimai',
+      gamesTitle: 'Kibernetinio\nsaugumo žaidimai',
       gamesText:
         'Mokymasis pasilieka, kai jis smagus — ir mūsų kibernetinio saugumo žaidimai sukurti lygiai su šia mintimi. Apimantys viską nuo slaptažodžių saugumo iki interneto grėsmių identifikavimo, kiekvienas žaidimas paverčia pagrindinius mokymo plano konceptus žaidimu grindžiamais išgyvenimais, prie kurių vaikai nuoširdžiai nori sugrįžti. Nesvarbu, ar naudojami kaip apšilimas, atlygis ar visa pamokos veikla, žaidimai išlaiko besimokančiuosius motyvuotus, tyliai stiprinant svarbiausius įgūdžius. Tinkami įvairaus amžiaus ir gebėjimų lygio asmenims, juos lengva paleisti klasėje, kompiuterių laboratorijoje arba kaip savarankišką namų veiklą.',
 
@@ -64,6 +64,7 @@ export const shared = {
         'Teikiame prieinamus, patrauklius išteklius, specialiai sukurtus mokytojams ir vaikams, kad kiekviena klasė — nepriklausomai nuo techninio išsilavinimo — galėtų suteikti jauniems žmonėms žinių, pasitikėjimo ir praktinių įgūdžių saugiai ir atsakingai tyrinėti skaitmeninį pasaulį.',
 
       partnersTitle: 'Iniciatyvos partneriai',
+      initiativeDesc: 'Šis įrankių rinkinys yra pagrįstas KidCy projektu – bendradarbiavimu tarp pirmaujančių institucijų kibernetinio saugumo švietimo ir tyrimų srityje visoje Europoje, iš kurių kiekviena suteikia unikalią patirtį ir perspektyvas, kad sukurtų išsamų mokymosi patirtį jauniems besimokančiajam.',
       uniLiechtenstein: 'Lichtenšteino universitetas',
       uniLiechtensteinDesc:
         'Moksliniais tyrimais grįsta institucija, turinti informacinių sistemų ir skaitmeninių technologijų srities kompetenciją. Lichtenšteino universitetas įneša tvirtą taikomųjų technologijų tyrimų pagrindą į projektą, padėdamas formuoti įrodymais pagrįstus požiūrius į kibernetinio saugumo ugdymą.',
@@ -359,26 +360,31 @@ export const shared = {
 
         at: {
           title: 'Meistro burtažodis: Atidaryk saugyklą',
+          description: 'Ženkite į fantastinį pasaulį, kuriame jūsų autentifikavimo žinios tampa pažangos raktu.',
           subtitle: 'Ženkite į fantastinį pasaulį, kuriame jūsų autentifikavimo žinios tampa pažangos raktu. Pradėkite pasirinkdami stipresnį iš dviejų slaptažodžių tilto statybai, tada stokite į pilies iššūkį, kuriame tikrinsite savo dviejų faktorių autentifikavimo supratimą sekdami tinkamą riterį. Tęsdami nustatykite, kurie daiktai yra skaitmeniniai, ir apsaugokite juos kurdami stiprius slaptažodžius, kiekvieną iš jų saugodami magiškoj knygoj. Pakartojus šį procesą, sukurkite galingą Meistro burtažodį ir naudokite jį paslėptų skrynių atidarymui — tuo įrodydami, kad įvaldėte stiprių slaptažodžių ir autentifikavimo principus, prieš grįždami į savo namus.',
           altText: 'Žaidimo miniatiūra',
         },
         dp: {
           title: 'Perlų ir kriauklių paslaptys',
+          description: 'Ženkite į žavų pasaulį, kuriame jūsų sprendimai lemia, kaip gerai apsaugote savo asmeninę informaciją.',
           subtitle: 'Ženkite į žavų pasaulį, kuriame jūsų sprendimai lemia, kaip gerai apsaugote savo asmeninę informaciją. Pradėkite rūšiuodami informaciją į viešą ar privačią, naudodami kriaukles ir perlus sprendžiant, kuo turėtų būti dalijamasi ir kas turėtų likti paslėpta. Tada pereikite prie socialinių tinklų iššūkio, kuriame peržiūrėsite įrašus telefono tipo sąsajoje ir nuspręsite, ar juos saugu dalytis, ar jie atskleidžia slaptus duomenis. Tęsdami sekite paslaptingą gnomą, kad atskleistumėte savo skaitmeninius pėdsakus ir atsakytumėte į klausimus apie temas, tokias kaip slapukai ir VPN. Paskutiniame etape atsakykite į telefono pranešimus apie jūsų skaitmeninio pėdsako valdymą ir valymą, įrodydami savo duomenų privatumo supratimą prieš baigdami kelionę.',
           altText: 'Žaidimo miniatiūra',
         },
         se: {
           title: 'Sukčiavimas ar saugu? Nepasiduokite!',
+          description: 'Ženkite į didelių statymų iššūkį, kuriame jūsų gebėjimas pastebėti apgaulę yra išgyvenimo raktas.',
           subtitle: 'Ženkite į didelių statymų iššūkį, kuriame jūsų gebėjimas pastebėti apgaulę yra išgyvenimo raktas. Pradėkite šokdami tarp platformų ir identifikuodami, ar tokie pavyzdžiai, kaip svetainės, žinutės ar el. laiškai, yra teisėti ar sukčiavimo bandymai — rinkitės teisingai, kad judėtumėte pirmyn, tačiau suklyskite ir rizikuokite prarasti skydą bei nukristi. Iššūkiui intensyvėjant, tęskite sudėtingesniu keliu, kur kiekvienas žingsnis pristato naują scenarijų, reikalaujantį nuspręsti, ar tai sukčiavimas, saugu ar neaišku. Įrodykite savo socialinės inžinerijos taktikų suvokimą ir paaštrinkite savo instinktus naršydami šiuo pavojingu keliu.',
           altText: 'Žaidimo miniatiūra',
         },
         mw: {
           title: 'Kenkėjiškos programinės įrangos lenktynės',
+          description: 'Ženkite į spartų lenktynių žaidimą, kuriame kenkėjiškos programinės įrangos supratimas suteikia jums pranašumą.',
           subtitle: 'Ženkite į spartų lenktynių žaidimą, kuriame kenkėjiškos programinės įrangos supratimas suteikia jums pranašumą. Pradėkite tyrinėdami skirtingus daiktus trasoje — pvz., virusus, kirminus, išpirkos reikalaujančias programas ir apsaugines priemones, tokias kaip antivirusinė programinė įranga, ugniasienės ir naujinimai — kiekvienas su savo efektu ir realaus pasaulio reikšme. Tada skriekite per tris ratus, rinkdami daiktus, kurie gali arba sustiprinti jūsų veikimą, arba sulėtinti jus, priklausomai nuo to, ar jie atstovauja grėsmėms, ar apsaugoms. Finišo tiesiojoje peržiūrėkite, ką surinkote, ir sužinokite, kaip kiekvienas elementas susijęs su realiu kibernetiniu saugumu, kartu su praktiniais patarimais, kaip išlikti apsaugotiems.',
           altText: 'Žaidimo miniatiūra',
         },
         da: {
           title: 'Gerumo misija: Išgelbėkite miestą',
+          description: 'Ženkite į gyvą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų.',
           subtitle: 'Ženkite į gyvą miestą, kuriame skaitmeniniai konfliktai sukėlė įtampą tarp jo gyventojų. Prisiimkite problemų sprendėjo vaidmenį, padėdami žmonėms spręsti tokias problemas kaip kibernetinis priekabiavimas, deepfake\'ai ir piktnaudžiavimas internete, priimant apgalvotus sprendimus jų ginčams išspręsti. Su kiekvienu sėkmingai išspręstu konfliktu santykiai gerėja ir miestas tampa svetingesnis. Stebėkite, kaip jūsų veiksmai keičia atmosferą — vedant į džiugią šventę, kur bendruomenė susiburia ir kadaise tolimas maskote tampa vis draugiškesnis.',
           altText: 'Žaidimo miniatiūra',
         },

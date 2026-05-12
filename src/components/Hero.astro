@@ -21,8 +21,8 @@ const { t } = useTranslations(Astro.currentLocale)
 
 <section class="hero mt-12 mb-12">
   <div class="container">
-    <div class="grid grid-cols-1 items-center lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-[4fr_3fr]">
+      <div class="flex flex-col items-center gap-4 md:items-start">
         <h1 class="hero-title text-center md:text-left" style="z-index: 3; letter-spacing: -0.05em;">
           <slot><span style="color: var(--link-color);">W</span>ise <span style="color: var(--link-color);">W</span>eb <br/><span style="color: var(--link-color);">W</span>anderers</slot>
         </h1>
@@ -30,18 +30,18 @@ const { t } = useTranslations(Astro.currentLocale)
           {t('layout.hero.subtitle')}
         </p>
         <div class="flex flex-col gap-3 min-[600px]:flex-row items-center">
-          <a class="button has-icon" href={learningHubHref}>
-            <Icon name="lucide:graduation-cap" />
-            {t('layout.hero.explore')}
-          </a>
-          <a class="button has-icon is-outline" href="#learning-modules">
-            <Icon name="lucide:info" />
-            {t('layout.hero.moreInfo')}
-          </a>
-        </div>
+      <a class="button has-icon" href={learningHubHref}>
+        <Icon name="lucide:graduation-cap" />
+        {t('layout.hero.explore')}
+      </a>
+      <a class="button has-icon is-outline" href="#learning-modules">
+        <Icon name="lucide:info" />
+        {t('layout.hero.moreInfo')}
+      </a>
+    </div>
       </div>
       <div style="z-index: 5;">
-        <img class="hidden xl:block floating-image" src="/images/index/robot-intro.png" alt="" decoding="async" loading="eager" />
+        <img class="hidden xl:block floating-image" src="/images/index/robot-intro.png" alt="" decoding="async" loading="eager" style="scale:1.2"/>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@ const { t } = useTranslations(Astro.currentLocale)
   }
 
   .hero-title {
-    font-size: clamp(4rem, 7vw + 1rem, 8rem);
+    font-size: clamp(3rem, 5.5vw + 1rem, 8rem);
     line-height: 1.05;
   }
 

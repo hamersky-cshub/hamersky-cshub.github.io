@@ -29,15 +29,15 @@ export const shared = {
     home: {
       title: 'Hjem',
 
-      statModulesLabel: 'Lærings-\nmoduler',
-      statChallengesLabel: 'Interaktive \nutfordringer',
+      statModulesLabel: 'Læringsmoduler',
+      statChallengesLabel: 'Interaktive\nutfordringer',
       statGamesLabel: 'Cybersikkerhets-\nspill',
 
       learningModulesTitle: 'Læringsmoduler',
       learningModulesText:
         'Gi elevene dine de digitale ferdighetene de trenger for å navigere i dagens tilkoblede verden trygt og ansvarlig. Våre syv strukturerte læringsmoduler guider elevene steg for steg — fra grunnleggende konsepter som digitalt medborgerskap og personvern på nett, til mer avanserte emner som å gjenkjenne phishing-forsøk og sosial manipulasjon. Hver modul kombinerer tydelige forklaringer med praktiske aktiviteter, og gjør komplekse cybersikkerhetskonsepter tilgjengelige og lettere å huske uavhengig av teknisk bakgrunn. Designet med tanke på fleksibilitet i klasserommet kan modulene undervises sekvensielt som et fullt kurs eller integreres enkeltvis i din eksisterende læreplan.',
 
-      challengesTitle: 'Interaktive \nutfordringer',
+      challengesTitle: 'Interaktive\nutfordringer',
       challengesText:
         'Omsett kunnskap til handling med scenariobaserte utfordringer som plasserer barn i rollen som problemløser. Hver utfordring presenterer en realistisk situasjon — en mistenkelig e-post, en usikret konto, en villedende lenke — og ber barn tenke kritisk, ta beslutninger og se konsekvensene utfolde seg. Umiddelbar tilbakemelding hjelper elevene å forstå ikke bare hva det riktige svaret er, men også hvorfor, og styrker varig forståelse fremfor utenatplugging. Som pedagog får du et tydelig innblikk i hvert barns resonnement, og gjør disse utfordringene like nyttige for formativ vurdering som for engasjement.',
 
@@ -64,6 +64,7 @@ export const shared = {
         'Vi tilbyr tilgjengelige, engasjerende ressurser designet spesifikt for lærere og barn, slik at hvert klasserom — uavhengig av teknisk bakgrunn — kan utruste unge mennesker med kunnskap, selvtillit og praktiske ferdigheter til å utforske den digitale verden trygt og ansvarlig.',
 
       partnersTitle: 'Initiativets partnere',
+      initiativeDesc: 'Dette verktøysettet er basert på KidCy-prosjektet – et samarbeid mellom ledende institusjoner innen cybersikkerhetsutdanning og forskning over hele Europa, hvor hver bringer unik ekspertise og perspektiver for å skape en omfattende læringsopplevelse for unge elever.',
       uniLiechtenstein: 'Universitetet i Liechtenstein',
       uniLiechtensteinDesc:
         'En forskningsdrevet institusjon med ekspertise innen informasjonssystemer og digitale teknologier. Universitetet i Liechtenstein bringer et solid fundament i anvendt teknologiforskning til prosjektet og bidrar til å forme evidensbaserte tilnærminger til cybersikkerhetsopplæring.',
@@ -359,26 +360,31 @@ export const shared = {
 
         at: {
           title: 'Mesterstaveord: Lås opp hvelvet',
+          description: 'Tred inn i en fantasiverden der din kunnskap om autentisering blir nøkkelen til fremgang.',
           subtitle: 'Tred inn i en fantasiverden der din kunnskap om autentisering blir nøkkelen til fremgang. Begynn med å velge det sterkeste av to passord for å bygge en bro, og møt deretter en slottsutfordring der du vil teste din forståelse av tofaktorautentisering ved å spore den riktige ridderen. Etter hvert som du fortsetter, identifiser hvilke gjenstander som er digitale og sikre dem ved å lage sterke passord, og lagre hvert i en magisk bok. Etter å ha gjentatt denne prosessen, lag et kraftig Mesterstaveord og bruk det til å låse opp skjulte kister — og bevise at du har mestret prinsippene for sterke passord og autentisering, før du returnerer til hjemmerommet ditt.',
           altText: 'Spillminiatyr',
         },
         dp: {
           title: 'Perle og skjells hemmeligheter',
+          description: 'Tred inn i en eventyrlig verden der valgene dine former hvor godt du beskytter personlig informasjon.',
           subtitle: 'Tred inn i en eventyrlig verden der valgene dine former hvor godt du beskytter personlig informasjon. Begynn med å sortere informasjon som offentlig eller privat, ved å bruke skjell og perler til å bestemme hva som bør deles og hva som bør forbli skjult. Gå deretter til en utfordring på sosiale medier, der du vil gjennomgå innlegg på et telefonlignende grensesnitt og bestemme om de er trygge å dele eller avslører sensitive data. Etter hvert som du fortsetter, følg en mystisk gnom for å avdekke dine digitale spor, og svar på spørsmål om emner som informasjonskapsler og VPN. I den siste fasen, svar på telefonvarsler om å administrere og rydde opp i ditt digitale fotavtrykk, og bevise din forståelse av personvern før du fullfører reisen.',
           altText: 'Spillminiatyr',
         },
         se: {
           title: 'Svindel eller trygt? La deg ikke lure!',
+          description: 'Tred inn i en høyrisikokonkurranse der din evne til å oppdage bedrag er nøkkelen til overlevelse.',
           subtitle: 'Tred inn i en høyrisikokonkurranse der din evne til å oppdage bedrag er nøkkelen til overlevelse. Begynn med å hoppe mellom plattformer og identifisere om eksempler som nettsteder, meldinger eller e-poster er legitime eller phishing-forsøk — velg riktig for å komme videre, men gjør en feil og risiker å miste skjoldet ditt og falle. Etter hvert som utfordringen intensiveres, fortsett langs en mer krevende sti der hvert steg presenterer et nytt scenario, og krever at du avgjør om det er phishing, trygt eller usikkert. Bevis din bevissthet om sosial manipulasjonstaktikker og skjerp instinktene dine mens du navigerer denne farlige stien.',
           altText: 'Spillminiatyr',
         },
         mw: {
           title: 'Skadelig programvare-galskap: Løpet',
+          description: 'Tred inn i et lynraskt løp der forståelse av skadelig programvare gir deg fordelen.',
           subtitle: 'Tred inn i et lynraskt løp der forståelse av skadelig programvare gir deg fordelen. Begynn med å utforske ulike gjenstander på banen — som virus, ormer, løsepengevirus og beskyttelsesverktøy som antivirusprogramvare, brannmurer og oppdateringer — hver med sin egen effekt og virkelige betydning. Kjør deretter gjennom tre runder og samle gjenstander som enten kan øke prestasjonen din eller bremse deg, avhengig av om de representerer trusler eller beskyttelse. Ved målstreken, gjennomgå hva du har samlet og lær hvordan hvert element kobler seg til virkelig cybersikkerhet, sammen med praktiske tips om hvordan du holder deg beskyttet.',
           altText: 'Spillminiatyr',
         },
         da: {
           title: 'Vennlighetsmisjon: Redd byen',
+          description: 'Tred inn i en livlig by der digitale konflikter har skapt spenning blant innbyggerne.',
           subtitle: 'Tred inn i en livlig by der digitale konflikter har skapt spenning blant innbyggerne. Ta på deg rollen som problemløser når du hjelper folk med å navigere problemer som nettmobbing, deepfakes og digital misbruk, og ta gjennomtenkte valg for å løse tvistene deres. Med hver konflikt du vellykket løser, forbedres forholdet og byen blir mer innbydende. Se hvordan handlingene dine transformerer atmosfæren — og fører til en gledelig feiring der fellesskapet samles og den en gang fjerne maskoten blir stadig mer vennlig.',
           altText: 'Spillminiatyr',
         },
