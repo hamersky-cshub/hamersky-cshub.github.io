@@ -18,10 +18,6 @@ export const contentMW = {
     'Warnsignale bei verdächtigen Downloads erkennen.',
     'Vertrauenswürdige Quellen nutzen und bei Unsicherheit um Hilfe bitten.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Unterrichtsleitfaden Malware',
-  },
   parts: [
     {
       goal: 'Den Lernenden helfen, das Konzept Malware zu verstehen.',
@@ -53,7 +49,7 @@ export const contentMW = {
             title: 'Malware definieren',
           },
           {
-            title: 'Abschlussrunde – Zusammenfassung und informelle Bewertung',
+            title: 'Abschlussrunde: Zusammenfassung und informelle Bewertung',
           },
         ],
       },
@@ -111,7 +107,7 @@ export const contentMW = {
             title: 'Knoten für Malware-Typen knüpfen',
           },
           {
-            title: 'Abschlussrunde – Zusammenfassung und informelle Bewertung',
+            title: 'Abschlussrunde: Zusammenfassung und informelle Bewertung',
           },
         ],
       },
@@ -176,7 +172,7 @@ export const contentMW = {
             title: 'Malware untersuchen',
           },
           {
-            title: 'Abschlussrunde – Zusammenfassung und informelle Bewertung',
+            title: 'Abschlussrunde: Zusammenfassung und informelle Bewertung',
           },
         ],
       },
@@ -221,7 +217,7 @@ export const contentMW = {
             title: 'Grundlegende Schutzmaßnahmen erlernen',
           },
           {
-            title: 'Abschlussrunde – Zusammenfassung und informelle Bewertung',
+            title: 'Abschlussrunde: Zusammenfassung und informelle Bewertung',
           },
         ],
       },

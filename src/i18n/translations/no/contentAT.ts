@@ -21,10 +21,6 @@ export const contentAT = {
     'Jeg kan skille mellom svake og sterke brukernavn og passord.',
     'Jeg kan demonstrere hvordan jeg bruker en passordbehandler til å lagre passord og begrunne valgene mine.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Last ned lærerveiledning',
-    download: 'Lærerveiledning for autentisering',
-  },
   parts: [
     {
       goal: 'Hjelpe elever med å opprette sterke, minneverdige hemmeligheter og forstå hvorfor gjenbruk er risikabelt.',
@@ -73,7 +69,7 @@ export const contentAT = {
             title: 'Forstå digitale eiendeler',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -137,7 +133,7 @@ export const contentAT = {
             title: 'Anvende autentisering på digitale eiendeler',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -216,7 +212,7 @@ export const contentAT = {
             title: 'Lage sterke passord på en trygg måte',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -323,7 +319,7 @@ export const contentAT = {
             title: 'Bruke passordbehandlere på en trygg måte',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -385,7 +381,7 @@ export const contentAT = {
             title: 'Digital identitet og autentisering',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },

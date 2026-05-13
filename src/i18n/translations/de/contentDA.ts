@@ -18,10 +18,6 @@ export const contentDA = {
     'Einfache Sicherheitsmaßnahmen wie Blockieren oder Melden anwenden.',
     'Vertrauenspersonen und Unterstützungskanäle kennen, an die man sich wenden kann.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Unterrichtsleitfaden herunterladen',
-    download: 'Unterrichtsleitfaden Digitaler Missbrauch',
-  },
   parts: [
     {
       title: 'Fehlinformation',
@@ -47,7 +43,7 @@ export const contentDA = {
             title: 'Was ist Fehlinformation?',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -87,7 +83,7 @@ export const contentDA = {
             title: 'Algorithmen',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -132,7 +128,7 @@ export const contentDA = {
             title: 'Was ist Cybermobbing?',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -174,7 +170,7 @@ export const contentDA = {
             title: 'Einführung',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -203,7 +199,7 @@ export const contentDA = {
             title: 'Social-Media-Influencer',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -245,7 +241,7 @@ export const contentDA = {
             title: 'Einführung',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },

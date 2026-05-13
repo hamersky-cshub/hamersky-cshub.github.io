@@ -16,10 +16,6 @@ export const contentAP = {
     'Jeg forstår angriperes motiver og kan gi eksempler knyttet til psykologiske, sosiale og økonomiske faktorer.',
     'Jeg kan gjenkjenne angriperteknikker i gitte scenarioer.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Last ned lærerveiledning',
-    download: 'Lærerveiledning for angriperperspektivet',
-  },
   parts: [
     {
       goal:
@@ -52,7 +48,7 @@ export const contentAP = {
             title: 'Definer kretsen av betrodde personer',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -104,7 +100,7 @@ export const contentAP = {
             title: 'Forstå angriperens motivasjon',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -158,7 +154,7 @@ export const contentAP = {
             title: 'Forstå angrepsveier',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -233,7 +229,7 @@ export const challengeAP = {
     displayName: 'Alex Johnson',
     handle: '@alex123',
     statusActiveNow: 'Aktiv nå',
-    bioText: '16 · Gamer 🎮 · Manga Fan · Coffee ☕',
+    bioText: '16 · Gamer 🎮 · Manga Fan',
     aboutTitle: 'Om meg',
     statsFriendsLabel: 'Venner',
     statsFollowingLabel: 'Følger',

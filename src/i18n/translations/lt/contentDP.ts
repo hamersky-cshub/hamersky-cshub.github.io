@@ -18,10 +18,6 @@ export const contentDP = {
     'Paaiškinti, kaip duomenys gali keliauti ir būti saugomi internete.',
     'Taikyti paprastas privatumo taisykles prieš dalinantis ar skelbiant.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Atsisiųsti mokymo vadovą',
-    download: 'Duomenų privatumo mokymo vadovas',
-  },
   parts: [
     {
       goal: 'Padėti mokiniams suprasti, kas yra asmens duomenys, identifikuoti įvairius jautrių duomenų tipus ir atpažinti, kodėl svarbu juos apsaugoti.',
@@ -53,7 +49,7 @@ export const contentDP = {
             title: 'Kas yra asmens duomenys?',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },

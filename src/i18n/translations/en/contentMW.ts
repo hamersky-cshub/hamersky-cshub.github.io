@@ -18,10 +18,6 @@ export const contentMW = {
     'Recognize warning signs of suspicious downloads.',
     'Use trusted sources and ask for help when unsure.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Malware Teaching Guide',
-  },
   parts: [
     {
       goal: 'Help students understand the concept of malware.',
@@ -53,7 +49,7 @@ export const contentMW = {
             title: 'Defining Malware',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -112,7 +108,7 @@ export const contentMW = {
             title: 'Tie the Knots for Malware Types',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -176,7 +172,7 @@ export const contentMW = {
             title: 'Investigating Malware',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -192,21 +188,21 @@ export const contentMW = {
             // ID: 6.4.1
             kind: 'Situation',
             name: 'Malware and Data Theft?',
-            filename: 'Situation - Malware and Data Theft',
+            filename: 'Situation – Malware and Data Theft',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.4.2
             kind: 'Poster',
             name: 'DOs and DON\'Ts',
-            filename: 'Poster - DOs and DON\'Ts',
+            filename: 'Poster – DOs and DON\'Ts',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.4.3
             kind: 'Worksheet',
             name: 'A Shield Against Malware',
-            filename: 'Worksheet - A Shield Against Malware',
+            filename: 'Worksheet – A Shield Against Malware',
             ariaLabel: 'Download material',
           },
         ],
@@ -221,7 +217,7 @@ export const contentMW = {
             title: 'Learning Basic Protection Measures',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },

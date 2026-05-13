@@ -55,6 +55,9 @@ export const shared = {
       subtitle:
         'Zjistěte více o našem poslání vytvořit bezpečnější digitální prostředí. Ponořte se do našich vzdělávacích modulů navržených k výuce jednotlivců o digitálním občanství, autentizaci, ochraně dat a dalším.',
 
+      cofundEU: 'Podporováno EU',
+      cofundEUDesc: 'Tento projekt je spolufinancován Evropskou unií v rámci programu Digitální Evropa.',
+
       missionTitle: 'Naše poslání',
       missionP1:
         'Internet, chytré telefony a sociální média jsou nyní přirozenou součástí každodenního života dětí — plnou příležitostí, ale také skutečných rizik. Jak mladí lidé tráví více času online, kyberbezpečnost se stala nezbytnou životní dovedností, nejen tématem pro specialisty.',
@@ -287,9 +290,9 @@ export const shared = {
           },
         },
         da: {
-          title: 'Digitální násilí',
+          title: 'Digitální zneužívání',
           description:
-            'Digitální násilí zahrnuje škodlivé chování online, jako jsou výhrůžky, obtěžování nebo nevyžádaný kontakt. Tento modul pomáhá pedagogům učit žáky rozpoznávat nebezpečné chování, nastavovat hranice a hledat pomoc.',
+            'Digitální zneužívání zahrnuje škodlivé chování online, jako jsou výhrůžky, obtěžování nebo nevyžádaný kontakt. Tento modul pomáhá pedagogům učit žáky rozpoznávat nebezpečné chování, nastavovat hranice a hledat pomoc.',
           parts: {
             p1: {
               title: 'Misinformace',

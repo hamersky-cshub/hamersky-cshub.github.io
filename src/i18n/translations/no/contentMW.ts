@@ -18,10 +18,6 @@ export const contentMW = {
     'Gjenkjenne advarselsignaler ved mistenkelige nedlastinger.',
     'Bruke pålitelige kilder og be om hjelp når man er usikker.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Lærerveiledning for skadevare',
-  },
   parts: [
     {
       goal: 'Hjelpe elever med å forstå konseptet skadevare.',
@@ -53,7 +49,7 @@ export const contentMW = {
             title: 'Definere skadevare',
           },
           {
-            title: 'Avslutning – oppsummering og uformell vurdering',
+            title: 'Avslutning: oppsummering og uformell vurdering',
           },
         ],
       },
@@ -111,7 +107,7 @@ export const contentMW = {
             title: 'Knytte knutene for typer skadevare',
           },
           {
-            title: 'Avslutning – oppsummering og uformell vurdering',
+            title: 'Avslutning: oppsummering og uformell vurdering',
           },
         ],
       },
@@ -176,7 +172,7 @@ export const contentMW = {
             title: 'Undersøke skadevare',
           },
           {
-            title: 'Avslutning – oppsummering og uformell vurdering',
+            title: 'Avslutning: oppsummering og uformell vurdering',
           },
         ],
       },
@@ -221,7 +217,7 @@ export const contentMW = {
             title: 'Lære grunnleggende beskyttelsestiltak',
           },
           {
-            title: 'Avslutning – oppsummering og uformell vurdering',
+            title: 'Avslutning: oppsummering og uformell vurdering',
           },
         ],
       },

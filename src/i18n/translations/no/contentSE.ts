@@ -18,10 +18,6 @@ export const contentSE = {
     'Bruke en stopp-og-sjekk-rutine før man handler.',
     'Vite når og hvordan man melder fra om mistenkelig atferd.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Last ned lærerveiledning',
-    download: 'Lærerveiledning for sosial manipulasjon',
-  },
   parts: [
     {
       goal: 'Hjelpe elever til å forstå hva sosial manipulasjon er ved først å kjenne igjen hvordan mennesker kan bli påvirket eller manipulert i hverdagssituasjoner, og deretter koble denne forståelsen til digitale miljøer og angripernes atferd.',
@@ -61,7 +57,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Introduksjon – Påvirkning og overtalelse i hverdagen',
+            title: 'Introduksjon: Påvirkning og overtalelse i hverdagen',
           },
           {
             title: 'Introduksjon til konseptet sosial manipulasjon',
@@ -73,7 +69,7 @@ export const contentSE = {
             title: 'Sosial manipulasjon online og offline',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -131,7 +127,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Introduksjon – Mennesker vs. systemer',
+            title: 'Introduksjon: Mennesker vs. systemer',
           },
           {
             title: 'Følelser angripere bruker',
@@ -143,7 +139,7 @@ export const contentSE = {
             title: 'Hverdagskontekster der sosial manipulasjon virker',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -179,7 +175,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Introduksjon – Hvor kan sosial manipulasjon skje?',
+            title: 'Introduksjon: Hvor kan sosial manipulasjon skje?',
           },
           {
             title: 'Vanlige advarselstegn',
@@ -191,7 +187,7 @@ export const contentSE = {
             title: 'Øve på gjenkjenning',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -256,7 +252,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Introduksjon – Fra gjenkjenning til respons',
+            title: 'Introduksjon: Fra gjenkjenning til respons',
           },
           {
             title: 'En enkel modell for trygge beslutninger',
@@ -268,7 +264,7 @@ export const contentSE = {
             title: 'Beskytte andre',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },

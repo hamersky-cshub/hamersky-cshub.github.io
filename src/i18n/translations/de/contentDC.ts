@@ -17,10 +17,6 @@ export const contentDC = {
     'Ich kann erklären, was digitale Staatsbürgerschaft ist und warum sie wichtig ist.',
     'Ich kann die Prinzipien von Rechten, Verantwortung und Respekt in digitalen Umgebungen diskutieren, einschließlich wie man sicher bleibt, klug handelt und sich sozial engagiert.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Unterrichtsleitfaden herunterladen',
-    download: 'Unterrichtsleitfaden Digitale Staatsbürgerschaft',
-  },
   parts: [
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was eine digitale Umgebung ist und welche positiven Aspekte diese hat.',

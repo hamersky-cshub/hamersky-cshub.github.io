@@ -18,10 +18,6 @@ export const contentDA = {
     'Use simple safety steps like blocking or reporting.',
     'Know trusted adults and support channels to reach out to.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Abuse Teaching Guide',
-  },
   parts: [
     {
       title: 'Misinformation',
@@ -47,7 +43,7 @@ export const contentDA = {
             title: 'What is Misinformation?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -87,7 +83,7 @@ export const contentDA = {
             title: 'Algorithms',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -132,7 +128,7 @@ export const contentDA = {
             title: 'What is Cyber Bullying?',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -174,7 +170,7 @@ export const contentDA = {
             title: 'Introduction',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -203,7 +199,7 @@ export const contentDA = {
             title: 'Social Media Influencers',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -245,7 +241,7 @@ export const contentDA = {
             title: 'Introduction',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },

@@ -55,6 +55,10 @@ export const shared = {
       subtitle:
         'Learn more about our mission to create a safer digital environment. Dive into our learning modules designed to teach individuals about digital citizenship, authentication, data privacy, and more.',
 
+      cofundEU: 'Supported by the EU',
+      cofundEUDesc:
+        'This project is co-funded by the European Union’s Digital Europe Programme.',
+
       missionTitle: 'Our Mission',
       missionP1:
         'The internet, smartphones, and social media are now a natural part of children\'s everyday lives — full of opportunity, but also real risks. As young people spend more time online, cybersecurity has become an essential life skill, not just a topic for specialists.',

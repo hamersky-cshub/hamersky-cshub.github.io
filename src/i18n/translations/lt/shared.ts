@@ -55,6 +55,9 @@ export const shared = {
       subtitle:
         'Sužinokite daugiau apie mūsų misiją kurti saugesnę skaitmeninę aplinką. Susipažinkite su mūsų mokymosi moduliais, skirtais asmenims mokyti apie skaitmeninį pilietiškumą, autentifikavimą, duomenų privatumą ir daugiau.',
 
+      cofundEU: 'Remiama ES',
+      cofundEUDesc: 'Šis projektas bendrai finansuojamas iš Europos Sąjungos programos „Skaitmeninė Europa".',
+
       missionTitle: 'Mūsų misija',
       missionP1:
         'Internetas, išmanieji telefonai ir socialiniai tinklai dabar yra natūrali vaikų kasdienio gyvenimo dalis — pilna galimybių, bet ir realių pavojų. Jauniems žmonėms vis daugiau laiko praleidžiant internete, kibernetinis saugumas tapo būtinu gyvenimo įgūdžiu, o ne tik specialistams skirta tema.',

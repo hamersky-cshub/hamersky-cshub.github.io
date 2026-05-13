@@ -16,10 +16,6 @@ export const contentAP = {
     'Ich verstehe die Motive von Angreifern und kann Beispiele zu psychologischen, sozialen und wirtschaftlichen Faktoren nennen.',
     'Ich kann Angreifertechniken in gegebenen Szenarien erkennen.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Unterrichtsleitfaden herunterladen',
-    download: 'Unterrichtsleitfaden Angreiferperspektive',
-  },
   parts: [
     {
       goal:
@@ -52,7 +48,7 @@ export const contentAP = {
             title: 'Den Kreis der Vertrauenspersonen definieren',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -104,7 +100,7 @@ export const contentAP = {
             title: 'Die Motivation des Angreifers verstehen',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -158,7 +154,7 @@ export const contentAP = {
             title: 'Angriffspfade verstehen',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -233,7 +229,7 @@ export const challengeAP = {
     displayName: 'Alex Johnson',
     handle: '@alex123',
     statusActiveNow: 'Jetzt aktiv',
-    bioText: '16 · Gamer 🎮 · Manga Fan · Coffee ☕',
+    bioText: '16 · Gamer 🎮 · Manga Fan',
     aboutTitle: 'Über mich',
     statsFriendsLabel: 'Freunde',
     statsFollowingLabel: 'Folge ich',

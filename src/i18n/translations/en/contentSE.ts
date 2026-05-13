@@ -18,10 +18,6 @@ export const contentSE = {
     'Use a pause-and-check routine before acting.',
     'Know when and how to report suspicious behavior.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Social Engineering Teaching Guide',
-  },
   parts: [
     {
       goal: 'Help students understand what social engineering is by first recognising how people can be influenced or manipulated in everyday situations, and then connecting this understanding to digital environments and attacker behaviour.',
@@ -61,7 +57,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 Influence and Persuasion in Everyday Life',
+            title: 'Introduction: Influence and Persuasion in Everyday Life',
           },
           {
             title: 'Introducing the Concept of Social Engineering',
@@ -73,7 +69,7 @@ export const contentSE = {
             title: 'Social Engineering Online and Offline',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -131,7 +127,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 People vs Systems',
+            title: 'Introduction: People vs Systems',
           },
           {
             title: 'Emotions Attackers Use',
@@ -143,7 +139,7 @@ export const contentSE = {
             title: 'Everyday Contexts Where Social Engineering Works',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -159,27 +155,27 @@ export const contentSE = {
             // ID: 5.3.1
             kind: 'Image',
             name: 'Examples of Social Engineering Messages',
-            filename: 'Image - Examples of Social Engineering Messages',
+            filename: 'Image – Examples of Social Engineering Messages',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.3.2
             kind: 'Scenario Cards',
             name: 'Social Engineering Situations',
-            filename: 'Scenario Cards - Social Engineering Situations',
+            filename: 'Scenario Cards – Social Engineering Situations',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.3.3
             kind: 'Worksheet',
             name: 'Spot the Social Engineering',
-            filename: 'Worksheet - Spot the Social Engineering',
+            filename: 'Worksheet – Spot the Social Engineering',
             ariaLabel: 'Download material',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 Where Can Social Engineering Happen?',
+            title: 'Introduction: Where Can Social Engineering Happen?',
           },
           {
             title: 'Common Warning Signs',
@@ -191,7 +187,7 @@ export const contentSE = {
             title: 'Practising Recognition',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -222,41 +218,41 @@ export const contentSE = {
             // ID: 5.4.1
             kind: 'Scenario Cards',
             name: 'What Would You Do?',
-            filename: 'Scenario Cards - What Would You Do',
+            filename: 'Scenario Cards – What Would You Do',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.2
             kind: 'Checklist',
             name: 'Stop, Think, Check, Ask',
-            filename: 'Checklist - Stop, Think, Check, Ask',
+            filename: 'Checklist – Stop, Think, Check, Ask',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.3
             kind: 'Worksheet',
             name: 'Stop, Think, Check, Ask',
-            filename: 'Worksheet - Stop, Think, Check, Ask',
+            filename: 'Worksheet – Stop, Think, Check, Ask',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.4
             kind: 'Role Cards',
             name: 'Target, Helper, Bystander',
-            filename: 'Role Cards - Target, Helper, Bystander',
+            filename: 'Role Cards – Target, Helper, Bystander',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.5
             kind: 'Worksheet',
             name: 'Protecting Myself and Others',
-            filename: 'Worksheet - Protecting Myself and Others',
+            filename: 'Worksheet – Protecting Myself and Others',
             ariaLabel: 'Download material',
           },
         ],
         activityPlan: [
           {
-            title: 'Introduction \u2013 From Recognising to Responding',
+            title: 'Introduction: From Recognising to Responding',
           },
           {
             title: 'A Simple Model for Safe Decisions',
@@ -268,7 +264,7 @@ export const contentSE = {
             title: 'Protecting Others',
           },
           {
-            title: 'Plenary \u2013 Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },

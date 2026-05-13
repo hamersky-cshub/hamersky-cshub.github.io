@@ -54,5 +54,9 @@ export function useTranslations(currentLocale: string | undefined) {
     return key
   }
 
-  return { t, v, locale, translations }
+  function tHtml(key: string): string {
+    return t(key).replace(/\n/g, '<br>')
+  }
+
+  return { t, tHtml, v, locale, translations }
 }

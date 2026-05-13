@@ -18,10 +18,6 @@ export const contentDA = {
     'Bruke enkle sikkerhetstiltak som blokkering eller rapportering.',
     'Kjenne til betrodde voksne og støttekanaler å oppsøke.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Last ned lærerveiledning',
-    download: 'Lærerveiledning for digitalt misbruk',
-  },
   parts: [
     {
       title: 'Feilinformasjon',
@@ -47,7 +43,7 @@ export const contentDA = {
             title: 'Hva er feilinformasjon?',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -87,7 +83,7 @@ export const contentDA = {
             title: 'Algoritmer',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -132,7 +128,7 @@ export const contentDA = {
             title: 'Hva er nettmobbing?',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -174,7 +170,7 @@ export const contentDA = {
             title: 'Introduksjon',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -203,7 +199,7 @@ export const contentDA = {
             title: 'Influencere på sosiale medier',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },
@@ -245,7 +241,7 @@ export const contentDA = {
             title: 'Introduksjon',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },

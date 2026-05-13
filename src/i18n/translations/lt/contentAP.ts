@@ -16,10 +16,6 @@ export const contentAP = {
     'Suprantu užpuolikų motyvus ir galiu pateikti pavyzdžių, susijusių su psichologiniais, socialiniais ir ekonominiais veiksniais.',
     'Galiu atpažinti užpuolikų technikas pateiktuose scenarijuose.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Atsisiųsti mokymo vadovą',
-    download: 'Užpuoliko perspektyvos mokymo vadovas',
-  },
   parts: [
     {
       goal:
@@ -52,7 +48,7 @@ export const contentAP = {
             title: 'Apibrėžti patikimų asmenų ratą',
           },
           {
-            title: 'Plenarinis posėdis – Apibendrinimas ir neoficialus vertinimas',
+            title: 'Plenarinis posėdis: Apibendrinimas ir neoficialus vertinimas',
           },
         ],
       },
@@ -104,7 +100,7 @@ export const contentAP = {
             title: 'Suprasti užpuoliko motyvaciją',
           },
           {
-            title: 'Plenarinis posėdis – Apibendrinimas ir neoficialus vertinimas',
+            title: 'Plenarinis posėdis: Apibendrinimas ir neoficialus vertinimas',
           },
         ],
       },
@@ -158,7 +154,7 @@ export const contentAP = {
             title: 'Suprasti atakos kelius',
           },
           {
-            title: 'Plenarinis posėdis – Apibendrinimas ir neoficialus vertinimas',
+            title: 'Plenarinis posėdis: Apibendrinimas ir neoficialus vertinimas',
           },
         ],
       },
@@ -233,7 +229,7 @@ export const challengeAP = {
     displayName: 'Alex Johnson',
     handle: '@alex123',
     statusActiveNow: 'Aktyvus dabar',
-    bioText: '16 · Gamer 🎮 · Manga Fan · Coffee ☕',
+    bioText: '16 · Gamer 🎮 · Manga Fan',
     aboutTitle: 'Apie mane',
     statsFriendsLabel: 'Draugai',
     statsFollowingLabel: 'Seku',

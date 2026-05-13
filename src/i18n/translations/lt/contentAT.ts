@@ -21,10 +21,6 @@ export const contentAT = {
     'Galiu atskirti silpnus ir stiprius vartotojo vardus bei slaptažodžius.',
     'Galiu parodyti, kaip naudoti slaptažodžių tvarkyklę slaptažodžiams saugoti, ir pagrįsti savo pasirinkimus.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Atsisiųsti mokymo vadovą',
-    download: 'Autentifikacijos mokymo vadovas',
-  },
   parts: [
     {
       goal: 'Padėti mokiniams kurti stiprius, įsimintinus slaptus žodžius ir suprasti, kodėl jų pakartotinis naudojimas yra rizikingas.',
@@ -73,7 +69,7 @@ export const contentAT = {
             title: 'Skaitmeninių išteklių supratimas',
           },
           {
-            title: 'Plenarinis – Apibendrinimas ir neformali vertinimas',
+            title: 'Plenarinis: Apibendrinimas ir neformali vertinimas',
           },
         ],
       },
@@ -137,7 +133,7 @@ export const contentAT = {
             title: 'Autentifikacijos taikymas skaitmeniniams ištekliams',
           },
           {
-            title: 'Plenarinis – Apibendrinimas ir neformali vertinimas',
+            title: 'Plenarinis: Apibendrinimas ir neformali vertinimas',
           },
         ],
       },
@@ -216,7 +212,7 @@ export const contentAT = {
             title: 'Saugus stiprių slaptažodžių kūrimas',
           },
           {
-            title: 'Plenarinis – Apibendrinimas ir neformali vertinimas',
+            title: 'Plenarinis: Apibendrinimas ir neformali vertinimas',
           },
         ],
       },
@@ -323,7 +319,7 @@ export const contentAT = {
             title: 'Saugus slaptažodžių tvarkyklių taikymas',
           },
           {
-            title: 'Plenarinis – Apibendrinimas ir neformali vertinimas',
+            title: 'Plenarinis: Apibendrinimas ir neformali vertinimas',
           },
         ],
       },
@@ -385,7 +381,7 @@ export const contentAT = {
             title: 'Skaitmeninė tapatybė ir autentifikacija',
           },
           {
-            title: 'Plenarinis – Apibendrinimas ir neformali vertinimas',
+            title: 'Plenarinis: Apibendrinimas ir neformali vertinimas',
           },
         ],
       },

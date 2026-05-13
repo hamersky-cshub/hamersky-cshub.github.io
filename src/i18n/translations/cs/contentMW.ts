@@ -18,15 +18,11 @@ export const contentMW = {
     'Rozpoznat varovné signály podezřelých stahování.',
     'Používat důvěryhodné zdroje a žádat o pomoc, pokud si nejsi jistý/á.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Průvodce výukou malwaru',
-  },
   parts: [
     {
       goal: 'Pomoci žákům pochopit koncept malwaru.',
       bundle: {
-        filename: 'Malware Part 1 Package',
+        filename: 'Malware - balíček - Část 1',
       },
       included: {
         materials: [
@@ -53,7 +49,7 @@ export const contentMW = {
             title: 'Definice malwaru',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -77,7 +73,7 @@ export const contentMW = {
     {
       goal: 'Představit běžné typy malwaru.',
       bundle: {
-        filename: 'Malware Part 2 Package',
+        filename: 'Malware - balíček - Část 2',
       },
       included: {
         materials: [
@@ -111,7 +107,7 @@ export const contentMW = {
             title: 'Svažte uzly pro typy malwaru',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -134,7 +130,7 @@ export const contentMW = {
     {
       goal: 'Poskytnout přehled charakteristik malwaru pro jeho rozpoznání a detekci.',
       bundle: {
-        filename: 'Malware Part 3 Package',
+        filename: 'Malware - balíček - Část 3',
       },
       included: {
         materials: [
@@ -175,7 +171,7 @@ export const contentMW = {
             title: 'Vyšetřování malwaru',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -183,7 +179,7 @@ export const contentMW = {
     {
       goal: 'Pomoci žákům pochopit ochranná opatření proti malwaru.',
       bundle: {
-        filename: 'Malware Part 4 Package',
+        filename: 'Malware - balíček - Část 4',
       },
       included: {
         materials: [
@@ -220,7 +216,7 @@ export const contentMW = {
             title: 'Výuka základních ochranných opatření',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },

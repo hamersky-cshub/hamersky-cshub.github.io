@@ -18,10 +18,6 @@ export const contentMW = {
     'Atpažinti įtartinų atsisiuntimų įspėjamuosius ženklus.',
     'Naudotis patikimais šaltiniais ir prašyti pagalbos, kai neaišku.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Kenkėjiškų programų mokymo vadovas',
-  },
   parts: [
     {
       goal: 'Padėti mokiniams suprasti kenkėjiškos programos sąvoką.',
@@ -53,7 +49,7 @@ export const contentMW = {
             title: 'Kenkėjiškos programos apibrėžimas',
           },
           {
-            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
+            title: 'Apibendrinimas: santrauka ir neoficialus vertinimas',
           },
         ],
       },
@@ -111,7 +107,7 @@ export const contentMW = {
             title: 'Mazgų rišimas kenkėjiškų programų tipams',
           },
           {
-            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
+            title: 'Apibendrinimas: santrauka ir neoficialus vertinimas',
           },
         ],
       },
@@ -176,7 +172,7 @@ export const contentMW = {
             title: 'Kenkėjiškų programų tyrimas',
           },
           {
-            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
+            title: 'Apibendrinimas: santrauka ir neoficialus vertinimas',
           },
         ],
       },
@@ -221,7 +217,7 @@ export const contentMW = {
             title: 'Pagrindinių apsaugos priemonių mokymasis',
           },
           {
-            title: 'Apibendrinimas – santrauka ir neoficialus vertinimas',
+            title: 'Apibendrinimas: santrauka ir neoficialus vertinimas',
           },
         ],
       },

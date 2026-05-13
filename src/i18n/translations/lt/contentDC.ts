@@ -17,10 +17,6 @@ export const contentDC = {
     'Galiu paaiškinti, kas yra skaitmeninis pilietiškumas ir kodėl jis svarbus.',
     'Galiu aptarti teisių, atsakomybės ir pagarbos principus skaitmeninėje aplinkoje, įskaitant tai, kaip išlikti saugiems, elgtis protingai ir socialiai įsitraukti.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Atsisiųsti mokymo vadovą',
-    download: 'Skaitmeninio pilietiškumo mokymo vadovas',
-  },
   parts: [
     {
       goal: 'Padėti mokiniams suprasti, kas yra skaitmeninė aplinka ir kokie yra jos teigiami aspektai.',

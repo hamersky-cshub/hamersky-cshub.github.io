@@ -18,10 +18,6 @@ export const contentSE = {
     'Eine Innehalten-und-prüfen-Routine anwenden, bevor man handelt.',
     'Wissen, wann und wie man verdächtiges Verhalten meldet.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Unterrichtsleitfaden herunterladen',
-    download: 'Unterrichtsleitfaden Social Engineering',
-  },
   parts: [
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Social Engineering ist, indem sie zunächst erkennen, wie Menschen in alltäglichen Situationen beeinflusst oder manipuliert werden können, und dieses Verständnis dann mit digitalen Umgebungen und dem Verhalten von Angreifern verbinden.',
@@ -61,7 +57,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Einführung – Einfluss und Überzeugung im Alltag',
+            title: 'Einführung: Einfluss und Überzeugung im Alltag',
           },
           {
             title: 'Einführung des Konzepts Social Engineering',
@@ -73,7 +69,7 @@ export const contentSE = {
             title: 'Social Engineering online und offline',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -131,7 +127,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Einführung – Menschen vs. Systeme',
+            title: 'Einführung: Menschen vs. Systeme',
           },
           {
             title: 'Emotionen, die Angreifer nutzen',
@@ -143,7 +139,7 @@ export const contentSE = {
             title: 'Alltägliche Kontexte, in denen Social Engineering funktioniert',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -179,7 +175,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Einführung – Wo kann Social Engineering passieren?',
+            title: 'Einführung: Wo kann Social Engineering passieren?',
           },
           {
             title: 'Häufige Warnsignale',
@@ -191,7 +187,7 @@ export const contentSE = {
             title: 'Erkennen üben',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -256,7 +252,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Einführung – Von der Erkennung zur Reaktion',
+            title: 'Einführung: Von der Erkennung zur Reaktion',
           },
           {
             title: 'Ein einfaches Modell für sichere Entscheidungen',
@@ -268,7 +264,7 @@ export const contentSE = {
             title: 'Andere schützen',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },

@@ -16,16 +16,12 @@ export const contentAP = {
     'Rozumím motivům útočníků a dokážu uvést příklady psychologických, sociálních a ekonomických faktorů.',
     'Dokážu rozpoznat techniky útočníků v daných scénářích.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Výukový průvodce pohledem útočníka',
-  },
   parts: [
     {
       goal:
         'Pomoci dětem získat znalosti o konceptu důvěryhodné osoby a rozvíjet dovednosti v identifikaci kruhu důvěryhodných osob.',
       bundle: {
-        filename: 'Attacker Perspective Part 1 Package',
+        filename: 'Útočníkův pohled - balíček - Část 1',
       },
       included: {
         materials: [
@@ -33,14 +29,14 @@ export const contentAP = {
             // ID: 2.1.1
             kind: 'Pracovní list',
             name: 'Důvěryhodní lidé: Lidé kolem mě',
-            filename: 'Worksheet - Trusteees People Around Me',
+            filename: 'Pracovní list - Lide kolem mě',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.1.2
             kind: 'Pracovní list',
             name: 'Kruhy důvěry',
-            filename: 'Worksheet - Circles of Trust',
+            filename: 'Pracovní list - Kruhy důvěry',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -52,7 +48,7 @@ export const contentAP = {
             title: 'Definovat kruh důvěryhodných osob',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -60,7 +56,7 @@ export const contentAP = {
     {
       goal: 'Představit koncept útočníka a motivaci z pohledu útočníka.',
       bundle: {
-        filename: 'Attacker Perspective Part 2 Package',
+        filename: 'Útočníkův pohled - balíček - Část 2',
       },
       included: {
         materials: [
@@ -68,28 +64,28 @@ export const contentAP = {
             // ID: 2.2.1
             kind: 'Karty',
             name: 'Identifikovat chování',
-            filename: 'Cards - Identify the Behaviour',
+            filename: 'Karty - Identifikovat chování',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.2.2
             kind: 'Karty',
             name: 'Rozpoznat postavy',
-            filename: 'Cards - Recognise the Characters',
+            filename: 'Karty - Rozpoznat postavy',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.2.4
             kind: 'Obrázek',
             name: 'Motivace útočníků',
-            filename: 'Image - Attacker Motivations',
+            filename: 'Image - Motivace útočníků',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.2.5
             kind: 'Pracovní list',
             name: 'Analýza útoku',
-            filename: 'Worksheet - Attack Analysis',
+            filename: 'Pracovní list - Analýza útoku',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -104,7 +100,7 @@ export const contentAP = {
             title: 'Pochopit motivaci útočníka',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -115,11 +111,11 @@ export const contentAP = {
           'Použijte toto video, aby si studenti dokázali představit skutečné lidi a motivy za kybernetickými útoky, přesahující stereotyp osamělého hackera. Zastavte se a zeptejte se, kdo si myslí, že je zodpovědný a proč.',
         downloads: {
           video: {
-            filename: 'Who is Behind Cyber Attacks',
+            filename: 'Kdo stojí za kybernetickými útoky - Video',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Who is Behind Cyber Attacks - Subtitles',
+            filename: 'Kdo stojí za kybernetickými útoky - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -128,7 +124,7 @@ export const contentAP = {
     {
       goal: 'Představit základní techniky (taktiky) relevantní pro děti, které útočníci používají k dosažení svých cílů.',
       bundle: {
-        filename: 'Attacker Perspective Part 3 Package',
+        filename: 'Útočníkův pohled - balíček - Část 3',
       },
       included: {
         materials: [
@@ -158,7 +154,7 @@ export const contentAP = {
             title: 'Porozumět cestám útoku',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -230,19 +226,19 @@ export const challengeAP = {
     '🚩 Odpovědi na bezpečnostní otázky odhaleny',
   ],
   profile: {
-    displayName: 'Alex Johnson',
-    handle: '@alex123',
-    statusActiveNow: 'Aktivní nyní',
-    bioText: '16 · Gamer 🎮 · Manga Fan · Coffee ☕',
+    displayName: 'Martin Novák',
+    handle: '@martin123',
+    statusActiveNow: 'Nyní aktivní',
+    bioText: '16 · Hráč 🎮 · Manga fanoušek',
     aboutTitle: 'O mně',
     statsFriendsLabel: 'Přátelé',
     statsFollowingLabel: 'Sledování',
-    bornText: 'Narozen/a 14. června 2008',
-    emailText: 'alex.gamer@freemail.com',
-    petNameText: 'Jméno mazlíčka: Whiskers',
-    post1Time: '📍 Nákupní centrum v centru · Právě teď',
-    post1Body: 'Právě jsem si dal/a kávu ☕ Je někdo poblíž? Přijďte mě najít u stánků s jídlem! 😄',
-    post1Badge: '🛍️ Centrum Mall — přihlášeno',
+    bornText: 'Narozen: 14. června 2008',
+    emailText: 'martin.novak@seznam.cz',
+    petNameText: 'Jméno mazlíčka: Pepe',
+    post1Time: '📍 Nákupní centrum Hladovka · Právě teď',
+    post1Body: 'Právě jsem si dal skvělý burger. Je někdo poblíž? Přijďte mě najít u stánků s jídlem! 😄',
+    post1Badge: '🛍️ Nákupní centrum Hladovka — přihlášeno',
     post2Time: 'Před 2 hodinami',
     post2Body: 'Právě jsem se vrátil/a ze školy! Dáváme si pizzu s rodinou 🍕 Nejlepší večer vůbec!',
     actionLike: 'To se mi líbí',

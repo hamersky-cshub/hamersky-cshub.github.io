@@ -17,10 +17,6 @@ export const contentDC = {
     'Jeg kan forklare hva digitalt medborgerskap er og hvorfor det er viktig.',
     'Jeg kan diskutere prinsippene om rettigheter, ansvar og respekt i digitale miljøer, inkludert hvordan man holder seg trygg, opptrer klokt og engasjerer seg sosialt.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Last ned lærerveiledning',
-    download: 'Lærerveiledning for digitalt medborgerskap',
-  },
   parts: [
     {
       goal: 'Hjelpe elever til å forstå hva et digitalt miljø er og positive aspekter ved dette.',

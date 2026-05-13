@@ -18,10 +18,6 @@ export const contentDP = {
     'Forklare hvordan data kan overføres og lagres på nett.',
     'Anvende enkle personvernregler før deling eller posting.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Last ned lærerveiledning',
-    download: 'Lærerveiledning for personvern',
-  },
   parts: [
     {
       goal: 'Hjelpe elever til å forstå hva personopplysninger er, identifisere ulike typer sensitiv informasjon og gjenkjenne hvorfor det er viktig å beskytte dem.',
@@ -53,7 +49,7 @@ export const contentDP = {
             title: 'Hva er personopplysninger?',
           },
           {
-            title: 'Plenum – Oppsummering og uformell vurdering',
+            title: 'Plenum: Oppsummering og uformell vurdering',
           },
         ],
       },

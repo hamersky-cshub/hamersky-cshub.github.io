@@ -261,7 +261,7 @@ const moduleImages = {
                               {partMaterials.map((item: MergedMaterial, i: number) => (
                                 <li class="se-step-item">
                                   <span class="se-step-num">{String(i + 1).padStart(2, '0')}</span>
-                                  <p class="se-step-title"><b>{String(item.kind ?? '')}:</b> {String(item.name ?? '')}</p>
+                                  <p class="se-step-title"><b>{String(item.kind ?? '')} –</b> {String(item.name ?? '')}</p>
                                   <a
                                     class="se-item-download"
                                     href={String(item.href ?? '')}
@@ -288,7 +288,7 @@ const moduleImages = {
                               {partActivity.map((step: MergedActivityStep) => (
                                 <li class="se-step-item se-step-item--plain">
                                   <span class="se-step-num">{String(step.stepNumber ?? 0).padStart(2, '0')}</span>
-                                  <p class="se-step-title"><b>{t('pages.hub.labels.step')} {String(step.stepNumber ?? '')}:</b> {String(step.title ?? '')}</p>
+                                  <p class="se-step-title"><b>{t('pages.hub.labels.step')} {String(step.stepNumber ?? '')} –</b> {String(step.title ?? '')}</p>
                                 </li>
                               ))}
                             </ul>

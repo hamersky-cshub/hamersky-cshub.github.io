@@ -17,10 +17,6 @@ export const contentDC = {
     'I can explain what digital citizenship is and why it is important.',
     'I can discuss the principles of rights, responsibility and respect in digital environments, including how to stay safe, act savvy and engage socially.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Digital Citizenship Teaching Guide',
-  },
   parts: [
     {
       goal: 'Help students understand what a digital environment is and positive aspects of this.',
@@ -45,7 +41,7 @@ export const contentDC = {
             title: 'What is a digital environment?',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -106,7 +102,7 @@ export const contentDC = {
             title: 'Rights, Respect and Responsibilities in Digital Environments',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -159,7 +155,7 @@ export const contentDC = {
             title: 'Privacy Settings',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -197,7 +193,7 @@ export const contentDC = {
             title: 'Understanding How to Develop Resilience',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -259,7 +255,7 @@ export const contentDC = {
             title: 'Curating a Positive Digital Footprint',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },

@@ -55,6 +55,9 @@ export const shared = {
       subtitle:
         'Erfahren Sie mehr über unsere Mission, eine sicherere digitale Umgebung zu schaffen. Tauchen Sie in unsere Lernmodule ein, die Einzelpersonen über digitale Staatsbürgerschaft, Authentifizierung, Datenschutz und mehr aufklären sollen.',
 
+      cofundEU: 'Unterstützt durch die EU',
+      cofundEUDesc: 'Dieses Projekt wird durch das Programm Digitales Europa der Europäischen Union mitfinanziert.',
+
       missionTitle: 'Unsere Mission',
       missionP1:
         'Internet, Smartphones und soziale Medien sind nun ein natürlicher Teil des Alltags von Kindern — voller Möglichkeiten, aber auch echter Risiken. Da junge Menschen mehr Zeit online verbringen, ist Cybersicherheit zu einer wesentlichen Lebenskompetenz geworden, nicht nur zu einem Thema für Spezialisten.',

@@ -16,10 +16,6 @@ export const contentAP = {
     'I understand the attacker motives and can give examples related to psychological, social and economic factors.',
     'I can recognize attacker techniques in given scenarios.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Attacker Perspective Teaching Guide',
-  },
   parts: [
     {
       goal:
@@ -52,7 +48,7 @@ export const contentAP = {
             title: 'Define the Circle of Trustees',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -104,7 +100,7 @@ export const contentAP = {
             title: "Understand the Attacker's Motivation",
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -158,7 +154,7 @@ export const contentAP = {
             title: 'Understand Attack Paths',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -233,7 +229,7 @@ export const challengeAP = {
     displayName: 'Alex Johnson',
     handle: '@alex123',
     statusActiveNow: 'Active now',
-    bioText: '16 · Gamer 🎮 · Manga Fan · Coffee ☕',
+    bioText: '16 · Gamer 🎮 · Manga Fan',
     aboutTitle: 'About',
     statsFriendsLabel: 'Friends',
     statsFollowingLabel: 'Following',

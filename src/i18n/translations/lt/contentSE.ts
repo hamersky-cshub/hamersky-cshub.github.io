@@ -18,10 +18,6 @@ export const contentSE = {
     'Naudoti sustojimo ir patikrinimo rutiną prieš veikiant.',
     'Žinoti, kada ir kaip pranešti apie įtartiną elgesį.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Atsisiųsti mokymo vadovą',
-    download: 'Socialinės inžinerijos mokymo vadovas',
-  },
   parts: [
     {
       goal: 'Padėti mokiniams suprasti, kas yra socialinė inžinerija, pirmiausia atpažįstant, kaip žmonės gali būti veikiami ar manipuliuojami kasdienėse situacijose, o tada siejant šį supratimą su skaitmenine aplinka ir užpuolikų elgesiu.',
@@ -61,7 +57,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Įvadas – Įtaka ir įtikinėjimas kasdieniniame gyvenime',
+            title: 'Įvadas: Įtaka ir įtikinėjimas kasdieniniame gyvenime',
           },
           {
             title: 'Socialinės inžinerijos koncepto pristatymas',
@@ -73,7 +69,7 @@ export const contentSE = {
             title: 'Socialinė inžinerija internete ir ne',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -131,7 +127,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Įvadas – Žmonės vs. sistemos',
+            title: 'Įvadas: Žmonės vs. sistemos',
           },
           {
             title: 'Emocijos, kurias naudoja užpuolikai',
@@ -143,7 +139,7 @@ export const contentSE = {
             title: 'Kasdieniai kontekstai, kuriuose veikia socialinė inžinerija',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -179,7 +175,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Įvadas – Kur gali vykti socialinė inžinerija?',
+            title: 'Įvadas: Kur gali vykti socialinė inžinerija?',
           },
           {
             title: 'Dažni įspėjimo ženklai',
@@ -191,7 +187,7 @@ export const contentSE = {
             title: 'Atpažinimo praktika',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -256,7 +252,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Įvadas – Nuo atpažinimo iki reagavimo',
+            title: 'Įvadas: Nuo atpažinimo iki reagavimo',
           },
           {
             title: 'Paprastas saugių sprendimų modelis',
@@ -268,7 +264,7 @@ export const contentSE = {
             title: 'Kitų apsauga',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },

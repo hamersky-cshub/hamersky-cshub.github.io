@@ -7,7 +7,7 @@ import { useTranslations } from '../i18n/index'
 import { moduleCount, challengeCount, gameCount } from '../data/modules'
 
 const about = localizePath(Astro.currentLocale, '/about')
-const { t } = useTranslations(Astro.currentLocale)
+const { t, tHtml } = useTranslations(Astro.currentLocale)
 ---
 
 <DefaultLayout title={t('pages.home.title')}>
@@ -19,15 +19,15 @@ const { t } = useTranslations(Astro.currentLocale)
           <div class="intro-stats grid grid-cols-1 gap-6 md:grid-cols-3">
           <div class="stat-card">
             <span class="stat-number">{moduleCount}</span>
-            <p class="stat-title">{t('pages.home.statModulesLabel')}</p>
+            <p class="stat-title" set:html={tHtml('pages.home.statModulesLabel')} />
           </div>
           <div class="stat-card">
             <span class="stat-number">{challengeCount}</span>
-            <p class="stat-title">{t('pages.home.statChallengesLabel')}</p>
+            <p class="stat-title" set:html={tHtml('pages.home.statChallengesLabel')} />
           </div>
           <div class="stat-card">
             <span class="stat-number">{gameCount}</span>
-            <p class="stat-title">{t('pages.home.statGamesLabel')}</p>
+            <p class="stat-title" set:html={tHtml('pages.home.statGamesLabel')} />
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ const { t } = useTranslations(Astro.currentLocale)
         </div>
         <div class="modules-content">
           <div>
-            <h2 class="section-heading" id="learning-modules">{t('pages.home.learningModulesTitle')}</h2>
+            <h2 class="section-heading" id="learning-modules" set:html={tHtml('pages.home.learningModulesTitle')} />
           </div>
           <p class="md:text-2xl">{t('pages.home.learningModulesText')}</p>
         </div>
@@ -47,7 +47,7 @@ const { t } = useTranslations(Astro.currentLocale)
       <div class="learning-modules-grid-right">
         <div class="modules-content">
           <div>
-            <h2 class="section-heading" id="learning-modules-right">{t('pages.home.challengesTitle')}</h2>
+            <h2 class="section-heading" id="learning-modules-right" set:html={tHtml('pages.home.challengesTitle')} />
           </div>
           <p class="md:text-2xl">{t('pages.home.challengesText')}</p>
         </div>
@@ -62,7 +62,7 @@ const { t } = useTranslations(Astro.currentLocale)
         </div>
         <div class="modules-content">
           <div>
-            <h2 class="section-heading">{t('pages.home.gamesTitle')}</h2>
+            <h2 class="section-heading" set:html={tHtml('pages.home.gamesTitle')} />
           </div>
           <p class="md:text-2xl">{t('pages.home.gamesText')}</p>
         </div>

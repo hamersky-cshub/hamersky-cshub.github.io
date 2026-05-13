@@ -18,15 +18,11 @@ export const contentDP = {
     'Vysvětlit, jak mohou data putovat a být ukládána online.',
     'Aplikovat jednoduchá pravidla soukromí před sdílením nebo zveřejňováním.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Průvodce výukou ochrany dat',
-  },
   parts: [
     {
       goal: 'Pomoci žákům pochopit, co jsou osobní údaje, identifikovat různé typy citlivých informací a rozpoznat, proč jejich ochrana záleží.',
       bundle: {
-        filename: 'Data Privacy Part 1 Package',
+        filename: 'Ochrana osobních údajů - balíček - Část 1',
       },
       included: {
         materials: [
@@ -53,7 +49,7 @@ export const contentDP = {
             title: 'Co jsou osobní údaje?',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -77,7 +73,7 @@ export const contentDP = {
     {
       goal: 'Pomoci žákům pochopit, jak a proč se data sdílejí online, důležitost souhlasu a jak dělat promyšlená rozhodnutí před sdílením osobních informací.',
       bundle: {
-        filename: 'Data Privacy Part 2 Package',
+        filename: 'Ochrana osobních údajů - balíček - Část 2',
       },
       included: {
         materials: [
@@ -122,7 +118,7 @@ export const contentDP = {
     {
       goal: 'Pomoci žákům objevit, co je digitální stopa, pochopit, jak každodenní online aktivity zanechávají trvalé stopy, a uvažovat o dlouhodobém dopadu jejich online chování.',
       bundle: {
-        filename: 'Data Privacy Part 3 Package',
+        filename: 'Ochrana osobních údajů - balíček - Část 3',
       },
       included: {
         materials: [
@@ -176,7 +172,7 @@ export const contentDP = {
     {
       goal: 'Pomoci žákům naučit se praktické strategie pro přezkoumání a správu jejich digitální stopy, včetně způsobu úpravy nastavení soukromí a odstranění nežádoucích dat.',
       bundle: {
-        filename: 'Data Privacy Part 4 Package',
+        filename: 'Ochrana osobních údajů - balíček - Část 4',
       },
       included: {
         materials: [

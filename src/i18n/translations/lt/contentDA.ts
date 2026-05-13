@@ -18,10 +18,6 @@ export const contentDA = {
     'Naudoti paprastus saugumo veiksmus, tokius kaip blokavimas arba pranešimas.',
     'Žinoti patikimus suaugusiuosius ir palaikymo kanalus, su kuriais galima susisiekti.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Atsisiųsti mokymo vadovą',
-    download: 'Skaitmeninio smurto mokymo vadovas',
-  },
   parts: [
     {
       title: 'Dezinformacija',
@@ -47,7 +43,7 @@ export const contentDA = {
             title: 'Kas yra dezinformacija?',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -87,7 +83,7 @@ export const contentDA = {
             title: 'Algoritmai',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -132,7 +128,7 @@ export const contentDA = {
             title: 'Kas yra kibernetinis patyčiavimasis?',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -174,7 +170,7 @@ export const contentDA = {
             title: 'Įvadas',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -203,7 +199,7 @@ export const contentDA = {
             title: 'Socialinių medijų influenceriai',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },
@@ -245,7 +241,7 @@ export const contentDA = {
             title: 'Įvadas',
           },
           {
-            title: 'Plenarinis susirinkimas – Apibendrinimas ir neformalus vertinimas',
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
           },
         ],
       },

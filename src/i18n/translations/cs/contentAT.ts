@@ -21,15 +21,11 @@ export const contentAT = {
     'Dokáži rozlišit mezi slabými a silnými uživatelskými jmény a hesly.',
     'Dokáži předvést, jak používat správce hesel k ukládání hesel, a zdůvodnit, proč jsem tyto volby učinil/a.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Výukový průvodce autentizací',
-  },
   parts: [
     {
       goal: 'Pomoci studentům vytvořit silná, zapamatovatelná tajemství a pochopit, proč je opakované použití riskantní.',
       bundle: {
-        filename: 'Authentication Part 1 Package',
+        filename: 'Autentizace - balíček - Část 1',
       },
       included: {
         materials: [
@@ -37,28 +33,28 @@ export const contentAT = {
             // ID: 3.1.1
             kind: 'Obrázek',
             name: 'Online identita',
-            filename: 'Image - Online Identity',
+            filename: 'Obrázek - Online identita',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.1.2
             kind: 'Obrázky',
             name: 'Příklady osobních digitálních aktiv',
-            filename: 'Images - Examples of Personal Digital Assets',
+            filename: 'Obrázky - Příklady osobních digitálních aktiv',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.1.4
             kind: 'Pracovní list',
             name: 'Co by se stalo, kdyby...?',
-            filename: 'Worksheet - What Would Happen if',
+            filename: 'Pracovní list - Co by se stalo, kdyby',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.1.5
             kind: 'Pracovní list',
             name: 'Moje digitální aktiva',
-            filename: 'Worksheet - My Digital Assets',
+            filename: 'Pracovní list - Moje digitální aktiva',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -73,7 +69,7 @@ export const contentAT = {
             title: 'Porozumění digitálním aktivům',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -97,7 +93,7 @@ export const contentAT = {
       goal:
         'Pomoci studentům pochopit, co je autentizace, proč je důležitá a jak pomáhá chránit jejich digitální identitu a digitální aktiva tím, že kontroluje, kdo má povolený přístup.',
       bundle: {
-        filename: 'Authentication Part 2 Package',
+        filename: 'Autentizace - balíček - Část 2',
       },
       included: {
         materials: [
@@ -105,21 +101,21 @@ export const contentAT = {
             // ID: 3.2.1
             kind: 'Obrázky',
             name: 'Příklady autentizace z reálného světa',
-            filename: 'Images - Real-world Authentication Examples',
+            filename: 'Obrázky - Příklady autentizace z reálného světa',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.2.3
             kind: 'Obrázek',
             name: 'Přihlášení do digitálního systému',
-            filename: 'Image - Logging Into a Digital System',
+            filename: 'Obrázek - Přihlášení do digitálního systému',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.2.4
             kind: 'Pracovní list',
             name: 'Autentizace v každodenním životě',
-            filename: 'Worksheet - Authentication in Everday Life',
+            filename: 'Pracovní list - Autentizace v každodenním životě',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -137,7 +133,7 @@ export const contentAT = {
             title: 'Aplikace autentizace na digitální aktiva',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -162,7 +158,7 @@ export const contentAT = {
       goal:
         'Pomoci studentům pochopit, co je autentizace, proč je důležitá a jak pomáhá chránit jejich digitální identitu a digitální aktiva tím, že kontroluje, kdo má povolený přístup.',
       bundle: {
-        filename: 'Authentication Part 3 Package',
+        filename: 'Autentizace - balíček - Část 3',
        },
       included: {
         materials: [
@@ -170,35 +166,35 @@ export const contentAT = {
             // ID: 3.3.2
             kind: 'Obrázek',
             name: 'Příklady slabých hesel',
-            filename: 'Image - Examples of Strong Passwords',
+            filename: 'Obrázek - Příklady slabých hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.3
             kind: 'Obrázek',
             name: 'Příklady silných hesel',
-            filename: 'Image - Check your Password',
+            filename: 'Obrázek - Příklady silných hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.4
             kind: 'Karty',
             name: 'Vytvořit silné heslo',
-            filename: 'Cards - Create a Strong Password',
+            filename: 'Karty - Vytvořit silné heslo',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.5
             kind: 'Obrázek',
             name: 'Zkontrolujte své heslo',
-            filename: 'Image - Two Different Types of Authentication Used Together',
+            filename: 'Obrázek - Zkontrolujte své heslo',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.3.6
             kind: 'Pracovní list',
             name: 'Moje pravidla pro silná hesla',
-            filename: 'Worksheet - My Strong Password Rules',
+            filename: 'Pracovní list - Moje pravidla pro silná hesla',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -216,7 +212,7 @@ export const contentAT = {
             title: 'Bezpečné vytváření silných hesel',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -227,11 +223,11 @@ export const contentAT = {
           'Použijte toto video, abyste studentům ukázali rozdíl mezi hesly, která chrání účty, a hesly, která je vystavují riziku. Vyzvěte je, aby zamysleli nad tím, zda jejich vlastní hesla splňují kritéria silných hesel.',
         downloads: {
           video: {
-            filename: 'Strong and Weak Passwords',
+            filename: 'Silná a slabá hesla - Video',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Strong and Weak Passwords - Subtitles',
+            filename: 'Silná a slabá hesla - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -241,7 +237,7 @@ export const contentAT = {
       goal:
         'Pomoci studentům pochopit, co je dvoufaktorová autentizace a proč je správa mnoha hesel obtížná, představit koncept správce hesel a vysvětlit, jak správci hesel pomáhají chránit digitální identity a digitální aktiva při zodpovědném používání s podporou důvěryhodného dospělého.',
       bundle: {
-        filename: 'Authentication Part 4 Package',
+        filename: 'Autentizace - balíček - Část 4',
        },
       included: {
         materials: [
@@ -249,63 +245,63 @@ export const contentAT = {
             // ID: 3.4.1
             kind: 'Schéma',
             name: 'Sada skupin',
-            filename: 'Schema - Set of Groups',
+            filename: 'Schéma - Sada skupin',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.2
             kind: 'Schéma',
             name: 'Sada mincí',
-            filename: 'Schema - Set of Coins',
+            filename: 'Schéma - Sada mincí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.3
             kind: 'Schéma',
             name: 'Sada skupin',
-            filename: 'Schema - Set of Groups',
+            filename: 'Schéma - Sada skupin',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.4
             kind: 'Schéma',
             name: 'PIN karty',
-            filename: 'Schema - PIN Cards',
+            filename: 'Schéma - PIN karty',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.6
             kind: 'Obrázky',
             name: 'Jak používat správce hesel',
-            filename: 'Images - How to Use a Password Manager',
+            filename: 'Obrázky - Jak používat správce hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.7
             kind: 'Obrázek',
             name: 'Trezor správce hesel',
-            filename: 'Image - Password Manager Vault',
+            filename: 'Obrázek - Trezor správce hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.8
             kind: 'Obrázek',
             name: 'Správce hesel jako digitální klíčenka',
-            filename: 'Image - Password Manager as a Digital Keyring',
+            filename: 'Obrázek - Správce hesel jako digitální klíčenka',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.9
             kind: 'Obrázek',
             name: 'Kroky ukládání hesel',
-            filename: 'Image - Steps of Saving Passwords',
+            filename: 'Obrázek - Kroky ukládání hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.10
             kind: 'Pracovní list',
             name: 'Problémy s hesly a řešení',
-            filename: 'Worksheet - Password Problems and Solutions',
+            filename: 'Pracovní list - Problémy s hesly a řešení',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -323,7 +319,7 @@ export const contentAT = {
             title: 'Bezpečné používání správců hesel',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -334,11 +330,11 @@ export const contentAT = {
           'Použijte toto video k představení správců hesel jako praktického řešení pro vytváření a ukládání silných, jedinečných hesel pro každý účet. Zastavte se a zeptejte se studentů, zda o správci hesel slyšeli nebo jej již používali.',
         downloads: {
           video: {
-            filename: 'What Is a Password Manager',
+            filename: 'Co je správce hesel? - Video',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What Is a Password Manager - Subtitles',
+            filename: 'Co je správce hesel? - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -348,7 +344,7 @@ export const contentAT = {
       goal:
         'Pomoci studentům pochopit, jak jejich volby a chování ovlivňují bezpečnost jejich digitální identity a jak zodpovědné jednání pomáhá chránit jejich digitální aktiva, je samotné a ostatní v digitálním prostředí.',
       bundle: {
-        filename: 'Authentication Part 5 Package',
+        filename: 'Autentizace - balíček - Část 5',
        },
       included: {
         materials: [
@@ -356,21 +352,21 @@ export const contentAT = {
             // ID: 3.5.1
             kind: 'Obrázek',
             name: 'Bezpečné a nebezpečné online chování',
-            filename: 'Image - Safe and Unsafe Online Behaviours',
+            filename: 'Obrázek - Bezpečné a nebezpečné online chování',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.5.3
             kind: 'Pracovní list',
             name: 'Scénáře digitální identity a autentizace',
-            filename: 'Worksheet - Digital Identity and Authentication Scenarios',
+            filename: 'Pracovní list - Scénáře digitální identity a autentizace',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.5.4
             kind: 'Pracovní list',
             name: 'Jak chráním svou digitální identitu',
-            filename: 'Worksheet - How I Protect My Digital Identity',
+            filename: 'Pracovní list - Jak chráním svou digitální identitu',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -385,7 +381,7 @@ export const contentAT = {
             title: 'Digitální identita a autentizace',
           },
           {
-            title: 'Plenární zasedání – Shrnutí a neformální hodnocení',
+            title: 'Plenární zasedání: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -396,11 +392,11 @@ export const contentAT = {
           'Použijte toto video ke spojení strategií, které se studenti naučili pro zachování bezpečnosti své digitální identity. Povzbuďte je, aby identifikovali jeden konkrétní zvyk, který změní nebo zavedou po shlédnutí.',
         downloads: {
           video: {
-            filename: 'Protecting Your Digital Identity',
+            filename: 'Ochrana vaší digitální identity - Video',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Protecting Your Digital Identity - Subtitles',
+            filename: 'Ochrana vaší digitální identity - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },

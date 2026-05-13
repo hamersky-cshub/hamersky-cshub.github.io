@@ -18,10 +18,6 @@ export const contentDP = {
     'Explain how data can travel and be stored online.',
     'Apply simple privacy rules before sharing or posting.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Download Teaching Guide',
-    download: 'Data Privacy Teaching Guide',
-  },
   parts: [
     {
       goal: 'Help students understand what personal data is, identify different types of sensitive information, and recognise why protecting it matters.',
@@ -53,7 +49,7 @@ export const contentDP = {
             title: 'What Is Personal Data?',
           },
           {
-            title: 'Plenary – Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -114,7 +110,7 @@ export const contentDP = {
             title: 'Consent and Permissions',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -152,7 +148,7 @@ export const contentDP = {
             title: 'Mapping Your Online Traces',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },
@@ -206,7 +202,7 @@ export const contentDP = {
             title: 'Managing Privacy Settings',
           },
           {
-            title: 'Plenary - Summary and Informal Assessment',
+            title: 'Plenary: Summary and Informal Assessment',
           },
         ],
       },

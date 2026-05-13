@@ -21,10 +21,6 @@ export const contentAT = {
     'Ich kann zwischen schwachen und starken Benutzernamen und Passwörtern unterscheiden.',
     'Ich kann demonstrieren, wie ich einen Passwort-Manager zur Speicherung von Passwörtern nutze, und begründen, warum ich diese Entscheidungen getroffen habe.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Unterrichtsleitfaden herunterladen',
-    download: 'Unterrichtsleitfaden Authentifizierung',
-  },
   parts: [
     {
       goal: 'Schülerinnen und Schülern helfen, starke, einprägsame Geheimnisse zu erstellen und zu verstehen, warum Wiederverwendung riskant ist.',
@@ -73,7 +69,7 @@ export const contentAT = {
             title: 'Digitale Assets verstehen',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -137,7 +133,7 @@ export const contentAT = {
             title: 'Authentifizierung auf digitale Assets anwenden',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -216,7 +212,7 @@ export const contentAT = {
             title: 'Starke Passwörter sicher erstellen',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -323,7 +319,7 @@ export const contentAT = {
             title: 'Passwort-Manager sicher anwenden',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },
@@ -385,7 +381,7 @@ export const contentAT = {
             title: 'Digitale Identität und Authentifizierung',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },

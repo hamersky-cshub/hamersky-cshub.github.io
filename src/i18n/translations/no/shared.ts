@@ -55,6 +55,9 @@ export const shared = {
       subtitle:
         'Finn ut mer om vår misjon om å skape et tryggere digitalt miljø. Dyk ned i læringsmodulene våre designet for å lære enkeltpersoner om digitalt medborgerskap, autentisering, personvern og mer.',
 
+      cofundEU: 'Støttet av EU',
+      cofundEUDesc: 'Dette prosjektet er medfinansiert av Den europeiske unions program Digitalt Europa.',
+
       missionTitle: 'Vårt oppdrag',
       missionP1:
         'Internett, smarttelefoner og sosiale medier er nå en naturlig del av barns hverdag — full av muligheter, men også reelle risikoer. Ettersom unge bruker mer tid på nett, har cybersikkerhet blitt en viktig livsferdighet, ikke bare et tema for spesialister.',

@@ -17,15 +17,11 @@ export const contentDC = {
     'Dokáži vysvětlit, co je digitální občanství a proč je důležité.',
     'Dokáži diskutovat o principech práv, odpovědnosti a úcty v digitálním prostředí, včetně toho, jak zůstat v bezpečí, jednat chytře a zapojovat se do sociálního života.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Výukový průvodce digitálním občanstvím',
-  },
   parts: [
     {
       goal: 'Pomoci žákům pochopit, co je digitální prostředí a jaké jsou jeho pozitivní aspekty.',
       bundle: {
-        filename: 'Digital Citizenship Part 1 Package',
+        filename: 'Digitální občanství - balíček - Část 1',
       },
       included: {
         materials: [
@@ -69,7 +65,7 @@ export const contentDC = {
     {
       goal: 'Pomoci žákům pochopit, co je digitální občanství a proč je důležité.',
       bundle: {
-        filename: 'Digital Citizenship Part 2 Package',
+        filename: 'Digitální občanství - balíček - Část 2',
       },
       included: {
         materials: [
@@ -115,7 +111,7 @@ export const contentDC = {
       goal:
         'Pomoci žákům vědět, jak být v digitálním prostředí v bezpečí prostřednictvím kritického myšlení a zodpovědného jednání s nastavením soukromí.',
       bundle: {
-        filename: 'Digital Citizenship Part 3 Package',
+        filename: 'Digitální občanství - balíček - Část 3',
       },
       included: {
         materials: [
@@ -183,7 +179,7 @@ export const contentDC = {
     {
       goal: 'Pomoci žákům pochopit, jak jim moudrost a odolnost mohou pomoci být chytrými v digitálním prostředí.',
       bundle: {
-        filename: 'Digital Citizenship Part 4 Package',
+        filename: 'Digitální občanství - balíček - Část 4',
       },
       included: {
         activityPlan: [
@@ -222,7 +218,7 @@ export const contentDC = {
       goal:
         'Pomoci žákům pochopit, jak jednat zodpovědně a projevovat úctu k sobě i ostatním při sociálním zapojení v digitálním prostředí.',
       bundle: {
-        filename: 'Digital Citizenship Part 5 Package',
+        filename: 'Digitální občanství - balíček - Část 5',
       },
       included: {
         materials: [
@@ -317,7 +313,7 @@ export const challengeDC = {
   postsToSort: 'Příspěvky k roztřídění',
   safeToShare: 'Bezpečné ke sdílení',
   dragSafeHere: 'Přetáhněte bezpečné příspěvky sem',
-  doNotShare: 'NESDÍLEJTE',
+  doNotShare: 'Nesdílet',
   dragUnsafeHere: 'Přetáhněte nebezpečné příspěvky sem',
   safeZoneAriaLabel: 'Zóna bezpečná ke sdílení',
   unsafeZoneAriaLabel: 'Zóna NESDÍLEJTE',
@@ -330,7 +326,7 @@ export const challengeDC = {
     { text: 'Moje domácí adresa je Hlavní ulice 123',
       category: 'unsafe',
       emoji: '🏠',
-      explanation: 'Vaše domácí adresa je soukromá — nikdy ji nesdílejte online! Cizinci ji mohou použít k nalezení místa, kde bydlíte.'
+      explanation: 'Vaše domácí adresa je soukromá — nikdy ji nesdílejte online! Cizí lidé ji mohou použít k nalezení místa, kde bydlíte.'
     },
     { text: 'Miluju hrát fotbal!',
       category: 'safe',
@@ -350,7 +346,7 @@ export const challengeDC = {
     { text: 'Moje telefonní číslo je 555-0123',
       category: 'unsafe',
       emoji: '📱',
-      explanation: 'Telefonní čísla jsou osobní — uchovejte je soukromá, aby vás cizinci nemohli kontaktovat.'
+      explanation: 'Telefonní čísla jsou osobní — uchovejte je soukromá, aby vás cizí lidé nemohli kontaktovat.'
     },
     { text: 'Jsem doma sám/sama do 18:00',
       category: 'unsafe',
@@ -380,7 +376,7 @@ export const challengeDC = {
     { text: 'Moje celé jméno je Emily Rose Johnson',
       category: 'unsafe',
       emoji: '📛',
-      explanation: 'Sdílení vašeho celého jména online může pomoci cizincům vás identifikovat a sledovat.'
+      explanation: 'Sdílení vašeho celého jména online může pomoci cizím lidem vás identifikovat a sledovat.'
     },
     { text: 'Právě jsem se naučil/a jezdit na kole!',
       category: 'safe',
@@ -400,7 +396,7 @@ export const challengeDC = {
     { text: 'Chodím domů sám/sama přes park ve 15:30',
       category: 'unsafe',
       emoji: '🚶',
-      explanation: 'Sdílení vašeho denního režimu a trasy přesně říká cizincům, kde vás najít.'
+      explanation: 'Sdílení vašeho denního režimu a trasy přesně říká cizím lidem, kde vás najít.'
     },
   ],
 }

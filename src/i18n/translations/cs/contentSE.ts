@@ -18,15 +18,11 @@ export const contentSE = {
     'Používat rutinu zastavení a kontroly před jednáním.',
     'Vědět, kdy a jak nahlásit podezřelé chování.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Průvodce výukou sociálního inženýrství',
-  },
   parts: [
     {
       goal: 'Pomoci žákům pochopit, co je sociální inženýrství, a to nejprve rozpoznáním toho, jak mohou být lidé ovlivněni nebo manipulováni v každodenních situacích, a poté propojením tohoto porozumění s digitálním prostředím a chováním útočníků.',
       bundle: {
-        filename: 'Social Engineering Part 1 Package',
+        filename: 'Sociální inženýrství - balíček - Část 1',
       },
       included: {
         materials: [
@@ -61,7 +57,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Úvod – Vliv a přesvědčování v každodenním životě',
+            title: 'Úvod: Vliv a přesvědčování v každodenním životě',
           },
           {
             title: 'Představení konceptu sociálního inženýrství',
@@ -73,7 +69,7 @@ export const contentSE = {
             title: 'Sociální inženýrství online a offline',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -96,7 +92,7 @@ export const contentSE = {
     {
       goal: 'Pomoci žákům pochopit, proč útočníci používají sociální inženýrství, prozkoumáním psychologických a emocionálních pák, které lidi zranitelňují, a procvičením kritického myšlení, když cítí nátlak.',
       bundle: {
-        filename: 'Social Engineering Part 2 Package',
+        filename: 'Sociální inženýrství - balíček - Část 2',
       },
       included: {
         materials: [
@@ -131,7 +127,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Úvod – Lidé vs. systémy',
+            title: 'Úvod: Lidé vs. systémy',
           },
           {
             title: 'Emoce, které útočníci využívají',
@@ -143,7 +139,7 @@ export const contentSE = {
             title: 'Každodenní kontexty, kde sociální inženýrství funguje',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -151,7 +147,7 @@ export const contentSE = {
     {
       goal: 'Pomoci žákům rozpoznat pokusy o sociální inženýrství identifikací běžných varovných signálů a pochopením různých kontextů, ve kterých k těmto útokům může docházet, jak online, tak offline.',
       bundle: {
-        filename: 'Social Engineering Part 3 Package',
+        filename: 'Sociální inženýrství - balíček - Část 3',
       },
       included: {
         materials: [
@@ -179,7 +175,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Úvod – Kde může dojít k sociálnímu inženýrství?',
+            title: 'Úvod: Kde může dojít k sociálnímu inženýrství?',
           },
           {
             title: 'Běžné varovné signály',
@@ -191,7 +187,7 @@ export const contentSE = {
             title: 'Procvičování rozpoznávání',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -214,7 +210,7 @@ export const contentSE = {
     {
       goal: 'Pomoci žákům procvičit ověřování informací a volbu bezpečných reakcí a posílit je v podpoře ostatních, když se setkají s pokusy o sociální inženýrství.',
       bundle: {
-        filename: 'Social Engineering Part 4 Package',
+        filename: 'Sociální inženýrství - balíček - Část 4',
       },
       included: {
         materials: [
@@ -256,7 +252,7 @@ export const contentSE = {
         ],
         activityPlan: [
           {
-            title: 'Úvod – Od rozpoznání k reakci',
+            title: 'Úvod: Od rozpoznání k reakci',
           },
           {
             title: 'Jednoduchý model pro bezpečná rozhodnutí',
@@ -268,7 +264,7 @@ export const contentSE = {
             title: 'Ochrana ostatních',
           },
           {
-            title: 'Plénum – Shrnutí a neformální hodnocení',
+            title: 'Plénum: Shrnutí a neformální hodnocení',
           },
         ],
       },

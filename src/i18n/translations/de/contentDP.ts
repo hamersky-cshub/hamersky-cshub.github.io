@@ -18,10 +18,6 @@ export const contentDP = {
     'Erklären, wie Daten online übertragen und gespeichert werden können.',
     'Einfache Datenschutzregeln anwenden, bevor man teilt oder postet.',
   ],
-  teachingGuide: {
-    ariaLabel: 'Unterrichtsleitfaden herunterladen',
-    download: 'Unterrichtsleitfaden Datenschutz',
-  },
   parts: [
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was personenbezogene Daten sind, verschiedene Arten sensibler Informationen zu identifizieren und zu erkennen, warum deren Schutz wichtig ist.',
@@ -53,7 +49,7 @@ export const contentDP = {
             title: 'Was sind personenbezogene Daten?',
           },
           {
-            title: 'Plenarsitzung – Zusammenfassung und informelle Beurteilung',
+            title: 'Plenarsitzung: Zusammenfassung und informelle Beurteilung',
           },
         ],
       },

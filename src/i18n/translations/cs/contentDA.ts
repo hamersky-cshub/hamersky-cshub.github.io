@@ -18,16 +18,12 @@ export const contentDA = {
     'Používat jednoduché bezpečnostní kroky, jako je blokování nebo nahlášení.',
     'Znát důvěryhodné dospělé a podpůrné kanály, na které se lze obrátit.',
   ],
-  teachersGuide: {
-    ariaLabel: 'Stáhnout výukového průvodce',
-    download: 'Průvodce výukou digitálního zneužívání',
-  },
   parts: [
     {
       title: 'Dezinformace',
       goal: 'Pomoci žákům pochopit, co jsou dezinformace, co lidi motivuje k jejich šíření a jak je rozpoznat.',
       bundle: {
-        filename: 'Digital Abuse Part 1 Package',
+        filename: 'Digitální zneužívání - balíček - Část 1',
       },
       included: {
         materials: [
@@ -47,7 +43,7 @@ export const contentDA = {
             title: 'Co jsou dezinformace?',
           },
           {
-            title: 'Plenum – Shrnutí a neformální hodnocení',
+            title: 'Plenum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -72,7 +68,7 @@ export const contentDA = {
       title: 'Disinformace',
       goal: 'Pomoci žákům pochopit, co jsou disinformace, motivace za nimi a jak je rozpoznat.',
       bundle: {
-        filename: 'Digital Abuse Part 2 Package',
+        filename: 'Digitální zneužívání - balíček - Část 2',
       },
       included: {
         materials: [],
@@ -87,7 +83,7 @@ export const contentDA = {
             title: 'Algoritmy',
           },
           {
-            title: 'Plenum – Shrnutí a neformální hodnocení',
+            title: 'Plenum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -112,7 +108,7 @@ export const contentDA = {
       title: 'Kyberšikana',
       goal: 'Pomoci žákům pochopit, co je kyberšikana, motivace za ní a jak ji rozpoznat.',
       bundle: {
-        filename: 'Digital Abuse Part 3 Package',
+        filename: 'Digitální zneužívání - balíček - Část 3',
       },
       included: {
         materials: [
@@ -132,7 +128,7 @@ export const contentDA = {
             title: 'Co je kyberšikana?',
           },
           {
-            title: 'Plenum – Shrnutí a neformální hodnocení',
+            title: 'Plenum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -157,7 +153,7 @@ export const contentDA = {
       title: 'Nebezpečí od cizinců',
       goal: 'Pomoci žákům pochopit, co je nebezpečí od cizinců online, motivace za ním a jak ho rozpoznat.',
       bundle: {
-        filename: 'Digital Abuse Part 4 Package',
+        filename: 'Digitální zneužívání - balíček - Část 4',
       },
       included: {
         materials: [
@@ -174,7 +170,7 @@ export const contentDA = {
             title: 'Úvod',
           },
           {
-            title: 'Plenum – Shrnutí a neformální hodnocení',
+            title: 'Plenum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -183,7 +179,7 @@ export const contentDA = {
       title: 'Influenceři',
       goal: 'Pomoci žákům pochopit, co jsou influenceři a co je motivuje.',
       bundle: {
-        filename: 'Digital Abuse Part 5 Package',
+        filename: 'Digitální zneužívání - balíček - Část 5',
       },
       included: {
         materials: [
@@ -203,7 +199,7 @@ export const contentDA = {
             title: 'Influenceři na sociálních sítích',
           },
           {
-            title: 'Plenum – Shrnutí a neformální hodnocení',
+            title: 'Plenum: Shrnutí a neformální hodnocení',
           },
         ],
       },
@@ -228,7 +224,7 @@ export const contentDA = {
       title: 'Jak se vypořádat s chováním digitálních agresorů?',
       goal: 'Pomoci žákům vědět, co mohou udělat, aby se chránili před digitálním zneužíváním.',
       bundle: {
-        filename: 'Digital Abuse Part 6 Package',
+        filename: 'Digitální zneužívání - balíček - Část 6',
       },
       included: {
         materials: [
@@ -245,7 +241,7 @@ export const contentDA = {
             title: 'Úvod',
           },
           {
-            title: 'Plenum – Shrnutí a neformální hodnocení',
+            title: 'Plenum: Shrnutí a neformální hodnocení',
           },
         ],
       },
