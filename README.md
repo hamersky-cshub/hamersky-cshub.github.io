@@ -1,4 +1,4 @@
-# WWW: Wise Web Wanderers
+# Wise Web Wanderers
 
 ![Wise Web Wanderers preview](public/WWW-preview.png)
 
