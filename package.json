@@ -10,8 +10,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "postinstall": "node scripts/clean-nm-tsconfigs.cjs"
+    "preview": "astro preview"
   },
   "keywords": [
     "astro",
