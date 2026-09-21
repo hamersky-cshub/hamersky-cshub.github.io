@@ -1,0 +1,233 @@
+WEBVTT
+
+00:00:09.327 --> 00:00:10.143
+Hi there.
+
+00:00:10.143 --> 00:00:13.791
+Welcome to this video where we are going
+to learn about different types
+
+00:00:13.791 --> 00:00:16.943
+of social engineering attacks
+and how to recognize them.
+
+00:00:17.631 --> 00:00:22.783
+The goal of this video is to learn
+the names of common social engineering attacks.
+
+00:00:22.783 --> 00:00:26.303
+When you know the names,
+it becomes easier to notice the trick
+
+00:00:26.351 --> 00:00:29.343
+and explain what is happening.
+
+00:00:32.863 --> 00:00:35.855
+Social engineering
+attacks can happen in many ways.
+
+00:00:35.935 --> 00:00:38.815
+Some come through email,
+some through messages,
+
+00:00:38.815 --> 00:00:41.983
+some through phone calls,
+and some happen in real life.
+
+00:00:42.543 --> 00:00:46.335
+The method changes, but the attacker
+is still trying to trick a person.
+
+00:00:47.103 --> 00:00:49.375
+Phishing is one of the most common types.
+
+00:00:49.375 --> 00:00:53.023
+In phishing, an attacker
+sends a fake email that looks real.
+
+00:00:53.663 --> 00:00:57.823
+It may pretend to come from a school, 
+game shop or online service
+
+00:00:57.935 --> 00:01:00.943
+and asks you to click a link 
+or share information.
+
+00:01:01.423 --> 00:01:06.815
+Smishing is similar to phishing, but it 
+happens through text messages or chat apps.
+
+00:01:06.815 --> 00:01:09.615
+A smishing message
+may say that "a package is waiting",
+
+00:01:09.615 --> 00:01:12.623
+"an account has a problem"
+or "a prize is ready".
+
+00:01:12.895 --> 00:01:16.143
+The goal is usually to make
+you tap a dangerous link.
+
+00:01:16.895 --> 00:01:19.103
+Vishing means voice phishing.
+
+00:01:19.103 --> 00:01:22.095
+This happens through 
+a phone call or voice message.
+
+00:01:22.415 --> 00:01:25.263
+The attacker may pretend 
+to be from a bank, company,
+
+00:01:25.263 --> 00:01:28.543
+school, or support team
+and ask for private information.
+
+00:01:29.935 --> 00:01:33.103
+Impersonation means 
+pretending to be someone else.
+
+00:01:33.823 --> 00:01:37.183
+An attacker may pretend to be 
+a teacher, friend, parent,
+
+00:01:37.215 --> 00:01:40.303
+gamer, administrator,
+or famous person online.
+
+00:01:41.023 --> 00:01:43.343
+The trick works because people often trust
+
+00:01:43.343 --> 00:01:46.335
+familiar names or important roles.
+
+00:01:47.295 --> 00:01:49.375
+Pretexting is when an attacker
+
+00:01:49.375 --> 00:01:52.847
+invents a fake story
+to make the request sound believable.
+
+00:01:53.407 --> 00:01:59.695
+For example, they may say "I lost access to my account", 
+or "I need your code to fix a problem".
+
+00:02:00.079 --> 00:02:03.087
+The story is the trap.
+
+00:02:03.695 --> 00:02:05.215
+Baiting means offering
+
+00:02:05.215 --> 00:02:08.207
+something tempting 
+to make people take a risky action.
+
+00:02:08.287 --> 00:02:13.887
+The bait could be a free game, skin, 
+free coins, a cheat code, a download, or a prize.
+
+00:02:14.527 --> 00:02:17.535
+If it sounds too good to be true,
+it may be bait.
+
+00:02:19.167 --> 00:02:22.175
+Quid pro quo 
+means something for something.
+
+00:02:22.527 --> 00:02:25.615
+In this attack,
+someone offers help or a reward
+
+00:02:25.695 --> 00:02:28.575
+in exchange for information or access.
+
+00:02:28.575 --> 00:02:32.815
+For example, I will give you free coins
+if you tell me your login code.
+
+00:02:34.543 --> 00:02:36.863
+Scareware tries to frighten people.
+
+00:02:36.863 --> 00:02:41.614
+A pop up or message may say your device 
+has a virus or your account will be deleted.
+
+00:02:42.142 --> 00:02:45.902
+It then tells you to click quickly,
+install something, or pay money.
+
+00:02:47.278 --> 00:02:51.438
+Fake support scams happen when attackers
+pretend to be technical support.
+
+00:02:51.550 --> 00:02:55.390
+They may say they can fix your account,
+computer game or phone.
+
+00:02:56.158 --> 00:03:00.270
+Real support teams should not ask
+for your password or private codes.
+
+00:03:01.966 --> 00:03:04.974
+Some social engineering happens offline.
+
+00:03:05.086 --> 00:03:07.614
+Shoulder surfing
+is when someone watches your screen
+
+00:03:07.614 --> 00:03:10.606
+or keyboard to see your password or pin.
+
+00:03:10.974 --> 00:03:18.334
+Tailgating is when someone follows another 
+person into a protected area without permission.
+
+00:03:20.478 --> 00:03:23.150
+Let's compare the types:
+
+00:03:23.150 --> 00:03:24.798
+Phishing uses e-mail.
+
+00:03:24.798 --> 00:03:27.182
+Smishing uses messages.
+
+00:03:27.182 --> 00:03:29.422
+Vishing uses calls.
+
+00:03:29.422 --> 00:03:32.414
+Impersonation uses fake identity.
+
+00:03:32.910 --> 00:03:35.150
+Pretexting uses a fake story.
+
+00:03:36.590 --> 00:03:39.582
+Baiting uses tempting offers.
+
+00:03:40.318 --> 00:03:43.310
+Scareware uses fear.
+
+00:03:43.582 --> 00:03:44.590
+Great work!
+
+00:03:44.590 --> 00:03:47.902
+You now know several types
+of social engineering attacks.
+
+00:03:49.038 --> 00:03:53.054
+Remember, the type may change,
+but the safe response is similar.
+
+00:03:53.646 --> 00:03:55.614
+Slow down. Check carefully.
+
+00:03:55.614 --> 00:04:01.646
+Do not share private information
+and ask a trusted adult when unsure.
+
+00:04:01.694 --> 00:04:03.262
+Thank you for watching.
+
+00:04:03.262 --> 00:04:06.206
+Do not forget to watch
+other videos in our series.

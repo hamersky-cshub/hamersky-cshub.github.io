@@ -33,7 +33,16 @@ export default defineConfig({
       },
     },
     plugins: [tailwindcss()],
+    // Pin the tsconfig Vite 8 / oxc uses for transforms. Without this, oxc auto-discovers a
+    // tsconfig per transformed file by walking up the directory tree (into node_modules and
+    // above the project root) and hard-fails on any it finds whose "extends" it can't resolve
+    // through a package exports map -- e.g. "astro/tsconfigs/base".
+    // See https://github.com/vitejs/vite/issues/23459
+    tsconfig: './tsconfig.json',
     resolve: {
+      // Same discovery walk, for path-alias resolution. All aliases below are explicit,
+      // so turning it off doesn't affect module resolution.
+      tsconfigPaths: false,
       alias: {
         '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
         '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),

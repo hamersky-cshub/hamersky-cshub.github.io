@@ -285,10 +285,10 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           // What Is a Digital Environment?
           id: '1.1.2',
           posterSrc: '/images/video-posters/1.1.2_DigitalEnvironment_video_thumbnail.png',
-          videoSrc: '/materials/digital-citizenship/part1/videos/1.1.2_DigitalEnvironment_video.mp4',
+          videoSrc: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4',
           downloads: {
             video: 
-            { href: '/materials/digital-citizenship/part1/videos/1.1.2_DigitalEnvironment_video.mp4'
+            { href: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4'
             },
             subtitles: 
             { href: '/materials/digital-citizenship/part1/videos/subtitles/subtitles.zip'
@@ -297,23 +297,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English', 
               srclang: 'en',
-              src: '/materials/digital-citizenship/part1/videos/subtitles/en/1.1.2_DigitalEnvironment_subtitles_EN.vtt' 
+              src: '/materials/digital-citizenship/part1/videos/subtitles/en/1.1.2. Digital Environment_EN.vtt' 
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/digital-citizenship/part1/videos/subtitles/cs/1.1.2_DigitalEnvironment_subtitles_CS.vtt' 
+              src: '/materials/digital-citizenship/part1/videos/subtitles/cs/1.1.2. Digital Environment_CS.vtt' 
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/digital-citizenship/part1/videos/subtitles/no/1.1.2_DigitalEnvironment_subtitles_NO.vtt' 
+              src: '/materials/digital-citizenship/part1/videos/subtitles/no/1.1.2. Digital Environment_NO.vtt' 
             },
             { label: 'Lietuvių', 
               srclang: 'lt', 
-              src: '/materials/digital-citizenship/part1/videos/subtitles/lt/1.1.2_DigitalEnvironment_subtitles_LT.vtt' 
+              src: '/materials/digital-citizenship/part1/videos/subtitles/lt/1.1.2. Digital Environment_LT.vtt' 
             },
             { label: 'Deutsch', 
               srclang: 'de', 
-              src: '/materials/digital-citizenship/part1/videos/subtitles/de/1.1.2_DigitalEnvironment_subtitles_DE.vtt' 
+              src: '/materials/digital-citizenship/part1/videos/subtitles/de/1.1.2. Digital Environment_DE.vtt' 
             },
           ],
         },
@@ -368,11 +368,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What Are Privacy Settings?
           id: '1.3.3',
-          posterSrc: '',
-          videoSrc: '/materials/digital-citizenship/part3/videos/1.3.3_PrivacySettings_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/1.3.3_PrivacySettings_video_thumbnail.png',
+          videoSrc: '/materials/digital-citizenship/part3/videos/1.3.3. Privacy Settings.mp4',
           downloads: {
             video:
-            { href: '/materials/digital-citizenship/part3/videos/1.3.3_PrivacySettings_video.mp4'
+            { href: '/materials/digital-citizenship/part3/videos/1.3.3. Privacy Settings.mp4'
             },
             subtitles:
             { href: '/materials/digital-citizenship/part3/videos/subtitles/subtitles.zip'
@@ -381,23 +381,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/digital-citizenship/part3/videos/subtitles/en/1.3.3_PrivacySettings_subtitles_EN.vtt'
+              src: '/materials/digital-citizenship/part3/videos/subtitles/en/1.3.3. Privacy Settings_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part3/videos/subtitles/cs/1.3.3. Privacy Settings_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part3/videos/subtitles/no/1.3.3. Privacy Settings_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part3/videos/subtitles/lt/1.3.3. Privacy Settings_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part3/videos/subtitles/de/1.3.3. Privacy Settings_DE.vtt'
             },
           ],
         },
@@ -412,11 +412,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Resilience in Digital Environments
           id: '1.4.1',
-          posterSrc: '',
-          videoSrc: '/materials/digital-citizenship/part4/videos/1.4.1_Resilience_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/1.4.1_Resilience_video_thumbnail.png',
+          videoSrc: '/materials/digital-citizenship/part4/videos/1.4.1. Resilience.mp4',
           downloads: {
             video:
-            { href: '/materials/digital-citizenship/part4/videos/1.4.1_Resilience_video.mp4'
+            { href: '/materials/digital-citizenship/part4/videos/1.4.1. Resilience.mp4'
             },
             subtitles:
             { href: '/materials/digital-citizenship/part4/videos/subtitles/subtitles.zip'
@@ -425,23 +425,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/digital-citizenship/part4/videos/subtitles/en/1.4.1_Resilience_subtitles_EN.vtt'
+              src: '/materials/digital-citizenship/part4/videos/subtitles/en/1.4.1. Resilience_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part4/videos/subtitles/cs/1.4.1. Resilience_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part4/videos/subtitles/no/1.4.1. Resilience_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part4/videos/subtitles/lt/1.4.1. Resilience_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-citizenship/part4/videos/subtitles/de/1.4.1. Resilience_DE.vtt'
             },
           ],
         },
@@ -518,11 +518,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Who is Behind Cyber Attacks?
           id: '2.2.3',
-          posterSrc: '',
-          videoSrc: '/materials/attacker-perspective/part2/videos/2.2.3_WhoIsBehindCyberAttacks_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/2.2.3_WhoIsBehindCyberAttacks_video_thumbnail.png',
+          videoSrc: '/materials/attacker-perspective/part2/videos/2.2.3. Who is Behind Cyber Attacks.mp4',
           downloads: {
             video:
-            { href: '/materials/attacker-perspective/part2/videos/2.2.3_WhoIsBehindCyberAttacks_video.mp4'
+            { href: '/materials/attacker-perspective/part2/videos/2.2.3. Who is Behind Cyber Attacks.mp4'
             },
             subtitles:
             { href: '/materials/attacker-perspective/part2/videos/subtitles/subtitles.zip'
@@ -531,23 +531,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/en/2.2.3. Who is Behind Cyber Attacks_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/cs/2.2.3. Who is Behind Cyber Attacks_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/no/2.2.3. Who is Behind Cyber Attacks_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/lt/2.2.3. Who is Behind Cyber Attacks_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/de/2.2.3. Who is Behind Cyber Attacks_DE.vtt'
             },
           ],
         },
@@ -602,11 +602,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What is Digital Identity?
           id: '3.1.2',
-          posterSrc: '',
-          videoSrc: '/materials/authentication/part1/videos/3.1.2_WhatIsDigitalIdentity_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/3.1.2_WhatIsDigitalIdentity_video_thumbnail.png',
+          videoSrc: '/materials/authentication/part1/videos/3.1.2. What is Digital Identity.mp4',
           downloads: {
             video:
-            { href: '/materials/authentication/part1/videos/3.1.2_WhatIsDigitalIdentity_video.mp4'
+            { href: '/materials/authentication/part1/videos/3.1.2. What is Digital Identity.mp4'
             },
             subtitles:
             { href: '/materials/authentication/part1/videos/subtitles/subtitles.zip'
@@ -615,23 +615,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part1/videos/subtitles/en/3.1.2. What is Digital Identity_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part1/videos/subtitles/cs/3.1.2. What is Digital Identity_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part1/videos/subtitles/no/3.1.2. What is Digital Identity_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part1/videos/subtitles/lt/3.1.2. What is Digital Identity_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part1/videos/subtitles/de/3.1.2. What is Digital Identity_DE.vtt'
             },
           ],
         },
@@ -659,12 +659,12 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         ],
         featuredVideo: {
           // What is Authentication and Why is It Important?
-          id: '3.2.2',
-          posterSrc: '',
-          videoSrc: '/materials/authentication/part2/videos/3.2.2_WhatIsAuthentication_video.mp4',
+          id: '3.2.1',
+          posterSrc: '/images/learning-hub/video-posters/3.2.2_WhatIsAuthentication_video_thumbnail.png',
+          videoSrc: '/materials/authentication/part2/videos/3.2.1. Authentication.mp4',
           downloads: {
             video:
-            { href: '/materials/authentication/part2/videos/3.2.2_WhatIsAuthentication_video.mp4'
+            { href: '/materials/authentication/part2/videos/3.2.1. Authentication.mp4'
             },
             subtitles:
             { href: '/materials/authentication/part2/videos/subtitles/subtitles.zip'
@@ -673,23 +673,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part2/videos/subtitles/en/3.2.1. Authentication_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part2/videos/subtitles/cs/3.2.1. Authentication_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part2/videos/subtitles/no/3.2.1. Authentication_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part2/videos/subtitles/lt/3.2.1. Authentication_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part2/videos/subtitles/de/3.2.1. Authentication_DE.vtt'
             },
           ],
         },
@@ -726,11 +726,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Strong and Weak Passwords
           id: '3.3.1',
-          posterSrc: '',
-          videoSrc: '/materials/authentication/part3/videos/3.3.1_StrongAndWeakPasswords_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/3.3.1_StrongAndWeakPasswords_video_thumbnail.png',
+          videoSrc: '/materials/authentication/part3/videos/3.3.1. Strong and Weak Passwords.mp4',
           downloads: {
             video:
-            { href: '/materials/authentication/part3/videos/3.3.1_StrongAndWeakPasswords_video.mp4'
+            { href: '/materials/authentication/part3/videos/3.3.1. Strong and Weak Passwords.mp4'
             },
             subtitles:
             { href: '/materials/authentication/part3/videos/subtitles/subtitles.zip'
@@ -739,23 +739,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part3/videos/subtitles/en/3.3.1. Strong and Weak Passwords_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part3/videos/subtitles/cs/3.3.1. Strong and Weak Passwords_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part3/videos/subtitles/no/3.3.1. Strong and Weak Passwords_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part3/videos/subtitles/lt/3.3.1. Strong and Weak Passwords_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part3/videos/subtitles/de/3.3.1. Strong and Weak Passwords_DE.vtt'
             },
           ],
         },
@@ -768,10 +768,6 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/authentication/part4/part4.zip'
         },
         materials: [
-          // Image: Two Different Types of Authentication Used Together
-          { id: '3.4.1',
-            href: '/materials/placeholder.txt'
-          },
           // Schema: Set of Money Coins
           { id: '3.4.2',
             href: '/materials/placeholder.txt'
@@ -807,12 +803,12 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         ],
         featuredVideo: {
           // What Is a Password Manager?
-          id: '3.4.5',
-          posterSrc: '',
-          videoSrc: '/materials/authentication/part4/videos/3.4.5_WhatIsPasswordManager_video.mp4',
+          id: '3.4.1',
+          posterSrc: '/images/learning-hub/video-posters/3.4.1_WhatIsPasswordManager_video_thumbnail.png',
+          videoSrc: '/materials/authentication/part4/videos/3.4.1. Password Manager.mp4',
           downloads: {
             video:
-            { href: '/materials/authentication/part4/videos/3.4.5_WhatIsPasswordManager_video.mp4'
+            { href: '/materials/authentication/part4/videos/3.4.1. Password Manager.mp4'
             },
             subtitles:
             { href: '/materials/authentication/part4/videos/subtitles/subtitles.zip'
@@ -821,23 +817,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part4/videos/subtitles/en/3.4.1. Password Manager_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part4/videos/subtitles/cs/3.4.1. Password Manager_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part4/videos/subtitles/no/3.4.1. Password Manager_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part4/videos/subtitles/lt/3.4.1. Password Manager_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part4/videos/subtitles/de/3.4.1. Password Manager_DE.vtt'
             },
           ],
         },
@@ -866,11 +862,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Protecting Your Digital Identity
           id: '3.5.2',
-          posterSrc: '',
-          videoSrc: '/materials/authentication/part5/videos/3.5.2_ProtectingYourDigitalIdentity_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/3.5.1_ProtectingYourDigitalIdentity_video_thumbnail.png',
+          videoSrc: '/materials/authentication/part5/videos/3.5.1. Protecting Your Digital Identity.mp4',
           downloads: {
             video:
-            { href: '/materials/authentication/part5/videos/3.5.2_ProtectingYourDigitalIdentity_video.mp4'
+            { href: '/materials/authentication/part5/videos/3.5.1. Protecting Your Digital Identity.mp4'
             },
             subtitles:
             { href: '/materials/authentication/part5/videos/subtitles/subtitles.zip'
@@ -879,23 +875,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part5/videos/subtitles/en/3.5.1. Protecting Your Digital Identity_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part5/videos/subtitles/cs/3.5.1. Protecting Your Digital Identity_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part5/videos/subtitles/no/3.5.1. Protecting Your Digital Identity_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part5/videos/subtitles/lt/3.5.1. Protecting Your Digital Identity_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/authentication/part5/videos/subtitles/de/3.5.1. Protecting Your Digital Identity_DE.vtt'
             },
           ],
         },
@@ -923,12 +919,12 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         ],
         featuredVideo: {
           // What Is Private Data?
-          id: '4.1.2',
-          posterSrc: '',
-          videoSrc: '/materials/data-privacy/part1/videos/4.1.2_WhatIsPrivateData_video.mp4',
+          id: '4.1.1',
+          posterSrc: '/images/learning-hub/video-posters/4.1.1_WhatIsPrivateData_video_thumbnail.png',
+          videoSrc: '/materials/data-privacy/part1/videos/4.1.1. What is Private Data.mp4',
           downloads: {
             video:
-            { href: '/materials/data-privacy/part1/videos/4.1.2_WhatIsPrivateData_video.mp4'
+            { href: '/materials/data-privacy/part1/videos/4.1.1. What is Private Data.mp4'
             },
             subtitles:
             { href: '/materials/data-privacy/part1/videos/subtitles/subtitles.zip'
@@ -937,23 +933,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part1/videos/subtitles/en/4.1.1. What is Private Data_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part1/videos/subtitles/cs/4.1.1. What is Private Data_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part1/videos/subtitles/no/4.1.1. What is Private Data_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part1/videos/subtitles/lt/4.1.1. What is Private Data_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part1/videos/subtitles/de/4.1.1. What is Private Data_DE.vtt'
             },
           ],
         },
@@ -1000,11 +996,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What Is a Digital Footprint?
           id: '4.3.1',
-          posterSrc: '',
-          videoSrc: '/materials/data-privacy/part3/videos/4.3.1_WhatIsDigitalFootprint_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/4.3.1_WhatIsDigitalFootprint_video_thumbnail.png',
+          videoSrc: '/materials/data-privacy/part3/videos/4.3.1. What is a Digital Footprint.mp4',
           downloads: {
             video:
-            { href: '/materials/data-privacy/part3/videos/4.3.1_WhatIsDigitalFootprint_video.mp4'
+            { href: '/materials/data-privacy/part3/videos/4.3.1. What is a Digital Footprint.mp4'
             },
             subtitles:
             { href: '/materials/data-privacy/part3/videos/subtitles/subtitles.zip'
@@ -1013,23 +1009,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part3/videos/subtitles/en/4.3.1. What is a Digital Footprint_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part3/videos/subtitles/cs/4.3.1. What is a Digital Footprint_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part3/videos/subtitles/no/4.3.1. What is a Digital Footprint_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part3/videos/subtitles/lt/4.3.1. What is a Digital Footprint_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part3/videos/subtitles/de/4.3.1. What is a Digital Footprint_DE.vtt'
             },
           ],
         },
@@ -1043,22 +1039,22 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         },
         materials: [
           // Checklist: Digital Footprint Cleanup Checklist
-          { id: '4.4.1',
+          { id: '4.4.2',
             href: '/materials/placeholder.txt'
           },
           // Worksheet: Privacy Settings Guide
-          { id: '4.4.2',
+          { id: '4.4.3',
             href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
           // Protecting Your Personal Data Online
-          id: '4.4.4',
-          posterSrc: '',
-          videoSrc: '/materials/data-privacy/part4/videos/4.4.4_ProtectingYourPersonalDataOnline_video.mp4',
+          id: '4.4.1',
+          posterSrc: '/images/learning-hub/video-posters/4.4.1_ProtectingYourPersonalDataOnline_video_thumbnail.png',
+          videoSrc: '/materials/data-privacy/part4/videos/4.4.1. Protecting Your Personal Data.mp4',
           downloads: {
             video:
-            { href: '/materials/data-privacy/part4/videos/4.4.4_ProtectingYourPersonalDataOnline_video.mp4'
+            { href: '/materials/data-privacy/part4/videos/4.4.1. Protecting Your Personal Data.mp4'
             },
             subtitles:
             { href: '/materials/data-privacy/part4/videos/subtitles/subtitles.zip'
@@ -1067,23 +1063,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part4/videos/subtitles/en/4.4.1. Protecting Your Personal Data_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part4/videos/subtitles/cs/4.4.1. Protecting Your Personal Data_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part4/videos/subtitles/no/4.4.1. Protecting Your Personal Data_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part4/videos/subtitles/lt/4.4.1. Protecting Your Personal Data_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/data-privacy/part4/videos/subtitles/de/4.4.1. Protecting Your Personal Data_DE.vtt'
             },
           ],
         },
@@ -1119,12 +1115,12 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         ],
         featuredVideo: {
           // What Is Social Engineering?
-          id: '5.1.2',
-          posterSrc: '',
-          videoSrc: '/materials/social-engineering/part1/videos/5.1.1_WhatIsSocialEngineering_video.mp4',
+          id: '5.1.1',
+          posterSrc: '/images/learning-hub/video-posters/5.1.1_WhatIsSocialEngineering_video_thumbnail.png',
+          videoSrc: '/materials/social-engineering/part1/videos/5.1.1. What is Social Engineering.mp4',
           downloads: {
             video:
-            { href: '/materials/social-engineering/part1/videos/5.1.1_WhatIsSocialEngineering_video.mp4'
+            { href: '/materials/social-engineering/part1/videos/5.1.1. What is Social Engineering.mp4'
             },
             subtitles:
             { href: '/materials/social-engineering/part1/videos/subtitles/subtitles.zip'
@@ -1133,23 +1129,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part1/videos/subtitles/en/5.1.1. What is Social Engineering_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part1/videos/subtitles/cs/5.1.1. What is Social Engineering_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part1/videos/subtitles/no/5.1.1. What is Social Engineering_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part1/videos/subtitles/lt/5.1.1. What is Social Engineering_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part1/videos/subtitles/de/5.1.1. What is Social Engineering_DE.vtt'
             },
           ],
         },
@@ -1203,12 +1199,12 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         ],
         featuredVideo: {
           // Types of Social Engineering
-          id: '5.3.3',
-          posterSrc: '',
-          videoSrc: '/materials/social-engineering/part3/videos/5.3.1_TypesOfSocialEngineering_video.mp4',
+          id: '5.3.1',
+          posterSrc: '/images/learning-hub/video-posters/5.3.1_TypesOfSocialEngineering_video_thumbnail.png',
+          videoSrc: '/materials/social-engineering/part3/videos/5.3.1. Types of Social Engineering.mp4',
           downloads: {
             video:
-            { href: '/materials/social-engineering/part3/videos/5.3.1_TypesOfSocialEngineering_video.mp4'
+            { href: '/materials/social-engineering/part3/videos/5.3.1. Types of Social Engineering.mp4'
             },
             subtitles:
             { href: '/materials/social-engineering/part3/videos/subtitles/subtitles.zip'
@@ -1217,23 +1213,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part3/videos/subtitles/en/5.3.1. Types of Social Engineering_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part3/videos/subtitles/cs/5.3.1. Types of Social Engineering_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part3/videos/subtitles/no/5.3.1. Types of Social Engineering_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part3/videos/subtitles/lt/5.3.1. Types of Social Engineering_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/social-engineering/part3/videos/subtitles/de/5.3.1. Types of Social Engineering_DE.vtt'
             },
           ],
         },
@@ -1292,11 +1288,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What is Malware?
           id: '6.1.2',
-          posterSrc: '',
-          videoSrc: '/materials/malware/part1/videos/6.1.2_WhatIsMalware_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/6.1.2_WhatIsMalware_video_thumbnail.png',
+          videoSrc: '/materials/malware/part1/videos/6.1.2. What is Malware.mp4',
           downloads: {
             video:
-            { href: '/materials/malware/part1/videos/6.1.2_WhatIsMalware_video.mp4'
+            { href: '/materials/malware/part1/videos/6.1.2. What is Malware.mp4'
             },
             subtitles:
             { href: '/materials/malware/part1/videos/subtitles/subtitles.zip'
@@ -1305,23 +1301,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part1/videos/subtitles/en/6.1.2. What is Malware_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part1/videos/subtitles/cs/6.1.2. What is Malware_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part1/videos/subtitles/no/6.1.2. What is Malware_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part1/videos/subtitles/lt/6.1.2. What is Malware_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part1/videos/subtitles/de/6.1.2. What is Malware_DE.vtt'
             },
           ],
         },
@@ -1350,11 +1346,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Introducing Malware Types
           id: '6.2.1',
-          posterSrc: '',
-          videoSrc: '/materials/malware/part2/videos/6.2.1_IntroducingMalwareTypes_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/6.2.1_IntroducingMalwareTypes_video_thumbnail.png',
+          videoSrc: '/materials/malware/part2/videos/6.2.1. Malware Types.mp4',
           downloads: {
             video:
-            { href: '/materials/malware/part2/videos/6.2.1_IntroducingMalwareTypes_video.mp4'
+            { href: '/materials/malware/part2/videos/6.2.1. Malware Types.mp4'
             },
             subtitles:
             { href: '/materials/malware/part2/videos/subtitles/subtitles.zip'
@@ -1363,23 +1359,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part2/videos/subtitles/en/6.2.1. Malware Types_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part2/videos/subtitles/cs/6.2.1. Malware Types_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part2/videos/subtitles/no/6.2.1. Malware Types_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part2/videos/subtitles/lt/6.2.1. Malware Types_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/malware/part2/videos/subtitles/de/6.2.1. Malware Types_DE.vtt'
             },
           ],
         },
@@ -1452,11 +1448,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What is Misinformation?
           id: '7.1.1',
-          posterSrc: '',
-          videoSrc: '/materials/digital-abuse/part1/videos/7.1.1_WhatIsMisinformation_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/7.1.1_WhatIsMisinformation_video_thumbnail.png',
+          videoSrc: '/materials/digital-abuse/part1/videos/7.1.1. Misinformation.mp4',
           downloads: {
             video:
-            { href: '/materials/digital-abuse/part1/videos/7.1.1_WhatIsMisinformation_video.mp4'
+            { href: '/materials/digital-abuse/part1/videos/7.1.1. Misinformation.mp4'
             },
             subtitles:
             { href: '/materials/digital-abuse/part1/videos/subtitles/subtitles.zip'
@@ -1465,23 +1461,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part1/videos/subtitles/en/7.1.1. Misinformation_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part1/videos/subtitles/cs/7.1.1. Misinformation_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part1/videos/subtitles/no/7.1.1. Misinformation_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part1/videos/subtitles/lt/7.1.1. Misinformation_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part1/videos/subtitles/de/7.1.1. Misinformation_DE.vtt'
             },
           ],
         },
@@ -1497,11 +1493,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // What is Disinformation?
           id: '7.2.1',
-          posterSrc: '',
-          videoSrc: '/materials/digital-abuse/part2/videos/7.2.2_WhatIsDisinformation_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/7.2.1_WhatIsDisinformation_video_thumbnail.png',
+          videoSrc: '/materials/digital-abuse/part2/videos/7.2.1. Disinformation.mp4',
           downloads: {
             video:
-            { href: '/materials/digital-abuse/part2/videos/7.2.2_WhatIsDisinformation_video.mp4'
+            { href: '/materials/digital-abuse/part2/videos/7.2.1. Disinformation.mp4'
             },
             subtitles:
             { href: '/materials/digital-abuse/part2/videos/subtitles/subtitles.zip'
@@ -1510,23 +1506,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part2/videos/subtitles/en/7.2.1. Disinformation_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part2/videos/subtitles/cs/7.2.1. Disinformation_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part2/videos/subtitles/no/7.2.1. Disinformation_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part2/videos/subtitles/lt/7.2.1. Disinformation_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part2/videos/subtitles/de/7.2.1. Disinformation_DE.vtt'
             },
           ],
         },
@@ -1540,18 +1536,18 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         },
         materials: [
           // Game: Act it Out!
-          { id: '7.3.1',
+          { id: '7.3.2',
             href: '/materials/placeholder.txt'
           },
         ],
         featuredVideo: {
           // What is Cyber Bullying?
-          id: '7.3.2',
-          posterSrc: '',
-          videoSrc: '/materials/digital-abuse/part3/videos/7.3.2_WhatIsCyberbullying_video.mp4',
+          id: '7.3.1',
+          posterSrc: '/images/learning-hub/video-posters/7.3.1_WhatIsCyberbullying_video_thumbnail.png',
+          videoSrc: '/materials/digital-abuse/part3/videos/7.3.1. Cyber Bullying.mp4',
           downloads: {
             video:
-            { href: '/materials/digital-abuse/part3/videos/7.3.2_WhatIsCyberbullying_video.mp4'
+            { href: '/materials/digital-abuse/part3/videos/7.3.1. Cyber Bullying.mp4'
             },
             subtitles:
             { href: '/materials/digital-abuse/part3/videos/subtitles/subtitles.zip'
@@ -1560,23 +1556,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part3/videos/subtitles/en/7.3.1. Cyber Bullying_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part3/videos/subtitles/cs/7.3.1. Cyber Bullying_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part3/videos/subtitles/no/7.3.1. Cyber Bullying_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part3/videos/subtitles/lt/7.3.1. Cyber Bullying_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part3/videos/subtitles/de/7.3.1. Cyber Bullying_DE.vtt'
             },
           ],
         },
@@ -1611,11 +1607,11 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Social Media Influencers
           id: '7.5.1',
-          posterSrc: '',
-          videoSrc: '/materials/digital-abuse/part5/videos/7.5.1_SocialMediaInfluencers_video.mp4',
+          posterSrc: '/images/learning-hub/video-posters/7.5.1_SocialMediaInfluencers_video_thumbnail.png',
+          videoSrc: '/materials/digital-abuse/part5/videos/7.5.1. Influencers.mp4',
           downloads: {
             video:
-            { href: '/materials/digital-abuse/part5/videos/7.5.1_SocialMediaInfluencers_video.mp4'
+            { href: '/materials/digital-abuse/part5/videos/7.5.1. Influencers.mp4'
             },
             subtitles:
             { href: '/materials/digital-abuse/part5/videos/subtitles/subtitles.zip'
@@ -1624,23 +1620,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part5/videos/subtitles/en/7.5.1. Influencers_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part5/videos/subtitles/cs/7.5.1. Influencers_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part5/videos/subtitles/no/7.5.1. Influencers_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part5/videos/subtitles/lt/7.5.1. Influencers_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/placeholder.vtt'
+              src: '/materials/digital-abuse/part5/videos/subtitles/de/7.5.1. Influencers_DE.vtt'
             },
           ],
         },

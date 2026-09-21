@@ -1,0 +1,337 @@
+WEBVTT
+
+00:09.567 --> 00:10.367
+Hi there.
+
+00:10.367 --> 00:12.655
+Welcome to this video
+where we are going to learn
+
+00:12.655 --> 00:16.015
+about digital systems
+and the digital environment.
+
+00:16.415 --> 00:20.367
+The goal of the video is to help
+you understand what a digital environment is,
+
+00:20.367 --> 00:23.487
+and what the building blocks
+of digital systems are.
+
+00:24.207 --> 00:28.767
+In the video, firstly, we will
+look at what we mean by digital devices.
+
+00:29.055 --> 00:33.215
+Following this, we will explore
+what we mean by a digital environment.
+
+00:33.567 --> 00:36.447
+Finally, we will take a look
+at what the building blocks
+
+00:36.447 --> 00:39.455
+of digital systems are.
+
+00:43.503 --> 00:44.911
+People in today's world
+
+00:44.911 --> 00:47.903
+spend a lot of time using digital devices.
+
+00:48.351 --> 00:51.711
+Computers, smartphones
+and tablets are examples
+
+00:51.711 --> 00:55.743
+of digital devices that make up
+the digital environment around us.
+
+00:56.143 --> 00:59.231
+Digital devices
+help us with work and school
+
+00:59.231 --> 01:02.223
+as well as with family
+and leisure activities.
+
+01:02.271 --> 01:05.311
+People work online with their
+peers on the same project.
+
+01:05.311 --> 01:09.311
+We can go online to pay bills
+or apartment rent, and we can watch TV
+
+01:09.311 --> 01:12.911
+shows and buy tickets
+to a sports event on our digital devices.
+
+01:13.343 --> 01:16.191
+People also use
+various application programs,
+
+01:16.191 --> 01:19.423
+commonly called apps,
+to study and communicate.
+
+01:19.743 --> 01:22.943
+We send messages and photos
+using messaging apps.
+
+01:23.311 --> 01:27.951
+People can play games on their devices
+alone or with friends who are far away.
+
+01:28.383 --> 01:32.975
+In short, most of us cannot
+imagine our lives without digital devices.
+
+01:36.735 --> 01:37.935
+Not all of the digital devices
+
+01:37.935 --> 01:41.263
+we use are a part
+of the digital environment.
+
+01:41.695 --> 01:44.287
+A digital environment is any environment
+
+01:44.287 --> 01:47.295
+where your digital device
+is connected to the internet.
+
+01:48.591 --> 01:51.231
+Typically, a food mixer
+and a vacuum cleaner
+
+01:51.231 --> 01:54.223
+are non-digital electric home appliances.
+
+01:54.303 --> 01:58.223
+Some digital home appliances
+have mini computers inside them.
+
+01:58.511 --> 02:03.311
+For example, a washing machine has a mini
+computer to manage washing programs.
+
+02:03.711 --> 02:07.983
+Such devices can sometimes be updated
+using special tools that connect
+
+02:07.983 --> 02:12.671
+to the appliance using another connection
+type, for example Bluetooth.
+
+02:13.311 --> 02:16.703
+Not all of these appliances
+are connected to the internet.
+
+02:17.071 --> 02:20.031
+However, a refrigerator
+with a wireless internet connection
+
+02:20.031 --> 02:23.183
+is part of the digital environment.
+
+02:23.951 --> 02:27.903
+Owners could use mobile
+or web applications to check humidity,
+
+02:27.983 --> 02:30.991
+temperature, or appliance status data.
+
+02:31.583 --> 02:35.551
+Digital devices also include
+computers and smartphones.
+
+02:36.031 --> 02:38.591
+All digital devices and internet connected
+
+02:38.591 --> 02:41.950
+appliances make up
+what we call a personal network.
+
+02:43.470 --> 02:46.302
+What devices are part
+of your personal network?
+
+02:46.302 --> 02:49.310
+How do these digital devices work?
+
+02:52.462 --> 02:53.422
+Digital systems
+
+02:53.422 --> 02:57.422
+help our digital devices to work,
+and these systems are built with computer
+
+02:57.422 --> 03:00.830
+programs and applications
+that are called software.
+
+03:01.422 --> 03:06.382
+Software is a broad term that includes
+games, online educational systems,
+
+03:06.430 --> 03:11.102
+text editing tools, and booking systems
+to buy tickets or rent apartments.
+
+03:11.342 --> 03:14.350
+Software can be standalone or remote.
+
+03:14.654 --> 03:18.286
+Standalone software is installed
+on the user's personal device.
+
+03:18.526 --> 03:22.606
+For example, personal digital devices
+have operating system software
+
+03:22.606 --> 03:26.366
+which enables all of the devices,
+functions, and controls
+
+03:26.366 --> 03:30.798
+the installation of applications
+such as games or a work related program.
+
+03:31.246 --> 03:32.686
+The installed applications
+
+03:32.686 --> 03:36.206
+use the computing resources
+and settings of the personal device.
+
+03:36.686 --> 03:40.766
+You may have noticed that older devices
+have fewer computing resources.
+
+03:41.166 --> 03:44.286
+For example,
+maybe you have an old computer, phone,
+
+03:44.286 --> 03:49.278
+or gaming system that cannot run new games
+that require more computing resources.
+
+03:53.358 --> 03:54.638
+In comparison,
+
+03:54.638 --> 03:58.430
+other computer programs and applications
+are connected to the internet,
+
+03:58.446 --> 04:02.318
+and these online systems
+run on remote computers.
+
+04:02.670 --> 04:06.350
+These remote computers
+are located somewhere else,
+
+04:06.350 --> 04:08.158
+often far away from the user.
+
+04:08.158 --> 04:11.358
+Access to online systems
+happens thanks to software
+
+04:11.358 --> 04:14.366
+installed locally on the personal device.
+
+04:14.366 --> 04:18.766
+In most cases, people need browsers
+to access online systems.
+
+04:18.926 --> 04:22.046
+We can think of local
+software programs as opening
+
+04:22.046 --> 04:25.054
+a portal to powerful online resources.
+
+04:25.214 --> 04:28.206
+Standalone applications can work offline.
+
+04:28.366 --> 04:32.334
+For example, some games
+allow users to play without the internet.
+
+04:32.606 --> 04:36.094
+However, they can be connected
+to the internet to send data
+
+04:36.094 --> 04:40.094
+or retrieve data
+from to remote computers upon request.
+
+04:40.654 --> 04:41.886
+For example,
+
+04:41.886 --> 04:45.774
+the results are sent to a remote computer
+when the internet is available.
+
+04:46.126 --> 04:48.046
+That way, the remote computer
+
+04:48.046 --> 04:51.326
+can make a game leaderboard
+after getting the results.
+
+04:51.806 --> 04:56.686
+However, many games are only functional
+with the internet, such as multiplayer
+
+04:56.734 --> 05:00.206
+games that allow several users
+to play together in real time.
+
+05:00.766 --> 05:04.446
+Thus, a locally installed game
+application sends data
+
+05:04.446 --> 05:08.734
+about the user's actions
+to a remote computer without any delay.
+
+05:10.078 --> 05:13.486
+Which of your digital
+devices connect to the internet?
+
+05:13.486 --> 05:17.166
+What applications on these devices
+can be used without the internet?
+
+05:21.597 --> 05:22.909
+So in this short video,
+
+05:22.909 --> 05:25.917
+we learned that we are
+part of the digital environment
+
+05:25.917 --> 05:29.229
+when we are using devices
+that are connected to the internet.
+
+05:29.677 --> 05:30.749
+We have also learned
+
+05:30.749 --> 05:35.117
+That the digital systems such as
+smartphones, gaming consoles and computers
+
+05:35.117 --> 05:38.429
+work because of software
+that is either standalone or remote.
+
+05:40.669 --> 05:42.237
+Thank you for watching.
+
+05:42.237 --> 05:45.181
+Do not forget to watch
+other videos in our series.

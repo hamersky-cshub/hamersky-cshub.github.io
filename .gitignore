@@ -35,3 +35,7 @@ pnpm-debug.log*
 
 # Other
 README_backup.md
+# New 4K video masters (>100 MB each) — exceed GitHub's hard file-size limit.
+# The previously committed videos remain tracked and continue to serve the site.
+# Remove this rule once the videos are re-encoded or moved to external hosting.
+public/materials/**/videos/*.mp4

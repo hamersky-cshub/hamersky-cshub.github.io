@@ -1,0 +1,348 @@
+WEBVTT
+
+00:00:09.967 --> 00:00:10.831
+Ahoj!
+
+00:00:10.831 --> 00:00:13.711
+Vítejte u videa,
+ve kterém se dozvíte,
+
+00:00:13.711 --> 00:00:16.703
+jak se na kybernetickou bezpečnost
+dívá útočník.
+
+00:00:16.943 --> 00:00:20.399
+Cílem videa je ukázat,
+jaká rizika představují
+
+00:00:20.399 --> 00:00:24.479
+lidé, kteří nám nepřejí. V kyberprostoru
+se jim říká útočníci.
+
+00:00:25.007 --> 00:00:28.447
+Nejdřív si řekneme,
+kdo je útočník.
+
+00:00:28.927 --> 00:00:32.079
+Potom si ukážeme
+nejběžnější typy útočníků
+
+00:00:32.127 --> 00:00:35.199
+a podíváme se, proč dělají
+škodlivé věci –
+
+00:00:35.247 --> 00:00:38.799
+tedy věci, kterými chtějí
+v digitálním prostředí schválně ublížit.
+
+00:00:43.951 --> 00:00:45.359
+Ve slovníku stojí,
+
+00:00:45.359 --> 00:00:48.479
+že protivník je ten,
+kdo se staví proti.
+
+00:00:48.559 --> 00:00:51.279
+Je to nepřítel nebo soupeř.
+
+00:00:51.279 --> 00:00:54.959
+Přesnější slovo útočník označuje
+někoho, kdo dělá
+
+00:00:54.959 --> 00:00:58.511
+škodlivé věci v oblasti
+kybernetické bezpečnosti.
+
+00:00:58.639 --> 00:01:03.231
+Útočník je člověk nebo skupina,
+kvůli které mají běžní uživatelé
+
+00:01:03.231 --> 00:01:07.039
+a firmy problém dělat
+svou práci v digitálním prostoru.
+
+00:01:07.759 --> 00:01:11.279
+Útočníkem může být jeden člověk,
+parta nebo celá organizace,
+
+00:01:11.311 --> 00:01:14.751
+která škodí
+digitálním systémům.
+
+00:01:15.519 --> 00:01:18.671
+Říkáme jim útočníci proto,
+
+00:01:18.671 --> 00:01:21.679
+že jednají útočně a aktivně.
+
+00:01:21.791 --> 00:01:25.391
+Odborníci na kybernetickou bezpečnost
+rozlišují různé typy útočníků
+
+00:01:25.471 --> 00:01:28.479
+a vědí, co je k tomu vede.
+
+00:01:28.511 --> 00:01:31.551
+Dnes se seznámíme
+s těmi nejběžnějšími,
+
+00:01:31.551 --> 00:01:34.831
+se kterými se můžete potkat
+nebo o nich slyšet.
+
+00:01:35.391 --> 00:01:40.879
+Insideři, hacktivisté, script kiddies,
+státem podporovaní útočníci, kyberzločinci.
+
+00:01:45.727 --> 00:01:47.855
+Začneme insidery.
+
+00:01:47.855 --> 00:01:49.567
+Insider je někdo, kdo ví,
+
+00:01:49.567 --> 00:01:53.087
+co se děje uvnitř nějaké skupiny,
+protože do ní sám patří.
+
+00:01:53.695 --> 00:01:55.935
+Všichni jsme insidery různých skupin.
+
+00:01:55.935 --> 00:01:58.335
+Většinou je to úplně běžné.
+
+00:01:58.335 --> 00:02:01.967
+V kybernetické bezpečnosti ale
+mluvíme o hrozbě zevnitř.
+
+00:02:02.015 --> 00:02:03.295
+To je insider,
+
+00:02:03.295 --> 00:02:07.135
+který něco ví a svoje znalosti
+použije tak,
+
+00:02:07.135 --> 00:02:11.247
+že to skupině nebo někomu
+konkrétnímu uškodí.
+
+00:02:11.935 --> 00:02:14.287
+Představte si třeba, že řeknete
+
+00:02:14.287 --> 00:02:17.295
+svoje heslo k herní platformě
+nejlepšímu kamarádovi.
+
+00:02:17.967 --> 00:02:20.815
+Ten chce udělat dojem
+na starší spolužáky
+
+00:02:20.815 --> 00:02:23.167
+a dá jim vaše heslo.
+
+00:02:23.167 --> 00:02:26.847
+Starší spolužáci se dostanou
+do vašeho účtu a ovládnou ho.
+
+00:02:27.407 --> 00:02:30.095
+Váš kamarád je insider
+a jeho jednání
+
+00:02:30.095 --> 00:02:33.087
+pro vás mělo
+nepříjemné následky.
+
+00:02:33.535 --> 00:02:37.007
+Proto bychom měli být opatrní,
+když sdílíme osobní údaje.
+
+00:02:41.438 --> 00:02:43.886
+Další typ útočníka jsou hacktivisté.
+
+00:02:43.886 --> 00:02:49.326
+Slovo hacktivista vzniklo ze dvou
+slov: hacker a aktivista.
+
+00:02:50.078 --> 00:02:54.718
+Hacker je člověk, který toho ví
+hodně o počítačích a systémech.
+
+00:02:55.246 --> 00:02:58.926
+Své znalosti a dovednosti používá,
+aby se dostal
+
+00:02:58.926 --> 00:03:02.846
+do systémů, ukradl data
+nebo systémy narušil.
+
+00:03:03.326 --> 00:03:05.086
+Je to takový kybernetický výtržník.
+
+00:03:05.086 --> 00:03:09.118
+Aktivista je člověk, který se zastává
+věci, ve kterou věří.
+
+00:03:09.838 --> 00:03:13.198
+Hacktivista používá své hackerské
+dovednosti, aby předal nějaký vzkaz.
+
+00:03:13.278 --> 00:03:16.958
+Většinou jde o něco, co mu
+ve světě přijde nespravedlivé.
+
+00:03:17.646 --> 00:03:23.006
+Například hacktivista, který miluje
+přírodu, může narušit web firmy,
+
+00:03:23.006 --> 00:03:25.998
+která kácí stromy v lese
+a prodává dřevo.
+
+00:03:30.798 --> 00:03:33.790
+Dalším typem útočníka
+jsou script kiddies.
+
+00:03:34.270 --> 00:03:36.990
+Script kiddies mají nějaké
+dovednosti a znalosti,
+
+00:03:36.990 --> 00:03:40.510
+díky kterým se dokážou dostat
+do počítačových systémů nebo je narušit.
+
+00:03:41.150 --> 00:03:44.350
+Chybí jim ale znalosti a dovednosti
+
+00:03:44.398 --> 00:03:47.390
+na to, aby chápali,
+co jejich jednání způsobí.
+
+00:03:47.710 --> 00:03:50.510
+Script kiddies většinou rádi objevují
+
+00:03:50.510 --> 00:03:53.918
+nové programy a zkoušejí je –
+někdy taky proto, aby se předvedli.
+
+00:03:54.798 --> 00:03:59.358
+Například váš kamarád může ve škole
+spustit nějaký zvláštní program
+
+00:03:59.390 --> 00:04:02.990
+a klidně tím naruší
+celou školní počítačovou síť.
+
+00:04:03.678 --> 00:04:06.558
+Pokud netuší,
+jak je všechno vytvořené
+
+00:04:06.558 --> 00:04:07.598
+a proč se program
+
+00:04:07.598 --> 00:04:11.918
+chová určitým způsobem,
+máme tu script kiddie.
+
+00:04:16.670 --> 00:04:20.702
+Kyberzločinci jsou útočníci,
+kteří mají větší cíle
+
+00:04:20.702 --> 00:04:24.670
+než jen narušit školní síť
+nebo veřejné služby.
+
+00:04:25.342 --> 00:04:27.662
+Kyberzločinci jsou hodně ctižádostiví
+
+00:04:27.662 --> 00:04:30.670
+a jde jim o peníze nebo o slávu.
+
+00:04:31.182 --> 00:04:34.430
+Máte někde poblíž supermarket,
+kam občas chodíte?
+
+00:04:35.102 --> 00:04:38.462
+Kyberzločinci si můžou vybrat
+platební systémy,
+
+00:04:38.462 --> 00:04:42.062
+pokladny nebo speciální
+logistické systémy.
+
+00:04:42.830 --> 00:04:45.822
+Můžou se pokusit ukrást
+údaje o platebních kartách,
+
+00:04:45.822 --> 00:04:48.830
+které se v těchto systémech používají.
+
+00:04:52.206 --> 00:04:56.094
+Ve zprávách jste možná slyšeli
+o státem podporovaných útočnících.
+
+00:04:56.286 --> 00:04:59.454
+Není žádné tajemství, že mezi
+více než 200 zeměmi světa
+
+00:04:59.454 --> 00:05:03.134
+jsou spojenci i soupeři.
+
+00:05:04.126 --> 00:05:06.606
+I mezi spojenci se soutěží
+
+00:05:06.606 --> 00:05:09.614
+v novinkách a lidé se neshodnou
+na tom, co je důležité.
+
+00:05:10.014 --> 00:05:12.526
+Některé státy proto podporují
+hackerské skupiny,
+
+00:05:12.526 --> 00:05:15.726
+aby narušovaly různé akce
+nebo špehovaly.
+
+00:05:15.934 --> 00:05:20.733
+Chtějí získat data nebo informace,
+které jsou tajné.
+
+00:05:25.405 --> 00:05:27.805
+Teď znáte několik typů útočníků
+
+00:05:27.805 --> 00:05:31.005
+a víte, proč útočí.
+
+00:05:31.565 --> 00:05:34.045
+Zvládli byste jednou větou popsat
+
+00:05:34.045 --> 00:05:37.037
+každého z útočníků,
+kteří jsou na snímku?
+
+00:05:37.341 --> 00:05:40.333
+Dejme si chvilku na přemýšlení.
+
+00:05:43.869 --> 00:05:47.773
+Stačil vám čas na to, abyste našli
+slova a rozlišili všechny typy?
+
+00:05:48.413 --> 00:05:53.293
+Ještě jedna věc. Když vám zamrzne
+počítač nebo přestane fungovat mobil,
+
+00:05:53.293 --> 00:05:56.285
+neznamená to,
+že vás někdo napadl.
+
+00:05:56.493 --> 00:05:59.325
+Abychom zjistili, kdo za tím stojí,
+
+00:05:59.325 --> 00:06:02.333
+je potřeba vyšetřování.
+
+00:06:02.461 --> 00:06:04.029
+Děkujeme za pozornost.
+
+00:06:04.029 --> 00:06:06.957
+Nezapomeňte se podívat
+i na další videa z naší série.
+

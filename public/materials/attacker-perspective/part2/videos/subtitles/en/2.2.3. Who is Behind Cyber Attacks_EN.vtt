@@ -1,0 +1,353 @@
+WEBVTT
+
+00:00:09.967 --> 00:00:10.831
+Hi there.
+
+00:00:10.831 --> 00:00:13.711
+Welcome to this video
+where we are going to learn about
+
+00:00:13.711 --> 00:00:16.703
+the attacker's 
+perspective in cybersecurity.
+
+00:00:16.943 --> 00:00:20.399
+The goal of the video is 
+to emphasize the existing risks posed
+
+00:00:20.399 --> 00:00:24.479
+by some unfriendly actors,
+called attackers in cyberspace.
+
+00:00:25.007 --> 00:00:28.447
+In the video, firstly,
+we will discuss what the attacker is.
+
+00:00:28.927 --> 00:00:32.079
+Then we will distinguish
+the common types of attackers
+
+00:00:32.127 --> 00:00:35.199
+and examine their motivations
+for engaging in malicious,
+
+00:00:35.247 --> 00:00:38.799
+deliberately harmful activity
+in the digital environment.
+
+00:00:43.951 --> 00:00:45.359
+According to the dictionary,
+
+00:00:45.359 --> 00:00:48.479
+the adversary is someone 
+who opposes or resists.
+
+00:00:48.559 --> 00:00:51.279
+It is an enemy or an opponent.
+
+00:00:51.279 --> 00:00:54.959
+A more specific term attacker 
+identifies someone who carries out
+
+00:00:54.959 --> 00:00:58.511
+harmful actions
+in the cybersecurity field.
+
+00:00:58.639 --> 00:01:03.231
+An attacker is an individual or entity
+that causes problems for regular users
+
+00:01:03.231 --> 00:01:07.039
+and companies to perform
+tasks and duties in the digital space.
+
+00:01:07.759 --> 00:01:11.279
+The attacker can be 
+a person, group, or organization
+
+00:01:11.311 --> 00:01:14.751
+that conducts malicious activities
+against digital resources.
+
+00:01:15.519 --> 00:01:18.671
+Typically, we refer to such 
+a person as an attacker
+
+00:01:18.671 --> 00:01:21.679
+due to their aggressive or active pose.
+
+00:01:21.791 --> 00:01:25.391
+Cybersecurity professionals
+distinguish various types of attackers
+
+00:01:25.471 --> 00:01:28.479
+and link them to specific motivations.
+
+00:01:28.511 --> 00:01:31.551
+Today, we will learn about
+some of the most common types
+
+00:01:31.551 --> 00:01:34.831
+you could meet or hear about
+when doing your daily activities.
+
+00:01:35.391 --> 00:01:40.879
+Insiders, hacktivists, script kiddies,
+nation state actors, and cyber criminals.
+
+00:01:45.727 --> 00:01:47.855
+Let us start with insiders.
+
+00:01:47.855 --> 00:01:49.567
+An insider is someone who knows
+
+00:01:49.567 --> 00:01:53.087
+information available within 
+a group due to being part of that group.
+
+00:01:53.695 --> 00:01:55.935
+We are all insiders of various groups.
+
+00:01:55.935 --> 00:01:58.335
+Typically, it is a regular thing.
+
+00:01:58.335 --> 00:02:01.967
+However, in cybersecurity,
+the concept of an insider threat
+
+00:02:02.015 --> 00:02:03.295
+refers to an insider
+
+00:02:03.295 --> 00:02:07.135
+who not only possesses knowledge,
+but also utilizes it in a manner
+
+00:02:07.135 --> 00:02:11.247
+that leads to negative consequences
+for the group or specific individuals.
+
+00:02:11.935 --> 00:02:14.287
+For example, let us assume that you share
+
+00:02:14.287 --> 00:02:17.295
+your password for the gaming 
+platform with your best friend.
+
+00:02:17.967 --> 00:02:20.815
+The friend wants to impress
+some older schoolchildren
+
+00:02:20.815 --> 00:02:23.167
+and gives them your password.
+
+00:02:23.167 --> 00:02:26.847
+These older children access 
+your account and take control of it.
+
+00:02:27.407 --> 00:02:30.095
+Your friend is an insider,
+but the actions led
+
+00:02:30.095 --> 00:02:33.087
+to some negative consequences
+from your perspective.
+
+00:02:33.535 --> 00:02:37.007
+That is why we should all 
+be careful when sharing personal data.
+
+00:02:41.438 --> 00:02:43.886
+Another type of attacker is hacktivists.
+
+00:02:43.886 --> 00:02:49.326
+The concept of a hacktivist is constructed
+from two words: hacker and activist.
+
+00:02:50.078 --> 00:02:54.718
+A hacker is a person who knows a lot
+about computers and computer systems.
+
+00:02:55.246 --> 00:02:58.926
+This person utilizes their 
+knowledge and skills to gain access
+
+00:02:58.926 --> 00:03:02.846
+to systems, to steal the data 
+or disturb those systems.
+
+00:03:03.326 --> 00:03:05.086
+It is a cyber hooligan.
+
+00:03:05.086 --> 00:03:09.118
+An activist is a person
+who stands up for a cause they believe in.
+
+00:03:09.838 --> 00:03:13.198
+A hacktivist uses
+their hacking skills to send a message,
+
+00:03:13.278 --> 00:03:16.958
+usually about something
+they perceive as unfair in the world.
+
+00:03:17.646 --> 00:03:23.006
+For example, a hacktivist who loves nature
+could disrupt the website of a company
+
+00:03:23.006 --> 00:03:25.998
+that cuts down trees 
+in the forest and sells timber.
+
+00:03:30.798 --> 00:03:33.790
+Script kiddies make another 
+type of adversary actor.
+
+00:03:34.270 --> 00:03:36.990
+Script kiddies possess 
+some skills and knowledge
+
+00:03:36.990 --> 00:03:40.510
+that enable them to break into 
+or disturb computer systems.
+
+00:03:41.150 --> 00:03:44.350
+However, they lack
+the necessary knowledge and skills
+
+00:03:44.398 --> 00:03:47.390
+to comprehend 
+the implications of their actions.
+
+00:03:47.710 --> 00:03:50.510
+Typically, script kiddies 
+are eager to discover
+
+00:03:50.510 --> 00:03:53.918
+software and run or test it,
+sometimes to show off.
+
+00:03:54.798 --> 00:03:59.358
+For example, your friend could use
+a specialized application to run at school
+
+00:03:59.390 --> 00:04:02.990
+and potentially disrupt
+the entire school's computer network.
+
+00:04:03.678 --> 00:04:06.558
+If your friend has no idea
+how everything is developed
+
+00:04:06.558 --> 00:04:07.598
+and why the software
+
+00:04:07.598 --> 00:04:11.918
+behaves in a certain way, 
+it means we have some script kiddies around.
+
+00:04:16.670 --> 00:04:20.702
+Cyber criminals are adversary actors
+or attackers with larger goals
+
+00:04:20.702 --> 00:04:24.670
+than just disrupting the school's
+computer network or public services.
+
+00:04:25.342 --> 00:04:27.662
+Cyber criminals are highly ambitious
+
+00:04:27.662 --> 00:04:30.670
+and seek financial or reputational gain.
+
+00:04:31.182 --> 00:04:34.430
+Do you have a supermarket around
+where you go from time to time?
+
+00:04:35.102 --> 00:04:38.462
+The targets of cyber criminals
+could target payment systems,
+
+00:04:38.462 --> 00:04:42.062
+cash registers and some 
+specialized logistics systems.
+
+00:04:42.830 --> 00:04:45.822
+Cyber criminals could attempt
+to steal data about the credit cards
+
+00:04:45.822 --> 00:04:48.830
+used in these systems.
+
+00:04:52.206 --> 00:04:56.094
+In the news, you might have heard 
+about state sponsored actors.
+
+00:04:56.286 --> 00:04:59.454
+It is not a secret that among 
+more than 200 countries globally,
+
+00:04:59.454 --> 00:05:03.134
+there are alliances and opposing parties.
+
+00:05:04.126 --> 00:05:06.606
+Among the alliances,
+there are competitions
+
+00:05:06.606 --> 00:05:09.614
+in innovations 
+and disagreements over values.
+
+00:05:10.014 --> 00:05:12.526
+Thus, state sponsor some hacker groups
+
+00:05:12.526 --> 00:05:15.726
+to sabotage events
+or to engage in espionage,
+
+00:05:15.934 --> 00:05:20.733
+aiming to get data or specific knowledge
+related to secret information.
+
+00:05:25.405 --> 00:05:27.805
+Now you know several types of adversaries
+
+00:05:27.805 --> 00:05:31.005
+and their motivation
+to perform adversarial actions.
+
+00:05:31.565 --> 00:05:34.045
+Could you think of 
+one sentence to describe each
+
+00:05:34.045 --> 00:05:37.037
+of the adversary actors
+listed in the slide?
+
+00:05:37.341 --> 00:05:40.333
+Let us take a moment to think.
+
+00:05:43.869 --> 00:05:47.773
+Was it enough time to find the 
+proper words in trying to distinguish all types?
+
+00:05:48.413 --> 00:05:53.293
+One more thing to mention. When your 
+computer freezes or your phone stops working.
+
+00:05:53.293 --> 00:05:56.285
+It does not mean
+that you have been attacked.
+
+00:05:56.493 --> 00:05:59.325
+To attribute the incident
+to a particular adversary
+
+00:05:59.325 --> 00:06:02.333
+an investigation is needed.
+
+00:06:02.461 --> 00:06:04.029
+Thank you for watching.
+
+00:06:04.029 --> 00:06:06.957
+Do not forget to watch
+other videos in our series.
