@@ -285,7 +285,7 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           // What Is a Digital Environment?
           id: '1.1.2',
           posterSrc: '/images/video-posters/1.1.2_DigitalEnvironment_video_thumbnail.png',
-          videoSrc: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4',
+          videoSrc: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4', 
           downloads: {
             video: 
             { href: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4'
@@ -519,10 +519,10 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           // Who is Behind Cyber Attacks?
           id: '2.2.3',
           posterSrc: '/images/learning-hub/video-posters/2.2.3_WhoIsBehindCyberAttacks_video_thumbnail.png',
-          videoSrc: '/materials/attacker-perspective/part2/videos/2.2.3. Who is Behind Cyber Attacks.mp4',
+          videoSrc: '/materials/attacker-perspective/part2/videos/2.2.3. Who Is Behind Cyber Attacks.mp4',
           downloads: {
             video:
-            { href: '/materials/attacker-perspective/part2/videos/2.2.3. Who is Behind Cyber Attacks.mp4'
+            { href: '/materials/attacker-perspective/part2/videos/2.2.3. Who Is Behind Cyber Attacks.mp4'
             },
             subtitles:
             { href: '/materials/attacker-perspective/part2/videos/subtitles/subtitles.zip'
@@ -531,23 +531,23 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/en/2.2.3. Who is Behind Cyber Attacks_EN.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/en/2.2.3. Who Is Behind Cyber Attacks_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/cs/2.2.3. Who is Behind Cyber Attacks_CS.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/cs/2.2.3. Who Is Behind Cyber Attacks_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/no/2.2.3. Who is Behind Cyber Attacks_NO.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/no/2.2.3. Who Is Behind Cyber Attacks_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/lt/2.2.3. Who is Behind Cyber Attacks_LT.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/lt/2.2.3. Who Is Behind Cyber Attacks_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/de/2.2.3. Who is Behind Cyber Attacks_DE.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/de/2.2.3. Who Is Behind Cyber Attacks_DE.vtt'
             },
           ],
         },
