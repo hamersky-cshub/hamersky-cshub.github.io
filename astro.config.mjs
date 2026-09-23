@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url'
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: 'https://hamersky-cshub.github.io/',
+  site: 'https://kidcyproject.github.io/',
   trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
