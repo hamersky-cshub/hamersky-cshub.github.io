@@ -22,36 +22,43 @@ export const contentSE = {
     {
       goal: 'Hjelpe elever til å forstå hva sosial manipulasjon er ved først å kjenne igjen hvordan mennesker kan bli påvirket eller manipulert i hverdagssituasjoner, og deretter koble denne forståelsen til digitale miljøer og angripernes atferd.',
       bundle: {
-        filename: 'Social Engineering Part 1 Package',
+        filename: 'Sosial manipulasjon - pakke - del 1',
       },
       included: {
         materials: [
           {
-            // ID: 5.1.1
-            kind: 'Bilde',
-            name: 'Lure mennesker vs. hacke systemer',
-            filename: 'Image - Tricking People vs Hacking Systems',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
             // ID: 5.1.2
             kind: 'Bilde',
-            name: 'Eksempler på meldinger med sosial manipulasjon',
-            filename: 'Image - Examples of Social Engineering Messages',
+            name: 'Hacke systemer vs. lure mennesker',
+            filename: 'Bilde - Hacke systemer vs. lure mennesker',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.1.3
-            kind: 'Situasjonsvurdering',
-            name: 'Hva vil en angriper ha?',
-            filename: 'Situation Assessment - What Does an Attacker Want',
+            kind: 'Bilde',
+            name: 'En angripers mål',
+            filename: 'Bilde - En angripers mål',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.1.4
+            kind: 'Scenariokort',
+            name: 'Hva vil en angriper ha?',
+            filename: 'Scenariokort - Hva vil en angriper ha',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 5.1.5
+            kind: 'Løsningskort',
+            name: 'Hva vil en angriper ha?',
+            filename: 'Løsningskort - Hva vil en angriper ha',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 5.1.6
             kind: 'Arbeidsark',
             name: 'Forstå sosial manipulasjon',
-            filename: 'Worksheet - Understanding Social Engineering',
+            filename: 'Arbeidsark - Forstå sosial manipulasjon',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -74,16 +81,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.1.1
         title: 'Hva er sosial manipulasjon?',
         supportText:
           'Bruk denne videoen til å introdusere sosial manipulasjon som en teknikk som utnytter menneskelig tillit fremfor tekniske systemer. Pause for å spørre elever om de kan huske en situasjon der noen prøvde å lure dem på nett.',
         downloads: {
           video: {
-            filename: 'What Is Social Engineering',
+            filename: 'Hva er sosial manipulasjon',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What Is Social Engineering - Subtitles',
+            filename: 'Hva er sosial manipulasjon - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -92,36 +100,29 @@ export const contentSE = {
     {
       goal: 'Hjelpe elever til å forstå hvorfor angripere bruker sosial manipulasjon ved å utforske de psykologiske og emosjonelle mekanismene som gjør mennesker sårbare, og øve på å tenke kritisk når de føler press.',
       bundle: {
-        filename: 'Social Engineering Part 2 Package',
+        filename: 'Sosial manipulasjon - pakke - del 2',
       },
       included: {
         materials: [
           {
             // ID: 5.2.1
-            kind: 'Bilde',
-            name: 'Menneskelig beslutningstaking vs. datamaskinbeslutningstaking',
-            filename: 'Image - Human Decision-making vs Computer Decision-making',
+            kind: 'Scenariokort',
+            name: 'Angripernes taktikker',
+            filename: 'Scenariokort - Angripernes taktikker',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.2.2
             kind: 'Scenariokort',
             name: 'Eksempler på emosjonell manipulasjon',
-            filename: 'Scenario Cards - Emotional Manipulation Examples',
+            filename: 'Scenariokort - Eksempler på emosjonell manipulasjon',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.2.3
-            kind: 'Spillkort',
-            name: 'Angripernes taktikker',
-            filename: 'Game Cards - Attacker Tactics',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
-            // ID: 5.2.4
             kind: 'Arbeidsark',
             name: 'Hvorfor sosial manipulasjon virker',
-            filename: 'Worksheet - Why Social Engineering Works',
+            filename: 'Arbeidsark - Hvorfor sosial manipulasjon virker',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -147,29 +148,15 @@ export const contentSE = {
     {
       goal: 'Hjelpe elever til å gjenkjenne forsøk på sosial manipulasjon ved å identifisere vanlige advarselstegn og forstå de ulike kontekstene der disse angrepene kan forekomme, både online og offline.',
       bundle: {
-        filename: 'Social Engineering Part 3 Package',
+        filename: 'Sosial manipulasjon - pakke - del 3',
       },
       included: {
         materials: [
           {
-            // ID: 5.3.1
-            kind: 'Bilde',
-            name: 'Eksempler på meldinger med sosial manipulasjon',
-            filename: 'Image - Examples of Social Engineering Messages',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
             // ID: 5.3.2
-            kind: 'Scenariokort',
-            name: 'Situasjoner med sosial manipulasjon',
-            filename: 'Scenario Cards - Social Engineering Situations',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
-            // ID: 5.3.3
             kind: 'Arbeidsark',
-            name: 'Finn sosial manipulasjon',
-            filename: 'Worksheet - Spot the Social Engineering',
+            name: 'Tegn prikk til prikk',
+            filename: 'Arbeidsark - Tegn prikk til prikk',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -192,16 +179,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.3.1
         title: 'Typer sosial manipulasjon',
         supportText:
           'Bruk denne videoen til å hjelpe elever med å gjenkjenne de ulike formene sosial manipulasjon kan ta, fra phishing-e-poster til telefonimitasjon. Pause for å diskutere hvilken type de tror ville være vanskeligst å oppdage og hvorfor.',
         downloads: {
           video: {
-            filename: 'Types of Social Engineering',
+            filename: 'Typer sosial manipulasjon',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Types of Social Engineering - Subtitles',
+            filename: 'Typer sosial manipulasjon - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -210,43 +198,43 @@ export const contentSE = {
     {
       goal: 'Hjelpe elever til å øve på å verifisere informasjon og velge trygge svar, og gi dem verktøy til å støtte andre når de møter forsøk på sosial manipulasjon.',
       bundle: {
-        filename: 'Social Engineering Part 4 Package',
+        filename: 'Sosial manipulasjon - pakke - del 4',
       },
       included: {
         materials: [
           {
             // ID: 5.4.1
-            kind: 'Scenariokort',
-            name: 'Hva ville du gjort?',
-            filename: 'Scenario Cards - What Would You Do',
+            kind: 'Bilde',
+            name: 'Stopp, tenk, sjekk, spør',
+            filename: 'Bilde - Stopp, tenk, sjekk, spør',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.4.2
-            kind: 'Sjekkliste',
+            kind: 'Arbeidsark',
             name: 'Stopp, tenk, sjekk, spør',
-            filename: 'Checklist - Stop, Think, Check, Ask',
+            filename: 'Arbeidsark - Stopp, tenk, sjekk, spør',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.4.3
-            kind: 'Arbeidsark',
-            name: 'Stopp, tenk, sjekk, spør',
-            filename: 'Worksheet - Stop, Think, Check, Ask',
+            kind: 'Scenariokort',
+            name: 'Hva ville du gjort?',
+            filename: 'Scenariokort - Hva ville du gjort',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.4.4
             kind: 'Rollekort',
-            name: 'Mål, hjelper, tilskuer',
-            filename: 'Role Cards - Target, Helper, Bystander',
+            name: 'Prososial atferd eller tilskuereffekten',
+            filename: 'Rollekort - Prososial atferd eller tilskuereffekten',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 5.4.5
             kind: 'Arbeidsark',
             name: 'Beskytte meg selv og andre',
-            filename: 'Worksheet - Protecting Myself and Others',
+            filename: 'Arbeidsark - Beskytte meg selv og andre',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -275,37 +263,37 @@ export const contentSE = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

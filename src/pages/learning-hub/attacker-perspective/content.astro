@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components'
 import { localizePath } from 'src/i18n/i18n'
 import { getModule } from 'src/data/modules'
 import type { ModuleId } from 'src/data/modules'
-import { modulePartsData, mergeParts } from 'src/data/moduleParts'
+import { modulePartsData, mergeParts, MATERIAL_LANGUAGE_LABELS } from 'src/data/moduleParts'
 import type { TranslationPart, TeachersGuide, RelatedModuleCard, MergedPart, MergedMaterial, MergedActivityStep, PartMeta } from 'src/data/moduleParts'
 import { useTranslations } from 'src/i18n/index'
 
@@ -35,13 +35,13 @@ const formatCount = (count: number, singularKey: string, pluralKey: string) =>
 const getPartTitle = (part: MergedPart) => part.titleKey ? t(part.titleKey) : ''
 
 const moduleImages = {
-  dc: '/images/learning-hub/01_digital-citizenship.png',
-  ap: '/images/learning-hub/02_attacker-perspective.png',
-  at: '/images/learning-hub/03_authentication.png',
-  dp: '/images/learning-hub/04_data-privacy.png',
-  se: '/images/learning-hub/05_social-engineering.png',
-  mw: '/images/learning-hub/06_malware.png',
-  da: '/images/learning-hub/07_digital-abuse.png',
+  dc: '/images/learning-hub/01_digital-citizenship.webp',
+  ap: '/images/learning-hub/02_attacker-perspective.webp',
+  at: '/images/learning-hub/03_authentication.webp',
+  dp: '/images/learning-hub/04_data-privacy.webp',
+  se: '/images/learning-hub/05_social-engineering.webp',
+  mw: '/images/learning-hub/06_malware.webp',
+  da: '/images/learning-hub/07_digital-abuse.webp',
 }
 ---
 
@@ -78,16 +78,16 @@ const moduleImages = {
         <div class="ap-tabs">
           <div class="ap-tabs__bar" role="tablist">
             <button class="ap-tab" role="tab" aria-selected="true" data-panel="aoo-aim">
-              <img class="ap-tab-img-icon" src="/images/learning-hub/aim.png" alt="" aria-hidden="true" />
+              <img class="ap-tab-img-icon" src="/images/learning-hub/aim.webp" alt="" aria-hidden="true" />
               {t('pages.hub.contentPage.aimTitle')}
             </button>
             <button class="ap-tab" role="tab" aria-selected="false" data-panel="aoo-objectives">
-              <img class="ap-tab-img-icon" src="/images/learning-hub/objectives.png" alt="" aria-hidden="true" />
+              <img class="ap-tab-img-icon" src="/images/learning-hub/objectives.webp" alt="" aria-hidden="true" />
               {t('pages.hub.contentPage.objectivesTitle')}
               <span class="ap-tab__badge">{objectives.length}</span>
             </button>
             <button class="ap-tab" role="tab" aria-selected="false" data-panel="aoo-outcomes">
-              <img class="ap-tab-img-icon" src="/images/learning-hub/outcomes.png" alt="" aria-hidden="true" />
+              <img class="ap-tab-img-icon" src="/images/learning-hub/outcomes.webp" alt="" aria-hidden="true" />
               {t('pages.hub.contentPage.outcomesTitle')}
               <span class="ap-tab__badge">{outcomes.length}</span>
             </button>
@@ -262,15 +262,53 @@ const moduleImages = {
                                 <li class="ap-step-item">
                                   <span class="ap-step-num">{String(i + 1).padStart(2, '0')}</span>
                                   <p class="ap-step-title"><b>{String(item.kind ?? '')} –</b> {String(item.name ?? '')}</p>
-                                  <a
-                                    class="ap-item-download"
-                                    href={String(item.href ?? '')}
-                                    download={String(item.filename ?? '')}
-                                    aria-label={String(item.ariaLabel ?? '')}
-                                  >
-                                    <Icon name="lucide:download" />
-                                    <span>{t('pages.hub.contentPage.download')}</span>
-                                  </a>
+                                  {item.languages?.length ? (
+                                    <div class="ap-material-download">
+                                      <button
+                                        type="button"
+                                        class="ap-item-download ap-download-trigger"
+                                        aria-expanded="false"
+                                        aria-controls={`material-${part.anchorId}-${i}`}
+                                        aria-label={`${t('pages.hub.contentPage.download')}: ${String(item.kind ?? '')} – ${String(item.name ?? '')}`}
+                                        data-download-trigger
+                                      >
+                                        <Icon name="lucide:download" />
+                                        <span>{t('pages.hub.contentPage.download')}</span>
+                                        <Icon name="lucide:chevron-down" />
+                                      </button>
+                                      <ul
+                                        class="ap-download-menu"
+                                        id={`material-${part.anchorId}-${i}`}
+                                        aria-label={String(item.ariaLabel ?? t('pages.hub.contentPage.download'))}
+                                        data-download-menu
+                                        hidden
+                                      >
+                                        {item.languages.map((file) => (
+                                          <li>
+                                            <a
+                                              class="ap-download-option"
+                                              href={file.href}
+                                              download={item.filename ? `${item.filename} (${file.lang.toUpperCase()}).${file.href.split('.').pop()}` : file.href.split('/').pop()}
+                                              hreflang={file.lang}
+                                            >
+                                              <span class="ap-download-code" aria-hidden="true">{file.lang.toUpperCase()}</span>
+                                              <span lang={file.lang}>{MATERIAL_LANGUAGE_LABELS[file.lang]}</span>
+                                            </a>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ) : (
+                                    <a
+                                      class="ap-item-download"
+                                      href={String(item.href ?? '')}
+                                      download={String(item.filename ?? '')}
+                                      aria-label={String(item.ariaLabel ?? '')}
+                                    >
+                                      <Icon name="lucide:download" />
+                                      <span>{t('pages.hub.contentPage.download')}</span>
+                                    </a>
+                                  )}
                                 </li>
                               ))}
                             </ul>
@@ -336,15 +374,38 @@ const moduleImages = {
                                     </a>
                                   </div>
                                   <div class="ap-video-action-wrap">
-                                    <a
-                                      class="ap-item-download"
-                                      href={String(featuredVideo.downloads?.subtitles?.href ?? '')}
-                                      download={String(featuredVideo.downloads?.subtitles?.filename ?? '')}
-                                      aria-label={String(featuredVideo.downloads?.subtitles?.ariaLabel ?? '')}
+                                    <button
+                                      type="button"
+                                      class="ap-item-download ap-download-trigger"
+                                      aria-expanded="false"
+                                      aria-controls={`subtitles-${part.anchorId}`}
+                                      data-download-trigger
                                     >
                                       <Icon name="lucide:captions" />
                                       <span>{t('pages.hub.labels.subtitles')}</span>
-                                    </a>
+                                      <Icon name="lucide:chevron-down" />
+                                    </button>
+                                    <ul
+                                      class="ap-download-menu"
+                                      id={`subtitles-${part.anchorId}`}
+                                      aria-label={String(featuredVideo.downloads?.subtitles?.ariaLabel ?? t('pages.hub.labels.subtitles'))}
+                                      data-download-menu
+                                      hidden
+                                    >
+                                      {(featuredVideo.tracks ?? []).map((track) => (
+                                        <li>
+                                          <a
+                                            class="ap-download-option"
+                                            href={String(track.src ?? '')}
+                                            download={String(track.src ?? '').split('/').pop()}
+                                            hreflang={String(track.srclang ?? '')}
+                                          >
+                                            <span class="ap-download-code" aria-hidden="true">{String(track.srclang ?? '').toUpperCase()}</span>
+                                            <span lang={String(track.srclang ?? '')}>{String(track.label ?? '')}</span>
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
                                   </div>
                                 </div>
                               </div>
@@ -439,6 +500,8 @@ const moduleImages = {
 </DefaultLayout>
 
 <script>
+  import { initDownloadMenus } from '../../../utils/downloadMenu'
+
   // When a URL contains a hash that targets a <details> element (e.g. a direct
   // link to a module part like /content#digital-environments), open it and
   // scroll to it. requestAnimationFrame gives the browser one paint cycle to
@@ -483,6 +546,9 @@ const moduleImages = {
 
   document.addEventListener('astro:page-load', initTabs)
   initTabs()
+
+  document.addEventListener('astro:page-load', initDownloadMenus)
+  initDownloadMenus()
 </script>
 
 <style>
@@ -1348,6 +1414,106 @@ const moduleImages = {
 
   :global(html.darkmode) .ap-divider--center {
     color: var(--dm-fg-muted);
+  }
+
+  /* ── Language dropdowns: subtitles + materials (behaviour: src/utils/downloadMenu.ts) ───── */
+  .ap-download-trigger {
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+  }
+
+  .ap-download-trigger :global(svg:last-child) {
+    transition: transform 0.2s ease;
+  }
+
+  .ap-download-trigger[aria-expanded="true"] {
+    background-color: var(--brand-AP);
+    color: #fff;
+    border-color: color-mix(in oklab, var(--brand-AP), black 6%);
+  }
+
+  .ap-download-trigger[aria-expanded="true"] :global(svg:last-child) {
+    transform: rotate(180deg);
+  }
+
+  .ap-download-menu {
+    position: fixed;
+    z-index: 1000;
+    min-width: 12rem;
+    margin: 0;
+    padding: 0.35rem;
+    list-style: none;
+    background: #fff;
+    border: 1px solid color-mix(in oklab, var(--brand-AP), white 45%);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px -8px rgb(0 0 0 / 0.22);
+  }
+
+  .ap-download-menu[hidden] {
+    display: none;
+  }
+
+  .ap-download-menu li {
+    margin: 0;
+  }
+
+  .ap-download-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.65rem;
+    border-radius: 6px;
+    color: var(--color-neutral-900, #1c1917);
+    font-weight: 600;
+    font-size: var(--font-size--1);
+    text-decoration: none;
+  }
+
+  .ap-download-option:hover,
+  .ap-download-option:focus-visible {
+    background: color-mix(in oklab, var(--brand-AP), white 88%);
+    outline: none;
+  }
+
+  .ap-download-option:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--brand-AP);
+  }
+
+  .ap-download-code {
+    min-width: 2rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    background: color-mix(in oklab, var(--brand-AP), white 85%);
+    color: color-mix(in oklab, var(--brand-AP), black 45%);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  :global(html.darkmode) .ap-download-trigger[aria-expanded="true"] {
+    background: var(--brand-AP);
+    color: #1c1917;
+    border-color: var(--brand-AP);
+  }
+
+  :global(html.darkmode) .ap-download-menu {
+    background: var(--dm-surface-2);
+    border-color: color-mix(in oklab, var(--brand-AP) 40%, var(--dm-border-sub));
+  }
+
+  :global(html.darkmode) .ap-download-option {
+    color: var(--dm-fg);
+  }
+
+  :global(html.darkmode) .ap-download-option:hover,
+  :global(html.darkmode) .ap-download-option:focus-visible {
+    background: color-mix(in oklab, var(--brand-AP) 18%, var(--dm-surface-2));
+  }
+
+  :global(html.darkmode) .ap-download-code {
+    background: color-mix(in oklab, var(--brand-AP) 25%, var(--dm-surface-3));
+    color: var(--dm-fg);
   }
 
   :global(html.darkmode) .ap-item-download {

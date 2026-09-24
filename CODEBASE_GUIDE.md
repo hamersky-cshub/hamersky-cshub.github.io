@@ -92,8 +92,10 @@ Counts are **derived automatically** from `modulePartsData` at build time — do
 `modulePartsData: Record<ModuleId, PartDefinition[]>` — the single source of truth for all file paths and structural data. Each `PartDefinition` has:
 - `anchorId` — URL hash for deep-linking to a part (e.g. `digital-environments`).
 - `assets.bundle.href` — ZIP download path for the whole part.
-- `assets.materials[]` — array of `{ id, href, isGuide? }` asset entries.
-- `assets.featuredVideo` — `{ id, posterSrc, videoSrc, downloads, tracks[] }`.
+- `assets.materials[]` — array of `{ id, href, isGuide?, languages? }` asset entries.
+  - Material **without translatable text** (e.g. an image): set only `href` → the page shows a plain **Download** button.
+  - Material **translated into several languages**: also add `languages: [{ lang: 'en', href }, { lang: 'cs', href }, …]` → **Download** opens a language dropdown (one option per entry, in the listed order; names come from `MATERIAL_LANGUAGE_LABELS`). Keep `href` pointing to a default file (it is used for the material counts). Example: `1.1.1` in Digital Citizenship.
+- `assets.featuredVideo` — `{ id, posterSrc, videoSrc, downloads, tracks[] }`. `tracks[]` feeds both the video player captions and the Subtitles download dropdown (one entry per language). Both dropdowns share the behaviour in `src/utils/downloadMenu.ts`.
 
 **Editors do not touch this file for text** — all displayed text comes from translation files.
 
@@ -211,7 +213,6 @@ public/
 │       │   ├── <asset-id>.pdf    # Individual materials
 │       │   └── videos/
 │       │       ├── <id>_video.mp4
-│       │       ├── subtitles.zip
 │       │       └── subtitles/<locale>/<id>_subtitles_<LOCALE>.vtt
 │       ├── teaching-guide/teaching-guide.zip
 │       └── <module-slug>.zip     # Full module bundle

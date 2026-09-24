@@ -21,7 +21,7 @@ export const contentAP = {
       goal:
         'Hjelpe barn til å tilegne seg kunnskap om konseptet med en betrodd person og utvikle ferdigheter i å identifisere kretsen av betrodde personer.',
       bundle: {
-        filename: 'Attacker Perspective Part 1 Package',
+        filename: 'Angriperperspektiv - pakke - del 1',
       },
       included: {
         materials: [
@@ -29,14 +29,28 @@ export const contentAP = {
             // ID: 2.1.1
             kind: 'Arbeidsark',
             name: 'Betrodde personer: mennesker rundt meg',
-            filename: 'Worksheet - Trusteees People Around Me',
+            filename: 'Arbeidsark - Betrodde personer mennesker rundt meg',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 2.1.2
             kind: 'Arbeidsark',
             name: 'Tillitssirkler',
-            filename: 'Worksheet - Circles of Trust',
+            filename: 'Arbeidsark - Tillitssirkler',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.1.3
+            kind: 'Bilde',
+            name: 'Situasjon: Fant penger',
+            filename: 'Bilde - Situasjon Fant penger',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.1.4
+            kind: 'Bilde',
+            name: 'Situasjon: Så et bilde',
+            filename: 'Bilde - Situasjon Så et bilde',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -56,36 +70,43 @@ export const contentAP = {
     {
       goal: 'Introdusere konseptet med en angriper og motivasjon fra angriperperspektivet.',
       bundle: {
-        filename: 'Attacker Perspective Part 2 Package',
+        filename: 'Angriperperspektiv - pakke - del 2',
       },
       included: {
         materials: [
           {
             // ID: 2.2.1
-            kind: 'Kort',
+            kind: 'Scenariokort',
             name: 'Identifiser atferden',
-            filename: 'Cards - Identify the Behaviour',
+            filename: 'Scenariokort - Identifiser atferden',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 2.2.2
-            kind: 'Kort',
+            kind: 'Scenariokort',
             name: 'Gjenkjenn karakterene',
-            filename: 'Cards - Recognise the Characters',
+            filename: 'Scenariokort - Gjenkjenn karakterene',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 2.2.4
             kind: 'Bilde',
             name: 'Angripermotivasjoner',
-            filename: 'Image - Attacker Motivations',
+            filename: 'Bilde - Angripermotivasjoner',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 2.2.5
+            kind: 'Bilde',
+            name: 'Et blikk inn i eventyret: Angriperens motivasjon og midler',
+            filename: 'Bilde - Et blikk inn i eventyret Angriperens motivasjon og midler',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.2.6
             kind: 'Arbeidsark',
             name: 'Angrepsanalyse',
-            filename: 'Worksheet - Attack Analysis',
+            filename: 'Arbeidsark - Angrepsanalyse',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -111,11 +132,11 @@ export const contentAP = {
           'Bruk denne videoen til å hjelpe elever med å se for seg de virkelige menneskene og motivene bak cyberangrep, utover stereotypen med den ensomme hackeren. Pause for å spørre hvem de forestiller seg er ansvarlig og hvorfor.',
         downloads: {
           video: {
-            filename: 'Who is Behind Cyber Attacks',
+            filename: 'Hvem står bak cyberangrep',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Who is Behind Cyber Attacks - Subtitles',
+            filename: 'Hvem står bak cyberangrep - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -124,22 +145,50 @@ export const contentAP = {
     {
       goal: 'Introdusere de grunnleggende teknikkene (taktikkene) som er relevante for barn og som angripere bruker for å nå sine mål.',
       bundle: {
-        filename: 'Attacker Perspective Part 3 Package',
+        filename: 'Angriperperspektiv - pakke - del 3',
       },
       included: {
         materials: [
           {
             // ID: 2.3.1
-            kind: 'Situasjon',
-            name: 'Smishing og identitetstyveri',
-            filename: 'Situation - Smishing and Impersonation',
+            kind: 'Lesestoff',
+            name: 'Smishing og etterligning',
+            filename: 'Lesestoff - Smishing og etterligning',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 2.3.2
+            kind: 'Lesestoff',
+            name: 'Vishing, svindel og etterligning',
+            filename: 'Lesestoff - Vishing, svindel og etterligning',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.3.3
+            kind: 'Lesestoff',
+            name: 'De vanligste cybertruslene',
+            filename: 'Lesestoff - De vanligste cybertruslene',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.3.4
             kind: 'Bilde',
-            name: 'Vanlige angripeteknikker',
-            filename: 'Image - Common Adversary Techniques',
+            name: 'Vanlige angriperteknikker',
+            filename: 'Bilde - Vanlige angriperteknikker',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.3.5
+            kind: 'Kort',
+            name: 'Angripere og planene deres',
+            filename: 'Kort - Angripere og planene deres',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 2.3.6
+            kind: 'Arbeidsark',
+            name: 'Gåte: Angripernes fest',
+            filename: 'Arbeidsark - Gåte Angripernes fest',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -168,37 +217,37 @@ export const contentAP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

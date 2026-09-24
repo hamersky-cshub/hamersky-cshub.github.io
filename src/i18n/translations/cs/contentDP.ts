@@ -27,17 +27,17 @@ export const contentDP = {
       included: {
         materials: [
           {
-            // ID: 4.1.3
+            // ID: 4.1.2
             kind: 'Třídící karty',
-            name: 'Veřejné nebo soukromé',
-            filename: 'Sorting Cards - Public or Private',
+            name: 'Soukromé, nebo veřejné',
+            filename: 'Třídící karty - Soukromé, nebo veřejné',
             ariaLabel: 'Stáhnout materiál',
           },
           {
-            // ID: 4.1.5
+            // ID: 4.1.3
             kind: 'Pracovní list',
-            name: 'Reflexe o veřejných vs. soukromých datech',
-            filename: 'Worksheet - Reflection on Public vs Private Data',
+            name: 'Reflexe: Veřejná vs. soukromá data',
+            filename: 'Pracovní list - Reflexe Veřejná vs. soukromá data',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -54,17 +54,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.1.2
+        // ID: 4.1.1
         title: 'Co jsou soukromá data?',
         supportText:
           'Použijte toto video k představení konceptu soukromých dat a zahájení diskuse o typech informací, které žáci každý den sdílejí. Pozastavte se a zeptejte se žáků, které detaily považují za soukromé.',
         downloads: {
           video: {
-            filename: 'What Is Private Data',
+            filename: 'Co jsou soukromá data',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What Is Private Data - Subtitles',
+            filename: 'Co jsou soukromá data - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -78,24 +78,24 @@ export const contentDP = {
       included: {
         materials: [
           {
+            // ID: 4.2.1
+            kind: 'Obrázek',
+            name: 'Sdílení online: Bezpečné vs. rizikové',
+            filename: 'Obrázek - Sdílení online Bezpečné vs. rizikové',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
             // ID: 4.2.2
-            kind: 'Karty scénářů',
-            name: 'Roleplay',
-            filename: 'Scenario Cards - Roleplay',
+            kind: 'Scénářové karty',
+            name: 'Hraní rolí',
+            filename: 'Scénářové karty - Hraní rolí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 4.2.3
-            kind: 'Obrázek',
-            name: 'Sdílení online: Bezpečné vs. rizikové',
-            filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 4.2.4
             kind: 'Pracovní list',
-            name: 'Sdílet nebo nesdílet?',
-            filename: 'Worksheet - Share or Don\'t Share',
+            name: 'Sdílet, nebo nesdílet',
+            filename: 'Pracovní list - Sdílet, nebo nesdílet',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -123,17 +123,31 @@ export const contentDP = {
       included: {
         materials: [
           {
+            // ID: 4.3.2
+            kind: 'Obrázek',
+            name: 'Komiks: Den ze života Sama online',
+            filename: 'Obrázek - Komiks Den ze života Sama online',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
             // ID: 4.3.3
-            kind: 'Komiks',
-            name: 'Den ze života Sama online',
-            filename: 'Comic Story - A Day in the Life of Sam Online',
+            kind: 'Pracovní list',
+            name: 'Sleduj Samovu stopu',
+            filename: 'Pracovní list - Sleduj Samovu stopu',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 4.3.4
-            kind: 'Pracovní list',
-            name: 'Sleduj Samovu stopu',
-            filename: 'Worksheet - Track Sam\'s Footprint',
+            kind: 'Schéma',
+            name: 'Hrací deska: Hodnota soukromí',
+            filename: 'Schéma - Hrací deska Hodnota soukromí',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 4.3.5
+            kind: 'Herní sada',
+            name: 'Karty: Hodnota soukromí',
+            filename: 'Herní sada - Karty Hodnota soukromí',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -159,11 +173,11 @@ export const contentDP = {
           'Použijte toto video, aby si žáci dokázali představit stopu dat, kterou zanechávají online. Podpořte reflexi o tom, které jejich nedávné aktivity mohly zanechat stopu.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Footprint',
+            filename: 'Co je digitální stopa',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What Is a Digital Footprint - Subtitles',
+            filename: 'Co je digitální stopa - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -178,16 +192,37 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Kontrolní seznam',
-            name: 'Kontrolní seznam pro úklid digitální stopy',
-            filename: 'Checklist - Digital Footprint Cleanup Checklist',
+            kind: 'Obrázek',
+            name: 'Příklad základního nastavení',
+            filename: 'Obrázek - Příklad základního nastavení',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 4.4.2
             kind: 'Pracovní list',
-            name: 'Průvodce nastavením soukromí',
-            filename: 'Worksheet - Privacy Settings Guide',
+            name: 'Oprav tento profil!',
+            filename: 'Pracovní list - Oprav tento profil',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 4.4.3
+            kind: 'Pracovní list',
+            name: 'Tipy na ochranu soukromí pro děti',
+            filename: 'Pracovní list - Tipy na ochranu soukromí pro děti',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 4.4.4
+            kind: 'Pracovní list',
+            name: 'Šablona plakátu',
+            filename: 'Pracovní list - Šablona plakátu',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 4.4.6
+            kind: 'Pracovní list',
+            name: 'Hádanka: Využití digitálních stop „Členové týmu Brain Fights“',
+            filename: 'Pracovní list - Hádanka Využití digitálních stop Členové týmu Brain Fights',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -207,17 +242,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.4.4
+        // ID: 4.4.5
         title: 'Ochrana vašich osobních dat online',
         supportText:
           'Použijte toto video k představení konceptu osobních dat a zahájení diskuse o typech informací, které žáci každý den sdílejí.',
         downloads: {
           video: {
-            filename: 'Protecting Your Personal Data Online',
+            filename: 'Ochrana vašich osobních dat online',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Protecting Your Personal Data Online - Subtitles',
+            filename: 'Ochrana vašich osobních dat online - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -229,37 +264,37 @@ export const contentDP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

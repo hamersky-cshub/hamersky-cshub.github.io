@@ -25,7 +25,7 @@ export const contentAT = {
     {
       goal: 'Schülerinnen und Schülern helfen, starke, einprägsame Geheimnisse zu erstellen und zu verstehen, warum Wiederverwendung riskant ist.',
       bundle: {
-        filename: 'Authentication Part 1 Package',
+        filename: 'Authentifizierung - Paket - Teil 1',
       },
       included: {
         materials: [
@@ -33,28 +33,28 @@ export const contentAT = {
             // ID: 3.1.1
             kind: 'Bild',
             name: 'Online-Identität',
-            filename: 'Image - Online Identity',
+            filename: 'Bild - Online-Identität',
             ariaLabel: 'Material herunterladen',
           },
           {
-            // ID: 3.1.2
+            // ID: 3.1.3
             kind: 'Bilder',
             name: 'Beispiele persönlicher digitaler Assets',
-            filename: 'Images - Examples of Personal Digital Assets',
+            filename: 'Bilder - Beispiele persönlicher digitaler Assets',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.1.4
             kind: 'Arbeitsblatt',
             name: 'Was würde passieren, wenn...?',
-            filename: 'Worksheet - What Would Happen if',
+            filename: 'Arbeitsblatt - Was würde passieren, wenn',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.1.5
             kind: 'Arbeitsblatt',
             name: 'Meine digitalen Assets',
-            filename: 'Worksheet - My Digital Assets',
+            filename: 'Arbeitsblatt - Meine digitalen Assets',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -79,11 +79,11 @@ export const contentAT = {
           'Verwenden Sie dieses Video, damit Schülerinnen und Schüler verstehen, dass ihre digitale Identität aus den Informationen und Verhaltensweisen besteht, die sie online teilen. Pausieren Sie, um zu fragen, welche Teile ihrer digitalen Identität sie ihrer Meinung nach kontrollieren können.',
         downloads: {
           video: {
-            filename: 'What is Digital Identity',
+            filename: 'Was ist digitale Identität',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What is Digital Identity - Subtitles',
+            filename: 'Was ist digitale Identität - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -93,7 +93,7 @@ export const contentAT = {
       goal:
         'Schülerinnen und Schülern helfen zu verstehen, was Authentifizierung ist, warum sie wichtig ist und wie sie hilft, ihre digitale Identität und digitale Assets zu schützen, indem kontrolliert wird, wem Zugang gewährt wird.',
       bundle: {
-        filename: 'Authentication Part 2 Package',
+        filename: 'Authentifizierung - Paket - Teil 2',
       },
       included: {
         materials: [
@@ -101,21 +101,21 @@ export const contentAT = {
             // ID: 3.2.1
             kind: 'Bilder',
             name: 'Authentifizierungsbeispiele aus dem realen Leben',
-            filename: 'Images - Real-world Authentication Examples',
+            filename: 'Bilder - Authentifizierungsbeispiele aus dem realen Leben',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.2.3
             kind: 'Bild',
             name: 'Anmeldung bei einem digitalen System',
-            filename: 'Image - Logging Into a Digital System',
+            filename: 'Bild - Anmeldung bei einem digitalen System',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.2.4
             kind: 'Arbeitsblatt',
             name: 'Authentifizierung im Alltag',
-            filename: 'Worksheet - Authentication in Everday Life',
+            filename: 'Arbeitsblatt - Authentifizierung im Alltag',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -139,16 +139,16 @@ export const contentAT = {
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'Was ist Authentifizierung und warum ist sie wichtig?',
+        title: 'Was ist Authentifizierung?',
         supportText:
           'Verwenden Sie dieses Video, um Authentifizierung als den alltäglichen Mechanismus einzuführen, der die digitalen Konten der Schülerinnen und Schüler schützt. Pausieren Sie, um zu fragen, wie sie ihre Identität aktuell in den Apps nachweisen, die sie am häufigsten nutzen.',
         downloads: {
           video: {
-            filename: 'What is Authentication and Why is It Important',
+            filename: 'Was ist Authentifizierung',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What is Authentication and Why is It Important - Subtitles',
+            filename: 'Was ist Authentifizierung - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -158,7 +158,7 @@ export const contentAT = {
       goal:
         'Schülerinnen und Schülern helfen zu verstehen, was Authentifizierung ist, warum sie wichtig ist und wie sie hilft, ihre digitale Identität und digitale Assets zu schützen, indem kontrolliert wird, wem Zugang gewährt wird.',
       bundle: {
-        filename: 'Authentication Part 3 Package',
+        filename: 'Authentifizierung - Paket - Teil 3',
        },
       included: {
         materials: [
@@ -166,35 +166,35 @@ export const contentAT = {
             // ID: 3.3.2
             kind: 'Bild',
             name: 'Beispiele schwacher Passwörter',
-            filename: 'Image - Examples of Strong Passwords',
+            filename: 'Bild - Beispiele schwacher Passwörter',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.3
             kind: 'Bild',
             name: 'Beispiele starker Passwörter',
-            filename: 'Image - Check your Password',
+            filename: 'Bild - Beispiele starker Passwörter',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.4
             kind: 'Karten',
             name: 'Ein starkes Passwort erstellen',
-            filename: 'Cards - Create a Strong Password',
+            filename: 'Karten - Ein starkes Passwort erstellen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.5
             kind: 'Bild',
             name: 'Ihr Passwort überprüfen',
-            filename: 'Image - Two Different Types of Authentication Used Together',
+            filename: 'Bild - Ihr Passwort überprüfen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.3.6
             kind: 'Arbeitsblatt',
             name: 'Meine Regeln für starke Passwörter',
-            filename: 'Worksheet - My Strong Password Rules',
+            filename: 'Arbeitsblatt - Meine Regeln für starke Passwörter',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -223,11 +223,11 @@ export const contentAT = {
           'Verwenden Sie dieses Video, um Schülerinnen und Schülern den Unterschied zwischen Passwörtern zu zeigen, die Konten schützen, und solchen, die sie gefährden. Laden Sie sie ein zu überlegen, ob ihre eigenen Passwörter die Kriterien für Stärke erfüllen.',
         downloads: {
           video: {
-            filename: 'Strong and Weak Passwords',
+            filename: 'Starke und schwache Passwörter',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Strong and Weak Passwords - Subtitles',
+            filename: 'Starke und schwache Passwörter - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -237,71 +237,64 @@ export const contentAT = {
       goal:
         'Schülerinnen und Schülern helfen zu verstehen, was Zwei-Faktor-Authentifizierung ist und warum die Verwaltung vieler Passwörter schwierig ist, das Konzept eines Passwort-Managers einzuführen und zu erklären, wie Passwort-Manager dabei helfen, digitale Identitäten und Assets zu schützen, wenn sie verantwortungsvoll mit Unterstützung eines vertrauenswürdigen Erwachsenen verwendet werden.',
       bundle: {
-        filename: 'Authentication Part 4 Package',
+        filename: 'Authentifizierung - Paket - Teil 4',
        },
       included: {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Schema',
-            name: 'Gruppensatz',
-            filename: 'Schema - Set of Groups',
+            kind: 'Bild',
+            name: 'Zwei verschiedene Authentifizierungsarten zusammen verwendet',
+            filename: 'Bild - Zwei verschiedene Authentifizierungsarten zusammen verwendet',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.2
             kind: 'Schema',
             name: 'Münzsatz',
-            filename: 'Schema - Set of Coins',
+            filename: 'Schema - Münzsatz',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.3
             kind: 'Schema',
             name: 'Gruppensatz',
-            filename: 'Schema - Set of Groups',
+            filename: 'Schema - Gruppensatz',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.4
             kind: 'Schema',
             name: 'PIN-Karten',
-            filename: 'Schema - PIN Cards',
+            filename: 'Schema - PIN-Karten',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.6
-            kind: 'Bilder',
+            kind: 'Bild',
             name: 'So verwenden Sie einen Passwort-Manager',
-            filename: 'Images - How to Use a Password Manager',
+            filename: 'Bild - So verwenden Sie einen Passwort-Manager',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.7
             kind: 'Bild',
-            name: 'Passwort-Manager-Tresor',
-            filename: 'Image - Password Manager Vault',
+            name: 'Passwort-Manager',
+            filename: 'Bild - Passwort-Manager',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.8
             kind: 'Bild',
-            name: 'Passwort-Manager als digitaler Schlüsselbund',
-            filename: 'Image - Password Manager as a Digital Keyring',
+            name: 'Schritte zum Speichern von Passwörtern',
+            filename: 'Bild - Schritte zum Speichern von Passwörtern',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.4.9
-            kind: 'Bild',
-            name: 'Schritte zum Speichern von Passwörtern',
-            filename: 'Image - Steps of Saving Passwords',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
-            // ID: 3.4.10
             kind: 'Arbeitsblatt',
             name: 'Passwortprobleme und Lösungen',
-            filename: 'Worksheet - Password Problems and Solutions',
+            filename: 'Arbeitsblatt - Passwortprobleme und Lösungen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -330,11 +323,11 @@ export const contentAT = {
           'Verwenden Sie dieses Video, um Passwort-Manager als praktische Lösung zum Erstellen und Speichern starker, einzigartiger Passwörter für jedes Konto einzuführen. Pausieren Sie, um Schülerinnen und Schüler zu fragen, ob sie davon gehört oder einen bereits benutzt haben.',
         downloads: {
           video: {
-            filename: 'What Is a Password Manager',
+            filename: 'Was ist ein Passwort-Manager',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What Is a Password Manager - Subtitles',
+            filename: 'Was ist ein Passwort-Manager - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -344,7 +337,7 @@ export const contentAT = {
       goal:
         'Schülerinnen und Schülern helfen zu verstehen, wie ihre Entscheidungen und ihr Verhalten die Sicherheit ihrer digitalen Identität beeinflussen und wie verantwortungsvolles Handeln dabei hilft, ihre digitalen Assets, sich selbst und andere in digitalen Umgebungen zu schützen.',
       bundle: {
-        filename: 'Authentication Part 5 Package',
+        filename: 'Authentifizierung - Paket - Teil 5',
        },
       included: {
         materials: [
@@ -352,21 +345,21 @@ export const contentAT = {
             // ID: 3.5.1
             kind: 'Bild',
             name: 'Sicheres und unsicheres Online-Verhalten',
-            filename: 'Image - Safe and Unsafe Online Behaviours',
+            filename: 'Bild - Sicheres und unsicheres Online-Verhalten',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.5.3
             kind: 'Arbeitsblatt',
             name: 'Szenarien zu digitaler Identität und Authentifizierung',
-            filename: 'Worksheet - Digital Identity and Authentication Scenarios',
+            filename: 'Arbeitsblatt - Szenarien zu digitaler Identität und Authentifizierung',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 3.5.4
             kind: 'Arbeitsblatt',
             name: 'Wie ich meine digitale Identität schütze',
-            filename: 'Worksheet - How I Protect My Digital Identity',
+            filename: 'Arbeitsblatt - Wie ich meine digitale Identität schütze',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -392,11 +385,11 @@ export const contentAT = {
           'Verwenden Sie dieses Video, um die Strategien zusammenzuführen, die die Schülerinnen und Schüler zum Schutz ihrer digitalen Identität gelernt haben. Ermutigen Sie sie, eine konkrete Gewohnheit zu identifizieren, die sie nach dem Ansehen ändern oder beginnen werden.',
         downloads: {
           video: {
-            filename: 'Protecting Your Digital Identity',
+            filename: 'Schutz Ihrer digitalen Identität',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Protecting Your Digital Identity - Subtitles',
+            filename: 'Schutz Ihrer digitalen Identität - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -411,37 +404,37 @@ export const contentAT = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

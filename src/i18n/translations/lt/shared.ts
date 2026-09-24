@@ -114,6 +114,8 @@ export const shared = {
         'Tai yra centrinis erdvė visiems projekto moduliams, mokymo medžiagai ir švietimo ištekliams. Čia rasite paruoštas naudoti pamokas, praktines veiklas ir gaires, skirtas kibernetinio saugumo ugdymui įvairiose klasės aplinkose. Visa medžiaga yra struktūruota, pritaikoma ir sukurta taip, kad padėtų pedagogams užtikrintai supažindinti vaikus su skaitmeninio saugumo temomis. Nesvarbu, ar ieškote pilnų modulių, ar atskirų mokymo išteklių, Mokymosi centras suteikia viską, ko reikia, vienoje vietoje.',
 
       labels: {
+        showDetails: 'Rodyti dalis ir veiklas',
+        hideDetails: 'Slėpti dalis ir veiklas',
         goal: 'Tikslas',
         challenge: 'Iššūkis',
         challenges: 'Iššūkiai',

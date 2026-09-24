@@ -27,28 +27,35 @@ export const contentSE = {
       included: {
         materials: [
           {
-            // ID: 5.1.1
-            kind: 'Image',
-            name: 'Tricking People vs Hacking Systems',
-            filename: 'Image - Tricking People vs Hacking Systems',
-            ariaLabel: 'Download material',
-          },
-          {
             // ID: 5.1.2
             kind: 'Image',
-            name: 'Examples of Social Engineering Messages',
-            filename: 'Image - Examples of Social Engineering Messages',
+            name: 'Hacking Systems vs. Tricking People',
+            filename: 'Image - Hacking Systems vs. Tricking People',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.1.3
-            kind: 'Situation Assessment',
-            name: 'What Does an Attacker Want?',
-            filename: 'Situation Assessment - What Does an Attacker Want',
+            kind: 'Image',
+            name: 'Goals of an Attacker',
+            filename: 'Image - Goals of an Attacker',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.1.4
+            kind: 'Scenario Cards',
+            name: 'What Does an Attacker Want?',
+            filename: 'Scenario Cards - What Does an Attacker Want',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 5.1.5
+            kind: 'Solution Cards',
+            name: 'What Does an Attacker Want?',
+            filename: 'Solution Cards - What Does an Attacker Want',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 5.1.6
             kind: 'Worksheet',
             name: 'Understanding Social Engineering',
             filename: 'Worksheet - Understanding Social Engineering',
@@ -74,6 +81,7 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.1.1
         title: 'What Is Social Engineering?',
         supportText:
           'Use this video to introduce social engineering as a technique that exploits human trust rather than technical systems. Pause to ask students if they can recall a situation where someone tried to trick them online.',
@@ -98,9 +106,9 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.2.1
-            kind: 'Image',
-            name: 'Human Decision-making vs Computer Decision-making',
-            filename: 'Image - Human Decision-making vs Computer Decision-making',
+            kind: 'Scenario Cards',
+            name: 'Attacker Tactics',
+            filename: 'Scenario Cards - Attacker Tactics',
             ariaLabel: 'Download material',
           },
           {
@@ -112,13 +120,6 @@ export const contentSE = {
           },
           {
             // ID: 5.2.3
-            kind: 'Game Cards',
-            name: 'Attacker Tactics',
-            filename: 'Game Cards - Attacker Tactics',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 5.2.4
             kind: 'Worksheet',
             name: 'Why Social Engineering Works',
             filename: 'Worksheet - Why Social Engineering Works',
@@ -152,24 +153,10 @@ export const contentSE = {
       included: {
         materials: [
           {
-            // ID: 5.3.1
-            kind: 'Image',
-            name: 'Examples of Social Engineering Messages',
-            filename: 'Image – Examples of Social Engineering Messages',
-            ariaLabel: 'Download material',
-          },
-          {
             // ID: 5.3.2
-            kind: 'Scenario Cards',
-            name: 'Social Engineering Situations',
-            filename: 'Scenario Cards – Social Engineering Situations',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 5.3.3
             kind: 'Worksheet',
-            name: 'Spot the Social Engineering',
-            filename: 'Worksheet – Spot the Social Engineering',
+            name: 'Dot-to-Dot Activity',
+            filename: 'Worksheet - Dot-to-Dot Activity',
             ariaLabel: 'Download material',
           },
         ],
@@ -192,6 +179,7 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.3.1
         title: 'Types of Social Engineering',
         supportText:
           'Use this video to help students recognise the different forms social engineering can take, from phishing emails to phone impersonation. Pause to discuss which type they think would be hardest to spot and why.',
@@ -216,37 +204,37 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.4.1
-            kind: 'Scenario Cards',
-            name: 'What Would You Do?',
-            filename: 'Scenario Cards – What Would You Do',
+            kind: 'Image',
+            name: 'Stop, Think, Check, Ask',
+            filename: 'Image - Stop, Think, Check, Ask',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.2
-            kind: 'Checklist',
+            kind: 'Worksheet',
             name: 'Stop, Think, Check, Ask',
-            filename: 'Checklist – Stop, Think, Check, Ask',
+            filename: 'Worksheet - Stop, Think, Check, Ask',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.3
-            kind: 'Worksheet',
-            name: 'Stop, Think, Check, Ask',
-            filename: 'Worksheet – Stop, Think, Check, Ask',
+            kind: 'Scenario Cards',
+            name: 'What Would You Do?',
+            filename: 'Scenario Cards - What Would You Do',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.4
             kind: 'Role Cards',
-            name: 'Target, Helper, Bystander',
-            filename: 'Role Cards – Target, Helper, Bystander',
+            name: 'Prosocial Behaviour or Bystander Apathy',
+            filename: 'Role Cards - Prosocial Behaviour or Bystander Apathy',
             ariaLabel: 'Download material',
           },
           {
             // ID: 5.4.5
             kind: 'Worksheet',
             name: 'Protecting Myself and Others',
-            filename: 'Worksheet – Protecting Myself and Others',
+            filename: 'Worksheet - Protecting Myself and Others',
             ariaLabel: 'Download material',
           },
         ],
@@ -275,37 +263,37 @@ export const contentSE = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

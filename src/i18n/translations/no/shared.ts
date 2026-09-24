@@ -114,6 +114,8 @@ export const shared = {
         'Dette er det sentrale rommet for alle prosjektmoduler, opplæringsmateriell og pedagogiske ressurser. Her finner du bruksklare leksjoner, praktiske aktiviteter og veiledning designet for å støtte cybersikkerhetsopplæring i ulike klasseromsmiljøer. Alt materiell er strukturert, tilpasningsdyktig og skapt for å hjelpe pedagoger med å trygt introdusere digitale sikkerhetstemaer for barn. Enten du leter etter komplette moduler eller individuelle undervisningsressurser, tilbyr Læringssenteret alt du trenger på ett sted.',
 
       labels: {
+        showDetails: 'Vis deler og aktiviteter',
+        hideDetails: 'Skjul deler og aktiviteter',
         goal: 'Mål',
         challenge: 'Utfordring',
         challenges: 'Utfordringer',

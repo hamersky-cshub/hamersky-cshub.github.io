@@ -21,7 +21,7 @@ export const contentAP = {
       goal:
         'Kindern Wissen über das Konzept einer Vertrauensperson vermitteln und Fähigkeiten zur Identifizierung des Kreises der Vertrauenspersonen entwickeln.',
       bundle: {
-        filename: 'Attacker Perspective Part 1 Package',
+        filename: 'Angreifer-Perspektive - Paket - Teil 1',
       },
       included: {
         materials: [
@@ -29,14 +29,28 @@ export const contentAP = {
             // ID: 2.1.1
             kind: 'Arbeitsblatt',
             name: 'Vertrauenspersonen: Menschen um mich herum',
-            filename: 'Worksheet - Trusteees People Around Me',
+            filename: 'Arbeitsblatt - Vertrauenspersonen Menschen um mich herum',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 2.1.2
             kind: 'Arbeitsblatt',
             name: 'Vertrauenskreise',
-            filename: 'Worksheet - Circles of Trust',
+            filename: 'Arbeitsblatt - Vertrauenskreise',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.1.3
+            kind: 'Bild',
+            name: 'Situation: Gefundenes Geld',
+            filename: 'Bild - Situation Gefundenes Geld',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.1.4
+            kind: 'Bild',
+            name: 'Situation: Ein Foto gesehen',
+            filename: 'Bild - Situation Ein Foto gesehen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -56,36 +70,43 @@ export const contentAP = {
     {
       goal: 'Das Konzept eines Angreifers und die Motivation aus der Angreiferperspektive einführen.',
       bundle: {
-        filename: 'Attacker Perspective Part 2 Package',
+        filename: 'Angreifer-Perspektive - Paket - Teil 2',
       },
       included: {
         materials: [
           {
             // ID: 2.2.1
-            kind: 'Karten',
+            kind: 'Szenariokarten',
             name: 'Das Verhalten identifizieren',
-            filename: 'Cards - Identify the Behaviour',
+            filename: 'Szenariokarten - Das Verhalten identifizieren',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 2.2.2
-            kind: 'Karten',
+            kind: 'Szenariokarten',
             name: 'Die Charaktere erkennen',
-            filename: 'Cards - Recognise the Characters',
+            filename: 'Szenariokarten - Die Charaktere erkennen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 2.2.4
             kind: 'Bild',
             name: 'Angreifermotivationen',
-            filename: 'Image - Attacker Motivations',
+            filename: 'Bild - Angreifermotivationen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 2.2.5
+            kind: 'Bild',
+            name: 'Ein Blick ins Märchen: Motivation und Mittel von Angreifern',
+            filename: 'Bild - Ein Blick ins Märchen Motivation und Mittel von Angreifern',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.2.6
             kind: 'Arbeitsblatt',
             name: 'Angriffsanalyse',
-            filename: 'Worksheet - Attack Analysis',
+            filename: 'Arbeitsblatt - Angriffsanalyse',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -111,11 +132,11 @@ export const contentAP = {
           'Verwenden Sie dieses Video, damit Schülerinnen und Schüler sich die echten Menschen und Motive hinter Cyberangriffen vorstellen können, über das Stereotyp des einsamen Hackers hinaus. Pausieren Sie, um zu fragen, wer ihrer Meinung nach verantwortlich ist und warum.',
         downloads: {
           video: {
-            filename: 'Who is Behind Cyber Attacks',
+            filename: 'Wer steckt hinter Cyberangriffen',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Who is Behind Cyber Attacks - Subtitles',
+            filename: 'Wer steckt hinter Cyberangriffen - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -124,22 +145,50 @@ export const contentAP = {
     {
       goal: 'Die grundlegenden Techniken (Taktiken) einführen, die für Kinder relevant sind und die Angreifer zur Erreichung ihrer Ziele einsetzen.',
       bundle: {
-        filename: 'Attacker Perspective Part 3 Package',
+        filename: 'Angreifer-Perspektive - Paket - Teil 3',
       },
       included: {
         materials: [
           {
             // ID: 2.3.1
-            kind: 'Situation',
-            name: 'Smishing und Identitätsdiebstahl',
-            filename: 'Situation - Smishing and Impersonation',
+            kind: 'Lektüre',
+            name: 'Smishing und Vortäuschung falscher Identität',
+            filename: 'Lektüre - Smishing und Vortäuschung falscher Identität',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 2.3.2
+            kind: 'Lektüre',
+            name: 'Vishing, Betrug und Vortäuschung falscher Identität',
+            filename: 'Lektüre - Vishing, Betrug und Vortäuschung falscher Identität',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.3.3
+            kind: 'Lektüre',
+            name: 'Die häufigsten Cyberbedrohungen',
+            filename: 'Lektüre - Die häufigsten Cyberbedrohungen',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.3.4
             kind: 'Bild',
             name: 'Häufige Angreifertechniken',
-            filename: 'Image - Common Adversary Techniques',
+            filename: 'Bild - Häufige Angreifertechniken',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.3.5
+            kind: 'Karten',
+            name: 'Angreifer und ihre Pläne',
+            filename: 'Karten - Angreifer und ihre Pläne',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 2.3.6
+            kind: 'Arbeitsblatt',
+            name: 'Rätsel: Die Party der Angreifer',
+            filename: 'Arbeitsblatt - Rätsel Die Party der Angreifer',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -168,37 +217,37 @@ export const contentAP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

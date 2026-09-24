@@ -30,14 +30,21 @@ export const contentMW = {
             // ID: 6.1.1
             kind: 'Obrázek',
             name: 'Škodlivý + software = malware',
-            filename: 'Image - Malicious + Software = Malware',
+            filename: 'Obrázek - Škodlivý + software = malware',
             ariaLabel: 'Stáhnout materiál',
           },
           {
-            // ID: 6.1.3
+            // ID: 6.1.2
+            kind: 'Obrázek',
+            name: 'Co je škodlivé?',
+            filename: 'Obrázek - Co je škodlivé',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 6.1.4
             kind: 'Pracovní list',
-            name: 'Souvisí s malwarem nebo ne?',
-            filename: 'Worksheet - Related to Malware or Not',
+            name: 'Souvisí s malwarem, nebo ne',
+            filename: 'Pracovní list - Souvisí s malwarem, nebo ne',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -54,17 +61,17 @@ export const contentMW = {
         ],
       },
       featuredVideo: {
-        // ID: 6.1.2
+        // ID: 6.1.3
         title: 'Co je malware?',
         supportText:
           'Použijte toto video k představení malwaru jako softwaru navrženého k způsobení škody, čímž dáte žákům základ, než prozkoumají konkrétní typy podrobněji. Pozastavte se a zeptejte se, co již znají nebo slyšeli o počítačových virech.',
         downloads: {
           video: {
-            filename: 'What is Malware',
+            filename: 'Co je malware',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What is Malware - Subtitles',
+            filename: 'Co je malware - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -81,21 +88,14 @@ export const contentMW = {
             // ID: 6.2.2
             kind: 'Schéma',
             name: 'Sada mincí',
-            filename: 'Schema - Set of Coins',
+            filename: 'Schéma - Sada mincí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 6.2.3
             kind: 'Schéma',
-            name: 'Tabule uzlových vazeb',
-            filename: 'Sheet - Knot Ties Board',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 6.2.4
-            kind: 'List',
-            name: 'Vlastnosti malwaru',
-            filename: 'Sheet - Malware Properties',
+            name: 'Hrací deska: Svaž uzly',
+            filename: 'Schéma - Hrací deska Svaž uzly',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -118,11 +118,11 @@ export const contentMW = {
           'Použijte toto video, aby žáci získali jasný přehled o různých kategoriích malwaru a o tom, co každý z nich odlišuje. Pozastavte se pro krátkou diskusi o tom, který typ podle nich představuje největší riziko a proč.',
         downloads: {
           video: {
-            filename: 'Introducing Malware Types',
+            filename: 'Představení typů malwaru',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Introducing Malware Types - Subtitles',
+            filename: 'Představení typů malwaru - Titulky',
             ariaLabel: 'Stáhnout titulky' },
         },
       },
@@ -136,30 +136,23 @@ export const contentMW = {
         materials: [
           {
             // ID: 6.3.1
-            kind: 'Pracovní list',
-            name: 'Seznam indikátorů',
-            filename: 'Worksheet - List of Indicators',
+            kind: 'Čtení',
+            name: 'Rozpoznávání malwaru',
+            filename: 'Čtení - Rozpoznávání malwaru',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 6.3.2
-            kind: 'Čtení',
-            name: 'Rozpoznávání malwaru',
-            filename: 'Reading - Recognising Malware',
+            kind: 'Plakát',
+            name: 'Sedm indikátorů',
+            filename: 'Plakát - Sedm indikátorů',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 6.3.3
-            kind: 'Plakát',
-            name: 'Sedm indikátorů',
-            filename: 'Poster - Seven Indicators',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 6.3.4
-            kind: 'Tabulka',
-            name: 'Situace a indikátory',
-            filename: 'Table - Situation and Indicators',
+            kind: 'Pracovní list',
+            name: 'Seznam indikátorů',
+            filename: 'Pracovní list - Seznam indikátorů',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -186,22 +179,29 @@ export const contentMW = {
           {
             // ID: 6.4.1
             kind: 'Situace',
-            name: 'Malware a krádež dat?',
-            filename: 'Situation - Malware and Data Theft',
+            name: 'Malware a krádež dat',
+            filename: 'Situace - Malware a krádež dat',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 6.4.2
             kind: 'Plakát',
             name: 'Co dělat a co ne',
-            filename: 'Poster - DOs and DON\'Ts',
+            filename: 'Plakát - Co dělat a co ne',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 6.4.3
+            kind: 'Obrázky',
+            name: 'Asociativní obrázky: Buď ostražitý',
+            filename: 'Obrázky - Asociativní obrázky Buď ostražitý',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 6.4.4
             kind: 'Pracovní list',
             name: 'Štít proti malwaru',
-            filename: 'Worksheet - A Shield Against Malware',
+            filename: 'Pracovní list - Štít proti malwaru',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -227,37 +227,37 @@ export const contentMW = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

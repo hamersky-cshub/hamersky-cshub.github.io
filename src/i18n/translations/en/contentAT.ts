@@ -37,7 +37,7 @@ export const contentAT = {
             ariaLabel: 'Download material',
           },
           {
-            // ID: 3.1.2
+            // ID: 3.1.3
             kind: 'Images',
             name: 'Examples of Personal Digital Assets',
             filename: 'Images - Examples of Personal Digital Assets',
@@ -46,8 +46,8 @@ export const contentAT = {
           {
             // ID: 3.1.4
             kind: 'Worksheet',
-            name: 'What Would Happen if ...?',
-            filename: 'Worksheet - What Would Happen if',
+            name: 'What Would Happen If...?',
+            filename: 'Worksheet - What Would Happen If',
             ariaLabel: 'Download material',
           },
           {
@@ -63,7 +63,7 @@ export const contentAT = {
             title: 'Introduction',
           },
           {
-            title: 'What is Digital Identity?',
+            title: 'What Is Digital Identity?',
           },
           {
             title: 'Understanding Digital Assets',
@@ -74,16 +74,16 @@ export const contentAT = {
         ],
       },
       featuredVideo: {
-        title: 'What is Digital Identity?',
+        title: 'What Is Digital Identity?',
         supportText:
           'Use this video to help students understand that their digital identity is made up of the information and behaviours they share online. Pause to ask which parts of their digital identity they think they can control.',
         downloads: {
           video: {
-            filename: 'What is Digital Identity',
+            filename: 'What Is Digital Identity',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What is Digital Identity - Subtitles',
+            filename: 'What Is Digital Identity - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -100,8 +100,8 @@ export const contentAT = {
           {
             // ID: 3.2.1
             kind: 'Images',
-            name: 'Real-world Authentication Examples',
-            filename: 'Images - Real-world Authentication Examples',
+            name: 'Real-World Authentication Examples',
+            filename: 'Images - Real-World Authentication Examples',
             ariaLabel: 'Download material',
           },
           {
@@ -114,8 +114,8 @@ export const contentAT = {
           {
             // ID: 3.2.4
             kind: 'Worksheet',
-            name: 'Authentication in Everday Life',
-            filename: 'Worksheet - Authentication in Everday Life',
+            name: 'Authentication in Everyday Life',
+            filename: 'Worksheet - Authentication in Everyday Life',
             ariaLabel: 'Download material',
           },
         ],
@@ -139,16 +139,16 @@ export const contentAT = {
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'What is Authentication and Why is It Important?',
+        title: 'What Is Authentication?',
         supportText:
           'Use this video to introduce authentication as the everyday mechanism that guards students\' digital accounts. Pause to ask how they currently prove their identity on the apps they use most.',
         downloads: {
           video: {
-            filename: 'What is Authentication and Why is It Important',
+            filename: 'What Is Authentication',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What is Authentication and Why is It Important - Subtitles',
+            filename: 'What Is Authentication - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -166,14 +166,14 @@ export const contentAT = {
             // ID: 3.3.2
             kind: 'Image',
             name: 'Examples of Weak Passwords',
-            filename: 'Image - Examples of Strong Passwords',
+            filename: 'Image - Examples of Weak Passwords',
             ariaLabel: 'Download material',
           },
           {
             // ID: 3.3.3
             kind: 'Image',
             name: 'Examples of Strong Passwords',
-            filename: 'Image - Check your Password',
+            filename: 'Image - Examples of Strong Passwords',
             ariaLabel: 'Download material',
           },
           {
@@ -186,8 +186,8 @@ export const contentAT = {
           {
             // ID: 3.3.5
             kind: 'Image',
-            name: 'Check your Password',
-            filename: 'Image - Two Different Types of Authentication Used Together',
+            name: 'Check Your Password',
+            filename: 'Image - Check Your Password',
             ariaLabel: 'Download material',
           },
           {
@@ -243,16 +243,16 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Schema',
-            name: 'Set of Groups',
-            filename: 'Schema - Set of Groups',
+            kind: 'Image',
+            name: 'Two Different Types of Authentication Used Together',
+            filename: 'Image - Two Different Types of Authentication Used Together',
             ariaLabel: 'Download material',
           },
           {
             // ID: 3.4.2
             kind: 'Schema',
             name: 'Set of Money Coins',
-            filename: 'Schema - Set of Coins',
+            filename: 'Schema - Set of Money Coins',
             ariaLabel: 'Download material',
           },
           {
@@ -271,34 +271,27 @@ export const contentAT = {
           },
           {
             // ID: 3.4.6
-            kind: 'Images',
+            kind: 'Image',
             name: 'How to Use a Password Manager',
-            filename: 'Images - How to Use a Password Manager',
+            filename: 'Image - How to Use a Password Manager',
             ariaLabel: 'Download material',
           },
           {
             // ID: 3.4.7
             kind: 'Image',
-            name: 'Password Manager Vault',
-            filename: 'Image - Password Manager Vault',
+            name: 'Password Manager',
+            filename: 'Image - Password Manager',
             ariaLabel: 'Download material',
           },
           {
             // ID: 3.4.8
-            kind: 'Image',
-            name: 'Password Manager as a Digital Keyring',
-            filename: 'Image - Password Manager as a Digital Keyring',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 3.4.9
             kind: 'Image',
             name: 'Steps of Saving Passwords',
             filename: 'Image - Steps of Saving Passwords',
             ariaLabel: 'Download material',
           },
           {
-            // ID: 3.4.10
+            // ID: 3.4.9
             kind: 'Worksheet',
             name: 'Password Problems and Solutions',
             filename: 'Worksheet - Password Problems and Solutions',
@@ -411,37 +404,37 @@ export const contentAT = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

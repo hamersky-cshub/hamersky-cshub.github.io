@@ -22,7 +22,7 @@ export const contentMW = {
     {
       goal: 'Den Lernenden helfen, das Konzept Malware zu verstehen.',
       bundle: {
-        filename: 'Malware Part 1 Package',
+        filename: 'Malware - Paket - Teil 1',
       },
       included: {
         materials: [
@@ -30,15 +30,22 @@ export const contentMW = {
             // ID: 6.1.1
             kind: 'Bild',
             name: 'Schädlich + Software = Malware',
-            filename: 'Image - Malicious + Software = Malware',
-            ariaLabel: 'Download material',
+            filename: 'Bild - Schädlich + Software = Malware',
+            ariaLabel: 'Material herunterladen',
           },
           {
-            // ID: 6.1.3
+            // ID: 6.1.2
+            kind: 'Bild',
+            name: 'Was ist schädlich?',
+            filename: 'Bild - Was ist schädlich',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 6.1.4
             kind: 'Arbeitsblatt',
-            name: 'Mit Malware verwandt oder nicht?',
-            filename: 'Worksheet - Related to Malware or Not',
-            ariaLabel: 'Download material',
+            name: 'Hat es mit Malware zu tun oder nicht',
+            filename: 'Arbeitsblatt - Hat es mit Malware zu tun oder nicht',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
@@ -54,18 +61,18 @@ export const contentMW = {
         ],
       },
       featuredVideo: {
-        // ID: 6.1.2
+        // ID: 6.1.3
         title: 'Was ist Malware?',
         supportText:
           'Nutze dieses Video, um Malware als Software einzuführen, die darauf ausgelegt ist, Schaden anzurichten. Es gibt den Lernenden eine Grundlage, bevor sie spezifische Typen genauer erkunden. Halte das Video an und frage, was sie bereits über Computerviren wissen oder gehört haben.',
         downloads: {
           video: {
-            filename: 'What is Malware',
-            ariaLabel: 'Download video',
+            filename: 'Was ist Malware',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What is Malware - Subtitles',
-            ariaLabel: 'Download subtitles',
+            filename: 'Was ist Malware - Untertitel',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
@@ -73,7 +80,7 @@ export const contentMW = {
     {
       goal: 'Gängige Malware-Typen vorstellen.',
       bundle: {
-        filename: 'Malware Part 2 Package',
+        filename: 'Malware - Paket - Teil 2',
       },
       included: {
         materials: [
@@ -81,22 +88,15 @@ export const contentMW = {
             // ID: 6.2.2
             kind: 'Schema',
             name: 'Münzset',
-            filename: 'Schema - Set of Coins',
-            ariaLabel: 'Download material',
+            filename: 'Schema - Münzset',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 6.2.3
             kind: 'Schema',
-            name: 'Knoten-Zuordnungstafel',
-            filename: 'Sheet - Knot Ties Board',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 6.2.4
-            kind: 'Blatt',
-            name: 'Malware-Eigenschaften',
-            filename: 'Sheet - Malware Properties',
-            ariaLabel: 'Download material',
+            name: 'Spielbrett: Knote die Bänder',
+            filename: 'Schema - Spielbrett Knote die Bänder',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
@@ -118,12 +118,12 @@ export const contentMW = {
           'Nutze dieses Video, um den Lernenden einen klaren Überblick über die verschiedenen Malware-Kategorien und ihre Besonderheiten zu geben. Halte das Video an für eine kurze Diskussion, welchen Typ sie für am gefährlichsten halten und warum.',
         downloads: {
           video: {
-            filename: 'Introducing Malware Types',
-            ariaLabel: 'Download video',
+            filename: 'Malware-Typen im Überblick',
+            ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Introducing Malware Types - Subtitles',
-            ariaLabel: 'Download subtitles',
+            filename: 'Malware-Typen im Überblick - Untertitel',
+            ariaLabel: 'Untertitel herunterladen',
           },
         },
       },
@@ -131,37 +131,30 @@ export const contentMW = {
     {
       goal: 'Einen Überblick über die Merkmale von Malware geben, um sie zu erkennen und zu entdecken.',
       bundle: {
-        filename: 'Malware Part 3 Package',
+        filename: 'Malware - Paket - Teil 3',
       },
       included: {
         materials: [
           {
             // ID: 6.3.1
-            kind: 'Arbeitsblatt',
-            name: 'Liste der Indikatoren',
-            filename: 'Worksheet - List of Indicators',
-            ariaLabel: 'Download material',
+            kind: 'Lektüre',
+            name: 'Malware erkennen',
+            filename: 'Lektüre - Malware erkennen',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 6.3.2
-            kind: 'Lektüre',
-            name: 'Malware erkennen',
-            filename: 'Reading - Recognising Malware',
-            ariaLabel: 'Download material',
+            kind: 'Poster',
+            name: 'Sieben Indikatoren',
+            filename: 'Poster - Sieben Indikatoren',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 6.3.3
-            kind: 'Poster',
-            name: 'Sieben Indikatoren',
-            filename: 'Poster - Seven Indicators',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 6.3.4
-            kind: 'Tabelle',
-            name: 'Situation und Indikatoren',
-            filename: 'Table - Situation and Indicators',
-            ariaLabel: 'Download material',
+            kind: 'Arbeitsblatt',
+            name: 'Liste der Indikatoren',
+            filename: 'Arbeitsblatt - Liste der Indikatoren',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
@@ -180,30 +173,37 @@ export const contentMW = {
     {
       goal: 'Den Lernenden helfen, Schutzmaßnahmen gegen Malware zu verstehen.',
       bundle: {
-        filename: 'Malware Part 4 Package',
+        filename: 'Malware - Paket - Teil 4',
       },
       included: {
         materials: [
           {
             // ID: 6.4.1
             kind: 'Situation',
-            name: 'Malware und Datendiebstahl?',
-            filename: 'Situation - Malware and Data Theft',
-            ariaLabel: 'Download material',
+            name: 'Malware und Datendiebstahl',
+            filename: 'Situation - Malware und Datendiebstahl',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 6.4.2
             kind: 'Poster',
-            name: 'DO\'s und DON\'Ts',
-            filename: 'Poster - DOs and DON\'Ts',
-            ariaLabel: 'Download material',
+            name: 'DOs und DON\'Ts',
+            filename: 'Poster - DOs und DON\'Ts',
+            ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 6.4.3
+            kind: 'Bilder',
+            name: 'Assoziative Bilder: Sei aufmerksam',
+            filename: 'Bilder - Assoziative Bilder Sei aufmerksam',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 6.4.4
             kind: 'Arbeitsblatt',
             name: 'Ein Schutzschild gegen Malware',
-            filename: 'Worksheet - A Shield Against Malware',
-            ariaLabel: 'Download material',
+            filename: 'Arbeitsblatt - Ein Schutzschild gegen Malware',
+            ariaLabel: 'Material herunterladen',
           },
         ],
         activityPlan: [
@@ -228,37 +228,37 @@ export const contentMW = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

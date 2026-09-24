@@ -34,13 +34,20 @@ export const contentDA = {
             filename: 'Game - Truth Detectives',
             ariaLabel: 'Download material',
           },
+          {
+            // ID: 7.1.3
+            kind: 'Image',
+            name: 'Cinnamon Challenge',
+            filename: 'Image - Cinnamon Challenge',
+            ariaLabel: 'Download material',
+          },
         ],
         activityPlan: [
           {
             title: 'Introduction',
           },
           {
-            title: 'What is Misinformation?',
+            title: 'What Is Misinformation?',
           },
           {
             title: 'Plenary: Summary and Informal Assessment',
@@ -49,16 +56,16 @@ export const contentDA = {
       },
       featuredVideo: {
         // ID: 7.1.1
-        title: 'What is Misinformation?',
+        title: 'What Is Misinformation?',
         supportText:
           'Use this video to introduce misinformation as false or inaccurate content that can spread online without harmful intent. Pause to ask students if they have ever shared something that later turned out not to be true.',
         downloads: {
           video: {
-            filename: 'What is Misinformation',
+            filename: 'What Is Misinformation',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What is Misinformation - Subtitles',
+            filename: 'What Is Misinformation - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -71,13 +78,28 @@ export const contentDA = {
         filename: 'Digital Abuse Part 2 Package',
       },
       included: {
-        materials: [],
+        materials: [
+          {
+            // ID: 7.2.2
+            kind: 'Worksheet',
+            name: 'Newspaper Template “Sharing News”',
+            filename: 'Worksheet - Newspaper Template Sharing News',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 7.2.3
+            kind: 'Image',
+            name: 'Social Media Algorithms',
+            filename: 'Image - Social Media Algorithms',
+            ariaLabel: 'Download material',
+          },
+        ],
         activityPlan: [
           {
             title: 'Introduction',
           },
           {
-            title: 'What is Disinformation?',
+            title: 'What Is Disinformation?',
           },
           {
             title: 'Algorithms',
@@ -89,16 +111,16 @@ export const contentDA = {
       },
       featuredVideo: {
         // ID: 7.2.1
-        title: 'What is Disinformation?',
+        title: 'What Is Disinformation?',
         supportText:
           'Use this video to help students distinguish disinformation — deliberately deceptive content — from misinformation. Pause to discuss how intent changes the way we evaluate and respond to false information.',
         downloads: {
           video: {
-            filename: 'What is Disinformation',
+            filename: 'What Is Disinformation',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What is Disinformation - Subtitles',
+            filename: 'What Is Disinformation - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -114,9 +136,16 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Game',
-            name: 'Act it Out!',
-            filename: 'Game - Act it Out',
+            kind: 'Scenario Cards',
+            name: 'Act It Out!',
+            filename: 'Scenario Cards - Act It Out',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 7.3.3
+            kind: 'Scenario Cards',
+            name: 'Is It Just Bad Manners?',
+            filename: 'Scenario Cards - Is It Just Bad Manners',
             ariaLabel: 'Download material',
           },
         ],
@@ -125,7 +154,7 @@ export const contentDA = {
             title: 'Introduction',
           },
           {
-            title: 'What is Cyber Bullying?',
+            title: 'What Is Cyber Bullying?',
           },
           {
             title: 'Plenary: Summary and Informal Assessment',
@@ -134,16 +163,16 @@ export const contentDA = {
       },
       featuredVideo: {
         // ID: 7.3.2
-        title: 'What is Cyber Bullying?',
+        title: 'What Is Cyber Bullying?',
         supportText:
           'Use this video to help students define cyber bullying and understand how online behaviour can cause real emotional harm. Pause to discuss what makes a bystander\'s response important in these situations.',
         downloads: {
           video: {
-            filename: 'What is Cyber Bullying',
+            filename: 'What Is Cyber Bullying',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What is Cyber Bullying - Subtitles',
+            filename: 'What Is Cyber Bullying - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -159,9 +188,23 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Game',
-            name: 'Real or Fake?',
-            filename: 'Game - Real or Fake',
+            kind: 'Poster',
+            name: 'Stranger Danger',
+            filename: 'Poster - Stranger Danger',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 7.4.2
+            kind: 'Scenario Cards',
+            name: 'Real or Fake? The Profile Detective Game',
+            filename: 'Scenario Cards - Real or Fake The Profile Detective Game',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 7.4.3
+            kind: 'Worksheet',
+            name: 'Stranger Danger Champion',
+            filename: 'Worksheet - Stranger Danger Champion',
             ariaLabel: 'Download material',
           },
         ],
@@ -185,9 +228,9 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scenarios',
-            name: 'Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
-            filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scenario Cards',
+            name: 'Influencer Posts',
+            filename: 'Scenario Cards - Influencer Posts',
             ariaLabel: 'Download material',
           },
         ],
@@ -230,9 +273,23 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Activity',
-            name: 'Safety Superhero Suggestion Pack',
-            filename: 'Activity - Safety Superhero Suggestion Pack',
+            kind: 'Worksheet',
+            name: 'Digital Superhero',
+            filename: 'Worksheet - Digital Superhero',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 7.6.2
+            kind: 'Worksheet',
+            name: 'CyberDoku: Solving the Mystery',
+            filename: 'Worksheet - CyberDoku Solving the Mystery',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 7.6.3
+            kind: 'Image',
+            name: 'CyberDoku: The Map of the Area',
+            filename: 'Image - CyberDoku The Map of the Area',
             ariaLabel: 'Download material',
           },
         ],
@@ -252,37 +309,37 @@ export const contentDA = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
   ],
 }

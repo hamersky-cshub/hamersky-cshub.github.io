@@ -114,6 +114,8 @@ export const shared = {
         'Toto je centrální prostor pro všechny moduly, školicí materiály a další vzdělávací zdroje. Najdete zde lekce připravené k použití, praktické aktivity a pokyny navržené k podpoře výuky kyberbezpečnosti v různorodém školním prostředí. Všechny materiály jsou strukturované, adaptabilní a vytvořené tak, aby pomohly pedagogům sebejistě představit témata digitální bezpečnosti dětem. Ať už hledáte ucelené moduly nebo jednotlivé výukové zdroje, výukové centrum vám poskytne vše potřebné na jednom místě.',
 
       labels: {
+        showDetails: 'Zobrazit části a aktivity',
+        hideDetails: 'Skrýt části a aktivity',
         goal: 'Cíl',
         challenge: 'Výzva',
         challenges: 'Výzvy',

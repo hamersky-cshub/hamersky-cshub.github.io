@@ -23,7 +23,7 @@ export const contentDA = {
       title: 'Feilinformasjon',
       goal: 'Hjelpe elever til å forstå hva feilinformasjon er, hva som motiverer folk til å spre det og hvordan man gjenkjenner det.',
       bundle: {
-        filename: 'Digital Abuse Part 1 Package',
+        filename: 'Digital misbruk - pakke - del 1',
       },
       included: {
         materials: [
@@ -31,7 +31,14 @@ export const contentDA = {
             // ID: 7.1.2
             kind: 'Spill',
             name: 'Sannhetsdetektivene',
-            filename: 'Game - Truth Detectives',
+            filename: 'Spill - Sannhetsdetektivene',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.1.3
+            kind: 'Bilde',
+            name: 'Kanelutfordringen',
+            filename: 'Bilde - Kanelutfordringen',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -54,11 +61,11 @@ export const contentDA = {
           'Bruk denne videoen til å introdusere feilinformasjon som falskt eller unøyaktig innhold som kan spre seg på nettet uten skadelig hensikt. Pause for å spørre elever om de noen gang har delt noe som senere viste seg å ikke stemme.',
         downloads: {
           video: {
-            filename: 'What is Misinformation',
+            filename: 'Hva er feilinformasjon',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What is Misinformation - Subtitles',
+            filename: 'Hva er feilinformasjon - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -68,10 +75,25 @@ export const contentDA = {
       title: 'Desinformasjon',
       goal: 'Hjelpe elever til å forstå hva desinformasjon er, motivasjonene bak det og hvordan man gjenkjenner det.',
       bundle: {
-        filename: 'Digital Abuse Part 2 Package',
+        filename: 'Digital misbruk - pakke - del 2',
       },
       included: {
-        materials: [],
+        materials: [
+          {
+            // ID: 7.2.2
+            kind: 'Arbeidsark',
+            name: 'Avismal «Dele nyheter»',
+            filename: 'Arbeidsark - Avismal Dele nyheter',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.2.3
+            kind: 'Bilde',
+            name: 'Algoritmer i sosiale medier',
+            filename: 'Bilde - Algoritmer i sosiale medier',
+            ariaLabel: 'Last ned materiell',
+          },
+        ],
         activityPlan: [
           {
             title: 'Introduksjon',
@@ -94,11 +116,11 @@ export const contentDA = {
           'Bruk denne videoen til å hjelpe elever med å skille desinformasjon — bevisst villedende innhold — fra feilinformasjon. Pause for å diskutere hvordan hensikten endrer måten vi vurderer og reagerer på falsk informasjon.',
         downloads: {
           video: {
-            filename: 'What is Disinformation',
+            filename: 'Hva er desinformasjon',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What is Disinformation - Subtitles',
+            filename: 'Hva er desinformasjon - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -108,15 +130,22 @@ export const contentDA = {
       title: 'Nettmobbing',
       goal: 'Hjelpe elever til å forstå hva nettmobbing er, motivasjonene bak det og hvordan man gjenkjenner det.',
       bundle: {
-        filename: 'Digital Abuse Part 3 Package',
+        filename: 'Digital misbruk - pakke - del 3',
       },
       included: {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Spill',
+            kind: 'Scenariokort',
             name: 'Spill det ut!',
-            filename: 'Game - Act it Out',
+            filename: 'Scenariokort - Spill det ut',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.3.3
+            kind: 'Scenariokort',
+            name: 'Er det bare dårlig oppførsel?',
+            filename: 'Scenariokort - Er det bare dårlig oppførsel',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -139,11 +168,11 @@ export const contentDA = {
           'Bruk denne videoen til å hjelpe elever med å definere nettmobbing og forstå hvordan nettadferd kan forårsake reell emosjonell skade. Pause for å diskutere hvorfor tilskueres respons er viktig i disse situasjonene.',
         downloads: {
           video: {
-            filename: 'What is Cyber Bullying',
+            filename: 'Hva er nettmobbing',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What is Cyber Bullying - Subtitles',
+            filename: 'Hva er nettmobbing - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -153,15 +182,29 @@ export const contentDA = {
       title: 'Fremmedes fare',
       goal: 'Hjelpe elever til å forstå hva fremmedes fare er, motivasjonene bak det og hvordan man gjenkjenner det.',
       bundle: {
-        filename: 'Digital Abuse Part 4 Package',
+        filename: 'Digital misbruk - pakke - del 4',
       },
       included: {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Spill',
-            name: 'Ekte eller falsk?',
-            filename: 'Game - Real or Fake',
+            kind: 'Plakat',
+            name: 'Farlige fremmede',
+            filename: 'Plakat - Farlige fremmede',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.4.2
+            kind: 'Scenariokort',
+            name: 'Ekte eller falsk? Profildetektivspillet',
+            filename: 'Scenariokort - Ekte eller falsk Profildetektivspillet',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.4.3
+            kind: 'Arbeidsark',
+            name: 'Mester på farlige fremmede',
+            filename: 'Arbeidsark - Mester på farlige fremmede',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -179,15 +222,15 @@ export const contentDA = {
       title: 'Influencere',
       goal: 'Hjelpe elever til å forstå hva influencere er og hva som motiverer dem.',
       bundle: {
-        filename: 'Digital Abuse Part 5 Package',
+        filename: 'Digital misbruk - pakke - del 5',
       },
       included: {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scenarier',
-            name: 'Eksempler på influencer-innlegg som er potensielt skadelige og ikke skadelige',
-            filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scenariokort',
+            name: 'Influencer-innlegg',
+            filename: 'Scenariokort - Influencer-innlegg',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -210,11 +253,11 @@ export const contentDA = {
           'Bruk denne videoen til å utforske hvordan influencere former meninger og atferd på sosiale medier, og ansvaret som følger med den rekkevidden. Pause for å spørre elever hvilke influencere de følger og hva som gjør dem troverdige.',
         downloads: {
           video: {
-            filename: 'Social Media Influencers',
+            filename: 'Influencere på sosiale medier',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Social Media Influencers - Subtitles',
+            filename: 'Influencere på sosiale medier - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -224,15 +267,29 @@ export const contentDA = {
       title: 'Hvordan kan vi håndtere atferden til digitale overgripere?',
       goal: 'Hjelpe elever til å vite hva de kan gjøre for å beskytte seg mot digitalt misbruk.',
       bundle: {
-        filename: 'Digital Abuse Part 6 Package',
+        filename: 'Digital misbruk - pakke - del 6',
       },
       included: {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Aktivitet',
-            name: 'Sikkerhets-superhelt forslagspakke',
-            filename: 'Activity - Safety Superhero Suggestion Pack',
+            kind: 'Arbeidsark',
+            name: 'Digital superhelt',
+            filename: 'Arbeidsark - Digital superhelt',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.6.2
+            kind: 'Arbeidsark',
+            name: 'CyberDoku: Løs mysteriet',
+            filename: 'Arbeidsark - CyberDoku Løs mysteriet',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 7.6.3
+            kind: 'Bilde',
+            name: 'CyberDoku: Kart over området',
+            filename: 'Bilde - CyberDoku Kart over området',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -252,37 +309,37 @@ export const contentDA = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
   ],
 }

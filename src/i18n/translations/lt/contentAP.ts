@@ -21,7 +21,7 @@ export const contentAP = {
       goal:
         'Padėti vaikams įgyti žinių apie patikimo asmens konceptą ir ugdyti įgūdžius identifikuoti patikimų asmenų ratą.',
       bundle: {
-        filename: 'Attacker Perspective Part 1 Package',
+        filename: 'Užpuoliko perspektyva - paketas - 1 dalis',
       },
       included: {
         materials: [
@@ -29,14 +29,28 @@ export const contentAP = {
             // ID: 2.1.1
             kind: 'Darbalapas',
             name: 'Patikimi asmenys: žmonės aplink mane',
-            filename: 'Worksheet - Trusteees People Around Me',
+            filename: 'Darbalapas - Patikimi asmenys žmonės aplink mane',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 2.1.2
             kind: 'Darbalapas',
             name: 'Pasitikėjimo ratai',
-            filename: 'Worksheet - Circles of Trust',
+            filename: 'Darbalapas - Pasitikėjimo ratai',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.1.3
+            kind: 'Paveikslėlis',
+            name: 'Situacija: Rasti pinigai',
+            filename: 'Paveikslėlis - Situacija Rasti pinigai',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.1.4
+            kind: 'Paveikslėlis',
+            name: 'Situacija: Pamatyta nuotrauka',
+            filename: 'Paveikslėlis - Situacija Pamatyta nuotrauka',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -56,36 +70,43 @@ export const contentAP = {
     {
       goal: 'Pristatyti užpuoliko konceptą ir motyvaciją iš užpuoliko perspektyvos.',
       bundle: {
-        filename: 'Attacker Perspective Part 2 Package',
+        filename: 'Užpuoliko perspektyva - paketas - 2 dalis',
       },
       included: {
         materials: [
           {
             // ID: 2.2.1
-            kind: 'Kortelės',
+            kind: 'Scenarijų kortelės',
             name: 'Identifikuoti elgesį',
-            filename: 'Cards - Identify the Behaviour',
+            filename: 'Scenarijų kortelės - Identifikuoti elgesį',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 2.2.2
-            kind: 'Kortelės',
+            kind: 'Scenarijų kortelės',
             name: 'Atpažinti personažus',
-            filename: 'Cards - Recognise the Characters',
+            filename: 'Scenarijų kortelės - Atpažinti personažus',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 2.2.4
             kind: 'Paveikslėlis',
             name: 'Užpuolikų motyvacijos',
-            filename: 'Image - Attacker Motivations',
+            filename: 'Paveikslėlis - Užpuolikų motyvacijos',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 2.2.5
+            kind: 'Paveikslėlis',
+            name: 'Žvilgsnis į pasaką: Užpuoliko motyvacija ir priemonės',
+            filename: 'Paveikslėlis - Žvilgsnis į pasaką Užpuoliko motyvacija ir priemonės',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.2.6
             kind: 'Darbalapas',
             name: 'Atakos analizė',
-            filename: 'Worksheet - Attack Analysis',
+            filename: 'Darbalapas - Atakos analizė',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -111,11 +132,11 @@ export const contentAP = {
           'Naudokite šį vaizdo įrašą, kad mokiniai galėtų įsivaizduoti tikrus žmones ir motyvus už kibernetinių atakų, peržengdami vieno hakerio stereotipą. Sustokite ir paklauskite, kas, jų manymu, yra atsakingas ir kodėl.',
         downloads: {
           video: {
-            filename: 'Who is Behind Cyber Attacks',
+            filename: 'Kas slypi už kibernetinių atakų',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Who is Behind Cyber Attacks - Subtitles',
+            filename: 'Kas slypi už kibernetinių atakų - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -124,22 +145,50 @@ export const contentAP = {
     {
       goal: 'Pristatyti pagrindines technikas (taktikas), aktualias vaikams, kurias užpuolikai naudoja savo tikslams pasiekti.',
       bundle: {
-        filename: 'Attacker Perspective Part 3 Package',
+        filename: 'Užpuoliko perspektyva - paketas - 3 dalis',
       },
       included: {
         materials: [
           {
             // ID: 2.3.1
-            kind: 'Situacija',
+            kind: 'Skaitymas',
             name: 'Smišingas ir apsimetinėjimas',
-            filename: 'Situation - Smishing and Impersonation',
+            filename: 'Skaitymas - Smišingas ir apsimetinėjimas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 2.3.2
+            kind: 'Skaitymas',
+            name: 'Višingas, sukčiavimas ir apsimetinėjimas',
+            filename: 'Skaitymas - Višingas, sukčiavimas ir apsimetinėjimas',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.3.3
+            kind: 'Skaitymas',
+            name: 'Dažniausios kibernetinės grėsmės',
+            filename: 'Skaitymas - Dažniausios kibernetinės grėsmės',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.3.4
             kind: 'Paveikslėlis',
             name: 'Įprastos priešininkų technikos',
-            filename: 'Image - Common Adversary Techniques',
+            filename: 'Paveikslėlis - Įprastos priešininkų technikos',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.3.5
+            kind: 'Kortelės',
+            name: 'Užpuolikai ir jų planai',
+            filename: 'Kortelės - Užpuolikai ir jų planai',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 2.3.6
+            kind: 'Darbalapas',
+            name: 'Galvosūkis: Užpuolikų vakarėlis',
+            filename: 'Darbalapas - Galvosūkis Užpuolikų vakarėlis',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -168,37 +217,37 @@ export const contentAP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

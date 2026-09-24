@@ -31,7 +31,14 @@ export const contentDA = {
             // ID: 7.1.2
             kind: 'Hra',
             name: 'Detektivové pravdy',
-            filename: 'Game - Truth Detectives',
+            filename: 'Hra - Detektivové pravdy',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.1.3
+            kind: 'Obrázek',
+            name: 'Skořicová výzva',
+            filename: 'Obrázek - Skořicová výzva',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -40,7 +47,7 @@ export const contentDA = {
             title: 'Úvod',
           },
           {
-            title: 'Co jsou dezinformace?',
+            title: 'Co jsou misinformace?',
           },
           {
             title: 'Plenum: Shrnutí a neformální hodnocení',
@@ -49,16 +56,16 @@ export const contentDA = {
       },
       featuredVideo: {
         // ID: 7.1.1
-        title: 'Co jsou dezinformace?',
+        title: 'Co jsou misinformace?',
         supportText:
           'Použijte toto video k představení dezinformací jako nepravdivého nebo nepřesného obsahu, který se může šířit online bez škodlivého úmyslu. Pozastavte a zeptejte se žáků, zda někdy sdíleli něco, co se později ukázalo jako nepravdivé.',
         downloads: {
           video: {
-            filename: 'What is Misinformation',
+            filename: 'Co jsou misinformace',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What is Misinformation - Subtitles',
+            filename: 'Co jsou misinformace - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -71,13 +78,28 @@ export const contentDA = {
         filename: 'Digitální zneužívání - balíček - Část 2',
       },
       included: {
-        materials: [],
+        materials: [
+          {
+            // ID: 7.2.2
+            kind: 'Pracovní list',
+            name: 'Šablona novin „Sdílení zpráv“',
+            filename: 'Pracovní list - Šablona novin Sdílení zpráv',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.2.3
+            kind: 'Obrázek',
+            name: 'Algoritmy sociálních sítí',
+            filename: 'Obrázek - Algoritmy sociálních sítí',
+            ariaLabel: 'Stáhnout materiál',
+          },
+        ],
         activityPlan: [
           {
             title: 'Úvod',
           },
           {
-            title: 'Co jsou disinformace?',
+            title: 'Co jsou dezinformace?',
           },
           {
             title: 'Algoritmy',
@@ -89,16 +111,16 @@ export const contentDA = {
       },
       featuredVideo: {
         // ID: 7.2.1
-        title: 'Co jsou disinformace?',
+        title: 'Co jsou dezinformace?',
         supportText:
           'Použijte toto video, aby žáci dokázali rozlišit disinformace – záměrně klamný obsah – od dezinformací. Pozastavte a diskutujte o tom, jak úmysl mění způsob, jakým hodnotíme nepravdivé informace a reagujeme na ně.',
         downloads: {
           video: {
-            filename: 'What is Disinformation',
+            filename: 'Co jsou dezinformace',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What is Disinformation - Subtitles',
+            filename: 'Co jsou dezinformace - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -114,9 +136,16 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Hra',
+            kind: 'Scénářové karty',
             name: 'Zahraj to!',
-            filename: 'Game - Act it Out',
+            filename: 'Scénářové karty - Zahraj to',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.3.3
+            kind: 'Scénářové karty',
+            name: 'Je to jen nevychovanost?',
+            filename: 'Scénářové karty - Je to jen nevychovanost',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -139,11 +168,11 @@ export const contentDA = {
           'Použijte toto video, aby žáci definovali kyberšikanu a pochopili, jak online chování může způsobit skutečnou emocionální újmu. Pozastavte a diskutujte o tom, proč je reakce přihlížejícího v těchto situacích důležitá.',
         downloads: {
           video: {
-            filename: 'What is Cyber Bullying',
+            filename: 'Co je kyberšikana',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What is Cyber Bullying - Subtitles',
+            filename: 'Co je kyberšikana - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -159,9 +188,23 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Hra',
-            name: 'Skutečné nebo falešné?',
-            filename: 'Game - Real or Fake',
+            kind: 'Plakát',
+            name: 'Nebezpečí od cizích lidí',
+            filename: 'Plakát - Nebezpečí od cizích lidí',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.4.2
+            kind: 'Scénářové karty',
+            name: 'Skutečný, nebo falešný? Hra na detektiva profilů',
+            filename: 'Scénářové karty - Skutečný, nebo falešný Hra na detektiva profilů',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.4.3
+            kind: 'Pracovní list',
+            name: 'Šampion v bezpečí před cizími lidmi',
+            filename: 'Pracovní list - Šampion v bezpečí před cizími lidmi',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -185,9 +228,9 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scénáře',
-            name: 'Příklady příspěvků influencerů, které jsou potenciálně škodlivé a které nejsou',
-            filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scénářové karty',
+            name: 'Příspěvky influencerů',
+            filename: 'Scénářové karty - Příspěvky influencerů',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -210,11 +253,11 @@ export const contentDA = {
           'Použijte toto video k prozkoumání toho, jak influenceři formují názory a chování na sociálních sítích, a jaká odpovědnost s tímto dosahem přichází. Pozastavte a zeptejte se žáků, které influencery sledují a co je dělá důvěryhodné.',
         downloads: {
           video: {
-            filename: 'Social Media Influencers',
+            filename: 'Influenceři na sociálních sítích',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Social Media Influencers - Subtitles',
+            filename: 'Influenceři na sociálních sítích - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -230,9 +273,23 @@ export const contentDA = {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Aktivita',
-            name: 'Balíček návrhů od Bezpečnostního superhrdiny',
-            filename: 'Activity - Safety Superhero Suggestion Pack',
+            kind: 'Pracovní list',
+            name: 'Digitální superhrdina',
+            filename: 'Pracovní list - Digitální superhrdina',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.6.2
+            kind: 'Pracovní list',
+            name: 'CyberDoku: Řešení záhady',
+            filename: 'Pracovní list - CyberDoku Řešení záhady',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 7.6.3
+            kind: 'Obrázek',
+            name: 'CyberDoku: Mapa oblasti',
+            filename: 'Obrázek - CyberDoku Mapa oblasti',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -252,37 +309,37 @@ export const contentDA = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
   ],
 }

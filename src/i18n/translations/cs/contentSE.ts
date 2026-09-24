@@ -27,31 +27,38 @@ export const contentSE = {
       included: {
         materials: [
           {
-            // ID: 5.1.1
-            kind: 'Obrázek',
-            name: 'Klamání lidí vs. hackování systémů',
-            filename: 'Image - Tricking People vs Hacking Systems',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
             // ID: 5.1.2
             kind: 'Obrázek',
-            name: 'Příklady zpráv sociálního inženýrství',
-            filename: 'Image - Examples of Social Engineering Messages',
+            name: 'Hackování systémů vs. klamání lidí',
+            filename: 'Obrázek - Hackování systémů vs. klamání lidí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.1.3
-            kind: 'Hodnocení situace',
-            name: 'Co útočník chce?',
-            filename: 'Situation Assessment - What Does an Attacker Want',
+            kind: 'Obrázek',
+            name: 'Cíle útočníka',
+            filename: 'Obrázek - Cíle útočníka',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.1.4
+            kind: 'Scénářové karty',
+            name: 'Co útočník chce?',
+            filename: 'Scénářové karty - Co útočník chce',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 5.1.5
+            kind: 'Karty s řešením',
+            name: 'Co útočník chce?',
+            filename: 'Karty s řešením - Co útočník chce',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 5.1.6
             kind: 'Pracovní list',
             name: 'Pochopení sociálního inženýrství',
-            filename: 'Worksheet - Understanding Social Engineering',
+            filename: 'Pracovní list - Pochopení sociálního inženýrství',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -74,16 +81,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.1.1
         title: 'Co je sociální inženýrství?',
         supportText:
           'Použijte toto video k představení sociálního inženýrství jako techniky, která využívá lidskou důvěru, nikoli technické systémy. Pozastavte se a zeptejte se žáků, zda si vzpomenou na situaci, kdy se je někdo pokusil oklamat online.',
         downloads: {
           video: {
-            filename: 'What Is Social Engineering',
+            filename: 'Co je sociální inženýrství',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What Is Social Engineering - Subtitles',
+            filename: 'Co je sociální inženýrství - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -98,30 +106,23 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.2.1
-            kind: 'Obrázek',
-            name: 'Lidské rozhodování vs. počítačové rozhodování',
-            filename: 'Image - Human Decision-making vs Computer Decision-making',
+            kind: 'Scénářové karty',
+            name: 'Taktiky útočníků',
+            filename: 'Scénářové karty - Taktiky útočníků',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.2.2
-            kind: 'Karty scénářů',
+            kind: 'Scénářové karty',
             name: 'Příklady emocionální manipulace',
-            filename: 'Scenario Cards - Emotional Manipulation Examples',
+            filename: 'Scénářové karty - Příklady emocionální manipulace',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.2.3
-            kind: 'Herní karty',
-            name: 'Taktiky útočníků',
-            filename: 'Game Cards - Attacker Tactics',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 5.2.4
             kind: 'Pracovní list',
             name: 'Proč sociální inženýrství funguje',
-            filename: 'Worksheet - Why Social Engineering Works',
+            filename: 'Pracovní list - Proč sociální inženýrství funguje',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -152,24 +153,10 @@ export const contentSE = {
       included: {
         materials: [
           {
-            // ID: 5.3.1
-            kind: 'Obrázek',
-            name: 'Příklady zpráv sociálního inženýrství',
-            filename: 'Image - Examples of Social Engineering Messages',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
             // ID: 5.3.2
-            kind: 'Karty scénářů',
-            name: 'Situace sociálního inženýrství',
-            filename: 'Scenario Cards - Social Engineering Situations',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 5.3.3
             kind: 'Pracovní list',
-            name: 'Odhal sociální inženýrství',
-            filename: 'Worksheet - Spot the Social Engineering',
+            name: 'Spojovačka',
+            filename: 'Pracovní list - Spojovačka',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -192,16 +179,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.3.1
         title: 'Typy sociálního inženýrství',
         supportText:
           'Použijte toto video, aby žáci rozpoznali různé formy sociálního inženýrství, od phishingových e-mailů po telefonní vydávání se za jiného. Pozastavte se a diskutujte, který typ by bylo nejtěžší odhalit a proč.',
         downloads: {
           video: {
-            filename: 'Types of Social Engineering',
+            filename: 'Typy sociálního inženýrství',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Types of Social Engineering - Subtitles',
+            filename: 'Typy sociálního inženýrství - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -216,37 +204,37 @@ export const contentSE = {
         materials: [
           {
             // ID: 5.4.1
-            kind: 'Karty scénářů',
-            name: 'Co bys udělal/a?',
-            filename: 'Scenario Cards - What Would You Do',
+            kind: 'Obrázek',
+            name: 'Zastav se, přemýšlej, zkontroluj, zeptej se',
+            filename: 'Obrázek - Zastav se, přemýšlej, zkontroluj, zeptej se',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.4.2
-            kind: 'Kontrolní seznam',
+            kind: 'Pracovní list',
             name: 'Zastav se, přemýšlej, zkontroluj, zeptej se',
-            filename: 'Checklist - Stop, Think, Check, Ask',
+            filename: 'Pracovní list - Zastav se, přemýšlej, zkontroluj, zeptej se',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.4.3
-            kind: 'Pracovní list',
-            name: 'Zastav se, přemýšlej, zkontroluj, zeptej se',
-            filename: 'Worksheet - Stop, Think, Check, Ask',
+            kind: 'Scénářové karty',
+            name: 'Co bys udělal/a?',
+            filename: 'Scénářové karty - Co bys udělala',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.4.4
             kind: 'Karty rolí',
-            name: 'Cíl, pomocník, přihlížející',
-            filename: 'Role Cards - Target, Helper, Bystander',
+            name: 'Prosociální chování, nebo apatie přihlížejících',
+            filename: 'Karty rolí - Prosociální chování, nebo apatie přihlížejících',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 5.4.5
             kind: 'Pracovní list',
             name: 'Ochrana sebe a ostatních',
-            filename: 'Worksheet - Protecting Myself and Others',
+            filename: 'Pracovní list - Ochrana sebe a ostatních',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -275,37 +263,37 @@ export const contentSE = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

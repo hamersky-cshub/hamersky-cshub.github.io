@@ -34,7 +34,7 @@ const { t, tHtml } = useTranslations(Astro.currentLocale)
 
       <div class="learning-modules-grid-left">
         <div class="modules-image">
-          <img class="hidden xl:block floating-image1" src="/images/index/learning-modules.png" alt="Open learning module book illustration" decoding="async" loading="eager" />
+          <img class="hidden xl:block floating-image1" src="/images/index/learning-modules.webp" alt="Open learning module book illustration" decoding="async" loading="eager" />
         </div>
         <div class="modules-content">
           <div>
@@ -52,13 +52,13 @@ const { t, tHtml } = useTranslations(Astro.currentLocale)
           <p class="md:text-2xl">{t('pages.home.challengesText')}</p>
         </div>
         <div class="modules-image">
-          <img class="hidden xl:block floating-image2" src="/images/index/challenges.png" alt="Puzzle pieces illustration representing interactive challenges" decoding="async" loading="eager" />
+          <img class="hidden xl:block floating-image2" src="/images/index/challenges.webp" alt="Puzzle pieces illustration representing interactive challenges" decoding="async" loading="eager" />
         </div>
       </div>
 
       <div class="learning-modules-grid-left">
         <div class="modules-image">
-          <img class="hidden xl:block floating-image3" src="/images/index/cybersecurity-games.png" alt="Game controller illustration representing cybersecurity games" decoding="async" loading="eager" />
+          <img class="hidden xl:block floating-image3" src="/images/index/cybersecurity-games.webp" alt="Game controller illustration representing cybersecurity games" decoding="async" loading="eager" />
         </div>
         <div class="modules-content">
           <div>
@@ -334,58 +334,6 @@ const { t, tHtml } = useTranslations(Astro.currentLocale)
   .module-grid :global(.card .image) {
     position: relative;
     overflow: hidden;
-  }
-
-  .module-grid :global(.card .image::after) {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.00s ease;
-  }
-
-  .module-grid :global(.card:hover .image::after),
-  .module-grid :global(.card:focus-within .image::after) {
-    opacity: 1;
-  }
-
-  .module-grid :global(.card:hover .image img),
-  .module-grid :global(.card:focus-within .image img) {
-    opacity: 0;
-  }
-
-  .module-grid :global(.card .image img) {
-    transition: opacity 2.00s ease;
-  }
-
-  .module-grid :global(.module-card-dc .image::after) {
-    background-image: url('/images/01_digital-citizenship_poster_hover.png');
-  }
-
-  .module-grid :global(.module-card-ap .image::after) {
-    background-image: url('/images/02_attacker-perspective_poster_hover.png');
-  }
-
-  .module-grid :global(.module-card-at .image::after) {
-    background-image: url('/images/03_authentication_poster_hover.png');
-  }
-
-  .module-grid :global(.module-card-dp .image::after) {
-    background-image: url('/images/04_data-privacy_poster_hover.png');
-  }
-
-  .module-grid :global(.module-card-se .image::after) {
-    background-image: url('/images/05_social-engineering_poster_hover.png');
-  }
-
-  .module-grid :global(.module-card-mw .image::after) {
-    background-image: url('/images/06_malware_poster_hover.png');
-  }
-
-  .module-grid :global(.module-card-da .image::after) {
-    background-image: url('/images/07_digital-abuse_poster_hover.png');
   }
 
   /* Module button colors live in src/assets/scss/base/_modules.scss */

@@ -21,7 +21,7 @@ export const contentDC = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was eine digitale Umgebung ist und welche positiven Aspekte diese hat.',
       bundle: {
-        filename: 'Digital Citizenship Part 1 Package',
+        filename: 'Digitale Staatsbürgerschaft - Paket - Teil 1',
       },
       included: {
         materials: [
@@ -29,7 +29,7 @@ export const contentDC = {
             // ID: 1.1.1
             kind: 'Szenariokarten',
             name: 'Physische und digitale Welten',
-            filename: 'Scenario Cards - Physical and Digital Worlds',
+            filename: 'Szenariokarten - Physische und digitale Welten',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -47,16 +47,16 @@ export const contentDC = {
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'Was ist eine digitale Umgebung?',
+        title: 'Was ist eine digitale Umgebung und was sind digitale Systeme?',
         supportText:
           'Verwenden Sie dieses Video, um eine Diskussion über Online-Räume anzuregen, die Schülerinnen und Schüler bereits nutzen, von Lernplattformen bis hin zu Spielen und Messaging-Apps. Pausieren Sie für kurze Reflexionen darüber, wo Schülerinnen und Schüler Zeit online verbringen.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Environment',
+            filename: 'Was ist eine digitale Umgebung und was sind digitale Systeme',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What Is a Digital Environment - Subtitles',
+            filename: 'Was ist eine digitale Umgebung und was sind digitale Systeme - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -65,7 +65,7 @@ export const contentDC = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was digitale Staatsbürgerschaft ist und warum sie wichtig ist.',
       bundle: {
-        filename: 'Digital Citizenship Part 2 Package',
+        filename: 'Digitale Staatsbürgerschaft - Paket - Teil 2',
       },
       included: {
         materials: [
@@ -73,21 +73,14 @@ export const contentDC = {
             // ID: 1.2.1
             kind: 'Bild',
             name: 'Verantwortungsbewusster Bürger',
-            filename: 'Worksheet A - Rights Responsibilities and Respect',
+            filename: 'Bild - Verantwortungsbewusster Bürger',
             ariaLabel: 'Material herunterladen',
           },
           {
-            // ID: 1.2.2a
-            kind: 'Arbeitsblatt A',
+            // ID: 1.2.2
+            kind: 'Arbeitsblatt',
             name: 'Rechte, Verantwortlichkeiten und Respekt',
-            filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
-            // ID: 1.2.2b
-            kind: 'Arbeitsblatt B',
-            name: 'Rechte, Verantwortlichkeiten und Respekt',
-            filename: 'Image - Feeling Safe',
+            filename: 'Arbeitsblatt - Rechte, Verantwortlichkeiten und Respekt',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -111,7 +104,7 @@ export const contentDC = {
       goal:
         'Den Schülerinnen und Schülern helfen zu wissen, wie sie in digitalen Umgebungen sicher sein können, indem sie kritisch denken und verantwortungsvoll mit Datenschutzeinstellungen umgehen.',
       bundle: {
-        filename: 'Digital Citizenship Part 3 Package',
+        filename: 'Digitale Staatsbürgerschaft - Paket - Teil 3',
       },
       included: {
         materials: [
@@ -119,28 +112,28 @@ export const contentDC = {
             // ID: 1.3.1
             kind: 'Bild',
             name: 'Sicherheitsgefühl',
-            filename: 'Image - Feeling Unsafe',
+            filename: 'Bild - Sicherheitsgefühl',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.3.2
             kind: 'Bild',
             name: 'Unsicherheitsgefühl',
-            filename: 'Image - Application Privacy Settings',
+            filename: 'Bild - Unsicherheitsgefühl',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.3.4
             kind: 'Bild',
-            name: 'Datenschutzeinstellungen der Anwendung',
-            filename: 'Image - Privacy Settings Strategy',
+            name: 'Datenschutzeinstellungsstrategie',
+            filename: 'Bild - Datenschutzeinstellungsstrategie',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.3.5
             kind: 'Bild',
-            name: 'Datenschutzeinstellungsstrategie',
-            filename: 'Image - Digital Footprint',
+            name: 'App-Datenschutzeinstellungen',
+            filename: 'Bild - App-Datenschutzeinstellungen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -166,11 +159,11 @@ export const contentDC = {
           'Verwenden Sie dieses Video, um Datenschutzeinstellungen als praktisches Werkzeug einzuführen, das Schülerinnen und Schüler bei den Apps und Geräten, die sie bereits besitzen, kontrollieren können. Pausieren Sie, um zu fragen, welche Einstellungen sie bereits überprüft oder geändert haben.',
         downloads: {
           video: {
-            filename: 'What Are Privacy Settings',
+            filename: 'Was sind Datenschutzeinstellungen',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What Are Privacy Settings - Subtitles',
+            filename: 'Was sind Datenschutzeinstellungen - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -179,7 +172,7 @@ export const contentDC = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, wie Weisheit und Resilienz ihnen helfen können, klug in digitalen Umgebungen zu agieren.',
       bundle: {
-        filename: 'Digital Citizenship Part 4 Package',
+        filename: 'Digitale Staatsbürgerschaft - Paket - Teil 4',
       },
       included: {
         activityPlan: [
@@ -204,11 +197,11 @@ export const contentDC = {
           'Verwenden Sie dieses Video, um zu erkunden, wie Schülerinnen und Schüler sich erholen und anpassen können, wenn online etwas schiefläuft, von Kontoproblemen bis hin zu unerwünschtem Kontakt. Pausieren Sie, um zu fragen, an wen sich Schülerinnen und Schüler in solchen Situationen um Hilfe wenden.',
         downloads: {
           video: {
-            filename: 'Resilience in Digital Environments',
+            filename: 'Resilienz in digitalen Umgebungen',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Resilience in Digital Environments - Subtitles',
+            filename: 'Resilienz in digitalen Umgebungen - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -218,7 +211,7 @@ export const contentDC = {
       goal:
         'Den Schülerinnen und Schülern helfen zu verstehen, wie sie verantwortungsvoll handeln und Respekt für sich selbst und andere zeigen können, wenn sie sich sozial in digitalen Umgebungen engagieren.',
       bundle: {
-        filename: 'Digital Citizenship Part 5 Package',
+        filename: 'Digitale Staatsbürgerschaft - Paket - Teil 5',
       },
       included: {
         materials: [
@@ -226,21 +219,21 @@ export const contentDC = {
             // ID: 1.5.1
             kind: 'Bild',
             name: 'Digitaler Fußabdruck',
-            filename: 'Image - Digital Footprint',
+            filename: 'Bild - Digitaler Fußabdruck',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.5.2
             kind: 'Szenariokarten',
-            name: 'Gut und schlecht zu Posten',
-            filename: 'Scenario Cards - Good and Bad to Post',
+            name: 'Was man posten sollte und was nicht',
+            filename: 'Szenariokarten - Was man posten sollte und was nicht',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 1.5.3
             kind: 'Szenariokarten',
             name: 'Social-Media-Beiträge',
-            filename: 'Scenario Cards - Social Media Posts',
+            filename: 'Szenariokarten - Social-Media-Beiträge',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -266,37 +259,37 @@ export const contentDC = {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

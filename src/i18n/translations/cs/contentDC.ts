@@ -29,7 +29,7 @@ export const contentDC = {
             // ID: 1.1.1
             kind: 'Scénářové karty',
             name: 'Fyzický a digitální svět',
-            filename: 'Scenario Cards - Physical and Digital Worlds',
+            filename: 'Scénářové karty - Fyzický a digitální svět',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -47,16 +47,16 @@ export const contentDC = {
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'Co je digitální prostředí?',
+        title: 'Co je digitální prostředí a co jsou digitální systémy?',
         supportText:
           'Použijte toto video k podnícení diskuse o online prostorech, které žáci již používají, od vzdělávacích platforem po hry a aplikace pro zasílání zpráv. Zastavte se pro rychlé zamyšlení nad tím, kde žáci tráví čas online.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Environment',
+            filename: 'Co je digitální prostředí a co jsou digitální systémy',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What Is a Digital Environment - Subtitles',
+            filename: 'Co je digitální prostředí a co jsou digitální systémy - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -73,21 +73,14 @@ export const contentDC = {
             // ID: 1.2.1
             kind: 'Obrázek',
             name: 'Zodpovědný občan',
-            filename: 'Worksheet A - Rights Responsibilities and Respect',
+            filename: 'Obrázek - Zodpovědný občan',
             ariaLabel: 'Stáhnout materiál',
           },
           {
-            // ID: 1.2.2a
-            kind: 'Pracovní list A',
+            // ID: 1.2.2
+            kind: 'Pracovní list',
             name: 'Práva, odpovědnosti a úcta',
-            filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 1.2.2b
-            kind: 'Pracovní list B',
-            name: 'Práva, odpovědnosti a úcta',
-            filename: 'Image - Feeling Safe',
+            filename: 'Pracovní list - Práva, odpovědnosti a úcta',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -119,28 +112,28 @@ export const contentDC = {
             // ID: 1.3.1
             kind: 'Obrázek',
             name: 'Pocit bezpečí',
-            filename: 'Image - Feeling Unsafe',
+            filename: 'Obrázek - Pocit bezpečí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 1.3.2
             kind: 'Obrázek',
             name: 'Pocit nebezpečí',
-            filename: 'Image - Application Privacy Settings',
+            filename: 'Obrázek - Pocit nebezpečí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 1.3.4
             kind: 'Obrázek',
-            name: 'Nastavení soukromí aplikace',
-            filename: 'Image - Privacy Settings Strategy',
+            name: 'Strategie nastavení soukromí',
+            filename: 'Obrázek - Strategie nastavení soukromí',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 1.3.5
             kind: 'Obrázek',
-            name: 'Strategie nastavení soukromí',
-            filename: 'Image - Digital Footprint',
+            name: 'Nastavení soukromí v aplikacích',
+            filename: 'Obrázek - Nastavení soukromí v aplikacích',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -166,11 +159,11 @@ export const contentDC = {
           'Použijte toto video k představení nastavení soukromí jako praktického nástroje, který mohou žáci ovládat v aplikacích a zařízeních, která již vlastní. Zastavte se a zeptejte se, jaká nastavení kontrolovali nebo změnili.',
         downloads: {
           video: {
-            filename: 'What Are Privacy Settings',
+            filename: 'Co jsou nastavení soukromí',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What Are Privacy Settings - Subtitles',
+            filename: 'Co jsou nastavení soukromí - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -204,11 +197,11 @@ export const contentDC = {
           'Použijte toto video k prozkoumání toho, jak se žáci mohou vzpamatovat a přizpůsobit, když se něco online pokazí, od problémů s účtem po nevyžádaný kontakt. Zastavte se a zeptejte se, na koho se žáci obracejí o pomoc v takových situacích.',
         downloads: {
           video: {
-            filename: 'Resilience in Digital Environments',
+            filename: 'Odolnost v digitálním prostředí',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Resilience in Digital Environments - Subtitles',
+            filename: 'Odolnost v digitálním prostředí - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -226,21 +219,21 @@ export const contentDC = {
             // ID: 1.5.1
             kind: 'Obrázek',
             name: 'Digitální stopa',
-            filename: 'Image - Digital Footprint',
+            filename: 'Obrázek - Digitální stopa',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 1.5.2
             kind: 'Scénářové karty',
             name: 'Co je vhodné a nevhodné sdílet',
-            filename: 'Scenario Cards - Good and Bad to Post',
+            filename: 'Scénářové karty - Co je vhodné a nevhodné sdílet',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 1.5.3
             kind: 'Scénářové karty',
             name: 'Příspěvky na sociálních sítích',
-            filename: 'Scenario Cards - Social Media Posts',
+            filename: 'Scénářové karty - Příspěvky na sociálních sítích',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -266,43 +259,43 @@ export const contentDC = {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }
 
 export const challengeDC = {
-  title: 'Vhodný nebo NEVHODNÝ obsah ke sdílení?',
+  title: 'DOBRÝ nebo ŠPATNÝ obsah ke sdílení?',
   subtitle: 'Přetáhněte každý příspěvek do správné kategorie. Naučte se, co je bezpečné sdílet online!',
   howItWorks: 'Jak to funguje',
   instruction: 'Přetáhněte každou kartu příspěvku do příslušné zóny. Na mobilu klepněte na kartu pro výběr, poté klepněte na zónu.',
@@ -338,7 +331,7 @@ export const challengeDC = {
       emoji: '🔑',
       explanation: 'Nikdy nesdílejte hesla s nikým online — ani se svými nejlepšími přáteli!'
     },
-    { text: 'Dostal jsem jedničku z testu z přírodovědy!',
+    { text: 'Dostal/a jsem jedničku z testu z přírodovědy!',
       category: 'safe',
       emoji: '🎉',
       explanation: 'Slavit úspěchy je bezpečné sdílet — tak dál!'

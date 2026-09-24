@@ -23,7 +23,7 @@ export const contentDA = {
       title: 'Fehlinformation',
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Fehlinformation ist, was Menschen dazu motiviert und wie man sie erkennt.',
       bundle: {
-        filename: 'Digital Abuse Part 1 Package',
+        filename: 'Digitaler Missbrauch - Paket - Teil 1',
       },
       included: {
         materials: [
@@ -31,7 +31,14 @@ export const contentDA = {
             // ID: 7.1.2
             kind: 'Spiel',
             name: 'Wahrheitsdetektive',
-            filename: 'Game - Truth Detectives',
+            filename: 'Spiel - Wahrheitsdetektive',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.1.3
+            kind: 'Bild',
+            name: 'Zimt-Challenge',
+            filename: 'Bild - Zimt-Challenge',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -54,11 +61,11 @@ export const contentDA = {
           'Verwenden Sie dieses Video, um Fehlinformation als falsche oder ungenaue Inhalte einzuführen, die sich online ohne schädliche Absicht verbreiten können. Halten Sie inne und fragen Sie die Schülerinnen und Schüler, ob sie jemals etwas geteilt haben, das sich später als unwahr herausstellte.',
         downloads: {
           video: {
-            filename: 'What is Misinformation',
+            filename: 'Was ist Fehlinformation',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What is Misinformation - Subtitles',
+            filename: 'Was ist Fehlinformation - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -68,10 +75,25 @@ export const contentDA = {
       title: 'Desinformation',
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Desinformation ist, die Motivationen dahinter und wie man sie erkennt.',
       bundle: {
-        filename: 'Digital Abuse Part 2 Package',
+        filename: 'Digitaler Missbrauch - Paket - Teil 2',
       },
       included: {
-        materials: [],
+        materials: [
+          {
+            // ID: 7.2.2
+            kind: 'Arbeitsblatt',
+            name: 'Zeitungsvorlage „Nachrichten teilen“',
+            filename: 'Arbeitsblatt - Zeitungsvorlage Nachrichten teilen',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.2.3
+            kind: 'Bild',
+            name: 'Social-Media-Algorithmen',
+            filename: 'Bild - Social-Media-Algorithmen',
+            ariaLabel: 'Material herunterladen',
+          },
+        ],
         activityPlan: [
           {
             title: 'Einführung',
@@ -94,11 +116,11 @@ export const contentDA = {
           'Verwenden Sie dieses Video, um Schülerinnen und Schüler darin zu unterstützen, Desinformation — absichtlich täuschende Inhalte — von Fehlinformation zu unterscheiden. Halten Sie inne, um zu besprechen, wie die Absicht die Art und Weise verändert, wie wir falsche Informationen bewerten und darauf reagieren.',
         downloads: {
           video: {
-            filename: 'What is Disinformation',
+            filename: 'Was ist Desinformation',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What is Disinformation - Subtitles',
+            filename: 'Was ist Desinformation - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -108,15 +130,22 @@ export const contentDA = {
       title: 'Cybermobbing',
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Cybermobbing ist, die Motivationen dahinter und wie man es erkennt.',
       bundle: {
-        filename: 'Digital Abuse Part 3 Package',
+        filename: 'Digitaler Missbrauch - Paket - Teil 3',
       },
       included: {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Spiel',
+            kind: 'Szenariokarten',
             name: 'Zeig es!',
-            filename: 'Game - Act it Out',
+            filename: 'Szenariokarten - Zeig es',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.3.3
+            kind: 'Szenariokarten',
+            name: 'Ist das nur schlechtes Benehmen?',
+            filename: 'Szenariokarten - Ist das nur schlechtes Benehmen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -139,11 +168,11 @@ export const contentDA = {
           'Verwenden Sie dieses Video, um Schülerinnen und Schülern zu helfen, Cybermobbing zu definieren und zu verstehen, wie Online-Verhalten echten emotionalen Schaden verursachen kann. Halten Sie inne, um zu besprechen, warum die Reaktion von Zuschauern in diesen Situationen wichtig ist.',
         downloads: {
           video: {
-            filename: 'What is Cyber Bullying',
+            filename: 'Was ist Cybermobbing',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What is Cyber Bullying - Subtitles',
+            filename: 'Was ist Cybermobbing - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -153,15 +182,29 @@ export const contentDA = {
       title: 'Fremde Gefahr',
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Fremde Gefahr ist, die Motivationen dahinter und wie man sie erkennt.',
       bundle: {
-        filename: 'Digital Abuse Part 4 Package',
+        filename: 'Digitaler Missbrauch - Paket - Teil 4',
       },
       included: {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Spiel',
-            name: 'Echt oder Fake?',
-            filename: 'Game - Real or Fake',
+            kind: 'Poster',
+            name: 'Vorsicht vor Fremden',
+            filename: 'Poster - Vorsicht vor Fremden',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.4.2
+            kind: 'Szenariokarten',
+            name: 'Echt oder Fake? Das Profil-Detektiv-Spiel',
+            filename: 'Szenariokarten - Echt oder Fake Das Profil-Detektiv-Spiel',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.4.3
+            kind: 'Arbeitsblatt',
+            name: 'Champion gegen Gefahren durch Fremde',
+            filename: 'Arbeitsblatt - Champion gegen Gefahren durch Fremde',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -179,15 +222,15 @@ export const contentDA = {
       title: 'Influencer',
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Influencer sind und was sie motiviert.',
       bundle: {
-        filename: 'Digital Abuse Part 5 Package',
+        filename: 'Digitaler Missbrauch - Paket - Teil 5',
       },
       included: {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Szenarien',
-            name: 'Beispiele für Influencer-Beiträge, die potenziell schädlich und nicht schädlich sind',
-            filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Szenariokarten',
+            name: 'Influencer-Beiträge',
+            filename: 'Szenariokarten - Influencer-Beiträge',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -210,11 +253,11 @@ export const contentDA = {
           'Verwenden Sie dieses Video, um zu erkunden, wie Influencer Meinungen und Verhaltensweisen in sozialen Medien beeinflussen, und welche Verantwortung mit dieser Reichweite einhergeht. Halten Sie inne und fragen Sie die Schülerinnen und Schüler, welchen Influencern sie folgen und was sie vertrauenswürdig macht.',
         downloads: {
           video: {
-            filename: 'Social Media Influencers',
+            filename: 'Social-Media-Influencer',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Social Media Influencers - Subtitles',
+            filename: 'Social-Media-Influencer - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -224,15 +267,29 @@ export const contentDA = {
       title: 'Wie können wir mit dem Verhalten digitaler Täter umgehen?',
       goal: 'Den Schülerinnen und Schülern helfen zu wissen, was sie tun können, um sich vor digitalem Missbrauch zu schützen.',
       bundle: {
-        filename: 'Digital Abuse Part 6 Package',
+        filename: 'Digitaler Missbrauch - Paket - Teil 6',
       },
       included: {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Aktivität',
-            name: 'Sicherheits-Superheldenpaket',
-            filename: 'Activity - Safety Superhero Suggestion Pack',
+            kind: 'Arbeitsblatt',
+            name: 'Digitaler Superheld',
+            filename: 'Arbeitsblatt - Digitaler Superheld',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.6.2
+            kind: 'Arbeitsblatt',
+            name: 'CyberDoku: Das Rätsel lösen',
+            filename: 'Arbeitsblatt - CyberDoku Das Rätsel lösen',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 7.6.3
+            kind: 'Bild',
+            name: 'CyberDoku: Die Karte der Umgebung',
+            filename: 'Bild - CyberDoku Die Karte der Umgebung',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -252,37 +309,37 @@ export const contentDA = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
   ],
 }

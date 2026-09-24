@@ -10,13 +10,13 @@ const locale = Astro.currentLocale
 const { t } = useTranslations(locale)
 
 const imageMap: Record<string, string> = {
-  dc: '/images/learning-hub/01_digital-citizenship.png',
-  ap: '/images/learning-hub/02_attacker-perspective.png',
-  at: '/images/learning-hub/03_authentication.png',
-  dp: '/images/learning-hub/04_data-privacy.png',
-  se: '/images/learning-hub/05_social-engineering.png',
-  mw: '/images/learning-hub/06_malware.png',
-  da: '/images/learning-hub/07_digital-abuse.png',
+  dc: '/images/learning-hub/01_digital-citizenship.webp',
+  ap: '/images/learning-hub/02_attacker-perspective.webp',
+  at: '/images/learning-hub/03_authentication.webp',
+  dp: '/images/learning-hub/04_data-privacy.webp',
+  se: '/images/learning-hub/05_social-engineering.webp',
+  mw: '/images/learning-hub/06_malware.webp',
+  da: '/images/learning-hub/07_digital-abuse.webp',
 }
 
 const modules = moduleData.map(m => ({
@@ -200,25 +200,26 @@ const localizedModules = modules.map((module) => {
                   </div>
 
                   <p class="module-description">{module.description}</p>
+
+                  <button
+                    type="button"
+                    class="module-toggle"
+                    aria-expanded="false"
+                    aria-controls={`module-details-${module.id}`}
+                    data-module-toggle
+                  >
+                    <span class="module-toggle-label" data-toggle-label-show>{t('pages.hub.labels.showDetails')}</span>
+                    <span class="module-toggle-label" data-toggle-label-hide hidden>{t('pages.hub.labels.hideDetails')}</span>
+                    <span class="sr-only">– {module.title}</span>
+                    <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
                 </div>
 
-                <button
-                  class="module-toggle"
-                  aria-expanded="false"
-                  aria-label={`${t('pages.hub.aria.expandDetailsAriaPrefix')} ${module.title} ${t('pages.hub.aria.expandDetailsAriaSuffix')}`}
-                  data-module-toggle
-                  data-module-title={module.title}
-                  data-expand-prefix={t('pages.hub.aria.expandDetailsAriaPrefix')}
-                  data-collapse-prefix={t('pages.hub.aria.collapseDetailsAriaPrefix')}
-                  data-details-suffix={t('pages.hub.aria.expandDetailsAriaSuffix')}
-                >
-                  <svg class="toggle-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M8 5l8 7-8 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                  </svg>
-                </button>
               </div>
 
-              <div class="module-collapsible" data-module-collapsible hidden>
+              <div class="module-collapsible" id={`module-details-${module.id}`} data-module-collapsible hidden>
                 <div class="module-divider" role="presentation"></div>
 
                 <div class="module-parts" aria-label={`${module.title} ${t('pages.hub.aria.partListAriaSuffix')}`}>
@@ -310,7 +311,7 @@ const localizedModules = modules.map((module) => {
 
   .learning-hub-modules .module-intro-grid {
     display: grid;
-    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr) auto;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
     align-items: center;
     gap: clamp(1rem, 2vw, 2rem);
   }
@@ -615,39 +616,58 @@ const localizedModules = modules.map((module) => {
     color: var(--module-color);
   }
 
-  /* ── Toggle button ── */
+  /* ── Toggle button ──
+     A labelled pill button (text + down chevron) so it is obvious that the
+     card opens to reveal the parts, challenge and game. Text stays dark for
+     contrast; the module colour is used for the border, tint and chevron. */
   .learning-hub-modules .module-toggle {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    align-self: center;
-    flex-shrink: 0;
-    width: 2.75rem;
-    height: 2.75rem;
-    border-radius: 50%;
+    gap: 0.5rem;
+    align-self: flex-start;
+    min-height: 2.75rem;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0.85rem 0.5rem 1rem;
+    border-radius: 0.75rem;
     border: 2px solid var(--panel-border);
-    background: var(--panel-surface-strong);
-    color: var(--module-color);
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--color-neutral-800);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
   .learning-hub-modules .module-toggle:hover,
-  .learning-hub-modules .module-toggle:focus-visible {
-    background: var(--module-color);
+  .learning-hub-modules .module-toggle[aria-expanded="true"] {
+    background: var(--panel-surface-strong);
     border-color: var(--module-color);
-    color: #ffffff;
-    outline: none;
+  }
+
+  .learning-hub-modules .module-toggle:focus-visible {
+    outline: 3px solid var(--module-color);
+    outline-offset: 3px;
   }
 
   .learning-hub-modules .toggle-arrow {
-    width: 1.1rem;
-    height: 1.1rem;
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--module-color);
     transition: transform 0.3s ease;
   }
 
   .learning-hub-modules .module-toggle[aria-expanded="true"] .toggle-arrow {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .learning-hub-modules .toggle-arrow {
+      transition: none;
+    }
   }
 
   /* ── Collapsible section ── */
@@ -661,8 +681,7 @@ const localizedModules = modules.map((module) => {
 
   @media (max-width: 960px) {
     .learning-hub-modules .module-intro-grid {
-      grid-template-columns: 1fr auto;
-      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
     }
 
     .learning-hub-modules .module-poster {
@@ -670,15 +689,6 @@ const localizedModules = modules.map((module) => {
       grid-column: 1 / -1;
     }
 
-    .learning-hub-modules .module-copy {
-      grid-column: 1;
-    }
-
-    .learning-hub-modules .module-toggle {
-      grid-column: 2;
-      align-self: start;
-      margin-top: 0.25rem;
-    }
   }
 
   @media (max-width: 720px) {
@@ -698,8 +708,8 @@ const localizedModules = modules.map((module) => {
     }
 
     .learning-hub-modules .module-toggle {
-      grid-column: 1;
-      justify-self: end;
+      align-self: stretch;
+      justify-content: space-between;
     }
 
     .learning-hub-modules .module-title {
@@ -731,12 +741,6 @@ const localizedModules = modules.map((module) => {
 </style>
 
 <script>
-  const buildToggleAriaLabel = (btn: HTMLButtonElement, prefix: string) => {
-    const title = btn.dataset.moduleTitle ?? ''
-    const suffix = btn.dataset.detailsSuffix ?? ''
-    return `${prefix} ${title} ${suffix}`.trim().replace(/\s+/g, ' ')
-  }
-
   // data-toggle-bound guards against attaching duplicate click listeners when
   // Astro view transitions cause initializeModuleToggles to run again on the
   // same DOM nodes that were carried over from the previous page visit.
@@ -750,17 +754,15 @@ const localizedModules = modules.map((module) => {
         const collapsible = panel?.querySelector<HTMLElement>('[data-module-collapsible]')
         if (!collapsible) return
 
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true'
+        const expand = btn.getAttribute('aria-expanded') !== 'true'
 
-        if (isExpanded) {
-          collapsible.hidden = true
-          btn.setAttribute('aria-expanded', 'false')
-          btn.setAttribute('aria-label', buildToggleAriaLabel(btn, btn.dataset.expandPrefix ?? ''))
-        } else {
-          collapsible.hidden = false
-          btn.setAttribute('aria-expanded', 'true')
-          btn.setAttribute('aria-label', buildToggleAriaLabel(btn, btn.dataset.collapsePrefix ?? ''))
-        }
+        collapsible.hidden = !expand
+        btn.setAttribute('aria-expanded', String(expand))
+
+        const showLabel = btn.querySelector<HTMLElement>('[data-toggle-label-show]')
+        const hideLabel = btn.querySelector<HTMLElement>('[data-toggle-label-hide]')
+        if (showLabel) showLabel.hidden = expand
+        if (hideLabel) hideLabel.hidden = !expand
       })
     })
   }

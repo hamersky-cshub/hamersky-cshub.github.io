@@ -22,7 +22,7 @@ export const contentMW = {
     {
       goal: 'Hjelpe elever med å forstå konseptet skadevare.',
       bundle: {
-        filename: 'Malware Part 1 Package',
+        filename: 'Skadelig programvare - pakke - del 1',
       },
       included: {
         materials: [
@@ -30,15 +30,22 @@ export const contentMW = {
             // ID: 6.1.1
             kind: 'Bilde',
             name: 'Ondsinnet + programvare = skadevare',
-            filename: 'Image - Malicious + Software = Malware',
-            ariaLabel: 'Download material',
+            filename: 'Bilde - Ondsinnet + programvare = skadevare',
+            ariaLabel: 'Last ned materiell',
           },
           {
-            // ID: 6.1.3
+            // ID: 6.1.2
+            kind: 'Bilde',
+            name: 'Hva er ondsinnet?',
+            filename: 'Bilde - Hva er ondsinnet',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 6.1.4
             kind: 'Arbeidsark',
-            name: 'Relatert til skadevare eller ikke?',
-            filename: 'Worksheet - Related to Malware or Not',
-            ariaLabel: 'Download material',
+            name: 'Relatert til skadevare eller ikke',
+            filename: 'Arbeidsark - Relatert til skadevare eller ikke',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
@@ -54,18 +61,18 @@ export const contentMW = {
         ],
       },
       featuredVideo: {
-        // ID: 6.1.2
+        // ID: 6.1.3
         title: 'Hva er skadevare?',
         supportText:
           'Bruk denne videoen til å introdusere skadevare som programvare designet for å forårsake skade, og gi elevene et grunnlag før de utforsker spesifikke typer mer i dybden. Ta pause og spør hva de allerede vet eller har hørt om datavirus.',
         downloads: {
           video: {
-            filename: 'What is Malware',
-            ariaLabel: 'Download video',
+            filename: 'Hva er skadevare',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What is Malware - Subtitles',
-            ariaLabel: 'Download subtitles',
+            filename: 'Hva er skadevare - Undertekster',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
@@ -73,7 +80,7 @@ export const contentMW = {
     {
       goal: 'Introdusere vanlige typer skadevare.',
       bundle: {
-        filename: 'Malware Part 2 Package',
+        filename: 'Skadelig programvare - pakke - del 2',
       },
       included: {
         materials: [
@@ -81,22 +88,15 @@ export const contentMW = {
             // ID: 6.2.2
             kind: 'Skjema',
             name: 'Myntsett',
-            filename: 'Schema - Set of Coins',
-            ariaLabel: 'Download material',
+            filename: 'Skjema - Myntsett',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 6.2.3
             kind: 'Skjema',
-            name: 'Knute-koblingstavle',
-            filename: 'Sheet - Knot Ties Board',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 6.2.4
-            kind: 'Ark',
-            name: 'Egenskaper ved skadevare',
-            filename: 'Sheet - Malware Properties',
-            ariaLabel: 'Download material',
+            name: 'Spillebrett: Knyt knutene',
+            filename: 'Skjema - Spillebrett Knyt knutene',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
@@ -118,12 +118,12 @@ export const contentMW = {
           'Bruk denne videoen til å gi elevene en tydelig oversikt over de ulike kategoriene av skadevare og hva som gjør hver enkelt unik. Ta pause for en kort diskusjon om hvilken type de mener utgjør størst risiko og hvorfor.',
         downloads: {
           video: {
-            filename: 'Introducing Malware Types',
-            ariaLabel: 'Download video',
+            filename: 'Introduksjon til typer skadevare',
+            ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Introducing Malware Types - Subtitles',
-            ariaLabel: 'Download subtitles',
+            filename: 'Introduksjon til typer skadevare - Undertekster',
+            ariaLabel: 'Last ned undertekster',
           },
         },
       },
@@ -131,37 +131,30 @@ export const contentMW = {
     {
       goal: 'Gi en oversikt over kjennetegnene på skadevare for å gjenkjenne og oppdage den.',
       bundle: {
-        filename: 'Malware Part 3 Package',
+        filename: 'Skadelig programvare - pakke - del 3',
       },
       included: {
         materials: [
           {
             // ID: 6.3.1
-            kind: 'Arbeidsark',
-            name: 'Liste over indikatorer',
-            filename: 'Worksheet - List of Indicators',
-            ariaLabel: 'Download material',
+            kind: 'Lesestoff',
+            name: 'Gjenkjenne skadevare',
+            filename: 'Lesestoff - Gjenkjenne skadevare',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 6.3.2
-            kind: 'Lesestoff',
-            name: 'Gjenkjenne skadevare',
-            filename: 'Reading - Recognising Malware',
-            ariaLabel: 'Download material',
+            kind: 'Plakat',
+            name: 'Syv indikatorer',
+            filename: 'Plakat - Syv indikatorer',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 6.3.3
-            kind: 'Plakat',
-            name: 'Syv indikatorer',
-            filename: 'Poster - Seven Indicators',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 6.3.4
-            kind: 'Tabell',
-            name: 'Situasjon og indikatorer',
-            filename: 'Table - Situation and Indicators',
-            ariaLabel: 'Download material',
+            kind: 'Arbeidsark',
+            name: 'Liste over indikatorer',
+            filename: 'Arbeidsark - Liste over indikatorer',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
@@ -180,30 +173,37 @@ export const contentMW = {
     {
       goal: 'Hjelpe elever med å forstå beskyttelsestiltak mot skadevare.',
       bundle: {
-        filename: 'Malware Part 4 Package',
+        filename: 'Skadelig programvare - pakke - del 4',
       },
       included: {
         materials: [
           {
             // ID: 6.4.1
             kind: 'Situasjon',
-            name: 'Skadevare og datatyveri?',
-            filename: 'Situation - Malware and Data Theft',
-            ariaLabel: 'Download material',
+            name: 'Skadevare og datatyveri',
+            filename: 'Situasjon - Skadevare og datatyveri',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 6.4.2
             kind: 'Plakat',
             name: 'HVA MAN BØR og IKKE BØR gjøre',
-            filename: 'Poster - DOs and DON\'Ts',
-            ariaLabel: 'Download material',
+            filename: 'Plakat - HVA MAN BØR og IKKE BØR gjøre',
+            ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 6.4.3
+            kind: 'Bilder',
+            name: 'Assosiative bilder: Vær oppmerksom',
+            filename: 'Bilder - Assosiative bilder Vær oppmerksom',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 6.4.4
             kind: 'Arbeidsark',
             name: 'Et skjold mot skadevare',
-            filename: 'Worksheet - A Shield Against Malware',
-            ariaLabel: 'Download material',
+            filename: 'Arbeidsark - Et skjold mot skadevare',
+            ariaLabel: 'Last ned materiell',
           },
         ],
         activityPlan: [
@@ -228,37 +228,37 @@ export const contentMW = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

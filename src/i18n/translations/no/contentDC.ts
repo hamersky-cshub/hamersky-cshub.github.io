@@ -21,7 +21,7 @@ export const contentDC = {
     {
       goal: 'Hjelpe elever til å forstå hva et digitalt miljø er og positive aspekter ved dette.',
       bundle: {
-        filename: 'Digital Citizenship Part 1 Package',
+        filename: 'Digitalt medborgerskap - pakke - del 1',
       },
       included: {
         materials: [
@@ -29,7 +29,7 @@ export const contentDC = {
             // ID: 1.1.1
             kind: 'Scenariokort',
             name: 'Fysiske og digitale verdener',
-            filename: 'Scenario Cards - Physical and Digital Worlds',
+            filename: 'Scenariokort - Fysiske og digitale verdener',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -47,16 +47,16 @@ export const contentDC = {
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'Hva er et digitalt miljø?',
+        title: 'Hva er et digitalt miljø og digitale systemer?',
         supportText:
           'Bruk denne videoen til å starte en diskusjon om nettrom elevene allerede bruker, fra læringsplattformer til spill og meldingsapper. Pause for raske refleksjoner om hvor elever tilbringer tid på nettet.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Environment',
+            filename: 'Hva er et digitalt miljø og digitale systemer',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What Is a Digital Environment - Subtitles',
+            filename: 'Hva er et digitalt miljø og digitale systemer - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -65,7 +65,7 @@ export const contentDC = {
     {
       goal: 'Hjelpe elever til å forstå hva digitalt medborgerskap er og hvorfor det er viktig.',
       bundle: {
-        filename: 'Digital Citizenship Part 2 Package',
+        filename: 'Digitalt medborgerskap - pakke - del 2',
       },
       included: {
         materials: [
@@ -73,21 +73,14 @@ export const contentDC = {
             // ID: 1.2.1
             kind: 'Bilde',
             name: 'Ansvarlig borger',
-            filename: 'Worksheet A - Rights Responsibilities and Respect',
+            filename: 'Bilde - Ansvarlig borger',
             ariaLabel: 'Last ned materiell',
           },
           {
-            // ID: 1.2.2a
-            kind: 'Arbeidsark A',
+            // ID: 1.2.2
+            kind: 'Arbeidsark',
             name: 'Rettigheter, ansvar og respekt',
-            filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
-            // ID: 1.2.2b
-            kind: 'Arbeidsark B',
-            name: 'Rettigheter, ansvar og respekt',
-            filename: 'Image - Feeling Safe',
+            filename: 'Arbeidsark - Rettigheter, ansvar og respekt',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -111,7 +104,7 @@ export const contentDC = {
       goal:
         'Hjelpe elever til å vite hvordan de kan være trygge i digitale miljøer ved å tenke kritisk og handle ansvarlig med personverninnstillinger.',
       bundle: {
-        filename: 'Digital Citizenship Part 3 Package',
+        filename: 'Digitalt medborgerskap - pakke - del 3',
       },
       included: {
         materials: [
@@ -119,28 +112,28 @@ export const contentDC = {
             // ID: 1.3.1
             kind: 'Bilde',
             name: 'Følelse av trygghet',
-            filename: 'Image - Feeling Unsafe',
+            filename: 'Bilde - Følelse av trygghet',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.3.2
             kind: 'Bilde',
             name: 'Følelse av utrygghet',
-            filename: 'Image - Application Privacy Settings',
+            filename: 'Bilde - Følelse av utrygghet',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.3.4
             kind: 'Bilde',
-            name: 'Personverninnstillinger for apper',
-            filename: 'Image - Privacy Settings Strategy',
+            name: 'Strategi for personverninnstillinger',
+            filename: 'Bilde - Strategi for personverninnstillinger',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.3.5
             kind: 'Bilde',
-            name: 'Strategi for personverninnstillinger',
-            filename: 'Image - Digital Footprint',
+            name: 'Personverninnstillinger for apper',
+            filename: 'Bilde - Personverninnstillinger for apper',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -166,11 +159,11 @@ export const contentDC = {
           'Bruk denne videoen til å introdusere personverninnstillinger som et praktisk verktøy elevene kan kontrollere på appene og enhetene de allerede eier. Pause for å spørre hvilke innstillinger de har sjekket eller endret tidligere.',
         downloads: {
           video: {
-            filename: 'What Are Privacy Settings',
+            filename: 'Hva er personverninnstillinger',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What Are Privacy Settings - Subtitles',
+            filename: 'Hva er personverninnstillinger - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -179,7 +172,7 @@ export const contentDC = {
     {
       goal: 'Hjelpe elever til å forstå hvordan visdom og motstandskraft kan hjelpe dem å være kloke i digitale miljøer.',
       bundle: {
-        filename: 'Digital Citizenship Part 4 Package',
+        filename: 'Digitalt medborgerskap - pakke - del 4',
       },
       included: {
         activityPlan: [
@@ -204,11 +197,11 @@ export const contentDC = {
           'Bruk denne videoen til å utforske hvordan elever kan komme seg og tilpasse seg når ting går galt på nettet, fra kontoproblemer til uønsket kontakt. Pause for å spørre hvem elever henvender seg til for hjelp i slike situasjoner.',
         downloads: {
           video: {
-            filename: 'Resilience in Digital Environments',
+            filename: 'Motstandskraft i digitale miljøer',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Resilience in Digital Environments - Subtitles',
+            filename: 'Motstandskraft i digitale miljøer - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -218,7 +211,7 @@ export const contentDC = {
       goal:
         'Hjelpe elever til å forstå hvordan de handler ansvarlig, viser respekt for seg selv og andre når de engasjerer seg sosialt i digitale miljøer.',
       bundle: {
-        filename: 'Digital Citizenship Part 5 Package',
+        filename: 'Digitalt medborgerskap - pakke - del 5',
       },
       included: {
         materials: [
@@ -226,21 +219,21 @@ export const contentDC = {
             // ID: 1.5.1
             kind: 'Bilde',
             name: 'Digitalt fotavtrykk',
-            filename: 'Image - Digital Footprint',
+            filename: 'Bilde - Digitalt fotavtrykk',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.5.2
             kind: 'Scenariokort',
             name: 'Godt og dårlig å dele',
-            filename: 'Scenario Cards - Good and Bad to Post',
+            filename: 'Scenariokort - Godt og dårlig å dele',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 1.5.3
             kind: 'Scenariokort',
             name: 'Innlegg på sosiale medier',
-            filename: 'Scenario Cards - Social Media Posts',
+            filename: 'Scenariokort - Innlegg på sosiale medier',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -266,37 +259,37 @@ export const contentDC = {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

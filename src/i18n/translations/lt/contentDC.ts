@@ -21,7 +21,7 @@ export const contentDC = {
     {
       goal: 'Padėti mokiniams suprasti, kas yra skaitmeninė aplinka ir kokie yra jos teigiami aspektai.',
       bundle: {
-        filename: 'Digital Citizenship Part 1 Package',
+        filename: 'Skaitmeninis pilietiškumas - paketas - 1 dalis',
       },
       included: {
         materials: [
@@ -29,7 +29,7 @@ export const contentDC = {
             // ID: 1.1.1
             kind: 'Scenarijų kortelės',
             name: 'Fizinis ir skaitmeninis pasauliai',
-            filename: 'Scenario Cards - Physical and Digital Worlds',
+            filename: 'Scenarijų kortelės - Fizinis ir skaitmeninis pasauliai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -47,16 +47,16 @@ export const contentDC = {
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'Kas yra skaitmeninė aplinka?',
+        title: 'Kas yra skaitmeninė aplinka ir skaitmeninės sistemos?',
         supportText:
           'Naudokite šį vaizdo įrašą diskusijai apie internetines erdves, kurias mokiniai jau naudoja – nuo mokymosi platformų iki žaidimų ir žinučių programėlių. Sustokite trumpam apmąstymui apie tai, kur mokiniai leidžia laiką internete.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Environment',
+            filename: 'Kas yra skaitmeninė aplinka ir skaitmeninės sistemos',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What Is a Digital Environment - Subtitles',
+            filename: 'Kas yra skaitmeninė aplinka ir skaitmeninės sistemos - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -65,7 +65,7 @@ export const contentDC = {
     {
       goal: 'Padėti mokiniams suprasti, kas yra skaitmeninis pilietiškumas ir kodėl jis svarbus.',
       bundle: {
-        filename: 'Digital Citizenship Part 2 Package',
+        filename: 'Skaitmeninis pilietiškumas - paketas - 2 dalis',
       },
       included: {
         materials: [
@@ -73,21 +73,14 @@ export const contentDC = {
             // ID: 1.2.1
             kind: 'Paveikslėlis',
             name: 'Atsakingas pilietis',
-            filename: 'Worksheet A - Rights Responsibilities and Respect',
+            filename: 'Paveikslėlis - Atsakingas pilietis',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
-            // ID: 1.2.2a
-            kind: 'Darbalapas A',
+            // ID: 1.2.2
+            kind: 'Darbalapas',
             name: 'Teisės, atsakomybės ir pagarba',
-            filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
-            // ID: 1.2.2b
-            kind: 'Darbalapas B',
-            name: 'Teisės, atsakomybės ir pagarba',
-            filename: 'Image - Feeling Safe',
+            filename: 'Darbalapas - Teisės, atsakomybės ir pagarba',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -111,7 +104,7 @@ export const contentDC = {
       goal:
         'Padėti mokiniams žinoti, kaip būti saugiems skaitmeninėje aplinkoje, kritiškai mąstant ir atsakingai naudojant privatumo nustatymus.',
       bundle: {
-        filename: 'Digital Citizenship Part 3 Package',
+        filename: 'Skaitmeninis pilietiškumas - paketas - 3 dalis',
       },
       included: {
         materials: [
@@ -119,28 +112,28 @@ export const contentDC = {
             // ID: 1.3.1
             kind: 'Paveikslėlis',
             name: 'Saugumo jausmas',
-            filename: 'Image - Feeling Unsafe',
+            filename: 'Paveikslėlis - Saugumo jausmas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 1.3.2
             kind: 'Paveikslėlis',
             name: 'Nesaugumo jausmas',
-            filename: 'Image - Application Privacy Settings',
+            filename: 'Paveikslėlis - Nesaugumo jausmas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 1.3.4
             kind: 'Paveikslėlis',
-            name: 'Programėlės privatumo nustatymai',
-            filename: 'Image - Privacy Settings Strategy',
+            name: 'Privatumo nustatymų strategija',
+            filename: 'Paveikslėlis - Privatumo nustatymų strategija',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 1.3.5
             kind: 'Paveikslėlis',
-            name: 'Privatumo nustatymų strategija',
-            filename: 'Image - Digital Footprint',
+            name: 'Programėlių privatumo nustatymai',
+            filename: 'Paveikslėlis - Programėlių privatumo nustatymai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -166,11 +159,11 @@ export const contentDC = {
           'Naudokite šį vaizdo įrašą pristatydami privatumo nustatymus kaip praktinį įrankį, kurį mokiniai gali valdyti programėlėse ir įrenginiuose, kuriuos jau turi. Sustokite ir paklauskite, kokius nustatymus jie jau patikrino ar pakeitė.',
         downloads: {
           video: {
-            filename: 'What Are Privacy Settings',
+            filename: 'Kas yra privatumo nustatymai',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What Are Privacy Settings - Subtitles',
+            filename: 'Kas yra privatumo nustatymai - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -179,7 +172,7 @@ export const contentDC = {
     {
       goal: 'Padėti mokiniams suprasti, kaip išmintingumas ir atsparumas gali padėti jiems būti protingiems skaitmeninėje aplinkoje.',
       bundle: {
-        filename: 'Digital Citizenship Part 4 Package',
+        filename: 'Skaitmeninis pilietiškumas - paketas - 4 dalis',
       },
       included: {
         activityPlan: [
@@ -204,11 +197,11 @@ export const contentDC = {
           'Naudokite šį vaizdo įrašą tyrinėdami, kaip mokiniai gali atsigauti ir prisitaikyti, kai internete kažkas klostosi ne taip – nuo paskyros problemų iki nepageidaujamų kontaktų. Sustokite ir paklauskite, į ką mokiniai kreipiasi pagalbos tokiose situacijose.',
         downloads: {
           video: {
-            filename: 'Resilience in Digital Environments',
+            filename: 'Atsparumas skaitmeninėje aplinkoje',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Resilience in Digital Environments - Subtitles',
+            filename: 'Atsparumas skaitmeninėje aplinkoje - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -218,7 +211,7 @@ export const contentDC = {
       goal:
         'Padėti mokiniams suprasti, kaip elgtis atsakingai, rodant pagarbą sau ir kitiems, socialiai įsitraukiant skaitmeninėje aplinkoje.',
       bundle: {
-        filename: 'Digital Citizenship Part 5 Package',
+        filename: 'Skaitmeninis pilietiškumas - paketas - 5 dalis',
       },
       included: {
         materials: [
@@ -226,21 +219,21 @@ export const contentDC = {
             // ID: 1.5.1
             kind: 'Paveikslėlis',
             name: 'Skaitmeninis pėdsakas',
-            filename: 'Image - Digital Footprint',
+            filename: 'Paveikslėlis - Skaitmeninis pėdsakas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 1.5.2
             kind: 'Scenarijų kortelės',
             name: 'Ką tinkama ir netinkama skelbti',
-            filename: 'Scenario Cards - Good and Bad to Post',
+            filename: 'Scenarijų kortelės - Ką tinkama ir netinkama skelbti',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 1.5.3
             kind: 'Scenarijų kortelės',
             name: 'Socialinių tinklų įrašai',
-            filename: 'Scenario Cards - Social Media Posts',
+            filename: 'Scenarijų kortelės - Socialinių tinklų įrašai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -266,37 +259,37 @@ export const contentDC = {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

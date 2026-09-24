@@ -22,22 +22,22 @@ export const contentDP = {
     {
       goal: 'Padėti mokiniams suprasti, kas yra asmens duomenys, identifikuoti įvairius jautrių duomenų tipus ir atpažinti, kodėl svarbu juos apsaugoti.',
       bundle: {
-        filename: 'Data Privacy Part 1 Package',
+        filename: 'Duomenų privatumas - paketas - 1 dalis',
       },
       included: {
         materials: [
           {
-            // ID: 4.1.3
+            // ID: 4.1.2
             kind: 'Rūšiavimo kortelės',
-            name: 'Vieši ar privatūs',
-            filename: 'Sorting Cards - Public or Private',
+            name: 'Privatūs ar vieši',
+            filename: 'Rūšiavimo kortelės - Privatūs ar vieši',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
-            // ID: 4.1.5
+            // ID: 4.1.3
             kind: 'Darbalapas',
-            name: 'Apmąstymai apie viešus ir privačius duomenis',
-            filename: 'Worksheet - Reflection on Public vs Private Data',
+            name: 'Apmąstymai: Vieši ir privatūs duomenys',
+            filename: 'Darbalapas - Apmąstymai Vieši ir privatūs duomenys',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -54,17 +54,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.1.2
+        // ID: 4.1.1
         title: 'Kas yra privatūs duomenys?',
         supportText:
           'Naudokite šį vaizdo įrašą, kad supažindintumėte su privačių duomenų konceptu ir išprovokuotumėte diskusiją apie informacijos tipus, kuriais mokiniai dalinasi kiekvieną dieną. Sustokite ir paklauskite mokinių, kokias detales jie laiko privačiomis.',
         downloads: {
           video: {
-            filename: 'What Is Private Data',
+            filename: 'Kas yra privatūs duomenys',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What Is Private Data - Subtitles',
+            filename: 'Kas yra privatūs duomenys - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -73,29 +73,29 @@ export const contentDP = {
     {
       goal: 'Padėti mokiniams suprasti, kaip ir kodėl duomenys dalinami internete, sutikimo svarbą ir kaip priimti apgalvotus sprendimus prieš dalinantis asmenine informacija.',
       bundle: {
-        filename: 'Data Privacy Part 2 Package',
+        filename: 'Duomenų privatumas - paketas - 2 dalis',
       },
       included: {
         materials: [
           {
+            // ID: 4.2.1
+            kind: 'Paveikslėlis',
+            name: 'Dalijimasis internete: Saugu vs. rizikinga',
+            filename: 'Paveikslėlis - Dalijimasis internete Saugu vs. rizikinga',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
             // ID: 4.2.2
             kind: 'Scenarijų kortelės',
             name: 'Vaidmenų žaidimas',
-            filename: 'Scenario Cards - Roleplay',
+            filename: 'Scenarijų kortelės - Vaidmenų žaidimas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.2.3
-            kind: 'Paveikslėlis',
-            name: 'Dalijimasis internete: Saugu vs. rizikinga',
-            filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
-            // ID: 4.2.4
             kind: 'Darbalapas',
-            name: 'Dalintis ar nedalintis?',
-            filename: 'Worksheet - Share or Don\'t Share',
+            name: 'Dalintis ar nesidalinti',
+            filename: 'Darbalapas - Dalintis ar nesidalinti',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -118,22 +118,36 @@ export const contentDP = {
     {
       goal: 'Padėti mokiniams sužinoti, kas yra skaitmeninis pėdsakas, suprasti, kaip kasdienė internetinė veikla palieka ilgalaikius pėdsakus, ir apmąstyti ilgalaikį jų elgesio internete poveikį.',
       bundle: {
-        filename: 'Data Privacy Part 3 Package',
+        filename: 'Duomenų privatumas - paketas - 3 dalis',
       },
       included: {
         materials: [
           {
+            // ID: 4.3.2
+            kind: 'Paveikslėlis',
+            name: 'Komiksas: Viena Samo diena internete',
+            filename: 'Paveikslėlis - Komiksas Viena Samo diena internete',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
             // ID: 4.3.3
-            kind: 'Komiksų istorija',
-            name: 'Sam gyvenimo diena internete',
-            filename: 'Comic Story - A Day in the Life of Sam Online',
+            kind: 'Darbalapas',
+            name: 'Sek Samo pėdsaką',
+            filename: 'Darbalapas - Sek Samo pėdsaką',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.3.4
-            kind: 'Darbalapas',
-            name: 'Sek Sam pėdsaką',
-            filename: 'Worksheet - Track Sam\'s Footprint',
+            kind: 'Schema',
+            name: 'Žaidimo lenta: Privatumo vertė',
+            filename: 'Schema - Žaidimo lenta Privatumo vertė',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 4.3.5
+            kind: 'Žaidimo rinkinys',
+            name: 'Kortelės: Privatumo vertė',
+            filename: 'Žaidimo rinkinys - Kortelės Privatumo vertė',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -159,11 +173,11 @@ export const contentDP = {
           'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams įsivaizduoti duomenų pėdsaką, kurį palieka internete. Skatinkite apmąstymus apie tai, kurios iš pastarojo meto veiklų galėjo palikti pėdsaką.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Footprint',
+            filename: 'Kas yra skaitmeninis pėdsakas',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What Is a Digital Footprint - Subtitles',
+            filename: 'Kas yra skaitmeninis pėdsakas - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -172,22 +186,43 @@ export const contentDP = {
     {
       goal: 'Padėti mokiniams išmokti praktinių strategijų peržiūrėti ir valdyti savo skaitmeninį pėdsaką, įskaitant privatumo nustatymų koregavimą ir nepageidaujamų duomenų pašalinimą.',
       bundle: {
-        filename: 'Data Privacy Part 4 Package',
+        filename: 'Duomenų privatumas - paketas - 4 dalis',
       },
       included: {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Kontrolinis sąrašas',
-            name: 'Skaitmeninio pėdsako valymo kontrolinis sąrašas',
-            filename: 'Checklist - Digital Footprint Cleanup Checklist',
+            kind: 'Paveikslėlis',
+            name: 'Pagrindinių nustatymų pavyzdys',
+            filename: 'Paveikslėlis - Pagrindinių nustatymų pavyzdys',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 4.4.2
             kind: 'Darbalapas',
-            name: 'Privatumo nustatymų vadovas',
-            filename: 'Worksheet - Privacy Settings Guide',
+            name: 'Pataisyk šį profilį!',
+            filename: 'Darbalapas - Pataisyk šį profilį',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 4.4.3
+            kind: 'Darbalapas',
+            name: 'Privatumo patarimai vaikams',
+            filename: 'Darbalapas - Privatumo patarimai vaikams',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 4.4.4
+            kind: 'Darbalapas',
+            name: 'Plakato šablonas',
+            filename: 'Darbalapas - Plakato šablonas',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 4.4.6
+            kind: 'Darbalapas',
+            name: 'Galvosūkis: Skaitmeninių pėdsakų naudojimas „Brain Fights komandos nariai“',
+            filename: 'Darbalapas - Galvosūkis Skaitmeninių pėdsakų naudojimas Brain Fights komandos nariai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -207,17 +242,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.4.4
+        // ID: 4.4.5
         title: 'Jūsų asmens duomenų apsauga internete',
         supportText:
           'Naudokite šį vaizdo įrašą, kad supažindintumėte su asmeninių duomenų konceptu ir išprovokuotumėte diskusiją apie informacijos tipus, kuriais mokiniai dalinasi kiekvieną dieną.',
         downloads: {
           video: {
-            filename: 'Protecting Your Personal Data Online',
+            filename: 'Jūsų asmens duomenų apsauga internete',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Protecting Your Personal Data Online - Subtitles',
+            filename: 'Jūsų asmens duomenų apsauga internete - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -229,37 +264,37 @@ export const contentDP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

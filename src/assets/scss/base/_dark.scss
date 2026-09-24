@@ -1416,12 +1416,13 @@
 
 // ── Toggle button (expand/collapse) ───────────────────────────────────────────
 .darkmode .learning-hub-modules .module-toggle {
-  background: color-mix(in oklab, var(--module-color) 18%, var(--dm-surface-3));
+  background: var(--dm-surface-2);
   border-color: color-mix(in oklab, var(--module-color) 35%, var(--dm-border));
+  color: var(--dm-fg);
 
   &:hover,
-  &:focus-visible {
-    background: var(--module-color);
+  &[aria-expanded="true"] {
+    background: color-mix(in oklab, var(--module-color) 14%, var(--dm-surface-2));
     border-color: var(--module-color);
   }
 }

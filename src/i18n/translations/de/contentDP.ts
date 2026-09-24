@@ -22,22 +22,22 @@ export const contentDP = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was personenbezogene Daten sind, verschiedene Arten sensibler Informationen zu identifizieren und zu erkennen, warum deren Schutz wichtig ist.',
       bundle: {
-        filename: 'Data Privacy Part 1 Package',
+        filename: 'Datenschutz - Paket - Teil 1',
       },
       included: {
         materials: [
           {
-            // ID: 4.1.3
+            // ID: 4.1.2
             kind: 'Sortierkarten',
-            name: 'Öffentlich oder privat',
-            filename: 'Sorting Cards - Public or Private',
+            name: 'Privat oder öffentlich',
+            filename: 'Sortierkarten - Privat oder öffentlich',
             ariaLabel: 'Material herunterladen',
           },
           {
-            // ID: 4.1.5
+            // ID: 4.1.3
             kind: 'Arbeitsblatt',
-            name: 'Reflexion über öffentliche vs. private Daten',
-            filename: 'Worksheet - Reflection on Public vs Private Data',
+            name: 'Reflexion: Öffentliche vs. private Daten',
+            filename: 'Arbeitsblatt - Reflexion Öffentliche vs. private Daten',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -54,17 +54,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.1.2
+        // ID: 4.1.1
         title: 'Was sind private Daten?',
         supportText:
           'Verwenden Sie dieses Video, um das Konzept privater Daten einzuführen und eine Diskussion über die Arten von Informationen anzuregen, die Schülerinnen und Schüler täglich teilen. Halten Sie inne und fragen Sie die Schülerinnen und Schüler, welche Details sie als privat betrachten.',
         downloads: {
           video: {
-            filename: 'What Is Private Data',
+            filename: 'Was sind private Daten',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What Is Private Data - Subtitles',
+            filename: 'Was sind private Daten - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -73,29 +73,29 @@ export const contentDP = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, wie und warum Daten online geteilt werden, die Bedeutung von Zustimmung und wie man überlegte Entscheidungen vor dem Teilen persönlicher Informationen trifft.',
       bundle: {
-        filename: 'Data Privacy Part 2 Package',
+        filename: 'Datenschutz - Paket - Teil 2',
       },
       included: {
         materials: [
           {
+            // ID: 4.2.1
+            kind: 'Bild',
+            name: 'Online teilen: Sicher vs. riskant',
+            filename: 'Bild - Online teilen Sicher vs. riskant',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
             // ID: 4.2.2
-            kind: 'Szenarienkarten',
+            kind: 'Szenariokarten',
             name: 'Rollenspiel',
-            filename: 'Scenario Cards - Roleplay',
+            filename: 'Szenariokarten - Rollenspiel',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.2.3
-            kind: 'Bild',
-            name: 'Online teilen: Sicher vs. riskant',
-            filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
-            // ID: 4.2.4
             kind: 'Arbeitsblatt',
-            name: 'Teilen oder nicht teilen?',
-            filename: 'Worksheet - Share or Don\'t Share',
+            name: 'Teilen oder nicht teilen',
+            filename: 'Arbeitsblatt - Teilen oder nicht teilen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -118,22 +118,36 @@ export const contentDP = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu entdecken, was ein digitaler Fußabdruck ist, zu verstehen, wie alltägliche Online-Aktivitäten dauerhafte Spuren hinterlassen, und den langfristigen Einfluss ihres Online-Verhaltens zu bedenken.',
       bundle: {
-        filename: 'Data Privacy Part 3 Package',
+        filename: 'Datenschutz - Paket - Teil 3',
       },
       included: {
         materials: [
           {
+            // ID: 4.3.2
+            kind: 'Bild',
+            name: 'Comicgeschichte: Ein Tag in Sams Online-Leben',
+            filename: 'Bild - Comicgeschichte Ein Tag in Sams Online-Leben',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
             // ID: 4.3.3
-            kind: 'Comicgeschichte',
-            name: 'Ein Tag im Online-Leben von Sam',
-            filename: 'Comic Story - A Day in the Life of Sam Online',
+            kind: 'Arbeitsblatt',
+            name: 'Sams Fußabdruck verfolgen',
+            filename: 'Arbeitsblatt - Sams Fußabdruck verfolgen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.3.4
-            kind: 'Arbeitsblatt',
-            name: 'Sams Fußabdruck verfolgen',
-            filename: 'Worksheet - Track Sam\'s Footprint',
+            kind: 'Schema',
+            name: 'Spielbrett: Wert der Privatsphäre',
+            filename: 'Schema - Spielbrett Wert der Privatsphäre',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 4.3.5
+            kind: 'Spielset',
+            name: 'Karten: Wert der Privatsphäre',
+            filename: 'Spielset - Karten Wert der Privatsphäre',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -159,11 +173,11 @@ export const contentDP = {
           'Verwenden Sie dieses Video, um Schülerinnen und Schülern zu helfen, sich die Datenspur vorzustellen, die sie online hinterlassen. Fördern Sie die Reflexion darüber, welche ihrer jüngsten Aktivitäten einen Fußabdruck hinterlassen haben könnten.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Footprint',
+            filename: 'Was ist ein digitaler Fußabdruck',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What Is a Digital Footprint - Subtitles',
+            filename: 'Was ist ein digitaler Fußabdruck - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -172,22 +186,43 @@ export const contentDP = {
     {
       goal: 'Den Schülerinnen und Schülern helfen, praktische Strategien zur Überprüfung und Verwaltung ihres digitalen Fußabdrucks zu erlernen, einschließlich der Anpassung von Datenschutzeinstellungen und der Entfernung unerwünschter Daten.',
       bundle: {
-        filename: 'Data Privacy Part 4 Package',
+        filename: 'Datenschutz - Paket - Teil 4',
       },
       included: {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Checkliste',
-            name: 'Checkliste zur Bereinigung des digitalen Fußabdrucks',
-            filename: 'Checklist - Digital Footprint Cleanup Checklist',
+            kind: 'Bild',
+            name: 'Ein Beispiel für Grundeinstellungen',
+            filename: 'Bild - Ein Beispiel für Grundeinstellungen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 4.4.2
             kind: 'Arbeitsblatt',
-            name: 'Leitfaden für Datenschutzeinstellungen',
-            filename: 'Worksheet - Privacy Settings Guide',
+            name: 'Korrigiere dieses Profil!',
+            filename: 'Arbeitsblatt - Korrigiere dieses Profil',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 4.4.3
+            kind: 'Arbeitsblatt',
+            name: 'Datenschutztipps für Kinder',
+            filename: 'Arbeitsblatt - Datenschutztipps für Kinder',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 4.4.4
+            kind: 'Arbeitsblatt',
+            name: 'Postervorlage',
+            filename: 'Arbeitsblatt - Postervorlage',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 4.4.6
+            kind: 'Arbeitsblatt',
+            name: 'Rätsel: Digitale Spuren nutzen „Mitglieder des Teams Brain Fights“',
+            filename: 'Arbeitsblatt - Rätsel Digitale Spuren nutzen Mitglieder des Teams Brain Fights',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -207,17 +242,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.4.4
+        // ID: 4.4.5
         title: 'Ihre persönlichen Daten online schützen',
         supportText:
           'Verwenden Sie dieses Video, um das Konzept persönlicher Daten einzuführen und eine Diskussion über die Arten von Informationen anzuregen, die Schülerinnen und Schüler täglich teilen.',
         downloads: {
           video: {
-            filename: 'Protecting Your Personal Data Online',
+            filename: 'Ihre persönlichen Daten online schützen',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Protecting Your Personal Data Online - Subtitles',
+            filename: 'Ihre persönlichen Daten online schützen - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -229,37 +264,37 @@ export const contentDP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

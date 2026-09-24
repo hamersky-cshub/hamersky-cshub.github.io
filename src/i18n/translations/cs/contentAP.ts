@@ -29,7 +29,7 @@ export const contentAP = {
             // ID: 2.1.1
             kind: 'Pracovní list',
             name: 'Důvěryhodní lidé: Lidé kolem mě',
-            filename: 'Pracovní list - Lide kolem mě',
+            filename: 'Pracovní list - Důvěryhodní lidé Lidé kolem mě',
             ariaLabel: 'Stáhnout materiál',
           },
           {
@@ -37,6 +37,20 @@ export const contentAP = {
             kind: 'Pracovní list',
             name: 'Kruhy důvěry',
             filename: 'Pracovní list - Kruhy důvěry',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.1.3
+            kind: 'Obrázek',
+            name: 'Situace: Nalezené peníze',
+            filename: 'Obrázek - Situace Nalezené peníze',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.1.4
+            kind: 'Obrázek',
+            name: 'Situace: Zahlédnutá fotka',
+            filename: 'Obrázek - Situace Zahlédnutá fotka',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -62,27 +76,34 @@ export const contentAP = {
         materials: [
           {
             // ID: 2.2.1
-            kind: 'Karty',
+            kind: 'Scénářové karty',
             name: 'Identifikovat chování',
-            filename: 'Karty - Identifikovat chování',
+            filename: 'Scénářové karty - Identifikovat chování',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.2.2
-            kind: 'Karty',
+            kind: 'Scénářové karty',
             name: 'Rozpoznat postavy',
-            filename: 'Karty - Rozpoznat postavy',
+            filename: 'Scénářové karty - Rozpoznat postavy',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.2.4
             kind: 'Obrázek',
             name: 'Motivace útočníků',
-            filename: 'Image - Motivace útočníků',
+            filename: 'Obrázek - Motivace útočníků',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.2.5
+            kind: 'Obrázek',
+            name: 'Pohled do pohádky: Motivace a prostředky útočníka',
+            filename: 'Obrázek - Pohled do pohádky Motivace a prostředky útočníka',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.2.6
             kind: 'Pracovní list',
             name: 'Analýza útoku',
             filename: 'Pracovní list - Analýza útoku',
@@ -111,7 +132,7 @@ export const contentAP = {
           'Použijte toto video, aby si studenti dokázali představit skutečné lidi a motivy za kybernetickými útoky, přesahující stereotyp osamělého hackera. Zastavte se a zeptejte se, kdo si myslí, že je zodpovědný a proč.',
         downloads: {
           video: {
-            filename: 'Kdo stojí za kybernetickými útoky - Video',
+            filename: 'Kdo stojí za kybernetickými útoky',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
@@ -130,16 +151,44 @@ export const contentAP = {
         materials: [
           {
             // ID: 2.3.1
-            kind: 'Situace',
+            kind: 'Čtení',
             name: 'Smishing a vydávání se za jinou osobu',
-            filename: 'Situation - Smishing and Impersonation',
+            filename: 'Čtení - Smishing a vydávání se za jinou osobu',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 2.3.2
+            kind: 'Čtení',
+            name: 'Vishing, podvody a vydávání se za jinou osobu',
+            filename: 'Čtení - Vishing, podvody a vydávání se za jinou osobu',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.3.3
+            kind: 'Čtení',
+            name: 'Nejčastější kybernetické hrozby',
+            filename: 'Čtení - Nejčastější kybernetické hrozby',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.3.4
             kind: 'Obrázek',
             name: 'Běžné techniky protivníků',
-            filename: 'Image - Common Adversary Techniques',
+            filename: 'Obrázek - Běžné techniky protivníků',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.3.5
+            kind: 'Karty',
+            name: 'Útočníci a jejich plány',
+            filename: 'Karty - Útočníci a jejich plány',
+            ariaLabel: 'Stáhnout materiál',
+          },
+          {
+            // ID: 2.3.6
+            kind: 'Pracovní list',
+            name: 'Hádanka: Večírek útočníků',
+            filename: 'Pracovní list - Hádanka Večírek útočníků',
             ariaLabel: 'Stáhnout materiál',
           },
         ],
@@ -168,37 +217,37 @@ export const contentAP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

@@ -37,7 +37,7 @@ export const contentAT = {
             ariaLabel: 'Stáhnout materiál',
           },
           {
-            // ID: 3.1.2
+            // ID: 3.1.3
             kind: 'Obrázky',
             name: 'Příklady osobních digitálních aktiv',
             filename: 'Obrázky - Příklady osobních digitálních aktiv',
@@ -79,11 +79,11 @@ export const contentAT = {
           'Použijte toto video, aby studenti pochopili, že jejich digitální identita se skládá z informací a chování, které sdílejí online. Zastavte se a zeptejte se, které části digitální identity si myslí, že mohou ovládat.',
         downloads: {
           video: {
-            filename: 'What is Digital Identity',
+            filename: 'Co je digitální identita',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What is Digital Identity - Subtitles',
+            filename: 'Co je digitální identita - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -139,16 +139,16 @@ export const contentAT = {
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'Co je autentizace a proč je důležitá?',
+        title: 'Co je autentizace?',
         supportText:
           'Použijte toto video k představení autentizace jako každodenního mechanismu, který chrání digitální účty studentů. Zastavte se a zeptejte se, jak aktuálně prokazují svou identitu v aplikacích, které nejčastěji používají.',
         downloads: {
           video: {
-            filename: 'What is Authentication and Why is It Important',
+            filename: 'Co je autentizace',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'What is Authentication and Why is It Important - Subtitles',
+            filename: 'Co je autentizace - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -223,7 +223,7 @@ export const contentAT = {
           'Použijte toto video, abyste studentům ukázali rozdíl mezi hesly, která chrání účty, a hesly, která je vystavují riziku. Vyzvěte je, aby zamysleli nad tím, zda jejich vlastní hesla splňují kritéria silných hesel.',
         downloads: {
           video: {
-            filename: 'Silná a slabá hesla - Video',
+            filename: 'Silná a slabá hesla',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
@@ -243,9 +243,9 @@ export const contentAT = {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Schéma',
-            name: 'Sada skupin',
-            filename: 'Schéma - Sada skupin',
+            kind: 'Obrázek',
+            name: 'Dva různé typy autentizace použité společně',
+            filename: 'Obrázek - Dva různé typy autentizace použité společně',
             ariaLabel: 'Stáhnout materiál',
           },
           {
@@ -271,34 +271,27 @@ export const contentAT = {
           },
           {
             // ID: 3.4.6
-            kind: 'Obrázky',
+            kind: 'Obrázek',
             name: 'Jak používat správce hesel',
-            filename: 'Obrázky - Jak používat správce hesel',
+            filename: 'Obrázek - Jak používat správce hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.7
             kind: 'Obrázek',
-            name: 'Trezor správce hesel',
-            filename: 'Obrázek - Trezor správce hesel',
+            name: 'Správce hesel',
+            filename: 'Obrázek - Správce hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
             // ID: 3.4.8
-            kind: 'Obrázek',
-            name: 'Správce hesel jako digitální klíčenka',
-            filename: 'Obrázek - Správce hesel jako digitální klíčenka',
-            ariaLabel: 'Stáhnout materiál',
-          },
-          {
-            // ID: 3.4.9
             kind: 'Obrázek',
             name: 'Kroky ukládání hesel',
             filename: 'Obrázek - Kroky ukládání hesel',
             ariaLabel: 'Stáhnout materiál',
           },
           {
-            // ID: 3.4.10
+            // ID: 3.4.9
             kind: 'Pracovní list',
             name: 'Problémy s hesly a řešení',
             filename: 'Pracovní list - Problémy s hesly a řešení',
@@ -330,11 +323,11 @@ export const contentAT = {
           'Použijte toto video k představení správců hesel jako praktického řešení pro vytváření a ukládání silných, jedinečných hesel pro každý účet. Zastavte se a zeptejte se studentů, zda o správci hesel slyšeli nebo jej již používali.',
         downloads: {
           video: {
-            filename: 'Co je správce hesel? - Video',
+            filename: 'Co je správce hesel',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
-            filename: 'Co je správce hesel? - Titulky',
+            filename: 'Co je správce hesel - Titulky',
             ariaLabel: 'Stáhnout titulky',
           },
         },
@@ -392,7 +385,7 @@ export const contentAT = {
           'Použijte toto video ke spojení strategií, které se studenti naučili pro zachování bezpečnosti své digitální identity. Povzbuďte je, aby identifikovali jeden konkrétní zvyk, který změní nebo zavedou po shlédnutí.',
         downloads: {
           video: {
-            filename: 'Ochrana vaší digitální identity - Video',
+            filename: 'Ochrana vaší digitální identity',
             ariaLabel: 'Stáhnout video',
           },
           subtitles: {
@@ -411,37 +404,37 @@ export const contentAT = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

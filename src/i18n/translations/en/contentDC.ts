@@ -47,16 +47,16 @@ export const contentDC = {
       },
       featuredVideo: {
         // ID: 1.1.2
-        title: 'What Is a Digital Environment?',
+        title: 'What Is a Digital Environment and Digital Systems?',
         supportText:
           'Use this video to spark discussion about online spaces students already use, from learning platforms to games and messaging apps. Pause for quick reflections on where students spend time online.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Environment',
+            filename: 'What Is a Digital Environment and Digital Systems',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What Is a Digital Environment - Subtitles',
+            filename: 'What Is a Digital Environment and Digital Systems - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -73,21 +73,14 @@ export const contentDC = {
             // ID: 1.2.1
             kind: 'Image',
             name: 'Responsible Citizen',
-            filename: 'Worksheet A - Rights Responsibilities and Respect',
+            filename: 'Image - Responsible Citizen',
             ariaLabel: 'Download material',
           },
           {
-            // ID: 1.2.2a
-            kind: 'Worksheet A',
+            // ID: 1.2.2
+            kind: 'Worksheet',
             name: 'Rights, Responsibilities and Respect',
-            filename: 'Worksheet B - Rights Responsibilities and Respect',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 1.2.2b
-            kind: 'Worksheet B',
-            name: 'Rights, Responsibilities and Respect',
-            filename: 'Image - Feeling Safe',
+            filename: 'Worksheet - Rights, Responsibilities and Respect',
             ariaLabel: 'Download material',
           },
         ],
@@ -119,28 +112,28 @@ export const contentDC = {
             // ID: 1.3.1
             kind: 'Image',
             name: 'Feeling Safe',
-            filename: 'Image - Feeling Unsafe',
+            filename: 'Image - Feeling Safe',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.3.2
             kind: 'Image',
             name: 'Feeling Unsafe',
-            filename: 'Image - Application Privacy Settings',
+            filename: 'Image - Feeling Unsafe',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.3.4
             kind: 'Image',
-            name: 'Application Privacy Settings',
-            filename: 'Image - Privacy Settings Strategy',
+            name: 'Privacy Setting Strategy',
+            filename: 'Image - Privacy Setting Strategy',
             ariaLabel: 'Download material',
           },
           {
             // ID: 1.3.5
             kind: 'Image',
-            name: 'Privacy Settings Strategy',
-            filename: 'Image - Digital Footprint',
+            name: 'App Privacy Settings',
+            filename: 'Image - App Privacy Settings',
             ariaLabel: 'Download material',
           },
         ],
@@ -266,37 +259,37 @@ export const contentDC = {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

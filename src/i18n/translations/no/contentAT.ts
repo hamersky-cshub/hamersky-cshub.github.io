@@ -25,7 +25,7 @@ export const contentAT = {
     {
       goal: 'Hjelpe elever med å opprette sterke, minneverdige hemmeligheter og forstå hvorfor gjenbruk er risikabelt.',
       bundle: {
-        filename: 'Authentication Part 1 Package',
+        filename: 'Autentisering - pakke - del 1',
       },
       included: {
         materials: [
@@ -33,28 +33,28 @@ export const contentAT = {
             // ID: 3.1.1
             kind: 'Bilde',
             name: 'Nettidentitet',
-            filename: 'Image - Online Identity',
+            filename: 'Bilde - Nettidentitet',
             ariaLabel: 'Last ned materiell',
           },
           {
-            // ID: 3.1.2
+            // ID: 3.1.3
             kind: 'Bilder',
             name: 'Eksempler på personlige digitale eiendeler',
-            filename: 'Images - Examples of Personal Digital Assets',
+            filename: 'Bilder - Eksempler på personlige digitale eiendeler',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.1.4
             kind: 'Arbeidsark',
-            name: 'Hva ville skje hvis ...?',
-            filename: 'Worksheet - What Would Happen if',
+            name: 'Hva ville skje hvis...?',
+            filename: 'Arbeidsark - Hva ville skje hvis',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.1.5
             kind: 'Arbeidsark',
             name: 'Mine digitale eiendeler',
-            filename: 'Worksheet - My Digital Assets',
+            filename: 'Arbeidsark - Mine digitale eiendeler',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -79,11 +79,11 @@ export const contentAT = {
           'Bruk denne videoen til å hjelpe elever med å forstå at deres digitale identitet består av informasjonen og atferden de deler på nett. Pause for å spørre hvilke deler av deres digitale identitet de tror de kan kontrollere.',
         downloads: {
           video: {
-            filename: 'What is Digital Identity',
+            filename: 'Hva er digital identitet',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What is Digital Identity - Subtitles',
+            filename: 'Hva er digital identitet - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -93,7 +93,7 @@ export const contentAT = {
       goal:
         'Hjelpe elever med å forstå hva autentisering er, hvorfor det er viktig, og hvordan det bidrar til å beskytte deres digitale identitet og digitale eiendeler ved å kontrollere hvem som får tilgang.',
       bundle: {
-        filename: 'Authentication Part 2 Package',
+        filename: 'Autentisering - pakke - del 2',
       },
       included: {
         materials: [
@@ -101,21 +101,21 @@ export const contentAT = {
             // ID: 3.2.1
             kind: 'Bilder',
             name: 'Eksempler på autentisering fra den virkelige verden',
-            filename: 'Images - Real-world Authentication Examples',
+            filename: 'Bilder - Eksempler på autentisering fra den virkelige verden',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.2.3
             kind: 'Bilde',
             name: 'Logge inn på et digitalt system',
-            filename: 'Image - Logging Into a Digital System',
+            filename: 'Bilde - Logge inn på et digitalt system',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.2.4
             kind: 'Arbeidsark',
             name: 'Autentisering i hverdagen',
-            filename: 'Worksheet - Authentication in Everday Life',
+            filename: 'Arbeidsark - Autentisering i hverdagen',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -139,16 +139,16 @@ export const contentAT = {
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'Hva er autentisering og hvorfor er det viktig?',
+        title: 'Hva er autentisering?',
         supportText:
           'Bruk denne videoen til å introdusere autentisering som den daglige mekanismen som beskytter elevenes digitale kontoer. Pause for å spørre hvordan de for øyeblikket bekrefter identiteten sin i appene de bruker mest.',
         downloads: {
           video: {
-            filename: 'What is Authentication and Why is It Important',
+            filename: 'Hva er autentisering',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What is Authentication and Why is It Important - Subtitles',
+            filename: 'Hva er autentisering - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -158,7 +158,7 @@ export const contentAT = {
       goal:
         'Hjelpe elever med å forstå hva autentisering er, hvorfor det er viktig, og hvordan det bidrar til å beskytte deres digitale identitet og digitale eiendeler ved å kontrollere hvem som får tilgang.',
       bundle: {
-        filename: 'Authentication Part 3 Package',
+        filename: 'Autentisering - pakke - del 3',
        },
       included: {
         materials: [
@@ -166,35 +166,35 @@ export const contentAT = {
             // ID: 3.3.2
             kind: 'Bilde',
             name: 'Eksempler på svake passord',
-            filename: 'Image - Examples of Strong Passwords',
+            filename: 'Bilde - Eksempler på svake passord',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.3
             kind: 'Bilde',
             name: 'Eksempler på sterke passord',
-            filename: 'Image - Check your Password',
+            filename: 'Bilde - Eksempler på sterke passord',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.4
             kind: 'Kort',
             name: 'Lag et sterkt passord',
-            filename: 'Cards - Create a Strong Password',
+            filename: 'Kort - Lag et sterkt passord',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.5
             kind: 'Bilde',
             name: 'Sjekk passordet ditt',
-            filename: 'Image - Two Different Types of Authentication Used Together',
+            filename: 'Bilde - Sjekk passordet ditt',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.3.6
             kind: 'Arbeidsark',
             name: 'Mine regler for sterke passord',
-            filename: 'Worksheet - My Strong Password Rules',
+            filename: 'Arbeidsark - Mine regler for sterke passord',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -223,11 +223,11 @@ export const contentAT = {
           'Bruk denne videoen til å vise elever forskjellen mellom passord som beskytter kontoer og passord som setter dem i fare. Inviter dem til å reflektere over om deres egne passord oppfyller kriteriene for styrke.',
         downloads: {
           video: {
-            filename: 'Strong and Weak Passwords',
+            filename: 'Sterke og svake passord',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Strong and Weak Passwords - Subtitles',
+            filename: 'Sterke og svake passord - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -237,71 +237,64 @@ export const contentAT = {
       goal:
         'Hjelpe elever med å forstå hva tofaktorautentisering er og hvorfor det er vanskelig å håndtere mange passord, introdusere konseptet passordbehandler, og forklare hvordan passordbehandlere bidrar til å beskytte digitale identiteter og digitale eiendeler når de brukes ansvarlig med støtte fra en betrodd voksen.',
       bundle: {
-        filename: 'Authentication Part 4 Package',
+        filename: 'Autentisering - pakke - del 4',
        },
       included: {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Skjema',
-            name: 'Sett med grupper',
-            filename: 'Schema - Set of Groups',
+            kind: 'Bilde',
+            name: 'To ulike typer autentisering brukt sammen',
+            filename: 'Bilde - To ulike typer autentisering brukt sammen',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.2
             kind: 'Skjema',
             name: 'Sett med mynter',
-            filename: 'Schema - Set of Coins',
+            filename: 'Skjema - Sett med mynter',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.3
             kind: 'Skjema',
             name: 'Sett med grupper',
-            filename: 'Schema - Set of Groups',
+            filename: 'Skjema - Sett med grupper',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.4
             kind: 'Skjema',
             name: 'PIN-kort',
-            filename: 'Schema - PIN Cards',
+            filename: 'Skjema - PIN-kort',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.6
-            kind: 'Bilder',
+            kind: 'Bilde',
             name: 'Slik bruker du en passordbehandler',
-            filename: 'Images - How to Use a Password Manager',
+            filename: 'Bilde - Slik bruker du en passordbehandler',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.7
             kind: 'Bilde',
-            name: 'Passordbehandlerens hvelv',
-            filename: 'Image - Password Manager Vault',
+            name: 'Passordbehandler',
+            filename: 'Bilde - Passordbehandler',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.8
             kind: 'Bilde',
-            name: 'Passordbehandler som digital nøkkelring',
-            filename: 'Image - Password Manager as a Digital Keyring',
+            name: 'Trinn for lagring av passord',
+            filename: 'Bilde - Trinn for lagring av passord',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.4.9
-            kind: 'Bilde',
-            name: 'Trinn for lagring av passord',
-            filename: 'Image - Steps of Saving Passwords',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
-            // ID: 3.4.10
             kind: 'Arbeidsark',
             name: 'Passordproblemer og løsninger',
-            filename: 'Worksheet - Password Problems and Solutions',
+            filename: 'Arbeidsark - Passordproblemer og løsninger',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -330,11 +323,11 @@ export const contentAT = {
           'Bruk denne videoen til å introdusere passordbehandlere som en praktisk løsning for å opprette og lagre sterke, unike passord for hver konto. Pause for å spørre elever om de har hørt om eller brukt en passordbehandler før.',
         downloads: {
           video: {
-            filename: 'What Is a Password Manager',
+            filename: 'Hva er en passordbehandler',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What Is a Password Manager - Subtitles',
+            filename: 'Hva er en passordbehandler - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -344,7 +337,7 @@ export const contentAT = {
       goal:
         'Hjelpe elever med å forstå hvordan deres valg og atferd påvirker sikkerheten til deres digitale identitet, og hvordan ansvarlig atferd bidrar til å beskytte deres digitale eiendeler, dem selv og andre i digitale miljøer.',
       bundle: {
-        filename: 'Authentication Part 5 Package',
+        filename: 'Autentisering - pakke - del 5',
        },
       included: {
         materials: [
@@ -352,21 +345,21 @@ export const contentAT = {
             // ID: 3.5.1
             kind: 'Bilde',
             name: 'Trygg og utrygg nettadferd',
-            filename: 'Image - Safe and Unsafe Online Behaviours',
+            filename: 'Bilde - Trygg og utrygg nettadferd',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.5.3
             kind: 'Arbeidsark',
             name: 'Scenarioer for digital identitet og autentisering',
-            filename: 'Worksheet - Digital Identity and Authentication Scenarios',
+            filename: 'Arbeidsark - Scenarioer for digital identitet og autentisering',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 3.5.4
             kind: 'Arbeidsark',
             name: 'Slik beskytter jeg min digitale identitet',
-            filename: 'Worksheet - How I Protect My Digital Identity',
+            filename: 'Arbeidsark - Slik beskytter jeg min digitale identitet',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -392,11 +385,11 @@ export const contentAT = {
           'Bruk denne videoen til å samle strategiene elevene har lært for å holde sin digitale identitet trygg. Oppmuntre dem til å identifisere én spesifikk vane de vil endre eller starte etter å ha sett den.',
         downloads: {
           video: {
-            filename: 'Protecting Your Digital Identity',
+            filename: 'Beskytte din digitale identitet',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Protecting Your Digital Identity - Subtitles',
+            filename: 'Beskytte din digitale identitet - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -411,37 +404,37 @@ export const contentAT = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

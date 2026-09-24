@@ -28,8 +28,8 @@ export const contentAP = {
           {
             // ID: 2.1.1
             kind: 'Worksheet',
-            name: 'Trusteees: People Around Me',
-            filename: 'Worksheet - Trusteees People Around Me',
+            name: 'Trustees: People Around Me',
+            filename: 'Worksheet - Trustees People Around Me',
             ariaLabel: 'Download material',
           },
           {
@@ -37,6 +37,20 @@ export const contentAP = {
             kind: 'Worksheet',
             name: 'Circles of Trust',
             filename: 'Worksheet - Circles of Trust',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.1.3
+            kind: 'Image',
+            name: 'Situation: Found Money',
+            filename: 'Image - Situation Found Money',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.1.4
+            kind: 'Image',
+            name: 'Situation: Saw a Photo',
+            filename: 'Image - Situation Saw a Photo',
             ariaLabel: 'Download material',
           },
         ],
@@ -62,16 +76,16 @@ export const contentAP = {
         materials: [
           {
             // ID: 2.2.1
-            kind: 'Cards',
+            kind: 'Scenario Cards',
             name: 'Identify the Behaviour',
-            filename: 'Cards - Identify the Behaviour',
+            filename: 'Scenario Cards - Identify the Behaviour',
             ariaLabel: 'Download material',
           },
           {
             // ID: 2.2.2
-            kind: 'Cards',
+            kind: 'Scenario Cards',
             name: 'Recognise the Characters',
-            filename: 'Cards - Recognise the Characters',
+            filename: 'Scenario Cards - Recognise the Characters',
             ariaLabel: 'Download material',
           },
           {
@@ -83,6 +97,13 @@ export const contentAP = {
           },
           {
             // ID: 2.2.5
+            kind: 'Image',
+            name: 'Looking Into the Fairytale: Attacker Motivation and Means',
+            filename: 'Image - Looking Into the Fairytale Attacker Motivation and Means',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.2.6
             kind: 'Worksheet',
             name: 'Attack Analysis',
             filename: 'Worksheet - Attack Analysis',
@@ -130,16 +151,44 @@ export const contentAP = {
         materials: [
           {
             // ID: 2.3.1
-            kind: 'Situation',
+            kind: 'Reading',
             name: 'Smishing and Impersonation',
-            filename: 'Situation - Smishing and Impersonation',
+            filename: 'Reading - Smishing and Impersonation',
             ariaLabel: 'Download material',
           },
           {
             // ID: 2.3.2
+            kind: 'Reading',
+            name: 'Vishing, Fraud, and Impersonation',
+            filename: 'Reading - Vishing, Fraud, and Impersonation',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.3.3
+            kind: 'Reading',
+            name: 'Most Common Cyber Threats',
+            filename: 'Reading - Most Common Cyber Threats',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.3.4
             kind: 'Image',
             name: 'Common Adversary Techniques',
             filename: 'Image - Common Adversary Techniques',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.3.5
+            kind: 'Cards',
+            name: 'Attackers and Their Plans',
+            filename: 'Cards - Attackers and Their Plans',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 2.3.6
+            kind: 'Worksheet',
+            name: 'Puzzle: Party of Attackers',
+            filename: 'Worksheet - Puzzle Party of Attackers',
             ariaLabel: 'Download material',
           },
         ],
@@ -168,37 +217,37 @@ export const contentAP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

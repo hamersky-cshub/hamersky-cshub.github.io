@@ -27,17 +27,17 @@ export const contentDP = {
       included: {
         materials: [
           {
-            // ID: 4.1.3
+            // ID: 4.1.2
             kind: 'Sorting Cards',
-            name: 'Public or Private',
-            filename: 'Sorting Cards - Public or Private',
+            name: 'Private or Public',
+            filename: 'Sorting Cards - Private or Public',
             ariaLabel: 'Download material',
           },
           {
-            // ID: 4.1.5
+            // ID: 4.1.3
             kind: 'Worksheet',
-            name: 'Reflection on Public vs Private Data',
-            filename: 'Worksheet - Reflection on Public vs Private Data',
+            name: 'Reflection: Public vs. Private Data',
+            filename: 'Worksheet - Reflection Public vs. Private Data',
             ariaLabel: 'Download material',
           },
         ],
@@ -54,7 +54,7 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.1.2
+        // ID: 4.1.1
         title: 'What Is Private Data?',
         supportText:
           'Use this video to introduce the concept of private data and spark discussion about the types of information students share every day. Pause to ask students which details they consider private.',
@@ -78,6 +78,13 @@ export const contentDP = {
       included: {
         materials: [
           {
+            // ID: 4.2.1
+            kind: 'Image',
+            name: 'Sharing Online: Safe vs. Risky',
+            filename: 'Image - Sharing Online Safe vs. Risky',
+            ariaLabel: 'Download material',
+          },
+          {
             // ID: 4.2.2
             kind: 'Scenario Cards',
             name: 'Roleplay',
@@ -86,15 +93,8 @@ export const contentDP = {
           },
           {
             // ID: 4.2.3
-            kind: 'Image',
-            name: 'Sharing Online: Safe vs Risky',
-            filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 4.2.4
             kind: 'Worksheet',
-            name: 'Share or Don\'t Share?',
+            name: 'Share or Don\'t Share',
             filename: 'Worksheet - Share or Don\'t Share',
             ariaLabel: 'Download material',
           },
@@ -123,17 +123,31 @@ export const contentDP = {
       included: {
         materials: [
           {
+            // ID: 4.3.2
+            kind: 'Image',
+            name: 'Comic Story: A Day in the Life of Sam Online',
+            filename: 'Image - Comic Story A Day in the Life of Sam Online',
+            ariaLabel: 'Download material',
+          },
+          {
             // ID: 4.3.3
-            kind: 'Comic Story',
-            name: 'A Day in the Life of Sam Online',
-            filename: 'Comic Story - A Day in the Life of Sam Online',
+            kind: 'Worksheet',
+            name: 'Track Sam\'s Footprint',
+            filename: 'Worksheet - Track Sam\'s Footprint',
             ariaLabel: 'Download material',
           },
           {
             // ID: 4.3.4
-            kind: 'Worksheet',
-            name: 'Track Sam\'s Footprint',
-            filename: 'Worksheet - Track Sam\'s Footprint',
+            kind: 'Schema',
+            name: 'Board Privacy Value',
+            filename: 'Schema - Board Privacy Value',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 4.3.5
+            kind: 'Game Set',
+            name: 'Cards Privacy Value',
+            filename: 'Game Set - Cards Privacy Value',
             ariaLabel: 'Download material',
           },
         ],
@@ -178,16 +192,37 @@ export const contentDP = {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Checklist',
-            name: 'Digital Footprint Cleanup Checklist',
-            filename: 'Checklist - Digital Footprint Cleanup Checklist',
+            kind: 'Image',
+            name: 'An Example of Basic Settings',
+            filename: 'Image - An Example of Basic Settings',
             ariaLabel: 'Download material',
           },
           {
             // ID: 4.4.2
             kind: 'Worksheet',
-            name: 'Privacy Settings Guide',
-            filename: 'Worksheet - Privacy Settings Guide',
+            name: 'Fix This Profile!',
+            filename: 'Worksheet - Fix This Profile',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 4.4.3
+            kind: 'Worksheet',
+            name: 'Privacy Tips for Kids',
+            filename: 'Worksheet - Privacy Tips for Kids',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 4.4.4
+            kind: 'Worksheet',
+            name: 'Poster Template',
+            filename: 'Worksheet - Poster Template',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 4.4.6
+            kind: 'Worksheet',
+            name: 'Puzzle: Using Digital Traces “Members of the Brain Fights Team”',
+            filename: 'Worksheet - Puzzle Using Digital Traces Members of the Brain Fights Team',
             ariaLabel: 'Download material',
           },
         ],
@@ -207,7 +242,7 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.4.4
+        // ID: 4.4.5
         title: 'Protecting Your Personal Data Online',
         supportText:
           'Use this video to introduce the concept of personal data and spark discussion about the types of information students share every day.',
@@ -229,37 +264,37 @@ export const contentDP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

@@ -34,9 +34,16 @@ export const contentMW = {
             ariaLabel: 'Download material',
           },
           {
-            // ID: 6.1.3
+            // ID: 6.1.2
+            kind: 'Image',
+            name: 'What Is Malicious?',
+            filename: 'Image - What Is Malicious',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 6.1.4
             kind: 'Worksheet',
-            name: 'Related to Malware or Not?',
+            name: 'Related to Malware or Not',
             filename: 'Worksheet - Related to Malware or Not',
             ariaLabel: 'Download material',
           },
@@ -54,17 +61,17 @@ export const contentMW = {
         ],
       },
       featuredVideo: {
-        // ID: 6.1.2
-        title: 'What is Malware?',
+        // ID: 6.1.3
+        title: 'What Is Malware?',
         supportText:
           'Use this video to introduce malware as software designed to cause harm, giving students a foundation before they explore specific types in more depth. Pause to ask what they already know or have heard about computer viruses.',
         downloads: {
           video: {
-            filename: 'What is Malware',
+            filename: 'What Is Malware',
             ariaLabel: 'Download video',
           },
           subtitles: {
-            filename: 'What is Malware - Subtitles',
+            filename: 'What Is Malware - Subtitles',
             ariaLabel: 'Download subtitles',
           },
         },
@@ -87,15 +94,8 @@ export const contentMW = {
           {
             // ID: 6.2.3
             kind: 'Schema',
-            name: 'Knot Ties Board',
-            filename: 'Sheet - Knot Ties Board',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 6.2.4
-            kind: 'Sheet',
-            name: 'Malware Properties',
-            filename: 'Sheet - Malware Properties',
+            name: 'Knot the Ties Board',
+            filename: 'Schema - Knot the Ties Board',
             ariaLabel: 'Download material',
           },
         ],
@@ -137,30 +137,23 @@ export const contentMW = {
         materials: [
           {
             // ID: 6.3.1
-            kind: 'Worksheet',
-            name: 'List of Indicators',
-            filename: 'Worksheet - List of Indicators',
-            ariaLabel: 'Download material',
-          },
-          {
-            // ID: 6.3.2
             kind: 'Reading',
             name: 'Recognising Malware',
             filename: 'Reading - Recognising Malware',
             ariaLabel: 'Download material',
           },
           {
-            // ID: 6.3.3
+            // ID: 6.3.2
             kind: 'Poster',
             name: 'Seven Indicators',
             filename: 'Poster - Seven Indicators',
             ariaLabel: 'Download material',
           },
           {
-            // ID: 6.3.4
-            kind: 'Table',
-            name: 'Situation and Indicators',
-            filename: 'Table - Situation and Indicators',
+            // ID: 6.3.3
+            kind: 'Worksheet',
+            name: 'List of Indicators',
+            filename: 'Worksheet - List of Indicators',
             ariaLabel: 'Download material',
           },
         ],
@@ -187,22 +180,29 @@ export const contentMW = {
           {
             // ID: 6.4.1
             kind: 'Situation',
-            name: 'Malware and Data Theft?',
-            filename: 'Situation – Malware and Data Theft',
+            name: 'Malware and Data Theft',
+            filename: 'Situation - Malware and Data Theft',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.4.2
             kind: 'Poster',
             name: 'DOs and DON\'Ts',
-            filename: 'Poster – DOs and DON\'Ts',
+            filename: 'Poster - DOs and DON\'Ts',
             ariaLabel: 'Download material',
           },
           {
             // ID: 6.4.3
+            kind: 'Images',
+            name: 'Associative Pictures: Be Aware',
+            filename: 'Images - Associative Pictures Be Aware',
+            ariaLabel: 'Download material',
+          },
+          {
+            // ID: 6.4.4
             kind: 'Worksheet',
             name: 'A Shield Against Malware',
-            filename: 'Worksheet – A Shield Against Malware',
+            filename: 'Worksheet - A Shield Against Malware',
             ariaLabel: 'Download material',
           },
         ],
@@ -228,37 +228,37 @@ export const contentMW = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

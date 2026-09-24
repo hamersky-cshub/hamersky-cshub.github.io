@@ -23,7 +23,7 @@ export const contentDA = {
       title: 'Dezinformacija',
       goal: 'Padėti mokiniams suprasti, kas yra dezinformacija, kas motyvuoja žmones tai daryti ir kaip ją atpažinti.',
       bundle: {
-        filename: 'Digital Abuse Part 1 Package',
+        filename: 'Skaitmeninis piktnaudžiavimas - paketas - 1 dalis',
       },
       included: {
         materials: [
@@ -31,7 +31,66 @@ export const contentDA = {
             // ID: 7.1.2
             kind: 'Žaidimas',
             name: 'Tiesos detektyvai',
-            filename: 'Game - Truth Detectives',
+            filename: 'Žaidimas - Tiesos detektyvai',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.1.3
+            kind: 'Paveikslėlis',
+            name: 'Cinamono iššūkis',
+            filename: 'Paveikslėlis - Cinamono iššūkis',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+        ],
+        activityPlan: [
+          {
+            title: 'Įvadas',
+          },
+          {
+            title: 'Kas yra klaidinga informacija?',
+          },
+          {
+            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
+          },
+        ],
+      },
+      featuredVideo: {
+        // ID: 7.1.1
+        title: 'Kas yra klaidinga informacija?',
+        supportText:
+          'Naudokite šį vaizdo įrašą, kad supažindintumėte su dezinformacija kaip klaidingais ar netiksliais turinio fragmentais, kurie gali plisti internete be žalingos intencijos. Sustokite ir paklauskite mokinių, ar jie kada nors pasidalino kuo nors, kas vėliau pasirodė esąs netiesa.',
+        downloads: {
+          video: {
+            filename: 'Kas yra klaidinga informacija',
+            ariaLabel: 'Atsisiųsti vaizdo įrašą',
+          },
+          subtitles: {
+            filename: 'Kas yra klaidinga informacija - Subtitrai',
+            ariaLabel: 'Atsisiųsti subtitrus',
+          },
+        },
+      },
+    },
+    {
+      title: 'Klaidinformacija',
+      goal: 'Padėti mokiniams suprasti, kas yra klaidinformacija, motyvacijas už jos ir kaip ją atpažinti.',
+      bundle: {
+        filename: 'Skaitmeninis piktnaudžiavimas - paketas - 2 dalis',
+      },
+      included: {
+        materials: [
+          {
+            // ID: 7.2.2
+            kind: 'Darbalapas',
+            name: 'Laikraščio šablonas „Dalijimasis naujienomis“',
+            filename: 'Darbalapas - Laikraščio šablonas Dalijimasis naujienomis',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.2.3
+            kind: 'Paveikslėlis',
+            name: 'Socialinių tinklų algoritmai',
+            filename: 'Paveikslėlis - Socialinių tinklų algoritmai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -43,43 +102,6 @@ export const contentDA = {
             title: 'Kas yra dezinformacija?',
           },
           {
-            title: 'Plenarinis susirinkimas: Apibendrinimas ir neformalus vertinimas',
-          },
-        ],
-      },
-      featuredVideo: {
-        // ID: 7.1.1
-        title: 'Kas yra dezinformacija?',
-        supportText:
-          'Naudokite šį vaizdo įrašą, kad supažindintumėte su dezinformacija kaip klaidingais ar netiksliais turinio fragmentais, kurie gali plisti internete be žalingos intencijos. Sustokite ir paklauskite mokinių, ar jie kada nors pasidalino kuo nors, kas vėliau pasirodė esąs netiesa.',
-        downloads: {
-          video: {
-            filename: 'What is Misinformation',
-            ariaLabel: 'Atsisiųsti vaizdo įrašą',
-          },
-          subtitles: {
-            filename: 'What is Misinformation - Subtitles',
-            ariaLabel: 'Atsisiųsti subtitrus',
-          },
-        },
-      },
-    },
-    {
-      title: 'Klaidinformacija',
-      goal: 'Padėti mokiniams suprasti, kas yra klaidinformacija, motyvacijas už jos ir kaip ją atpažinti.',
-      bundle: {
-        filename: 'Digital Abuse Part 2 Package',
-      },
-      included: {
-        materials: [],
-        activityPlan: [
-          {
-            title: 'Įvadas',
-          },
-          {
-            title: 'Kas yra klaidinformacija?',
-          },
-          {
             title: 'Algoritmai',
           },
           {
@@ -89,16 +111,16 @@ export const contentDA = {
       },
       featuredVideo: {
         // ID: 7.2.1
-        title: 'Kas yra klaidinformacija?',
+        title: 'Kas yra dezinformacija?',
         supportText:
           'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams atskirti klaidinformaciją — tyčia apgaulingą turinį — nuo dezinformacijos. Sustokite aptarti, kaip intencija keičia tai, kaip mes vertiname ir reaguojame į melagingą informaciją.',
         downloads: {
           video: {
-            filename: 'What is Disinformation',
+            filename: 'Kas yra dezinformacija',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What is Disinformation - Subtitles',
+            filename: 'Kas yra dezinformacija - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -108,15 +130,22 @@ export const contentDA = {
       title: 'Kibernetinis patyčiavimasis',
       goal: 'Padėti mokiniams suprasti, kas yra kibernetinis patyčiavimasis, motyvacijas už jo ir kaip jį atpažinti.',
       bundle: {
-        filename: 'Digital Abuse Part 3 Package',
+        filename: 'Skaitmeninis piktnaudžiavimas - paketas - 3 dalis',
       },
       included: {
         materials: [
           {
             // ID: 7.3.1
-            kind: 'Žaidimas',
+            kind: 'Scenarijų kortelės',
             name: 'Suvaidink tai!',
-            filename: 'Game - Act it Out',
+            filename: 'Scenarijų kortelės - Suvaidink tai',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.3.3
+            kind: 'Scenarijų kortelės',
+            name: 'Ar tai tik blogos manieros?',
+            filename: 'Scenarijų kortelės - Ar tai tik blogos manieros',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -139,11 +168,11 @@ export const contentDA = {
           'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams apibrėžti kibernetinį patyčiavimąsi ir suprasti, kaip elgesys internete gali sukelti tikrą emocinę žalą. Sustokite aptarti, kodėl stebėtojų reakcija šiose situacijose yra svarbi.',
         downloads: {
           video: {
-            filename: 'What is Cyber Bullying',
+            filename: 'Kas yra kibernetinis patyčiavimasis',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What is Cyber Bullying - Subtitles',
+            filename: 'Kas yra kibernetinis patyčiavimasis - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -153,15 +182,29 @@ export const contentDA = {
       title: 'Nepažįstamųjų pavojus',
       goal: 'Padėti mokiniams suprasti, kas yra nepažįstamųjų pavojus, motyvacijas už jo ir kaip jį atpažinti.',
       bundle: {
-        filename: 'Digital Abuse Part 4 Package',
+        filename: 'Skaitmeninis piktnaudžiavimas - paketas - 4 dalis',
       },
       included: {
         materials: [
           {
             // ID: 7.4.1
-            kind: 'Žaidimas',
-            name: 'Tikra ar netikra?',
-            filename: 'Game - Real or Fake',
+            kind: 'Plakatas',
+            name: 'Nepažįstamųjų pavojus',
+            filename: 'Plakatas - Nepažįstamųjų pavojus',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.4.2
+            kind: 'Scenarijų kortelės',
+            name: 'Tikras ar netikras? Profilių detektyvo žaidimas',
+            filename: 'Scenarijų kortelės - Tikras ar netikras Profilių detektyvo žaidimas',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.4.3
+            kind: 'Darbalapas',
+            name: 'Nepažįstamųjų pavojaus čempionas',
+            filename: 'Darbalapas - Nepažįstamųjų pavojaus čempionas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -179,15 +222,15 @@ export const contentDA = {
       title: 'Influenceriai',
       goal: 'Padėti mokiniams suprasti, kas yra influenceriai ir kas juos motyvuoja.',
       bundle: {
-        filename: 'Digital Abuse Part 5 Package',
+        filename: 'Skaitmeninis piktnaudžiavimas - paketas - 5 dalis',
       },
       included: {
         materials: [
           {
             // ID: 7.5.2
-            kind: 'Scenarijai',
-            name: 'Influencerių įrašų, kurie gali būti žalingi ir nežalingi, pavyzdžiai',
-            filename: 'Scenarios - Examples of Influencers Posts That Are Potentially Harmful and Not Harmful',
+            kind: 'Scenarijų kortelės',
+            name: 'Influencerių įrašai',
+            filename: 'Scenarijų kortelės - Influencerių įrašai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -210,11 +253,11 @@ export const contentDA = {
           'Naudokite šį vaizdo įrašą, kad ištirtumėte, kaip influenceriai formuoja nuomones ir elgesį socialiniuose tinkluose, ir kokia atsakomybė kyla dėl šios pasiekiamumo galios. Sustokite ir paklauskite mokinių, kuriuos influencerius jie seka ir kas daro juos patikimais.',
         downloads: {
           video: {
-            filename: 'Social Media Influencers',
+            filename: 'Socialinių medijų influenceriai',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Social Media Influencers - Subtitles',
+            filename: 'Socialinių medijų influenceriai - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -224,15 +267,29 @@ export const contentDA = {
       title: 'Kaip galime susidoroti su skaitmeninių nusikaltėlių elgesiu?',
       goal: 'Padėti mokiniams žinoti, ką jie gali padaryti, kad apsisaugotų nuo skaitmeninio smurto.',
       bundle: {
-        filename: 'Digital Abuse Part 6 Package',
+        filename: 'Skaitmeninis piktnaudžiavimas - paketas - 6 dalis',
       },
       included: {
         materials: [
           {
             // ID: 7.6.1
-            kind: 'Veikla',
-            name: 'Saugumo superherojaus pasiūlymų paketas',
-            filename: 'Activity - Safety Superhero Suggestion Pack',
+            kind: 'Darbalapas',
+            name: 'Skaitmeninis superherojus',
+            filename: 'Darbalapas - Skaitmeninis superherojus',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.6.2
+            kind: 'Darbalapas',
+            name: 'CyberDoku: Paslapties įminimas',
+            filename: 'Darbalapas - CyberDoku Paslapties įminimas',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 7.6.3
+            kind: 'Paveikslėlis',
+            name: 'CyberDoku: Vietovės žemėlapis',
+            filename: 'Paveikslėlis - CyberDoku Vietovės žemėlapis',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -252,37 +309,37 @@ export const contentDA = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
   ],
 }

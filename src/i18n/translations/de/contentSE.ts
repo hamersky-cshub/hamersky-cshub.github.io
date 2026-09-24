@@ -22,36 +22,43 @@ export const contentSE = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, was Social Engineering ist, indem sie zunächst erkennen, wie Menschen in alltäglichen Situationen beeinflusst oder manipuliert werden können, und dieses Verständnis dann mit digitalen Umgebungen und dem Verhalten von Angreifern verbinden.',
       bundle: {
-        filename: 'Social Engineering Part 1 Package',
+        filename: 'Social Engineering - Paket - Teil 1',
       },
       included: {
         materials: [
           {
-            // ID: 5.1.1
-            kind: 'Bild',
-            name: 'Menschen täuschen vs. Systeme hacken',
-            filename: 'Image - Tricking People vs Hacking Systems',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
             // ID: 5.1.2
             kind: 'Bild',
-            name: 'Beispiele für Social-Engineering-Nachrichten',
-            filename: 'Image - Examples of Social Engineering Messages',
+            name: 'Systeme hacken vs. Menschen täuschen',
+            filename: 'Bild - Systeme hacken vs. Menschen täuschen',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.1.3
-            kind: 'Situationsbewertung',
-            name: 'Was will ein Angreifer?',
-            filename: 'Situation Assessment - What Does an Attacker Want',
+            kind: 'Bild',
+            name: 'Ziele eines Angreifers',
+            filename: 'Bild - Ziele eines Angreifers',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.1.4
+            kind: 'Szenariokarten',
+            name: 'Was will ein Angreifer?',
+            filename: 'Szenariokarten - Was will ein Angreifer',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 5.1.5
+            kind: 'Lösungskarten',
+            name: 'Was will ein Angreifer?',
+            filename: 'Lösungskarten - Was will ein Angreifer',
+            ariaLabel: 'Material herunterladen',
+          },
+          {
+            // ID: 5.1.6
             kind: 'Arbeitsblatt',
             name: 'Social Engineering verstehen',
-            filename: 'Worksheet - Understanding Social Engineering',
+            filename: 'Arbeitsblatt - Social Engineering verstehen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -74,16 +81,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.1.1
         title: 'Was ist Social Engineering?',
         supportText:
           'Verwenden Sie dieses Video, um Social Engineering als Technik einzuführen, die menschliches Vertrauen anstatt technischer Systeme ausnutzt. Halten Sie inne und fragen Sie die Schülerinnen und Schüler, ob sie sich an eine Situation erinnern, in der jemand versucht hat, sie online zu täuschen.',
         downloads: {
           video: {
-            filename: 'What Is Social Engineering',
+            filename: 'Was ist Social Engineering',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'What Is Social Engineering - Subtitles',
+            filename: 'Was ist Social Engineering - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -92,36 +100,29 @@ export const contentSE = {
     {
       goal: 'Den Schülerinnen und Schülern helfen zu verstehen, warum Angreifer Social Engineering einsetzen, indem sie die psychologischen und emotionalen Hebel erkunden, die Menschen verwundbar machen, und üben, wie man kritisch denkt, wenn man Druck spürt.',
       bundle: {
-        filename: 'Social Engineering Part 2 Package',
+        filename: 'Social Engineering - Paket - Teil 2',
       },
       included: {
         materials: [
           {
             // ID: 5.2.1
-            kind: 'Bild',
-            name: 'Menschliche Entscheidungsfindung vs. Computer-Entscheidungsfindung',
-            filename: 'Image - Human Decision-making vs Computer Decision-making',
+            kind: 'Szenariokarten',
+            name: 'Taktiken von Angreifern',
+            filename: 'Szenariokarten - Taktiken von Angreifern',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.2.2
-            kind: 'Szenarienkarten',
+            kind: 'Szenariokarten',
             name: 'Beispiele für emotionale Manipulation',
-            filename: 'Scenario Cards - Emotional Manipulation Examples',
+            filename: 'Szenariokarten - Beispiele für emotionale Manipulation',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.2.3
-            kind: 'Spielkarten',
-            name: 'Taktiken von Angreifern',
-            filename: 'Game Cards - Attacker Tactics',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
-            // ID: 5.2.4
             kind: 'Arbeitsblatt',
             name: 'Warum Social Engineering funktioniert',
-            filename: 'Worksheet - Why Social Engineering Works',
+            filename: 'Arbeitsblatt - Warum Social Engineering funktioniert',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -147,29 +148,15 @@ export const contentSE = {
     {
       goal: 'Den Schülerinnen und Schülern helfen, Social-Engineering-Versuche zu erkennen, indem sie häufige Warnsignale identifizieren und die verschiedenen Kontexte verstehen, in denen diese Angriffe auftreten können, sowohl online als auch offline.',
       bundle: {
-        filename: 'Social Engineering Part 3 Package',
+        filename: 'Social Engineering - Paket - Teil 3',
       },
       included: {
         materials: [
           {
-            // ID: 5.3.1
-            kind: 'Bild',
-            name: 'Beispiele für Social-Engineering-Nachrichten',
-            filename: 'Image - Examples of Social Engineering Messages',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
             // ID: 5.3.2
-            kind: 'Szenarienkarten',
-            name: 'Social-Engineering-Situationen',
-            filename: 'Scenario Cards - Social Engineering Situations',
-            ariaLabel: 'Material herunterladen',
-          },
-          {
-            // ID: 5.3.3
             kind: 'Arbeitsblatt',
-            name: 'Social Engineering erkennen',
-            filename: 'Worksheet - Spot the Social Engineering',
+            name: 'Verbinde die Punkte',
+            filename: 'Arbeitsblatt - Verbinde die Punkte',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -192,16 +179,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.3.1
         title: 'Arten von Social Engineering',
         supportText:
           'Verwenden Sie dieses Video, um Schülerinnen und Schülern zu helfen, die verschiedenen Formen zu erkennen, die Social Engineering annehmen kann, von Phishing-E-Mails bis zu telefonischer Identitätsvortäuschung. Halten Sie inne, um zu diskutieren, welche Art ihrer Meinung nach am schwierigsten zu erkennen wäre und warum.',
         downloads: {
           video: {
-            filename: 'Types of Social Engineering',
+            filename: 'Arten von Social Engineering',
             ariaLabel: 'Video herunterladen',
           },
           subtitles: {
-            filename: 'Types of Social Engineering - Subtitles',
+            filename: 'Arten von Social Engineering - Untertitel',
             ariaLabel: 'Untertitel herunterladen',
           },
         },
@@ -210,43 +198,43 @@ export const contentSE = {
     {
       goal: 'Den Schülerinnen und Schülern helfen, das Überprüfen von Informationen und die Wahl sicherer Reaktionen zu üben, und sie zu befähigen, andere zu unterstützen, wenn sie auf Social-Engineering-Versuche stoßen.',
       bundle: {
-        filename: 'Social Engineering Part 4 Package',
+        filename: 'Social Engineering - Paket - Teil 4',
       },
       included: {
         materials: [
           {
             // ID: 5.4.1
-            kind: 'Szenarienkarten',
-            name: 'Was würdest du tun?',
-            filename: 'Scenario Cards - What Would You Do',
+            kind: 'Bild',
+            name: 'Stopp, denk nach, prüf, frag',
+            filename: 'Bild - Stopp, denk nach, prüf, frag',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.2
-            kind: 'Checkliste',
+            kind: 'Arbeitsblatt',
             name: 'Stopp, denk nach, prüf, frag',
-            filename: 'Checklist - Stop, Think, Check, Ask',
+            filename: 'Arbeitsblatt - Stopp, denk nach, prüf, frag',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.3
-            kind: 'Arbeitsblatt',
-            name: 'Stopp, denk nach, prüf, frag',
-            filename: 'Worksheet - Stop, Think, Check, Ask',
+            kind: 'Szenariokarten',
+            name: 'Was würdest du tun?',
+            filename: 'Szenariokarten - Was würdest du tun',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.4
             kind: 'Rollenkarten',
-            name: 'Opfer, Helfer, Zuschauer',
-            filename: 'Role Cards - Target, Helper, Bystander',
+            name: 'Prosoziales Verhalten oder Zuschauereffekt',
+            filename: 'Rollenkarten - Prosoziales Verhalten oder Zuschauereffekt',
             ariaLabel: 'Material herunterladen',
           },
           {
             // ID: 5.4.5
             kind: 'Arbeitsblatt',
             name: 'Mich und andere schützen',
-            filename: 'Worksheet - Protecting Myself and Others',
+            filename: 'Arbeitsblatt - Mich und andere schützen',
             ariaLabel: 'Material herunterladen',
           },
         ],
@@ -275,37 +263,37 @@ export const contentSE = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

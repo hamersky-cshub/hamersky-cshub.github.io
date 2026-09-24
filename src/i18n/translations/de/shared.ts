@@ -114,6 +114,8 @@ export const shared = {
         'Dies ist der zentrale Bereich für alle Projektmodule, Schulungsmaterialien und Bildungsressourcen. Hier finden Sie einsatzbereite Lektionen, praktische Aktivitäten und Anleitungen, die die Cybersicherheitsausbildung in verschiedenen Unterrichtsumgebungen unterstützen sollen. Alle Materialien sind strukturiert, anpassbar und darauf ausgerichtet, Pädagogen dabei zu helfen, digitale Sicherheitsthemen sicher in den Unterricht einzuführen. Ob Sie nach vollständigen Modulen oder einzelnen Unterrichtsressourcen suchen — das Lernzentrum bietet alles, was Sie benötigen, an einem Ort.',
 
       labels: {
+        showDetails: 'Teile & Aktivitäten anzeigen',
+        hideDetails: 'Teile & Aktivitäten ausblenden',
         goal: 'Ziel',
         challenge: 'Herausforderung',
         challenges: 'Herausforderungen',

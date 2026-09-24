@@ -12,7 +12,7 @@
 
 [![Learning Modules](https://img.shields.io/badge/Learning_Modules-7-16A34A)](#-the-seven-modules)
 [![Lesson Parts](https://img.shields.io/badge/Lesson_Parts-31-0EA5E9)](#-module-catalogue)
-[![Classroom Materials](https://img.shields.io/badge/Classroom_Materials-85-F59E0B)](#-module-catalogue)
+[![Classroom Materials](https://img.shields.io/badge/Classroom_Materials-101-F59E0B)](#-module-catalogue)
 [![Videos](https://img.shields.io/badge/Videos-20-EF4444)](#-module-catalogue)
 [![Challenges](https://img.shields.io/badge/Interactive_Challenges-7-8850DF)](#-interactive-challenges)
 [![Games](https://img.shields.io/badge/Roblox_Games-5-D946EF)](#-cybersecurity-games-roblox)
@@ -130,14 +130,14 @@ Teaching Guide  →  Parts (content + activities + video)  →  Interactive Chal
 Click a module to see its parts, videos and materials.
 
 <details>
-<summary><b>1 · Digital Citizenship</b> — 5 parts · 11 materials · 3 videos</summary>
+<summary><b>1 · Digital Citizenship</b> — 5 parts · 10 materials · 3 videos</summary>
 
 **Aim:** To provide an understanding of what digital citizenship is and how to follow its core principles.
 
 | Part | Title | Video | Materials |
 |:-:|---|---|:-:|
-| 1 | Digital Environments | 🎬 What Is a Digital Environment? | 1 |
-| 2 | What Does it Mean to be a Digital Citizen? | — | 3 |
+| 1 | Digital Environments | 🎬 What Is a Digital Environment and Digital Systems? | 1 |
+| 2 | What Does it Mean to be a Digital Citizen? | — | 2 |
 | 3 | How to Stay Safe — Privacy Settings | 🎬 What Are Privacy Settings? | 4 |
 | 4 | How to Act Savvy — Being Wise and Resilient | 🎬 Resilience in Digital Environments | — |
 | 5 | How to Act Responsibly — Respecting Ourselves and Others | — | 3 |
@@ -148,15 +148,15 @@ Click a module to see its parts, videos and materials.
 </details>
 
 <details>
-<summary><b>2 · Attacker Perspective</b> — 3 parts · 8 materials · 1 video</summary>
+<summary><b>2 · Attacker Perspective</b> — 3 parts · 15 materials · 1 video</summary>
 
 **Aim:** To help learners recognise attacker techniques and understand the motives behind cyber-attacks.
 
 | Part | Title | Video | Materials |
 |:-:|---|---|:-:|
-| 1 | Let Us Define the Circle of Trustees | — | 2 |
-| 2 | What Is an Adversary? | 🎬 Who Is Behind Cyber Attacks? | 4 |
-| 3 | What Are the Attacker Techniques? | — | 2 |
+| 1 | Let Us Define the Circle of Trustees | — | 4 |
+| 2 | What Is an Adversary? | 🎬 Who Is Behind Cyber Attacks? | 5 |
+| 3 | What Are the Attacker Techniques? | — | 6 |
 
 **Challenge:** *In Hacker's Mind* — students examine a social media profile as a hacker would, spotting the weak spots.
 
@@ -164,16 +164,16 @@ Click a module to see its parts, videos and materials.
 </details>
 
 <details>
-<summary><b>3 · Authentication</b> — 5 parts · 24 materials · 5 videos</summary>
+<summary><b>3 · Authentication</b> — 5 parts · 23 materials · 5 videos</summary>
 
 **Aim:** To provide core knowledge of authentication and identity management principles for protecting personal digital assets.
 
 | Part | Title | Video | Materials |
 |:-:|---|---|:-:|
 | 1 | What Is Identity and What Are Digital Assets? | 🎬 What Is Digital Identity? | 4 |
-| 2 | What Is Authentication and Why Is It Important? | 🎬 What Is Authentication and Why Is It Important? | 3 |
+| 2 | What Is Authentication and Why Is It Important? | 🎬 What Is Authentication? | 3 |
 | 3 | How to Create Strong Usernames and Passwords | 🎬 Strong and Weak Passwords | 5 |
-| 4 | How to Manage Passwords Securely — Using a Password Manager | 🎬 What Is a Password Manager? | 9 |
+| 4 | How to Manage Passwords Securely — Using a Password Manager | 🎬 What Is a Password Manager? | 8 |
 | 5 | How to Protect Our Digital Identity — Safe and Responsible Choices | 🎬 Protecting Your Digital Identity | 3 |
 
 **Challenge:** *Password Lab* — build a stronger password one round at a time.
@@ -183,7 +183,7 @@ Click a module to see its parts, videos and materials.
 </details>
 
 <details>
-<summary><b>4 · Data Privacy</b> — 4 parts · 9 materials · 3 videos</summary>
+<summary><b>4 · Data Privacy</b> — 4 parts · 14 materials · 3 videos</summary>
 
 **Aim:** To help students recognise what counts as personal data, understand why privacy matters, and make safer choices before sharing information online.
 
@@ -191,8 +191,8 @@ Click a module to see its parts, videos and materials.
 |:-:|---|---|:-:|
 | 1 | What Is Private Data? | 🎬 What Is Private Data? | 2 |
 | 2 | Data Sharing | — | 3 |
-| 3 | Data Detectives — Digital Footprints | 🎬 What Is a Digital Footprint? | 2 |
-| 4 | Data Detectives — Clean Up Your Digital Footprint | 🎬 Protecting Your Personal Data Online | 2 |
+| 3 | Data Detectives — Digital Footprints | 🎬 What Is a Digital Footprint? | 4 |
+| 4 | Data Detectives — Clean Up Your Digital Footprint | 🎬 Protecting Your Personal Data Online | 5 |
 
 **Challenge:** *Digital Footprint Sorter* — sort everyday activities by the traces they leave online.
 **Game:** *Secrets of the Pearl & Shell* (Roblox).
@@ -201,15 +201,15 @@ Click a module to see its parts, videos and materials.
 </details>
 
 <details>
-<summary><b>5 · Social Engineering</b> — 4 parts · 16 materials · 2 videos</summary>
+<summary><b>5 · Social Engineering</b> — 4 parts · 14 materials · 2 videos</summary>
 
 **Aim:** To help students recognise manipulation tactics, pause before acting, and choose safer responses when someone uses pressure, urgency, or false trust.
 
 | Part | Title | Video | Materials |
 |:-:|---|---|:-:|
-| 1 | What Is Social Engineering? | 🎬 What Is Social Engineering? | 4 |
-| 2 | Why Is Social Engineering Used by Attackers? | — | 4 |
-| 3 | Recognising Social Engineering in Everyday Contexts | 🎬 Types of Social Engineering | 3 |
+| 1 | What Is Social Engineering? | 🎬 What Is Social Engineering? | 5 |
+| 2 | Why Is Social Engineering Used by Attackers? | — | 3 |
+| 3 | Recognising Social Engineering in Everyday Contexts | 🎬 Types of Social Engineering | 1 |
 | 4 | Protecting Yourself and Others From Social Engineering | — | 5 |
 
 **Challenge:** *Phishing Case Files* — become a Message Detective: trust it, or ignore/report it?
@@ -225,10 +225,10 @@ Click a module to see its parts, videos and materials.
 
 | Part | Title | Video | Materials |
 |:-:|---|---|:-:|
-| 1 | What Is Malware? | 🎬 What Is Malware? | 2 |
-| 2 | Malware Types | 🎬 Introducing Malware Types | 3 |
-| 3 | Recognising Malware | — | 4 |
-| 4 | Protection Measures Against Malware | — | 3 |
+| 1 | What Is Malware? | 🎬 What Is Malware? | 3 |
+| 2 | Malware Types | 🎬 Introducing Malware Types | 2 |
+| 3 | Recognising Malware | — | 3 |
+| 4 | Protection Measures Against Malware | — | 4 |
 
 **Challenge:** *Malware Detective* — inspect files, emails, pop-ups and app permissions across 4 levels.
 **Game:** *Malware Madness Race* (Roblox).
@@ -237,18 +237,18 @@ Click a module to see its parts, videos and materials.
 </details>
 
 <details>
-<summary><b>7 · Digital Abuse</b> — 6 parts · 5 materials · 4 videos</summary>
+<summary><b>7 · Digital Abuse</b> — 6 parts · 13 materials · 4 videos</summary>
 
 **Aim:** To help students recognise harmful online behaviour, understand that boundaries matter, and know the steps they can take to get support and stay safe.
 
 | Part | Title | Video | Materials |
 |:-:|---|---|:-:|
-| 1 | Misinformation | 🎬 What Is Misinformation? | 1 |
-| 2 | Disinformation | 🎬 What Is Disinformation? | — |
-| 3 | Cyber Bullying | 🎬 What Is Cyber Bullying? | 1 |
-| 4 | Stranger Danger | — | 1 |
+| 1 | Misinformation | 🎬 What Is Misinformation? | 2 |
+| 2 | Disinformation | 🎬 What Is Disinformation? | 2 |
+| 3 | Cyber Bullying | 🎬 What Is Cyber Bullying? | 2 |
+| 4 | Stranger Danger | — | 3 |
 | 5 | Influencers | 🎬 Social Media Influencers | 1 |
-| 6 | How Can We Deal With the Behaviour of Digital Abusers? | — | 1 |
+| 6 | How Can We Deal With the Behaviour of Digital Abusers? | — | 3 |
 
 **Challenge:** *Real Talk Stories* — make choices, see consequences, learn how to handle cyberbullying and online pressure.
 **Game:** *Kindness Quest: Save the City* (Roblox).

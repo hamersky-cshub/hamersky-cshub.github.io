@@ -115,6 +115,8 @@ export const shared = {
         'This is the central space for all project modules, training materials, and educational resources. Here you will find ready-to-use lessons, practical activities, and guidance designed to support cybersecurity education in diverse classroom settings. All materials are structured, adaptable, and created to help educators confidently introduce digital safety topics to children. Whether you are looking for complete modules or individual teaching resources, the Learning Hub provides everything you need in one place.',
 
       labels: {
+        showDetails: 'Show parts & activities',
+        hideDetails: 'Hide parts & activities',
         goal: 'Goal',
         challenge: 'Challenge',
         challenges: 'Challenges',

@@ -22,36 +22,43 @@ export const contentSE = {
     {
       goal: 'Padėti mokiniams suprasti, kas yra socialinė inžinerija, pirmiausia atpažįstant, kaip žmonės gali būti veikiami ar manipuliuojami kasdienėse situacijose, o tada siejant šį supratimą su skaitmenine aplinka ir užpuolikų elgesiu.',
       bundle: {
-        filename: 'Social Engineering Part 1 Package',
+        filename: 'Socialinė inžinerija - paketas - 1 dalis',
       },
       included: {
         materials: [
           {
-            // ID: 5.1.1
-            kind: 'Paveikslėlis',
-            name: 'Žmonių apgaudinėjimas vs. sistemų įsilaužimas',
-            filename: 'Image - Tricking People vs Hacking Systems',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
             // ID: 5.1.2
             kind: 'Paveikslėlis',
-            name: 'Socialinės inžinerijos žinučių pavyzdžiai',
-            filename: 'Image - Examples of Social Engineering Messages',
+            name: 'Sistemų įsilaužimas vs. žmonių apgaudinėjimas',
+            filename: 'Paveikslėlis - Sistemų įsilaužimas vs. žmonių apgaudinėjimas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.1.3
-            kind: 'Situacijos įvertinimas',
-            name: 'Ko nori užpuolikas?',
-            filename: 'Situation Assessment - What Does an Attacker Want',
+            kind: 'Paveikslėlis',
+            name: 'Užpuoliko tikslai',
+            filename: 'Paveikslėlis - Užpuoliko tikslai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.1.4
+            kind: 'Scenarijų kortelės',
+            name: 'Ko nori užpuolikas?',
+            filename: 'Scenarijų kortelės - Ko nori užpuolikas',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 5.1.5
+            kind: 'Sprendimų kortelės',
+            name: 'Ko nori užpuolikas?',
+            filename: 'Sprendimų kortelės - Ko nori užpuolikas',
+            ariaLabel: 'Atsisiųsti medžiagą',
+          },
+          {
+            // ID: 5.1.6
             kind: 'Darbalapas',
             name: 'Socialinės inžinerijos supratimas',
-            filename: 'Worksheet - Understanding Social Engineering',
+            filename: 'Darbalapas - Socialinės inžinerijos supratimas',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -74,16 +81,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.1.1
         title: 'Kas yra socialinė inžinerija?',
         supportText:
           'Naudokite šį vaizdo įrašą, kad pristatytumėte socialinę inžineriją kaip techniką, išnaudojančią žmonių pasitikėjimą, o ne technines sistemas. Sustokite ir paklauskite mokinių, ar jie prisimena situaciją, kai kažkas bandė juos apgauti internete.',
         downloads: {
           video: {
-            filename: 'What Is Social Engineering',
+            filename: 'Kas yra socialinė inžinerija',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What Is Social Engineering - Subtitles',
+            filename: 'Kas yra socialinė inžinerija - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -92,36 +100,29 @@ export const contentSE = {
     {
       goal: 'Padėti mokiniams suprasti, kodėl užpuolikai naudoja socialinę inžineriją, tyrinėjant psichologinius ir emocinius svertus, dėl kurių žmonės tampa pažeidžiami, ir praktikuojant kritinį mąstymą, kai jaučiamas spaudimas.',
       bundle: {
-        filename: 'Social Engineering Part 2 Package',
+        filename: 'Socialinė inžinerija - paketas - 2 dalis',
       },
       included: {
         materials: [
           {
             // ID: 5.2.1
-            kind: 'Paveikslėlis',
-            name: 'Žmogiškasis sprendimų priėmimas vs. kompiuterinis sprendimų priėmimas',
-            filename: 'Image - Human Decision-making vs Computer Decision-making',
+            kind: 'Scenarijų kortelės',
+            name: 'Užpuolikų taktikos',
+            filename: 'Scenarijų kortelės - Užpuolikų taktikos',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.2.2
             kind: 'Scenarijų kortelės',
             name: 'Emocinės manipuliacijos pavyzdžiai',
-            filename: 'Scenario Cards - Emotional Manipulation Examples',
+            filename: 'Scenarijų kortelės - Emocinės manipuliacijos pavyzdžiai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.2.3
-            kind: 'Žaidimo kortelės',
-            name: 'Užpuolikų taktikos',
-            filename: 'Game Cards - Attacker Tactics',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
-            // ID: 5.2.4
             kind: 'Darbalapas',
             name: 'Kodėl socialinė inžinerija veikia',
-            filename: 'Worksheet - Why Social Engineering Works',
+            filename: 'Darbalapas - Kodėl socialinė inžinerija veikia',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -147,29 +148,15 @@ export const contentSE = {
     {
       goal: 'Padėti mokiniams atpažinti socialinės inžinerijos bandymus identifikuojant dažnus įspėjimo ženklus ir suprantant skirtingus kontekstus, kuriuose šie išpuoliai gali įvykti, tiek internete, tiek ne.',
       bundle: {
-        filename: 'Social Engineering Part 3 Package',
+        filename: 'Socialinė inžinerija - paketas - 3 dalis',
       },
       included: {
         materials: [
           {
-            // ID: 5.3.1
-            kind: 'Paveikslėlis',
-            name: 'Socialinės inžinerijos žinučių pavyzdžiai',
-            filename: 'Image - Examples of Social Engineering Messages',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
             // ID: 5.3.2
-            kind: 'Scenarijų kortelės',
-            name: 'Socialinės inžinerijos situacijos',
-            filename: 'Scenario Cards - Social Engineering Situations',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
-            // ID: 5.3.3
             kind: 'Darbalapas',
-            name: 'Aptik socialinę inžineriją',
-            filename: 'Worksheet - Spot the Social Engineering',
+            name: 'Sujunk taškus',
+            filename: 'Darbalapas - Sujunk taškus',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -192,16 +179,17 @@ export const contentSE = {
         ],
       },
       featuredVideo: {
+        // ID: 5.3.1
         title: 'Socialinės inžinerijos tipai',
         supportText:
           'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams atpažinti skirtingas socialinės inžinerijos formas: nuo sukčiavimo el. laiškais iki apsimetimo kitu telefonu. Sustokite aptarti, kurį tipą manytų sunkiausiai pastebimą ir kodėl.',
         downloads: {
           video: {
-            filename: 'Types of Social Engineering',
+            filename: 'Socialinės inžinerijos tipai',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Types of Social Engineering - Subtitles',
+            filename: 'Socialinės inžinerijos tipai - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -210,43 +198,43 @@ export const contentSE = {
     {
       goal: 'Padėti mokiniams praktikuoti informacijos tikrinimą ir saugių atsakymų pasirinkimą bei įgalinti juos palaikyti kitus, kai susiduria su socialinės inžinerijos bandymais.',
       bundle: {
-        filename: 'Social Engineering Part 4 Package',
+        filename: 'Socialinė inžinerija - paketas - 4 dalis',
       },
       included: {
         materials: [
           {
             // ID: 5.4.1
-            kind: 'Scenarijų kortelės',
-            name: 'Ką darytumei?',
-            filename: 'Scenario Cards - What Would You Do',
+            kind: 'Paveikslėlis',
+            name: 'Sustok, pagalvok, patikrink, paklausk',
+            filename: 'Paveikslėlis - Sustok, pagalvok, patikrink, paklausk',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.4.2
-            kind: 'Kontrolinis sąrašas',
+            kind: 'Darbalapas',
             name: 'Sustok, pagalvok, patikrink, paklausk',
-            filename: 'Checklist - Stop, Think, Check, Ask',
+            filename: 'Darbalapas - Sustok, pagalvok, patikrink, paklausk',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.4.3
-            kind: 'Darbalapas',
-            name: 'Sustok, pagalvok, patikrink, paklausk',
-            filename: 'Worksheet - Stop, Think, Check, Ask',
+            kind: 'Scenarijų kortelės',
+            name: 'Ką darytumei?',
+            filename: 'Scenarijų kortelės - Ką darytumei',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.4.4
             kind: 'Vaidmenų kortelės',
-            name: 'Taikinys, pagalbininkas, stebėtojas',
-            filename: 'Role Cards - Target, Helper, Bystander',
+            name: 'Prosocialus elgesys ar stebėtojo apatija',
+            filename: 'Vaidmenų kortelės - Prosocialus elgesys ar stebėtojo apatija',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 5.4.5
             kind: 'Darbalapas',
             name: 'Savęs ir kitų apsauga',
-            filename: 'Worksheet - Protecting Myself and Others',
+            filename: 'Darbalapas - Savęs ir kitų apsauga',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -275,37 +263,37 @@ export const contentSE = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

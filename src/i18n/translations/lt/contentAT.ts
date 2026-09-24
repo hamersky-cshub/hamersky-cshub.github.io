@@ -25,7 +25,7 @@ export const contentAT = {
     {
       goal: 'Padėti mokiniams kurti stiprius, įsimintinus slaptus žodžius ir suprasti, kodėl jų pakartotinis naudojimas yra rizikingas.',
       bundle: {
-        filename: 'Authentication Part 1 Package',
+        filename: 'Autentifikavimas - paketas - 1 dalis',
       },
       included: {
         materials: [
@@ -33,28 +33,28 @@ export const contentAT = {
             // ID: 3.1.1
             kind: 'Paveikslėlis',
             name: 'Internetinė tapatybė',
-            filename: 'Image - Online Identity',
+            filename: 'Paveikslėlis - Internetinė tapatybė',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
-            // ID: 3.1.2
+            // ID: 3.1.3
             kind: 'Paveikslėliai',
             name: 'Asmeninių skaitmeninių išteklių pavyzdžiai',
-            filename: 'Images - Examples of Personal Digital Assets',
+            filename: 'Paveikslėliai - Asmeninių skaitmeninių išteklių pavyzdžiai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.1.4
             kind: 'Darbalapas',
-            name: 'Kas nutiktų, jei ...?',
-            filename: 'Worksheet - What Would Happen if',
+            name: 'Kas nutiktų, jei...?',
+            filename: 'Darbalapas - Kas nutiktų, jei',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.1.5
             kind: 'Darbalapas',
             name: 'Mano skaitmeniniai ištekliai',
-            filename: 'Worksheet - My Digital Assets',
+            filename: 'Darbalapas - Mano skaitmeniniai ištekliai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -79,11 +79,11 @@ export const contentAT = {
           'Naudokite šį vaizdo įrašą, kad padėtumėte mokiniams suprasti, jog jų skaitmeninę tapatybę sudaro informacija ir elgesys, kuriais jie dalinasi internete. Pristabdykite ir paklauskite, kurias savo skaitmeninės tapatybės dalis, jų manymu, jie gali kontroliuoti.',
         downloads: {
           video: {
-            filename: 'What is Digital Identity',
+            filename: 'Kas yra skaitmeninė tapatybė',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What is Digital Identity - Subtitles',
+            filename: 'Kas yra skaitmeninė tapatybė - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -93,7 +93,7 @@ export const contentAT = {
       goal:
         'Padėti mokiniams suprasti, kas yra autentifikacija, kodėl ji svarbi ir kaip ji padeda apsaugoti jų skaitmeninę tapatybę ir skaitmeninius išteklius kontroliuojant, kam leidžiama prieiga.',
       bundle: {
-        filename: 'Authentication Part 2 Package',
+        filename: 'Autentifikavimas - paketas - 2 dalis',
       },
       included: {
         materials: [
@@ -101,21 +101,21 @@ export const contentAT = {
             // ID: 3.2.1
             kind: 'Paveikslėliai',
             name: 'Realaus pasaulio autentifikacijos pavyzdžiai',
-            filename: 'Images - Real-world Authentication Examples',
+            filename: 'Paveikslėliai - Realaus pasaulio autentifikacijos pavyzdžiai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.2.3
             kind: 'Paveikslėlis',
             name: 'Prisijungimas prie skaitmeninės sistemos',
-            filename: 'Image - Logging Into a Digital System',
+            filename: 'Paveikslėlis - Prisijungimas prie skaitmeninės sistemos',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.2.4
             kind: 'Darbalapas',
             name: 'Autentifikacija kasdieniniame gyvenime',
-            filename: 'Worksheet - Authentication in Everday Life',
+            filename: 'Darbalapas - Autentifikacija kasdieniniame gyvenime',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -139,16 +139,16 @@ export const contentAT = {
       },
       featuredVideo: {
         // ID: 3.2.2
-        title: 'Kas yra autentifikacija ir kodėl ji svarbi?',
+        title: 'Kas yra autentifikacija?',
         supportText:
           'Naudokite šį vaizdo įrašą, kad pristatytumėte autentifikaciją kaip kasdienį mechanizmą, saugantį mokinių skaitmeninius paskyras. Pristabdykite ir paklauskite, kaip jie šiuo metu patvirtina savo tapatybę dažniausiai naudojamose programėlėse.',
         downloads: {
           video: {
-            filename: 'What is Authentication and Why is It Important',
+            filename: 'Kas yra autentifikacija',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What is Authentication and Why is It Important - Subtitles',
+            filename: 'Kas yra autentifikacija - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -158,7 +158,7 @@ export const contentAT = {
       goal:
         'Padėti mokiniams suprasti, kas yra autentifikacija, kodėl ji svarbi ir kaip ji padeda apsaugoti jų skaitmeninę tapatybę ir skaitmeninius išteklius kontroliuojant, kam leidžiama prieiga.',
       bundle: {
-        filename: 'Authentication Part 3 Package',
+        filename: 'Autentifikavimas - paketas - 3 dalis',
        },
       included: {
         materials: [
@@ -166,35 +166,35 @@ export const contentAT = {
             // ID: 3.3.2
             kind: 'Paveikslėlis',
             name: 'Silpnų slaptažodžių pavyzdžiai',
-            filename: 'Image - Examples of Strong Passwords',
+            filename: 'Paveikslėlis - Silpnų slaptažodžių pavyzdžiai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.3.3
             kind: 'Paveikslėlis',
             name: 'Stiprių slaptažodžių pavyzdžiai',
-            filename: 'Image - Check your Password',
+            filename: 'Paveikslėlis - Stiprių slaptažodžių pavyzdžiai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.3.4
             kind: 'Kortelės',
             name: 'Sukurkite stiprų slaptažodį',
-            filename: 'Cards - Create a Strong Password',
+            filename: 'Kortelės - Sukurkite stiprų slaptažodį',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.3.5
             kind: 'Paveikslėlis',
             name: 'Patikrinkite savo slaptažodį',
-            filename: 'Image - Two Different Types of Authentication Used Together',
+            filename: 'Paveikslėlis - Patikrinkite savo slaptažodį',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.3.6
             kind: 'Darbalapas',
             name: 'Mano stipraus slaptažodžio taisyklės',
-            filename: 'Worksheet - My Strong Password Rules',
+            filename: 'Darbalapas - Mano stipraus slaptažodžio taisyklės',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -223,11 +223,11 @@ export const contentAT = {
           'Naudokite šį vaizdo įrašą, kad parodytumėte mokiniams skirtumą tarp slaptažodžių, kurie apsaugo paskyras, ir slaptažodžių, kurie kelia jiems riziką. Pakvieskite juos apmąstyti, ar jų pačių slaptažodžiai atitinka stiprumo kriterijus.',
         downloads: {
           video: {
-            filename: 'Strong and Weak Passwords',
+            filename: 'Stiprūs ir silpni slaptažodžiai',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Strong and Weak Passwords - Subtitles',
+            filename: 'Stiprūs ir silpni slaptažodžiai - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -237,71 +237,64 @@ export const contentAT = {
       goal:
         'Padėti mokiniams suprasti, kas yra dviejų veiksnių autentifikacija ir kodėl daugelio slaptažodžių valdymas yra sudėtingas, pristatyti slaptažodžių tvarkyklės sąvoką ir paaiškinti, kaip slaptažodžių tvarkyklės padeda apsaugoti skaitmenines tapatybes ir skaitmeninius išteklius, kai naudojamos atsakingai su patikimo suaugusiojo pagalba.',
       bundle: {
-        filename: 'Authentication Part 4 Package',
+        filename: 'Autentifikavimas - paketas - 4 dalis',
        },
       included: {
         materials: [
           {
             // ID: 3.4.1
-            kind: 'Schema',
-            name: 'Grupių rinkinys',
-            filename: 'Schema - Set of Groups',
+            kind: 'Paveikslėlis',
+            name: 'Du skirtingi autentifikacijos tipai, naudojami kartu',
+            filename: 'Paveikslėlis - Du skirtingi autentifikacijos tipai, naudojami kartu',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.2
             kind: 'Schema',
             name: 'Monetų rinkinys',
-            filename: 'Schema - Set of Coins',
+            filename: 'Schema - Monetų rinkinys',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.3
             kind: 'Schema',
             name: 'Grupių rinkinys',
-            filename: 'Schema - Set of Groups',
+            filename: 'Schema - Grupių rinkinys',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.4
             kind: 'Schema',
             name: 'PIN kortelės',
-            filename: 'Schema - PIN Cards',
+            filename: 'Schema - PIN kortelės',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.6
-            kind: 'Paveikslėliai',
+            kind: 'Paveikslėlis',
             name: 'Kaip naudoti slaptažodžių tvarkyklę',
-            filename: 'Images - How to Use a Password Manager',
+            filename: 'Paveikslėlis - Kaip naudoti slaptažodžių tvarkyklę',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.7
             kind: 'Paveikslėlis',
-            name: 'Slaptažodžių tvarkyklės saugykla',
-            filename: 'Image - Password Manager Vault',
+            name: 'Slaptažodžių tvarkyklė',
+            filename: 'Paveikslėlis - Slaptažodžių tvarkyklė',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.8
             kind: 'Paveikslėlis',
-            name: 'Slaptažodžių tvarkyklė kaip skaitmeninis raktų pakabukas',
-            filename: 'Image - Password Manager as a Digital Keyring',
+            name: 'Slaptažodžių išsaugojimo žingsniai',
+            filename: 'Paveikslėlis - Slaptažodžių išsaugojimo žingsniai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.4.9
-            kind: 'Paveikslėlis',
-            name: 'Slaptažodžių išsaugojimo žingsniai',
-            filename: 'Image - Steps of Saving Passwords',
-            ariaLabel: 'Atsisiųsti medžiagą',
-          },
-          {
-            // ID: 3.4.10
             kind: 'Darbalapas',
             name: 'Slaptažodžių problemos ir sprendimai',
-            filename: 'Worksheet - Password Problems and Solutions',
+            filename: 'Darbalapas - Slaptažodžių problemos ir sprendimai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -330,11 +323,11 @@ export const contentAT = {
           'Naudokite šį vaizdo įrašą, kad pristatytumėte slaptažodžių tvarkykles kaip praktinį sprendimą kuriant ir saugant stiprius, unikalius kiekvienos paskyros slaptažodžius. Pristabdykite ir paklauskite mokinių, ar jie yra girdėję apie slaptažodžių tvarkykles ar jas naudoję.',
         downloads: {
           video: {
-            filename: 'What Is a Password Manager',
+            filename: 'Kas yra slaptažodžių tvarkyklė',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'What Is a Password Manager - Subtitles',
+            filename: 'Kas yra slaptažodžių tvarkyklė - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -344,7 +337,7 @@ export const contentAT = {
       goal:
         'Padėti mokiniams suprasti, kaip jų pasirinkimai ir elgesys veikia jų skaitmeninės tapatybės saugumą, ir kaip atsakingas elgesys padeda apsaugoti jų skaitmeninius išteklius, juos pačius ir kitus skaitmeninėse aplinkose.',
       bundle: {
-        filename: 'Authentication Part 5 Package',
+        filename: 'Autentifikavimas - paketas - 5 dalis',
        },
       included: {
         materials: [
@@ -352,21 +345,21 @@ export const contentAT = {
             // ID: 3.5.1
             kind: 'Paveikslėlis',
             name: 'Saugus ir nesaugus elgesys internete',
-            filename: 'Image - Safe and Unsafe Online Behaviours',
+            filename: 'Paveikslėlis - Saugus ir nesaugus elgesys internete',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.5.3
             kind: 'Darbalapas',
             name: 'Skaitmeninės tapatybės ir autentifikacijos scenarijai',
-            filename: 'Worksheet - Digital Identity and Authentication Scenarios',
+            filename: 'Darbalapas - Skaitmeninės tapatybės ir autentifikacijos scenarijai',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
           {
             // ID: 3.5.4
             kind: 'Darbalapas',
             name: 'Kaip aš saugau savo skaitmeninę tapatybę',
-            filename: 'Worksheet - How I Protect My Digital Identity',
+            filename: 'Darbalapas - Kaip aš saugau savo skaitmeninę tapatybę',
             ariaLabel: 'Atsisiųsti medžiagą',
           },
         ],
@@ -392,11 +385,11 @@ export const contentAT = {
           'Naudokite šį vaizdo įrašą, kad apibendrintumėte strategijas, kurių mokiniai išmoko savo skaitmeninei tapatybei saugoti. Paskatinkite juos įvardinti vieną konkretų įprotį, kurį pakeis ar pradės po žiūrėjimo.',
         downloads: {
           video: {
-            filename: 'Protecting Your Digital Identity',
+            filename: 'Savo skaitmeninės tapatybės apsauga',
             ariaLabel: 'Atsisiųsti vaizdo įrašą',
           },
           subtitles: {
-            filename: 'Protecting Your Digital Identity - Subtitles',
+            filename: 'Savo skaitmeninės tapatybės apsauga - Subtitrai',
             ariaLabel: 'Atsisiųsti subtitrus',
           },
         },
@@ -411,37 +404,37 @@ export const contentAT = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'dp',
       brand: 'DP',
       href: '/learning-hub/data-privacy/content',
-      imageSrc: '/images/learning-hub/04_data-privacy.png',
+      imageSrc: '/images/learning-hub/04_data-privacy.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

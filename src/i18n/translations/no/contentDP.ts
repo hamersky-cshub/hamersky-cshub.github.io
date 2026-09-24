@@ -22,22 +22,22 @@ export const contentDP = {
     {
       goal: 'Hjelpe elever til å forstå hva personopplysninger er, identifisere ulike typer sensitiv informasjon og gjenkjenne hvorfor det er viktig å beskytte dem.',
       bundle: {
-        filename: 'Data Privacy Part 1 Package',
+        filename: 'Personvern - pakke - del 1',
       },
       included: {
         materials: [
           {
-            // ID: 4.1.3
+            // ID: 4.1.2
             kind: 'Sorteringskort',
-            name: 'Offentlig eller privat',
-            filename: 'Sorting Cards - Public or Private',
+            name: 'Privat eller offentlig',
+            filename: 'Sorteringskort - Privat eller offentlig',
             ariaLabel: 'Last ned materiell',
           },
           {
-            // ID: 4.1.5
+            // ID: 4.1.3
             kind: 'Arbeidsark',
-            name: 'Refleksjon over offentlige vs. private data',
-            filename: 'Worksheet - Reflection on Public vs Private Data',
+            name: 'Refleksjon: Offentlige vs. private data',
+            filename: 'Arbeidsark - Refleksjon Offentlige vs. private data',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -54,17 +54,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.1.2
+        // ID: 4.1.1
         title: 'Hva er private data?',
         supportText:
           'Bruk denne videoen til å introdusere konseptet med private data og starte en diskusjon om typer informasjon elever deler hver dag. Pause for å spørre elever hvilke detaljer de anser som private.',
         downloads: {
           video: {
-            filename: 'What Is Private Data',
+            filename: 'Hva er private data',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What Is Private Data - Subtitles',
+            filename: 'Hva er private data - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -73,29 +73,29 @@ export const contentDP = {
     {
       goal: 'Hjelpe elever til å forstå hvordan og hvorfor data deles på nett, viktigheten av samtykke og hvordan man tar gjennomtenkte beslutninger før man deler personlig informasjon.',
       bundle: {
-        filename: 'Data Privacy Part 2 Package',
+        filename: 'Personvern - pakke - del 2',
       },
       included: {
         materials: [
           {
+            // ID: 4.2.1
+            kind: 'Bilde',
+            name: 'Del på nett: Trygt vs. risikabelt',
+            filename: 'Bilde - Del på nett Trygt vs. risikabelt',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
             // ID: 4.2.2
             kind: 'Scenariokort',
             name: 'Rollespill',
-            filename: 'Scenario Cards - Roleplay',
+            filename: 'Scenariokort - Rollespill',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.2.3
-            kind: 'Bilde',
-            name: 'Del på nett: Trygt vs. risikabelt',
-            filename: 'Image - Sharing Online: Safe vs Risky',
-            ariaLabel: 'Last ned materiell',
-          },
-          {
-            // ID: 4.2.4
             kind: 'Arbeidsark',
-            name: 'Del eller ikke del?',
-            filename: 'Worksheet - Share or Don\'t Share',
+            name: 'Del eller ikke del',
+            filename: 'Arbeidsark - Del eller ikke del',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -118,22 +118,36 @@ export const contentDP = {
     {
       goal: 'Hjelpe elever til å oppdage hva et digitalt fotavtrykk er, forstå hvordan hverdagslige nettaktiviteter etterlater varige spor, og vurdere den langsiktige innvirkningen av nettadferd.',
       bundle: {
-        filename: 'Data Privacy Part 3 Package',
+        filename: 'Personvern - pakke - del 3',
       },
       included: {
         materials: [
           {
+            // ID: 4.3.2
+            kind: 'Bilde',
+            name: 'Tegneseriehistorie: En dag i Sams nettliv',
+            filename: 'Bilde - Tegneseriehistorie En dag i Sams nettliv',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
             // ID: 4.3.3
-            kind: 'Tegneseriehistorie',
-            name: 'En dag i Sams nettliv',
-            filename: 'Comic Story - A Day in the Life of Sam Online',
+            kind: 'Arbeidsark',
+            name: 'Spor Sams fotavtrykk',
+            filename: 'Arbeidsark - Spor Sams fotavtrykk',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.3.4
-            kind: 'Arbeidsark',
-            name: 'Spor Sams fotavtrykk',
-            filename: 'Worksheet - Track Sam\'s Footprint',
+            kind: 'Skjema',
+            name: 'Spillebrett: Verdien av personvern',
+            filename: 'Skjema - Spillebrett Verdien av personvern',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 4.3.5
+            kind: 'Spillsett',
+            name: 'Kort: Verdien av personvern',
+            filename: 'Spillsett - Kort Verdien av personvern',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -159,11 +173,11 @@ export const contentDP = {
           'Bruk denne videoen til å hjelpe elever med å visualisere datasporen de etterlater på nett. Oppmuntre til refleksjon over hvilke av deres nylige aktiviteter som kan ha skapt et fotavtrykk.',
         downloads: {
           video: {
-            filename: 'What Is a Digital Footprint',
+            filename: 'Hva er et digitalt fotavtrykk',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'What Is a Digital Footprint - Subtitles',
+            filename: 'Hva er et digitalt fotavtrykk - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -172,22 +186,43 @@ export const contentDP = {
     {
       goal: 'Hjelpe elever til å lære praktiske strategier for å gjennomgå og administrere det digitale fotavtrykket sitt, inkludert hvordan man justerer personverninnstillinger og fjerner uønskede data.',
       bundle: {
-        filename: 'Data Privacy Part 4 Package',
+        filename: 'Personvern - pakke - del 4',
       },
       included: {
         materials: [
           {
             // ID: 4.4.1
-            kind: 'Sjekkliste',
-            name: 'Sjekkliste for opprydding av digitalt fotavtrykk',
-            filename: 'Checklist - Digital Footprint Cleanup Checklist',
+            kind: 'Bilde',
+            name: 'Et eksempel på grunnleggende innstillinger',
+            filename: 'Bilde - Et eksempel på grunnleggende innstillinger',
             ariaLabel: 'Last ned materiell',
           },
           {
             // ID: 4.4.2
             kind: 'Arbeidsark',
-            name: 'Veiledning for personverninnstillinger',
-            filename: 'Worksheet - Privacy Settings Guide',
+            name: 'Fiks denne profilen!',
+            filename: 'Arbeidsark - Fiks denne profilen',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 4.4.3
+            kind: 'Arbeidsark',
+            name: 'Personverntips for barn',
+            filename: 'Arbeidsark - Personverntips for barn',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 4.4.4
+            kind: 'Arbeidsark',
+            name: 'Plakatmal',
+            filename: 'Arbeidsark - Plakatmal',
+            ariaLabel: 'Last ned materiell',
+          },
+          {
+            // ID: 4.4.6
+            kind: 'Arbeidsark',
+            name: 'Gåte: Bruk av digitale spor «Medlemmer av Brain Fights-laget»',
+            filename: 'Arbeidsark - Gåte Bruk av digitale spor Medlemmer av Brain Fights-laget',
             ariaLabel: 'Last ned materiell',
           },
         ],
@@ -207,17 +242,17 @@ export const contentDP = {
         ],
       },
       featuredVideo: {
-        // ID: 4.4.4
+        // ID: 4.4.5
         title: 'Beskytte personopplysningene dine på nett',
         supportText:
           'Bruk denne videoen til å introdusere konseptet med personopplysninger og starte en diskusjon om typer informasjon elever deler hver dag.',
         downloads: {
           video: {
-            filename: 'Protecting Your Personal Data Online',
+            filename: 'Beskytte personopplysningene dine på nett',
             ariaLabel: 'Last ned video',
           },
           subtitles: {
-            filename: 'Protecting Your Personal Data Online - Subtitles',
+            filename: 'Beskytte personopplysningene dine på nett - Undertekster',
             ariaLabel: 'Last ned undertekster',
           },
         },
@@ -229,37 +264,37 @@ export const contentDP = {
       moduleId: 'dc',
       brand: 'DC',
       href: '/learning-hub/digital-citizenship/content',
-      imageSrc: '/images/learning-hub/01_digital-citizenship.png',
+      imageSrc: '/images/learning-hub/01_digital-citizenship.webp',
     },
     {
       moduleId: 'ap',
       brand: 'AP',
       href: '/learning-hub/attacker-perspective/content',
-      imageSrc: '/images/learning-hub/02_attacker-perspective.png',
+      imageSrc: '/images/learning-hub/02_attacker-perspective.webp',
     },
     {
       moduleId: 'at',
       brand: 'AT',
       href: '/learning-hub/authentication/content',
-      imageSrc: '/images/learning-hub/03_authentication.png',
+      imageSrc: '/images/learning-hub/03_authentication.webp',
     },
     {
       moduleId: 'se',
       brand: 'SE',
       href: '/learning-hub/social-engineering/content',
-      imageSrc: '/images/learning-hub/05_social-engineering.png',
+      imageSrc: '/images/learning-hub/05_social-engineering.webp',
     },
     {
       moduleId: 'mw',
       brand: 'MW',
       href: '/learning-hub/malware/content',
-      imageSrc: '/images/learning-hub/06_malware.png',
+      imageSrc: '/images/learning-hub/06_malware.webp',
     },
     {
       moduleId: 'da',
       brand: 'DA',
       href: '/learning-hub/digital-abuse/content',
-      imageSrc: '/images/learning-hub/07_digital-abuse.png',
+      imageSrc: '/images/learning-hub/07_digital-abuse.webp',
     },
   ],
 }

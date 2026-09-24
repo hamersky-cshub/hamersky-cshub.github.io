@@ -32,7 +32,38 @@ export interface RelatedModuleCard {
 // ── Non-translatable asset interfaces ────────────────────────────────────────
 
 export interface PartBundle { href: string }
-export interface PartMaterialAssets { id?: string; href: string; isGuide?: boolean }
+/** Languages that translated materials can be provided in (same set as the site locales). */
+export type MaterialLanguage = 'en' | 'cs' | 'no' | 'lt' | 'de'
+
+/**
+ * Native language names shown in the material "Download" dropdown.
+ * (The options appear in the order they are listed in a material's `languages`.)
+ */
+export const MATERIAL_LANGUAGE_LABELS: Record<MaterialLanguage, string> = {
+  en: 'English',
+  cs: 'Čeština',
+  no: 'Norsk',
+  lt: 'Lietuvių',
+  de: 'Deutsch',
+}
+
+/** One language version of a translated material. */
+export interface MaterialLanguageFile { lang: MaterialLanguage; href: string }
+
+/**
+ * A downloadable material.
+ * - `href` — the file for materials without translatable text (e.g. an image);
+ *   for translated materials it is the default/fallback file.
+ * - `languages` — set this for materials that exist in several languages. The
+ *   page then shows a "Download" dropdown with one option per entry instead of
+ *   a plain "Download" link.
+ */
+export interface PartMaterialAssets {
+  id?: string
+  href: string
+  isGuide?: boolean
+  languages?: MaterialLanguageFile[]
+}
 export interface VideoDownload { href: string; filename?: string }
 export interface SubtitleTrack { label: string; srclang: string; src: string }
 
@@ -40,7 +71,7 @@ export interface FeaturedVideoAssets {
   id?: string
   posterSrc: string
   videoSrc: string
-  downloads: { video: VideoDownload; subtitles: VideoDownload }
+  downloads: { video: VideoDownload }
   tracks: SubtitleTrack[]
 }
 
@@ -237,7 +268,7 @@ export function mergeParts(
           tracks: assets?.featuredVideo?.tracks,
           downloads: {
             video:     { ...assets?.featuredVideo?.downloads?.video,     ...tp.featuredVideo?.downloads?.video },
-            subtitles: { ...assets?.featuredVideo?.downloads?.subtitles, ...tp.featuredVideo?.downloads?.subtitles },
+            subtitles: { ...tp.featuredVideo?.downloads?.subtitles },
           },
         } as MergedFeaturedVideo
       : undefined
@@ -275,24 +306,31 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: { 
           href: '/materials/digital-citizenship/part1/part1.zip' 
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
           // Scenario Cards: Physical and Digital Worlds
-          { id: '1.1.1', 
-            href: '/materials/digital-citizenship/part1/cards/1.1.1_Scenario_Cards.pdf'
+          { id: '1.1.1',
+            href: '/materials/digital-citizenship/part1/cards/1.1.1_Scenario_Cards.pdf',
+            languages: [
+              { lang: 'en', href: '/materials/digital-citizenship/part1/cards/1.1.1_Scenario_Cards.pdf' },
+              { lang: 'cs', href: '/materials/digital-citizenship/part1/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-citizenship/part1/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-citizenship/part1/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-citizenship/part1/cards/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
-          // What Is a Digital Environment?
+          // What Is a Digital Environment and Digital Systems?
           id: '1.1.2',
-          posterSrc: '/images/video-posters/1.1.2_DigitalEnvironment_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/1.1.2_DigitalEnvironment_video_thumbnail.webp',
           videoSrc: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4', 
           downloads: {
             video: 
             { href: '/materials/digital-citizenship/part1/videos/1.1.2. Digital Environment.mp4'
-            },
-            subtitles: 
-            { href: '/materials/digital-citizenship/part1/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English', 
@@ -328,15 +366,18 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Responsible Citizen
           { id: '1.2.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part2/images/placeholder.txt'
           },
-          // Worksheet A: Rights, Responsibilities and Respect
-          { id: '1.2.2a',
-            href: '/materials/placeholder.txt'
-          },
-          // Worksheet B: Rights, Responsibilities and Respect
-          { id: '1.2.2b',
-            href: '/materials/placeholder.txt'
+          // Worksheet: Rights, Responsibilities and Respect
+          { id: '1.2.2',
+            href: '/materials/digital-citizenship/part2/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-citizenship/part2/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-citizenship/part2/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-citizenship/part2/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-citizenship/part2/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-citizenship/part2/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -350,33 +391,37 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Feeling Safe
           { id: '1.3.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part3/images/placeholder.txt'
           },
           // Image: Feeling Unsafe
           { id: '1.3.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part3/images/placeholder.txt'
           },
-          // Image: Application Privacy Settings
+          // Image: Privacy Setting Strategy
           { id: '1.3.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part3/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-citizenship/part3/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-citizenship/part3/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-citizenship/part3/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-citizenship/part3/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-citizenship/part3/images/de/placeholder.txt' },
+            ],
           },
-          // Image: Privacy Settings Strategy
+          // Image: App Privacy Settings
           { id: '1.3.5',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part3/images/placeholder.txt'
           },
         ],
         featuredVideo: {
           // What Are Privacy Settings?
           id: '1.3.3',
-          posterSrc: '/images/learning-hub/video-posters/1.3.3_PrivacySettings_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/1.3.3_PrivacySettings_video_thumbnail.webp',
           videoSrc: '/materials/digital-citizenship/part3/videos/1.3.3. Privacy Settings.mp4',
           downloads: {
             video:
             { href: '/materials/digital-citizenship/part3/videos/1.3.3. Privacy Settings.mp4'
-            },
-            subtitles:
-            { href: '/materials/digital-citizenship/part3/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -412,15 +457,12 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         featuredVideo: {
           // Resilience in Digital Environments
           id: '1.4.1',
-          posterSrc: '/images/learning-hub/video-posters/1.4.1_Resilience_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/1.4.1_Resilience_video_thumbnail.webp',
           videoSrc: '/materials/digital-citizenship/part4/videos/1.4.1. Resilience.mp4',
           downloads: {
             video:
             { href: '/materials/digital-citizenship/part4/videos/1.4.1. Resilience.mp4'
-            },
-            subtitles:
-            { href: '/materials/digital-citizenship/part4/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -456,15 +498,36 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Digital Footprint
           { id: '1.5.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part5/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-citizenship/part5/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-citizenship/part5/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-citizenship/part5/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-citizenship/part5/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-citizenship/part5/images/de/placeholder.txt' },
+            ],
           },
           // Scenario Cards: Good and Bad to Post
           { id: '1.5.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part5/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-citizenship/part5/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-citizenship/part5/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-citizenship/part5/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-citizenship/part5/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-citizenship/part5/cards/de/placeholder.txt' },
+            ],
           },
           // Scenario Cards: Social Media Posts
           { id: '1.5.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-citizenship/part5/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-citizenship/part5/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-citizenship/part5/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-citizenship/part5/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-citizenship/part5/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-citizenship/part5/cards/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -479,14 +542,39 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/attacker-perspective/part1/part1.zip'
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
           // Worksheet: Trusteees: People Around Me
           { id: '2.1.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/attacker-perspective/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part1/worksheets/de/placeholder.txt' },
+            ],
           },
           // Worksheet: Circles of Trust
           { id: '2.1.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/attacker-perspective/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part1/worksheets/de/placeholder.txt' },
+            ],
+          },
+          // Image: Situation: Found Money
+          { id: '2.1.3',
+            href: '/materials/attacker-perspective/part1/images/placeholder.txt'
+          },
+          // Image: Situation: Saw a Photo
+          { id: '2.1.4',
+            href: '/materials/attacker-perspective/part1/images/placeholder.txt'
           },
         ],
       },
@@ -498,56 +586,85 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/attacker-perspective/part2/part2.zip'
         },
         materials: [
-          // Cards: Identify the Behaviour
+          // Scenario Cards: Identify the Behaviour
           { id: '2.2.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/attacker-perspective/part2/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part2/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part2/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part2/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part2/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part2/cards/de/placeholder.txt' },
+            ],
           },
-          // Cards: Recognise the Characters
+          // Scenario Cards: Recognise the Characters
           { id: '2.2.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/attacker-perspective/part2/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part2/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part2/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part2/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part2/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part2/cards/de/placeholder.txt' },
+            ],
           },
           // Image: Attacker Motivations
           { id: '2.2.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/attacker-perspective/part2/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part2/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part2/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part2/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part2/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part2/images/de/placeholder.txt' },
+            ],
+          },
+          // Image: Looking Into the Fairytale: Attacker Motivation and Means
+          { id: '2.2.5',
+            href: '/materials/attacker-perspective/part2/images/placeholder.txt'
           },
           // Worksheet: Attack Analysis
-          { id: '2.2.5',
-            href: '/materials/placeholder.txt'
+          { id: '2.2.6',
+            href: '/materials/attacker-perspective/part2/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part2/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part2/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part2/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part2/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part2/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // Who is Behind Cyber Attacks?
           id: '2.2.3',
-          posterSrc: '/images/learning-hub/video-posters/2.2.3_WhoIsBehindCyberAttacks_video_thumbnail.png',
-          videoSrc: '/materials/attacker-perspective/part2/videos/2.2.3. Who Is Behind Cyber Attacks.mp4',
+          posterSrc: '/images/learning-hub/video-posters/2.2.3_WhoIsBehindCyberAttacks_video_thumbnail.webp',
+          videoSrc: '/materials/attacker-perspective/part2/videos/2.2.3. Who is Behind Cyber Attacks.mp4',
           downloads: {
             video:
-            { href: '/materials/attacker-perspective/part2/videos/2.2.3. Who Is Behind Cyber Attacks.mp4'
-            },
-            subtitles:
-            { href: '/materials/attacker-perspective/part2/videos/subtitles/subtitles.zip'
-            },
+            { href: '/materials/attacker-perspective/part2/videos/2.2.3. Who is Behind Cyber Attacks.mp4'
+            }
           },
           tracks: [
             { label: 'English',
               srclang: 'en',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/en/2.2.3. Who Is Behind Cyber Attacks_EN.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/en/2.2.3. Who is Behind Cyber Attacks_EN.vtt'
             },
             { label: 'Čeština',
               srclang: 'cs',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/cs/2.2.3. Who Is Behind Cyber Attacks_CS.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/cs/2.2.3. Who is Behind Cyber Attacks_CS.vtt'
             },
             { label: 'Norsk',
               srclang: 'no',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/no/2.2.3. Who Is Behind Cyber Attacks_NO.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/no/2.2.3. Who is Behind Cyber Attacks_NO.vtt'
             },
             { label: 'Lietuvių',
               srclang: 'lt',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/lt/2.2.3. Who Is Behind Cyber Attacks_LT.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/lt/2.2.3. Who is Behind Cyber Attacks_LT.vtt'
             },
             { label: 'Deutsch',
               srclang: 'de',
-              src: '/materials/attacker-perspective/part2/videos/subtitles/de/2.2.3. Who Is Behind Cyber Attacks_DE.vtt'
+              src: '/materials/attacker-perspective/part2/videos/subtitles/de/2.2.3. Who is Behind Cyber Attacks_DE.vtt'
             },
           ],
         },
@@ -560,13 +677,64 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/attacker-perspective/part3/part3.zip'
         },
         materials: [
-          // Situation: Smishing and Impersonation
+          // Reading: Smishing and Impersonation
           { id: '2.3.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/attacker-perspective/part3/readings/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part3/readings/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part3/readings/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part3/readings/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part3/readings/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part3/readings/de/placeholder.txt' },
+            ],
+          },
+          // Reading: Vishing, Fraud, and Impersonation
+          { id: '2.3.2',
+            href: '/materials/attacker-perspective/part3/readings/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part3/readings/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part3/readings/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part3/readings/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part3/readings/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part3/readings/de/placeholder.txt' },
+            ],
+          },
+          // Reading: Most Common Cyber Threats
+          { id: '2.3.3',
+            href: '/materials/attacker-perspective/part3/readings/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part3/readings/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part3/readings/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part3/readings/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part3/readings/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part3/readings/de/placeholder.txt' },
+            ],
           },
           // Image: Common Adversary Techniques
-          { id: '2.3.2',
-            href: '/materials/placeholder.txt'
+          { id: '2.3.4',
+            href: '/materials/attacker-perspective/part3/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part3/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part3/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part3/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part3/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part3/images/de/placeholder.txt' },
+            ],
+          },
+          // Cards: Attackers and Their Plans
+          { id: '2.3.5',
+            href: '/materials/attacker-perspective/part3/cards/placeholder.txt'
+          },
+          // Worksheet: Puzzle: Party of Attackers
+          { id: '2.3.6',
+            href: '/materials/attacker-perspective/part3/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/attacker-perspective/part3/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/attacker-perspective/part3/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/attacker-perspective/part3/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/attacker-perspective/part3/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/attacker-perspective/part3/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -581,36 +749,50 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/authentication/part1/part1.zip'
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
           // Image: Online Identity
           { id: '3.1.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part1/images/placeholder.txt'
           },
           // Images: Examples of Personal Digital Assets
-          { id: '3.1.2',
-            href: '/materials/placeholder.txt'
+          { id: '3.1.3',
+            href: '/materials/authentication/part1/images/placeholder.txt'
           },
-          // Worksheet: What Would Happen if ...?
+          // Worksheet: What Would Happen If...?
           { id: '3.1.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part1/worksheets/de/placeholder.txt' },
+            ],
           },
           // Worksheet: My Digital Assets
           { id: '3.1.5',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part1/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
-          // What is Digital Identity?
+          // What Is Digital Identity?
           id: '3.1.2',
-          posterSrc: '/images/learning-hub/video-posters/3.1.2_WhatIsDigitalIdentity_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/3.1.2_WhatIsDigitalIdentity_video_thumbnail.webp',
           videoSrc: '/materials/authentication/part1/videos/3.1.2. What is Digital Identity.mp4',
           downloads: {
             video:
             { href: '/materials/authentication/part1/videos/3.1.2. What is Digital Identity.mp4'
-            },
-            subtitles:
-            { href: '/materials/authentication/part1/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -644,31 +826,42 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/authentication/part2/part2.zip'
         },
         materials: [
-          // Images: Real-world Authentication Examples
+          // Images: Real-World Authentication Examples
           { id: '3.2.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part2/images/placeholder.txt'
           },
           // Image: Logging Into a Digital System
           { id: '3.2.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part2/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part2/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part2/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part2/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part2/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part2/images/de/placeholder.txt' },
+            ],
           },
-          // Worksheet: Authentication in Everday Life
+          // Worksheet: Authentication in Everyday Life
           { id: '3.2.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part2/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part2/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part2/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part2/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part2/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part2/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
-          // What is Authentication and Why is It Important?
-          id: '3.2.1',
-          posterSrc: '/images/learning-hub/video-posters/3.2.2_WhatIsAuthentication_video_thumbnail.png',
+          // What Is Authentication?
+          id: '3.2.2',
+          posterSrc: '/images/learning-hub/video-posters/3.2.2_WhatIsAuthentication_video_thumbnail.webp',
           videoSrc: '/materials/authentication/part2/videos/3.2.1. Authentication.mp4',
           downloads: {
             video:
             { href: '/materials/authentication/part2/videos/3.2.1. Authentication.mp4'
-            },
-            subtitles:
-            { href: '/materials/authentication/part2/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -704,37 +897,62 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Examples of Weak Passwords
           { id: '3.3.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part3/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part3/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part3/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part3/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part3/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part3/images/de/placeholder.txt' },
+            ],
           },
           // Image: Examples of Strong Passwords
           { id: '3.3.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part3/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part3/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part3/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part3/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part3/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part3/images/de/placeholder.txt' },
+            ],
           },
           // Cards: Create a Strong Password
           { id: '3.3.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part3/cards/placeholder.txt'
           },
-          // Image: Check your Password
+          // Image: Check Your Password
           { id: '3.3.5',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part3/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part3/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part3/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part3/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part3/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part3/images/de/placeholder.txt' },
+            ],
           },
           // Worksheet: My Strong Password Rules
           { id: '3.3.6',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part3/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part3/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part3/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part3/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part3/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part3/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // Strong and Weak Passwords
           id: '3.3.1',
-          posterSrc: '/images/learning-hub/video-posters/3.3.1_StrongAndWeakPasswords_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/3.3.1_StrongAndWeakPasswords_video_thumbnail.webp',
           videoSrc: '/materials/authentication/part3/videos/3.3.1. Strong and Weak Passwords.mp4',
           downloads: {
             video:
             { href: '/materials/authentication/part3/videos/3.3.1. Strong and Weak Passwords.mp4'
-            },
-            subtitles:
-            { href: '/materials/authentication/part3/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -768,51 +986,62 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/authentication/part4/part4.zip'
         },
         materials: [
+          // Image: Two Different Types of Authentication Used Together
+          { id: '3.4.1',
+            href: '/materials/authentication/part4/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part4/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part4/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part4/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part4/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part4/images/de/placeholder.txt' },
+            ],
+          },
           // Schema: Set of Money Coins
           { id: '3.4.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part4/schemas/placeholder.txt'
           },
           // Schema: Set of Groups
           { id: '3.4.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part4/schemas/placeholder.txt'
           },
           // Schema: PIN Cards
           { id: '3.4.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part4/schemas/placeholder.txt'
           },
-          // Images: How to Use a Password Manager
+          // Image: How to Use a Password Manager
           { id: '3.4.6',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part4/images/placeholder.txt'
           },
-          // Image: Password Manager Vault
+          // Image: Password Manager
           { id: '3.4.7',
-            href: '/materials/placeholder.txt'
-          },
-          // Image: Password Manager as a Digital Keyring
-          { id: '3.4.8',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part4/images/placeholder.txt'
           },
           // Image: Steps of Saving Passwords
-          { id: '3.4.9',
-            href: '/materials/placeholder.txt'
+          { id: '3.4.8',
+            href: '/materials/authentication/part4/images/placeholder.txt'
           },
           // Worksheet: Password Problems and Solutions
-          { id: '3.4.10',
-            href: '/materials/placeholder.txt'
+          { id: '3.4.9',
+            href: '/materials/authentication/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part4/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // What Is a Password Manager?
-          id: '3.4.1',
-          posterSrc: '/images/learning-hub/video-posters/3.4.1_WhatIsPasswordManager_video_thumbnail.png',
+          id: '3.4.5',
+          posterSrc: '/images/learning-hub/video-posters/3.4.1_WhatIsPasswordManager_video_thumbnail.webp',
           videoSrc: '/materials/authentication/part4/videos/3.4.1. Password Manager.mp4',
           downloads: {
             video:
             { href: '/materials/authentication/part4/videos/3.4.1. Password Manager.mp4'
-            },
-            subtitles:
-            { href: '/materials/authentication/part4/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -848,29 +1077,40 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Image: Safe and Unsafe Online Behaviours
           { id: '3.5.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part5/images/placeholder.txt'
           },
           // Worksheet: Digital Identity and Authentication Scenarios
           { id: '3.5.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part5/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part5/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part5/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part5/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part5/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part5/worksheets/de/placeholder.txt' },
+            ],
           },
           // Worksheet: How I Protect My Digital Identity
           { id: '3.5.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/authentication/part5/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/authentication/part5/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/authentication/part5/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/authentication/part5/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/authentication/part5/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/authentication/part5/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // Protecting Your Digital Identity
           id: '3.5.2',
-          posterSrc: '/images/learning-hub/video-posters/3.5.1_ProtectingYourDigitalIdentity_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/3.5.1_ProtectingYourDigitalIdentity_video_thumbnail.webp',
           videoSrc: '/materials/authentication/part5/videos/3.5.1. Protecting Your Digital Identity.mp4',
           downloads: {
             video:
             { href: '/materials/authentication/part5/videos/3.5.1. Protecting Your Digital Identity.mp4'
-            },
-            subtitles:
-            { href: '/materials/authentication/part5/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -907,28 +1147,42 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/data-privacy/part1/part1.zip'
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
-          // Sorting Cards: Public or Private
-          { id: '4.1.3',
-            href: '/materials/placeholder.txt'
+          // Sorting Cards: Private or Public
+          { id: '4.1.2',
+            href: '/materials/data-privacy/part1/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part1/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part1/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part1/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part1/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part1/cards/de/placeholder.txt' },
+            ],
           },
-          // Worksheet: Reflection on Public vs Private Data
-          { id: '4.1.5',
-            href: '/materials/placeholder.txt'
+          // Worksheet: Reflection: Public vs. Private Data
+          { id: '4.1.3',
+            href: '/materials/data-privacy/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part1/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // What Is Private Data?
           id: '4.1.1',
-          posterSrc: '/images/learning-hub/video-posters/4.1.1_WhatIsPrivateData_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/4.1.1_WhatIsPrivateData_video_thumbnail.webp',
           videoSrc: '/materials/data-privacy/part1/videos/4.1.1. What is Private Data.mp4',
           downloads: {
             video:
             { href: '/materials/data-privacy/part1/videos/4.1.1. What is Private Data.mp4'
-            },
-            subtitles:
-            { href: '/materials/data-privacy/part1/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -962,17 +1216,31 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/data-privacy/part2/part2.zip'
         },
         materials: [
+          // Image: Sharing Online: Safe vs. Risky
+          { id: '4.2.1',
+            href: '/materials/data-privacy/part2/images/placeholder.txt'
+          },
           // Scenario Cards: Roleplay
           { id: '4.2.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/data-privacy/part2/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part2/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part2/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part2/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part2/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part2/cards/de/placeholder.txt' },
+            ],
           },
-          // Image: Sharing Online: Safe vs Risky
+          // Worksheet: Share or Don't Share
           { id: '4.2.3',
-            href: '/materials/placeholder.txt'
-          },
-          // Worksheet: Share or Don't Share?
-          { id: '4.2.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/data-privacy/part2/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part2/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part2/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part2/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part2/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part2/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -984,27 +1252,53 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/data-privacy/part3/part3.zip'
         },
         materials: [
-          // Comic Story: A Day in the Life of Sam Online
-          { id: '4.3.3',
-            href: '/materials/placeholder.txt'
+          // Image: Comic Story: A Day in the Life of Sam Online
+          { id: '4.3.2',
+            href: '/materials/data-privacy/part3/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part3/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part3/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part3/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part3/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part3/images/de/placeholder.txt' },
+            ],
           },
           // Worksheet: Track Sam's Footprint
+          { id: '4.3.3',
+            href: '/materials/data-privacy/part3/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part3/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part3/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part3/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part3/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part3/worksheets/de/placeholder.txt' },
+            ],
+          },
+          // Schema: Board Privacy Value
           { id: '4.3.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/data-privacy/part3/schemas/placeholder.txt'
+          },
+          // Game Set: Cards Privacy Value
+          { id: '4.3.5',
+            href: '/materials/data-privacy/part3/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part3/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part3/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part3/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part3/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part3/cards/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // What Is a Digital Footprint?
           id: '4.3.1',
-          posterSrc: '/images/learning-hub/video-posters/4.3.1_WhatIsDigitalFootprint_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/4.3.1_WhatIsDigitalFootprint_video_thumbnail.webp',
           videoSrc: '/materials/data-privacy/part3/videos/4.3.1. What is a Digital Footprint.mp4',
           downloads: {
             video:
             { href: '/materials/data-privacy/part3/videos/4.3.1. What is a Digital Footprint.mp4'
-            },
-            subtitles:
-            { href: '/materials/data-privacy/part3/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1038,27 +1332,64 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/data-privacy/part4/part4.zip'
         },
         materials: [
-          // Checklist: Digital Footprint Cleanup Checklist
-          { id: '4.4.2',
-            href: '/materials/placeholder.txt'
+          // Image: An Example of Basic Settings
+          { id: '4.4.1',
+            href: '/materials/data-privacy/part4/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part4/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part4/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part4/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part4/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part4/images/de/placeholder.txt' },
+            ],
           },
-          // Worksheet: Privacy Settings Guide
+          // Worksheet: Fix This Profile!
+          { id: '4.4.2',
+            href: '/materials/data-privacy/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part4/worksheets/de/placeholder.txt' },
+            ],
+          },
+          // Worksheet: Privacy Tips for Kids
           { id: '4.4.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/data-privacy/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part4/worksheets/de/placeholder.txt' },
+            ],
+          },
+          // Worksheet: Poster Template
+          { id: '4.4.4',
+            href: '/materials/data-privacy/part4/worksheets/placeholder.txt'
+          },
+          // Worksheet: Puzzle: Using Digital Traces “Members of the Brain Fights Team”
+          { id: '4.4.6',
+            href: '/materials/data-privacy/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/data-privacy/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/data-privacy/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/data-privacy/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/data-privacy/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/data-privacy/part4/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // Protecting Your Personal Data Online
-          id: '4.4.1',
-          posterSrc: '/images/learning-hub/video-posters/4.4.1_ProtectingYourPersonalDataOnline_video_thumbnail.png',
+          id: '4.4.5',
+          posterSrc: '/images/learning-hub/video-posters/4.4.1_ProtectingYourPersonalDataOnline_video_thumbnail.webp',
           videoSrc: '/materials/data-privacy/part4/videos/4.4.1. Protecting Your Personal Data.mp4',
           downloads: {
             video:
             { href: '/materials/data-privacy/part4/videos/4.4.1. Protecting Your Personal Data.mp4'
-            },
-            subtitles:
-            { href: '/materials/data-privacy/part4/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1095,36 +1426,68 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/social-engineering/part1/part1.zip'
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
-          // Image: Tricking People vs Hacking Systems
-          { id: '5.1.4',
-            href: '/materials/placeholder.txt'
+          // Image: Hacking Systems vs. Tricking People
+          { id: '5.1.2',
+            href: '/materials/social-engineering/part1/images/placeholder.txt'
           },
-          // Image: Examples of Social Engineering Messages
-          { id: '5.1.4',
-            href: '/materials/placeholder.txt'
-          },
-          // Situation Assessment: What Does an Attacker Want?
+          // Image: Goals of an Attacker
           { id: '5.1.3',
-            href: '/materials/placeholder.txt'
+            href: '/materials/social-engineering/part1/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part1/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part1/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part1/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part1/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part1/images/de/placeholder.txt' },
+            ],
+          },
+          // Scenario Cards: What Does an Attacker Want?
+          { id: '5.1.4',
+            href: '/materials/social-engineering/part1/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part1/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part1/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part1/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part1/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part1/cards/de/placeholder.txt' },
+            ],
+          },
+          // Solution Cards: What Does an Attacker Want?
+          { id: '5.1.5',
+            href: '/materials/social-engineering/part1/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part1/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part1/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part1/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part1/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part1/cards/de/placeholder.txt' },
+            ],
           },
           // Worksheet: Understanding Social Engineering
-          { id: '5.1.5',
-            href: '/materials/placeholder.txt'
+          { id: '5.1.6',
+            href: '/materials/social-engineering/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part1/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // What Is Social Engineering?
           id: '5.1.1',
-          posterSrc: '/images/learning-hub/video-posters/5.1.1_WhatIsSocialEngineering_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/5.1.1_WhatIsSocialEngineering_video_thumbnail.webp',
           videoSrc: '/materials/social-engineering/part1/videos/5.1.1. What is Social Engineering.mp4',
           downloads: {
             video:
             { href: '/materials/social-engineering/part1/videos/5.1.1. What is Social Engineering.mp4'
-            },
-            subtitles:
-            { href: '/materials/social-engineering/part1/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1158,21 +1521,38 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/social-engineering/part2/part2.zip'
         },
         materials: [
-          // Image: Human Decision-making vs Computer Decision-making
+          // Scenario Cards: Attacker Tactics
           { id: '5.2.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/social-engineering/part2/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part2/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part2/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part2/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part2/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part2/cards/de/placeholder.txt' },
+            ],
           },
           // Scenario Cards: Emotional Manipulation Examples
-          { id: '5.2.4',
-            href: '/materials/placeholder.txt'
-          },
-          // Game Cards: Attacker Tactics
-          { id: '5.2.3',
-            href: '/materials/placeholder.txt'
+          { id: '5.2.2',
+            href: '/materials/social-engineering/part2/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part2/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part2/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part2/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part2/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part2/cards/de/placeholder.txt' },
+            ],
           },
           // Worksheet: Why Social Engineering Works
-          { id: '5.2.5',
-            href: '/materials/placeholder.txt'
+          { id: '5.2.3',
+            href: '/materials/social-engineering/part2/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part2/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part2/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part2/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part2/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part2/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -1184,31 +1564,27 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/social-engineering/part3/part3.zip'
         },
         materials: [
-          // Image: Examples of Social Engineering Messages
+          // Worksheet: Dot-to-Dot Activity
           { id: '5.3.2',
-            href: '/materials/placeholder.txt'
-          },
-          // Scenario Cards: Social Engineering Situations
-          { id: '5.3.4',
-            href: '/materials/placeholder.txt'
-          },
-          // Worksheet: Spot the Social Engineering
-          { id: '5.3.5',
-            href: '/materials/placeholder.txt'
+            href: '/materials/social-engineering/part3/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part3/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part3/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part3/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part3/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part3/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // Types of Social Engineering
           id: '5.3.1',
-          posterSrc: '/images/learning-hub/video-posters/5.3.1_TypesOfSocialEngineering_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/5.3.1_TypesOfSocialEngineering_video_thumbnail.webp',
           videoSrc: '/materials/social-engineering/part3/videos/5.3.1. Types of Social Engineering.mp4',
           downloads: {
             video:
             { href: '/materials/social-engineering/part3/videos/5.3.1. Types of Social Engineering.mp4'
-            },
-            subtitles:
-            { href: '/materials/social-engineering/part3/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1242,25 +1618,60 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/social-engineering/part4/part4.zip'
         },
         materials: [
-          // Scenario Cards: What Would You Do?
-          { id: '5.4.3',
-            href: '/materials/placeholder.txt'
-          },
-          // Checklist: Stop, Think, Check, Ask
-          { id: '5.4.2',
-            href: '/materials/placeholder.txt'
+          // Image: Stop, Think, Check, Ask
+          { id: '5.4.1',
+            href: '/materials/social-engineering/part4/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part4/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part4/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part4/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part4/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part4/images/de/placeholder.txt' },
+            ],
           },
           // Worksheet: Stop, Think, Check, Ask
           { id: '5.4.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/social-engineering/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part4/worksheets/de/placeholder.txt' },
+            ],
           },
-          // Role Cards: Target, Helper, Bystander
+          // Scenario Cards: What Would You Do?
+          { id: '5.4.3',
+            href: '/materials/social-engineering/part4/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part4/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part4/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part4/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part4/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part4/cards/de/placeholder.txt' },
+            ],
+          },
+          // Role Cards: Prosocial Behaviour or Bystander Apathy
           { id: '5.4.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/social-engineering/part4/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part4/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part4/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part4/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part4/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part4/cards/de/placeholder.txt' },
+            ],
           },
           // Worksheet: Protecting Myself and Others
           { id: '5.4.5',
-            href: '/materials/placeholder.txt'
+            href: '/materials/social-engineering/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/social-engineering/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/social-engineering/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/social-engineering/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/social-engineering/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/social-engineering/part4/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -1275,28 +1686,53 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/malware/part1/part1.zip'
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
           // Image: Malicious + Software = Malware
           { id: '6.1.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/malware/part1/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part1/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part1/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part1/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part1/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part1/images/de/placeholder.txt' },
+            ],
           },
-          // Worksheet: Related to Malware or Not?
-          { id: '6.1.3',
-            href: '/materials/placeholder.txt'
+          // Image: What Is Malicious?
+          { id: '6.1.2',
+            href: '/materials/malware/part1/images/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part1/images/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part1/images/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part1/images/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part1/images/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part1/images/de/placeholder.txt' },
+            ],
+          },
+          // Worksheet: Related to Malware or Not
+          { id: '6.1.4',
+            href: '/materials/malware/part1/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part1/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part1/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part1/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part1/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part1/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
-          // What is Malware?
-          id: '6.1.2',
-          posterSrc: '/images/learning-hub/video-posters/6.1.2_WhatIsMalware_video_thumbnail.png',
+          // What Is Malware?
+          id: '6.1.3',
+          posterSrc: '/images/learning-hub/video-posters/6.1.2_WhatIsMalware_video_thumbnail.webp',
           videoSrc: '/materials/malware/part1/videos/6.1.2. What is Malware.mp4',
           downloads: {
             video:
             { href: '/materials/malware/part1/videos/6.1.2. What is Malware.mp4'
-            },
-            subtitles:
-            { href: '/materials/malware/part1/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1332,29 +1768,22 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         materials: [
           // Schema: Set of Coins
           { id: '6.2.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/malware/part2/schemas/placeholder.txt'
           },
-          // Schema: Knot Ties Board
+          // Schema: Knot the Ties Board
           { id: '6.2.3',
-            href: '/materials/placeholder.txt'
-          },
-          // Sheet: Malware Properties
-          { id: '6.2.4',
-            href: '/materials/placeholder.txt'
+            href: '/materials/malware/part2/schemas/placeholder.txt'
           },
         ],
         featuredVideo: {
           // Introducing Malware Types
           id: '6.2.1',
-          posterSrc: '/images/learning-hub/video-posters/6.2.1_IntroducingMalwareTypes_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/6.2.1_IntroducingMalwareTypes_video_thumbnail.webp',
           videoSrc: '/materials/malware/part2/videos/6.2.1. Malware Types.mp4',
           downloads: {
             video:
             { href: '/materials/malware/part2/videos/6.2.1. Malware Types.mp4'
-            },
-            subtitles:
-            { href: '/materials/malware/part2/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1388,21 +1817,38 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/malware/part3/part3.zip'
         },
         materials: [
-          // Worksheet: List of Indicators
-          { id: '6.3.1',
-            href: '/materials/placeholder.txt'
-          },
           // Reading: Recognising Malware
-          { id: '6.3.2',
-            href: '/materials/placeholder.txt'
+          { id: '6.3.1',
+            href: '/materials/malware/part3/readings/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part3/readings/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part3/readings/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part3/readings/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part3/readings/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part3/readings/de/placeholder.txt' },
+            ],
           },
           // Poster: Seven Indicators
-          { id: '6.3.3',
-            href: '/materials/placeholder.txt'
+          { id: '6.3.2',
+            href: '/materials/malware/part3/posters/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part3/posters/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part3/posters/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part3/posters/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part3/posters/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part3/posters/de/placeholder.txt' },
+            ],
           },
-          // Table: Situation and Indicators
-          { id: '6.3.4',
-            href: '/materials/placeholder.txt'
+          // Worksheet: List of Indicators
+          { id: '6.3.3',
+            href: '/materials/malware/part3/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part3/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part3/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part3/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part3/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part3/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -1414,17 +1860,42 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/malware/part4/part4.zip'
         },
         materials: [
-          // Situation: Malware and Data Theft?
+          // Situation: Malware and Data Theft
           { id: '6.4.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/malware/part4/situations/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part4/situations/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part4/situations/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part4/situations/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part4/situations/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part4/situations/de/placeholder.txt' },
+            ],
           },
           // Poster: DOs and DON'Ts
           { id: '6.4.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/malware/part4/posters/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part4/posters/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part4/posters/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part4/posters/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part4/posters/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part4/posters/de/placeholder.txt' },
+            ],
+          },
+          // Images: Associative Pictures: Be Aware
+          { id: '6.4.3',
+            href: '/materials/malware/part4/images/placeholder.txt'
           },
           // Worksheet: A Shield Against Malware
-          { id: '6.4.3',
-            href: '/materials/placeholder.txt'
+          { id: '6.4.4',
+            href: '/materials/malware/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/malware/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/malware/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/malware/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/malware/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/malware/part4/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -1439,24 +1910,35 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/digital-abuse/part1/part1.zip'
         },
+        // Materials with `languages` → "Download" shows a language dropdown;
+        // without it (no translatable text) → plain "Download" button.
+        // TODO: replace the placeholder files with the real materials.
         materials: [
           // Game: Truth Detectives
           { id: '7.1.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-abuse/part1/games/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part1/games/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part1/games/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part1/games/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part1/games/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part1/games/de/placeholder.txt' },
+            ],
+          },
+          // Image: Cinnamon Challenge
+          { id: '7.1.3',
+            href: '/materials/digital-abuse/part1/images/placeholder.txt'
           },
         ],
         featuredVideo: {
-          // What is Misinformation?
+          // What Is Misinformation?
           id: '7.1.1',
-          posterSrc: '/images/learning-hub/video-posters/7.1.1_WhatIsMisinformation_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/7.1.1_WhatIsMisinformation_video_thumbnail.webp',
           videoSrc: '/materials/digital-abuse/part1/videos/7.1.1. Misinformation.mp4',
           downloads: {
             video:
             { href: '/materials/digital-abuse/part1/videos/7.1.1. Misinformation.mp4'
-            },
-            subtitles:
-            { href: '/materials/digital-abuse/part1/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1489,19 +1971,25 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
         bundle: {
           href: '/materials/digital-abuse/part2/part2.zip'
         },
-        materials: [],
+        materials: [
+          // Worksheet: Newspaper Template “Sharing News”
+          { id: '7.2.2',
+            href: '/materials/digital-abuse/part2/worksheets/placeholder.txt'
+          },
+          // Image: Social Media Algorithms
+          { id: '7.2.3',
+            href: '/materials/digital-abuse/part2/images/placeholder.txt'
+          },
+        ],
         featuredVideo: {
-          // What is Disinformation?
+          // What Is Disinformation?
           id: '7.2.1',
-          posterSrc: '/images/learning-hub/video-posters/7.2.1_WhatIsDisinformation_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/7.2.1_WhatIsDisinformation_video_thumbnail.webp',
           videoSrc: '/materials/digital-abuse/part2/videos/7.2.1. Disinformation.mp4',
           downloads: {
             video:
             { href: '/materials/digital-abuse/part2/videos/7.2.1. Disinformation.mp4'
-            },
-            subtitles:
-            { href: '/materials/digital-abuse/part2/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1535,23 +2023,38 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/digital-abuse/part3/part3.zip'
         },
         materials: [
-          // Game: Act it Out!
-          { id: '7.3.2',
-            href: '/materials/placeholder.txt'
+          // Scenario Cards: Act It Out!
+          { id: '7.3.1',
+            href: '/materials/digital-abuse/part3/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part3/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part3/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part3/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part3/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part3/cards/de/placeholder.txt' },
+            ],
+          },
+          // Scenario Cards: Is It Just Bad Manners?
+          { id: '7.3.3',
+            href: '/materials/digital-abuse/part3/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part3/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part3/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part3/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part3/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part3/cards/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
-          // What is Cyber Bullying?
-          id: '7.3.1',
-          posterSrc: '/images/learning-hub/video-posters/7.3.1_WhatIsCyberbullying_video_thumbnail.png',
+          // What Is Cyber Bullying?
+          id: '7.3.2',
+          posterSrc: '/images/learning-hub/video-posters/7.3.1_WhatIsCyberbullying_video_thumbnail.webp',
           videoSrc: '/materials/digital-abuse/part3/videos/7.3.1. Cyber Bullying.mp4',
           downloads: {
             video:
             { href: '/materials/digital-abuse/part3/videos/7.3.1. Cyber Bullying.mp4'
-            },
-            subtitles:
-            { href: '/materials/digital-abuse/part3/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1585,9 +2088,31 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/digital-abuse/part4/part4.zip'
         },
         materials: [
-          // Game: Real or Fake?
+          // Poster: Stranger Danger
           { id: '7.4.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-abuse/part4/posters/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part4/posters/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part4/posters/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part4/posters/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part4/posters/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part4/posters/de/placeholder.txt' },
+            ],
+          },
+          // Scenario Cards: Real or Fake? The Profile Detective Game
+          { id: '7.4.2',
+            href: '/materials/digital-abuse/part4/cards/placeholder.txt'
+          },
+          // Worksheet: Stranger Danger Champion
+          { id: '7.4.3',
+            href: '/materials/digital-abuse/part4/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part4/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part4/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part4/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part4/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part4/worksheets/de/placeholder.txt' },
+            ],
           },
         ],
       },
@@ -1599,23 +2124,27 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/digital-abuse/part5/part5.zip'
         },
         materials: [
-          // Scenarios: Examples of Influencers Posts That Are Potentially Harmful and Not Harmful
+          // Scenario Cards: Influencer Posts
           { id: '7.5.2',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-abuse/part5/cards/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part5/cards/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part5/cards/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part5/cards/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part5/cards/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part5/cards/de/placeholder.txt' },
+            ],
           },
         ],
         featuredVideo: {
           // Social Media Influencers
           id: '7.5.1',
-          posterSrc: '/images/learning-hub/video-posters/7.5.1_SocialMediaInfluencers_video_thumbnail.png',
+          posterSrc: '/images/learning-hub/video-posters/7.5.1_SocialMediaInfluencers_video_thumbnail.webp',
           videoSrc: '/materials/digital-abuse/part5/videos/7.5.1. Influencers.mp4',
           downloads: {
             video:
             { href: '/materials/digital-abuse/part5/videos/7.5.1. Influencers.mp4'
-            },
-            subtitles:
-            { href: '/materials/digital-abuse/part5/videos/subtitles/subtitles.zip'
-            },
+            }
           },
           tracks: [
             { label: 'English',
@@ -1649,9 +2178,31 @@ export const modulePartsData: Record<ModuleId, PartDefinition[]> = {
           href: '/materials/digital-abuse/part6/part6.zip'
         },
         materials: [
-          // Activity: Safety Superhero Suggestion Pack
+          // Worksheet: Digital Superhero
           { id: '7.6.1',
-            href: '/materials/placeholder.txt'
+            href: '/materials/digital-abuse/part6/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part6/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part6/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part6/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part6/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part6/worksheets/de/placeholder.txt' },
+            ],
+          },
+          // Worksheet: CyberDoku: Solving the Mystery
+          { id: '7.6.2',
+            href: '/materials/digital-abuse/part6/worksheets/en/placeholder.txt',
+            languages: [
+              { lang: 'en', href: '/materials/digital-abuse/part6/worksheets/en/placeholder.txt' },
+              { lang: 'cs', href: '/materials/digital-abuse/part6/worksheets/cs/placeholder.txt' },
+              { lang: 'no', href: '/materials/digital-abuse/part6/worksheets/no/placeholder.txt' },
+              { lang: 'lt', href: '/materials/digital-abuse/part6/worksheets/lt/placeholder.txt' },
+              { lang: 'de', href: '/materials/digital-abuse/part6/worksheets/de/placeholder.txt' },
+            ],
+          },
+          // Image: CyberDoku: The Map of the Area
+          { id: '7.6.3',
+            href: '/materials/digital-abuse/part6/images/placeholder.txt'
           },
         ],
       },
